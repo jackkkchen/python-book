@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.340">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>MySQL入门学习 - 2&nbsp; SQL学习</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./intro.html" rel="prev">
+<link href="././img/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./SQL学习.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">SQL学习</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">MySQL入门学习</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./MySQL入门学习.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./MySQL入门学习.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">前言</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MySQL介绍</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./SQL学习.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">SQL学习</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sql通用语法" id="toc-sql通用语法" class="nav-link active" data-scroll-target="#sql通用语法"><span class="header-section-number">2.1</span> SQL通用语法</a></li>
+  <li><a href="#sql分类" id="toc-sql分类" class="nav-link" data-scroll-target="#sql分类"><span class="header-section-number">2.2</span> SQL分类</a>
+  <ul class="collapse">
+  <li><a href="#ddl-数据定义语句" id="toc-ddl-数据定义语句" class="nav-link" data-scroll-target="#ddl-数据定义语句"><span class="header-section-number">2.2.1</span> DDL <strong>数据定义语句</strong></a></li>
+  </ul></li>
+  <li><a href="#函数" id="toc-函数" class="nav-link" data-scroll-target="#函数"><span class="header-section-number">2.3</span> 函数</a>
+  <ul class="collapse">
+  <li><a href="#字符串函数" id="toc-字符串函数" class="nav-link" data-scroll-target="#字符串函数"><span class="header-section-number">2.3.1</span> 字符串函数</a></li>
+  <li><a href="#数值函数" id="toc-数值函数" class="nav-link" data-scroll-target="#数值函数"><span class="header-section-number">2.3.2</span> 2. 数值函数</a></li>
+  <li><a href="#日期函数" id="toc-日期函数" class="nav-link" data-scroll-target="#日期函数"><span class="header-section-number">2.3.3</span> <strong>3.</strong> <strong>日期函数</strong></a></li>
+  <li><a href="#流程函数" id="toc-流程函数" class="nav-link" data-scroll-target="#流程函数"><span class="header-section-number">2.3.4</span> 4. 流程函数</a></li>
+  </ul></li>
+  <li><a href="#约束" id="toc-约束" class="nav-link" data-scroll-target="#约束"><span class="header-section-number">2.4</span> 约束</a>
+  <ul class="collapse">
+  <li><a href="#概述和分类" id="toc-概述和分类" class="nav-link" data-scroll-target="#概述和分类"><span class="header-section-number">2.4.1</span> 概述和分类</a></li>
+  <li><a href="#案例展示" id="toc-案例展示" class="nav-link" data-scroll-target="#案例展示"><span class="header-section-number">2.4.2</span> <strong>2.</strong> <strong>案例展示</strong></a></li>
+  <li><a href="#外键约束" id="toc-外键约束" class="nav-link" data-scroll-target="#外键约束"><span class="header-section-number">2.4.3</span> <strong>3.</strong> <strong>外键约束</strong></a></li>
+  </ul></li>
+  <li><a href="#多表查询" id="toc-多表查询" class="nav-link" data-scroll-target="#多表查询"><span class="header-section-number">2.5</span> 多表查询</a>
+  <ul class="collapse">
+  <li><a href="#多表关系" id="toc-多表关系" class="nav-link" data-scroll-target="#多表关系"><span class="header-section-number">2.5.1</span> 多表关系</a></li>
+  <li><a href="#多表查询-1" id="toc-多表查询-1" class="nav-link" data-scroll-target="#多表查询-1"><span class="header-section-number">2.5.2</span> 2.多表查询</a></li>
+  <li><a href="#连接查询" id="toc-连接查询" class="nav-link" data-scroll-target="#连接查询"><span class="header-section-number">2.5.3</span> 3.连接查询</a></li>
+  <li><a href="#子查询" id="toc-子查询" class="nav-link" data-scroll-target="#子查询"><span class="header-section-number">2.5.4</span> 4.子查询</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/main/SQL学习.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">SQL学习</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="sql通用语法" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sql通用语法"><span class="header-section-number">2.1</span> SQL通用语法</h2>
+<p>SQL语句可以单行或多行书写 以<strong>分号结尾</strong></p>
+<p>SQL语句可以使用空格/缩进来增强语句的可读性</p>
+<p>MySQL数据库的SQL语句<strong>不区分大小写，关键字建议使用大写</strong></p>
+<p>● 注释</p>
+<ol type="1">
+<li>单行注释 ：– 注释内容 或#注释内容（MySQL独有）</li>
+<li>多行注释 ：/* */</li>
+</ol>
+</section>
+<section id="sql分类" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sql分类"><span class="header-section-number">2.2</span> SQL分类</h2>
+<p>● SQL语句，根据其功能，主要分为四类：DDL、DML、DQL、DCL。</p>
+<section id="ddl-数据定义语句" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="ddl-数据定义语句"><span class="header-section-number">2.2.1</span> DDL <strong>数据定义语句</strong></h3>
+<section id="库操作" class="level4" data-number="2.2.1.1">
+<h4 data-number="2.2.1.1" class="anchored" data-anchor-id="库操作"><span class="header-section-number">2.2.1.1</span> 库操作</h4>
+<p>● 查询</p>
+<p>1)查询所有数据库</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(SHOW)SHOW DATABASES;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>2)查询当前数据库</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">SELECT</span>)<span class="kw">SELECT</span> <span class="kw">DATABASE</span>();</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>● 创建(CREATE)</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">DATABASE</span>[<span class="cf">IF</span> <span class="kw">NOT</span> <span class="kw">EXISTS</span>]数据库名[<span class="kw">DEFAULT</span> CHARSET 字符集][COLLATE 排序规则];</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>● 删除(DROP)</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> DATABASES[<span class="cf">IF</span> <span class="kw">EXISTS</span>] 数据库名;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>● 使用(USE)/<em>切换访问的数据库</em>/</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>USE数据库名；</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>DDL 数据定义语句</p>
+</section>
+<section id="表操作" class="level4" data-number="2.2.1.2">
+<h4 data-number="2.2.1.2" class="anchored" data-anchor-id="表操作"><span class="header-section-number">2.2.1.2</span> 表操作</h4>
+<p>● 查询</p>
+<p>1）查询当前数据所有表</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>SHOW <span class="kw">TABLES</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>2）查询表结构</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DESC</span> 表名;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>3）查询指定表的建表语句</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>SHOW <span class="kw">CREATE</span> <span class="kw">TABLE</span> 表名;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>● 创建(CREATE)</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> 表名{</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>字段1 字段1类型[<span class="kw">COMMENT</span> 字段1注释],</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>字段2 字段2类型[<span class="kw">COMMENT</span> 字段2注释],</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>字段3 字段3类型[<span class="kw">COMMENT</span> 字段3注释]</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}[<span class="kw">COMMENT</span> 表注释];</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>● 修改(ALTER)</p>
+<ol type="1">
+<li>添加字段(ADD)</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> 表名 <span class="kw">ADD</span> 字段名 类型(长度)[<span class="kw">comment</span> 注释][约束];</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>修改数据类型(MODIFY)</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> 表名 <span class="kw">MODIFY</span> 字段名 新数据类型(长度);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>修改字段名和字段类型(CHANGE)</li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> 表名 <span class="kw">CHANGE</span> 旧字段名 新字段名 类型(长度)[<span class="kw">COMMENT</span> 注释] [约束];</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>删除字段（DROP）</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> 表名 <span class="kw">DROP</span> 字段名;#删除列</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>修改表名</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> 表名 <span class="kw">RENAME</span> <span class="kw">TO</span> 新表名;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>● 删除</p>
+<ol type="1">
+<li>删除表</li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DROP</span> <span class="kw">TABLE</span> [<span class="cf">IF</span> <span class="kw">EXISTS</span>]表名;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>删除指定表，并重新创建该表(该表的<strong>数据会被删除</strong>，以该名表被重新创建)</li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">TRUNCATE</span> <span class="kw">TABLE</span> 表名;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="dml-数据操作语句" class="level4" data-number="2.2.1.3">
+<h4 data-number="2.2.1.3" class="anchored" data-anchor-id="dml-数据操作语句"><span class="header-section-number">2.2.1.3</span> DML 数据操作语句</h4>
+<section id="添加数据insert" class="level5" data-number="2.2.1.3.1">
+<h5 data-number="2.2.1.3.1" class="anchored" data-anchor-id="添加数据insert"><span class="header-section-number">2.2.1.3.1</span> ● 添加数据（INSERT）</h5>
+<ol type="1">
+<li>给<strong>指定字段</strong>名添加数据</li>
+</ol>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> 表名  (字段名1，字段名2， . . .)<span class="kw">VALUES</span>(值1，值2， . . .);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>给<strong>全部字段名</strong>添加数据</li>
+</ol>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> 表名 <span class="kw">VALUES</span>(值1，值2， . . .);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>批量添加数据</li>
+</ol>
+<p>/<em>批量插入数据 用逗号隔开</em>/</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> 表名(字段名1，字段名2， . . .)<span class="kw">VALUES</span>(值1，值2， . . .),(值1，值2， . . .),(值 1，值2， . . .);</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> 表名 <span class="kw">VALUES</span> (值1，值2， . . .)， (值1，值2， . . . .)， (值1，值2， . . . .);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>注意：</strong></p>
+<p>1）插入数据时，指定的字段顺序需要与值的<strong>顺序是一致</strong>的</p>
+<p>2）字符串和日期类型应该包含的在引号中</p>
+<p>3）插入的数据大小，应该在字段的规定范围内</p>
+</section>
+<section id="修改数据update" class="level5" data-number="2.2.1.3.2">
+<h5 data-number="2.2.1.3.2" class="anchored" data-anchor-id="修改数据update"><span class="header-section-number">2.2.1.3.2</span> ● 修改数据（UPDATE）</h5>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> 表名 <span class="kw">SET</span> 字段名1<span class="op">=</span>值1，字段名2<span class="op">=</span>值2， . . .[<span class="kw">WHERE</span> 条件];</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="删除delete" class="level5" data-number="2.2.1.3.3">
+<h5 data-number="2.2.1.3.3" class="anchored" data-anchor-id="删除delete"><span class="header-section-number">2.2.1.3.3</span> ● 删除（DELETE）</h5>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">DELETE</span> <span class="kw">FROM</span> 表名[<span class="kw">WHERE</span> 条件];</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="dql-数据查询语句" class="level4" data-number="2.2.1.4">
+<h4 data-number="2.2.1.4" class="anchored" data-anchor-id="dql-数据查询语句"><span class="header-section-number">2.2.1.4</span> DQL 数据查询语句</h4>
+<section id="基本查询" class="level5" data-number="2.2.1.4.1">
+<h5 data-number="2.2.1.4.1" class="anchored" data-anchor-id="基本查询"><span class="header-section-number">2.2.1.4.1</span> 基本查询</h5>
+<ol type="1">
+<li>查询多个字段</li>
+</ol>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> 字段1,字段2，字段3 . . .<span class="kw">FROM</span> 表名;</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span><span class="kw">FROM</span> 表名(全部字段)#返回查询列表中所有数据</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>设置别名（AS）</li>
+</ol>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> 字段1[<span class="kw">AS</span> 别名1],字段2[<span class="kw">AS</span> 别名2]. . .FROM表名;#别名要用单引号 AS可以省略</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>去除重复纪录(DISTINCT)</li>
+</ol>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> 字段列表 <span class="kw">FROM</span> 表名;#将该列的重复的元素去除（去重）</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="条件查询" class="level5" data-number="2.2.1.4.2">
+<h5 data-number="2.2.1.4.2" class="anchored" data-anchor-id="条件查询"><span class="header-section-number">2.2.1.4.2</span> 2.条件查询</h5>
+<ol type="1">
+<li>语法(WHERE)</li>
+</ol>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> 字段列表 <span class="kw">FROM</span> <span class="kw">WHERE</span> 条件列表; # where相当于java中if语句 后接条件语句 字段列表 <span class="op">=*</span>(所有列)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>条件</li>
+</ol>
+<p>​ ● 比较运算符</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>比较运算符</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr class="even">
+<td>&gt;=</td>
+<td>大于等于</td>
+</tr>
+<tr class="odd">
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr class="even">
+<td>&lt;=</td>
+<td>小于等于</td>
+</tr>
+<tr class="odd">
+<td>=</td>
+<td>等于</td>
+</tr>
+<tr class="even">
+<td>&lt;&gt;或！ =</td>
+<td>不等于</td>
+</tr>
+<tr class="odd">
+<td>BETWEEN…AND</td>
+<td>在某个范围之内（含最小、最大值）</td>
+</tr>
+<tr class="even">
+<td>IN(…)</td>
+<td>在in之后的列表中的值，多选一</td>
+</tr>
+<tr class="odd">
+<td>LIKE 占位符</td>
+<td>模糊匹配 ( _ 匹配<strong>单个字符</strong>, % 匹配<strong>任意个字符 </strong>)</td>
+</tr>
+<tr class="even">
+<td>IS NULL</td>
+<td>是NULL</td>
+</tr>
+</tbody>
+</table>
+<p>​ ● 逻辑运算符</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th><strong>逻辑运算符</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AND或&amp;&amp;</td>
+<td>并且(多个条件同时成立)</td>
+</tr>
+<tr class="even">
+<td>OR或||</td>
+<td>或者(多个条件任意一个成立)</td>
+</tr>
+<tr class="odd">
+<td>NOT或！</td>
+<td>非，不是</td>
+</tr>
+</tbody>
+</table>
+<p>​ ● 聚合函数</p>
+<ol type="1">
+<li>介绍</li>
+</ol>
+<p>将一列数据作为一个整体</p>
+<ol start="2" type="1">
+<li>常见聚合函数</li>
+</ol>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>函数</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">count</td>
+<td>统计数量</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">max</td>
+<td>最大值</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">min</td>
+<td>最小值</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">avg</td>
+<td>平均值</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sum</td>
+<td>求和</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb26"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> 聚合函数 <span class="kw">from</span> 表名;</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)<span class="kw">FROM</span> EMP;</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="kw">ID</span>)<span class="kw">FROM</span> EMP;</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>#聚合函数传进去的是字段</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>注意:null值不参与聚合函数的运算</p>
+</section>
+<section id="分组查询group-by" class="level5" data-number="2.2.1.4.3">
+<h5 data-number="2.2.1.4.3" class="anchored" data-anchor-id="分组查询group-by"><span class="header-section-number">2.2.1.4.3</span> 3.分组查询(GROUP BY)</h5>
+<ol type="1">
+<li>语法</li>
+</ol>
+<div class="sourceCode" id="cb27"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> 字段列表 <span class="kw">FROM</span> 表名[<span class="kw">WHERE</span> 条件]<span class="kw">GROUP</span> <span class="kw">BY</span> 分组字段名[<span class="kw">HAVING</span> 分组后过滤条件];</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> gender,<span class="fu">count</span>(<span class="op">*</span>)<span class="kw">from</span> emp <span class="kw">GROUP</span> <span class="kw">BY</span> gender;</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>#查询效果是 根据性别分组 统计男女的数量</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> gender,<span class="fu">AVG</span>(age)<span class="kw">FROM</span> emp <span class="kw">GROUP</span> <span class="kw">BY</span> gender;</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>#查询效果是 根据性别分组 统计男女的平均年龄</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> address,<span class="fu">COUNT</span>(<span class="op">*</span>)<span class="kw">FROM</span> emp <span class="kw">WHERE</span> age<span class="op">&lt;</span>xxx <span class="kw">GROUP</span> <span class="kw">BY</span> address;</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>#查询效果是 根据地址分组 统计年龄小于xxx的人数</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> address,<span class="fu">COUNT</span>(<span class="op">*</span>) address_count <span class="kw">FROM</span> emp <span class="kw">WHERE</span> age<span class="op">&lt;</span>xxx <span class="kw">GROUP</span> <span class="kw">BY</span> address <span class="kw">HAVING</span> address_count<span class="op">&gt;</span>X;</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>#上面一条语句的基础上再次筛选having</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>HAING 和WHERE区别</li>
+</ol>
+<p>执行时机不同:</p>
+<p>where是<strong>分组之前</strong>进行过滤，不满足where条件不进行分组；而having是 <strong>分组之后</strong>对结果进行过滤</p>
+<p>判断条件不同:</p>
+<p><strong>where不能对聚合函数进行判断</strong> 而having可以。</p>
+<ol start="3" type="1">
+<li>注意</li>
+</ol>
+<p>执行顺序:where-&gt;聚合函数-&gt;having</p>
+<p>分组之后，查询的字段一般为聚合函数和分组字段，查询其他字段无任何意义(意思是分组字段和查询字段是相同的)</p>
+</section>
+<section id="排序查询order-by" class="level5" data-number="2.2.1.4.4">
+<h5 data-number="2.2.1.4.4" class="anchored" data-anchor-id="排序查询order-by"><span class="header-section-number">2.2.1.4.4</span> 4.排序查询(ORDER BY)</h5>
+<ol type="1">
+<li>语法</li>
+</ol>
+<div class="sourceCode" id="cb28"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>#支持多字段排序</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> 字段列表 <span class="kw">FROM</span> 表名 <span class="kw">ORDER</span> <span class="kw">BY</span> 字段1 排序方1,字段2 排序方式2 <span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emp <span class="kw">ORDER</span> <span class="kw">BY</span> age <span class="kw">desc</span>;#降序</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emp <span class="kw">ORDER</span> <span class="kw">BY</span> age <span class="kw">asc</span>;#升序</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emp <span class="kw">ORDER</span> <span class="kw">BY</span> age <span class="kw">asc</span>,entrydate <span class="kw">desc</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>排序方式</li>
+</ol>
+<p>ASC：升序（默认值）</p>
+<p>DESC：降序</p>
+<p>注意:如果是多字段查询时，当第一个字段值相同时，才会根据第二个字段进行排序</p>
+</section>
+<section id="分页查询limit" class="level5" data-number="2.2.1.4.5">
+<h5 data-number="2.2.1.4.5" class="anchored" data-anchor-id="分页查询limit"><span class="header-section-number">2.2.1.4.5</span> 5.分页查询(LIMIT)</h5>
+<ol type="1">
+<li>语法</li>
+</ol>
+<div class="sourceCode" id="cb29"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> 字段列表 <span class="kw">FROM</span> <span class="kw">LIMIT</span> 起始索引 ,查询记录数;#两个参数</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>注意</p>
+<p>1）起始索引是<strong>从0开始，</strong>起始索引 =（查询页码-1）*每页显示记录数</p>
+<p>2）<strong>分页查询是数据库的方言</strong>，不同的数据库有不同的实现， Mysql是LIMIT</p>
+<p>3）如果查询的是第一页数据，起始索引可以省略，直接简写为limit 10</p>
+</section>
+</section>
+</section>
+</section>
+<section id="函数" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="函数"><span class="header-section-number">2.3</span> 函数</h2>
+<section id="字符串函数" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="字符串函数"><span class="header-section-number">2.3.1</span> 字符串函数</h3>
+<p>​ ● 常用函数</p>
+<table class="table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 71%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>函数</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CONCAT(S1,S2,…Sn)</td>
+<td>字符串拼接,将s1,s2,..sn拼接成一个字符串</td>
+</tr>
+<tr class="even">
+<td>LOWER(str)</td>
+<td>将字符串str全部转成小写</td>
+</tr>
+<tr class="odd">
+<td>UPPER(str)</td>
+<td>将字符串str全部转成大写</td>
+</tr>
+<tr class="even">
+<td>LPAD(str,n,pad)</td>
+<td>左填充，用字符串pad对str的左边进行填充，达到n个字符串长度</td>
+</tr>
+<tr class="odd">
+<td>RPAD(str,n,pad)</td>
+<td>右填充，用字符串pad对str的右边进行填充，达到n个字符串长度</td>
+</tr>
+<tr class="even">
+<td>TRIM(str)</td>
+<td>去掉字符串<strong>头部和尾部的空格</strong></td>
+</tr>
+<tr class="odd">
+<td>SUBSTRING(str,start,len)</td>
+<td>返回从字符串str从start位置起len个长度的字符串SELECT 函数(参数);</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="数值函数" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="数值函数"><span class="header-section-number">2.3.2</span> 2. 数值函数</h3>
+<p>​ ● 常用函数</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th><strong>函数</strong></th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CEIL(x)</td>
+<td>向上取整</td>
+</tr>
+<tr class="even">
+<td>FLOOR(x)</td>
+<td>向下取整</td>
+</tr>
+<tr class="odd">
+<td>MOD(x,y)</td>
+<td>返回x/y的模</td>
+</tr>
+<tr class="even">
+<td>RAND()</td>
+<td>返回0~1的随机数</td>
+</tr>
+<tr class="odd">
+<td>ROUND(x,y)</td>
+<td>求参数x的四舍五入的值，保留y位小数</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="日期函数" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="日期函数"><span class="header-section-number">2.3.3</span> <strong>3.</strong> <strong>日期函数</strong></h3>
+<p>​ ● 常用函数</p>
+<table class="table">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>函数</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CURDATE()</td>
+<td>返回当前日期</td>
+</tr>
+<tr class="even">
+<td>CURTIME()</td>
+<td>返回当前时间</td>
+</tr>
+<tr class="odd">
+<td>NOW()</td>
+<td>返回当前日期和时间</td>
+</tr>
+<tr class="even">
+<td>YEAR(date)</td>
+<td>返回当前指定date的年份</td>
+</tr>
+<tr class="odd">
+<td>MONTH(date)</td>
+<td>返回当前指定date的月份</td>
+</tr>
+<tr class="even">
+<td>DAY(date)</td>
+<td>返回当前指定date的日期</td>
+</tr>
+<tr class="odd">
+<td>DATE_ADD(date,INTERVAL_EXPR type)</td>
+<td>返回一个日期/时间加上一个<strong>时间间隔</strong>expr后的时间值</td>
+</tr>
+<tr class="even">
+<td>DATEDIFF(date1 ，date2)</td>
+<td>返回起始时间date1和结束时间date2之间的天数</td>
+</tr>
+</tbody>
+</table>
+<p>举例：</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> date_add(now(),<span class="dt">INTERVAL</span> <span class="dv">70</span> <span class="dt">YEAR</span>);</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>#查询员工的入职天数</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name,diff(now(),entrydate) <span class="kw">as</span> entrydayscount <span class="kw">FROM</span> emp <span class="kw">Group</span> <span class="kw">By</span> entrydayscount <span class="kw">SELECT</span> name,DATEDIFF(NOW(),<span class="st">'2000-11-12 '</span>)<span class="kw">FROM</span> emp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="流程函数" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="流程函数"><span class="header-section-number">2.3.4</span> 4. 流程函数</h3>
+<p>​ ● 常见函数</p>
+<table class="table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>函数</strong></th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IF(Value ，t ，f)</td>
+<td>如果value为true，则返回t，否则返回f</td>
+</tr>
+<tr class="even">
+<td>IFNULL(Value1,Value2)</td>
+<td>如果Value1不为空(空=null)，则返回value1，否则返回value2</td>
+</tr>
+<tr class="odd">
+<td>CASE WHEN[val1]THEN[res1]…ELSE[default]END</td>
+<td>如果val1为true，返回res1，否则返回default默认值</td>
+</tr>
+<tr class="even">
+<td>CASE [expr]WHEN[val]THEN[res1]…ELSE[default]END</td>
+<td>如果<strong>expr(表达式)</strong>的值等于val1，返回res1 ，…否则返回default默认值</td>
+</tr>
+</tbody>
+</table>
+<p>举例：</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name,(<span class="cf">case</span> workaddress <span class="cf">when</span> <span class="st">'北京 '</span>then<span class="st">'一线城市 '</span>when <span class="st">'上海 '</span>then<span class="st">'一线城 市 '</span>else<span class="st">'二线城市 '</span>end) <span class="kw">as</span> <span class="st">'工作地址 '</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">id</span>,name,(<span class="cf">case</span> <span class="cf">when</span> math<span class="op">&gt;=</span><span class="dv">85</span> <span class="cf">then</span> <span class="st">'优秀 '</span> <span class="cf">when</span> math<span class="op">&gt;=</span><span class="dv">60</span> <span class="cf">then</span> <span class="st">'及格 '</span>else <span class="st">'不 及格 '</span>end)<span class="kw">as</span> <span class="st">'数学 '</span>),</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>(<span class="cf">case</span> <span class="cf">when</span> English<span class="op">&gt;=</span><span class="dv">85</span> <span class="cf">then</span> <span class="st">'优秀 '</span> <span class="cf">when</span> English<span class="op">&gt;=</span><span class="dv">60</span> <span class="cf">then</span> <span class="st">'及格 '</span>else <span class="st">'不及格 '</span>end)<span class="kw">as</span> <span class="st">'英语 '</span>),</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>(<span class="cf">case</span> <span class="cf">when</span> Chinese<span class="op">&gt;=</span><span class="dv">85</span> <span class="cf">then</span> <span class="st">'优秀 '</span> <span class="cf">when</span> Chinese<span class="op">&gt;=</span><span class="dv">60</span> <span class="cf">then</span> <span class="st">'及格 '</span>else <span class="st">'不及格 '</span>end)<span class="kw">as</span> <span class="st">'语文 '</span>)</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> score;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="约束" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="约束"><span class="header-section-number">2.4</span> 约束</h2>
+<section id="概述和分类" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="概述和分类"><span class="header-section-number">2.4.1</span> 概述和分类</h3>
+<ol type="1">
+<li>概念</li>
+</ol>
+<p>约束是<strong>作用表中字段</strong>上的规则，用于限制存储在表中的数据</p>
+<ol start="2" type="1">
+<li>作用</li>
+</ol>
+<p>保证数据库中数据的<strong>正确性、有效性和完整性</strong></p>
+<ol start="3" type="1">
+<li><p>分类</p>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 74%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>约束</th>
+<th><strong>描述</strong></th>
+<th><strong>关键字</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>非空约束</td>
+<td>限制该字段的数据不能为null</td>
+<td>NOT NULL</td>
+</tr>
+<tr class="even">
+<td>唯一约束</td>
+<td>保证该字段的所有数据都是<strong>唯一</strong> ，<strong>不重复</strong>的</td>
+<td>UNIQUE</td>
+</tr>
+<tr class="odd">
+<td>主键约束</td>
+<td>主键是一行数据的唯一标识，要求<strong>非空且唯一</strong></td>
+<td>PRIMARY KEY</td>
+</tr>
+<tr class="even">
+<td>默认约束</td>
+<td>保存数据时，如果未指定该字段的值，则采用默认值</td>
+<td>DEFAULT</td>
+</tr>
+<tr class="odd">
+<td>检查约束</td>
+<td>保证字段值满足某一个条件(逻辑表达式+比较运算符)</td>
+<td>CHECK</td>
+</tr>
+<tr class="even">
+<td>外键约束</td>
+<td>用来让两张表的数据中之间建立连接，保证数据的一致性和完整</td>
+<td>FOREIGN KEY</td>
+</tr>
+</tbody>
+</table>
+<hr></li>
+</ol>
+<p>注意:约束是作用在表中字段上的，可以在<strong>创建表</strong>/<strong>修改表</strong>的时候添加约束</p>
+</section>
+<section id="案例展示" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="案例展示"><span class="header-section-number">2.4.2</span> <strong>2.</strong> <strong>案例展示</strong></h3>
+<div class="sourceCode" id="cb32"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">create</span> <span class="kw">table</span> <span class="fu">user</span>(</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="kw">id</span> <span class="dt">int</span> <span class="kw">primary</span> <span class="kw">key</span> auto_increment <span class="kw">comment</span> <span class="st">'主键 '</span>,</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>name <span class="dt">varchar</span>(<span class="dv">10</span>) <span class="kw">not</span> <span class="kw">null</span> <span class="kw">comment</span> <span class="st">'名字 '</span>,</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>age <span class="dt">int</span> <span class="kw">check</span> ( age<span class="op">&gt;</span><span class="dv">0</span><span class="ch">&amp;&amp;age</span><span class="op">&lt;</span><span class="dv">120</span> ) <span class="kw">comment</span> <span class="st">'年龄 '</span>,  # mysql 版本要在8 .0才支持该语句 </span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>status <span class="dt">char</span>(<span class="dv">1</span>) <span class="kw">default</span> <span class="st">'1 '</span>comment <span class="st">'状态 '</span>,</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>gander <span class="dt">char</span>(<span class="dv">1</span>) comment<span class="st">'性别 '</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>)<span class="kw">comment</span> <span class="st">'用户表 '</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="外键约束" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="外键约束"><span class="header-section-number">2.4.3</span> <strong>3.</strong> <strong>外键约束</strong></h3>
+<p><strong>3.</strong> <strong>1</strong> <strong>语法</strong></p>
+<p>添加外键:保证数据的完整性和一致性</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>#建表前添加外键</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> 表名{</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>     字段名 数据类型 ,</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>     <span class="op">..</span>.</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>     [<span class="kw">CONSTRAINT</span>][外键名称]<span class="kw">FOREIGN</span> <span class="kw">KEY</span>(外键字段名)<span class="kw">REFERENCES</span> 主表（主表列名） };</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>#建表后进行添加外键</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> 表名 <span class="kw">ADD</span> <span class="kw">CONSTRAINT</span> 外键名称 <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (外键字段名)<span class="kw">REFERENCES</span> 主表(主表列 名);#表名连接主表</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> 表名 <span class="kw">ADD</span> <span class="kw">CONSTRAINT</span> FK_表名_外键字段名 <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (外键字段名)<span class="kw">REFERENCES</span> 主(父)表(主表列名);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>删除外键</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> 表名 <span class="kw">DROP</span> <span class="kw">FOREIGN</span> <span class="kw">KEY</span> 外键名称;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>删除/更新行为(DELETE/UPDATE)</p>
+<table class="table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 83%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>行为</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>NO ACTION</td>
+<td>当父表中删除/更新对应纪录时，首先检查该记录是否有对应外键，如果有则不允许删除/更 新。</td>
+</tr>
+<tr class="even">
+<td>RESTRICT</td>
+<td>同上</td>
+</tr>
+<tr class="odd">
+<td>CASCADE</td>
+<td>当父表中删除/更新对应纪录时，首先检查该记录是否有对应外键，如果有则也删除/更新外键 在字表中的记录</td>
+</tr>
+<tr class="even">
+<td>SET NULL</td>
+<td>当父表中删除/更新对应纪录时，首先检查该记录是否有对应外键，如果有则设置字表中该外 键值为null</td>
+</tr>
+<tr class="odd">
+<td>SET DEFAULT</td>
+<td>父表有变更时，字表将外键列设置成一个默认值(Innodb不支持)</td>
+</tr>
+</tbody>
+</table>
+<p>语法：</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">TABLE</span> 表名 <span class="kw">ADD</span> <span class="kw">CONSTRAINT</span> 外键名称 <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (外键字段)<span class="kw">References</span> 主表名(字表字 段名) <span class="kw">ON</span> <span class="kw">UPDATE</span> <span class="kw">CASCADE</span> <span class="kw">ON</span> <span class="kw">DELETE</span> <span class="kw">CASCADE</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="多表查询" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="多表查询"><span class="header-section-number">2.5</span> 多表查询</h2>
+<section id="多表关系" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="多表关系"><span class="header-section-number">2.5.1</span> 多表关系</h3>
+<p>概述:</p>
+<p>由于业务之间相互关联，所以各个表结构之间也存在着各种联系，基本分为三种</p>
+<section id="一对多多对一" class="level4" data-number="2.5.1.1">
+<h4 data-number="2.5.1.1" class="anchored" data-anchor-id="一对多多对一"><span class="header-section-number">2.5.1.1</span> ● <strong>一对多(多对一)</strong></h4>
+<p>案例:部门与员工的关系</p>
+<p>关系:一个部门对应多个员工， 一个员工只能对应一个部门</p>
+<p>实现:<strong>在多的一方建立外键，指向一的一方的主键</strong>(员工表为多表，部门表就为一表)</p>
+</section>
+<section id="多对多" class="level4" data-number="2.5.1.2">
+<h4 data-number="2.5.1.2" class="anchored" data-anchor-id="多对多"><span class="header-section-number">2.5.1.2</span> <strong>● 多对多</strong></h4>
+<p>案例:学生和课程的关系</p>
+<p>关系:一个雪上可以选修多门课程， 一门课程也可以供多个学生选择</p>
+<p>实现:<strong>建立第三张中间表</strong>，中间表至少包含两个外键，分别<strong>关联两方主键</strong>(primary key)</p>
+</section>
+<section id="一对一" class="level4" data-number="2.5.1.3">
+<h4 data-number="2.5.1.3" class="anchored" data-anchor-id="一对一"><span class="header-section-number">2.5.1.3</span> <strong>● 一对一</strong></h4>
+<p>案例:用户与用户详情的关系</p>
+<p>关系:一对一关系，多用于单表拆分，将一张表的<strong>基础字段</strong>放在一张表中， <strong>其他详情字段放在另一张</strong> <strong>表中</strong>，以提升操作效率</p>
+<p>实现:在任意的一方加入外键，关联另外一方的主键，并且设置外键为唯一的(UNIQUE)</p>
+</section>
+</section>
+<section id="多表查询-1" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="多表查询-1"><span class="header-section-number">2.5.2</span> 2.多表查询</h3>
+<p>​ ● 概述: 指从多张表中查询数据</p>
+<p>笛卡尔积:笛卡尔乘积是指在数学中个，两个集合A集合和B集合的所有组合情况。(<strong>多表查询时，需要消除无效的笛卡尔积（连接条件）</strong> )</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>#多表查询</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> 父表 ,外表;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="多表查询分类" class="level4" data-number="2.5.2.1">
+<h4 data-number="2.5.2.1" class="anchored" data-anchor-id="多表查询分类"><span class="header-section-number">2.5.2.1</span> <strong>● 多表查询分类</strong></h4>
+<p>​ 连接查询</p>
+<ol type="1">
+<li>内连接</li>
+</ol>
+<p>​ 相当于查询A、B<strong>交集</strong>部分数据</p>
+<ol start="2" type="1">
+<li>外连接</li>
+</ol>
+<p>​ •左外连接</p>
+<p>​ •右外连接</p>
+<ol start="3" type="1">
+<li>自连接</li>
+</ol>
+<p>​ 当前表与自身的连接查询，自连接<strong>必须使用表别名</strong></p>
+<ol start="4" type="1">
+<li>联合查询</li>
+</ol>
+<p>​ •子查询</p>
+</section>
+</section>
+<section id="连接查询" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="连接查询"><span class="header-section-number">2.5.3</span> 3.连接查询</h3>
+<section id="内连接" class="level4" data-number="2.5.3.1">
+<h4 data-number="2.5.3.1" class="anchored" data-anchor-id="内连接"><span class="header-section-number">2.5.3.1</span> <strong>3.1</strong> <strong>内连接</strong></h4>
+<p>​ ● 隐式内连接</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> 字段列表 <span class="kw">FROM</span> 表1，表2 <span class="kw">WHERE</span> 条件 . . .;</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>#例子 emp员工表 dept部门表</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> emp.name,dept.name <span class="kw">FROM</span> emp,dept <span class="kw">WHERE</span> emp.dept_id<span class="op">=</span>dept.<span class="kw">id</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>​ ● 显式内连接</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> 字段列表 <span class="kw">FROM</span> 表1,[<span class="kw">INNER</span>] <span class="kw">JOIN</span> 表2 <span class="kw">ON</span> 连接条件;</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>#例子</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> e.name,d.name <span class="kw">FROM</span> emp e <span class="kw">INNER</span> <span class="kw">JOIN</span> dept d <span class="kw">ON</span> e.dept_id<span class="op">=</span>d.<span class="kw">id</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="外连接" class="level4" data-number="2.5.3.2">
+<h4 data-number="2.5.3.2" class="anchored" data-anchor-id="外连接"><span class="header-section-number">2.5.3.2</span> <strong>3.2</strong> <strong>外连接</strong></h4>
+<p>​ ● 左外连接(LEFT JOIN)</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> 字段列表 <span class="kw">FROM</span> 表1 <span class="kw">LEFT</span> [<span class="kw">OUTER</span>] <span class="kw">JOIN</span> 表2 <span class="kw">ON</span> 条件 #字段列表根据需求可进行优化 因为按照sql语句的执行属性可知select是在后面执行</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>相当于查询表1(左表)的所有数据和包含表1和表2交集部分的数据</p>
+<p>​ ● 右外连接(RIGHT JOIN)</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> 字段列表 <span class="kw">FROM</span> 表1 <span class="kw">RIGHT</span> [<span class="kw">OUTER</span>] <span class="kw">JOIN</span> 表2 <span class="kw">ON</span> 条件</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>相当于查询表2(右表)的所有数据和包含表1和表2交集部分的数据</p>
+</section>
+<section id="自连接" class="level4" data-number="2.5.3.3">
+<h4 data-number="2.5.3.3" class="anchored" data-anchor-id="自连接"><span class="header-section-number">2.5.3.3</span> <strong>3.3</strong> <strong>自连接</strong></h4>
+<p>​ ● 语法</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a># 把一张表看做成两张表 通过唯一 的id做为自连接的条件 managerid<span class="op">=</span><span class="kw">id</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a># 自连接必须给表名取别名！ ！ ！</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> 字段列表 <span class="kw">FROM</span> 表A 别名A <span class="kw">JOIN</span> 表A 别名B <span class="kw">ON</span> 条件 . . .;</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a># 举例：</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> a.name,b.name <span class="kw">FROM</span> emp a <span class="kw">JOIN</span> emp b <span class="kw">ON</span> a.managerid<span class="op">=</span>b.<span class="kw">id</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="联合查询" class="level4" data-number="2.5.3.4">
+<h4 data-number="2.5.3.4" class="anchored" data-anchor-id="联合查询"><span class="header-section-number">2.5.3.4</span> <strong>3.4</strong> <strong>联合查询</strong></h4>
+<p>​ ● 定义</p>
+<p>对于联合查询，就是把多次查询的结果合并起来，形成一个新的查询结果集。</p>
+<p>​ ● 关键词</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a># 作为单独一句 在两个sql语句查询中间</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="kw">UNION</span> #将查询的结果合并时 ，进行去重</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="kw">UNION</span> <span class="kw">ALL</span> #直接将查询的结果进行合并</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>注意</p>
+<ol type="1">
+<li>对于联合查询多表查询的；列数必须保持一致，字段类型也必须保持一致</li>
+<li>union all 会将全部数据直接合并在一起， union 会对合并之后的数据去重</li>
+</ol>
+</section>
+</section>
+<section id="子查询" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="子查询"><span class="header-section-number">2.5.4</span> 4.子查询</h3>
+<section id="概述" class="level4" data-number="2.5.4.1">
+<h4 data-number="2.5.4.1" class="anchored" data-anchor-id="概述"><span class="header-section-number">2.5.4.1</span> <strong>4.1</strong> <strong>概述</strong></h4>
+<p>​ <strong>● 概念:</strong>SQL语句中嵌套SELECT语句，成为<strong>嵌套语句</strong>，又称子查询</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> t1 <span class="kw">WHERE</span> column1<span class="op">=</span>(<span class="kw">SELECT</span> column1 <span class="kw">FROM</span> t2);</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>#子查询外部的语句可以是INSERT<span class="op">/</span><span class="kw">UPDATE</span><span class="op">/</span><span class="kw">DELETE</span><span class="op">/</span>SELECT的任何一个</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>​ ● <strong>查询结果分类</strong></p>
+<ol type="1">
+<li>标量子查询(子表查询结果为单个值)</li>
+<li>列子查询（子查询结果为一列）</li>
+<li>行子查询（子查询结果为一行）</li>
+<li>表子查询（子查询结果为多行多列）</li>
+</ol>
+<p>​ ● <strong>根据子查询位置</strong></p>
+<ol type="1">
+<li>WHERE之后</li>
+<li>FROM之后</li>
+<li>SELECT之后</li>
+</ol>
+</section>
+<section id="查询结果分类" class="level4" data-number="2.5.4.2">
+<h4 data-number="2.5.4.2" class="anchored" data-anchor-id="查询结果分类"><span class="header-section-number">2.5.4.2</span> <strong>4.2</strong> <strong>查询结果分类</strong></h4>
+<section id="标量子查询" class="level5" data-number="2.5.4.2.1">
+<h5 data-number="2.5.4.2.1" class="anchored" data-anchor-id="标量子查询"><span class="header-section-number">2.5.4.2.1</span> <strong>● 标量子查询</strong></h5>
+<ol type="1">
+<li>定义: 子查询返回的结果是单个值(数字，字符串，日期等)，最简单的形式，这种子查询称为标量子查询</li>
+<li>常用操作符:= 、&lt;&gt;、&gt; 、&gt;=、 &lt; 、&lt;=</li>
+<li>案例展示</li>
+</ol>
+<div class="sourceCode" id="cb44"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a># emp员工信息表</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a># dept部门表</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a># 要求查询具体部门对应的员工信息 前提员工表和部门表是已经建立了连接(<span class="kw">foreign</span> <span class="kw">key</span>) # 分析 首先得知道具体部门的部门ID 进而查询该部门的员工信息</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a># 可以两种sql写法</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">id</span> <span class="kw">FROM</span> dept <span class="kw">WHERE</span> name<span class="op">=</span><span class="st">'具体的部门名 '</span>;</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emp <span class="kw">WHERE</span> dept_id <span class="op">=</span><span class="ot">"上条语句的结果"</span>;</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a># 所以可以整合成一句 形成嵌套</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emp <span class="kw">WHERE</span> dept_id<span class="op">=</span>(<span class="kw">SELECT</span> <span class="kw">id</span> <span class="kw">FROM</span> dept <span class="kw">WHERE</span> name<span class="op">=</span><span class="st">'具体的部门名 '</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="列子查询" class="level5" data-number="2.5.4.2.2">
+<h5 data-number="2.5.4.2.2" class="anchored" data-anchor-id="列子查询"><span class="header-section-number">2.5.4.2.2</span> <strong>● 列子查询</strong></h5>
+<ol type="1">
+<li><p>子查询返回的结果是一列(可以是多行 )，这种子查询为列子查询</p></li>
+<li><p>常用操作符:IN、NOT IN、ANY、SOME、ALL</p></li>
+</ol>
+<table class="table">
+<thead>
+<tr class="header">
+<th><strong>操作符</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IN</td>
+<td>在指定的集合范围之内，多选一</td>
+</tr>
+<tr class="even">
+<td>NOT IN</td>
+<td>不在指定的集合范围之内</td>
+</tr>
+<tr class="odd">
+<td><strong>ANY</strong></td>
+<td>子查询返回列表中，有<strong>任意一个满足</strong>即可</td>
+</tr>
+<tr class="even">
+<td><strong>SOME</strong></td>
+<td>与ANY<strong>等同</strong>，使用SOME的地方都可以使用ANY</td>
+</tr>
+<tr class="odd">
+<td><strong>ALL</strong></td>
+<td>子查询返回列表的<strong>所有值都必须满足</strong></td>
+</tr>
+</tbody>
+</table>
+<ol start="3" type="1">
+<li>案例演示</li>
+</ol>
+<div class="sourceCode" id="cb45"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>#查询比财务部所有人工资都高的员工信息</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>#将获取信息的问题拆分化 在通过嵌套进行优化 形成一句sql语句</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a># 获取财务部的部门id</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">id</span> <span class="kw">FROM</span> dept <span class="kw">WHERE</span> name <span class="op">=</span><span class="st">'财务部'</span>;</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a># 获取财务中所有人的工资</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> salary <span class="kw">FROM</span> emp <span class="kw">WHERE</span> <span class="kw">id</span><span class="op">=</span>(<span class="kw">SELECT</span> <span class="kw">id</span> <span class="kw">FROM</span> dept <span class="kw">WHERE</span> name <span class="op">=</span><span class="st">'财务部'</span>);</span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a># 获取比财务部所有员工工资都高的员工信息</span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emp <span class="kw">WHERE</span> salary<span class="op">&gt;</span><span class="kw">ALL</span> <span class="kw">SELECT</span> salary <span class="kw">FROM</span> emp <span class="kw">WHERE</span> <span class="kw">id</span><span class="op">=</span>(<span class="kw">SELECT</span> <span class="kw">id</span> <span class="kw">FROM</span> dept <span class="kw">WHERE</span> name <span class="op">=</span><span class="st">'财务部'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="行子查询" class="level5" data-number="2.5.4.2.3">
+<h5 data-number="2.5.4.2.3" class="anchored" data-anchor-id="行子查询"><span class="header-section-number">2.5.4.2.3</span> ● 行子查询</h5>
+<p>1 . 子查询返回的结果是一行(可以是多列)，这种子查询为行子查询</p>
+<p>2 . 常用操作符:IN、 NOT IN、ANY、 SOME、ALL(同上)</p>
+<p>3 . 案例演示</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a># 查询张无忌的薪资及直属领导相同的员工信息</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> salary managerid <span class="kw">FROM</span> emp <span class="kw">WHERE</span> name<span class="op">=</span><span class="ot">"张无忌 "</span>;</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emp <span class="kw">WHERE</span> (salary,managerid)<span class="op">=</span>(<span class="kw">SELECT</span> salary managerid <span class="kw">FROM</span> emp <span class="kw">WHERE</span> name<span class="op">=</span><span class="ot">"张无忌 "</span>);</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>#返回的结果是一行多列 对应的是salary和managerID</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="表子查询" class="level5" data-number="2.5.4.2.4">
+<h5 data-number="2.5.4.2.4" class="anchored" data-anchor-id="表子查询"><span class="header-section-number">2.5.4.2.4</span> ● 表子查询</h5>
+<ol type="1">
+<li>表子查询返回的结果是多行多列，这种子查询为列表查询</li>
+<li>常用操作符: IN</li>
+<li>案例演示</li>
+</ol>
+<div class="sourceCode" id="cb47"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>#查询入职日期是 “<span class="dv">2006</span><span class="op">-</span><span class="dv">01</span><span class="op">-</span>01”之后的员工信息和部门信息</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emp <span class="kw">where</span> entrydate<span class="op">&gt;</span><span class="st">'2006-01-01'</span>;</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> e.<span class="op">*</span>,d.<span class="op">*</span> <span class="kw">FROM</span> (<span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emp <span class="kw">where</span> entrydate<span class="op">&gt;</span><span class="st">'2006-01-01 '</span>) e <span class="kw">LEFT</span> <span class="kw">JOIN</span> dept d <span class="kw">on</span> e.dept_id<span class="op">=</span>d.<span class="kw">id</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MySQL介绍</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
