@@ -1,0 +1,1534 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={MySQL入门学习},
+  pdfauthor={明数科技},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{MySQL入门学习}
+\author{明数科技}
+\date{2023-05-25}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, sharp corners, enhanced, frame hidden, boxrule=0pt, borderline west={3pt}{0pt}{shadecolor}, interior hidden]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\hypertarget{ux524dux8a00}{%
+\chapter*{前言}\label{ux524dux8a00}}
+\addcontentsline{toc}{chapter}{前言}
+
+\markboth{前言}{前言}
+
+这是由明数科技归纳整理出的 \textbf{MySQL} 入门教程，专门针对新手小白～
+
+\bookmarksetup{startatroot}
+
+\hypertarget{mysqlux4ecbux7ecd}{%
+\chapter{MySQL介绍}\label{mysqlux4ecbux7ecd}}
+
+\hypertarget{mysqlux4e09ux5c42ux7ed3ux6784}{%
+\section{MySQL三层结构}\label{mysqlux4e09ux5c42ux7ed3ux6784}}
+
+\hypertarget{ux6570ux636eux5e93}{%
+\subsection{数据库}\label{ux6570ux636eux5e93}}
+
+全称是\textbf{存储数据的仓库}，数据时候有组织的进行存储；简称DataBase(DB)
+
+\hypertarget{ux6570ux636eux5e93ux7ba1ux7406ux7cfbux7edf}{%
+\subsection{数据库管理系统}\label{ux6570ux636eux5e93ux7ba1ux7406ux7cfbux7edf}}
+
+全称是\textbf{操纵和管理数据库的大型软件} ；简称DataBase Management
+System（DBMS）
+
+\hypertarget{sql}{%
+\subsection{SQL}\label{sql}}
+
+操纵\textbf{关系型数据库的编程语言}，定义了一套操作关系型数据库\textbf{统一标准}
+；简称Structured Query Language（SQL）
+
+\hypertarget{ux4e3bux6d41ux7684ux5173ux7cfbux578bux6570ux636eux5e93ux7ba1ux7406ux7cfbux7edfux7cfbux7edf}{%
+\section{主流的关系型数据库管理系统系统}\label{ux4e3bux6d41ux7684ux5173ux7cfbux578bux6570ux636eux5e93ux7ba1ux7406ux7cfbux7edfux7cfbux7edf}}
+
+● Oracle
+
+● MySQL
+
+● Microsoft SQL Server
+
+\bookmarksetup{startatroot}
+
+\hypertarget{sqlux5b66ux4e60}{%
+\chapter{SQL学习}\label{sqlux5b66ux4e60}}
+
+\hypertarget{sqlux901aux7528ux8bedux6cd5}{%
+\section{SQL通用语法}\label{sqlux901aux7528ux8bedux6cd5}}
+
+SQL语句可以单行或多行书写 以\textbf{分号结尾}
+
+SQL语句可以使用空格/缩进来增强语句的可读性
+
+MySQL数据库的SQL语句\textbf{不区分大小写，关键字建议使用大写}
+
+● 注释
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  单行注释 ：-- 注释内容 或\#注释内容（MySQL独有）
+\item
+  多行注释 ：/* */
+\end{enumerate}
+
+\hypertarget{sqlux5206ux7c7b}{%
+\section{SQL分类}\label{sqlux5206ux7c7b}}
+
+● SQL语句，根据其功能，主要分为四类：DDL、DML、DQL、DCL。
+
+\hypertarget{ddl-ux6570ux636eux5b9aux4e49ux8bedux53e5}{%
+\subsection{\texorpdfstring{DDL
+\textbf{数据定义语句}}{DDL 数据定义语句}}\label{ddl-ux6570ux636eux5b9aux4e49ux8bedux53e5}}
+
+\hypertarget{ux5e93ux64cdux4f5c}{%
+\subsubsection{库操作}\label{ux5e93ux64cdux4f5c}}
+
+● 查询
+
+1)查询所有数据库
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(SHOW)SHOW DATABASES;}
+\end{Highlighting}
+\end{Shaded}
+
+2)查询当前数据库
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(}\KeywordTok{SELECT}\NormalTok{)}\KeywordTok{SELECT} \KeywordTok{DATABASE}\NormalTok{();}
+\end{Highlighting}
+\end{Shaded}
+
+● 创建(CREATE)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{CREATE} \KeywordTok{DATABASE}\NormalTok{[}\ControlFlowTok{IF} \KeywordTok{NOT} \KeywordTok{EXISTS}\NormalTok{]数据库名[}\KeywordTok{DEFAULT}\NormalTok{ CHARSET 字符集][COLLATE 排序规则];}
+\end{Highlighting}
+\end{Shaded}
+
+● 删除(DROP)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{DROP}\NormalTok{ DATABASES[}\ControlFlowTok{IF} \KeywordTok{EXISTS}\NormalTok{] 数据库名;}
+\end{Highlighting}
+\end{Shaded}
+
+● 使用(USE)/\emph{切换访问的数据库}/
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{USE数据库名；}
+\end{Highlighting}
+\end{Shaded}
+
+DDL 数据定义语句
+
+\hypertarget{ux8868ux64cdux4f5c}{%
+\subsubsection{表操作}\label{ux8868ux64cdux4f5c}}
+
+● 查询
+
+1）查询当前数据所有表
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SHOW }\KeywordTok{TABLES}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+2）查询表结构
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{DESC}\NormalTok{ 表名;}
+\end{Highlighting}
+\end{Shaded}
+
+3）查询指定表的建表语句
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{SHOW }\KeywordTok{CREATE} \KeywordTok{TABLE}\NormalTok{ 表名;}
+\end{Highlighting}
+\end{Shaded}
+
+● 创建(CREATE)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{CREATE} \KeywordTok{TABLE}\NormalTok{ 表名\{}
+
+\NormalTok{字段1 字段1类型[}\KeywordTok{COMMENT}\NormalTok{ 字段1注释],}
+
+\NormalTok{字段2 字段2类型[}\KeywordTok{COMMENT}\NormalTok{ 字段2注释],}
+
+\NormalTok{字段3 字段3类型[}\KeywordTok{COMMENT}\NormalTok{ 字段3注释]}
+
+\NormalTok{\}[}\KeywordTok{COMMENT}\NormalTok{ 表注释];}
+\end{Highlighting}
+\end{Shaded}
+
+● 修改(ALTER)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  添加字段(ADD)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ALTER} \KeywordTok{TABLE}\NormalTok{ 表名 }\KeywordTok{ADD}\NormalTok{ 字段名 类型(长度)[}\KeywordTok{comment}\NormalTok{ 注释][约束];}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  修改数据类型(MODIFY)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ALTER} \KeywordTok{TABLE}\NormalTok{ 表名 }\KeywordTok{MODIFY}\NormalTok{ 字段名 新数据类型(长度);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  修改字段名和字段类型(CHANGE)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ALTER} \KeywordTok{TABLE}\NormalTok{ 表名 }\KeywordTok{CHANGE}\NormalTok{ 旧字段名 新字段名 类型(长度)[}\KeywordTok{COMMENT}\NormalTok{ 注释] [约束];}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  删除字段（DROP）
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ALTER} \KeywordTok{TABLE}\NormalTok{ 表名 }\KeywordTok{DROP}\NormalTok{ 字段名;\#删除列}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  修改表名
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ALTER} \KeywordTok{TABLE}\NormalTok{ 表名 }\KeywordTok{RENAME} \KeywordTok{TO}\NormalTok{ 新表名;}
+\end{Highlighting}
+\end{Shaded}
+
+● 删除
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  删除表
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{DROP} \KeywordTok{TABLE}\NormalTok{ [}\ControlFlowTok{IF} \KeywordTok{EXISTS}\NormalTok{]表名;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  删除指定表，并重新创建该表(该表的\textbf{数据会被删除}，以该名表被重新创建)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{TRUNCATE} \KeywordTok{TABLE}\NormalTok{ 表名;}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{dml-ux6570ux636eux64cdux4f5cux8bedux53e5}{%
+\subsubsection{DML
+数据操作语句}\label{dml-ux6570ux636eux64cdux4f5cux8bedux53e5}}
+
+\hypertarget{ux6dfbux52a0ux6570ux636einsert}{%
+\paragraph{● 添加数据（INSERT）}\label{ux6dfbux52a0ux6570ux636einsert}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  给\textbf{指定字段}名添加数据
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{INSERT} \KeywordTok{INTO}\NormalTok{ 表名  (字段名1，字段名2， . . .)}\KeywordTok{VALUES}\NormalTok{(值1，值2， . . .);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  给\textbf{全部字段名}添加数据
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{INSERT} \KeywordTok{INTO}\NormalTok{ 表名 }\KeywordTok{VALUES}\NormalTok{(值1，值2， . . .);}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  批量添加数据
+\end{enumerate}
+
+/\emph{批量插入数据 用逗号隔开}/
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{INSERT} \KeywordTok{INTO}\NormalTok{ 表名(字段名1，字段名2， . . .)}\KeywordTok{VALUES}\NormalTok{(值1，值2， . . .),(值1，值2， . . .),(值 1，值2， . . .);}
+
+\KeywordTok{INSERT} \KeywordTok{INTO}\NormalTok{ 表名 }\KeywordTok{VALUES}\NormalTok{ (值1，值2， . . .)， (值1，值2， . . . .)， (值1，值2， . . . .);}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{注意：}
+
+1）插入数据时，指定的字段顺序需要与值的\textbf{顺序是一致}的
+
+2）字符串和日期类型应该包含的在引号中
+
+3）插入的数据大小，应该在字段的规定范围内
+
+\hypertarget{ux4feeux6539ux6570ux636eupdate}{%
+\paragraph{● 修改数据（UPDATE）}\label{ux4feeux6539ux6570ux636eupdate}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{UPDATE}\NormalTok{ 表名 }\KeywordTok{SET}\NormalTok{ 字段名1}\OperatorTok{=}\NormalTok{值1，字段名2}\OperatorTok{=}\NormalTok{值2， . . .[}\KeywordTok{WHERE}\NormalTok{ 条件];}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux5220ux9664delete}{%
+\paragraph{● 删除（DELETE）}\label{ux5220ux9664delete}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{DELETE} \KeywordTok{FROM}\NormalTok{ 表名[}\KeywordTok{WHERE}\NormalTok{ 条件];}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{dql-ux6570ux636eux67e5ux8be2ux8bedux53e5}{%
+\subsubsection{DQL
+数据查询语句}\label{dql-ux6570ux636eux67e5ux8be2ux8bedux53e5}}
+
+\hypertarget{ux57faux672cux67e5ux8be2}{%
+\paragraph{基本查询}\label{ux57faux672cux67e5ux8be2}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  查询多个字段
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ 字段1,字段2，字段3 . . .}\KeywordTok{FROM}\NormalTok{ 表名;}
+
+\KeywordTok{SELECT} \OperatorTok{*}\KeywordTok{FROM}\NormalTok{ 表名(全部字段)\#返回查询列表中所有数据}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设置别名（AS）
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ 字段1[}\KeywordTok{AS}\NormalTok{ 别名1],字段2[}\KeywordTok{AS}\NormalTok{ 别名2]. . .FROM表名;\#别名要用单引号 AS可以省略}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  去除重复纪录(DISTINCT)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT} \KeywordTok{DISTINCT}\NormalTok{ 字段列表 }\KeywordTok{FROM}\NormalTok{ 表名;\#将该列的重复的元素去除（去重）}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux6761ux4ef6ux67e5ux8be2}{%
+\paragraph{2.条件查询}\label{ux6761ux4ef6ux67e5ux8be2}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  语法(WHERE)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ 字段列表 }\KeywordTok{FROM} \KeywordTok{WHERE}\NormalTok{ 条件列表; \# where相当于java中if语句 后接条件语句 字段列表 }\OperatorTok{=*}\NormalTok{(所有列)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  条件
+\end{enumerate}
+
+\hspace{0pt} ● 比较运算符
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2029}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7971}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{比较运算符}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{功能}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textgreater{} & 大于 \\
+\textgreater= & 大于等于 \\
+\textless{} & 小于 \\
+\textless= & 小于等于 \\
+= & 等于 \\
+\textless\textgreater 或！ = & 不等于 \\
+BETWEEN\ldots AND & 在某个范围之内（含最小、最大值） \\
+IN(\ldots) & 在in之后的列表中的值，多选一 \\
+LIKE 占位符 & 模糊匹配 ( \_ 匹配\textbf{单个字符}, \%
+匹配\textbf{任意个字符 }) \\
+IS NULL & 是NULL \\
+\end{longtable}
+
+\hspace{0pt} ● 逻辑运算符
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+\textbf{逻辑运算符} & \textbf{功能} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+AND或\&\& & 并且(多个条件同时成立) \\
+OR或\textbar\textbar{} & 或者(多个条件任意一个成立) \\
+NOT或！ & 非，不是 \\
+\end{longtable}
+
+\hspace{0pt} ● 聚合函数
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  介绍
+\end{enumerate}
+
+将一列数据作为一个整体
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  常见聚合函数
+\end{enumerate}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+\textbf{函数} & \textbf{功能} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+count & 统计数量 \\
+max & 最大值 \\
+min & 最小值 \\
+avg & 平均值 \\
+sum & 求和 \\
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ 聚合函数 }\KeywordTok{from}\NormalTok{ 表名;}
+
+\KeywordTok{SELECT} \FunctionTok{COUNT}\NormalTok{(}\OperatorTok{*}\NormalTok{)}\KeywordTok{FROM}\NormalTok{ EMP;}
+
+\KeywordTok{SELECT} \FunctionTok{COUNT}\NormalTok{(}\KeywordTok{ID}\NormalTok{)}\KeywordTok{FROM}\NormalTok{ EMP;}
+
+\NormalTok{\#聚合函数传进去的是字段}
+\end{Highlighting}
+\end{Shaded}
+
+注意:null值不参与聚合函数的运算
+
+\hypertarget{ux5206ux7ec4ux67e5ux8be2group-by}{%
+\paragraph{3.分组查询(GROUP
+BY)}\label{ux5206ux7ec4ux67e5ux8be2group-by}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  语法
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ 字段列表 }\KeywordTok{FROM}\NormalTok{ 表名[}\KeywordTok{WHERE}\NormalTok{ 条件]}\KeywordTok{GROUP} \KeywordTok{BY}\NormalTok{ 分组字段名[}\KeywordTok{HAVING}\NormalTok{ 分组后过滤条件];}
+
+\KeywordTok{SELECT}\NormalTok{ gender,}\FunctionTok{count}\NormalTok{(}\OperatorTok{*}\NormalTok{)}\KeywordTok{from}\NormalTok{ emp }\KeywordTok{GROUP} \KeywordTok{BY}\NormalTok{ gender;}
+
+\NormalTok{\#查询效果是 根据性别分组 统计男女的数量}
+
+\KeywordTok{SELECT}\NormalTok{ gender,}\FunctionTok{AVG}\NormalTok{(age)}\KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{GROUP} \KeywordTok{BY}\NormalTok{ gender;}
+
+\NormalTok{\#查询效果是 根据性别分组 统计男女的平均年龄}
+
+\KeywordTok{SELECT}\NormalTok{ address,}\FunctionTok{COUNT}\NormalTok{(}\OperatorTok{*}\NormalTok{)}\KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{WHERE}\NormalTok{ age}\OperatorTok{\textless{}}\NormalTok{xxx }\KeywordTok{GROUP} \KeywordTok{BY}\NormalTok{ address;}
+
+\NormalTok{\#查询效果是 根据地址分组 统计年龄小于xxx的人数}
+
+\KeywordTok{SELECT}\NormalTok{ address,}\FunctionTok{COUNT}\NormalTok{(}\OperatorTok{*}\NormalTok{) address\_count }\KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{WHERE}\NormalTok{ age}\OperatorTok{\textless{}}\NormalTok{xxx }\KeywordTok{GROUP} \KeywordTok{BY}\NormalTok{ address }\KeywordTok{HAVING}\NormalTok{ address\_count}\OperatorTok{\textgreater{}}\NormalTok{X;}
+
+\NormalTok{\#上面一条语句的基础上再次筛选having}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  HAING 和WHERE区别
+\end{enumerate}
+
+执行时机不同:
+
+where是\textbf{分组之前}进行过滤，不满足where条件不进行分组；而having是
+\textbf{分组之后}对结果进行过滤
+
+判断条件不同:
+
+\textbf{where不能对聚合函数进行判断} 而having可以。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  注意
+\end{enumerate}
+
+执行顺序:where-\textgreater 聚合函数-\textgreater having
+
+分组之后，查询的字段一般为聚合函数和分组字段，查询其他字段无任何意义(意思是分组字段和查询字段是相同的)
+
+\hypertarget{ux6392ux5e8fux67e5ux8be2order-by}{%
+\paragraph{4.排序查询(ORDER
+BY)}\label{ux6392ux5e8fux67e5ux8be2order-by}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  语法
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#支持多字段排序}
+\KeywordTok{SELECT}\NormalTok{ 字段列表 }\KeywordTok{FROM}\NormalTok{ 表名 }\KeywordTok{ORDER} \KeywordTok{BY}\NormalTok{ 字段1 排序方1,字段2 排序方式2 }\KeywordTok{SELECT} \OperatorTok{*} \KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{ORDER} \KeywordTok{BY}\NormalTok{ age }\KeywordTok{desc}\NormalTok{;\#降序}
+
+\KeywordTok{SELECT} \OperatorTok{*} \KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{ORDER} \KeywordTok{BY}\NormalTok{ age }\KeywordTok{asc}\NormalTok{;\#升序}
+
+\KeywordTok{SELECT} \OperatorTok{*} \KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{ORDER} \KeywordTok{BY}\NormalTok{ age }\KeywordTok{asc}\NormalTok{,entrydate }\KeywordTok{desc}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  排序方式
+\end{enumerate}
+
+ASC：升序（默认值）
+
+DESC：降序
+
+注意:如果是多字段查询时，当第一个字段值相同时，才会根据第二个字段进行排序
+
+\hypertarget{ux5206ux9875ux67e5ux8be2limit}{%
+\paragraph{5.分页查询(LIMIT)}\label{ux5206ux9875ux67e5ux8be2limit}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  语法
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ 字段列表 }\KeywordTok{FROM} \KeywordTok{LIMIT}\NormalTok{ 起始索引 ,查询记录数;\#两个参数}
+\end{Highlighting}
+\end{Shaded}
+
+注意
+
+1）起始索引是\textbf{从0开始，}起始索引 =（查询页码-1）*每页显示记录数
+
+2）\textbf{分页查询是数据库的方言}，不同的数据库有不同的实现，
+Mysql是LIMIT
+
+3）如果查询的是第一页数据，起始索引可以省略，直接简写为limit 10
+
+\hypertarget{ux51fdux6570}{%
+\section{函数}\label{ux51fdux6570}}
+
+\hypertarget{ux5b57ux7b26ux4e32ux51fdux6570}{%
+\subsection{字符串函数}\label{ux5b57ux7b26ux4e32ux51fdux6570}}
+
+\hspace{0pt} ● 常用函数
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2857}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7143}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{函数}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{功能}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+CONCAT(S1,S2,\ldots Sn) & 字符串拼接,将s1,s2,..sn拼接成一个字符串 \\
+LOWER(str) & 将字符串str全部转成小写 \\
+UPPER(str) & 将字符串str全部转成大写 \\
+LPAD(str,n,pad) &
+左填充，用字符串pad对str的左边进行填充，达到n个字符串长度 \\
+RPAD(str,n,pad) &
+右填充，用字符串pad对str的右边进行填充，达到n个字符串长度 \\
+TRIM(str) & 去掉字符串\textbf{头部和尾部的空格} \\
+SUBSTRING(str,start,len) &
+返回从字符串str从start位置起len个长度的字符串SELECT 函数(参数); \\
+\end{longtable}
+
+\hypertarget{ux6570ux503cux51fdux6570}{%
+\subsection{2. 数值函数}\label{ux6570ux503cux51fdux6570}}
+
+\hspace{0pt} ● 常用函数
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+\textbf{函数} & 功能 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+CEIL(x) & 向上取整 \\
+FLOOR(x) & 向下取整 \\
+MOD(x,y) & 返回x/y的模 \\
+RAND() & 返回0\textasciitilde1的随机数 \\
+ROUND(x,y) & 求参数x的四舍五入的值，保留y位小数 \\
+\end{longtable}
+
+\hypertarget{ux65e5ux671fux51fdux6570}{%
+\subsection{\texorpdfstring{\textbf{3.}
+\textbf{日期函数}}{3. 日期函数}}\label{ux65e5ux671fux51fdux6570}}
+
+\hspace{0pt} ● 常用函数
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3929}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6071}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{函数}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{功能}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+CURDATE() & 返回当前日期 \\
+CURTIME() & 返回当前时间 \\
+NOW() & 返回当前日期和时间 \\
+YEAR(date) & 返回当前指定date的年份 \\
+MONTH(date) & 返回当前指定date的月份 \\
+DAY(date) & 返回当前指定date的日期 \\
+DATE\_ADD(date,INTERVAL\_EXPR type) &
+返回一个日期/时间加上一个\textbf{时间间隔}expr后的时间值 \\
+DATEDIFF(date1 ，date2) & 返回起始时间date1和结束时间date2之间的天数 \\
+\end{longtable}
+
+举例：
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ date\_add(now(),}\DataTypeTok{INTERVAL} \DecValTok{70} \DataTypeTok{YEAR}\NormalTok{);}
+
+\NormalTok{\#查询员工的入职天数}
+
+\KeywordTok{SELECT}\NormalTok{ name,diff(now(),entrydate) }\KeywordTok{as}\NormalTok{ entrydayscount }\KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{Group} \KeywordTok{By}\NormalTok{ entrydayscount }\KeywordTok{SELECT}\NormalTok{ name,DATEDIFF(NOW(),}\StringTok{\textquotesingle{}2000{-}11{-}12 \textquotesingle{}}\NormalTok{)}\KeywordTok{FROM}\NormalTok{ emp}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux6d41ux7a0bux51fdux6570}{%
+\subsection{4. 流程函数}\label{ux6d41ux7a0bux51fdux6570}}
+
+\hspace{0pt} ● 常见函数
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4495}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5505}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{函数}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+功能
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+IF(Value ，t ，f) & 如果value为true，则返回t，否则返回f \\
+IFNULL(Value1,Value2) &
+如果Value1不为空(空=null)，则返回value1，否则返回value2 \\
+CASE WHEN{[}val1{]}THEN{[}res1{]}\ldots ELSE{[}default{]}END &
+如果val1为true，返回res1，否则返回default默认值 \\
+CASE {[}expr{]}WHEN{[}val{]}THEN{[}res1{]}\ldots ELSE{[}default{]}END &
+如果\textbf{expr(表达式)}的值等于val1，返回res1
+，\ldots 否则返回default默认值 \\
+\end{longtable}
+
+举例：
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ name,(}\ControlFlowTok{case}\NormalTok{ workaddress }\ControlFlowTok{when} \StringTok{\textquotesingle{}北京 \textquotesingle{}}\NormalTok{then}\StringTok{\textquotesingle{}一线城市 \textquotesingle{}}\NormalTok{when }\StringTok{\textquotesingle{}上海 \textquotesingle{}}\NormalTok{then}\StringTok{\textquotesingle{}一线城 市 \textquotesingle{}}\NormalTok{else}\StringTok{\textquotesingle{}二线城市 \textquotesingle{}}\NormalTok{end) }\KeywordTok{as} \StringTok{\textquotesingle{}工作地址 \textquotesingle{}}
+
+\KeywordTok{SELECT} \KeywordTok{id}\NormalTok{,name,(}\ControlFlowTok{case} \ControlFlowTok{when}\NormalTok{ math}\OperatorTok{\textgreater{}=}\DecValTok{85} \ControlFlowTok{then} \StringTok{\textquotesingle{}优秀 \textquotesingle{}} \ControlFlowTok{when}\NormalTok{ math}\OperatorTok{\textgreater{}=}\DecValTok{60} \ControlFlowTok{then} \StringTok{\textquotesingle{}及格 \textquotesingle{}}\NormalTok{else }\StringTok{\textquotesingle{}不 及格 \textquotesingle{}}\NormalTok{end)}\KeywordTok{as} \StringTok{\textquotesingle{}数学 \textquotesingle{}}\NormalTok{),}
+
+\NormalTok{(}\ControlFlowTok{case} \ControlFlowTok{when}\NormalTok{ English}\OperatorTok{\textgreater{}=}\DecValTok{85} \ControlFlowTok{then} \StringTok{\textquotesingle{}优秀 \textquotesingle{}} \ControlFlowTok{when}\NormalTok{ English}\OperatorTok{\textgreater{}=}\DecValTok{60} \ControlFlowTok{then} \StringTok{\textquotesingle{}及格 \textquotesingle{}}\NormalTok{else }\StringTok{\textquotesingle{}不及格 \textquotesingle{}}\NormalTok{end)}\KeywordTok{as} \StringTok{\textquotesingle{}英语 \textquotesingle{}}\NormalTok{),}
+
+\NormalTok{(}\ControlFlowTok{case} \ControlFlowTok{when}\NormalTok{ Chinese}\OperatorTok{\textgreater{}=}\DecValTok{85} \ControlFlowTok{then} \StringTok{\textquotesingle{}优秀 \textquotesingle{}} \ControlFlowTok{when}\NormalTok{ Chinese}\OperatorTok{\textgreater{}=}\DecValTok{60} \ControlFlowTok{then} \StringTok{\textquotesingle{}及格 \textquotesingle{}}\NormalTok{else }\StringTok{\textquotesingle{}不及格 \textquotesingle{}}\NormalTok{end)}\KeywordTok{as} \StringTok{\textquotesingle{}语文 \textquotesingle{}}\NormalTok{)}
+
+\KeywordTok{FROM}\NormalTok{ score;}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux7ea6ux675f}{%
+\section{约束}\label{ux7ea6ux675f}}
+
+\hypertarget{ux6982ux8ff0ux548cux5206ux7c7b}{%
+\subsection{概述和分类}\label{ux6982ux8ff0ux548cux5206ux7c7b}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  概念
+\end{enumerate}
+
+约束是\textbf{作用表中字段}上的规则，用于限制存储在表中的数据
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  作用
+\end{enumerate}
+
+保证数据库中数据的\textbf{正确性、有效性和完整性}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  分类
+
+  \begin{longtable}[]{@{}
+    >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1067}}
+    >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.7467}}
+    >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1467}}@{}}
+  \toprule\noalign{}
+  \begin{minipage}[b]{\linewidth}\raggedright
+  约束
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  \textbf{描述}
+  \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+  \textbf{关键字}
+  \end{minipage} \\
+  \midrule\noalign{}
+  \endhead
+  \bottomrule\noalign{}
+  \endlastfoot
+  非空约束 & 限制该字段的数据不能为null & NOT NULL \\
+  唯一约束 & 保证该字段的所有数据都是\textbf{唯一} ，\textbf{不重复}的 &
+  UNIQUE \\
+  主键约束 & 主键是一行数据的唯一标识，要求\textbf{非空且唯一} & PRIMARY
+  KEY \\
+  默认约束 & 保存数据时，如果未指定该字段的值，则采用默认值 & DEFAULT \\
+  检查约束 & 保证字段值满足某一个条件(逻辑表达式+比较运算符) & CHECK \\
+  外键约束 & 用来让两张表的数据中之间建立连接，保证数据的一致性和完整 &
+  FOREIGN KEY \\
+  \end{longtable}
+
+  \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\end{enumerate}
+
+注意:约束是作用在表中字段上的，可以在\textbf{创建表}/\textbf{修改表}的时候添加约束
+
+\hypertarget{ux6848ux4f8bux5c55ux793a}{%
+\subsection{\texorpdfstring{\textbf{2.}
+\textbf{案例展示}}{2. 案例展示}}\label{ux6848ux4f8bux5c55ux793a}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{create} \KeywordTok{table} \FunctionTok{user}\NormalTok{(}
+
+\KeywordTok{id} \DataTypeTok{int} \KeywordTok{primary} \KeywordTok{key}\NormalTok{ auto\_increment }\KeywordTok{comment} \StringTok{\textquotesingle{}主键 \textquotesingle{}}\NormalTok{,}
+
+\NormalTok{name }\DataTypeTok{varchar}\NormalTok{(}\DecValTok{10}\NormalTok{) }\KeywordTok{not} \KeywordTok{null} \KeywordTok{comment} \StringTok{\textquotesingle{}名字 \textquotesingle{}}\NormalTok{,}
+
+\NormalTok{age }\DataTypeTok{int} \KeywordTok{check}\NormalTok{ ( age}\OperatorTok{\textgreater{}}\DecValTok{0}\CharTok{\&\&age}\OperatorTok{\textless{}}\DecValTok{120}\NormalTok{ ) }\KeywordTok{comment} \StringTok{\textquotesingle{}年龄 \textquotesingle{}}\NormalTok{,  \# mysql 版本要在8 .0才支持该语句 }
+
+\NormalTok{status }\DataTypeTok{char}\NormalTok{(}\DecValTok{1}\NormalTok{) }\KeywordTok{default} \StringTok{\textquotesingle{}1 \textquotesingle{}}\NormalTok{comment }\StringTok{\textquotesingle{}状态 \textquotesingle{}}\NormalTok{,}
+
+\NormalTok{gander }\DataTypeTok{char}\NormalTok{(}\DecValTok{1}\NormalTok{) comment}\StringTok{\textquotesingle{}性别 \textquotesingle{}}
+
+\NormalTok{)}\KeywordTok{comment} \StringTok{\textquotesingle{}用户表 \textquotesingle{}}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux5916ux952eux7ea6ux675f}{%
+\subsection{\texorpdfstring{\textbf{3.}
+\textbf{外键约束}}{3. 外键约束}}\label{ux5916ux952eux7ea6ux675f}}
+
+\textbf{3.} \textbf{1} \textbf{语法}
+
+添加外键:保证数据的完整性和一致性
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#建表前添加外键}
+
+\KeywordTok{CREATE} \KeywordTok{TABLE}\NormalTok{ 表名\{}
+
+\NormalTok{     字段名 数据类型 ,}
+
+     \OperatorTok{..}\NormalTok{.}
+
+\NormalTok{     [}\KeywordTok{CONSTRAINT}\NormalTok{][外键名称]}\KeywordTok{FOREIGN} \KeywordTok{KEY}\NormalTok{(外键字段名)}\KeywordTok{REFERENCES}\NormalTok{ 主表（主表列名） \};}
+
+\NormalTok{\#建表后进行添加外键}
+\KeywordTok{ALTER} \KeywordTok{TABLE}\NormalTok{ 表名 }\KeywordTok{ADD} \KeywordTok{CONSTRAINT}\NormalTok{ 外键名称 }\KeywordTok{FOREIGN} \KeywordTok{KEY}\NormalTok{ (外键字段名)}\KeywordTok{REFERENCES}\NormalTok{ 主表(主表列 名);\#表名连接主表}
+
+\KeywordTok{ALTER} \KeywordTok{TABLE}\NormalTok{ 表名 }\KeywordTok{ADD} \KeywordTok{CONSTRAINT}\NormalTok{ FK\_表名\_外键字段名 }\KeywordTok{FOREIGN} \KeywordTok{KEY}\NormalTok{ (外键字段名)}\KeywordTok{REFERENCES}\NormalTok{ 主(父)表(主表列名);}
+\end{Highlighting}
+\end{Shaded}
+
+删除外键
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ALTER} \KeywordTok{TABLE}\NormalTok{ 表名 }\KeywordTok{DROP} \KeywordTok{FOREIGN} \KeywordTok{KEY}\NormalTok{ 外键名称;}
+\end{Highlighting}
+\end{Shaded}
+
+删除/更新行为(DELETE/UPDATE)
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{行为}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{说明}
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+NO ACTION &
+当父表中删除/更新对应纪录时，首先检查该记录是否有对应外键，如果有则不允许删除/更
+新。 \\
+RESTRICT & 同上 \\
+CASCADE &
+当父表中删除/更新对应纪录时，首先检查该记录是否有对应外键，如果有则也删除/更新外键
+在字表中的记录 \\
+SET NULL &
+当父表中删除/更新对应纪录时，首先检查该记录是否有对应外键，如果有则设置字表中该外
+键值为null \\
+SET DEFAULT &
+父表有变更时，字表将外键列设置成一个默认值(Innodb不支持) \\
+\end{longtable}
+
+语法：
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ALTER} \KeywordTok{TABLE}\NormalTok{ 表名 }\KeywordTok{ADD} \KeywordTok{CONSTRAINT}\NormalTok{ 外键名称 }\KeywordTok{FOREIGN} \KeywordTok{KEY}\NormalTok{ (外键字段)}\KeywordTok{References}\NormalTok{ 主表名(字表字 段名) }\KeywordTok{ON} \KeywordTok{UPDATE} \KeywordTok{CASCADE} \KeywordTok{ON} \KeywordTok{DELETE} \KeywordTok{CASCADE}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux591aux8868ux67e5ux8be2}{%
+\section{多表查询}\label{ux591aux8868ux67e5ux8be2}}
+
+\hypertarget{ux591aux8868ux5173ux7cfb}{%
+\subsection{多表关系}\label{ux591aux8868ux5173ux7cfb}}
+
+概述:
+
+由于业务之间相互关联，所以各个表结构之间也存在着各种联系，基本分为三种
+
+\hypertarget{ux4e00ux5bf9ux591aux591aux5bf9ux4e00}{%
+\subsubsection{●
+一对多(多对一)}\label{ux4e00ux5bf9ux591aux591aux5bf9ux4e00}}
+
+案例:部门与员工的关系
+
+关系:一个部门对应多个员工， 一个员工只能对应一个部门
+
+实现:\textbf{在多的一方建立外键，指向一的一方的主键}(员工表为多表，部门表就为一表)
+
+\hypertarget{ux591aux5bf9ux591a}{%
+\subsubsection{\texorpdfstring{\textbf{●
+多对多}}{● 多对多}}\label{ux591aux5bf9ux591a}}
+
+案例:学生和课程的关系
+
+关系:一个雪上可以选修多门课程， 一门课程也可以供多个学生选择
+
+实现:\textbf{建立第三张中间表}，中间表至少包含两个外键，分别\textbf{关联两方主键}(primary
+key)
+
+\hypertarget{ux4e00ux5bf9ux4e00}{%
+\subsubsection{\texorpdfstring{\textbf{●
+一对一}}{● 一对一}}\label{ux4e00ux5bf9ux4e00}}
+
+案例:用户与用户详情的关系
+
+关系:一对一关系，多用于单表拆分，将一张表的\textbf{基础字段}放在一张表中，
+\textbf{其他详情字段放在另一张} \textbf{表中}，以提升操作效率
+
+实现:在任意的一方加入外键，关联另外一方的主键，并且设置外键为唯一的(UNIQUE)
+
+\hypertarget{ux591aux8868ux67e5ux8be2-1}{%
+\subsection{2.多表查询}\label{ux591aux8868ux67e5ux8be2-1}}
+
+\hspace{0pt} ● 概述: 指从多张表中查询数据
+
+笛卡尔积:笛卡尔乘积是指在数学中个，两个集合A集合和B集合的所有组合情况。(\textbf{多表查询时，需要消除无效的笛卡尔积（连接条件）}
+)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#多表查询}
+
+\KeywordTok{SELECT} \OperatorTok{*} \KeywordTok{FROM}\NormalTok{ 父表 ,外表;}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux591aux8868ux67e5ux8be2ux5206ux7c7b}{%
+\subsubsection{\texorpdfstring{\textbf{●
+多表查询分类}}{● 多表查询分类}}\label{ux591aux8868ux67e5ux8be2ux5206ux7c7b}}
+
+\hspace{0pt} 连接查询
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  内连接
+\end{enumerate}
+
+\hspace{0pt} 相当于查询A、B\textbf{交集}部分数据
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  外连接
+\end{enumerate}
+
+\hspace{0pt} •左外连接
+
+\hspace{0pt} •右外连接
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  自连接
+\end{enumerate}
+
+\hspace{0pt} 当前表与自身的连接查询，自连接\textbf{必须使用表别名}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  联合查询
+\end{enumerate}
+
+\hspace{0pt} •子查询
+
+\hypertarget{ux8fdeux63a5ux67e5ux8be2}{%
+\subsection{3.连接查询}\label{ux8fdeux63a5ux67e5ux8be2}}
+
+\hypertarget{ux5185ux8fdeux63a5}{%
+\subsubsection{\texorpdfstring{\textbf{3.1}
+\textbf{内连接}}{3.1 内连接}}\label{ux5185ux8fdeux63a5}}
+
+\hspace{0pt} ● 隐式内连接
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ 字段列表 }\KeywordTok{FROM}\NormalTok{ 表1，表2 }\KeywordTok{WHERE}\NormalTok{ 条件 . . .;}
+
+\NormalTok{\#例子 emp员工表 dept部门表}
+
+\KeywordTok{SELECT}\NormalTok{ emp.name,dept.name }\KeywordTok{FROM}\NormalTok{ emp,dept }\KeywordTok{WHERE}\NormalTok{ emp.dept\_id}\OperatorTok{=}\NormalTok{dept.}\KeywordTok{id}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\hspace{0pt} ● 显式内连接
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ 字段列表 }\KeywordTok{FROM}\NormalTok{ 表1,[}\KeywordTok{INNER}\NormalTok{] }\KeywordTok{JOIN}\NormalTok{ 表2 }\KeywordTok{ON}\NormalTok{ 连接条件;}
+
+\NormalTok{\#例子}
+
+\KeywordTok{SELECT}\NormalTok{ e.name,d.name }\KeywordTok{FROM}\NormalTok{ emp e }\KeywordTok{INNER} \KeywordTok{JOIN}\NormalTok{ dept d }\KeywordTok{ON}\NormalTok{ e.dept\_id}\OperatorTok{=}\NormalTok{d.}\KeywordTok{id}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux5916ux8fdeux63a5}{%
+\subsubsection{\texorpdfstring{\textbf{3.2}
+\textbf{外连接}}{3.2 外连接}}\label{ux5916ux8fdeux63a5}}
+
+\hspace{0pt} ● 左外连接(LEFT JOIN)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ 字段列表 }\KeywordTok{FROM}\NormalTok{ 表1 }\KeywordTok{LEFT}\NormalTok{ [}\KeywordTok{OUTER}\NormalTok{] }\KeywordTok{JOIN}\NormalTok{ 表2 }\KeywordTok{ON}\NormalTok{ 条件 \#字段列表根据需求可进行优化 因为按照sql语句的执行属性可知select是在后面执行}
+\end{Highlighting}
+\end{Shaded}
+
+相当于查询表1(左表)的所有数据和包含表1和表2交集部分的数据
+
+\hspace{0pt} ● 右外连接(RIGHT JOIN)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT}\NormalTok{ 字段列表 }\KeywordTok{FROM}\NormalTok{ 表1 }\KeywordTok{RIGHT}\NormalTok{ [}\KeywordTok{OUTER}\NormalTok{] }\KeywordTok{JOIN}\NormalTok{ 表2 }\KeywordTok{ON}\NormalTok{ 条件}
+\end{Highlighting}
+\end{Shaded}
+
+相当于查询表2(右表)的所有数据和包含表1和表2交集部分的数据
+
+\hypertarget{ux81eaux8fdeux63a5}{%
+\subsubsection{\texorpdfstring{\textbf{3.3}
+\textbf{自连接}}{3.3 自连接}}\label{ux81eaux8fdeux63a5}}
+
+\hspace{0pt} ● 语法
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\# 把一张表看做成两张表 通过唯一 的id做为自连接的条件 managerid}\OperatorTok{=}\KeywordTok{id}
+
+\NormalTok{\# 自连接必须给表名取别名！ ！ ！}
+
+\KeywordTok{SELECT}\NormalTok{ 字段列表 }\KeywordTok{FROM}\NormalTok{ 表A 别名A }\KeywordTok{JOIN}\NormalTok{ 表A 别名B }\KeywordTok{ON}\NormalTok{ 条件 . . .;}
+
+\NormalTok{\# 举例：}
+
+\KeywordTok{SELECT}\NormalTok{ a.name,b.name }\KeywordTok{FROM}\NormalTok{ emp a }\KeywordTok{JOIN}\NormalTok{ emp b }\KeywordTok{ON}\NormalTok{ a.managerid}\OperatorTok{=}\NormalTok{b.}\KeywordTok{id}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux8054ux5408ux67e5ux8be2}{%
+\subsubsection{\texorpdfstring{\textbf{3.4}
+\textbf{联合查询}}{3.4 联合查询}}\label{ux8054ux5408ux67e5ux8be2}}
+
+\hspace{0pt} ● 定义
+
+对于联合查询，就是把多次查询的结果合并起来，形成一个新的查询结果集。
+
+\hspace{0pt} ● 关键词
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\# 作为单独一句 在两个sql语句查询中间}
+
+\KeywordTok{UNION}\NormalTok{ \#将查询的结果合并时 ，进行去重}
+
+\KeywordTok{UNION} \KeywordTok{ALL}\NormalTok{ \#直接将查询的结果进行合并}
+\end{Highlighting}
+\end{Shaded}
+
+注意
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  对于联合查询多表查询的；列数必须保持一致，字段类型也必须保持一致
+\item
+  union all 会将全部数据直接合并在一起， union 会对合并之后的数据去重
+\end{enumerate}
+
+\hypertarget{ux5b50ux67e5ux8be2}{%
+\subsection{4.子查询}\label{ux5b50ux67e5ux8be2}}
+
+\hypertarget{ux6982ux8ff0}{%
+\subsubsection{\texorpdfstring{\textbf{4.1}
+\textbf{概述}}{4.1 概述}}\label{ux6982ux8ff0}}
+
+\hspace{0pt} \textbf{●
+概念:}SQL语句中嵌套SELECT语句，成为\textbf{嵌套语句}，又称子查询
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{SELECT} \OperatorTok{*} \KeywordTok{FROM}\NormalTok{ t1 }\KeywordTok{WHERE}\NormalTok{ column1}\OperatorTok{=}\NormalTok{(}\KeywordTok{SELECT}\NormalTok{ column1 }\KeywordTok{FROM}\NormalTok{ t2);}
+\NormalTok{\#子查询外部的语句可以是INSERT}\OperatorTok{/}\KeywordTok{UPDATE}\OperatorTok{/}\KeywordTok{DELETE}\OperatorTok{/}\NormalTok{SELECT的任何一个}
+\end{Highlighting}
+\end{Shaded}
+
+\hspace{0pt} ● \textbf{查询结果分类}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  标量子查询(子表查询结果为单个值)
+\item
+  列子查询（子查询结果为一列）
+\item
+  行子查询（子查询结果为一行）
+\item
+  表子查询（子查询结果为多行多列）
+\end{enumerate}
+
+\hspace{0pt} ● \textbf{根据子查询位置}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  WHERE之后
+\item
+  FROM之后
+\item
+  SELECT之后
+\end{enumerate}
+
+\hypertarget{ux67e5ux8be2ux7ed3ux679cux5206ux7c7b}{%
+\subsubsection{\texorpdfstring{\textbf{4.2}
+\textbf{查询结果分类}}{4.2 查询结果分类}}\label{ux67e5ux8be2ux7ed3ux679cux5206ux7c7b}}
+
+\hypertarget{ux6807ux91cfux5b50ux67e5ux8be2}{%
+\paragraph{\texorpdfstring{\textbf{●
+标量子查询}}{● 标量子查询}}\label{ux6807ux91cfux5b50ux67e5ux8be2}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  定义:
+  子查询返回的结果是单个值(数字，字符串，日期等)，最简单的形式，这种子查询称为标量子查询
+\item
+  常用操作符:= 、\textless\textgreater、\textgreater{} 、\textgreater=、
+  \textless{} 、\textless=
+\item
+  案例展示
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\# emp员工信息表}
+
+\NormalTok{\# dept部门表}
+
+\NormalTok{\# 要求查询具体部门对应的员工信息 前提员工表和部门表是已经建立了连接(}\KeywordTok{foreign} \KeywordTok{key}\NormalTok{) \# 分析 首先得知道具体部门的部门ID 进而查询该部门的员工信息}
+
+\NormalTok{\# 可以两种sql写法}
+
+\KeywordTok{SELECT} \KeywordTok{id} \KeywordTok{FROM}\NormalTok{ dept }\KeywordTok{WHERE}\NormalTok{ name}\OperatorTok{=}\StringTok{\textquotesingle{}具体的部门名 \textquotesingle{}}\NormalTok{;}
+
+\KeywordTok{SELECT} \OperatorTok{*} \KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{WHERE}\NormalTok{ dept\_id }\OperatorTok{=}\OtherTok{"上条语句的结果"}\NormalTok{;}
+
+\NormalTok{\# 所以可以整合成一句 形成嵌套}
+
+\KeywordTok{SELECT} \OperatorTok{*} \KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{WHERE}\NormalTok{ dept\_id}\OperatorTok{=}\NormalTok{(}\KeywordTok{SELECT} \KeywordTok{id} \KeywordTok{FROM}\NormalTok{ dept }\KeywordTok{WHERE}\NormalTok{ name}\OperatorTok{=}\StringTok{\textquotesingle{}具体的部门名 \textquotesingle{}}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux5217ux5b50ux67e5ux8be2}{%
+\paragraph{\texorpdfstring{\textbf{●
+列子查询}}{● 列子查询}}\label{ux5217ux5b50ux67e5ux8be2}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  子查询返回的结果是一列(可以是多行 )，这种子查询为列子查询
+\item
+  常用操作符:IN、NOT IN、ANY、SOME、ALL
+\end{enumerate}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+\textbf{操作符} & \textbf{描述} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+IN & 在指定的集合范围之内，多选一 \\
+NOT IN & 不在指定的集合范围之内 \\
+\textbf{ANY} & 子查询返回列表中，有\textbf{任意一个满足}即可 \\
+\textbf{SOME} & 与ANY\textbf{等同}，使用SOME的地方都可以使用ANY \\
+\textbf{ALL} & 子查询返回列表的\textbf{所有值都必须满足} \\
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  案例演示
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#查询比财务部所有人工资都高的员工信息}
+
+\NormalTok{\#将获取信息的问题拆分化 在通过嵌套进行优化 形成一句sql语句}
+
+\NormalTok{\# 获取财务部的部门id}
+
+\KeywordTok{SELECT} \KeywordTok{id} \KeywordTok{FROM}\NormalTok{ dept }\KeywordTok{WHERE}\NormalTok{ name }\OperatorTok{=}\StringTok{\textquotesingle{}财务部\textquotesingle{}}\NormalTok{;}
+
+\NormalTok{\# 获取财务中所有人的工资}
+
+\KeywordTok{SELECT}\NormalTok{ salary }\KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{WHERE} \KeywordTok{id}\OperatorTok{=}\NormalTok{(}\KeywordTok{SELECT} \KeywordTok{id} \KeywordTok{FROM}\NormalTok{ dept }\KeywordTok{WHERE}\NormalTok{ name }\OperatorTok{=}\StringTok{\textquotesingle{}财务部\textquotesingle{}}\NormalTok{);}
+
+\NormalTok{\# 获取比财务部所有员工工资都高的员工信息}
+
+\KeywordTok{SELECT} \OperatorTok{*} \KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{WHERE}\NormalTok{ salary}\OperatorTok{\textgreater{}}\KeywordTok{ALL} \KeywordTok{SELECT}\NormalTok{ salary }\KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{WHERE} \KeywordTok{id}\OperatorTok{=}\NormalTok{(}\KeywordTok{SELECT} \KeywordTok{id} \KeywordTok{FROM}\NormalTok{ dept }\KeywordTok{WHERE}\NormalTok{ name }\OperatorTok{=}\StringTok{\textquotesingle{}财务部\textquotesingle{}}\NormalTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux884cux5b50ux67e5ux8be2}{%
+\paragraph{● 行子查询}\label{ux884cux5b50ux67e5ux8be2}}
+
+1 . 子查询返回的结果是一行(可以是多列)，这种子查询为行子查询
+
+2 . 常用操作符:IN、 NOT IN、ANY、 SOME、ALL(同上)
+
+3 . 案例演示
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\# 查询张无忌的薪资及直属领导相同的员工信息}
+
+\KeywordTok{SELECT}\NormalTok{ salary managerid }\KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{WHERE}\NormalTok{ name}\OperatorTok{=}\OtherTok{"张无忌 "}\NormalTok{;}
+
+\KeywordTok{SELECT} \OperatorTok{*} \KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{WHERE}\NormalTok{ (salary,managerid)}\OperatorTok{=}\NormalTok{(}\KeywordTok{SELECT}\NormalTok{ salary managerid }\KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{WHERE}\NormalTok{ name}\OperatorTok{=}\OtherTok{"张无忌 "}\NormalTok{);}
+
+\NormalTok{\#返回的结果是一行多列 对应的是salary和managerID}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ux8868ux5b50ux67e5ux8be2}{%
+\paragraph{● 表子查询}\label{ux8868ux5b50ux67e5ux8be2}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  表子查询返回的结果是多行多列，这种子查询为列表查询
+\item
+  常用操作符: IN
+\item
+  案例演示
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\#查询入职日期是 “}\DecValTok{2006}\OperatorTok{{-}}\DecValTok{01}\OperatorTok{{-}}\NormalTok{01”之后的员工信息和部门信息}
+
+\KeywordTok{SELECT} \OperatorTok{*} \KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{where}\NormalTok{ entrydate}\OperatorTok{\textgreater{}}\StringTok{\textquotesingle{}2006{-}01{-}01\textquotesingle{}}\NormalTok{;}
+
+\KeywordTok{SELECT}\NormalTok{ e.}\OperatorTok{*}\NormalTok{,d.}\OperatorTok{*} \KeywordTok{FROM}\NormalTok{ (}\KeywordTok{SELECT} \OperatorTok{*} \KeywordTok{FROM}\NormalTok{ emp }\KeywordTok{where}\NormalTok{ entrydate}\OperatorTok{\textgreater{}}\StringTok{\textquotesingle{}2006{-}01{-}01 \textquotesingle{}}\NormalTok{) e }\KeywordTok{LEFT} \KeywordTok{JOIN}\NormalTok{ dept d }\KeywordTok{on}\NormalTok{ e.dept\_id}\OperatorTok{=}\NormalTok{d.}\KeywordTok{id}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+
+
+
+\end{document}
