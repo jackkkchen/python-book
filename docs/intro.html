@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MySQL入门学习 - 1&nbsp; MySQL介绍</title>
+<title>2&nbsp; Python简介</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./SQL学习.html" rel="next">
+<link href="./环境搭建.html" rel="next">
 <link href="./index.html" rel="prev">
 <link href="././img/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MySQL介绍</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python简介</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -87,22 +87,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">MySQL入门学习</a> 
-        <div class="sidebar-tools-main tools-wide">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+        <div class="sidebar-tools-collapse tools-wide">
     <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./MySQL入门学习.pdf">
+            <a class="dropdown-item sidebar-tools-collapse-item" href="./Python-Book.pdf">
               <i class="bi bi-bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="./MySQL入门学习.epub">
+            <a class="dropdown-item sidebar-tools-collapse-item" href="./Python-Book.epub">
               <i class="bi bi-bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -113,13 +115,13 @@ ul.task-list li input[type="checkbox"] {
       <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+            <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=|url|">
               <i class="bi bi-bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+            <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
               <i class="bi bi-bi-facebook pe-1"></i>
             Facebook
             </a>
@@ -127,31 +129,30 @@ ul.task-list li input[type="checkbox"] {
       </ul>
     </div>
 </div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">前言</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MySQL介绍</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python简介</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./SQL学习.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">SQL学习</span></span></a>
+  <a href="./环境搭建.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">环境搭建</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Python入门小白教程.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Python基础</span></span></a>
   </div>
 </li>
     </ul>
@@ -160,26 +161,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#mysql三层结构" id="toc-mysql三层结构" class="nav-link active" data-scroll-target="#mysql三层结构"><span class="header-section-number">1.1</span> MySQL三层结构</a>
-  <ul class="collapse">
-  <li><a href="#数据库" id="toc-数据库" class="nav-link" data-scroll-target="#数据库"><span class="header-section-number">1.1.1</span> 数据库</a></li>
-  <li><a href="#数据库管理系统" id="toc-数据库管理系统" class="nav-link" data-scroll-target="#数据库管理系统"><span class="header-section-number">1.1.2</span> 数据库管理系统</a></li>
-  <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql"><span class="header-section-number">1.1.3</span> SQL</a></li>
-  </ul></li>
-  <li><a href="#主流的关系型数据库管理系统系统" id="toc-主流的关系型数据库管理系统系统" class="nav-link" data-scroll-target="#主流的关系型数据库管理系统系统"><span class="header-section-number">1.2</span> 主流的关系型数据库管理系统系统</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/main/intro.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MySQL介绍</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python简介</span></h1>
 </div>
 
 
@@ -194,29 +183,9 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="mysql三层结构" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="mysql三层结构"><span class="header-section-number">1.1</span> MySQL三层结构</h2>
-<section id="数据库" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="数据库"><span class="header-section-number">1.1.1</span> 数据库</h3>
-<p>全称是<strong>存储数据的仓库</strong>，数据时候有组织的进行存储；简称DataBase(DB)</p>
-</section>
-<section id="数据库管理系统" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="数据库管理系统"><span class="header-section-number">1.1.2</span> 数据库管理系统</h3>
-<p>全称是<strong>操纵和管理数据库的大型软件</strong> ；简称DataBase Management System（DBMS）</p>
-</section>
-<section id="sql" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="sql"><span class="header-section-number">1.1.3</span> SQL</h3>
-<p>操纵<strong>关系型数据库的编程语言</strong>，定义了一套操作关系型数据库<strong>统一标准</strong> ；简称Structured Query Language（SQL）</p>
-</section>
-</section>
-<section id="主流的关系型数据库管理系统系统" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="主流的关系型数据库管理系统系统"><span class="header-section-number">1.2</span> 主流的关系型数据库管理系统系统</h2>
-<p>● Oracle</p>
-<p>● MySQL</p>
-<p>● Microsoft SQL Server</p>
+<p>Python是一种高级编程语言，由Guido van Rossum于1989年首次发布。Python之所以受到大家的欢迎，是因为它有很多优秀“品质”。 1.简单、易学、免费、开源：Python简单、易学。我们可以自由发布其复制版本，阅读、修改其源代码，将其（部分）用于新软件中。 2.解释型：Python是边解释边执行的，Python解释器会将源代码转换为中间字节码形式，然后将其解释为机器语言并执行。 3.可移植：Python解释器己被移植在许多平台上，Python程序无须经过修改就可以在多个平台上运行。 4.代码规范：Pythor所采用的强制缩进的方式，使得其代码具有极佳的可读性。 5.面向对象：与C++和Java等相比，Python以强大而简单的方式实现了面向对象编程。 6.胶水语言：标准版本的Python调用C语言，并可以借助C语言的接口驱动调用所有编程语言。 7.丰富的库：Pythor的标准库种类繁多，可以帮助处理各种工作，我们不需要安装就可以直接使用这些库。 8.动态类型：Python不会检查数据类型，在声明变量时不需要指定数据类型。</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -455,12 +424,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">前言</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./SQL学习.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">SQL学习</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./环境搭建.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">环境搭建</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -468,4 +437,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/main/intro.qmd" class="toc-action">Edit this page</a></p></div></div></div></div></footer></body></html>

@@ -6,6 +6,7 @@ execute:
   freeze: auto
 
 book:
+  title: "Python入门小白教程"
   favicon: "./img/logo.png"
   cover-image: "./img/logo.png"
   author: "明数科技"

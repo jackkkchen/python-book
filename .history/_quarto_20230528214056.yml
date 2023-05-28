@@ -6,6 +6,7 @@ execute:
   freeze: auto
 
 book:
+  title: "Python入门小白教程"
   favicon: "./img/logo.png"
   cover-image: "./img/logo.png"
   author: "明数科技"
@@ -21,7 +22,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - 环境搭建.qmd
+    - python学习.qmd
     - Python入门小白教程.qmd
 
 format:

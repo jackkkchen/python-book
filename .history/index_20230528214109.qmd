@@ -1,3 +1,3 @@
-# Python入门小白教程
+# Python入门小白教程 {.unnumbered}
 
 欢迎来到Python入门教程！本教程旨在帮助初学者了解Python编程语言。我们将从基本概念开始，逐步深入学习Python编程。
