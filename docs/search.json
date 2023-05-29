@@ -65,134 +65,141 @@
   {
     "objectID": "Python入门小白教程.html",
     "href": "Python入门小白教程.html",
-    "title": "3  Python基础",
+    "title": "4  Python基础",
     "section": "",
-    "text": "4 函数"
+    "text": "5 函数"
   },
   {
     "objectID": "Python入门小白教程.html#变量",
     "href": "Python入门小白教程.html#变量",
-    "title": "3  Python基础",
-    "section": "3.1 变量",
-    "text": "3.1 变量\n简单地说，变量就是编程中最基本的存储单位，变量会暂时性地储存你放进去的东西。\n经常发生改变的一个量，变量一般是用来接受一个赋值或用户的一个输入，在程序的其他地方进行调用。\n定义：变量名 = 变量值\n变量是表示（或指向）特定值的名称。例如，你可能想使用名称x来表示3，为此执行如下代码：\n x = 3\n这称为赋值（assignment），我们将值3赋给了变量x。换而言之，就是将变量x与值（或对象）3关联起来。给变量赋值后，就可在表达式中使用它。\nx * 2\n\n6\n不同于其他一些语言，使用Python变量前必须给它赋值，因为Python变量没有默认值。\n● 调用：直接在需要调用的地方输入变量名即可\n命名规范\n在Python中使用变量时，需要遵守一些规则和指南。违反这些规则将引发错误，而指南旨在让你编写的代码更容易阅读和理解。请务必牢记下述有关变量的规则。\n● 变量名只能包含字母、数字和下划线。变量名可以字母或下划线打头，但不能以数字打头，例如，可将变量命名为message_1，但不能将其命名为1_message。另外，py文件不要使用‘-’和以数字开头命名。\n● 变量名不能包含空格，但可使用下划线来分隔其中的单词。例如，变量名greeting_message可行，但变量名greeting message会引发错误。\n● 不要将Python关键字和函数名用作变量名，即不要使用Python保留用于特殊用途的单词，如print\n● 标识符对大小写敏感，就目前而言，应使用小写的Python变量名。在变量名中使用大写字母虽然不会导致错误，但避免使用大写字母是个不错的主意。在命名时如果想避开关键字，可使用大写首字母可以很有效地区分。\n● 变量名应既简短又具有描述性。例如，name比n好，student_name比s_n好，name_length比length_of_persons_name好。\n● 慎用小写字母l和大写字母O，因为它们可能被人错看成数字1和0。\n● 变量的数据类型是根据变量的赋值的类型来决定的\n\n要创建良好的变量名，需要经过一定的实践，在程序复杂而有趣时尤其如此。随着你编写的程序越来越多，并开始阅读别人编写的代码，将越来越善于创建有意义的变量名。"
+    "title": "4  Python基础",
+    "section": "4.1 变量",
+    "text": "4.1 变量\n简单地说，变量就是编程中最基本的存储单位，变量会暂时性地储存你放进去的东西。\n经常发生改变的一个量，变量一般是用来接受一个赋值或用户的一个输入，在程序的其他地方进行调用。\n定义：变量名 = 变量值\n变量是表示（或指向）特定值的名称。例如，你可能想使用名称x来表示3，为此执行如下代码：\n x = 3\n这称为赋值（assignment），我们将值3赋给了变量x。换而言之，就是将变量x与值（或对象）3关联起来。给变量赋值后，就可在表达式中使用它。\nx * 2\n\n6\n不同于其他一些语言，使用Python变量前必须给它赋值，因为Python变量没有默认值。\n● 调用：直接在需要调用的地方输入变量名即可\n命名规范\n在Python中使用变量时，需要遵守一些规则和指南。违反这些规则将引发错误，而指南旨在让你编写的代码更容易阅读和理解。请务必牢记下述有关变量的规则。\n● 变量名只能包含字母、数字和下划线。变量名可以字母或下划线打头，但不能以数字打头，例如，可将变量命名为message_1，但不能将其命名为1_message。另外，py文件不要使用‘-’和以数字开头命名。\n● 变量名不能包含空格，但可使用下划线来分隔其中的单词。例如，变量名greeting_message可行，但变量名greeting message会引发错误。\n● 不要将Python关键字和函数名用作变量名，即不要使用Python保留用于特殊用途的单词，如print\n● 标识符对大小写敏感，就目前而言，应使用小写的Python变量名。在变量名中使用大写字母虽然不会导致错误，但避免使用大写字母是个不错的主意。在命名时如果想避开关键字，可使用大写首字母可以很有效地区分。\n● 变量名应既简短又具有描述性。例如，name比n好，student_name比s_n好，name_length比length_of_persons_name好。\n● 慎用小写字母l和大写字母O，因为它们可能被人错看成数字1和0。\n● 变量的数据类型是根据变量的赋值的类型来决定的\n\n要创建良好的变量名，需要经过一定的实践，在程序复杂而有趣时尤其如此。随着你编写的程序越来越多，并开始阅读别人编写的代码，将越来越善于创建有意义的变量名。"
   },
   {
     "objectID": "Python入门小白教程.html#数据类型",
     "href": "Python入门小白教程.html#数据类型",
-    "title": "3  Python基础",
-    "section": "3.2 数据类型",
-    "text": "3.2 数据类型\nPython有以下基本数据类型：\n\n整数（int）：如1, 2, 3\n浮点数（float）：如1.5, 3.14\n字符串（str）：如”hello”, ‘world’\n布尔值（bool）：True, False\n\n在Python中，我们可以使用变量来存储数据。例如：\nx = 10\ny = 3.14\nname = \"Alice\"\nis_student = True\n\n3.2.1 字符串\n在上面我们已经初步接触到了字符串，很简单地说，字符串就是… “任何在这双引号之间的文字” 或者 ‘单引号其实和双引号完全一样’  再或者\n’‘’三个引号被用于过于长段的文 字或者是说明，只要三引号不完 你就可以随意换行写下文字’’’"
+    "title": "4  Python基础",
+    "section": "4.2 数据类型",
+    "text": "4.2 数据类型\nPython有以下基本数据类型：\n\n整数（int）：如1, 2, 3\n浮点数（float）：如1.5, 3.14\n字符串（str）：如”hello”, ‘world’\n布尔值（bool）：True, False\n\n在Python中，我们可以使用变量来存储数据。例如：\nx = 10\ny = 3.14\nname = \"Alice\"\nis_student = True\n\n4.2.1 字符串\n在上面我们已经初步接触到了字符串，很简单地说，字符串就是… “任何在这双引号之间的文字” 或者 ‘单引号其实和双引号完全一样’  再或者\n’‘’三个引号被用于过于长段的文 字或者是说明，只要三引号不完 你就可以随意换行写下文字’’’"
   },
   {
     "objectID": "Python入门小白教程.html#基础语法和运算符",
     "href": "Python入门小白教程.html#基础语法和运算符",
-    "title": "3  Python基础",
-    "section": "3.3 基础语法和运算符",
-    "text": "3.3 基础语法和运算符\n\n3.3.1 常见转义字符：\n\n\n\n转义字符\n描述\n\n\n\n\n\n换行符\n\n\n 制表符 空格\n\n\n\n 回车\n\n\n\n\\\n将\n\n\n\"\n对双引号转义\n\n\n'\n对单引号转义\n\n\n\n\n\n3.3.2 常见运算符\n\n3.3.2.0.1 算术运算符（常用语数学运算）\n\n\n\n运算符\n描述\n举例\n\n\n\n\nx+y\n加\n1+2=3\n\n\nx-y\n减\n6-5=1\n\n\nx*y\n乘\n2*3=6\n\n\nx/y\n除\n2/4=0.5\n\n\nx//y\n整除，取整数部分\n2//4=0\n\n\nx%y\n取余\n15%4=3\n\n\n**\n幂运算\n2**3=8 二的三次方\n\n\n\n\n\n3.3.2.0.2 比较运算符（常用语控制结构判断）\n\n\n\n运算符\n描述\n\n\n\n\n&lt;\n小于\n\n\n&lt;=\n小于等于\n\n\n&gt;\n大于\n\n\n&gt;=\n大于等于\n\n\n==\n等于\n\n\n!=\n不等于\n\n\nis\n判断两个标识符是不是引用自一个对象\n\n\nis not\n判断两个标识符是不是引用自不同对象\n\n\n\n\n\n3.3.2.0.3 逻辑运算符（常用于逻辑判断）\n● and or not (与 或 非)\n\n\n\n\n\n\n\n\n运算符\n描述\n备注\n\n\n\n\nx and y\nif x is false, then x,else y\nxy都为True,结果为True；否则为False\n\n\nx or y\nif x is false, then y，else x\nxy都为False,结果为False；否则为True\n\n\nnot x\nif x is false,then True，else False\nx为True时，值为False；x为False时，值为True\n\n\n\nx = 0 \ny = 2\n\nprint(x and y)  #只要x的布尔值为true，那就取y的值，如果x为false，就取x的值\n\nprint(x or y)   #只要x的布尔值为false，那就取y的值，如果x为true，就取x的值\n\nprint(not x)   #非就是取反\n\n\n3.3.2.0.4 位运算符\n\n\n\n运算符\n描述\n备注\n\n\n\n\n&\n与\n两个二进制的位数都是1，则结果为1，否则为0\n\n\n|\n或\n两个二进制的位数只要有一个为去，结果就为1，否则为0\n\n\n^\n异或\n两个二进制的位数都相同就为1，否则为0\n\n\n~\n取反\n就是对单个二进制数进行取反\n\n\n&lt;&lt;\n左移\n高位丢弃，低位补0\n\n\n&gt;&gt;\n右移\n低位丢弃，高位补0\n\n\n\n\n\n3.3.2.0.5 赋值运算符（常用于变量赋值）\n\n\n\n运算符\n描述\n\n\n\n\n=\n赋值\n\n\n+=\n加等,自增 number += 1 &lt;==&gt; number = number+1\n\n\n*=\n乘等\n\n\n%=\n余等\n\n\n-=\n减等，自检\n\n\n/=\n除等\n\n\n//=\n取整等\n\n\n**=\n幂等\n\n\n\n\n\n3.3.2.0.6 成员运算符（常用语条件判断）\n\n\n\n运算符\n描述\n\n\n\n\nin\n如果在指定的序列中找到值返回True，否则返回False。\n\n\nnot in\n如果在指定的序列中没找到值返回True，否则返回False。\n\n\n\n举例：\nprint(\"o\" in \"hello\")                \n\n&gt;&gt;&gt;True\n\nprint(\"o\" not in \"hello\")         \n\n&gt;&gt;&gt;False"
+    "title": "4  Python基础",
+    "section": "4.3 基础语法和运算符",
+    "text": "4.3 基础语法和运算符\n\n4.3.1 常见转义字符：\n\n\n\n转义字符\n描述\n\n\n\n\n\n换行符\n\n\n 制表符 空格\n\n\n\n 回车\n\n\n\n\\\n将\n\n\n\"\n对双引号转义\n\n\n'\n对单引号转义\n\n\n\n\n\n4.3.2 常见运算符\n\n4.3.2.0.1 算术运算符（常用语数学运算）\n\n\n\n运算符\n描述\n举例\n\n\n\n\nx+y\n加\n1+2=3\n\n\nx-y\n减\n6-5=1\n\n\nx*y\n乘\n2*3=6\n\n\nx/y\n除\n2/4=0.5\n\n\nx//y\n整除，取整数部分\n2//4=0\n\n\nx%y\n取余\n15%4=3\n\n\n**\n幂运算\n2**3=8 二的三次方\n\n\n\n\n\n4.3.2.0.2 比较运算符（常用语控制结构判断）\n\n\n\n运算符\n描述\n\n\n\n\n&lt;\n小于\n\n\n&lt;=\n小于等于\n\n\n&gt;\n大于\n\n\n&gt;=\n大于等于\n\n\n==\n等于\n\n\n!=\n不等于\n\n\nis\n判断两个标识符是不是引用自一个对象\n\n\nis not\n判断两个标识符是不是引用自不同对象\n\n\n\n\n\n4.3.2.0.3 逻辑运算符（常用于逻辑判断）\n● and or not (与 或 非)\n\n\n\n\n\n\n\n\n运算符\n描述\n备注\n\n\n\n\nx and y\nif x is false, then x,else y\nxy都为True,结果为True；否则为False\n\n\nx or y\nif x is false, then y，else x\nxy都为False,结果为False；否则为True\n\n\nnot x\nif x is false,then True，else False\nx为True时，值为False；x为False时，值为True\n\n\n\nx = 0 \ny = 2\n\nprint(x and y)  #只要x的布尔值为true，那就取y的值，如果x为false，就取x的值\n\nprint(x or y)   #只要x的布尔值为false，那就取y的值，如果x为true，就取x的值\n\nprint(not x)   #非就是取反\n\n\n4.3.2.0.4 位运算符\n\n\n\n运算符\n描述\n备注\n\n\n\n\n&\n与\n两个二进制的位数都是1，则结果为1，否则为0\n\n\n|\n或\n两个二进制的位数只要有一个为去，结果就为1，否则为0\n\n\n^\n异或\n两个二进制的位数都相同就为1，否则为0\n\n\n~\n取反\n就是对单个二进制数进行取反\n\n\n&lt;&lt;\n左移\n高位丢弃，低位补0\n\n\n&gt;&gt;\n右移\n低位丢弃，高位补0\n\n\n\n\n\n4.3.2.0.5 赋值运算符（常用于变量赋值）\n\n\n\n运算符\n描述\n\n\n\n\n=\n赋值\n\n\n+=\n加等,自增 number += 1 &lt;==&gt; number = number+1\n\n\n*=\n乘等\n\n\n%=\n余等\n\n\n-=\n减等，自检\n\n\n/=\n除等\n\n\n//=\n取整等\n\n\n**=\n幂等\n\n\n\n\n\n4.3.2.0.6 成员运算符（常用语条件判断）\n\n\n\n运算符\n描述\n\n\n\n\nin\n如果在指定的序列中找到值返回True，否则返回False。\n\n\nnot in\n如果在指定的序列中没找到值返回True，否则返回False。\n\n\n\n举例：\nprint(\"o\" in \"hello\")                \n\n&gt;&gt;&gt;True\n\nprint(\"o\" not in \"hello\")         \n\n&gt;&gt;&gt;False"
   },
   {
     "objectID": "Python入门小白教程.html#常用函数",
     "href": "Python入门小白教程.html#常用函数",
-    "title": "3  Python基础",
-    "section": "4.1 常用函数",
-    "text": "4.1 常用函数\n\n4.1.1 输出（print）\n输出：print()函数将括号内的字符串显示在屏幕上。\n方法：print(value,sep=” “,end=”“,file=None)\nvalue：输出的内容\nsep：输出字符的间隔，默认空字符串\nend：输出下一行格式，默认换行\nfile：指定写入文件流，将print输出写入到文件中，默认None\nprint('Hello world!')\n\nprint('What is your name?') # ask for their name\n备注：在写函数名时，末尾的左右括号表明它是一个函数的名字。引号没有打印在屏幕上。它们只是表示字符串的起止，不是字符串的一部分。\n\n\n4.1.2 输入（input）\n程序接受用户的输入参数，将该输入参数保存下来做进一步的处理，默认的输入参数类型为字符串类型。\n函数等待用户在键盘上输入一些文本，并按下回车键。\n语法：input（value）\nvalue：输入的提示信息，可以为空\n示例：\nprint(input())\n\nprint(input(\"请输入用户名:\"))\n\nusername = input(\":\")\n\nprint(username)\n\n\n4.1.3 len()函数\n你可以向 len()函数传递一个字符串（或包含字符串的变量），然后该函数求值为一个整型值，即字符串中字符的个数。\n\n\n4.1.4 str()、int()和 float()函数\nstr()、int()和 float()函数将分别求值为传入值的字符串、整数和浮点数形式。\n请尝试用这些函数在交互式环境中转换一些值，看看会发生什么。\n&gt;&gt;&gt; str(0)\n\n'0'\n\n&gt;&gt;&gt; str(-3.14)\n\n'-3.14'\n\n&gt;&gt;&gt; int('42')\n\n42\n\n&gt;&gt;&gt; int('-99')\n\n-99\n\n&gt;&gt;&gt; int(1.25)\n\n1 \n\n&gt;&gt;&gt; int(1.99)\n\n1 \n\n&gt;&gt;&gt; float('3.14')\n\n3.14\n\n&gt;&gt;&gt; float(10)\n\n10.0"
+    "title": "4  Python基础",
+    "section": "5.1 常用函数",
+    "text": "5.1 常用函数\n\n5.1.1 输出（print）\n输出：print()函数将括号内的字符串显示在屏幕上。\n方法：print(value,sep=” “,end=”“,file=None)\nvalue：输出的内容\nsep：输出字符的间隔，默认空字符串\nend：输出下一行格式，默认换行\nfile：指定写入文件流，将print输出写入到文件中，默认None\nprint('Hello world!')\n\nprint('What is your name?') # ask for their name\n备注：在写函数名时，末尾的左右括号表明它是一个函数的名字。引号没有打印在屏幕上。它们只是表示字符串的起止，不是字符串的一部分。\n\n\n5.1.2 输入（input）\n程序接受用户的输入参数，将该输入参数保存下来做进一步的处理，默认的输入参数类型为字符串类型。\n函数等待用户在键盘上输入一些文本，并按下回车键。\n语法：input（value）\nvalue：输入的提示信息，可以为空\n示例：\nprint(input())\n\nprint(input(\"请输入用户名:\"))\n\nusername = input(\":\")\n\nprint(username)\n\n\n5.1.3 len()函数\n你可以向 len()函数传递一个字符串（或包含字符串的变量），然后该函数求值为一个整型值，即字符串中字符的个数。\n\n\n5.1.4 str()、int()和 float()函数\nstr()、int()和 float()函数将分别求值为传入值的字符串、整数和浮点数形式。\n请尝试用这些函数在交互式环境中转换一些值，看看会发生什么。\n&gt;&gt;&gt; str(0)\n\n'0'\n\n&gt;&gt;&gt; str(-3.14)\n\n'-3.14'\n\n&gt;&gt;&gt; int('42')\n\n42\n\n&gt;&gt;&gt; int('-99')\n\n-99\n\n&gt;&gt;&gt; int(1.25)\n\n1 \n\n&gt;&gt;&gt; int(1.99)\n\n1 \n\n&gt;&gt;&gt; float('3.14')\n\n3.14\n\n&gt;&gt;&gt; float(10)\n\n10.0"
   },
   {
     "objectID": "Python入门小白教程.html#其他常见函数",
     "href": "Python入门小白教程.html#其他常见函数",
-    "title": "3  Python基础",
-    "section": "4.2 其他常见函数：",
-    "text": "4.2 其他常见函数：\n\n\n\n\n\n\n\n函数\n描述\n\n\n\n\ncount(str, beg= 0,end=len(string))\n返回 str 在 string 里面出现的次数，如果 beg或者 end 指定则返回指定范围内 str 出现的次数\n\n\ncapitalize()\n将字符串的第一个字符转换为大写(同title()方法)\n\n\ncenter(width, fillchar)\n返回一个指定的宽度 width 居中的字符串，fillchar 为填充的字符，默认为空格。\n\n\nfind(str, beg=0 end=len(string))\n检测 str 是否包含在字符串中 中，如果 beg 和end 指定范围，则检查是否包含在指定范围内，如果是返回开始的索引值，否则返回-1\n\n\nreplace(old, new [, max])\n把 将字符串中的 str1 替换成 str2,如果 max 指定，则替换不超过 max 次。\n\n\nsplit(str=““, num=string.count(str))\n以 str 为分隔符截取字符串，如果 num 有指定值，则仅截取 num 个子字符串\n\n\nindex(str, beg=0, end=len(string))\n跟find()方法一样，只不过如果str不在字符串中会报一个异常\n\n\nisalnum()\n如果字符串至少有一个字符并且所有字符都是字母或数字则返回 True,否则返回 False\n\n\nisalpha()\n如果字符串至少有一个字符并且所有字符都是字母则返回True, 否则返回False\n\n\nisdigit()\n如果字符串只包含数字则返回 True 否则返回 False\n\n\nislower()\n如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True，否则返回 False\n\n\nisupper()\n如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True，否则返回 False\n\n\nisspace()\n如果字符串中只包含空格，则返回 True，否则返回 False.\n\n\nistitle()\n如果字符串是标题化的(见 title())则返回 True，否则返回 False\n\n\nlower()\n转换字符串中所有大写字符为小写。\n\n\nupper()\n转换字符串中所有小写字符为大写。\n\n\nmax(str)\n返回字符串 str 中最大的字母。\n\n\nmin(str)\n返回字符串 str 中最小的字母。\n\n\nstartswith(str, beg=0,end=len(string))\n检查字符串是否是以 obj 开头，是则返回 True，否则返回 False。如果beg 和 end 指定值，则在指定范围内检查。\n\n\nstrip()\n取出字符串的前后空格"
+    "title": "4  Python基础",
+    "section": "5.2 其他常见函数：",
+    "text": "5.2 其他常见函数：\n\n\n\n\n\n\n\n函数\n描述\n\n\n\n\ncount(str, beg= 0,end=len(string))\n返回 str 在 string 里面出现的次数，如果 beg或者 end 指定则返回指定范围内 str 出现的次数\n\n\ncapitalize()\n将字符串的第一个字符转换为大写(同title()方法)\n\n\ncenter(width, fillchar)\n返回一个指定的宽度 width 居中的字符串，fillchar 为填充的字符，默认为空格。\n\n\nfind(str, beg=0 end=len(string))\n检测 str 是否包含在字符串中 中，如果 beg 和end 指定范围，则检查是否包含在指定范围内，如果是返回开始的索引值，否则返回-1\n\n\nreplace(old, new [, max])\n把 将字符串中的 str1 替换成 str2,如果 max 指定，则替换不超过 max 次。\n\n\nsplit(str=““, num=string.count(str))\n以 str 为分隔符截取字符串，如果 num 有指定值，则仅截取 num 个子字符串\n\n\nindex(str, beg=0, end=len(string))\n跟find()方法一样，只不过如果str不在字符串中会报一个异常\n\n\nisalnum()\n如果字符串至少有一个字符并且所有字符都是字母或数字则返回 True,否则返回 False\n\n\nisalpha()\n如果字符串至少有一个字符并且所有字符都是字母则返回True, 否则返回False\n\n\nisdigit()\n如果字符串只包含数字则返回 True 否则返回 False\n\n\nislower()\n如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True，否则返回 False\n\n\nisupper()\n如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True，否则返回 False\n\n\nisspace()\n如果字符串中只包含空格，则返回 True，否则返回 False.\n\n\nistitle()\n如果字符串是标题化的(见 title())则返回 True，否则返回 False\n\n\nlower()\n转换字符串中所有大写字符为小写。\n\n\nupper()\n转换字符串中所有小写字符为大写。\n\n\nmax(str)\n返回字符串 str 中最大的字母。\n\n\nmin(str)\n返回字符串 str 中最小的字母。\n\n\nstartswith(str, beg=0,end=len(string))\n检查字符串是否是以 obj 开头，是则返回 True，否则返回 False。如果beg 和 end 指定值，则在指定范围内检查。\n\n\nstrip()\n取出字符串的前后空格"
   },
   {
     "objectID": "Python入门小白教程.html#内建函数",
     "href": "Python入门小白教程.html#内建函数",
-    "title": "3  Python基础",
-    "section": "4.3 内建函数",
-    "text": "4.3 内建函数\n\n\n\nimage-20230527220141541"
+    "title": "4  Python基础",
+    "section": "5.3 内建函数",
+    "text": "5.3 内建函数\n\n\n\nimage-20230527220141541"
   },
   {
     "objectID": "Python入门小白教程.html#定义函数",
     "href": "Python入门小白教程.html#定义函数",
-    "title": "3  Python基础",
-    "section": "4.4 定义函数",
-    "text": "4.4 定义函数\n在程序中需要反复执行的某些代码，可以将他们用函数封装起来。\n函数是一种将一组语句组织在一起的机制，可以多次调用。函数可以接收参数，并返回结果。\ndef greet_user(): \n\n\"\"\"显示简单的问候语\"\"\" \n\n    print(\"Hello!\") \n\ngreet_user() \n用 def 语句创建函数时，可以用 return 语句指定应该返回什么值。例如：\ndef greet(name):\n    return \"你好, \" + name + \"!\"\n\nname = input(\"请输入你的名字：\")\nprint(greet(name))\n\n\n\nimage-20230527192028272\n\n\n\n4.4.1 向函数传递信息\n只需稍作修改，就可以让函数greet_user()不仅向用户显示Hello!，还将用户的名字用作抬头。为此，可在函数定义def greet_user()的括号内添加username。通过在这里添加username，就可让函数接受你给username指定的任何值。现在，这个函数要求你调用它时给username指定一个值。调用greet_user()时，可将一个名字传递给它，如下所示：\ndef greet_user(username): \n\n \"\"\"显示简单的问候语\"\"\"\n\n    print(\"Hello, \" + username.title() + \"!\") \n\n\ngreet_user('jesse') \n代码greet_user(‘jesse’)调用函数greet_user()，并向它提供执行print语句所需的信息。这个函数接受你传递给它的名字，并向这个人发出问候：\nHello, Jesse! \n同样，greet_user(‘sarah’)调用函数greet_user()并向它传递’sarah’，打印Hello, Sarah!。你可以根据需要调用函数greet_user()任意次，调用时无论传入什么样的名字，都会生成相应的输出。\n\n\n4.4.2 形式参数和实际参数\n由于定义函教时的参教不是实际教据，会在调用函教时传递给它们实际教据，所以我们称定义函教时的参教为形式参 数，简称形参；称调用函教时传递的实际教据为实际参散，简称实参。你可以将形参理解为在函数中定义的变量。\n前面定义函数greet_user()时，要求给变量username指定一个值。调用这个函数并提供这种信息（人名）时，它将打印相应的问候语。\n在函数greet_user()的定义中，变量username是一个形参——函数完成其工作所需的一项信息。在代码greet_user(‘jesse’)中值’jesse’是一个实参。实参是调用函数时传递给函数的信息。我们调用函数时，将要让函数使用的信息放在括号内。在greet_user(‘jesse’)中，将实参’jesse’传递给了函数greet_user()，这个值被存储在形参username中。\n\n\n4.4.3 返回值\n函数并非总是直接显示输出，相反，它可以处理一些数据，并返回一个或一组值。函数返回的值被称为返回值。在函数中，可使用return语句将值返回到调用函数的代码行。返回值让你能够将程序的大部分繁重工作移到函数中去完成，从而简化主程序。\n\n\n4.4.4 函数中变量的作用域\n变量可以在模块中创建，作用域（变量的有效范围）是整个模块，被称为全局变量。变量也可以在函数中创建，在默认情况下作用域是整\n个函数，被称为局部变量。\n\n\n\nimage-20230527222243663"
+    "title": "4  Python基础",
+    "section": "5.4 定义函数",
+    "text": "5.4 定义函数\n在程序中需要反复执行的某些代码，可以将他们用函数封装起来。\n函数是一种将一组语句组织在一起的机制，可以多次调用。函数可以接收参数，并返回结果。\ndef greet_user(): \n\n\"\"\"显示简单的问候语\"\"\" \n\n    print(\"Hello!\") \n\ngreet_user() \n用 def 语句创建函数时，可以用 return 语句指定应该返回什么值。例如：\ndef greet(name):\n    return \"你好, \" + name + \"!\"\n\nname = input(\"请输入你的名字：\")\nprint(greet(name))\n\n\n\nimage-20230527192028272\n\n\n\n5.4.1 向函数传递信息\n只需稍作修改，就可以让函数greet_user()不仅向用户显示Hello!，还将用户的名字用作抬头。为此，可在函数定义def greet_user()的括号内添加username。通过在这里添加username，就可让函数接受你给username指定的任何值。现在，这个函数要求你调用它时给username指定一个值。调用greet_user()时，可将一个名字传递给它，如下所示：\ndef greet_user(username): \n\n \"\"\"显示简单的问候语\"\"\"\n\n    print(\"Hello, \" + username.title() + \"!\") \n\n\ngreet_user('jesse') \n代码greet_user(‘jesse’)调用函数greet_user()，并向它提供执行print语句所需的信息。这个函数接受你传递给它的名字，并向这个人发出问候：\nHello, Jesse! \n同样，greet_user(‘sarah’)调用函数greet_user()并向它传递’sarah’，打印Hello, Sarah!。你可以根据需要调用函数greet_user()任意次，调用时无论传入什么样的名字，都会生成相应的输出。\n\n\n5.4.2 形式参数和实际参数\n由于定义函教时的参教不是实际教据，会在调用函教时传递给它们实际教据，所以我们称定义函教时的参教为形式参 数，简称形参；称调用函教时传递的实际教据为实际参散，简称实参。你可以将形参理解为在函数中定义的变量。\n前面定义函数greet_user()时，要求给变量username指定一个值。调用这个函数并提供这种信息（人名）时，它将打印相应的问候语。\n在函数greet_user()的定义中，变量username是一个形参——函数完成其工作所需的一项信息。在代码greet_user(‘jesse’)中值’jesse’是一个实参。实参是调用函数时传递给函数的信息。我们调用函数时，将要让函数使用的信息放在括号内。在greet_user(‘jesse’)中，将实参’jesse’传递给了函数greet_user()，这个值被存储在形参username中。\n\n\n5.4.3 返回值\n函数并非总是直接显示输出，相反，它可以处理一些数据，并返回一个或一组值。函数返回的值被称为返回值。在函数中，可使用return语句将值返回到调用函数的代码行。返回值让你能够将程序的大部分繁重工作移到函数中去完成，从而简化主程序。\n\n\n5.4.4 函数中变量的作用域\n变量可以在模块中创建，作用域（变量的有效范围）是整个模块，被称为全局变量。变量也可以在函数中创建，在默认情况下作用域是整\n个函数，被称为局部变量。\n\n\n\nimage-20230527222243663"
   },
   {
     "objectID": "Python入门小白教程.html#调用函数",
     "href": "Python入门小白教程.html#调用函数",
-    "title": "3  Python基础",
-    "section": "4.5 调用函数",
-    "text": "4.5 调用函数\n在定义好函数后，就可以调用函数了。在调用函数时传递的实参与定义函数时的形参顺序一致，这是调用函数的基本形式。"
+    "title": "4  Python基础",
+    "section": "5.5 调用函数",
+    "text": "5.5 调用函数\n在定义好函数后，就可以调用函数了。在调用函数时传递的实参与定义函数时的形参顺序一致，这是调用函数的基本形式。"
   },
   {
     "objectID": "Python入门小白教程.html#布尔值",
     "href": "Python入门小白教程.html#布尔值",
-    "title": "3  Python基础",
-    "section": "5.1 布尔值",
-    "text": "5.1 布尔值\n“布尔”数据类型只有两种值：True 和 False。\nBoolean（布尔）的首字母大写，因为这个数据类型是根据数学家 George Boole 命名的。在作为 Python 代码输入时，布尔值 True 和 False不像字符串，两边没有引号，它们总是以大写字母 T 或 F 开头，后面的字母小写。"
+    "title": "4  Python基础",
+    "section": "6.1 布尔值",
+    "text": "6.1 布尔值\n“布尔”数据类型只有两种值：True 和 False。\nBoolean（布尔）的首字母大写，因为这个数据类型是根据数学家 George Boole 命名的。在作为 Python 代码输入时，布尔值 True 和 False不像字符串，两边没有引号，它们总是以大写字母 T 或 F 开头，后面的字母小写。"
   },
   {
     "objectID": "Python入门小白教程.html#条件",
     "href": "Python入门小白教程.html#条件",
-    "title": "3  Python基础",
-    "section": "5.2 条件",
-    "text": "5.2 条件\n布尔表达式可以看成是条件，它和表达式是一回事。“条件”只是在控制流语句的上下文中更具体的名称。条件总是求值为一个布尔值，True 或 False。控制流语句根据条件是 True 还是 False，来决定做什么。几乎所有的控制流语句都使用条件。"
+    "title": "4  Python基础",
+    "section": "6.2 条件",
+    "text": "6.2 条件\n布尔表达式可以看成是条件，它和表达式是一回事。“条件”只是在控制流语句的上下文中更具体的名称。条件总是求值为一个布尔值，True 或 False。控制流语句根据条件是 True 还是 False，来决定做什么。几乎所有的控制流语句都使用条件。"
   },
   {
     "objectID": "Python入门小白教程.html#代码块",
     "href": "Python入门小白教程.html#代码块",
-    "title": "3  Python基础",
-    "section": "5.3 代码块",
-    "text": "5.3 代码块\n一些代码行可以作为一组，放在“代码块”中。可以根据代码行的缩进，知道代码块的开始和结束。代码块有 3 条规则。\n1．缩进增加时，代码块开始。\n2．代码块可以包含其他代码块。\n3．缩进减少为零，或减少为外面包围代码块的缩进，代码块就结束了。看一些有缩进的代码，更容易理解代码块。"
+    "title": "4  Python基础",
+    "section": "6.3 代码块",
+    "text": "6.3 代码块\n一些代码行可以作为一组，放在“代码块”中。可以根据代码行的缩进，知道代码块的开始和结束。代码块有 3 条规则。\n1．缩进增加时，代码块开始。\n2．代码块可以包含其他代码块。\n3．缩进减少为零，或减少为外面包围代码块的缩进，代码块就结束了。看一些有缩进的代码，更容易理解代码块。"
   },
   {
     "objectID": "Python入门小白教程.html#程序执行",
     "href": "Python入门小白教程.html#程序执行",
-    "title": "3  Python基础",
-    "section": "5.4 程序执行",
-    "text": "5.4 程序执行\nPython 开始执行程序顶部的指令，然后一条接一条往下执行。“程序执行”（或简称“执行”）这一术语是指当前被执行的指令。\n如果将源代码打印在纸上，在它执行时用手指指着每一行代码，你可以认为手指就是程序执行。\n但是，并非所有的程序都是从上至下简单地执行。如果用手指追踪一个带有控制流语句的程序，可能会发现手指会根据条件跳过源代码，有可能跳过整个子句。"
+    "title": "4  Python基础",
+    "section": "6.4 程序执行",
+    "text": "6.4 程序执行\nPython 开始执行程序顶部的指令，然后一条接一条往下执行。“程序执行”（或简称“执行”）这一术语是指当前被执行的指令。\n如果将源代码打印在纸上，在它执行时用手指指着每一行代码，你可以认为手指就是程序执行。\n但是，并非所有的程序都是从上至下简单地执行。如果用手指追踪一个带有控制流语句的程序，可能会发现手指会根据条件跳过源代码，有可能跳过整个子句。"
   },
   {
     "objectID": "Python入门小白教程.html#控制流语句",
     "href": "Python入门小白教程.html#控制流语句",
-    "title": "3  Python基础",
-    "section": "5.5 控制流语句",
-    "text": "5.5 控制流语句\n\n5.5.1 条件语句(if)\n用一句话概括 if……else 结构的作用：如果..条件是成立的，就做..；反之，就做…所谓条件(condition)指的是成立的条件，即是返回值为True的布尔表达式。\nif\nif语句是：“如果条件为真，执行子句中的代码。”\nelse\nelse语句是：“如果条件为真，执行这段代码。否则，执行那段代码。”\nelif\n虽然只有 if 或 else 子句会被执行，但有时候可能你希望，“许多”可能的子句中有一个被执行。elif 语句是“否则如果”，总是跟在 if 或另一条 elif 语句后面。它提供了另一个条件，仅在前面的条件为 False 时才检查该条件。\nelif语句是：“如果第一个条件为真，做这个。否则，如果第二个条件为真，做那个。否则，做另外的事。“\n例如：\nage = int(input(\"请输入你的年龄：\"))\n\nif age &lt; 18:\n    print(\"你还未成年。\")\nelif age &lt; 60:\n    print(\"你已经成年了。\")\nelse:\n    print(\"你已经退休了。\")\n我们结合函数的概念来创建这样一个函数,逐行分析它的原理:\n\ndef  account_ login():\n          password  =  input( 'Password:' )\n          if  password  ==   '12345' :\n                  print( 'Login  success!' )\n          else :\n                  print( 'Wrong  password  or  invalid  input!' )\n                  account_ login()\naccount_login()\n第1行:定义函数,并不需要参数;\n第2行:使用input获得用户输入的字符串并储存在变量password中;\n第3、4行:设置条件,如果用户输入的字符串和预设的密码12345相等时,就执 行打印文本’Loginsuccess!’;\n第5、6行:反之,一切不等于预设密码的输入结果,全部会执行打印错误提示, 并且再次调用函数,让用户再次输入密码;\n第7行:运行函数。\n第8行:调用函数\n\n\n5.5.2 循环语句(Loop)\n循环语句用于重复执行某个代码块。\nwhile循环\n利用 while 语句，可以让一个代码块一遍又一遍的执行。只要 while 语句的条件为 True，while 子句中的代码就会执行。\nwhile 语句看起来和 if 语句类似。不同之处是它们的行为。if 子句结束时，程序继续执行 if 语句之后的语句。但在 while 子句结束时，程序执行跳回到 while 语句开始处。\n让我们来看一个 if 语句和一个 while 循环。它们使用同样的条件，并基于该条件做出同样的动作。下面是 if 语句的代码：\na = 0\n\nif a &lt; 5:\n\n   print('Hello, world.')\n\n   a = a + 1\n下面是 while 语句的代码：\na = 0\n\nwhile a &lt; 5:\n\n      print('Hello, world.')\n\n      a = a + 1\n这些语句类似，if 和 while 都检查 a 的值，如果它小于５，就打印一条消息。但如果运行这两段代码，它们各自的表现非常不同。对于 if 语句，输出就是”Hello, world.”。但对于 while 语句，输出是”Hello, world.”重复了 5 次！\n带有 if 语句的代码检查条件，如果条件为 True，就打印一次”Hello, world.”。带有 while 循环的代码则不同，会打印 5 次。打印 5 次后停下来是因为，在每次循环迭代末尾，spam 中的整数都增加 1。这意味着循环将执行 5 次，然后 spam &lt; 5 变为False。\n在 while 循环中，条件总是在每次“迭代”开始时检查（也就是每次循环执行时）。如果条件为 True，子句就会执行，然后，再次检查条件。当条件第一次为 False时，while 子句就跳过。\nfor 循环和 range()函数\n在条件为 True 时，while 循环就会继续循环（这是它的名称的由来）。但如果你想让一个代码块执行固定次数，该怎么办？可以通过 for 循环语句和 range()函数来实现。\nfor循环和while的相同点在于都能循环做一件重复的事情,不同点在于 for 循环会在可迭代 的序列被穷尽的时候停止,while则是在条件不成立的时候停止,因此 while 的作用概 括成一句话就是: 只要…条件成立,就一直做…。\n例如：\nfor i in range(5):\n    print(i)\n\ncount = 0\nwhile count &lt; 5:\n    print(count)\n    count += 1\n提示：只要能够使用for循环，就不要使用while循环。\n无限循环：(在这里先行提醒一下,一定要记得及时停止运行代码!)\nwhile   1  &lt;   3 :\nprint( '1 is smaller than 3')\n在 while 后面的表达式是永远成立的,所以print会一直进行下去直至你的CPU过热。这种条件永远为True的循环,我们称之为死循环(InfiniteLoop)。\n\n\n5.5.3 跳转语句\nbreak 语句\n但如果 while 循环不能像 for 循环那样,在集合被穷尽之后停下来,我们又怎么 样才能控制 while 循环呢？\n方法：\n让执行提前跳出 while 循环子句。如果执行遇到 break 语句，就会马上退出 while 循环子句。在代码中，break 语句仅包含 break 关键字。例如:\ncount  =  0\nwhile True :\n     print( 'Repeat this line !' )\n     count = count  +  1\n     if count == 5 :\n         break\ncontinue 语句\n像 break 语句一样，continue 语句用于循环内部。如果程序执行遇到 continue语句，就会马上跳回到循环开始处，重新对循环条件求值（这也是执行到达循环末尾时发生的事情）。"
+    "title": "4  Python基础",
+    "section": "6.5 控制流语句",
+    "text": "6.5 控制流语句\n\n6.5.1 条件语句(if)\n用一句话概括 if……else 结构的作用：如果..条件是成立的，就做..；反之，就做…所谓条件(condition)指的是成立的条件，即是返回值为True的布尔表达式。\nif\nif语句是：“如果条件为真，执行子句中的代码。”\nelse\nelse语句是：“如果条件为真，执行这段代码。否则，执行那段代码。”\nelif\n虽然只有 if 或 else 子句会被执行，但有时候可能你希望，“许多”可能的子句中有一个被执行。elif 语句是“否则如果”，总是跟在 if 或另一条 elif 语句后面。它提供了另一个条件，仅在前面的条件为 False 时才检查该条件。\nelif语句是：“如果第一个条件为真，做这个。否则，如果第二个条件为真，做那个。否则，做另外的事。“\n例如：\nage = int(input(\"请输入你的年龄：\"))\n\nif age &lt; 18:\n    print(\"你还未成年。\")\nelif age &lt; 60:\n    print(\"你已经成年了。\")\nelse:\n    print(\"你已经退休了。\")\n我们结合函数的概念来创建这样一个函数,逐行分析它的原理:\n\ndef  account_ login():\n          password  =  input( 'Password:' )\n          if  password  ==   '12345' :\n                  print( 'Login  success!' )\n          else :\n                  print( 'Wrong  password  or  invalid  input!' )\n                  account_ login()\naccount_login()\n第1行:定义函数,并不需要参数;\n第2行:使用input获得用户输入的字符串并储存在变量password中;\n第3、4行:设置条件,如果用户输入的字符串和预设的密码12345相等时,就执 行打印文本’Loginsuccess!’;\n第5、6行:反之,一切不等于预设密码的输入结果,全部会执行打印错误提示, 并且再次调用函数,让用户再次输入密码;\n第7行:运行函数。\n第8行:调用函数\n\n\n6.5.2 循环语句(Loop)\n循环语句用于重复执行某个代码块。\nwhile循环\n利用 while 语句，可以让一个代码块一遍又一遍的执行。只要 while 语句的条件为 True，while 子句中的代码就会执行。\nwhile 语句看起来和 if 语句类似。不同之处是它们的行为。if 子句结束时，程序继续执行 if 语句之后的语句。但在 while 子句结束时，程序执行跳回到 while 语句开始处。\n让我们来看一个 if 语句和一个 while 循环。它们使用同样的条件，并基于该条件做出同样的动作。下面是 if 语句的代码：\na = 0\n\nif a &lt; 5:\n\n   print('Hello, world.')\n\n   a = a + 1\n下面是 while 语句的代码：\na = 0\n\nwhile a &lt; 5:\n\n      print('Hello, world.')\n\n      a = a + 1\n这些语句类似，if 和 while 都检查 a 的值，如果它小于５，就打印一条消息。但如果运行这两段代码，它们各自的表现非常不同。对于 if 语句，输出就是”Hello, world.”。但对于 while 语句，输出是”Hello, world.”重复了 5 次！\n带有 if 语句的代码检查条件，如果条件为 True，就打印一次”Hello, world.”。带有 while 循环的代码则不同，会打印 5 次。打印 5 次后停下来是因为，在每次循环迭代末尾，spam 中的整数都增加 1。这意味着循环将执行 5 次，然后 spam &lt; 5 变为False。\n在 while 循环中，条件总是在每次“迭代”开始时检查（也就是每次循环执行时）。如果条件为 True，子句就会执行，然后，再次检查条件。当条件第一次为 False时，while 子句就跳过。\nfor 循环和 range()函数\n在条件为 True 时，while 循环就会继续循环（这是它的名称的由来）。但如果你想让一个代码块执行固定次数，该怎么办？可以通过 for 循环语句和 range()函数来实现。\nfor循环和while的相同点在于都能循环做一件重复的事情,不同点在于 for 循环会在可迭代 的序列被穷尽的时候停止,while则是在条件不成立的时候停止,因此 while 的作用概 括成一句话就是: 只要…条件成立,就一直做…。\n例如：\nfor i in range(5):\n    print(i)\n\ncount = 0\nwhile count &lt; 5:\n    print(count)\n    count += 1\n提示：只要能够使用for循环，就不要使用while循环。\n无限循环：(在这里先行提醒一下,一定要记得及时停止运行代码!)\nwhile   1  &lt;   3 :\nprint( '1 is smaller than 3')\n在 while 后面的表达式是永远成立的,所以print会一直进行下去直至你的CPU过热。这种条件永远为True的循环,我们称之为死循环(InfiniteLoop)。\n\n\n6.5.3 跳转语句\nbreak 语句\n但如果 while 循环不能像 for 循环那样,在集合被穷尽之后停下来,我们又怎么 样才能控制 while 循环呢？\n方法：\n让执行提前跳出 while 循环子句。如果执行遇到 break 语句，就会马上退出 while 循环子句。在代码中，break 语句仅包含 break 关键字。例如:\ncount  =  0\nwhile True :\n     print( 'Repeat this line !' )\n     count = count  +  1\n     if count == 5 :\n         break\ncontinue 语句\n像 break 语句一样，continue 语句用于循环内部。如果程序执行遇到 continue语句，就会马上跳回到循环开始处，重新对循环条件求值（这也是执行到达循环末尾时发生的事情）。"
   },
   {
     "objectID": "Python入门小白教程.html#列表list",
     "href": "Python入门小白教程.html#列表list",
-    "title": "3  Python基础",
-    "section": "6.1 列表（list）",
-    "text": "6.1 列表（list）\n列表（list）由一系列按特定顺序排列的元素组成，是有序的元素集合，可以添加、删除和修改元素。\n你可以创建包含字母表中所有字母、数字0~9或所有家庭成员姓名的列表；也可以将任何东西加入列表中，其中的元素之间可以没有任何关系。\n鉴于列表通常包含多个元素，给列表指定一个表示复数的名称（如letters、digits或names）是个不错的主意。\n在Python中，用方括号（[]）来表示列表，并用逗号来分隔其中的元素。\n访问列表元素\n列表是有序集合，因此要访问列表的任何元素，只需将该元素的位置或索引告诉Python即可。\n要访问列表元素，可指出列表的名称，再指出元素的索引，并将其放在方括号内。\n索引从 0 而不是 1 开始\n在Python中，第一个列表元素的索引为0，而不是1。在大多数编程语言中都是如此，这与列表操作的底层实现相关。\n使用列表中的各个值\n可像使用其他变量一样使用列表中的各个值。例如，你可以使用拼接根据列表中的值来创建消息。\n\n6.1.1 修改、添加和删除元素\n你创建的大多数列表都将是动态的，这意味着列表创建后，将随着程序的运行增删元素。\n修改列表元素\n修改列表元素的语法与访问列表元素的语法类似。要修改列表元素，可指定列表名和要修改的元素的索引，再指定该元素的新值。\n在列表中添加元素\n在列表中添加新元素时，最简单的方式是将元素附加到列表末尾。给列表附加元素时，它将添加到列表末尾。\n在列表中插入元素\n使用方法insert()可在列表的任何位置添加新元素。为此，你需要指定新元素的索引和值。\n从列表中删除元素\n你经常需要从列表中删除一个或多个元素，可以根据位置或值来删除列表中的元素。\n使用del语句删除元素\n如果知道要删除的元素在列表中的位置，可使用del语句。\n使用方法pop()删除元素\n方法pop()可删除列表末尾的元素，并让你能够接着使用它。术语弹出（pop）源自这样的类\n比：列表就像一个栈，而删除列表末尾的元素相当于弹出栈顶元素。\n弹出列表中任何位置处的元素\n实际上，你可以使用pop()来删除列表中任何位置的元素，只需在括号中指定要删除的元素的索引即可。别忘了，每当你使用pop()时，被弹出的元素就不再在列表中了。\n如果你不确定该使用del语句还是pop()方法，下面是一个简单的判断标准：如果你要从列表中删除一个元素，且不再以任何方式使用它，就使用del语句；如果你要在删除元素后还能继续使用它，就使用方法pop()。\n根据值删除元素\n有时候，你不知道要从列表中删除的值所处的位置。如果你只知道要删除的元素的值，可使用方法remove()。\n\n\n6.1.2 组织列表\n在你创建的列表中，元素的排列顺序常常是无法预测的，因为你并非总能控制用户提供数据的顺序。这虽然在大多数情况下都是不可避免的，但你经常需要以特定的顺序呈现信息。有时候，你希望保留列表元素最初的排列顺序，而有时候又需要调整排列顺序。Python提供了很多组织列表的方式，可根据具体情况选用。\n使用方法 sort()对列表进行永久性排序\nPython方法sort()让你能够较为轻松地对列表进行排序。假设你有一个汽车列表，并要让其中的汽车按字母顺序排列。为简化这项任务，我们假设该列表中的所有值都是小写的。\n方法sort()永久性地修改了列表元素的排列顺序。\n你还可以按与字母顺序相反的顺序排列列表元素，为此，只需向sort()方法传递参数reverse=True。\n使用函数 sorted()对列表进行临时排序\n要保留列表元素原来的排列顺序，同时以特定的顺序呈现它们，可使用函数sorted()。函数sorted()让你能够按特定顺序显示列表元素，同时不影响它们在列表中的原始排列顺序。\n我们首先按原始顺序打印列表，再按字母顺序显示该列表。以特定顺序显示列表后，我们进行核实，确认列表元素的排列顺序与以前相同。\n注意，调用函数sorted()后，列表元素的排列顺序并没有变。如果你要按与字母顺序相反的顺序显示列表，也可向函数sorted()传递参数reverse=True。\n倒着打印列表\n要反转列表元素的排列顺序，可使用方法reverse()。\n注意，reverse()不是指按与字母顺序相反的顺序排列列表元素，而只是反转列表元素的排列顺序：\n方法reverse()永久性地修改列表元素的排列顺序，但可随时恢复到原来的排列顺序，为此只需对列表再次调用reverse()即可。\n确定列表的长度\n使用函数len()可快速获悉列表的长度。\n注意:Python计算列表元素数时从1开始，因此确定列表长度时，你应该不会遇到差一错误。"
+    "title": "4  Python基础",
+    "section": "7.1 列表（list）",
+    "text": "7.1 列表（list）\n列表（list）由一系列按特定顺序排列的元素组成，是有序的元素集合，可以添加、删除和修改元素。\n你可以创建包含字母表中所有字母、数字0~9或所有家庭成员姓名的列表；也可以将任何东西加入列表中，其中的元素之间可以没有任何关系。\n鉴于列表通常包含多个元素，给列表指定一个表示复数的名称（如letters、digits或names）是个不错的主意。\n在Python中，用方括号（[]）来表示列表，并用逗号来分隔其中的元素。\n访问列表元素\n列表是有序集合，因此要访问列表的任何元素，只需将该元素的位置或索引告诉Python即可。\n要访问列表元素，可指出列表的名称，再指出元素的索引，并将其放在方括号内。\n索引从 0 而不是 1 开始\n在Python中，第一个列表元素的索引为0，而不是1。在大多数编程语言中都是如此，这与列表操作的底层实现相关。\n使用列表中的各个值\n可像使用其他变量一样使用列表中的各个值。例如，你可以使用拼接根据列表中的值来创建消息。\n\n7.1.1 修改、添加和删除元素\n你创建的大多数列表都将是动态的，这意味着列表创建后，将随着程序的运行增删元素。\n修改列表元素\n修改列表元素的语法与访问列表元素的语法类似。要修改列表元素，可指定列表名和要修改的元素的索引，再指定该元素的新值。\n在列表中添加元素\n在列表中添加新元素时，最简单的方式是将元素附加到列表末尾。给列表附加元素时，它将添加到列表末尾。\n在列表中插入元素\n使用方法insert()可在列表的任何位置添加新元素。为此，你需要指定新元素的索引和值。\n从列表中删除元素\n你经常需要从列表中删除一个或多个元素，可以根据位置或值来删除列表中的元素。\n使用del语句删除元素\n如果知道要删除的元素在列表中的位置，可使用del语句。\n使用方法pop()删除元素\n方法pop()可删除列表末尾的元素，并让你能够接着使用它。术语弹出（pop）源自这样的类\n比：列表就像一个栈，而删除列表末尾的元素相当于弹出栈顶元素。\n弹出列表中任何位置处的元素\n实际上，你可以使用pop()来删除列表中任何位置的元素，只需在括号中指定要删除的元素的索引即可。别忘了，每当你使用pop()时，被弹出的元素就不再在列表中了。\n如果你不确定该使用del语句还是pop()方法，下面是一个简单的判断标准：如果你要从列表中删除一个元素，且不再以任何方式使用它，就使用del语句；如果你要在删除元素后还能继续使用它，就使用方法pop()。\n根据值删除元素\n有时候，你不知道要从列表中删除的值所处的位置。如果你只知道要删除的元素的值，可使用方法remove()。\n\n\n7.1.2 组织列表\n在你创建的列表中，元素的排列顺序常常是无法预测的，因为你并非总能控制用户提供数据的顺序。这虽然在大多数情况下都是不可避免的，但你经常需要以特定的顺序呈现信息。有时候，你希望保留列表元素最初的排列顺序，而有时候又需要调整排列顺序。Python提供了很多组织列表的方式，可根据具体情况选用。\n使用方法 sort()对列表进行永久性排序\nPython方法sort()让你能够较为轻松地对列表进行排序。假设你有一个汽车列表，并要让其中的汽车按字母顺序排列。为简化这项任务，我们假设该列表中的所有值都是小写的。\n方法sort()永久性地修改了列表元素的排列顺序。\n你还可以按与字母顺序相反的顺序排列列表元素，为此，只需向sort()方法传递参数reverse=True。\n使用函数 sorted()对列表进行临时排序\n要保留列表元素原来的排列顺序，同时以特定的顺序呈现它们，可使用函数sorted()。函数sorted()让你能够按特定顺序显示列表元素，同时不影响它们在列表中的原始排列顺序。\n我们首先按原始顺序打印列表，再按字母顺序显示该列表。以特定顺序显示列表后，我们进行核实，确认列表元素的排列顺序与以前相同。\n注意，调用函数sorted()后，列表元素的排列顺序并没有变。如果你要按与字母顺序相反的顺序显示列表，也可向函数sorted()传递参数reverse=True。\n倒着打印列表\n要反转列表元素的排列顺序，可使用方法reverse()。\n注意，reverse()不是指按与字母顺序相反的顺序排列列表元素，而只是反转列表元素的排列顺序：\n方法reverse()永久性地修改列表元素的排列顺序，但可随时恢复到原来的排列顺序，为此只需对列表再次调用reverse()即可。\n确定列表的长度\n使用函数len()可快速获悉列表的长度。\n注意:Python计算列表元素数时从1开始，因此确定列表长度时，你应该不会遇到差一错误。"
   },
   {
     "objectID": "Python入门小白教程.html#元组tuple",
     "href": "Python入门小白教程.html#元组tuple",
-    "title": "3  Python基础",
-    "section": "6.2 元组（tuple）",
-    "text": "6.2 元组（tuple）\n元组是有序的元素集合，但是不可修改。\n列表非常适合用于存储在程序运行期间可能变化的数据集。列表是可以修改的，这对处理网站的用户列表或游戏中的角色列表至关重要。然而，有时候你需要创建一系列不可修改的元素，元组可以满足这种需求。Python将不能修改的值称为不可变的，而不可变的列表被称为元组。\n定义元组\n元组看起来犹如列表，但使用圆括号而不是方括号来标识。定义元组后，就可以使用索引来访问其元素，就像访问列表元素一样。\n当我们尝试用代码试图修改元组的元素时，Python会报告错误。\n修改元组变量\n虽然不能修改元组的元素，但可以给存储元组的变量赋值。\n相比于列表，元组是更简单的数据结构。如果需要存储的一组值在程序的整个生命周期内都不变，可使用元组。"
+    "title": "4  Python基础",
+    "section": "7.2 元组（tuple）",
+    "text": "7.2 元组（tuple）\n元组是有序的元素集合，但是不可修改。\n列表非常适合用于存储在程序运行期间可能变化的数据集。列表是可以修改的，这对处理网站的用户列表或游戏中的角色列表至关重要。然而，有时候你需要创建一系列不可修改的元素，元组可以满足这种需求。Python将不能修改的值称为不可变的，而不可变的列表被称为元组。\n定义元组\n元组看起来犹如列表，但使用圆括号而不是方括号来标识。定义元组后，就可以使用索引来访问其元素，就像访问列表元素一样。\n当我们尝试用代码试图修改元组的元素时，Python会报告错误。\n修改元组变量\n虽然不能修改元组的元素，但可以给存储元组的变量赋值。\n相比于列表，元组是更简单的数据结构。如果需要存储的一组值在程序的整个生命周期内都不变，可使用元组。"
   },
   {
     "objectID": "Python入门小白教程.html#集合set",
     "href": "Python入门小白教程.html#集合set",
-    "title": "3  Python基础",
-    "section": "6.3 集合（set）",
-    "text": "6.3 集合（set）\n集合(set)是一种可迭代的、无序的、不能包含重复元素的容器类型的数据。\n创建集合\n我们可以通过以下两种方式创建集合。\n\nset(iterable)函数：参数iterable是可迭代对象（字符串、列表、 元组、集合和字典等)。\n{元素1，元素2，元素3，…}：指定具体的集合元素，元素之间以 逗号分隔。对于集合元素，需要使用大括号括起来。\n\n修改集合\n修改集合类似于修改列表，可以向其中插入和删除元素。修改可变集合有如右所示的常用方法。\nadd（elem）：添加元素，如果元素已经存在，则不能添加，不会抛出错误。\nremove（elem）：删除元素，如果元素不存在，则抛出错误。\nclear（）：清除集合。"
+    "title": "4  Python基础",
+    "section": "7.3 集合（set）",
+    "text": "7.3 集合（set）\n集合(set)是一种可迭代的、无序的、不能包含重复元素的容器类型的数据。\n创建集合\n我们可以通过以下两种方式创建集合。\n\nset(iterable)函数：参数iterable是可迭代对象（字符串、列表、 元组、集合和字典等)。\n{元素1，元素2，元素3，…}：指定具体的集合元素，元素之间以 逗号分隔。对于集合元素，需要使用大括号括起来。\n\n修改集合\n修改集合类似于修改列表，可以向其中插入和删除元素。修改可变集合有如右所示的常用方法。\nadd（elem）：添加元素，如果元素已经存在，则不能添加，不会抛出错误。\nremove（elem）：删除元素，如果元素不存在，则抛出错误。\nclear（）：清除集合。"
   },
   {
     "objectID": "Python入门小白教程.html#字典dict",
     "href": "Python入门小白教程.html#字典dict",
-    "title": "3  Python基础",
-    "section": "6.4 字典（dict）",
-    "text": "6.4 字典（dict）\n字典（dict）：键值对集合，通过键来查找对应的值。\n字典是可迭代的、通过键（key）来访问元素的可变的容器类型的数据。\n字典由两部分视图构成：键视图和值视图。键视图不能包含重复的元素，值视图能。在键视图中，键和值是成对出现的。\n创建字典\n我们可以通过以下两种方法创建字典。\n\ndict（）函数。2 {key1：value1，key2：value2，…，key_n：value_n}：指定具体的字典键值对，键值对之间以逗号分隔，最后用大括号括起来。\n\n修改字典\n字典可以被修改，但都是针对键和值同时操作的，对字典的修改包括添加、替换和删除。\n访问字典视图\n我们可以通过字典中的三种方法访问字典视图。\nitems（）：返回字典的所有键值对视图。\nkeys（）：返回字典键视图。\nvalues（）：返回字典值视图。"
+    "title": "4  Python基础",
+    "section": "7.4 字典（dict）",
+    "text": "7.4 字典（dict）\n字典（dict）：键值对集合，通过键来查找对应的值。\n字典是可迭代的、通过键（key）来访问元素的可变的容器类型的数据。\n字典由两部分视图构成：键视图和值视图。键视图不能包含重复的元素，值视图能。在键视图中，键和值是成对出现的。\n创建字典\n我们可以通过以下两种方法创建字典。\n\ndict（）函数。2 {key1：value1，key2：value2，…，key_n：value_n}：指定具体的字典键值对，键值对之间以逗号分隔，最后用大括号括起来。\n\n修改字典\n字典可以被修改，但都是针对键和值同时操作的，对字典的修改包括添加、替换和删除。\n访问字典视图\n我们可以通过字典中的三种方法访问字典视图。\nitems（）：返回字典的所有键值对视图。\nkeys（）：返回字典键视图。\nvalues（）：返回字典值视图。"
   },
   {
     "objectID": "Python入门小白教程.html#举例说明",
     "href": "Python入门小白教程.html#举例说明",
-    "title": "3  Python基础",
-    "section": "6.5 举例说明",
-    "text": "6.5 举例说明\n# 列表\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfruits.append(\"orange\")\nprint(fruits)\n\n# 元组\ncoordinates = (1, 2, 3)\nprint(coordinates)\n\n# 集合\nunique_numbers = {1, 2, 3, 2, 1}\nprint(unique_numbers)\n\n# 字典\nperson = {\"name\": \"Alice\", \"age\": 30}\nprint(person[\"name\"])"
+    "title": "4  Python基础",
+    "section": "7.5 举例说明",
+    "text": "7.5 举例说明\n# 列表\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfruits.append(\"orange\")\nprint(fruits)\n\n# 元组\ncoordinates = (1, 2, 3)\nprint(coordinates)\n\n# 集合\nunique_numbers = {1, 2, 3, 2, 1}\nprint(unique_numbers)\n\n# 字典\nperson = {\"name\": \"Alice\", \"age\": 30}\nprint(person[\"name\"])"
+  },
+  {
+    "objectID": "环境搭建.html",
+    "href": "环境搭建.html",
+    "title": "3  环境搭建",
+    "section": "",
+    "text": "要开始使用Python，首先需要安装Python。你可以访问Python官网下载并安装适合你操作系统的Python版本。\n安装完成后，打开命令行（Windows）或终端（macOS/Linux），输入以下命令，确认Python已成功安装：\npython --version\n输入python并按回车键。你将看到一条欢迎消息，其末尾\n为如下提示符：\n&gt;&gt;&gt;\n如果情况确实如此，就可以输入Python命令了。\n请尝试像下面这样做，以核实它是否管用：\n&gt;&gt;&gt; print(“Hello, world!”)\n等你按下回车键后，将出现如下输出：\nHello, world!\n&gt;&gt;&gt;\n如果你熟悉其他计算机语言，可能习惯了在每行末尾都加上分号。在Python中无需这样做，因为在Python中，一行就是一行。接下来，我们将学习如何编写和运行Python程序。"
   }
 ]
