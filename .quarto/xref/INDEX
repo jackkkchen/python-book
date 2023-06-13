@@ -16,5 +16,14 @@
   },
   "环境搭建.qmd": {
     "环境搭建.html": "b5f3e131"
+  },
+  "pandas.qmd": {
+    "pandas.html": "8dd36fc7"
+  },
+  "test.ipynb": {
+    "test.html": "4ef0223c"
+  },
+  "快速入门.ipynb": {
+    "快速入门.html": "72e48bef"
   }
 }

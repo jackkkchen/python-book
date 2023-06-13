@@ -1,0 +1,51 @@
+---
+title: "Pandas入门"
+format:
+  html:
+    code-fold: true
+jupyter: python3=
+---
+
+## 安装
+### 使用Anaconda安装
+对于没有经验的小白来说，直接上手用代码来安装各种包可能有点困难，而[Anaconda](https://docs.continuum.io/free/anaconda/)作为一个发型平台，可以非常轻松的安装除了Pandas之外的各种Python包（IPython、NumPy、 Matplotlib等）
+
+详细的Anaconda安装步骤可以观看我的B站视频，或者[官方文档](https://docs.continuum.io/free/anaconda/install/)
+
+```{python}
+conda install pandas
+```
+
+<div style="position: relative; padding: 30% 45%;">
+<iframe style="position: absolute; width: 80%; height: 80%; left: 0; top: 0;" src="//player.bilibili.com/player.html?aid=980446298&bvid=BV1f44y1G73a&cid=569281368&page=1" frameborder="no" scrolling="no" allowfullscreen="true">
+</iframe>
+</div> 
+
+### 使用[PyPI](https://pypi.org/project/pandas/)中的 pip 安装
+
+```{python}
+pip install pandas
+```
+
+::: {.callout-tip}
+一般来说这是python自带的安装方式，但有时候你的虚拟环境没有或者服务器里的需要更新，可以[参考文档](https://pip.pypa.io/en/stable/installation/)
+:::
+
+
+You can turn parallel sections to tabs in `html_document` output.
+
+::: {.tabset}
+## Linux
+```{python}
+$ python -m ensurepip --upgrade
+```
+
+## MacOS
+```{python}
+$ python -m ensurepip --upgrade
+```
+## Windows
+```{python}
+C:> py -m ensurepip --upgrade
+```
+::: 
