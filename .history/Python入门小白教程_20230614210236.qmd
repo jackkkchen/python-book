@@ -331,7 +331,7 @@ print(greet(name))
 
 ```
 
-![](./img/logo.png)
+![image-20230527192028272](./img/logo.png)
 
 ### 向函数传递信息
 
