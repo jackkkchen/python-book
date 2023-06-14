@@ -1,4 +1,6 @@
-# Python基础 {.unnumbered}
+# Resources {.unnumbered}
+
+# Python基础
 
 ## **变量**
 

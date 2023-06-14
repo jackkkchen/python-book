@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: docs  
+  output-dir: docs
 
 execute:
   freeze: auto
@@ -23,19 +23,15 @@ book:
     - intro.qmd
     - 环境搭建.qmd
     - Python入门小白教程.qmd
-    - part: "Pandas入门教学"
-      chapters:
-        - 安装.ipynb
-        - 快速入门.ipynb
+    # - pandas.qmd
+    - 安装.ipynb
+    - 快速入门.ipynb
 
 format:
   html:
     theme: cosmo
     cover-image: "./img/logo.png"
     code-link: true
-  # ipynb:
-  #   number-sections: true
-
 
 
 

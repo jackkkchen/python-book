@@ -23,7 +23,7 @@ book:
     - intro.qmd
     - 环境搭建.qmd
     - Python入门小白教程.qmd
-    - part: "Pandas入门教学"
+    - part: "Pandas库"
       chapters:
         - 安装.ipynb
         - 快速入门.ipynb
