@@ -1386,7 +1386,7 @@ Note
 <h4 data-number="2.0.13.1" class="anchored" data-anchor-id="方法一-使用append方法"><span class="header-section-number">2.0.13.1</span> 方法一： 使用append方法</h4>
 <p><code>df = df.append(new_row, ignore_index=True)</code></p>
 <p>其中，new_row是一个包含新行数据的字典或Series对象。</p>
-<div class="cell" data-execution_count="90">
+<div class="cell" data-execution_count="100">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 重新选取数据</span></span>
@@ -1397,7 +1397,7 @@ Note
 <span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-execution_count="91">
+<div class="cell" data-execution_count="101">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#`ignore_index=True`是确保新行的索引与原始DataFrame的索引保持一致。</span></span>
@@ -1413,7 +1413,7 @@ Note
 The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
 </code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="91">
+<div class="cell-output cell-output-display" data-execution_count="101">
 <div>
 
 
@@ -1467,7 +1467,7 @@ The frame.append method is deprecated and will be removed from pandas in a futur
 <section id="方法二使用concat" class="level4" data-number="2.0.13.2">
 <h4 data-number="2.0.13.2" class="anchored" data-anchor-id="方法二使用concat"><span class="header-section-number">2.0.13.2</span> 方法二：使用concat()</h4>
 <p>先创建一个新的DataFrame，然后将其与原始DataFrame进行合并</p>
-<div class="cell" data-execution_count="93">
+<div class="cell" data-execution_count="102">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>new_row <span class="op">=</span> {<span class="st">'姓名'</span>: <span class="st">'熊二'</span>, <span class="st">'年龄'</span>: <span class="dv">30</span>, <span class="st">'性别'</span>: <span class="st">'M'</span>}</span>
@@ -1477,7 +1477,7 @@ The frame.append method is deprecated and will be removed from pandas in a futur
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat([df, new_df], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="93">
+<div class="cell-output cell-output-display" data-execution_count="102">
 <div>
 
 
@@ -1523,12 +1523,6 @@ The frame.append method is deprecated and will be removed from pandas in a futur
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
-<td>熊二</td>
-<td>30</td>
-<td>M</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
 <td>熊二</td>
 <td>30</td>
 <td>M</td>
