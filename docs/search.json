@@ -221,6 +221,6 @@
     "href": "快速入门.html#更好的数据可视化plotly",
     "title": "2  快速入门",
     "section": "更好的数据可视化(Plotly)",
-    "text": "更好的数据可视化(Plotly)\n前面我们有展示pandas自带的可视化效果，其实和matplotlib一样都是静态的图表（略显呆板…）\n这边我们极力推荐使用plotly.express，只需几行代码就可以实现酷炫交互式可视化。\n\npip安装conda安装\n\n\n$ pip install plotly\n\n\n$ conda install -c plotly plotly\n\n\n\nplotly.express是plotly的简化包，只需要1～2行就可以生成可视化图表，大家可以滑动鼠标，获取相对应的数据。\n\n\nCode\n# 可生成html进行展示\nimport plotly.express as px\nfig = px.bar(x=[\"a\", \"b\", \"c\"], y=[1, 3, 2])\nfig.write_html('first_figure.html', auto_open=True)\n\n\n\n\nCode\n# plotly离线版\nimport plotly.offline as py\npy.init_notebook_mode(connected=True)\nx1 = [1, 2, 3, 5, 6]\ny1 = [1, 4.5, 7, 24, 38]\ntrace1 = dict(x=x1, y=y1)\ndata = [trace1]\npy.iplot(data)"
+    "text": "更好的数据可视化(Plotly)\n前面我们有展示pandas自带的可视化效果，其实和matplotlib一样都是静态的图表（略显呆板…）\n这边我们极力推荐使用plotly.express，只需几行代码就可以实现酷炫交互式可视化。\n\npip安装conda安装\n\n\n$ pip install plotly\n\n\n$ conda install -c plotly plotly\n\n\n\nplotly.express是plotly的简化包，只需要1～2行就可以生成可视化图表，大家可以滑动鼠标，获取相对应的数据。官方文档\n\n\nCode\nimport plotly.express as px\nfig = px.bar(x=[\"a\", \"b\", \"c\"], y=[3, 1, 8])\nfig.show(renderer=\"notebook\")"
   }
 ]
