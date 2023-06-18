@@ -28,7 +28,7 @@ book:
         - 安装.ipynb
         - 快速入门.ipynb
         - zhizai.qmd
-        - time_data.qmd
+        - time_data.ipynb
         - txt_data.qmd
 
 format:
