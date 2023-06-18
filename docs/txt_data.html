@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; 安装</title>
+<title>5&nbsp; 使用Pandas处理文本数据</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./快速入门.html" rel="next">
-<link href="./Python入门小白教程.html" rel="prev">
+<link href="./time_data.ipynb" rel="prev">
 <link href="././img/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -109,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./安装.html">Pandas入门教学</a></li><li class="breadcrumb-item"><a href="./安装.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">安装</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./安装.html">Pandas入门教学</a></li><li class="breadcrumb-item"><a href="./txt_data.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">使用Pandas处理文本数据</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -201,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./安装.html" class="sidebar-item-text sidebar-link active">
+  <a href="./安装.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">安装</span></span></a>
   </div>
 </li>
@@ -213,14 +212,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./time_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">使用Pandas处理时间序列数据</span></span></a>
+  <a href="./zhizai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">如何计算汇总统计</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./txt_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">使用Pandas处理文本数据</span></a>
+  <a href="./txt_data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">使用Pandas处理文本数据</span></span></a>
   </div>
 </li>
       </ul>
@@ -235,17 +234,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#使用anaconda安装" id="toc-使用anaconda安装" class="nav-link active" data-scroll-target="#使用anaconda安装"><span class="header-section-number">1.0.1</span> 使用Anaconda安装</a></li>
-  <li><a href="#使用pypi中的-pip-安装" id="toc-使用pypi中的-pip-安装" class="nav-link" data-scroll-target="#使用pypi中的-pip-安装"><span class="header-section-number">1.0.2</span> 使用PyPI中的 pip 安装</a></li>
+  <li><a href="#文本格式大小写变换" id="toc-文本格式大小写变换" class="nav-link active" data-scroll-target="#文本格式大小写变换">1. 文本格式：大小写变换</a></li>
+  <li><a href="#文本拆分" id="toc-文本拆分" class="nav-link" data-scroll-target="#文本拆分">2. 文本拆分</a></li>
+  <li><a href="#文本包含" id="toc-文本包含" class="nav-link" data-scroll-target="#文本包含">3. 文本包含</a></li>
+  <li><a href="#文本格式计数" id="toc-文本格式计数" class="nav-link" data-scroll-target="#文本格式计数">4. 文本格式：计数</a></li>
+  <li><a href="#文本替换" id="toc-文本替换" class="nav-link" data-scroll-target="#文本替换">5. 文本替换</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/安装.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jackkkchen/python-book/edit/main/txt_data.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">安装</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">使用Pandas处理文本数据</span></h1>
 </div>
 
 
@@ -260,50 +262,120 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="使用anaconda安装" class="level3" data-number="1.0.1">
-<h3 data-number="1.0.1" class="anchored" data-anchor-id="使用anaconda安装"><span class="header-section-number">1.0.1</span> 使用Anaconda安装</h3>
-<p>对于没有经验的小白来说，直接上手用代码来安装各种包可能有点困难，而<a href="https://docs.continuum.io/free/anaconda/">Anaconda</a>作为一个发型平台，可以非常轻松的安装除了Pandas之外的各种Python包（IPython、NumPy、 Matplotlib等）</p>
-<p>详细的Anaconda安装步骤可以观看我的B站视频，或者<a href="https://docs.continuum.io/free/anaconda/install/">官方文档</a></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>conda install pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div style="position: relative; padding: 30% 45%;">
-<iframe style="position: absolute; width: 80%; height: 80%; left: 0; top: 0;" src="//player.bilibili.com/player.html?aid=980446298&amp;bvid=BV1f44y1G73a&amp;cid=569281368&amp;page=1" frameborder="no" scrolling="no" allowfullscreen="true">
-</iframe>
-</div>
+<p>在Pandas中，文本的主要两个类型是<code>string</code>和<code>object</code>。如果不特殊指定类型为<code>string</code>，文本类型一般为<code>object</code>。</p>
+<p>在通过访问器<code>str</code>实现对文本的操作之前，需要注意：</p>
+<ul>
+<li>要确保访问的对象类型是字符串<code>str</code>类型，如果不是，需要使用<code>astype(str)</code>转换类型</li>
+<li>访问器只能对<code>Series</code>数据结构使用，可以多个连接使用。</li>
+</ul>
+<section id="文本格式大小写变换" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="文本格式大小写变换">1. 文本格式：大小写变换</h3>
+<p>在 Pandas 中，可以使用字符串方法 <code>str.lower()</code> 和 <code>str.upper()</code> 对文本数据进行大小写转换。这些方法可以应用于 Pandas 的 <code>Series</code>或<code>DataFrame</code>列中的文本数据，以将其转换为小写或大写形式。</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 字符全部变成小写</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>s.<span class="bu">str</span>.lower()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 字符全部大写</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>s.<span class="bu">str</span>.upper()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 每个单词首字母大写</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>s.<span class="bu">str</span>.title()</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 字符串第一个字母大写</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>s.<span class="bu">str</span>.capitalize()</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 大小写字母转换</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>s.<span class="bu">str</span>.swapcase()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="使用pypi中的-pip-安装" class="level3" data-number="1.0.2">
-<h3 data-number="1.0.2" class="anchored" data-anchor-id="使用pypi中的-pip-安装"><span class="header-section-number">1.0.2</span> 使用<a href="https://pypi.org/project/pandas/">PyPI</a>中的 pip 安装</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pip install pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>一般来说这是python自带的安装方式，但有时候你的虚拟环境没有或者服务器里的需要更新，可以<a href="https://pip.pypa.io/en/stable/installation/">参考文档</a></p>
-</div>
-</div>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">MacOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<pre class="{python}"><code>$ python -m ensurepip --upgrade</code></pre>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<pre class="{python}"><code>$ python -m ensurepip --upgrade</code></pre>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<pre class="{python}"><code>C:&gt; py -m ensurepip --upgrade</code></pre>
-</div>
-</div>
-</div>
+<section id="文本拆分" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="文本拆分">2. 文本拆分</h3>
+<p>在 Pandas 中，可以使用字符串方法 <code>str.split()</code> 对文本数据进行拆分。该方法可以将字符串按指定的分隔符拆分为多个部分，并返回一个包含拆分结果的 <code>Series</code>或<code>DataFrame</code>列。</p>
+<p>在对文本进行拆分时，可以使用<code>expand</code>参数将拆分出来的内容单独成列，使用<code>n</code>参数指定拆分的位置来控制形成几列。在对文本进行拆分以后，也可以使用<code>get</code>方法提取相关部分单独成列。</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用方法</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>s.<span class="bu">str</span>.split(<span class="st">'x'</span>, expand<span class="op">=</span><span class="va">True</span>, n<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 示例</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个包含文本数据的 DataFrame</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'Text'</span>: [<span class="st">'Hello World'</span>, <span class="st">'Python Programming'</span>, <span class="st">'Data Science'</span>]}</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 拆分文本并形成新列</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'Word1'</span>, <span class="st">'Word2'</span>]] <span class="op">=</span> df[<span class="st">'Text'</span>].<span class="bu">str</span>.split(<span class="st">' '</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 输出结果</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#                 Text    Word1        Word2</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 0        Hello World    Hello        World</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 1  Python Programming   Python  Programming</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 2       Data Science      Data      Science</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>要进行更复杂的拆分可以借助正则表达式，如：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>s.<span class="bu">str</span>.split(<span class="st">'\@|\.'</span>, expand<span class="op">=</span><span class="va">True</span>, n<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="文本包含" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="文本包含">3. 文本包含</h3>
+<p>在 Pandas 中，可以使用字符串方法 <code>str.contains()</code> 来判断文本数据是否包含指定的子串。这个方法返回一个布尔值的 <code>Series</code>或<code>DataFrame</code>列，用于表示每个元素是否包含指定的子串。，一般配合<code>loc</code>查询功能使用可搭配的参数有：</p>
+<ul>
+<li><code>pat</code>: 匹配字符串，支持正则表达式</li>
+<li><code>case</code>: 是否区分大小写，<code>True</code>表示区别</li>
+<li><code>flags</code>: 正则库<code>re</code>中的标识，比如<code>re.IGNORECASE</code></li>
+<li><code>na</code>: 对缺失值填充</li>
+<li><code>regex</code>: 是否支持正则，默认<code>True</code>支持</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用方法</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>s.<span class="bu">str</span>.contains(<span class="st">""</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 示例</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 判断文本是否包含特定子串，并创建新列</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Contains_Python'</span>] <span class="op">=</span> df[<span class="st">'Text'</span>].<span class="bu">str</span>.contains(<span class="st">'Python'</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 输出结果</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#                 Text  Contains_Python</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 0        Hello World            False</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 1  Python Programming             True</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 2       Data Science            False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="文本格式计数" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="文本格式计数">4. 文本格式：计数</h3>
+<p>在 Pandas 中，可以使用字符串方法 <code>str.count()</code> 计算文本数据中指定子串的出现次数，同时可以使用字符串方法 <code>str.len()</code> 计量文本的长度。这两个方法可以方便地对文本数据进行计数和测量长度的操作。</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用方法</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>s.<span class="bu">str</span>.count(<span class="st">''</span>) <span class="co"># 字符串种包括指定字母的数量</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>s.<span class="bu">str</span>.<span class="bu">len</span>() <span class="co"># 字符串长度</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 示例</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 计算指定子串的出现次数，并创建新列</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Count_o'</span>] <span class="op">=</span> df[<span class="st">'Text'</span>].<span class="bu">str</span>.count(<span class="st">'o'</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 计量文本长度，并创建新列</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Text_length'</span>] <span class="op">=</span> df[<span class="st">'Text'</span>].<span class="bu">str</span>.<span class="bu">len</span>()</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 输出结果</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">#                 Text  Count_o  Text_length</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 0        Hello World        2           11</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 1  Python Programming        2           19</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 2       Data Science        0           12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="文本替换" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="文本替换">5. 文本替换</h3>
+<p>文本替换通常使用<code>replace</code>方法进行，可选参数如下：</p>
+<ul>
+<li><code>pal</code>：为被替代的内容字符串，也可以为正则表达式</li>
+<li><code>repl</code>：为新内容字符串，也可以是一个被调用的函数</li>
+<li><code>regex</code>：用于设置是否支持正则，默认是<code>True</code></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用方法</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>s.<span class="bu">str</span>.replace(<span class="st">"s"</span>:<span class="st">"S"</span>, <span class="st">"f"</span>:<span class="st">"F"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 示例</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 将指定子串替换为新值，并创建新列</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'New_Text'</span>] <span class="op">=</span> df[<span class="st">'Text'</span>].<span class="bu">str</span>.replace(<span class="st">'o'</span>, <span class="st">'x'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 输出结果</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#                 Text            New_Text</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 0        Hello World        Hellx Wxrld</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 1  Python Programming  Pythxn Prxgramming</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 2       Data Science       Data Science</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -544,14 +616,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Python入门小白教程.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Python基础</span>
+      <a href="./time_data.ipynb" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./快速入门.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">快速入门</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
