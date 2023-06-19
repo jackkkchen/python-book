@@ -8,10 +8,10 @@ execute:
   freeze: auto
 
 book:
-  title: "Python新手文档"
-  author: "明数科技"
+  title: Python新手文档
   favicon: "./img/logo.png"
   cover-image: "./img/logo.png"
+  author: "明数科技"
   back-to-top-navigation: true
   page-navigation: true
   search: true

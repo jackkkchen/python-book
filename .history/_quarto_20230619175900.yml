@@ -8,23 +8,25 @@ execute:
   freeze: auto
 
 book:
-  title: "Python新手文档"
-  author: "明数科技"
+  title: Python入门学习指南:从编程小白到掌握Pandas
   favicon: "./img/logo.png"
   cover-image: "./img/logo.png"
+  author: "明数科技"
   back-to-top-navigation: true
   page-navigation: true
   search: true
   # reader-mode: true  
 
-  # sidebar:
-  #   style: "docked"
-  #   background: light
-  #   tools:
-  #     - text: Bilibili 
-  #       href: https://space.bilibili.com/22770928?spm_id_from=333.33.b_73656375726974794f75744c696e6b.1
-  #     - icon: github
-  #       url:  https://github.com/jackkkchen/python-book
+  sidebar:
+    style: "docked"
+    background: light
+    tools:
+      - text: Bilibili 
+        href: https://space.bilibili.com/22770928?spm_id_from=333.33.b_73656375726974794f75744c696e6b.1
+      - icon: github
+        url:  https://github.com/jackkkchen/python-book
+
+
 
   # date: "5/25/2023"
   repo-url: https://github.com/jackkkchen/python-book
