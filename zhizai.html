@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; 如何计算汇总统计</title>
+<title>6&nbsp; 如何计算汇总统计</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./time_data.html" rel="next">
-<link href="./快速入门.html" rel="prev">
+<link href="./添加新列.html" rel="prev">
 <link href="././img/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -100,7 +100,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./安装.html">Pandas入门教学</a></li><li class="breadcrumb-item"><a href="./zhizai.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">如何计算汇总统计</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./安装.html">Pandas快速入门</a></li><li class="breadcrumb-item"><a href="./zhizai.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">如何计算汇总统计</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -121,14 +121,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
         <div class="sidebar-tools-collapse tools-wide">
-    <a href="https://github.com/jackkkchen/python-book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://space.bilibili.com/22770928?spm_id_from=333.33.b_73656375726974794f75744c696e6b.1" title="Bilibili" class="quarto-navigation-tool px-1" aria-label="Bilibili"><i class="bi bi-"></i></a>
+    <a href="https://github.com/jackkkchen/python-book" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -146,30 +147,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </li>
       </ul>
     </div>
-    <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
-          <li>
-            <a class="dropdown-item sidebar-tools-collapse-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
-            Twitter
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-collapse-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
-            Facebook
-            </a>
-          </li>
-      </ul>
-    </div>
 </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python入门小白教程</span></a>
+ <span class="menu-text">Python入门学习指南：从编程小白到掌握Pandas</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -193,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Pandas入门教学</span></a>
+ <span class="menu-text">Pandas快速入门</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -202,31 +186,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./安装.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">安装</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Pandas安装</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./快速入门.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">快速入门</span></span></a>
+  <a href="./pandas处理什么样的数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">pandas处理什么样的数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./导入&amp;导出数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">导入&amp;导出数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./更好的数据可视化.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">更好的数据可视化(Plotly)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./添加新列.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">增删排序(DataFrame)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./zhizai.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">如何计算汇总统计</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">如何计算汇总统计</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./time_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">使用Pandas处理时间序列数据</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">使用Pandas处理时间序列数据</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./txt_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">使用Pandas处理文本数据</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">使用Pandas处理文本数据</span></span></a>
   </div>
 </li>
       </ul>
@@ -241,32 +243,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#describe的用法" id="toc-describe的用法" class="nav-link active" data-scroll-target="#describe的用法"><span class="header-section-number">3.0.1</span> describe()的用法</a></li>
-  <li><a href="#size和count" id="toc-size和count" class="nav-link" data-scroll-target="#size和count"><span class="header-section-number">3.0.2</span> size和count</a></li>
-  <li><a href="#如何重塑表格布局" id="toc-如何重塑表格布局" class="nav-link" data-scroll-target="#如何重塑表格布局"><span class="header-section-number">4</span> 如何重塑表格布局</a>
+  <li><a href="#describe的用法" id="toc-describe的用法" class="nav-link active" data-scroll-target="#describe的用法">describe()的用法</a></li>
+  <li><a href="#size和count" id="toc-size和count" class="nav-link" data-scroll-target="#size和count">size和count</a></li>
+  <li><a href="#如何重塑表格布局" id="toc-如何重塑表格布局" class="nav-link" data-scroll-target="#如何重塑表格布局">如何重塑表格布局</a>
   <ul class="collapse">
-  <li><a href="#sort的用法" id="toc-sort的用法" class="nav-link" data-scroll-target="#sort的用法"><span class="header-section-number">4.0.1</span> sort的用法</a></li>
-  <li><a href="#pivot方法" id="toc-pivot方法" class="nav-link" data-scroll-target="#pivot方法"><span class="header-section-number">4.0.2</span> pivot()方法</a></li>
-  <li><a href="#melt方法" id="toc-melt方法" class="nav-link" data-scroll-target="#melt方法"><span class="header-section-number">4.0.3</span> melt()方法</a></li>
-  <li><a href="#stack方法" id="toc-stack方法" class="nav-link" data-scroll-target="#stack方法"><span class="header-section-number">4.0.4</span> stack()方法</a></li>
-  <li><a href="#unstack方法" id="toc-unstack方法" class="nav-link" data-scroll-target="#unstack方法"><span class="header-section-number">4.0.5</span> unstack()方法</a></li>
+  <li><a href="#sort的用法" id="toc-sort的用法" class="nav-link" data-scroll-target="#sort的用法">sort的用法</a></li>
+  <li><a href="#pivot方法" id="toc-pivot方法" class="nav-link" data-scroll-target="#pivot方法">pivot()方法</a></li>
+  <li><a href="#melt方法" id="toc-melt方法" class="nav-link" data-scroll-target="#melt方法">melt()方法</a></li>
+  <li><a href="#stack方法" id="toc-stack方法" class="nav-link" data-scroll-target="#stack方法">stack()方法</a></li>
+  <li><a href="#unstack方法" id="toc-unstack方法" class="nav-link" data-scroll-target="#unstack方法">unstack()方法</a></li>
   </ul></li>
-  <li><a href="#如何合并多个表中的数据" id="toc-如何合并多个表中的数据" class="nav-link" data-scroll-target="#如何合并多个表中的数据"><span class="header-section-number">5</span> 如何合并多个表中的数据</a>
+  <li><a href="#如何合并多个表中的数据" id="toc-如何合并多个表中的数据" class="nav-link" data-scroll-target="#如何合并多个表中的数据">如何合并多个表中的数据</a>
   <ul class="collapse">
-  <li><a href="#concat方法" id="toc-concat方法" class="nav-link" data-scroll-target="#concat方法"><span class="header-section-number">5.0.1</span> concat()方法</a></li>
-  <li><a href="#merge方法" id="toc-merge方法" class="nav-link" data-scroll-target="#merge方法"><span class="header-section-number">5.0.2</span> merge()方法</a></li>
-  <li><a href="#join方法" id="toc-join方法" class="nav-link" data-scroll-target="#join方法"><span class="header-section-number">5.0.3</span> join()方法</a></li>
-  <li><a href="#补充ttranspose转置" id="toc-补充ttranspose转置" class="nav-link" data-scroll-target="#补充ttranspose转置"><span class="header-section-number">5.0.4</span> 补充：T（Transpose）转置</a></li>
+  <li><a href="#concat方法" id="toc-concat方法" class="nav-link" data-scroll-target="#concat方法">concat()方法</a></li>
+  <li><a href="#merge方法" id="toc-merge方法" class="nav-link" data-scroll-target="#merge方法">merge()方法</a></li>
+  <li><a href="#join方法" id="toc-join方法" class="nav-link" data-scroll-target="#join方法">join()方法</a></li>
+  <li><a href="#补充ttranspose转置" id="toc-补充ttranspose转置" class="nav-link" data-scroll-target="#补充ttranspose转置">补充：T（Transpose）转置</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jackkkchen/python-book/edit/main/zhizai.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">如何计算汇总统计</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">如何计算汇总统计</span></h1>
 </div>
 
 
@@ -281,8 +283,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="describe的用法" class="level3" data-number="3.0.1">
-<h3 data-number="3.0.1" class="anchored" data-anchor-id="describe的用法"><span class="header-section-number">3.0.1</span> describe()的用法</h3>
+<section id="describe的用法" class="level3">
+<h3 class="anchored" data-anchor-id="describe的用法">describe()的用法</h3>
 <p>在Pandas中，您可以使用<code>describe()</code>方法查看数值型列的汇总统计信息。这个方法提供了关于数据分布的有用统计量，包括计数、平均值、标准差、最小值、25%、50%和75%的分位数，以及最大值。</p>
 <p>示例代码：</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -333,8 +335,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>通过查看数值型列的汇总统计，可以快速了解数据的整体分布和统计特征，有助于进行数据分析和洞察。</p>
 </section>
-<section id="size和count" class="level3" data-number="3.0.2">
-<h3 data-number="3.0.2" class="anchored" data-anchor-id="size和count"><span class="header-section-number">3.0.2</span> size和count</h3>
+<section id="size和count" class="level3">
+<h3 class="anchored" data-anchor-id="size和count">size和count</h3>
 <p>在Pandas中，<code>size</code>和<code>count</code>是用于计算分组数据的两个方法，常常与<code>groupby</code>一起使用。它们可以提供关于每个分组的计数信息，但在计算方式和返回结果上有一些区别。</p>
 <p><strong>size方法：</strong></p>
 <ul>
@@ -379,10 +381,10 @@ Group
 A          2
 B          2</code></pre>
 </section>
-<section id="如何重塑表格布局" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> 如何重塑表格布局</h1>
-<section id="sort的用法" class="level3" data-number="4.0.1">
-<h3 data-number="4.0.1" class="anchored" data-anchor-id="sort的用法"><span class="header-section-number">4.0.1</span> sort的用法</h3>
+<section id="如何重塑表格布局" class="level1">
+<h1>如何重塑表格布局</h1>
+<section id="sort的用法" class="level3">
+<h3 class="anchored" data-anchor-id="sort的用法">sort的用法</h3>
 <p>在Pandas中，<code>sort_values</code>和<code>sort_index</code>是用于对DataFrame或Series进行排序的两个常用方法。</p>
 <ol type="1">
 <li><p><code>sort_values</code>方法：</p>
@@ -416,8 +418,8 @@ B          2</code></pre>
 <hr>
 <p>在Pandas中，可以使用不同的方法来重新塑造（reshape）表格布局，以满足特定的数据分析和处理需求。以下是一些常用的重塑表格布局的方法：</p>
 </section>
-<section id="pivot方法" class="level3" data-number="4.0.2">
-<h3 data-number="4.0.2" class="anchored" data-anchor-id="pivot方法"><span class="header-section-number">4.0.2</span> pivot()方法</h3>
+<section id="pivot方法" class="level3">
+<h3 class="anchored" data-anchor-id="pivot方法">pivot()方法</h3>
 <p><code>pivot()</code>方法：用于将长格式（long format）的数据转换为宽格式（wide format），根据指定的列创建新的列，并使用列值进行填充。</p>
 <p>示例，展示如何使用<code>pivot()</code>方法将数据从长格式转换为宽格式：</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -438,8 +440,8 @@ B          2</code></pre>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>Emma       <span class="dv">78</span>       <span class="dv">88</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>John       <span class="dv">85</span>       <span class="dv">92</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="melt方法" class="level3" data-number="4.0.3">
-<h3 data-number="4.0.3" class="anchored" data-anchor-id="melt方法"><span class="header-section-number">4.0.3</span> melt()方法</h3>
+<section id="melt方法" class="level3">
+<h3 class="anchored" data-anchor-id="melt方法">melt()方法</h3>
 <p>在Pandas中，<code>melt()</code>是一个用于将宽格式（wide format）的数据转换为长格式（long format）的方法。它将数据从列中展开成为更长的格式，使得数据更适合进行分析和可视化。</p>
 <p><code>melt()</code>方法的语法如下：</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>DataFrame.melt(id_vars<span class="op">=</span><span class="va">None</span>, value_vars<span class="op">=</span><span class="va">None</span>, var_name<span class="op">=</span><span class="va">None</span>, value_name<span class="op">=</span><span class="st">'value'</span>, col_level<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -489,8 +491,8 @@ B          2</code></pre>
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span>      Bob  <span class="bu">History</span>     <span class="dv">82</span></span>
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>  Charlie  <span class="bu">History</span>     <span class="dv">72</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="stack方法" class="level3" data-number="4.0.4">
-<h3 data-number="4.0.4" class="anchored" data-anchor-id="stack方法"><span class="header-section-number">4.0.4</span> stack()方法</h3>
+<section id="stack方法" class="level3">
+<h3 class="anchored" data-anchor-id="stack方法">stack()方法</h3>
 <ol type="1">
 <li><code>stack()</code>方法：</li>
 </ol>
@@ -536,8 +538,8 @@ B          2</code></pre>
 <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>    Bob  Science  <span class="dv">85</span></span>
 <span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>    Bob  <span class="bu">History</span>  <span class="dv">82</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="unstack方法" class="level3" data-number="4.0.5">
-<h3 data-number="4.0.5" class="anchored" data-anchor-id="unstack方法"><span class="header-section-number">4.0.5</span> unstack()方法</h3>
+<section id="unstack方法" class="level3">
+<h3 class="anchored" data-anchor-id="unstack方法">unstack()方法</h3>
 <p>在Pandas中，<code>unstack()</code>是用于将表格中的行索引转换为列索引，将数据从长格式转换为宽格式。</p>
 <p><code>unstack()</code>方法的语法如下：</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>DataFrame.unstack(level<span class="op">=-</span><span class="dv">1</span>, fill_value<span class="op">=</span><span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -581,11 +583,11 @@ B          2</code></pre>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>Bob       <span class="kw">NaN</span>      <span class="dv">80</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="如何合并多个表中的数据" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> 如何合并多个表中的数据</h1>
+<section id="如何合并多个表中的数据" class="level1">
+<h1>如何合并多个表中的数据</h1>
 <p>在Pandas中，可以使用不同的方法来合并（merge）多个表中的数据。以下是一些常用的合并数据的方法：</p>
-<section id="concat方法" class="level3" data-number="5.0.1">
-<h3 data-number="5.0.1" class="anchored" data-anchor-id="concat方法"><span class="header-section-number">5.0.1</span> concat()方法</h3>
+<section id="concat方法" class="level3">
+<h3 class="anchored" data-anchor-id="concat方法">concat()方法</h3>
 <p>在Pandas中，<code>concat()</code>是一个用于沿指定轴（行或列）将多个DataFrame对象进行合并的方法。它可以将多个DataFrame对象按照指定的方式进行连接，并返回一个合并后的DataFrame。以下是关于<code>concat()</code>方法的解释和示例说明：</p>
 <p><code>concat()</code>方法的语法如下：</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pd.concat(objs, axis<span class="op">=</span><span class="dv">0</span>, join<span class="op">=</span><span class="st">'outer'</span>, ignore_index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -618,8 +620,8 @@ B          2</code></pre>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>1  8  11</span>
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>2  9  12</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="merge方法" class="level3" data-number="5.0.2">
-<h3 data-number="5.0.2" class="anchored" data-anchor-id="merge方法"><span class="header-section-number">5.0.2</span> merge()方法</h3>
+<section id="merge方法" class="level3">
+<h3 class="anchored" data-anchor-id="merge方法">merge()方法</h3>
 <p>在Pandas中，<code>merge()</code>是一个用于合并（或连接）多个DataFrame对象的方法。它基于指定的键（或多个键）将多个DataFrame按照指定的方式进行连接，并返回一个合并后的DataFrame。</p>
 <p><code>merge()</code>方法的语法如下：</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>pd.merge(left, right, how<span class="op">=</span><span class="st">'inner'</span>, on<span class="op">=</span><span class="va">None</span>, left_on<span class="op">=</span><span class="va">None</span>, right_on<span class="op">=</span><span class="va">None</span>, left_index<span class="op">=</span><span class="va">False</span>, right_index<span class="op">=</span><span class="va">False</span>, sort<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -653,8 +655,8 @@ B          2</code></pre>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>  <span class="dv">2</span>  <span class="dv">5</span>  K2  <span class="dv">7</span>  <span class="dv">10</span></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>  <span class="dv">3</span>  <span class="dv">6</span>  K3  <span class="dv">8</span>  <span class="dv">11</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="join方法" class="level3" data-number="5.0.3">
-<h3 data-number="5.0.3" class="anchored" data-anchor-id="join方法"><span class="header-section-number">5.0.3</span> join()方法</h3>
+<section id="join方法" class="level3">
+<h3 class="anchored" data-anchor-id="join方法">join()方法</h3>
 <p>在Pandas中，<code>join()</code>是一个用于基于索引或列之间的关系将两个DataFrame对象进行连接的方法。它类似于SQL中的JOIN操作，可以根据指定的连接键将两个DataFrame进行合并，并返回一个合并后的DataFrame。</p>
 <p><code>join()</code>方法的语法如下：</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>DataFrame.join(other, on<span class="op">=</span><span class="va">None</span>, how<span class="op">=</span><span class="st">'left'</span>, lsuffix<span class="op">=</span><span class="st">''</span>, rsuffix<span class="op">=</span><span class="st">''</span>, sort<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -686,8 +688,8 @@ B          2</code></pre>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>K2   <span class="dv">2</span>    <span class="dv">5</span>  <span class="fl">7.0</span>  <span class="fl">10.0</span></span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>K3   <span class="dv">3</span>    <span class="dv">6</span>  <span class="fl">8.0</span>  <span class="fl">11.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="补充ttranspose转置" class="level3" data-number="5.0.4">
-<h3 data-number="5.0.4" class="anchored" data-anchor-id="补充ttranspose转置"><span class="header-section-number">5.0.4</span> 补充：T（Transpose）转置</h3>
+<section id="补充ttranspose转置" class="level3">
+<h3 class="anchored" data-anchor-id="补充ttranspose转置">补充：T（Transpose）转置</h3>
 <p>在Pandas中，T（Transpose）是一个用于转置数据的方法。转置操作会将DataFrame或Series的行和列进行交换，从而生成一个新的转置后的数据结构。以下是关于Pandas中的T转置的一些知识点：</p>
 <ol type="1">
 <li><p>DataFrame的转置： 转置DataFrame时，行索引将会变成转置前的列索引，列索引将会变成转置前的行索引。可以使用<code>T</code>方法来执行转置操作，例如：</p>
@@ -947,13 +949,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./快速入门.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">快速入门</span></span>
+      <a href="./添加新列.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">增删排序(DataFrame)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./time_data.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">使用Pandas处理时间序列数据</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">使用Pandas处理时间序列数据</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
