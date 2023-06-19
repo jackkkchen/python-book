@@ -29,7 +29,7 @@ book:
 
   # date: "5/25/2023"
   # repo-actions: [edit]
-  downloads: [pdf, epub]
+  # downloads: [pdf, epub]
   # sharing: [twitter, facebook]
 
   chapters:

@@ -29,7 +29,7 @@ book:
 
   # date: "5/25/2023"
   # repo-actions: [edit]
-  downloads: [pdf, epub]
+  # downloads: [pdf, epub]
   # sharing: [twitter, facebook]
 
   chapters:
@@ -55,7 +55,7 @@ format:
     cover-image: "./img/logo.png"
     code-copy: true
     code-link: true
-  # pdf: default
+  pdf: default
   # ipynb:
   #   number-sections: true
 
