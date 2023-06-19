@@ -57,7 +57,7 @@ df
 
 将字符串数据转换为`datetime64`对象后，这些时间日期数据就具有了可比性，这样一来，我们就可以用它们来获取时间序列的长度。
 
-```python
+```{python}
 # 计算时间序列的长度
 time_length = df['date'].max() - df['date'].min()
 
