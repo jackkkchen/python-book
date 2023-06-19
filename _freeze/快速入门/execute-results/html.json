@@ -1,0 +1,15 @@
+{
+  "hash": "923e90355f3e97fab889ced2a1fbd0ed",
+  "result": {
+    "markdown": "::: {.cell execution_count=1}\n``` {.python .cell-code}\n# 1. 导入pandas包\nimport pandas as pd\n\n# 2. 假设data数据\ndata = {\n  \"calories\": [420, 380, 390],\n  \"duration\": [50, 40, 45]\n}\n\n# 3. 假设df，然后调用pd(pandas包)，将数据转换为DataFrame格式\ndf = pd.DataFrame(data)\n\n# 4. 打印df\ndf\n```\n\n::: {.cell-output .cell-output-display execution_count=1}\n```{=html}\n<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>calories</th>\n      <th>duration</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>420</td>\n      <td>50</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>380</td>\n      <td>40</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>390</td>\n      <td>45</td>\n    </tr>\n  </tbody>\n</table>\n</div>\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "快速入门_files"
+    ],
+    "filters": [],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js\" integrity=\"sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==\" crossorigin=\"anonymous\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\" integrity=\"sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==\" crossorigin=\"anonymous\"></script>\n<script type=\"application/javascript\">define('jquery', [],function() {return window.jQuery;})</script>\n"
+      ]
+    }
+  }
+}
