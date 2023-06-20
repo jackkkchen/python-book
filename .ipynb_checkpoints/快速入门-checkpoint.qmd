@@ -1,0 +1,16 @@
+```{python}
+# 1. 导入pandas包
+import pandas as pd
+
+# 2. 假设data数据
+data = {
+  "calories": [420, 380, 390],
+  "duration": [50, 40, 45]
+}
+
+# 3. 假设df，然后调用pd(pandas包)，将数据转换为DataFrame格式
+df = pd.DataFrame(data)
+
+# 4. 打印df
+df
+```

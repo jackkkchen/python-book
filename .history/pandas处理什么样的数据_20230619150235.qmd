@@ -1,0 +1,18 @@
+---
+title: "快速入门"
+format:
+  html:
+   code-fold: true
+   code-tools: true
+jupyter: python3
+---
+
+## Pandas 处理什么样的数据？ {.unnumbered}
+大家在前面可能已经学习了python的用法，但是那些各种各样的数据该怎么用python来处理呢？或者说python跟其他像 SQL、JAVA或者R这些语言，在数据处理方面又有什么不同呢？
+
+首先这个Pandas是Python的一个库，专门用于数据处理和分析。它提供了高性能、灵活和易于使用的数据结构，包括数据导入、清洗、转换、分析和可视化，是非常适用于处理结构化和表格化的数据。pandas在数据科学、金融分析、商业智能等领域得到广泛应用。对于不同的数据结构下面进行举例（附上相关案例链接）
+
+::: {.callout-tip}
+一个免费的[Python在线编辑器](https://onecompiler.com/python)，别等啦！快打开来试试✌️
+:::
+
