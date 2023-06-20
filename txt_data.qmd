@@ -11,16 +11,30 @@
 在 Pandas 中，可以使用字符串方法 `str.lower()` 和 `str.upper()` 对文本数据进行大小写转换。这些方法可以应用于 Pandas 的 `Series `或` DataFrame `列中的文本数据，以将其转换为小写或大写形式。
 
 ```python
+import pandas as pd
+
+# 创建示例数据
+data = {'text': ['Hello World', 'Welcome to Pandas', 'Text Processing']}
+df = pd.DataFrame(data)
+
 # 字符全部变成小写
-s.str.lower()
-# 字符全部大写
-s.str.upper()
+df['lowercase'] = df['text'].str.lower()
+
+# 字符全部变成大写
+df['uppercase'] = df['text'].str.upper()
+
 # 每个单词首字母大写
-s.str.title()
-# 字符串第一个字母大写
-s.str.capitalize()
+df['titlecase'] = df['text'].str.title()
+
+# 字符串第一个字母大写，其余小写
+df['capitalize'] = df['text'].str.capitalize()
+
 # 大小写字母转换
-s.str.swapcase()
+df['swapcase'] = df['text'].str.swapcase()
+
+# 打印处理后的数据集
+print(df)
+
 ```
 
 ### 2. 文本拆分 {.unnumbered}
