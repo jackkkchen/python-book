@@ -394,7 +394,7 @@
   {
     "objectID": "更好的数据可视化.html",
     "href": "更好的数据可视化.html",
-    "title": "9  更好的数据可视化(Plotly)",
+    "title": "8  更好的数据可视化(Plotly)",
     "section": "",
     "text": "pip安装conda安装\n\n\n$ pip install plotly\n\n\n$ conda install -c plotly plotly\n\n\n\nplotly.express是plotly的简化包，只需要1～2行就可以生成可视化图表，大家可以滑动鼠标，获取相对应的数据。官方文档\n\n\nCode\nimport plotly.express as px\nfig = px.bar(x=[\"a\", \"b\", \"c\"], y=[6, 1, 8])\nfig.show(renderer=\"notebook\")"
   },
@@ -471,42 +471,42 @@
   {
     "objectID": "python链接数据库.html#为什么要用sqlalchemy连接数据库",
     "href": "python链接数据库.html#为什么要用sqlalchemy连接数据库",
-    "title": "11  Python连接Postgresql数据库",
+    "title": "10  Python连接Postgresql数据库",
     "section": "为什么要用SQLAlchemy连接数据库？",
     "text": "为什么要用SQLAlchemy连接数据库？\n在企业中，很多数据都存储在数据库当中，通过SQLAlchemy，可以轻松连接多种数据库，包括MySQL、PostgreSQL、SQLite等，并使用统一的API进行数据库操作。SQLAlchemy提供了高级的对象关系映射（ORM）功能，使数据库操作更加面向对象，简化了数据模型的开发和管理。它提供了查询构建器、事务管理、数据迁移等功能，提高了开发效率。"
   },
   {
     "objectID": "python链接数据库.html#所需环境和拓展包",
     "href": "python链接数据库.html#所需环境和拓展包",
-    "title": "11  Python连接Postgresql数据库",
+    "title": "10  Python连接Postgresql数据库",
     "section": "所需环境和拓展包",
     "text": "所需环境和拓展包\n\njupyternotebook – 撰写python代码\nPostgreSQL & Pgadmin4 – 数据库及其GUI工具（数据库客户端）\nSQLAlchemy – python拓展包，用来连接数据库"
   },
   {
     "objectID": "python链接数据库.html#操作步骤",
     "href": "python链接数据库.html#操作步骤",
-    "title": "11  Python连接Postgresql数据库",
+    "title": "10  Python连接Postgresql数据库",
     "section": "操作步骤",
     "text": "操作步骤\n\nDocker安装jupyternotebook & Postgresql数据库\n本地数据库备份&迁移\n安装和使用SqlAlechemy"
   },
   {
     "objectID": "for循环.html#为什么需要使用for循环",
     "href": "for循环.html#为什么需要使用for循环",
-    "title": "10  for循环自动获取股票数据",
+    "title": "9  for循环自动获取股票数据",
     "section": "为什么需要使用for循环？",
     "text": "为什么需要使用for循环？\nfor循环简化了操作、处理大量数据，自动化了重复任务，并提供灵活的遍历顺序。它是一种强大的编程工具，帮助我们优化效率、减少冗余代码。无论初学者还是经验丰富的开发人员，for循环都是不可或缺的技术，提升代码质量、处理数据轻而易举。"
   },
   {
     "objectID": "for循环.html#案例背景",
     "href": "for循环.html#案例背景",
-    "title": "10  for循环自动获取股票数据",
+    "title": "9  for循环自动获取股票数据",
     "section": "案例背景",
     "text": "案例背景\n使用for循环调用股票API Tushare获取日线行情。但是有限制调用页数。尝试使用for循环遍历列表，逐个发送API请求获取每只股票的日线行情数据。"
   },
   {
     "objectID": "for循环.html#操作步骤",
     "href": "for循环.html#操作步骤",
-    "title": "10  for循环自动获取股票数据",
+    "title": "9  for循环自动获取股票数据",
     "section": "操作步骤",
     "text": "操作步骤\n\n通过def定义函数\nfor循环遍历整个日线行情\nconcat合并上下表"
   },
