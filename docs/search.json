@@ -275,9 +275,9 @@
   {
     "objectID": "txt_data.html",
     "href": "txt_data.html",
-    "title": "8  使用Pandas处理文本数据",
+    "title": "7  使用Pandas处理文本数据",
     "section": "",
-    "text": "在Pandas中，文本的主要两个类型是string和object。如果不特殊指定类型为string，文本类型一般为object。\n在通过访问器str实现对文本的操作之前，需要注意：\n\n要确保访问的对象类型是字符串str类型，如果不是，需要使用astype(str)转换类型\n访问器只能对Series数据结构使用，可以多个连接使用。\n\n\n1. 文本格式：大小写变换\n在 Pandas 中，可以使用字符串方法 str.lower() 和 str.upper() 对文本数据进行大小写转换。这些方法可以应用于 Pandas 的 Series或DataFrame列中的文本数据，以将其转换为小写或大写形式。\n# 字符全部变成小写\ns.str.lower()\n# 字符全部大写\ns.str.upper()\n# 每个单词首字母大写\ns.str.title()\n# 字符串第一个字母大写\ns.str.capitalize()\n# 大小写字母转换\ns.str.swapcase()\n\n\n2. 文本拆分\n在 Pandas 中，可以使用字符串方法 str.split() 对文本数据进行拆分。该方法可以将字符串按指定的分隔符拆分为多个部分，并返回一个包含拆分结果的 Series或DataFrame列。\n在对文本进行拆分时，可以使用expand参数将拆分出来的内容单独成列，使用n参数指定拆分的位置来控制形成几列。在对文本进行拆分以后，也可以使用get方法提取相关部分单独成列。\n# 使用方法\ns.str.split('x', expand=True, n=1)\n\n# 示例\n# 创建一个包含文本数据的 DataFrame\ndata = {'Text': ['Hello World', 'Python Programming', 'Data Science']}\ndf = pd.DataFrame(data)\n\n# 拆分文本并形成新列\ndf[['Word1', 'Word2']] = df['Text'].str.split(' ', expand=True)\n\nprint(df)\n\n# 输出结果\n#                 Text    Word1        Word2\n# 0        Hello World    Hello        World\n# 1  Python Programming   Python  Programming\n# 2       Data Science      Data      Science\n要进行更复杂的拆分可以借助正则表达式，如：\ns.str.split('\\@|\\.', expand=True, n=1)\n\n\n3. 文本包含\n在 Pandas 中，可以使用字符串方法 str.contains() 来判断文本数据是否包含指定的子串。这个方法返回一个布尔值的 Series或DataFrame列，用于表示每个元素是否包含指定的子串。，一般配合loc查询功能使用可搭配的参数有：\n\npat: 匹配字符串，支持正则表达式\ncase: 是否区分大小写，True表示区别\nflags: 正则库re中的标识，比如re.IGNORECASE\nna: 对缺失值填充\nregex: 是否支持正则，默认True支持\n\n# 使用方法\ns.str.contains(\"\")\n\n# 示例\n# 判断文本是否包含特定子串，并创建新列\ndf['Contains_Python'] = df['Text'].str.contains('Python')\n\nprint(df)\n\n# 输出结果\n#                 Text  Contains_Python\n# 0        Hello World            False\n# 1  Python Programming             True\n# 2       Data Science            False\n\n\n4. 文本格式：计数\n在 Pandas 中，可以使用字符串方法 str.count() 计算文本数据中指定子串的出现次数，同时可以使用字符串方法 str.len() 计量文本的长度。这两个方法可以方便地对文本数据进行计数和测量长度的操作。\n# 使用方法\ns.str.count('') # 字符串种包括指定字母的数量\ns.str.len() # 字符串长度\n\n# 示例\n# 计算指定子串的出现次数，并创建新列\ndf['Count_o'] = df['Text'].str.count('o')\n\n# 计量文本长度，并创建新列\ndf['Text_length'] = df['Text'].str.len()\n\nprint(df)\n\n# 输出结果\n#                 Text  Count_o  Text_length\n# 0        Hello World        2           11\n# 1  Python Programming        2           19\n# 2       Data Science        0           12\n\n\n5. 文本替换\n文本替换通常使用replace方法进行，可选参数如下：\n\npal：为被替代的内容字符串，也可以为正则表达式\nrepl：为新内容字符串，也可以是一个被调用的函数\nregex：用于设置是否支持正则，默认是True\n\n# 使用方法\ns.str.replace(\"s\":\"S\", \"f\":\"F\")\n\n# 示例\n# 将指定子串替换为新值，并创建新列\ndf['New_Text'] = df['Text'].str.replace('o', 'x')\n\nprint(df)\n\n# 输出结果\n#                 Text            New_Text\n# 0        Hello World        Hellx Wxrld\n# 1  Python Programming  Pythxn Prxgramming\n# 2       Data Science       Data Science"
+    "text": "在Pandas中，文本的主要两个类型是string和object。如果不特殊指定类型为string，文本类型一般为object。\n在通过访问器str实现对文本的操作之前，需要注意：\n\n要确保访问的对象类型是字符串str类型，如果不是，需要使用astype(str)转换类型\n访问器只能对Series数据结构使用，可以多个连接使用。\n\n\n1. 文本格式：大小写变换\n在 Pandas 中，可以使用字符串方法 str.lower() 和 str.upper() 对文本数据进行大小写转换。这些方法可以应用于 Pandas 的 Series或DataFrame列中的文本数据，以将其转换为小写或大写形式。\nimport pandas as pd\n\n# 创建示例数据\ndata = {'text': ['Hello World', 'Welcome to Pandas', 'Text Processing']}\ndf = pd.DataFrame(data)\n\n# 字符全部变成小写\ndf['lowercase'] = df['text'].str.lower()\n\n# 字符全部变成大写\ndf['uppercase'] = df['text'].str.upper()\n\n# 每个单词首字母大写\ndf['titlecase'] = df['text'].str.title()\n\n# 字符串第一个字母大写，其余小写\ndf['capitalize'] = df['text'].str.capitalize()\n\n# 大小写字母转换\ndf['swapcase'] = df['text'].str.swapcase()\n\n# 打印处理后的数据集\nprint(df)\n\n\n2. 文本拆分\n在 Pandas 中，可以使用字符串方法 str.split() 对文本数据进行拆分。该方法可以将字符串按指定的分隔符拆分为多个部分，并返回一个包含拆分结果的 Series或DataFrame列。\n在对文本进行拆分时，可以使用expand参数将拆分出来的内容单独成列，使用n参数指定拆分的位置来控制形成几列。在对文本进行拆分以后，也可以使用get方法提取相关部分单独成列。\n# 使用方法\ns.str.split('x', expand=True, n=1)\n\n# 示例\n# 创建一个包含文本数据的 DataFrame\ndata = {'Text': ['Hello World', 'Python Programming', 'Data Science']}\ndf = pd.DataFrame(data)\n\n# 拆分文本并形成新列\ndf[['Word1', 'Word2']] = df['Text'].str.split(' ', expand=True)\n\nprint(df)\n\n# 输出结果\n#                 Text    Word1        Word2\n# 0        Hello World    Hello        World\n# 1  Python Programming   Python  Programming\n# 2       Data Science      Data      Science\n要进行更复杂的拆分可以借助正则表达式，如：\ns.str.split('\\@|\\.', expand=True, n=1)\n\n\n3. 文本包含\n在 Pandas 中，可以使用字符串方法 str.contains() 来判断文本数据是否包含指定的子串。这个方法返回一个布尔值的 Series或DataFrame列，用于表示每个元素是否包含指定的子串。，一般配合loc查询功能使用可搭配的参数有：\n\npat: 匹配字符串，支持正则表达式\ncase: 是否区分大小写，True表示区别\nflags: 正则库re中的标识，比如re.IGNORECASE\nna: 对缺失值填充\nregex: 是否支持正则，默认True支持\n\n# 使用方法\ns.str.contains(\"\")\n\n# 示例\n# 判断文本是否包含特定子串，并创建新列\ndf['Contains_Python'] = df['Text'].str.contains('Python')\n\nprint(df)\n\n# 输出结果\n#                 Text  Contains_Python\n# 0        Hello World            False\n# 1  Python Programming             True\n# 2       Data Science            False\n\n\n4. 文本格式：计数\n在 Pandas 中，可以使用字符串方法 str.count() 计算文本数据中指定子串的出现次数，同时可以使用字符串方法 str.len() 计量文本的长度。这两个方法可以方便地对文本数据进行计数和测量长度的操作。\n# 使用方法\ns.str.count('') # 字符串种包括指定字母的数量\ns.str.len() # 字符串长度\n\n# 示例\n# 计算指定子串的出现次数，并创建新列\ndf['Count_o'] = df['Text'].str.count('o')\n\n# 计量文本长度，并创建新列\ndf['Text_length'] = df['Text'].str.len()\n\nprint(df)\n\n# 输出结果\n#                 Text  Count_o  Text_length\n# 0        Hello World        2           11\n# 1  Python Programming        2           19\n# 2       Data Science        0           12\n\n\n5. 文本替换\n文本替换通常使用replace方法进行，可选参数如下：\n\npal：为被替代的内容字符串，也可以为正则表达式\nrepl：为新内容字符串，也可以是一个被调用的函数\nregex：用于设置是否支持正则，默认是True\n\n# 使用方法\ns.str.replace(\"s\":\"S\", \"f\":\"F\")\n\n# 示例\n# 将指定子串替换为新值，并创建新列\ndf['New_Text'] = df['Text'].str.replace('o', 'x')\n\nprint(df)\n\n# 输出结果\n#                 Text            New_Text\n# 0        Hello World        Hellx Wxrld\n# 1  Python Programming  Pythxn Prxgramming\n# 2       Data Science       Data Science"
   },
   {
     "objectID": "zhizai.html",
@@ -513,35 +513,35 @@
   {
     "objectID": "Dash案例.html#为什么要使用dash",
     "href": "Dash案例.html#为什么要使用dash",
-    "title": "12  Dash创建股票APP",
+    "title": "11  Dash创建股票APP",
     "section": "为什么要使用Dash",
     "text": "为什么要使用Dash\nDash Plotly是一个基于Python的开源框架，用于构建交互式数据可视化和分析应用。\n它的优势在于简洁的语法、强大的可视化功能和灵活的布局选项。通过使用Dash Plotly，您可以轻松创建漂亮、交互式的应用程序，展示和探索数据，无论是用于内部报告、数据分析还是对外展示。它提供了丰富的图表类型、注解和样式设置，以及与其他Python库的无缝集成，如pandas和numpy。Dash Plotly还支持部署到Web服务器上，使得应用程序能够通过浏览器进行访问和共享。\n总的来说，Dash Plotly提供了一种简单而强大的方式来创建数据驱动的应用程序，使得数据可视化和交互变得更加容易和高效。"
   },
   {
     "objectID": "Dash案例.html#案例背景",
     "href": "Dash案例.html#案例背景",
-    "title": "12  Dash创建股票APP",
+    "title": "11  Dash创建股票APP",
     "section": "案例背景",
     "text": "案例背景\n使用Dash 模仿复现股票走势的交互可视化面板，可以查看股票日线级别的涨跌幅度、股票走势和买入卖出盈亏比。以英伟达股票为案例"
   },
   {
     "objectID": "Dash案例.html#相关链接",
     "href": "Dash案例.html#相关链接",
-    "title": "12  Dash创建股票APP",
+    "title": "11  Dash创建股票APP",
     "section": "相关链接",
     "text": "相关链接\n免费股票数据API\nGitHub Python调用API\n模仿案例网站"
   },
   {
     "objectID": "Dash案例.html#dash股票案例上集",
     "href": "Dash案例.html#dash股票案例上集",
-    "title": "12  Dash创建股票APP",
+    "title": "11  Dash创建股票APP",
     "section": "Dash股票案例（上集）",
     "text": "Dash股票案例（上集）\n\nAPI获取&调用\npands数据清洗\n导出csv到本地\nDash-Bootstrap主题\nDash-layout排版\nDash-调整位置和宽度"
   },
   {
     "objectID": "Dash案例.html#dash股票案例下集",
     "href": "Dash案例.html#dash股票案例下集",
-    "title": "12  Dash创建股票APP",
+    "title": "11  Dash创建股票APP",
     "section": "Dash股票案例（下集）",
     "text": "Dash股票案例（下集）\n\napp功能：涨跌百分比\npadnas数据清洗&过滤\nplotly绘制百分比图\napp功能：股票走势图\nupdate_traces VS update_layout\napp功能：滚动数据\nBootstrap组件使用"
   }
