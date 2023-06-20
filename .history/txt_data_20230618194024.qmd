@@ -1,0 +1,135 @@
+## 使用Pandas处理文本数据 {.unnumbered}
+
+在Pandas中，文本的主要两个类型是`string`和`object`。如果不特殊指定类型为`string`，文本类型一般为`object`。
+
+在通过访问器`str`实现对文本的操作之前，需要注意：
+
+* 要确保访问的对象类型是字符串`str`类型，如果不是，需要使用`astype(str)`转换类型
+* 访问器只能对`Series`数据结构使用，可以多个连接使用。
+
+### 1. 文本格式：大小写变换 {.unnumbered}
+
+在 Pandas 中，可以使用字符串方法 `str.lower()` 和 `str.upper()` 对文本数据进行大小写转换。这些方法可以应用于 Pandas 的 `Series `或` DataFrame `列中的文本数据，以将其转换为小写或大写形式。
+
+```python
+# 字符全部变成小写
+s.str.lower()
+# 字符全部大写
+s.str.upper()
+# 每个单词首字母大写
+s.str.title()
+# 字符串第一个字母大写
+s.str.capitalize()
+# 大小写字母转换
+s.str.swapcase()
+```
+
+### 2. 文本拆分 {.unnumbered}
+
+在 Pandas 中，可以使用字符串方法 `str.split()` 对文本数据进行拆分。该方法可以将字符串按指定的分隔符拆分为多个部分，并返回一个包含拆分结果的 `Series `或`DataFrame `列。
+
+在对文本进行拆分时，可以使用`expand`参数将拆分出来的内容单独成列，使用`n`参数指定拆分的位置来控制形成几列。在对文本进行拆分以后，也可以使用`get`方法提取相关部分单独成列。
+
+```python
+# 使用方法
+s.str.split('x', expand=True, n=1)
+
+# 示例
+# 创建一个包含文本数据的 DataFrame
+data = {'Text': ['Hello World', 'Python Programming', 'Data Science']}
+df = pd.DataFrame(data)
+
+# 拆分文本并形成新列
+df[['Word1', 'Word2']] = df['Text'].str.split(' ', expand=True)
+
+print(df)
+
+# 输出结果
+#                 Text    Word1        Word2
+# 0        Hello World    Hello        World
+# 1  Python Programming   Python  Programming
+# 2       Data Science      Data      Science
+```
+
+要进行更复杂的拆分可以借助正则表达式，如：
+
+```python
+s.str.split('\@|\.', expand=True, n=1)
+```
+
+### 3. 文本包含 {.unnumbered}
+
+在 Pandas 中，可以使用字符串方法 `str.contains()` 来判断文本数据是否包含指定的子串。这个方法返回一个布尔值的 `Series `或` DataFrame `列，用于表示每个元素是否包含指定的子串。，一般配合`loc`查询功能使用可搭配的参数有：
+
+* `pat`: 匹配字符串，支持正则表达式
+* `case`: 是否区分大小写，`True`表示区别
+* `flags`: 正则库`re`中的标识，比如`re.IGNORECASE`
+* `na`: 对缺失值填充
+* `regex`: 是否支持正则，默认`True`支持
+
+```python
+# 使用方法
+s.str.contains("")
+
+# 示例
+# 判断文本是否包含特定子串，并创建新列
+df['Contains_Python'] = df['Text'].str.contains('Python')
+
+print(df)
+
+# 输出结果
+#                 Text  Contains_Python
+# 0        Hello World            False
+# 1  Python Programming             True
+# 2       Data Science            False
+```
+
+### 4. 文本格式：计数 {.unnumbered}
+
+在 Pandas 中，可以使用字符串方法 `str.count()` 计算文本数据中指定子串的出现次数，同时可以使用字符串方法 `str.len()` 计量文本的长度。这两个方法可以方便地对文本数据进行计数和测量长度的操作。
+
+```python
+# 使用方法
+s.str.count('') # 字符串种包括指定字母的数量
+s.str.len() # 字符串长度
+
+# 示例
+# 计算指定子串的出现次数，并创建新列
+df['Count_o'] = df['Text'].str.count('o')
+
+# 计量文本长度，并创建新列
+df['Text_length'] = df['Text'].str.len()
+
+print(df)
+
+# 输出结果
+#                 Text  Count_o  Text_length
+# 0        Hello World        2           11
+# 1  Python Programming        2           19
+# 2       Data Science        0           12
+```
+
+### 5. 文本替换 {.unnumbered}
+
+文本替换通常使用`replace`方法进行，可选参数如下：
+
+- `pal`：为被替代的内容字符串，也可以为正则表达式
+- `repl`：为新内容字符串，也可以是一个被调用的函数
+- `regex`：用于设置是否支持正则，默认是`True`
+
+```python
+# 使用方法
+s.str.replace("s":"S", "f":"F")
+
+# 示例
+# 将指定子串替换为新值，并创建新列
+df['New_Text'] = df['Text'].str.replace('o', 'x')
+
+print(df)
+
+# 输出结果
+#                 Text            New_Text
+# 0        Hello World        Hellx Wxrld
+# 1  Python Programming  Pythxn Prxgramming
+# 2       Data Science       Data Science
+```
