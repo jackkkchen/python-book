@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python新手文档 - Python简介</title>
+<title>Python新手文档 - 9&nbsp; for循环自动获取股票数据</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./环境搭建.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./python链接数据库.html" rel="next">
+<link href="./更好的数据可视化.html" rel="prev">
 <link href="././img/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Python简介</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./for循环.html">实际案例</a></li><li class="breadcrumb-item"><a href="./for循环.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">for循环自动获取股票数据</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -128,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python简介</span></a>
   </div>
 </li>
@@ -214,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./for循环.html" class="sidebar-item-text sidebar-link">
+  <a href="./for循环.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">for循环自动获取股票数据</span></span></a>
   </div>
 </li>
@@ -242,17 +242,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#主要特点" id="toc-主要特点" class="nav-link active" data-scroll-target="#主要特点">主要特点</a></li>
-  <li><a href="#应用领域" id="toc-应用领域" class="nav-link" data-scroll-target="#应用领域">应用领域</a></li>
+  <li><a href="#为什么需要使用for循环" id="toc-为什么需要使用for循环" class="nav-link active" data-scroll-target="#为什么需要使用for循环">为什么需要使用for循环？</a></li>
+  <li><a href="#案例背景" id="toc-案例背景" class="nav-link" data-scroll-target="#案例背景">案例背景</a></li>
+  <li><a href="#操作步骤" id="toc-操作步骤" class="nav-link" data-scroll-target="#操作步骤">操作步骤</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jackkkchen/python-book/edit/main/intro.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/for循环.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Python简介</h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">for循环自动获取股票数据</span></h1>
 </div>
 
 
@@ -267,27 +268,24 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="主要特点" class="level2">
-<h2 class="anchored" data-anchor-id="主要特点">主要特点</h2>
-<p>Python是一种高级编程语言，以其简洁、易读、易学和灵活性而受到广泛欢迎。以下是Python的一些主要特点：</p>
-<ul>
-<li><p>简洁易读：Python采用清晰简洁的语法，使得代码易于阅读和理解。它使用缩进来表示代码块，而不是使用大括号，这使得代码更加易读。</p></li>
-<li><p>易学性：Python的语法简单明了，相对于其他编程语言来说，学习曲线较低。这使得初学者能够快速入门并开始编写实用的程序。</p></li>
-<li><p>跨平台性：Python可以在多个操作系统上运行，包括Windows、macOS和各种Linux发行版。这意味着开发人员可以在不同的平台上编写一次代码，并在不同的环境中运行。</p></li>
-<li><p>大量的库和框架：Python拥有庞大且活跃的社区，为各种用途提供了大量的库和框架。这些库和框架使得开发人员能够快速构建各种应用，例如Web应用、科学计算、数据分析和人工智能等。</p></li>
-<li><p>可扩展性：Python可以与其他语言（如C/C++和Java）轻松集成，这使得开发人员能够使用现有的代码库和资源，以提高应用程序的性能和功能。</p></li>
-</ul>
+<section id="为什么需要使用for循环" class="level2">
+<h2 class="anchored" data-anchor-id="为什么需要使用for循环">为什么需要使用for循环？</h2>
+<p>for循环简化了操作、处理大量数据，自动化了重复任务，并提供灵活的遍历顺序。它是一种强大的编程工具，帮助我们优化效率、减少冗余代码。无论初学者还是经验丰富的开发人员，for循环都是不可或缺的技术，提升代码质量、处理数据轻而易举。</p>
 </section>
-<section id="应用领域" class="level2">
-<h2 class="anchored" data-anchor-id="应用领域">应用领域</h2>
-<p>Python具有广泛的应用领域，从Web开发到科学计算和人工智能等各种领域都能发挥其优势。它的简洁性和强大的库生态系统使得开发人员能够快速构建各种类型的应用程序。</p>
-<ul>
-<li><p>Web开发：Python的Web框架（如Django和Flask）使得构建功能强大的Web应用程序变得简单。Python还可以用于服务器端编程、网页爬虫和API开发等。</p></li>
-<li><p>数据科学和机器学习：Python在数据科学和机器学习领域非常受欢迎。它提供了许多用于数据处理、数据可视化和机器学习算法的库，如NumPy、Pandas、Matplotlib、Scikit-learn和TensorFlow等。</p></li>
-<li><p>科学计算：Python在科学计算领域也得到广泛应用。科学计算库如NumPy和SciPy提供了许多数值计算、优化和统计分析的功能，适用于物理学、数学、生物学等领域。</p></li>
-<li><p>自动化和脚本编写：Python的简洁性和易用性使得它成为自动化任务和脚本编写的理想选择。可以使用Python编写脚本来自动执行重复性的任务、处理文件、操作系统和网络等。</p></li>
-<li><p>游戏开发：Python也可以用于游戏开发。有一些专门的库和框架，如Pygame，使得使用Python编写2D游戏变得相对容易。</p></li>
-</ul>
+<section id="案例背景" class="level2">
+<h2 class="anchored" data-anchor-id="案例背景">案例背景</h2>
+<p>使用for循环调用股票API <code>Tushare</code>获取日线行情。但是有限制调用页数。尝试使用for循环遍历列表，逐个发送API请求获取每只股票的日线行情数据。</p>
+</section>
+<section id="操作步骤" class="level2">
+<h2 class="anchored" data-anchor-id="操作步骤">操作步骤</h2>
+<ol type="1">
+<li>通过<code>def</code>定义函数</li>
+<li><code>for循环</code>遍历整个日线行情</li>
+<li><code>concat</code>合并上下表</li>
+</ol>
+<video width="600" height="450" controls="">
+<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/python%20for.mp4">
+</video>
 
 
 </section>
@@ -372,6 +370,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
@@ -528,13 +577,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">文档目录</span>
+      <a href="./更好的数据可视化.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">更好的数据可视化(Plotly)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./环境搭建.html" class="pagination-link">
-        <span class="nav-page-text">环境搭建</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./python链接数据库.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Python连接Postgresql数据库</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python新手文档 - 4&nbsp; 导入&amp;导出数据</title>
+<title>Python新手文档 - 3&nbsp; 导入&amp;导出数据</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./更好的数据可视化.html" rel="next">
+<link href="./选取数据.html" rel="next">
 <link href="./pandas处理什么样的数据.html" rel="prev">
 <link href="././img/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -76,6 +76,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -112,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./安装.html">Pandas快速入门</a></li><li class="breadcrumb-item"><a href="./导入&amp;导出数据.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">导入&amp;导出数据</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./安装.html">Pandas快速入门</a></li><li class="breadcrumb-item"><a href="./导入&amp;导出数据.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">导入&amp;导出数据</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -160,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">简介</span></span></a>
+ <span class="menu-text">文档目录</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -193,49 +195,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./安装.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Pandas安装</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Pandas安装</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pandas处理什么样的数据.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">pandas处理什么样的数据</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">pandas处理什么样的数据</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./导入&amp;导出数据.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">导入&amp;导出数据</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">导入&amp;导出数据</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./更好的数据可视化.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">更好的数据可视化(Plotly)</span></span></a>
+  <a href="./选取数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">选取数据</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./添加新列.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">增删排序(DataFrame)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./zhizai.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">如何计算汇总统计</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">增删排序(DataFrame)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./time_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">使用Pandas处理时间序列数据</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">使用Pandas处理时间序列数据</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./txt_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">使用Pandas处理文本数据</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">使用Pandas处理文本数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./更好的数据可视化.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">更好的数据可视化(Plotly)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">实际案例</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./for循环.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">for循环自动获取股票数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python链接数据库.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Python连接Postgresql数据库</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Dash案例.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Dash创建股票APP</span></span></a>
   </div>
 </li>
       </ul>
@@ -252,12 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#读取本地数据" id="toc-读取本地数据" class="nav-link active" data-scroll-target="#读取本地数据">读取本地数据</a></li>
   <li><a href="#读取线上数据" id="toc-读取线上数据" class="nav-link" data-scroll-target="#读取线上数据">读取线上数据</a></li>
-  <li><a href="#选取特定数据" id="toc-选取特定数据" class="nav-link" data-scroll-target="#选取特定数据">选取特定数据</a>
-  <ul class="collapse">
-  <li><a href="#选取特定列" id="toc-选取特定列" class="nav-link" data-scroll-target="#选取特定列">选取特定列</a></li>
-  <li><a href="#选取特定行" id="toc-选取特定行" class="nav-link" data-scroll-target="#选取特定行">选取特定行</a></li>
-  </ul></li>
-  <li><a href="#根据条件筛选行列" id="toc-根据条件筛选行列" class="nav-link" data-scroll-target="#根据条件筛选行列">根据条件筛选行列</a></li>
+  <li><a href="#pandas连接mysql数据库导入导出数据" id="toc-pandas连接mysql数据库导入导出数据" class="nav-link" data-scroll-target="#pandas连接mysql数据库导入导出数据">Pandas连接MySQL数据库导入导出数据</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/导入&amp;导出数据.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -266,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">导入&amp;导出数据</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">导入&amp;导出数据</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
 </div>
 
 
@@ -421,12 +447,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-<section id="选取特定数据" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="选取特定数据">选取特定数据</h2>
-<p>在数据分析中，选取需要的数据进行处理和分析是很重要的。在Excel中，主要通过鼠标点选或拖拽来选取数据。</p>
-<p>而在pandas中，我们也可以通过行列名、索引以及各种条件来筛选感兴趣的数据子集，并进行数据过滤、筛选、切片、分析和连接等操作。</p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取案例数据</span></span>
@@ -434,7 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/titanic.csv'</span>) </span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -538,67 +559,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>本教程使用存储为 CSV 格式的泰坦尼克号数据集。以下是详细说明（改成折叠！！！！！）</p>
-<p>PassengerId：每位乘客的Id。</p>
-<p>Survived：指示乘客是否幸存。0是和1否。</p>
-<p>Pclass：3 个机票类别之一：Class 1、Class2和 Class 3。</p>
-<p>Name：乘客姓名。</p>
-<p>Sex：乘客的性别。</p>
-<p>Age：乘客的年龄。</p>
-<p>SibSp：船上兄弟姐妹或配偶的数量。</p>
-<p>Parch：船上父母或孩子的人数。</p>
-<p>Ticket：旅客的客票号。</p>
-<p>Fare：表示票价。</p>
-<p>Cabin：乘客的客舱号。</p>
-<p>Embarked：登船的港口。</p>
-</div>
-</div>
-<section id="选取特定列" class="level3">
-<h3 class="anchored" data-anchor-id="选取特定列">选取特定列</h3>
-<p>通过列索引标签或以属性的方式可以单独获取 DataFrame的列数据，返回的数据为 Series结构。</p>
-<p>假如我想知道每位乘客的姓名id（选取单列），<code>df</code>为数据表格，<code>Name</code>为列名</p>
-<div class="cell" data-execution_count="4">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 方法一：</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Name'</span>]</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 方法二：</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>df.Name</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 方法三：</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>df.loc[:, <span class="st">'Name'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>0                                Braund, Mr. Owen Harris
-1      Cumings, Mrs. John Bradley (Florence Briggs Th...
-2                                 Heikkinen, Miss. Laina
-3           Futrelle, Mrs. Jacques Heath (Lily May Peel)
-4                               Allen, Mr. William Henry
-                             ...                        
-886                                Montvila, Rev. Juozas
-887                         Graham, Miss. Margaret Edith
-888             Johnston, Miss. Catherine Helen "Carrie"
-889                                Behr, Mr. Karl Howell
-890                                  Dooley, Mr. Patrick
-Name: Name, Length: 891, dtype: object</code></pre>
-</div>
-</div>
-<p>假如我想知道所有乘客的幸存情况（获取多列），我们可以通过两个中括号，可以获取多个列的数据。</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title="pandas导入导出"><source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/Pandas%20IOtools.mp4"></video></div>
+</section>
+<section id="pandas连接mysql数据库导入导出数据" class="level3">
+<h3 class="anchored" data-anchor-id="pandas连接mysql数据库导入导出数据">Pandas连接MySQL数据库导入导出数据</h3>
+<section id="步骤1安装必要的库" class="level4">
+<h4 class="anchored" data-anchor-id="步骤1安装必要的库">步骤1：安装必要的库</h4>
+<p>在开始之前，确保已经安装了以下库：</p>
+<p>Pandas：用于数据处理和操作。</p>
+<p>SQLAlchemy：用于数据库连接和交互</p>
+<p>可以使用以下命令通过pip安装它们：</p>
+<p><code>pip install pandas sqlalchemy</code></p>
+</section>
+<section id="步骤2链接数据库" class="level4">
+<h4 class="anchored" data-anchor-id="步骤2链接数据库">步骤2：链接数据库</h4>
+<p>首先，我们需要使用SQLAlchemy来建立与数据库的连接。根据使用的数据库类型（如MySQL、SQLite、PostgreSQL等），使用适当的连接字符串和数据库驱动程序。</p>
+<p>以下是使用SQLite数据库的示例代码：</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'Name'</span>,<span class="st">'Survived'</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlalchemy</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 建立与数据库的连接</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>engine <span class="op">=</span> sqlalchemy.create_engine(<span class="st">'sqlite:///path/to/database.db'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -611,283 +594,68 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>内部方括号定义了一个 带有列名的<a href="https://docs.python.org/3/tutorial/datastructures.html#tut-morelists">Python列表</a>，而外部方括号用于从 pandas 中选择数据</p>
+<p>将<code>path/to/database.db</code>替换为实际的数据库文件路径或连接字符串</p>
 </div>
 </div>
 </section>
-<section id="选取特定行" class="level3">
-<h3 class="anchored" data-anchor-id="选取特定行">选取特定行</h3>
-<p>通过行索引获取行数据，冒号指定范围</p>
-<p>假设想知道第三行，Laina小姐的信息（单行）</p>
-<div class="cell" data-execution_count="5">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 选取从第二行到第三行到数据</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">2</span>:<span class="dv">3</span>]</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># df[2:5] 选取从第三行到第五行到数据</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">PassengerId</th>
-<th data-quarto-table-cell-role="th">Survived</th>
-<th data-quarto-table-cell-role="th">Pclass</th>
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Sex</th>
-<th data-quarto-table-cell-role="th">Age</th>
-<th data-quarto-table-cell-role="th">SibSp</th>
-<th data-quarto-table-cell-role="th">Parch</th>
-<th data-quarto-table-cell-role="th">Ticket</th>
-<th data-quarto-table-cell-role="th">Fare</th>
-<th data-quarto-table-cell-role="th">Cabin</th>
-<th data-quarto-table-cell-role="th">Embarked</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>3</td>
-<td>1</td>
-<td>3</td>
-<td>Heikkinen, Miss. Laina</td>
-<td>female</td>
-<td>26.0</td>
-<td>0</td>
-<td>0</td>
-<td>STON/O2. 3101282</td>
-<td>7.925</td>
-<td>NaN</td>
-<td>S</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>如果我不想按顺序这样选取多行数据呢？</p>
-<p>如果想获取单独的几行，通过loc和iloc方法 来获取第二行Laina和第五行William的信息</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>注意在pandas中第0行才是第一行，所以切片要-1</p>
-</div>
-</div>
-<p>iloc方法是按行索引位置选取数据，索引就是表格最左边的数字</p>
-<div class="cell" data-execution_count="8">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.iloc[[<span class="dv">2</span>,<span class="dv">4</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">PassengerId</th>
-<th data-quarto-table-cell-role="th">Survived</th>
-<th data-quarto-table-cell-role="th">Pclass</th>
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Sex</th>
-<th data-quarto-table-cell-role="th">Age</th>
-<th data-quarto-table-cell-role="th">SibSp</th>
-<th data-quarto-table-cell-role="th">Parch</th>
-<th data-quarto-table-cell-role="th">Ticket</th>
-<th data-quarto-table-cell-role="th">Fare</th>
-<th data-quarto-table-cell-role="th">Cabin</th>
-<th data-quarto-table-cell-role="th">Embarked</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>3</td>
-<td>1</td>
-<td>3</td>
-<td>Heikkinen, Miss. Laina</td>
-<td>female</td>
-<td>26.0</td>
-<td>0</td>
-<td>0</td>
-<td>STON/O2. 3101282</td>
-<td>7.925</td>
-<td>NaN</td>
-<td>S</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">4</td>
-<td>5</td>
-<td>0</td>
-<td>3</td>
-<td>Allen, Mr. William Henry</td>
-<td>male</td>
-<td>35.0</td>
-<td>0</td>
-<td>0</td>
-<td>373450</td>
-<td>8.050</td>
-<td>NaN</td>
-<td>S</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>loc方法是按行索引标签选取数据，因为这里索引的标签和位置相同，所以结果同上</p>
+<section id="步骤3导入数据" class="level4">
+<h4 class="anchored" data-anchor-id="步骤3导入数据">步骤3：导入数据</h4>
+<p>有几种方法可以使用Pandas从数据库中导入数据。最简单的方法是使用read_sql()函数，该函数接受一个SQL查询语句并将结果读取为DataFrame对象。</p>
+<p>以下是使用read_sql()函数导入数据的示例代码：</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df.loc[[<span class="dv">2</span>,<span class="dv">4</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 执行SQL查询并将结果读取为DataFrame</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>query <span class="op">=</span> <span class="st">'SELECT * FROM table_name'</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_sql(query, engine)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 打印DataFrame</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-</section>
-<section id="根据条件筛选行列" class="level2">
-<h2 class="anchored" data-anchor-id="根据条件筛选行列">根据条件筛选行列</h2>
-<p>假设我想知道十八岁以下的乘客信息</p>
-<div class="cell" data-execution_count="10">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">"Age"</span>] <span class="op">&lt;</span> <span class="dv">18</span>].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">PassengerId</th>
-<th data-quarto-table-cell-role="th">Survived</th>
-<th data-quarto-table-cell-role="th">Pclass</th>
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Sex</th>
-<th data-quarto-table-cell-role="th">Age</th>
-<th data-quarto-table-cell-role="th">SibSp</th>
-<th data-quarto-table-cell-role="th">Parch</th>
-<th data-quarto-table-cell-role="th">Ticket</th>
-<th data-quarto-table-cell-role="th">Fare</th>
-<th data-quarto-table-cell-role="th">Cabin</th>
-<th data-quarto-table-cell-role="th">Embarked</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">7</td>
-<td>8</td>
-<td>0</td>
-<td>3</td>
-<td>Palsson, Master. Gosta Leonard</td>
-<td>male</td>
-<td>2.0</td>
-<td>3</td>
-<td>1</td>
-<td>349909</td>
-<td>21.0750</td>
-<td>NaN</td>
-<td>S</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>10</td>
-<td>1</td>
-<td>2</td>
-<td>Nasser, Mrs. Nicholas (Adele Achem)</td>
-<td>female</td>
-<td>14.0</td>
-<td>1</td>
-<td>0</td>
-<td>237736</td>
-<td>30.0708</td>
-<td>NaN</td>
-<td>C</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">10</td>
-<td>11</td>
-<td>1</td>
-<td>3</td>
-<td>Sandstrom, Miss. Marguerite Rut</td>
-<td>female</td>
-<td>4.0</td>
-<td>1</td>
-<td>1</td>
-<td>PP 9549</td>
-<td>16.7000</td>
-<td>G6</td>
-<td>S</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">14</td>
-<td>15</td>
-<td>0</td>
-<td>3</td>
-<td>Vestrom, Miss. Hulda Amanda Adolfina</td>
-<td>female</td>
-<td>14.0</td>
-<td>0</td>
-<td>0</td>
-<td>350406</td>
-<td>7.8542</td>
-<td>NaN</td>
-<td>S</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">16</td>
-<td>17</td>
-<td>0</td>
-<td>3</td>
-<td>Rice, Master. Eugene</td>
-<td>male</td>
-<td>2.0</td>
-<td>4</td>
-<td>1</td>
-<td>382652</td>
-<td>29.1250</td>
-<td>NaN</td>
-<td>Q</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>从里到外来拆解，首先需要先确定<code>"Age"</code>列，然后使用运算符<code>&gt;</code>，选取十八岁以下的乘客。然后把这两操作在用方括号框起来，表明在数据<code>df</code>中操作，<code>.head()</code>选取前五行。</p>
+<p>将table_name替换为要查询的实际表名。</p>
 </div>
 </div>
-<p>DataFrames 可以通过多种方式进行过滤，其中最直观的是使用<a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing-boolean">布尔索引</a></p>
+</section>
+<section id="步骤4导出数据" class="level4">
+<h4 class="anchored" data-anchor-id="步骤4导出数据">步骤4：导出数据</h4>
+<p>同样，使用Pandas可以将DataFrame中的数据导出到数据库中。可以使用to_sql()函数将DataFrame写入数据库表。</p>
+<p>以下是使用to_sql()函数导出数据的示例代码</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 将DataFrame写入数据库表</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df.to_sql(<span class="st">'table_name'</span>, engine, if_exists<span class="op">=</span><span class="st">'replace'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>将table_name替换为要写入的实际表名。if_exists=’replace’表示如果表已经存在，则替换它。index=False表示不将DataFrame的索引写入数据库。</p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1178,16 +946,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./pandas处理什么样的数据.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">pandas处理什么样的数据</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">pandas处理什么样的数据</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./更好的数据可视化.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">更好的数据可视化(Plotly)</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./选取数据.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">选取数据</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
