@@ -4,8 +4,8 @@ project:
 
 number-depth: 0
 
-execute:
-  freeze: auto # re-render only when source changes
+# execute:
+#   freeze: auto # re-render only when source changes
 # freeze: true  never re-render during project render
 
 book:
