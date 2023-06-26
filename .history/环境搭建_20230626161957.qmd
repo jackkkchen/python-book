@@ -71,6 +71,6 @@ Visual Studio Code是一个轻量级但功能强大的源代码编辑器，在�
 官方有非常丰富的文档提供学习参考，第一步可以从[入门视频开始](https://code.visualstudio.com/docs/getstarted/introvideos)
 
 ::: {.callout-note}
-在vscode中，创建新的`main.py`文件后，可使用快捷键```ctl+` ```打开终端。
-输入`python main.py`运行 python代码
+在vscode中，创建新的`python.py`文件后，可使用快捷键```ctl+ ` ```打开终端。
+输入`python python.py`运行 python代码
 :::

@@ -36,7 +36,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - 环境搭建.qmd
+    - 环境搭建.ipynb
     - Python入门小白教程.qmd
     - part: "Pandas快速入门"
       chapters: 
