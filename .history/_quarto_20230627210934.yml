@@ -40,6 +40,7 @@ book:
     - part: "Python基础语法"
       chapters: 
         - 基础语法.ipynb
+    # - Python入门小白教程.qmd
     - part: "Pandas快速入门"
       chapters: 
         - 安装.ipynb
