@@ -4,19 +4,18 @@
 
 Anaconda提供了简化环境配置、跨平台支持、库和工具管理以及丰富的科学计算库等优势，使得小白学习Python更加便捷和高效。它是一个功能强大且易于使用的平台，可以帮助您快速入门Python编程并进行数据处理和分析。
 
-官方免费提供[在线编辑器-jupyterlab](https://www.anaconda.com/code-in-the-cloud) 无需手动安装环境，即可直接上手编写代码。
 <video width="600" height="450" controls>
-  <source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/Win_anaconda%E5%AE%89%E8%A3%85.mp4">
+  <source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/Win_anaconda%E5%AE%89%E8%A3%85.mp4">
 </video>
 
 
-## Python包 手动安装 
-你可以访问[Python官网](https://www.python.org/downloads/)下载并安装适合你操作系统的Python版本。最好选择stable稳定版
+## Python包 官方安装 
+要开始使用Python，首先需要安装Python。你可以访问[Python官网](https://www.python.org/downloads/)下载并安装适合你操作系统的Python版本。
 
 <!-- {{< video http://szmspython.oss-cn-hangzhou.aliyuncs.com/python3.11.mp4 title="Python3.11.4安装" start="10" aspect-ratio="4x3" >}} -->
 
 <video width="600" height="450" controls>
-  <source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85python%E5%8C%85.mp4">
+  <source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/python.mp4">
 </video>
 
 ### 设置环境变量
@@ -75,7 +74,7 @@ python --version
 Visual Studio Code是一个轻量级但功能强大的源代码编辑器，在你的桌面上运行，可用于Windows、macOS和Linux。它内置了对JavaScript、TypeScript和Node.js的支持，并有一个丰富的生态系统，可用于其他语言和运行系统（如C++、C#、Java、Python、PHP、Go、.NET）的扩展。
 
 <video width="600" height="450" controls>
-  <source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/vscode.mov">
+  <source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/vscode.mov">
 </video>
 
 官方有非常丰富的文档提供学习参考，第一步可以从[入门视频开始](https://code.visualstudio.com/docs/getstarted/introvideos)
