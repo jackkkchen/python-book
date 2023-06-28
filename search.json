@@ -28,261 +28,275 @@
     "text": "应用领域\nPython具有广泛的应用领域，从Web开发到科学计算和人工智能等各种领域都能发挥其优势。它的简洁性和强大的库生态系统使得开发人员能够快速构建各种类型的应用程序。\n\nWeb开发：Python的Web框架（如Django和Flask）使得构建功能强大的Web应用程序变得简单。Python还可以用于服务器端编程、网页爬虫和API开发等。\n数据科学和机器学习：Python在数据科学和机器学习领域非常受欢迎。它提供了许多用于数据处理、数据可视化和机器学习算法的库，如NumPy、Pandas、Matplotlib、Scikit-learn和TensorFlow等。\n科学计算：Python在科学计算领域也得到广泛应用。科学计算库如NumPy和SciPy提供了许多数值计算、优化和统计分析的功能，适用于物理学、数学、生物学等领域。\n自动化和脚本编写：Python的简洁性和易用性使得它成为自动化任务和脚本编写的理想选择。可以使用Python编写脚本来自动执行重复性的任务、处理文件、操作系统和网络等。\n游戏开发：Python也可以用于游戏开发。有一些专门的库和框架，如Pygame，使得使用Python编写2D游戏变得相对容易。"
   },
   {
-    "objectID": "环境搭建.html#anaconda环境安装强烈推荐",
-    "href": "环境搭建.html#anaconda环境安装强烈推荐",
+    "objectID": "周一环境搭建.html#anaconda环境安装强烈推荐",
+    "href": "周一环境搭建.html#anaconda环境安装强烈推荐",
     "title": "Python 环境搭建",
     "section": "Anaconda环境安装（强烈推荐）",
     "text": "Anaconda环境安装（强烈推荐）\n强烈推荐小白使用Anaconda平台学习Python。\nAnaconda提供了简化环境配置、跨平台支持、库和工具管理以及丰富的科学计算库等优势，使得小白学习Python更加便捷和高效。它是一个功能强大且易于使用的平台，可以帮助您快速入门Python编程并进行数据处理和分析。\n官方免费提供在线编辑器-jupyterlab 无需手动安装环境，即可直接上手编写代码。"
   },
   {
-    "objectID": "环境搭建.html#python包-手动安装",
-    "href": "环境搭建.html#python包-手动安装",
+    "objectID": "周一环境搭建.html#python包-手动安装",
+    "href": "周一环境搭建.html#python包-手动安装",
     "title": "Python 环境搭建",
     "section": "Python包 手动安装",
     "text": "Python包 手动安装\n你可以访问Python官网下载并安装适合你操作系统的Python版本。最好选择stable稳定版\n\n\n\n\n\n设置环境变量\n程序和可执行文件可以在许多目录，而这些路径很可能不在操作系统提供可执行文件的搜索路径中\nPATH (路径)存储在环境变量中，这是由操作系统维护的一个命名的字符串,这些变量包含可用的命令行解释器和其他程序的信息\nUnix 或 Windows 中路径变量为 PATH ( UNIX区分大小写，Windows 不区分大小写 )\nMac OS 中，如果安装程序过程中改变了 python 的安装路径，如果想要在其它目录引用 Python，则必须在 PATH 中添加 Python 目录\n\n\n在 Windows 设置环境变量\nWindows 系统中，把 Python 安装目录添加到 PATH 环境变量中流程如下\n\n右键点击 计算机，然后点击 属性\n然后点击”高级系统设置”\n选择 系统变量 窗口下面的 Path ,双击即可！\n然后在 Path 行，添加 python 安装路径即可，即在最后面，添加 ;C:\\Python\n设置成功以后，在 cmd 命令行，输入命令 python，就可以有相关显示\n\n\n\n\n\n\n\n\nNote\n\n\n\nWindows 下的 Python 一般安装在 C:\\Python目录。\n\n\n安装完成后，打开命令行（Windows）或终端（macOS/Linux），输入以下命令，确认Python已成功安装：\npython --version\n输入python并按回车键。你将看到一条欢迎消息，其末尾\n为如下提示符：\n\\&gt;&gt;&gt;\n如果情况确实如此，就可以输入Python命令了。\n请尝试像下面这样做，以核实它是否管用：\n\\&gt;&gt;&gt; print(\"Hello, world!\")\n等你按下回车键后，将出现如下输出：\nHello, world!\n\\&gt;&gt;&gt;\n如果你熟悉其他计算机语言，可能习惯了在每行末尾都加上分号。在Python中无需这样做，因为在Python中，一行就是一行。接下来，我们将学习如何编写和运行Python程序。"
   },
   {
-    "objectID": "环境搭建.html#visual-stuido-code安装",
-    "href": "环境搭建.html#visual-stuido-code安装",
+    "objectID": "周一环境搭建.html#visual-stuido-code安装",
+    "href": "周一环境搭建.html#visual-stuido-code安装",
     "title": "Python 环境搭建",
     "section": "Visual Stuido Code安装",
     "text": "Visual Stuido Code安装\nVisual Studio Code是一个轻量级但功能强大的源代码编辑器，在你的桌面上运行，可用于Windows、macOS和Linux。它内置了对JavaScript、TypeScript和Node.js的支持，并有一个丰富的生态系统，可用于其他语言和运行系统（如C++、C#、Java、Python、PHP、Go、.NET）的扩展。\n\n\n\n官方有非常丰富的文档提供学习参考，第一步可以从入门视频开始\n\n\n\n\n\n\nNote\n\n\n\n在vscode中，创建新的main.py文件后，可使用快捷键ctl+`打开终端。 输入python main.py运行 python代码"
   },
   {
-    "objectID": "基础语法.html#如何使用python",
-    "href": "基础语法.html#如何使用python",
+    "objectID": "周二基础语法.html#如何使用python",
+    "href": "周二基础语法.html#如何使用python",
     "title": "1  Python基础语法",
     "section": "如何使用Python",
     "text": "如何使用Python\n\n运行python文件\nPython文件的后缀为 .py\n\n\n\n在代码编辑器中输入python指令\n比如在jupyterlab，在终端或者vscode中输入代码\n\n\n\n\n\n\n\nNote\n\n\n\n在终端中，输入python进入python解释器后，即可运行python代码\n\n\n我们可以写一个简单的表达式，在编程中，表达式是一段产生值的代码，例如\n\n\nCode\n2023 + 4090\n\n\n6113\n\n\n另外一种表达式，让我们看看是否 9 大于 1？\n\n\nCode\n9 &gt; 1\n\n\nTrue\n\n\n因为这个逻辑是成立的，所以我们会得到 True，反之则会得到False。这也叫做布尔值，这会在之后的数据类型中介绍。\n那写代码总少不了报错。假如我的是空值呢？\n\n\nCode\n9 &gt; \n\n\nSyntaxError: invalid syntax (1639543893.py, line 1)\n\n\n我们会得到一个语法错误，其中SyntaxError在编程中，意味着语法，就像平常的语言中的语法一样，你不说清楚是什么的话，那是很难理解的。这在编程里也十分讲究。"
   },
   {
-    "objectID": "基础语法.html#变量赋值",
-    "href": "基础语法.html#变量赋值",
+    "objectID": "周二基础语法.html#变量赋值",
+    "href": "周二基础语法.html#变量赋值",
     "title": "1  Python基础语法",
     "section": "变量赋值",
     "text": "变量赋值\n在Python中，变量用于存储和表示数据。变量赋值是将一个值与一个变量关联起来的过程。通过变量，我们可以在程序中存储和操作数据。\n\n变量的命名规则\n在Python中，变量的命名需要遵循以下规则：\n\n变量名只能包含字母（大小写敏感）、数字和下划线（_）。\n变量名不能以数字开头。\n变量名不能使用Python关键字和保留字，如if、for、while等。\n变量名应具有描述性，能够清晰地表示变量的含义。\n\n\n\n变量的赋值\n在Python中，使用等号（=）进行变量赋值操作。等号 ( = ) 运算符左边是一个变量名,等号 ( = ) 运算符右边是存储在变量中的值\n下面是一个例子，将数字5赋值给变量x：\n\n\nCode\nx = 5\n\n\n\n\n变量的使用\n一旦变量被赋值，我们可以在程序中使用它来表示和操作存储的值。\n下面是一个例子，使用变量x计算其平方并打印结果：\n\n\nCode\nx = 5\nsquare = x * x\nprint(square)\n\n\n25\n\n\n\n\n变量的重新赋值\n在程序中，我们可以多次为同一个变量赋值，新的赋值将覆盖之前的值。\n下面是一个例子，演示变量的重新赋值：\n\n\nCode\nx = 5\nprint(x)  # 输出：5\n\nx = 10\nprint(x)  # 输出：10\n\n\n题型一\n将字符串”Hello, Python!“赋值给变量message，然后打印出变量的值。\n\n\nCode\nmessage = \"Hello, Python!\"\nprint(message)\n\n\nHello, Python!"
   },
   {
-    "objectID": "基础语法.html#注释",
-    "href": "基础语法.html#注释",
+    "objectID": "周二基础语法.html#注释",
+    "href": "周二基础语法.html#注释",
     "title": "1  Python基础语法",
     "section": "注释",
     "text": "注释\n在Python中，注释用于对代码进行解释和说明，对于其他人（包括自己）来理解代码的作用和意图非常有帮助。注释是在代码中添加的文本，Python解释器会忽略它们。\n\n单行注释\n在Python中，使用#符号开始的文本被视为单行注释。在#后面的所有内容都被视为注释，不会被执行。\n下面是一个例子，演示如何使用单行注释：\n\n\nCode\n# 这是一个单行注释\nprint(\"Hello, World!\")  # 打印输出文本\n\n\nHello, World!\n\n\n上述代码中，第一行是一个注释，用于对代码的目的进行解释。第二行是打印输出语句，不受注释的影响。\n\n\n多行注释\n在Python中，使用三个引号（“““或’’’）包围的文本被视为多行注释。多行注释可以跨越多行，并且可以包含多个段落。\n下面是一个例子，演示如何使用多行注释：\n\n\nCode\n\"\"\"\n这是一个多行注释的示例。\n它可以跨越多行，并且可以包含多个段落。\n\n以下是代码的主要功能：\n- 输入用户的姓名\n- 打印欢迎消息和姓名\n\"\"\"\n\nname = input(\"请输入您的姓名：\")\nprint(\"欢迎，\" + name + \"!\")\n\n\n欢迎，jack!\n\n\n\n\n\n\n\n\nNote\n\n\n\n如果想一次性注释多行的话，鼠标选取后，按ctl+/进行注释"
   },
   {
-    "objectID": "基础语法.html#数据类型",
-    "href": "基础语法.html#数据类型",
-    "title": "1  Python基础语法",
-    "section": "数据类型",
-    "text": "数据类型\n在Python中，有多种内置的数据类型，每种类型都用于存储不同类型的数据。了解和正确使用这些数据类型对于编写有效的Python代码非常重要。\n\n数字类型\n数字类型用于表示数值数据，包括整数（int）和浮点数（float）。\n下面是一个例子，演示如何使用数字类型：\n\n\nCode\n# 整数类型\nnum1 = 10\nprint(num1) \n\n\n10\n\n\n\n\nCode\n# 浮点数类型\nnum2 = 3.14\nprint(num2)  \n\n\n3.14\n\n\n\n\n字符串类型\n字符串类型用于表示文本数据，使用引号（单引号或双引号）括起来。\n下面是一个例子，演示如何使用字符串类型：\n\n\nCode\nname = \"Jack Chen\"\nprint(name)  \n\n\nJack Chen\n\n\n\n\n布尔类型\n布尔类型用于表示真（True）和假（False）的值。\n下面是一个例子，演示如何使用布尔类型：\n\n\nCode\nis_active = True\nprint(is_active)  \n\n\nTrue\n\n\n\n\nCode\nis_student = False\nprint(is_student) \n\n\nFalse"
-  },
-  {
-    "objectID": "基础语法.html#行和缩进",
-    "href": "基础语法.html#行和缩进",
+    "objectID": "周二基础语法.html#行和缩进",
+    "href": "周二基础语法.html#行和缩进",
     "title": "1  Python基础语法",
     "section": "行和缩进",
     "text": "行和缩进\n在Python中，行用于分隔不同的代码语句，而缩进用于表示代码块（例如条件语句、循环等）的范围。\n\n行\n每一行都包含一个完整的代码语句或表达式。下面是一个例子：\n\n\nCode\nprint(\"Hello, world!\")\n\n\nHello, world!\n\n\n上述代码中，print(“Hello, world!”)是一行代码，用于输出字符串”Hello, world!“。\n\n\n缩进\n在Python中，缩进通过空格或制表符来实现，用于表示代码块的开始和结束。通常使用4个空格作为标准缩进。\n\n\n\n\n\n\nWarning\n\n\n\n缩进造成的错误，应该名列 Python 错误榜第一\n\n\n下面是一个例子，演示如何使用缩进创建代码块：\n\n\nCode\n if x&gt;0:\n    print(\"x是正数\")\n    print(\"干得漂亮！\")\nelse:\n    print (\"x是负数\")\n    print (\"可惜哇嗷！\") \n\n\nx是正数\n干得漂亮！\n\n\n上述代码中，if语句和else语句是两个代码块，它们的范围由缩进表示。在if代码块中，两个print语句都会在条件满足时执行。在else代码块中，同样有两个print语句。（大家可以自己修改下x范围）\n\n\n\n\n\n\nNote\n\n\n\n养成良好编码习惯： 1. 保持一致的缩进：使用相同数量的空格或制表符进行缩进，并在整个代码中保持一致。这有助于提高代码的可读性； 2. 使用合适的缩进级别：根据代码逻辑嵌套关系，选择适当的缩进级别。通常建议每个缩进级别使用4个空格； 3. 使用注释：在关键地方添加注释，解释代码的目的和功能。注释可以提高代码的可读性和可维护性； 4. 注意行的长度：尽量将每行代码控制在适当的长度范围内，通常推荐不超过80个字符。可以使用换行符（）或括号来换行。\n\n\n\n\n多行语句\n\n使用反斜杠\n使用反斜杠（\\）将一行代码分成多行。下面是一个例子：\n\n\nCode\ntotal = 1 + \\\n        2 * \\\n        3\nprint(total)\n\n\n7\n\n\n上述代码中，total变量的值是1+2+3，通过使用反斜杠在多行中编写，使代码更易读。\n\n\n使用括号\n另一种方式是使用括号（圆括号、方括号、花括号）来隔行编写多行语句。下面是一个例子：\n\n\nCode\ntotal = (1 +\n         2 *\n         3)\nprint(total)\n\n\n7"
   },
   {
+    "objectID": "周三数据类型.html#数据类型",
+    "href": "周三数据类型.html#数据类型",
+    "title": "2  Python数据类型",
+    "section": "数据类型",
+    "text": "数据类型\n在Python中，有多种内置的数据类型，每种类型都用于存储不同类型的数据。了解和正确使用这些数据类型对于编写有效的Python代码非常重要。\nPython有以下基本数据类型：\n\n整数（int）：如1, 2, 3\n浮点数（float）：如1.5, 3.14\n字符串（str）：如”hello”, ‘world’\n布尔值（bool）：True, False\n\n\n数字类型\n数字类型用于表示数值数据，包括整数（int）和浮点数（float）。\n下面是一个例子，演示如何使用数字类型：\n\n\nCode\n# 整数类型\nnum1 = 10\nprint(num1) \n\n\n10\n\n\n\n\nCode\n# 浮点数类型\nnum2 = 3.14\nprint(num2)  \n\n\n3.14\n\n\n\n\n字符串类型\n字符串类型用于表示文本数据，使用引号（单引号或双引号）括起来。\n下面是一个例子，演示如何使用字符串类型：\n\n\nCode\nname = \"Jack Chen\"\nprint(name)  \n\n\nJack Chen\n\n\n\n\n布尔类型\n布尔类型用于表示真（True）和假（False）的值。\n下面是一个例子，演示如何使用布尔类型：\n\n\nCode\nis_active = True\nprint(is_active)  \n\n\nTrue\n\n\n\n\nCode\nis_student = False\nprint(is_student) \n\n\nFalse"
+  },
+  {
+    "objectID": "周三数据类型.html#运算符",
+    "href": "周三数据类型.html#运算符",
+    "title": "2  Python数据类型",
+    "section": "运算符",
+    "text": "运算符\n当提到Python的运算符，可以包括算术运算符、赋值运算符、比较运算符、逻辑运算符和位运算符等。下面是一些常见的运算符示例及其解析：\n\n算术运算符\n比较常见的算术运算符，也就是加减乘除这些。\n\n\n\n运算符\n描述\n举例\n\n\n\n\nx+y\n加\n1+2=3\n\n\nx-y\n减\n6-5=1\n\n\nx*y\n乘\n2*3=6\n\n\nx/y\n除\n2/4=0.5\n\n\nx//y\n整除，取整数部分\n2//4=0\n\n\nx%y\n取余\n15%4=3\n\n\n**\n幂运算\n2**3=8 二的三次方\n\n\n\n\n\nCode\na = 10\nb = 3\n\n# 加法\nresult = a + b * (a // b) \nprint(result)  \n\n\n19\n\n\n\n\n赋值运算符\n在加减乘除的基础上直接进行赋值计算，不需要新的变量\n\n\n\n运算符\n描述\n\n\n\n\n=\n赋值\n\n\n+=\n加等,自增 number += 1 &lt;==&gt; number = number+1\n\n\n*=\n乘等\n\n\n%=\n余等\n\n\n-=\n减等，自检\n\n\n/=\n除等\n\n\n//=\n取整等\n\n\n**=\n幂等\n\n\n\n\n\nCode\na = 10\nb = 3\n\n# 加法赋值\na += b \nprint(a)  \n\n\n13\n\n\n\n\n比较运算符（控制结构判断）\n输出为布尔值\n\n\n\n运算符\n描述\n\n\n\n\n&lt;\n小于\n\n\n&lt;=\n小于等于\n\n\n&gt;\n大于\n\n\n&gt;=\n大于等于\n\n\n==\n等于\n\n\n!=\n不等于\n\n\nis\n判断两个标识符是不是引用自一个对象\n\n\nis not\n判断两个标识符是不是引用自不同对象\n\n\n\n\n\nCode\na = 10\nb = 3\n\n# 相等比较\nresult = a == b\nprint(result)  \n\n\nFalse\n\n\n\n\n逻辑运算符\n逻辑运算符用于在布尔表达式中组合和比较逻辑条件。Python中的逻辑运算符包括以下三种：and（与）、or（或）和not（非）。\n\n\n\n\n\n\n\n\n运算符\n描述\n备注\n\n\n\n\nx and y\nif x is false, then x,else y\nxy都为True,结果为True；否则为False\n\n\nx or y\nif x is false, then y，else x\nxy都为False,结果为False；否则为True\n\n\nnot x\nif x is false,then True，else False\nx为True时，值为False；x为False时，值为True\n\n\n\n\n逻辑 与（and）运算符：\n逻辑与运算符返回两个操作数都为True时的结果为True，否则返回False。\n\n\nCode\nx = True\ny = False\n\n# 与运算\nresult = x and y\nprint(result)\n\n\nFalse\n\n\n这里可能比较难理解，在上面的示例中，x的值为True，y的值为False。当使用逻辑与运算符（and）将x和y进行运算时，由于y为False，所以结果为False。如果x和y都为True，则结果为True。\n\n\n逻辑或（or）运算符\n逻辑或运算符返回两个操作数中至少一个为True时的结果为True，只有当两个操作数都为False时结果才为False。\n\n\nCode\na = True\nb = False\n\nresult = a or b\nprint(result)  \n\n\nTrue\n\n\n\n\n逻辑非（not）运算符\n逻辑非运算符将操作数的值取反，如果操作数为True，则结果为False；如果操作数为False，则结果为True。\n\n\nCode\na = True\n\nresult = not a\nprint(result) \n\n\nFalse"
+  },
+  {
+    "objectID": "周三数据类型.html#数据结构",
+    "href": "周三数据类型.html#数据结构",
+    "title": "2  Python数据类型",
+    "section": "数据结构",
+    "text": "数据结构\nPython中有多种常用的数据结构，包括列表（List）、元组（Tuple）和字典（Dictionary）\n\n列表 List\nlist是Python中最常用的数据结构之一，用于存储一组有序的元素。列表中的元素可以是不同类型的对象，可以进行增删改查等操作。\n\n创建列表\n列表可以使用方括号[]来创建，其中每个元素用逗号分隔。例如：\n\n\nCode\n水果 = ['苹果', '菠萝', '榴莲']\nprint(水果)\n\n\n['苹果', '菠萝', '榴莲']\n\n\n\n\n访问列表元素\n列表中的元素可以通过索引访问，索引从0开始。例如，要访问列表中的第一个元素，可以使用fruits[0]。可以使用负数索引从列表末尾开始访问元素。例如，fruits[-1]表示访问最后一个元素。\n\n\nCode\n# python中顺序需要向前递减一位，所以索引 0 代表第一个\nprint(水果[0]) \n\n\n苹果\n\n\n\n\n修改列表元素\n列表中的元素可以通过索引进行修改。可以使用赋值语句将新的值赋给列表中的特定位置。\n\n\nCode\n水果[1] = '香蕉'\nprint(水果)\n\n\n['苹果', '香蕉', '榴莲']\n\n\n\n\n添加和删除元素\n添加元素：可以使用append()方法将元素添加到列表的末尾。\n\n\nCode\n水果.append('我爱香蕉')\nprint(水果)\n\n\n['苹果', '香蕉', '榴莲', '我爱香蕉']\n\n\n删除元素：可以使用remove()方法删除列表中的特定元素。\n\n\nCode\n水果.remove('香蕉')\nprint(水果) \n\n\n['苹果', '榴莲', '我爱香蕉']\n\n\n\n\n\n元组（Tuple）\n元组与列表类似，也是用于存储一组有序的元素。但是，元组一旦创建，其元素不可更改，即元组是不可变的。\n\n\nCode\n# 创建一个元组\nperson = ('John', 25, 'USA')\n\n# 访问元组元素\nprint(person[0])  \n\n\n\nJohn\n\n\n\n\nCode\n# 尝试修改元组元素（会抛出异常）\nperson[1] = 30\n\n\nTypeError: 'tuple' object does not support item assignment\n\n\n在上面的示例中，我们创建了一个包含个人信息的元组。通过索引访问元组中的元素，但是尝试修改元组元素会引发TypeError异常，因为元组是不可变的。\n\n元组的应用场景\n\n用于存储不可变的数据集合，如坐标点、日期等。\n作为字典（Dictionary）的键值，因为字典要求键是不可变的。\n用于函数返回多个值，函数可以返回元组，调用函数时可以解包元组并获得多个返回值。\n\n元组在需要存储不可变数据集合或对数据进行保护时非常有用。由于元组是不可变的，因此在某些情况下比列表更安全和高效。\n\n\n元组解包\n可以将元组的元素解包到多个变量中，从而快速访问元组的各个元素。\n\n\nCode\n# person元组中，有三个数值，所以必须设`x,y,z`\nx, y, z = person\nprint(x) \n\n\nJohn\n\n\n\n\n\n字典（Dictionary）\n字典是Python中一种常用的数据结构，又称 哈希表，它以键-值（key-value）对的形式存储数据。以下是对字典的详细说明：\n\n创建字典\n字典使用花括号{}来创建，每个键-值对之间使用冒号:分隔，不同键-值对之间使用逗号,分隔。例如：\n\n\nCode\nstudent = {'姓名': '帅气的Jack', '年龄': 24, '成绩': 'SSS'}\nstudent\n\n\n{'姓名': '帅气的Jack', '年龄': 24, '成绩': 'SSS'}\n\n\n\n\n访问字典元素\n可以通过键来访问字典中的值。使用键来提取相应的值，使用方括号[]操作符，将键作为索引传递给字典。例如：\n\n\nCode\nprint(student['姓名'])\n\n\n帅气的Jack\n\n\n\n\n修改字典元素\n字典中的值是可以修改的。可以通过指定键来更新字典中的值。例如：\n\n\nCode\n#如果需要指定中文，最好加上引号''\nstudent['成绩'] = '刚好及格'\nprint(student)\n\n\n{'姓名': '帅气的Jack', '年龄': 24, '成绩': '刚好及格'}\n\n\n\n\n关于字典的相关操作\n要确定字典有多少项，可以使用len()函数\n\n\nCode\nprint(len(student))\n\n\n3\n\n\n\n\nCode\ndel student['姓名']  # 删除键是'姓名'的条目\nstudent.clear()      # 清空字典所有条目\ndel student          # 删除字典"
+  },
+  {
     "objectID": "安装.html",
     "href": "安装.html",
-    "title": "2  Pandas安装",
+    "title": "3  Pandas安装",
     "section": "",
     "text": "使用Anaconda安装\n对于没有经验的小白来说，直接上手用代码来安装各种包可能有点困难，而Anaconda作为一个发型平台，可以非常轻松的安装除了Pandas之外的各种Python包（IPython、NumPy、 Matplotlib等）\n详细的Anaconda安装步骤可以观看我的B站视频，或者官方文档\n\nconda install pandas\n\n\n\n\n\n\n\n\n使用PyPI中的 pip 安装\n\npip install pandas\n\n\n\n\n\n\n\nTip\n\n\n\n一般来说这是python自带的安装方式，但有时候你的虚拟环境没有或者服务器里的需要更新，可以参考文档\n\n\n\nLinuxMacOSWindows\n\n\n$ python -m ensurepip --upgrade\n\n\n$ python -m ensurepip --upgrade\n\n\nC:&gt; py -m ensurepip --upgrade"
   },
   {
     "objectID": "pandas处理什么样的数据.html#表格数据",
     "href": "pandas处理什么样的数据.html#表格数据",
-    "title": "3  pandas处理什么样的数据",
+    "title": "4  pandas处理什么样的数据",
     "section": "表格数据",
     "text": "表格数据\nPandas最常用于处理表格数据，例如CSV文件、Excel文件、数据库查询结果等。你可以使用Pandas读取这些数据，并对其进行各种操作，如过滤、排序、合并、聚合、计算统计指标等。\n当使用Pandas处理表格数据时，你可以使用DataFrame这个主要的数据结构。DataFrame是一个二维的标记数组，类似于电子表格或SQL表。\n\n\nCode\n# 1. 导入pandas包\nimport pandas as pd\n\n# 2. 假设data数据\ndata = {\n  \"calories\": [420, 380, 390],\n  \"duration\": [50, 40, 45]\n}\n\n# 3. 假设df，然后调用pd(pandas包)，将数据转换为DataFrame格式\ndf = pd.DataFrame(data)\n\n# 4. 打印df\ndf\n\n\n\n\n\n\n\n\n\ncalories\nduration\n\n\n\n\n0\n420\n50\n\n\n1\n380\n40\n\n\n2\n390\n45"
   },
   {
     "objectID": "pandas处理什么样的数据.html#时间序列数据",
     "href": "pandas处理什么样的数据.html#时间序列数据",
-    "title": "3  pandas处理什么样的数据",
+    "title": "4  pandas处理什么样的数据",
     "section": "时间序列数据",
     "text": "时间序列数据\nPandas提供了强大的时间序列功能，可以处理日期和时间相关的数据。你可以使用Pandas对时间序列数据进行重采样、滚动计算、时间窗口分析、时间序列绘图等操作。\n\n\nCode\nimport pandas as pd\n\ndate = pd.to_datetime(\"13th of June, 2023\")\n\ndate\n\n\nTimestamp('2023-06-13 00:00:00')\n\n\n可以使用DateTimeIndex和TimedeltaIndex来表示时间索引和时间间隔。\n\n\nCode\nimport pandas as pd\n# 创建一个包含日期范围的时间索引\ndate_range = pd.date_range(start='2023-01-01', end='2023-01-10', freq='D')\n\n# 创建一个DataFrame，并使用时间索引\ndata = pd.DataFrame({'Value': [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]}, index=date_range)\n\n# 查看数据的前几行\ndata.head()\n\n\n\n\n\n\n\n\n\nValue\n\n\n\n\n2023-01-01\n10\n\n\n2023-01-02\n20\n\n\n2023-01-03\n30\n\n\n2023-01-04\n40\n\n\n2023-01-05\n50\n\n\n\n\n\n\n\n选取所需的时间序列数据，并进行计算\n\n\nCode\n# 通过日期索引获取某一天的数据\nday_data = data.loc['2023-01-05']\n\n# 通过日期范围索引获取一段时间内的数据\nrange_data = data.loc['2023-01-03':'2023-01-07']\n\n# 使用日期的年、月、日等属性进行切片\nyear_data = data[data.index.year == 2023]\nmonth_data = data[data.index.month == 1]\nday_data = data[data.index.day == 5]\n\n# 将数据按周进行重采样，计算每周的平均值\nweekly_data = data.resample('W').mean()\n\n# 将数据按月进行重采样，计算每月的总和\nmonthly_data = data.resample('M').sum()"
   },
   {
     "objectID": "pandas处理什么样的数据.html#缺失数据处理",
     "href": "pandas处理什么样的数据.html#缺失数据处理",
-    "title": "3  pandas处理什么样的数据",
+    "title": "4  pandas处理什么样的数据",
     "section": "缺失数据处理",
     "text": "缺失数据处理\nPandas提供了灵活的方法来处理缺失数据。你可以使用Pandas来检测和处理缺失值，填充缺失数据，或者根据缺失值进行数据筛选和计算。\n\n\nCode\n# 创建带有缺失数据的DataFrame\ndata = pd.DataFrame({'A': [1, 2, None, 4, 5],\n                     'B': [None, 2, 3, None, 6],\n\n                     'C': [1, 2, 3, 4, 5]})\n\n\n检查并统计缺失值\n\n\nCode\n# 检测每个单元格是否为缺失值\nmissing_values = data.isnull()\n\n# 统计每列的缺失值数量\nmissing_counts = data.isnull().sum()\n\n# 统计整个DataFrame的缺失值数量\ntotal_missing_count = data.isnull().sum().sum()\n\n\n对缺失值进行操作\n\n\nCode\n# 删除包含缺失值的行\ndata_dropna = data.dropna()\n\n# 删除全部为缺失值的列\ndata_dropna_cols = data.dropna(axis=1, how='all')\n\n# 填充缺失值为指定的常数\ndata_fillna = data.fillna(0)\n\n# 使用缺失值前面的值进行前向填充\ndata_ffill = data.fillna(method='ffill')\n\n# 使用缺失值后面的值进行后向填充\ndata_bfill = data.fillna(method='bfill')"
   },
   {
     "objectID": "pandas处理什么样的数据.html#数据清洗和转换",
     "href": "pandas处理什么样的数据.html#数据清洗和转换",
-    "title": "3  pandas处理什么样的数据",
+    "title": "4  pandas处理什么样的数据",
     "section": "数据清洗和转换",
     "text": "数据清洗和转换\nPandas可以用于数据清洗和转换的各种操作。你可以使用Pandas对数据进行重塑、合并、分组、变形等，以满足特定的分析需求。\n\n\nCode\n# 创建原始数据\ndata = pd.DataFrame({'Name': ['John', 'Emily', 'Michael', 'Emma'],\n                     'Age': [25, 30, 35, 28],\n                     'Gender': ['M', 'F', 'M', 'F'],\n                     'Salary': ['$5000', '$6000', '$4500', '$7000']})\n\n\n\n数据清洗\n清洗重复或者多余数据\n\n\nCode\n# 去除重复的行\ndata_cleaned = data.drop_duplicates()\n\n# 去除列中的空格\ndata_cleaned['Name'] = data_cleaned['Name'].str.strip()\n\n# 删除缺失值所在的行\ndata_cleaned = data_cleaned.dropna()\n\n\n\n\n数据转换\n将列表转换为系列（Series）\nseries = pd.Series(list)\n\n\nCode\nimport pandas as pd\n\n# 将列表转换为系列\nmy_list = [1, 2, 3, 4, 5]\nseries = pd.Series(my_list)\nseries\n\n\n0    1\n1    2\n2    3\n3    4\n4    5\ndtype: int64\n\n\n将系列（Series）转换为数据帧（DataFrame）\ndataframe = series.to_frame()\n\n\nCode\n# 将系列转换为数据帧\nseries = pd.Series([1, 2, 3, 4, 5])\ndataframe = series.to_frame()\ndataframe\n\n\n\n\n\n\n\n\n\n0\n\n\n\n\n0\n1\n\n\n1\n2\n\n\n2\n3\n\n\n3\n4\n\n\n4\n5\n\n\n\n\n\n\n\n将数据帧（DataFrame）转换为列表（list）\nmy_list = df.values.tolist()\n\n\nCode\n# 将数据帧转换为列表\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})\nmy_list = df.values.tolist()\nmy_list\n\n\n[[1, 4], [2, 5], [3, 6]]\n\n\n\n\n\n\n\n\nTip\n\n\n\n数据的清洗和转换是pandas最常使用的功能，之后我们会逐步拆解，进行详细说明"
   },
   {
     "objectID": "pandas处理什么样的数据.html#数据可视化",
     "href": "pandas处理什么样的数据.html#数据可视化",
-    "title": "3  pandas处理什么样的数据",
+    "title": "4  pandas处理什么样的数据",
     "section": "数据可视化",
     "text": "数据可视化\nPandas集成了Matplotlib库，可以通过简单的接口生成各种统计图表和可视化图形，以便更好地理解和呈现数据。\n\n\nCode\n# 创建数据\ndata = pd.DataFrame({'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],\n                     'Sales': [100, 150, 120, 200, 180, 250],\n                     'Expenses': [80, 90, 100, 85, 95, 110]})\n\n# 折线图\ndata.plot(x='Month', y='Sales', kind='line')\n\n\n&lt;Axes: xlabel='Month'&gt;\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n虽然pandas也可以画图，但是还是静态图形，之后我们会详细说明更加简洁和酷炫的可视化库 Plotly库"
   },
   {
     "objectID": "pandas处理什么样的数据.html#数据建模和分析",
     "href": "pandas处理什么样的数据.html#数据建模和分析",
-    "title": "3  pandas处理什么样的数据",
+    "title": "4  pandas处理什么样的数据",
     "section": "数据建模和分析",
     "text": "数据建模和分析\nPandas还支持数据建模和分析的操作。你可以使用Pandas进行数据建模、特征工程、数据预处理等，然后将数据传递给机器学习库（如Scikit-learn）进行模型训练和预测。网上看到不错的数据预测案例"
   },
   {
     "objectID": "导入&导出数据.html",
     "href": "导入&导出数据.html",
-    "title": "4  导入&导出数据",
+    "title": "5  导入&导出数据",
     "section": "",
     "text": "读取本地数据\n获取数据data.csv下载地址，将csv文件下载到本地。\n\n\nCode\n# 导入pandas包\nimport pandas as pd\n\n# 注意csv文件路径\ndf = pd.read_csv('./example_data/data.csv') \n\n# 打印前五个\ndf.head()\n\n\n\n\n\n\n\n\n\nDuration\nPulse\nMaxpulse\nCalories\n\n\n\n\n0\n60\n110\n130\n409.1\n\n\n1\n60\n117\n145\n479.0\n\n\n2\n60\n103\n135\n340.0\n\n\n3\n45\n109\n175\n282.4\n\n\n4\n45\n117\n148\n406.0\n\n\n\n\n\n\n\n\n\n读取线上数据\n线上数据地址\n\n\nCode\ndf = pd.read_csv('https://www.w3schools.com/python/pandas/data.csv.txt')\n\n# 打印前五个\ndf.head()\n\n\n\n\n\n\n\n\n\nDuration\nPulse\nMaxpulse\nCalories\n\n\n\n\n0\n60\n110\n130\n409.1\n\n\n1\n60\n117\n145\n479.0\n\n\n2\n60\n103\n135\n340.0\n\n\n3\n45\n109\n175\n282.4\n\n\n4\n45\n117\n148\n406.0\n\n\n\n\n\n\n\n\n\nCode\n# 获取案例数据\nimport pandas as pd\ndf = pd.read_csv('https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/titanic.csv') \ndf.head()\n\n\n\n\n\n\n\n\n\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\n\n0\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.2500\nNaN\nS\n\n\n1\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Th...\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n2\n3\n1\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n0\n0\nSTON/O2. 3101282\n7.9250\nNaN\nS\n\n\n3\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1000\nC123\nS\n\n\n4\n5\n0\n3\nAllen, Mr. William Henry\nmale\n35.0\n0\n0\n373450\n8.0500\nNaN\nS\n\n\n\n\n\n\n\n\n\n\n\n\n\nPandas连接MySQL数据库导入导出数据\n\n步骤1：安装必要的库\n在开始之前，确保已经安装了以下库：\nPandas：用于数据处理和操作。\nSQLAlchemy：用于数据库连接和交互\n可以使用以下命令通过pip安装它们：\npip install pandas sqlalchemy\n\n\n步骤2：链接数据库\n首先，我们需要使用SQLAlchemy来建立与数据库的连接。根据使用的数据库类型（如MySQL、SQLite、PostgreSQL等），使用适当的连接字符串和数据库驱动程序。\n以下是使用SQLite数据库的示例代码：\n\n\nCode\nimport sqlalchemy\n\n# 建立与数据库的连接\nengine = sqlalchemy.create_engine('sqlite:///path/to/database.db')\n\n\n\n\n\n\n\n\nTip\n\n\n\n将path/to/database.db替换为实际的数据库文件路径或连接字符串\n\n\n\n\n步骤3：导入数据\n有几种方法可以使用Pandas从数据库中导入数据。最简单的方法是使用read_sql()函数，该函数接受一个SQL查询语句并将结果读取为DataFrame对象。\n以下是使用read_sql()函数导入数据的示例代码：\n\n\nCode\nimport pandas as pd\n\n# 执行SQL查询并将结果读取为DataFrame\nquery = 'SELECT * FROM table_name'\ndf = pd.read_sql(query, engine)\n\n# 打印DataFrame\nprint(df)\n\n\n\n\n\n\n\n\nTip\n\n\n\n将table_name替换为要查询的实际表名。\n\n\n\n\n步骤4：导出数据\n同样，使用Pandas可以将DataFrame中的数据导出到数据库中。可以使用to_sql()函数将DataFrame写入数据库表。\n以下是使用to_sql()函数导出数据的示例代码\n\n\nCode\n# 将DataFrame写入数据库表\ndf.to_sql('table_name', engine, if_exists='replace', index=False)\n\n\n\n\n\n\n\n\nTip\n\n\n\n将table_name替换为要写入的实际表名。if_exists=’replace’表示如果表已经存在，则替换它。index=False表示不将DataFrame的索引写入数据库。"
   },
   {
     "objectID": "选取数据.html#根据条件筛选行列",
     "href": "选取数据.html#根据条件筛选行列",
-    "title": "5  选取数据",
+    "title": "6  选取数据",
     "section": "根据条件筛选行列",
     "text": "根据条件筛选行列\n假设我想知道十八岁以下的乘客信息\n\n\nCode\ndf[df[\"Age\"] &lt; 18].head()\n\n\n\n\n\n\n\n\n\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\n\n7\n8\n0\n3\nPalsson, Master. Gosta Leonard\nmale\n2.0\n3\n1\n349909\n21.0750\nNaN\nS\n\n\n9\n10\n1\n2\nNasser, Mrs. Nicholas (Adele Achem)\nfemale\n14.0\n1\n0\n237736\n30.0708\nNaN\nC\n\n\n10\n11\n1\n3\nSandstrom, Miss. Marguerite Rut\nfemale\n4.0\n1\n1\nPP 9549\n16.7000\nG6\nS\n\n\n14\n15\n0\n3\nVestrom, Miss. Hulda Amanda Adolfina\nfemale\n14.0\n0\n0\n350406\n7.8542\nNaN\nS\n\n\n16\n17\n0\n3\nRice, Master. Eugene\nmale\n2.0\n4\n1\n382652\n29.1250\nNaN\nQ\n\n\n\n\n\n\n\nDataFrames 可以通过多种方式进行过滤，其中最直观的是使用布尔索引"
   },
   {
     "objectID": "添加新列.html#添加新列",
     "href": "添加新列.html#添加新列",
-    "title": "6  增删排序(DataFrame)",
+    "title": "7  增删排序(DataFrame)",
     "section": "添加新列",
     "text": "添加新列\n可以看到目前的案例中是四行三列，如果我想添加新的一列“薪资”，有两种方法：\n\n方法一： df[‘列名’] = 值\n\n\nCode\n\ndf['工资'] = [5000, 6000, '', 7000]\ndf\n\n\n\n\n\n\n\n\n\n姓名\n年龄\n性别\n工资\n\n\n\n\n0\n张三\n25\nM\n5000\n\n\n1\n李四\n30\nF\n6000\n\n\n2\n王五\n35\nM\n\n\n\n3\n赵六\n28\nF\n7000\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n[值]必须对应行数，这里有四个人就必须有四个值，没有则可以为空白' ' 或者 'NA'；[]里面的顺序也会保持一样\n\n\n\n\n方法二：使用assign()\n\n\nCode\n\ndf = df.assign(工资=[5000, 6000, 4500, 7000])\ndf\n\n\n\n\n\n\n\n\n\n姓名\n年龄\n性别\n工资\n\n\n\n\n0\n张三\n25\nM\n5000\n\n\n1\n李四\n30\nF\n6000\n\n\n2\n王五\n35\nM\n4500\n\n\n3\n赵六\n28\nF\n7000\n\n\n\n\n\n\n\n我们可以在原有表格中添加新列，也可以从其他数据源（如文件、数据库等）中导入数据，并将其作为新列添加到DataFrame中。"
   },
   {
     "objectID": "添加新列.html#添加新行",
     "href": "添加新列.html#添加新行",
-    "title": "6  增删排序(DataFrame)",
+    "title": "7  增删排序(DataFrame)",
     "section": "添加新行",
     "text": "添加新行\n\n方法一： 使用append方法\ndf = df.append(new_row, ignore_index=True)\n其中，new_row是一个包含新行数据的字典或Series对象。\n\n\nCode\n# 重新选取数据\ndata = {'姓名': ['张三', '李四', '王五', '赵六'],\n        '年龄': [25, 30, 35, 28],\n        '性别': ['M', 'F', 'M', 'F']}\n\ndf = pd.DataFrame(data)\n\n\n\n\nCode\n#`ignore_index=True`是确保新行的索引与原始DataFrame的索引保持一致。\n\nnew_row = {'姓名': '熊大', '年龄': 35, '性别': 'M'}\n\ndf = df.append(new_row, ignore_index=True)\ndf\n\n\n/var/folders/fx/3rtntmd93wg4hsmfkcgfpq840000gn/T/ipykernel_42888/3717194637.py:5: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.\n  df = df.append(new_row, ignore_index=True)\n\n\n\n\n\n\n\n\n\n姓名\n年龄\n性别\n\n\n\n\n0\n张三\n25\nM\n\n\n1\n李四\n30\nF\n\n\n2\n王五\n35\nM\n\n\n3\n赵六\n28\nF\n\n\n4\n熊大\n35\nM\n\n\n\n\n\n\n\n\n\n方法二：使用concat()\n先创建一个新的DataFrame，然后将其与原始DataFrame进行合并\n\n\nCode\nnew_row = {'姓名': '熊二', '年龄': 30, '性别': 'M'}\n\nnew_df = pd.DataFrame([new_row])\n\ndf = pd.concat([df, new_df], ignore_index=True)\ndf\n\n\n\n\n\n\n\n\n\n姓名\n年龄\n性别\n\n\n\n\n0\n张三\n25\nM\n\n\n1\n李四\n30\nF\n\n\n2\n王五\n35\nM\n\n\n3\n赵六\n28\nF\n\n\n4\n熊大\n35\nM\n\n\n5\n熊二\n30\nM"
   },
   {
     "objectID": "添加新列.html#删除行列",
     "href": "添加新列.html#删除行列",
-    "title": "6  增删排序(DataFrame)",
+    "title": "7  增删排序(DataFrame)",
     "section": "删除行/列",
     "text": "删除行/列\n\n使用drop方法删除列\ndf = df.drop('column_name', axis=1)\n需要提供要删除的列名，然后指定axis=1表示按列进行操作。删除列后，DataFrame会自动调整列的顺序。\n\n\nCode\ndf = df.drop('性别', axis=1)\ndf\n\n\n\n\n\n\n\n\n\n姓名\n年龄\n\n\n\n\n0\n张三\n25\n\n\n1\n李四\n30\n\n\n2\n王五\n35\n\n\n3\n赵六\n28\n\n\n4\n熊大\n35\n\n\n5\n熊二\n30\n\n\n\n\n\n\n\n\n\n使用drop方法删除行\ndf = df.drop(row_index)\n使用drop方法根据行的索引来删除特定的行\n\n\nCode\n# 删除第五行数据\ndf = df.drop(5)\ndf\n\n\n\n\n\n\n\n\n\n姓名\n年龄\n\n\n\n\n0\n张三\n25\n\n\n1\n李四\n30\n\n\n2\n王五\n35\n\n\n3\n赵六\n28\n\n\n4\n熊大\n35"
   },
   {
     "objectID": "添加新列.html#重命名列",
     "href": "添加新列.html#重命名列",
-    "title": "6  增删排序(DataFrame)",
+    "title": "7  增删排序(DataFrame)",
     "section": "重命名列",
     "text": "重命名列\n\n使用rename方法：\ndf = df.rename(columns={'old_column_name': 'new_column_name'})\n其中，old_column_name是要重命名的旧列名，new_column_name是新的列名。\n\n\nCode\ndf = df.rename(columns={'姓名': '乘客id', '年龄':'乘客年龄'})\ndf\n\n\n\n\n\n\n\n\n\n乘客id\n乘客年龄\n\n\n\n\n0\n张三\n25\n\n\n1\n李四\n30\n\n\n2\n王五\n35\n\n\n3\n赵六\n28\n\n\n4\n熊大\n35"
   },
   {
     "objectID": "添加新列.html#按值排序",
     "href": "添加新列.html#按值排序",
-    "title": "6  增删排序(DataFrame)",
+    "title": "7  增删排序(DataFrame)",
     "section": "按值排序",
     "text": "按值排序\n\n使用sort_values方法：\ndf = df.sort_values(by='column_name', ascending=True)\n其中，column_name是你想要按其值进行排序的列名。ascending=True表示按升序排序，若要按降序排序，将ascending设置为False。\n通过sort_values方法，你可以根据特定列的值对DataFrame进行排序。你可以选择按单个列的值排序，也可以按多个列的值排序，只需在by参数中提供相应的列名列表即可。\n\n\nCode\ndf = df.sort_values(by='乘客年龄', ascending=True)\ndf\n\n\n\n\n\n\n\n\n\n乘客id\n乘客年龄\n\n\n\n\n0\n张三\n25\n\n\n3\n赵六\n28\n\n\n1\n李四\n30\n\n\n2\n王五\n35\n\n\n4\n熊大\n35"
   },
   {
     "objectID": "Pandas计算重塑合并最终版本.html",
     "href": "Pandas计算重塑合并最终版本.html",
-    "title": "7  如何计算汇总统计",
+    "title": "8  如何计算汇总统计",
     "section": "",
     "text": "describe()的用法\ndescribe() 是 Pandas 中一个常用的基础操作，用于生成关于 DataFrame 列的统计摘要。\n使用 describe() 方法，你可以获得以下统计信息：\n计数（count）：非缺失值的数量。\n均值（mean）：平均值。\n标准差（std）：标准差衡量数据的离散程度。\n最小值（min）和最大值（max）：数据列的最小和最大值。\n四分位数（25%，50%，75%）：数据的四个百分位数，用于描述数据的分布。\n示例代码：\n\nimport pandas as pd\n\n# 创建DataFrame示例\ndata = {'Name': ['John', 'Emma', 'Alex', 'Sophia', 'James'],\n        'Age': [25, 28, 22, 30, 32],\n        'Height': [175, 162, 180, 158, 170],\n        'Weight': [70, 58, 75, 52, 68]}\ndf = pd.DataFrame(data)\n\n# 查看数值型列的汇总统计\nsummary_stats = df.describe()\nmean_age = df['Age'].mean()\nmedian_height = df['Height'].median()\nmax_weight = df['Weight'].max()\n\nprint(summary_stats)\nprint(\"Mean Age:\", mean_age)\nprint(\"Median Height:\", median_height)\nprint(\"Max Weight:\", max_weight)\n\n             Age      Height     Weight\ncount   5.000000    5.000000   5.000000\nmean   27.400000  169.000000  64.600000\nstd     3.974921    9.055385   9.370165\nmin    22.000000  158.000000  52.000000\n25%    25.000000  162.000000  58.000000\n50%    28.000000  170.000000  68.000000\n75%    30.000000  175.000000  70.000000\nmax    32.000000  180.000000  75.000000\nMean Age: 27.4\nMedian Height: 170.0\nMax Weight: 75\n\n\n常用的计算汇总统计的方法：\n\ndescribe()方法：计算数值型列的基本统计信息，包括计数、均值、标准差、最小值、25%、50%和75%分位数以及最大值。\nmean()方法：计算数值型列的平均值。\nmedian()方法：计算数值型列的中位数。\nmin()方法：计算数值型列的最小值。\nmax()方法：计算数值型列的最大值。\nsum()方法：计算数值型列的总和。\ncount()方法：计算非缺失值的数量。\nstd()方法：计算数值型列的标准差。\nvar()方法：计算数值型列的方差。\n\n通过查看数值型列的汇总统计，可以快速了解数据的整体分布和统计特征，有助于进行数据分析和洞察。\n\n\nsize和count\n在Pandas中，size和count是用于计算分组数据的两个方法，常常与groupby一起使用。它们可以提供关于每个分组的计数信息，但在计算方式和返回结果上有一些区别。\nsize方法：\n\nsize方法用于计算每个分组中的元素数量，包括缺失值。\n返回的结果是一个Series，其索引是分组键，值是每个分组中的元素数量。\nsize方法不考虑缺失值，即使某个分组中存在缺失值，它也会将其计算为有效元素。\n\ncount方法：\n\ncount方法用于计算每个分组中非缺失值的数量。\n返回的结果是一个Series，其索引是分组键，值是每个分组中的非缺失值的数量。\ncount方法排除了缺失值，只计算非缺失值的数量。\n\n示例，演示如何使用size和count方法结合groupby对数据进行计数：\n\nimport pandas as pd\n\n# 创建一个示例DataFrame\ndata = {'Group': ['A', 'A', 'B', 'B', 'B'],\n        'Value': [1, 2, 3, None, 5]}\ndf = pd.DataFrame(data)\n\n# 使用groupby和size计算每个分组的元素数量\nsize_result = df.groupby('Group').size()\n\n# 使用groupby和count计算每个分组的非缺失值数量\ncount_result = df.groupby('Group').count()\n\nprint(\"Size结果:\")\nprint(size_result)\nprint(\"\\nCount结果:\")\nprint(count_result)\n\nSize结果:\nGroup\nA    2\nB    3\ndtype: int64\n\nCount结果:\n       Value\nGroup       \nA          2\nB          2\n\n\n在上述示例中，我们创建了一个DataFrame，并使用Group列进行分组。然后，我们分别使用size和count方法对分组后的数据进行计数。可以看到，size方法返回了每个分组的元素数量，而count方法返回了每个分组的非缺失值数量。在分组B中，有一个缺失值，因此size方法返回3，而count方法返回2。\n这两个方法的使用可以根据具体需求来选择。如果需要考虑缺失值并计算所有元素的数量，可以使用size方法；如果只关心非缺失值的数量，可以使用count方法。\n\n\n如何重塑表格布局\n\nsort的用法\n在Pandas中，sort_values和sort_index是用于对DataFrame或Series进行排序的两个常用方法。\nsort_values方法：\n\nsort_values方法用于按照指定的列或多个列的值对DataFrame或Series进行排序。\n可以通过by参数指定要排序的列或多个列，以列表形式提供。\n可以使用ascending参数来控制排序的升序或降序，默认为True（升序）。\n可以使用inplace参数来指定是否原地修改DataFrame或Series，默认为False，即返回排序后的副本。\n示例：\n\n\nimport pandas as pd\n\ndf = pd.DataFrame({'A': [3, 2, 1], 'B': [1, 3, 2]})\nsorted_df = df.sort_values(by='A', ascending=True)\n\n\n上述代码将按照’A’列的值对DataFrame df 进行升序排序，并将结果存储在sorted_df中。\n\nsort_index方法：\n\nsort_index方法用于根据索引对DataFrame或Series进行排序。\n可以使用axis参数指定要排序的轴，axis=0表示按行索引排序，axis=1表示按列索引排序。\n可以使用ascending参数来控制排序的升序或降序，默认为True（升序）。\n可以使用inplace参数来指定是否原地修改DataFrame或Series，默认为False，即返回排序后的副本。\n示例：\n\n\nimport pandas as pd\n\ndf = pd.DataFrame({'A': [3, 2, 1], 'B': [1, 3, 2]}, index=[2, 1, 3])\nsorted_df = df.sort_index(axis=0, ascending=True)\n\n\n上述代码将按照行索引对DataFrame df 进行升序排序，并将结果存储在sorted_df中。\n\n排序操作可以根据具体需求来选择使用sort_values还是sort_index。如果希望根据列的值进行排序，使用sort_values方法；如果希望根据索引进行排序，使用sort_index方法。\n\n在Pandas中，可以使用不同的方法来重新塑造（reshape）表格布局，以满足特定的数据分析和处理需求。以下是一些常用的重塑表格布局的方法：\n\n\npivot()方法\npivot()方法：用于将长格式（long format）的数据转换为宽格式（wide format），根据指定的列创建新的列，并使用列值进行填充。\n示例，展示如何使用pivot()方法将数据从长格式转换为宽格式：\n\nimport pandas as pd\n\n# 创建示例DataFrame\ndata = {'Name': ['John', 'John', 'Emma', 'Emma', 'Alex', 'Alex'],\n        'Subject': ['Math', 'Science', 'Math', 'Science', 'Math', 'Science'],\n        'Score': [85, 92, 78, 88, 90, 85]}\ndf = pd.DataFrame(data)\n\n# 使用pivot方法重塑表格布局\npivot_df = df.pivot(index='Name', columns='Subject', values='Score')\npivot_df\n\n\n\n\n\n\n\nSubject\nMath\nScience\n\n\nName\n\n\n\n\n\n\nAlex\n90\n85\n\n\nEmma\n78\n88\n\n\nJohn\n85\n92\n\n\n\n\n\n\n\n\n\nmelt()方法\n在Pandas中，melt()是一个用于将宽格式（wide format）的数据转换为长格式（long format）的方法。它将数据从列中展开成为更长的格式，使得数据更适合进行分析和可视化。\nmelt()方法的语法如下：\nDataFrame.melt(id_vars=None, value_vars=None, var_name=None, value_name='value', col_level=None)\n参数说明：\n\nid_vars：可选参数，指定要保留的列名，不进行展开操作。\nvalue_vars：可选参数，指定要进行展开操作的列名。如果未指定，则默认展开所有未指定为id_vars的列。\nvar_name：可选参数，指定展开后的列名的名称。\nvalue_name：可选参数，指定展开后的值的列名的名称，默认为value。\ncol_level：可选参数，用于多层索引列的级别。\n\n下面是一个示例，演示如何使用melt()方法将宽格式的数据转换为长格式：\n\nimport pandas as pd\n\n# 创建一个示例DataFrame\ndata = {\n    'Name': ['Alice', 'Bob', 'Charlie'],\n    'Math': [90, 80, 70],\n    'Science': [95, 85, 75],\n    'History': [92, 82, 72]\n}\ndf = pd.DataFrame(data)\n\n# 使用melt()方法进行数据转换\nmelted_df = df.melt(id_vars='Name', value_vars=['Math', 'Science', 'History'], var_name='Subject', value_name='Score')\n\nprint(\"原始DataFrame:\")\nprint(df)\nprint(\"\\n转换后的DataFrame:\")\nmelted_df\n\n原始DataFrame:\n      Name  Math  Science  History\n0    Alice    90       95       92\n1      Bob    80       85       82\n2  Charlie    70       75       72\n\n转换后的DataFrame:\n\n\n\n\n\n\n\n\n\nName\nSubject\nScore\n\n\n\n\n0\nAlice\nMath\n90\n\n\n1\nBob\nMath\n80\n\n\n2\nCharlie\nMath\n70\n\n\n3\nAlice\nScience\n95\n\n\n4\nBob\nScience\n85\n\n\n5\nCharlie\nScience\n75\n\n\n6\nAlice\nHistory\n92\n\n\n7\nBob\nHistory\n82\n\n\n8\nCharlie\nHistory\n72\n\n\n\n\n\n\n\n\n\nstack()方法\nstack()方法：\n在Pandas中，stack()是一个用于对DataFrame进行堆叠操作的方法。它将列标签（Column labels）转换为行索引（Row index），将数据从宽格式转换为长格式，从而生成一个更紧凑的DataFrame。\nstack()方法的语法如下：\nDataFrame.stack(level=-1, dropna=True)\n参数说明：\n\nlevel：可选参数，用于多层索引列的级别。默认值为-1，表示堆叠所有列。\ndropna：可选参数，指定是否删除包含缺失值的行，默认为True。\n\n示例：\n\nimport pandas as pd\n\n# 创建一个示例DataFrame\ndata = {\n    'Name': ['Alice', 'Bob'],\n    'Math': [90, 80],\n    'Science': [95, 85],\n    'History': [92, 82]\n}\ndf = pd.DataFrame(data)\n\n# 使用stack()方法进行堆叠操作\nstacked_df = df.set_index('Name').stack().reset_index()\n\nprint(\"原始DataFrame:\")\nprint(df)\nprint(\"\\n堆叠后的DataFrame:\")\nstacked_df\n\n原始DataFrame:\n    Name  Math  Science  History\n0  Alice    90       95       92\n1    Bob    80       85       82\n\n堆叠后的DataFrame:\n\n\n\n\n\n\n\n\n\nName\nlevel_1\n0\n\n\n\n\n0\nAlice\nMath\n90\n\n\n1\nAlice\nScience\n95\n\n\n2\nAlice\nHistory\n92\n\n\n3\nBob\nMath\n80\n\n\n4\nBob\nScience\n85\n\n\n5\nBob\nHistory\n82\n\n\n\n\n\n\n\n\n\nunstack()方法\n在Pandas中，unstack()是用于将表格中的行索引转换为列索引，将数据从长格式转换为宽格式。\nunstack()方法的语法如下：\nDataFrame.unstack(level=-1, fill_value=None)\n参数说明：\n\nlevel：可选参数，用于指定要展开的层次化索引的级别。默认值为-1，表示展开最内层索引。\nfill_value：可选参数，用于指定填充缺失值的值。\n\n示例：\n\nimport pandas as pd\n\n# 创建一个示例DataFrame\ndata = {\n    'Name': ['Alice', 'Bob'],\n    'Subject': ['Math', 'Science'],\n    'Score': [90, 80]\n}\ndf = pd.DataFrame(data)\n\n# 将DataFrame进行设置层次化索引\nindexed_df = df.set_index(['Name', 'Subject'])\n\n# 使用unstack()方法进行展开操作\nunstacked_df = indexed_df.unstack()\n\nprint(\"原始DataFrame:\")\nprint(df)\nprint(\"\\n展开后的DataFrame:\")\nunstacked_df\n\n原始DataFrame:\n    Name  Subject  Score\n0  Alice     Math     90\n1    Bob  Science     80\n\n展开后的DataFrame:\n\n\n\n\n\n\n\n\n\nScore\n\n\nSubject\nMath\nScience\n\n\nName\n\n\n\n\n\n\nAlice\n90.0\nNaN\n\n\nBob\nNaN\n80.0\n\n\n\n\n\n\n\n在上述示例中，原始数据包含学生的姓名、科目和分数。通过使用pivot()方法，将姓名作为行索引，科目作为列索引，并将分数填充到相应的单元格中，得到了以学生姓名为行、科目为列的宽格式表格布局。\n\n\n\n如何合并多个表中的数据\n在Pandas中，可以使用不同的方法来合并（merge）多个表中的数据。以下是一些常用的合并数据的方法：\n\nconcat()方法\n在Pandas中，concat()是一个用于沿指定轴（行或列）将多个DataFrame对象进行合并的方法。它可以将多个DataFrame对象按照指定的方式进行连接，并返回一个合并后的DataFrame。以下是关于concat()方法的解释和示例说明：\nconcat()方法的语法如下：\npd.concat(objs, axis=0, join='outer', ignore_index=False)\n参数说明：\n\nobjs：要合并的DataFrame对象列表或字典。\naxis：可选参数，指定合并的轴。默认为0，表示按行合并；1表示按列合并。\njoin：可选参数，指定连接的方式。默认为'outer'，表示按照并集进行连接；'inner'表示按照交集进行连接。\nignore_index：可选参数，指定是否忽略合并后的索引。默认为False，表示保留原始索引。\n\n示例：\n\nimport pandas as pd\n\n# 创建示例DataFrame\ndf1 = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})\ndf2 = pd.DataFrame({'A': [7, 8, 9], 'B': [10, 11, 12]})\n\n# 使用concat()方法进行合并操作\nmerged_df = pd.concat([df1, df2])\n\nprint(\"合并后的DataFrame:\")\nmerged_df\n\n合并后的DataFrame:\n\n\n\n\n\n\n\n\n\nA\nB\n\n\n\n\n0\n1\n4\n\n\n1\n2\n5\n\n\n2\n3\n6\n\n\n0\n7\n10\n\n\n1\n8\n11\n\n\n2\n9\n12\n\n\n\n\n\n\n\n\n\nmerge()方法\n在Pandas中，merge()是一个用于合并（或连接）多个DataFrame对象的方法。它基于指定的键（或多个键）将多个DataFrame按照指定的方式进行连接，并返回一个合并后的DataFrame。\nmerge()方法的语法如下：\npd.merge(left, right, how='inner', on=None, left_on=None, right_on=None, left_index=False, right_index=False, sort=True)\n参数说明：\n\nleft：左侧的DataFrame对象。\nright：右侧的DataFrame对象。\nhow：可选参数，指定连接方式。默认为'inner'，表示按照键的交集进行连接；'outer'表示按照键的并集进行连接；'left'表示按照左侧DataFrame的键进行连接；'right'表示按照右侧DataFrame的键进行连接。\non：可选参数，用于指定连接的键。可以是一个列名的字符串，或多个列名组成的列表。\nleft_on：可选参数，用于指定左侧DataFrame连接键的列名或列名列表。\nright_on：可选参数，用于指定右侧DataFrame连接键的列名或列名列表。\nleft_index：可选参数，指定是否使用左侧DataFrame的索引作为连接键。\nright_index：可选参数，指定是否使用右侧DataFrame的索引作为连接键。\nsort：可选参数，指定是否按照连接键进行排序。\n\n示例：\n\nimport pandas as pd\n\n# 创建示例DataFrame\ndf1 = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'Key': ['K1', 'K2', 'K3']})\ndf2 = pd.DataFrame({'C': [7, 8, 9], 'D': [10, 11, 12], 'Key': ['K2', 'K3', 'K4']})\n\n# 使用merge()方法进行合并操作\nmerged_df = pd.merge(df1, df2, on='Key')\n\nprint(\"合并后的DataFrame:\")\nmerged_df\n\n合并后的DataFrame:\n\n\n\n\n\n\n\n\n\nA\nB\nKey\nC\nD\n\n\n\n\n0\n2\n5\nK2\n7\n10\n\n\n1\n3\n6\nK3\n8\n11\n\n\n\n\n\n\n\n\n\njoin()方法\n在Pandas中，join()是一个用于基于索引或列之间的关系将两个DataFrame对象进行连接的方法。它类似于SQL中的JOIN操作，可以根据指定的连接键将两个DataFrame进行合并，并返回一个合并后的DataFrame。\njoin()方法的语法如下：\nDataFrame.join(other, on=None, how='left', lsuffix='', rsuffix='', sort=False)\n参数说明：\n\nother：要连接的另一个DataFrame对象。\non：可选参数，用于指定连接键。可以是一个列名的字符串，或多个列名组成的列表。如果未指定，则根据索引进行连接。\nhow：可选参数，指定连接方式。默认为'left'，表示按照左侧DataFrame的索引或列进行连接；'right'表示按照右侧DataFrame的索引或列进行连接；'inner'表示按照两个DataFrame共有的索引或列进行连接；'outer'表示按照两个DataFrame的并集进行连接。\nlsuffix：可选参数，用于处理连接时重叠列名的后缀（左侧DataFrame）。\nrsuffix：可选参数，用于处理连接时重叠列名的后缀（右侧DataFrame）。\nsort：可选参数，指定是否按照连接键进行排序。\n\n示例：\n\nimport pandas as pd\n\n# 创建示例DataFrame\ndf1 = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]}, index=['K1', 'K2', 'K3'])\ndf2 = pd.DataFrame({'C': [7, 8, 9], 'D': [10, 11, 12]}, index=['K2', 'K3', 'K4'])\n\n# 使用join()方法进行连接操作\njoined_df = df1.join(df2)\n\nprint(\"连接后的DataFrame:\")\njoined_df\n\n连接后的DataFrame:\n\n\n\n\n\n\n\n\n\nA\nB\nC\nD\n\n\n\n\nK1\n1\n4\nNaN\nNaN\n\n\nK2\n2\n5\n7.0\n10.0\n\n\nK3\n3\n6\n8.0\n11.0\n\n\n\n\n\n\n\n\n\n补充：T（Transpose）转置\n在Pandas中，T（Transpose）是一个用于转置数据的方法。转置操作会将DataFrame或Series的行和列进行交换，从而生成一个新的转置后的数据结构。以下是关于Pandas中的T转置的一些知识点：\n\nDataFrame的转置： 转置DataFrame时，行索引将会变成转置前的列索引，列索引将会变成转置前的行索引。可以使用T方法来执行转置操作，例如：\n\n\nimport pandas as pd\n\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})\ntransposed_df = df.T\n\n上述代码将创建一个DataFrame df，然后使用T方法将其转置，结果将会存储在transposed_df中。\n\nSeries的转置： 转置一个Series对象会生成一个具有单一列的DataFrame，行索引将会保持不变，而列索引将会变为转置前的索引值。可以使用T方法对Series进行转置，例如：\n\n\nimport pandas as pd\n\nseries = pd.Series([1, 2, 3, 4], index=['A', 'B', 'C', 'D'])\ntransposed_series = series.T\n\n上述代码将创建一个Series series，然后使用T方法将其转置，结果将会存储在transposed_series中。\n\n转置对数据结构的影响： 转置操作不会改变原始数据结构，而是生成一个新的转置后的数据结构。原始数据结构保持不变，只是行和列的排列顺序发生了变化。\n转置的应用： 转置操作常用于需要改变数据结构的情况，例如在数据分析和处理过程中，可以使用转置来更改数据的布局以满足特定的分析需求。\n\n需要注意的是，转置操作可能会导致数据结构的变化，因此在进行转置操作之后，索引和列名可能需要进行调整以适应新的结构。"
   },
   {
     "objectID": "time_data.html",
     "href": "time_data.html",
-    "title": "8  使用Pandas处理时间序列数据",
+    "title": "9  使用Pandas处理时间序列数据",
     "section": "",
     "text": "1. Pandas中的时间序列数据\nPandas中有6种关于时间序列数据的常见对象，分别是timestamp、datetimeindex、period、periodindex、以时间为元素的series和以时间索引的dataframe。\nPandas时序处理中最常见的两种数据类型为datetime和timedelta。\n\ndatetime\ndatetime即既有日期date，又有时间time的数据，表示一个具体的时间点（时间戳）。\ngraph TD;\ndatetime --&gt; date:2023-06-14;\ndatetime --&gt; time:12:00:00;\ntimedelta\ntimedelta表示两个时间点之差。如2023-01-01和2023-01-02之间的timedelta即为一天。\n\n\n\n2. 文本转换\n一般情况下，从.csv文件中导入的数据后，Dataframe中对应的时间列是字符串的形式，Pandas中提供了to_datetime()函数将字符串转换为datetime对象，并将其设置为Dataframe的索引。在Pandas中，这种类似于标准库中的日期时间对象称为：datetime64、datetime.datetime、pandas.Timestamp。\nimport pandas as pd\n\n# 创建包含字符串时间列数据的dataframe\ndata = {'date': ['20230601', '20230602', '20230603', '20230604']}\ndf = pd.DataFrame(data)\n# 展示dataframe\ndf\n# 输出结果为\n#          date\n# 0  20230601\n# 1  20230602\n# 2  20230603\n# 3  20230604\n# 将字符串时间列转换为datetime64格式的对象\ndf['date'] = pd.to_datetime(df['date'])\n\n# 打印转换后的结果\ndf\n\n# 输出结果为\n#         date\n# 0 2023-06-01\n# 1 2023-06-02\n# 2 2023-06-03\n# 3 2023-06-04\n将字符串数据转换为datetime64对象后，这些时间日期数据就具有了可比性，这样一来，我们就可以用它们来获取时间序列的长度。\n# 计算时间序列的长度\ntime_length = df['date'].max() - df['date'].min()\n\n# 打印时间序列的长度\nprint(\"时间序列的长度：\", time_length)\n\n# 输出结果为\n# 时间序列的长度： 3 days 00:00:00\n另外，我们还可以运用dt属性中的month函数来将月份信息提出出来，并将提取的结果赋值给新列。\n# 提取月份信息并形成新列\ndf['month'] = df['date'].dt.month\n\n# 打印DataFrame\nprint(df)\n\n# 输出结果为\n#         date  month\n# 0 2023-06-01      6\n# 1 2023-06-02      6\n# 2 2023-06-03      6\n# 3 2023-06-04      6\n\n\n2. Pandas中的时间日期索引\n在Pandas中，日期索引是一种特殊的索引类型，用于在时间序列数据中以日期或时间作为索引。日期索引在处理时间序列数据时非常有用，可以轻松地对数据进行切片、重采样和时间范围选择等操作。\nPandas提供了两种主要的日期索引类型：Timestamp和DatetimeIndex。\n\nTimestamp:\nTimestamp是Pandas中表示单个时间点的对象，可以使用pd.Timestamp()函数创建一个Timestamp对象，指定日期和时间。\npd.Timestamp('2023-06-17 10:30:00')\nDatetimeIndex:\nDatetimeIndex是一种由Timestamp对象构成的索引对象。可以使用pd.to_datetime()函数将日期时间字符串转换为DatetimeIndex对象。\npd.to_datetime(['2023-06-17', '2023-06-18', '2023-06-19'])\n\n使用日期索引可以实现以下功能：\n\n切片和选择：\n使用日期索引可以切片和选择时间序列数据。\n# 创建一个示例时间序列数据\ndata = {'日期': pd.date_range(start='2023-01-01', periods=10, freq='D'),\n        '销售量': [100, 150, 120, 200, 180, 160, 190, 210, 230, 250]}\ndf = pd.DataFrame(data)\n\n# 将日期列设置为索引\ndf.set_index('日期', inplace=True)\n\n# 选择特定日期范围的数据\nselected_data = df['2023-01-03':'2023-01-07']\nprint(selected_data)\n\n# 选择特定月份的数据\nselected_month = df['2023-02']\nprint(selected_month)\n\n# 使用布尔条件选择数据\nboolean_selection = df[df['销售量'] &gt; 200]\nprint(boolean_selection)\n重采样：\n重采样是指将时间序列数据从一个频率转换为另一个频率。使用日期索引，使用resample()方法可以对数据进行重采样，如按日、按周或按月重采样数据。\n# 按周重采样并计算平均值\nweekly_resampled = df.resample('W').mean()\nprint(weekly_resampled)\n\n# 按月重采样并计算总和\nmonthly_resampled = df.resample('M').sum()\nprint(monthly_resampled)\n时间范围生成：\nPandas提供了几个函数来生成一系列日期索引，如pd.date_range()和pd.period_range()。指定开始日期、结束日期和频率来生成日期范围，以便在创建时间序列数据时使用。\n# 生成一个包含5个连续日期的时间范围\ndate_range = pd.date_range(start='2023-01-01', periods=5, freq='D')\nprint(date_range)\n\n# 生成一个包含3个月份的时间范围\nmonth_range = pd.date_range(start='2023-01-01', periods=3, freq='M')\nprint(month_range)\n\n# 生成一个包含10个工作日的时间范围\nbusiness_days_range = pd.date_range(start='2023-01-01', periods=10, freq='B')\nprint(business_days_range)\n日期偏移：\nPandas提供了日期偏移功能，可以在日期上进行简单的数学运算。例如，您可以使用+或-操作符在日期索引上进行加减运算，例如df.index + pd.DateOffset(days=1)将日期索引向前偏移一天。\n# 创建一个日期索引\ndate_index = pd.date_range(start='2023-01-01', periods=5, freq='D')\n\n# 将日期索引向前偏移一天\nforward_offset = date_index + pd.DateOffset(days=1)\nprint(forward_offset)\n\n# 将日期索引向后偏移两天\nbackward_offset = date_index - pd.DateOffset(days=2)\nprint(backward_offset)\n\n# 将日期索引向前偏移一个月\nmonth_offset = date_index + pd.DateOffset(months=1)\nprint(month_offset)\n\n日期索引是Pandas中处理时间序列数据的重要工具之一，它提供了方便的方法来处理、分析和可视化时间相关的数据。使用日期索引，您可以更轻松地操作和探索时间序列数据。\n在Pandas中，.dt接口提供了许多常用的属性，用于处理日期和时间类型的Series数据。以下是一些常见的.dt接口属性的示例：\n\n\n\n\n\n\n\n属性\n描述\n\n\n\n\n.year\n返回日期的年份。\n\n\n.month\n返回日期的月份。\n\n\n.day\n返回日期的日。\n\n\n.hour\n返回时间的小时。\n\n\n.minute\n返回时间的分钟。\n\n\n.second\n返回时间的秒。\n\n\n.microsecond\n返回时间的微秒。\n\n\n.nanosecond\n返回时间的纳秒。\n\n\n.weekday\n返回日期对应的星期几（0代表星期一，6代表星期日）。\n\n\n.weekday_name\n返回日期对应的星期几的名称。\n\n\n.weekofyear\n返回日期所在年份的第几周。\n\n\n.quarter\n返回日期所属的季度。\n\n\n.is_month_start\n检查日期是否为月初。\n\n\n.is_month_end\n检查日期是否为月末。\n\n\n.is_quarter_start\n检查日期是否为季度初。\n\n\n.is_quarter_end\n检查日期是否为季度末。\n\n\n.is_year_start\n检查日期是否为年初。\n\n\n.is_year_end\n检查日期是否为年末。\n\n\n.is_leap_year\n检查日期是否为闰年。\n\n\n\n\n\n3. 重采样\n在 Pandas 中，重采样是指将时间序列数据从一个频率转换为另一个频率的过程。重采样可以帮助我们对时间序列数据进行聚合、降采样或升采样，以适应不同的分析需求。Pandas 提供了强大的重采样功能，可以根据日期和时间索引对时间序列数据进行灵活的重采样操作。\n重采样主要有两种类型：降采样（Downsampling）和升采样（Upsampling）。\n\n降采样：降采样是将时间序列数据从高频率转换为低频率。例如，从分钟数据转换为小时数据或从小时数据转换为每日数据。在降采样中，我们需要指定一个时间段，然后对该时间段内的数据进行聚合操作，例如求和、平均值、最大值、最小值等。\n示例代码：\npythonCopy code\ndf.resample('D').sum()  # 将数据按天进行降采样，并计算每天的总和\n升采样：升采样是将时间序列数据从低频率转换为高频率。例如，从每日数据转换为小时数据或从每月数据转换为每日数据。在升采样中，我们通常需要使用插值方法来填充新增的时间点，以估计缺失的数据。\n示例代码：\npythonCopy code\ndf.resample('H').ffill()  # 将数据按小时进行升采样，并使用向前填充方法插值数据\n\n在重采样过程中，我们需要使用 resample() 函数指定重采样的频率，例如 ‘D’ 表示按天重采样，‘H’ 表示按小时重采样。然后，我们可以对重采样对象应用聚合函数（例如 sum()、mean()、max()、min() 等）或插值函数（例如 ffill()、bfill() 等）来处理数据。"
   },
   {
     "objectID": "txt_data.html",
     "href": "txt_data.html",
-    "title": "9  使用Pandas处理文本数据",
+    "title": "10  使用Pandas处理文本数据",
     "section": "",
     "text": "在Pandas中，文本的主要两个类型是string和object。如果不特殊指定类型为string，文本类型一般为object。\n在通过访问器str实现对文本的操作之前，需要注意：\n\n要确保访问的对象类型是字符串str类型，如果不是，需要使用astype(str)转换类型\n访问器只能对Series数据结构使用，可以多个连接使用。\n\n\n1. 文本格式：大小写变换\n在 Pandas 中，可以使用字符串方法 str.lower() 和 str.upper() 对文本数据进行大小写转换。这些方法可以应用于 Pandas 的 Series或DataFrame列中的文本数据，以将其转换为小写或大写形式。\nimport pandas as pd\n\n# 创建示例数据\ndata = {'text': ['Hello World', 'Welcome to Pandas', 'Text Processing']}\ndf = pd.DataFrame(data)\n\n# 字符全部变成小写\ndf['lowercase'] = df['text'].str.lower()\n\n# 字符全部变成大写\ndf['uppercase'] = df['text'].str.upper()\n\n# 每个单词首字母大写\ndf['titlecase'] = df['text'].str.title()\n\n# 字符串第一个字母大写，其余小写\ndf['capitalize'] = df['text'].str.capitalize()\n\n# 大小写字母转换\ndf['swapcase'] = df['text'].str.swapcase()\n\n# 打印处理后的数据集\nprint(df)\n\n\n2. 文本拆分\n在 Pandas 中，可以使用字符串方法 str.split() 对文本数据进行拆分。该方法可以将字符串按指定的分隔符拆分为多个部分，并返回一个包含拆分结果的 Series或DataFrame列。\n在对文本进行拆分时，可以使用expand参数将拆分出来的内容单独成列，使用n参数指定拆分的位置来控制形成几列。在对文本进行拆分以后，也可以使用get方法提取相关部分单独成列。\n# 使用方法\ns.str.split('x', expand=True, n=1)\n\n# 示例\n# 创建一个包含文本数据的 DataFrame\ndata = {'Text': ['Hello World', 'Python Programming', 'Data Science']}\ndf = pd.DataFrame(data)\n\n# 拆分文本并形成新列\ndf[['Word1', 'Word2']] = df['Text'].str.split(' ', expand=True)\n\nprint(df)\n\n# 输出结果\n#                 Text    Word1        Word2\n# 0        Hello World    Hello        World\n# 1  Python Programming   Python  Programming\n# 2       Data Science      Data      Science\n要进行更复杂的拆分可以借助正则表达式，如：\ns.str.split('\\@|\\.', expand=True, n=1)\n\n\n3. 文本包含\n在 Pandas 中，可以使用字符串方法 str.contains() 来判断文本数据是否包含指定的子串。这个方法返回一个布尔值的 Series或DataFrame列，用于表示每个元素是否包含指定的子串。，一般配合loc查询功能使用可搭配的参数有：\n\npat: 匹配字符串，支持正则表达式\ncase: 是否区分大小写，True表示区别\nflags: 正则库re中的标识，比如re.IGNORECASE\nna: 对缺失值填充\nregex: 是否支持正则，默认True支持\n\n# 使用方法\ns.str.contains(\"\")\n\n# 示例\n# 判断文本是否包含特定子串，并创建新列\ndf['Contains_Python'] = df['Text'].str.contains('Python')\n\nprint(df)\n\n# 输出结果\n#                 Text  Contains_Python\n# 0        Hello World            False\n# 1  Python Programming             True\n# 2       Data Science            False\n\n\n4. 文本格式：计数\n在 Pandas 中，可以使用字符串方法 str.count() 计算文本数据中指定子串的出现次数，同时可以使用字符串方法 str.len() 计量文本的长度。这两个方法可以方便地对文本数据进行计数和测量长度的操作。\n# 使用方法\ns.str.count('') # 字符串种包括指定字母的数量\ns.str.len() # 字符串长度\n\n# 示例\n# 计算指定子串的出现次数，并创建新列\ndf['Count_o'] = df['Text'].str.count('o')\n\n# 计量文本长度，并创建新列\ndf['Text_length'] = df['Text'].str.len()\n\nprint(df)\n\n# 输出结果\n#                 Text  Count_o  Text_length\n# 0        Hello World        2           11\n# 1  Python Programming        2           19\n# 2       Data Science        0           12\n\n\n5. 文本替换\n文本替换通常使用replace方法进行，可选参数如下：\n\npal：为被替代的内容字符串，也可以为正则表达式\nrepl：为新内容字符串，也可以是一个被调用的函数\nregex：用于设置是否支持正则，默认是True\n\n# 使用方法\ns.str.replace(\"s\":\"S\", \"f\":\"F\")\n\n# 示例\n# 将指定子串替换为新值，并创建新列\ndf['New_Text'] = df['Text'].str.replace('o', 'x')\n\nprint(df)\n\n# 输出结果\n#                 Text            New_Text\n# 0        Hello World        Hellx Wxrld\n# 1  Python Programming  Pythxn Prxgramming\n# 2       Data Science       Data Science"
   },
   {
     "objectID": "更好的数据可视化.html",
     "href": "更好的数据可视化.html",
-    "title": "10  更好的数据可视化(Plotly)",
+    "title": "11  更好的数据可视化(Plotly)",
     "section": "",
     "text": "pip安装conda安装\n\n\n$ pip install plotly\n\n\n$ conda install -c plotly plotly\n\n\n\nplotly.express是plotly的简化包，只需要1～2行就可以生成可视化图表，大家可以滑动鼠标，获取相对应的数据。官方文档\n\n\nCode\nimport plotly.express as px\nfig = px.bar(x=[\"a\", \"b\", \"c\"], y=[6, 1, 8])\nfig.show(renderer=\"notebook\")"
   },
   {
     "objectID": "for循环.html#为什么需要使用for循环",
     "href": "for循环.html#为什么需要使用for循环",
-    "title": "11  for循环自动获取股票数据",
+    "title": "12  for循环自动获取股票数据",
     "section": "为什么需要使用for循环？",
     "text": "为什么需要使用for循环？\nfor循环简化了操作、处理大量数据，自动化了重复任务，并提供灵活的遍历顺序。它是一种强大的编程工具，帮助我们优化效率、减少冗余代码。无论初学者还是经验丰富的开发人员，for循环都是不可或缺的技术，提升代码质量、处理数据轻而易举。"
   },
   {
     "objectID": "for循环.html#案例背景",
     "href": "for循环.html#案例背景",
-    "title": "11  for循环自动获取股票数据",
+    "title": "12  for循环自动获取股票数据",
     "section": "案例背景",
     "text": "案例背景\n使用for循环调用股票API Tushare获取日线行情。但是有限制调用页数。尝试使用for循环遍历列表，逐个发送API请求获取每只股票的日线行情数据。"
   },
   {
     "objectID": "for循环.html#操作步骤",
     "href": "for循环.html#操作步骤",
-    "title": "11  for循环自动获取股票数据",
+    "title": "12  for循环自动获取股票数据",
     "section": "操作步骤",
     "text": "操作步骤\n\n通过def定义函数\nfor循环遍历整个日线行情\nconcat合并上下表"
   },
   {
     "objectID": "python链接数据库.html#为什么要用sqlalchemy连接数据库",
     "href": "python链接数据库.html#为什么要用sqlalchemy连接数据库",
-    "title": "12  Python连接Postgresql数据库",
+    "title": "13  Python连接Postgresql数据库",
     "section": "为什么要用SQLAlchemy连接数据库？",
     "text": "为什么要用SQLAlchemy连接数据库？\n在企业中，很多数据都存储在数据库当中，通过SQLAlchemy，可以轻松连接多种数据库，包括MySQL、PostgreSQL、SQLite等，并使用统一的API进行数据库操作。SQLAlchemy提供了高级的对象关系映射（ORM）功能，使数据库操作更加面向对象，简化了数据模型的开发和管理。它提供了查询构建器、事务管理、数据迁移等功能，提高了开发效率。"
   },
   {
     "objectID": "python链接数据库.html#所需环境和拓展包",
     "href": "python链接数据库.html#所需环境和拓展包",
-    "title": "12  Python连接Postgresql数据库",
+    "title": "13  Python连接Postgresql数据库",
     "section": "所需环境和拓展包",
     "text": "所需环境和拓展包\n\njupyternotebook – 撰写python代码\nPostgreSQL & Pgadmin4 – 数据库及其GUI工具（数据库客户端）\nSQLAlchemy – python拓展包，用来连接数据库"
   },
   {
     "objectID": "python链接数据库.html#操作步骤",
     "href": "python链接数据库.html#操作步骤",
-    "title": "12  Python连接Postgresql数据库",
+    "title": "13  Python连接Postgresql数据库",
     "section": "操作步骤",
     "text": "操作步骤\n\nDocker安装jupyternotebook & Postgresql数据库\n本地数据库备份&迁移\n安装和使用SqlAlechemy"
   },
   {
     "objectID": "Dash案例.html#为什么要使用dash",
     "href": "Dash案例.html#为什么要使用dash",
-    "title": "13  Dash创建股票APP",
+    "title": "14  Dash创建股票APP",
     "section": "为什么要使用Dash",
     "text": "为什么要使用Dash\nDash Plotly是一个基于Python的开源框架，用于构建交互式数据可视化和分析应用。\n它的优势在于简洁的语法、强大的可视化功能和灵活的布局选项。通过使用Dash Plotly，您可以轻松创建漂亮、交互式的应用程序，展示和探索数据，无论是用于内部报告、数据分析还是对外展示。它提供了丰富的图表类型、注解和样式设置，以及与其他Python库的无缝集成，如pandas和numpy。Dash Plotly还支持部署到Web服务器上，使得应用程序能够通过浏览器进行访问和共享。\n总的来说，Dash Plotly提供了一种简单而强大的方式来创建数据驱动的应用程序，使得数据可视化和交互变得更加容易和高效。"
   },
   {
     "objectID": "Dash案例.html#案例背景",
     "href": "Dash案例.html#案例背景",
-    "title": "13  Dash创建股票APP",
+    "title": "14  Dash创建股票APP",
     "section": "案例背景",
     "text": "案例背景\n使用Dash 模仿复现股票走势的交互可视化面板，可以查看股票日线级别的涨跌幅度、股票走势和买入卖出盈亏比。以英伟达股票为案例"
   },
   {
     "objectID": "Dash案例.html#相关链接",
     "href": "Dash案例.html#相关链接",
-    "title": "13  Dash创建股票APP",
+    "title": "14  Dash创建股票APP",
     "section": "相关链接",
     "text": "相关链接\n免费股票数据API\nGitHub Python调用API\n模仿案例网站"
   },
   {
     "objectID": "Dash案例.html#dash股票案例上集",
     "href": "Dash案例.html#dash股票案例上集",
-    "title": "13  Dash创建股票APP",
+    "title": "14  Dash创建股票APP",
     "section": "Dash股票案例（上集）",
     "text": "Dash股票案例（上集）\n\nAPI获取&调用\npands数据清洗\n导出csv到本地\nDash-Bootstrap主题\nDash-layout排版\nDash-调整位置和宽度"
   },
   {
     "objectID": "Dash案例.html#dash股票案例下集",
     "href": "Dash案例.html#dash股票案例下集",
-    "title": "13  Dash创建股票APP",
+    "title": "14  Dash创建股票APP",
     "section": "Dash股票案例（下集）",
     "text": "Dash股票案例（下集）\n\napp功能：涨跌百分比\npadnas数据清洗&过滤\nplotly绘制百分比图\napp功能：股票走势图\nupdate_traces VS update_layout\napp功能：滚动数据\nBootstrap组件使用"
   }
