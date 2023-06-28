@@ -1,0 +1,51 @@
+
+本文是为编程新手准备的Python入门学习指南，旨在帮助初学者掌握Python编程语言以及使用Pandas库进行数据处理和分析。无论你是完全没有编程经验，还是有其他编程语言经验但对Python和Pandas感兴趣，本指南将提供基础知识和实践案例，帮助你快速入门。
+
+## 目录
+
+### Python简介
+
+- Python的特点和应用领域
+- 安装Python和开发环境
+- Python基础知识
+  
+
+###  数据类型和变量
+- 运算符和表达式
+- 条件语句和循环
+- 函数和模块
+- 数据处理与分析入门
+
+### 数据处理和分析的基本概念
+- Pandas库介绍和安装
+- 数据结构：Series和DataFrame
+- 数据的读取和写入
+- 数据清洗和转换
+- 数据筛选和排序
+- 数据分组和聚合
+- 数据可视化
+- 实践案例
+
+###  使用Pandas进行数据分析
+- 从实际数据集中读取数据
+- 数据清洗和预处理
+- 探索性数据分析（EDA）
+- 数据可视化展示
+- 扩展学习资源
+ 
+###  推荐的Python和Pandas学习资源
+- [pandas官方文档(自译版)](https://pypandas.com/)
+- [Pandas对比SQL](https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_sql.html#)
+- [Plotly可视化官方文档](https://plotly.com/python/getting-started/)
+- [W3schools for Pandas](https://www.w3schools.com/python/pandas/default.asp)
+- <img src="./img/bil圆.svg" alt="Bootstrap" width="32" height="32"> [JackB站超级多的视频](https://space.bilibili.com/22770928) 
+
+## 结语
+通过本文的学习，你将建立起对Python编程语言的基本理解，掌握Pandas库进行数据处理和分析的技能。无论你是想进入数据科学领域、进行数据挖掘，还是对数据处理和分析有兴趣，Python和Pandas都是你的理想选择。开始你的编程之旅吧，让Python和Pandas帮助你实现数据的无限可能！
+
+::: {.callout-note}
+本文档主要针对编程小白，将以简洁易懂的语言和实例进行解释。每个主题都会提供充足的示例代码和实践案例，以便读者能够实际运用所学知识。在学习过程中，不断实践和探索将是提高编程能力的关键，鼓励读者积极动手并勇于尝试。
+:::
+
+
+
