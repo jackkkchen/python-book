@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Python新手文档 - 2&nbsp; 函数基础</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./安装.html" rel="next">
+<link href="./基础语法.html" rel="prev">
+<link href="././img/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./基础语法.html">Python基础语法</a></li><li class="breadcrumb-item"><a href="./第1周_周五_函数.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">函数基础</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Python新手文档</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/jackkkchen/python-book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Python新手文档.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Python新手文档.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">文档目录</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python简介</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./环境搭建.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python 环境搭建</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Python基础语法</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./基础语法.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Python基础语法</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./第1周_周五_函数.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">函数基础</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Pandas快速入门</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./安装.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pandas安装</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pandas处理什么样的数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">pandas处理什么样的数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./导入&amp;导出数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">导入&amp;导出数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./选取数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">选取数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./添加新列.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">增删排序(DataFrame)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Pandas计算重塑合并最终版本.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">如何计算汇总统计</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./time_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">使用Pandas处理时间序列数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./txt_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">使用Pandas处理文本数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./更好的数据可视化.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">更好的数据可视化(Plotly)</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">实际案例</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./for循环.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">for循环自动获取股票数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python链接数据库.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Python连接Postgresql数据库</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Dash案例.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Dash创建股票APP</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#函数的作用" id="toc-函数的作用" class="nav-link active" data-scroll-target="#函数的作用">函数的作用</a></li>
+  <li><a href="#使用函数组织代码的优势" id="toc-使用函数组织代码的优势" class="nav-link" data-scroll-target="#使用函数组织代码的优势">使用函数组织代码的优势</a></li>
+  <li><a href="#函数的定义和调用" id="toc-函数的定义和调用" class="nav-link" data-scroll-target="#函数的定义和调用">函数的定义和调用</a>
+  <ul class="collapse">
+  <li><a href="#函数的定义" id="toc-函数的定义" class="nav-link" data-scroll-target="#函数的定义">函数的定义</a></li>
+  <li><a href="#函数的命名规则" id="toc-函数的命名规则" class="nav-link" data-scroll-target="#函数的命名规则">函数的命名规则</a></li>
+  <li><a href="#函数的调用方式" id="toc-函数的调用方式" class="nav-link" data-scroll-target="#函数的调用方式">函数的调用方式</a>
+  <ul class="collapse">
+  <li><a href="#函数的传入参数" id="toc-函数的传入参数" class="nav-link" data-scroll-target="#函数的传入参数">函数的传入参数</a></li>
+  <li><a href="#函数的返回值" id="toc-函数的返回值" class="nav-link" data-scroll-target="#函数的返回值">函数的返回值</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#函数的高级特性" id="toc-函数的高级特性" class="nav-link" data-scroll-target="#函数的高级特性">函数的高级特性</a>
+  <ul class="collapse">
+  <li><a href="#匿名函数lambda表达式" id="toc-匿名函数lambda表达式" class="nav-link" data-scroll-target="#匿名函数lambda表达式">匿名函数（lambda表达式）</a></li>
+  <li><a href="#函数的嵌套和闭包" id="toc-函数的嵌套和闭包" class="nav-link" data-scroll-target="#函数的嵌套和闭包">函数的嵌套和闭包</a>
+  <ul class="collapse">
+  <li><a href="#函数的嵌套" id="toc-函数的嵌套" class="nav-link" data-scroll-target="#函数的嵌套">函数的嵌套</a></li>
+  <li><a href="#函数的闭包" id="toc-函数的闭包" class="nav-link" data-scroll-target="#函数的闭包">函数的闭包</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/第1周_周五_函数.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">函数基础</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="函数的作用" class="level2">
+<h2 class="anchored" data-anchor-id="函数的作用">函数的作用</h2>
+<p>函数是编程中的重要概念，它可以将一段代码封装为一个可重用的模块。 函数的作用和优势包括：</p>
+<ol type="1">
+<li><p>代码重用：通过将一段经常使用的代码封装在函数中，我们可以在程序的不同地方多次调用该函数，避免了重复编写相同的代码，提高了代码的复用性。这样一来，如果需要修改功能或修复 bug，只需修改函数内部的实现，而不需要在多个地方逐个修改相同的代码。</p></li>
+<li><p>模块化：函数允许将程序划分为独立的模块，每个模块负责一个特定的功能。通过将复杂的任务分解为更小、更易管理的函数，可以使代码更易于理解和维护。模块化还有助于团队合作，不同的开发人员可以并行工作于不同的函数，从而提高开发效率。</p></li>
+<li><p>提高可读性：函数使代码更易读和理解。通过将一段代码封装在函数中，并给函数起一个有描述性的名称，可以提高代码的可读性。函数的参数和返回值也可以提供关于函数预期行为的重要信息，帮助其他开发人员理解和正确使用函数。</p></li>
+<li><p>抽象和封装：函数可以将复杂的实现细节隐藏在函数内部，只暴露必要的接口。这种抽象和封装的方式有助于降低代码的复杂性，提高代码的可维护性。其他部分的代码只需关注函数的输入和输出，而无需了解函数内部的具体实现。</p></li>
+<li><p>代码的组织和管理：函数可以将代码分成逻辑上独立的部分，使代码更加结构化和有组织。通过使用函数，可以将不同的功能模块分开，每个函数负责一个特定的任务。这样一来，当需要修改或添加新功能时，可以更容易地定位和修改相关的函数，而不必浏览整个代码文件。</p></li>
+</ol>
+</section>
+<section id="使用函数组织代码的优势" class="level2">
+<h2 class="anchored" data-anchor-id="使用函数组织代码的优势">使用函数组织代码的优势</h2>
+<p>函数是Python中最重要的部分之一，使用函数来组织代码可以使代码具有以下几个优势：</p>
+<ol type="1">
+<li><p>可维护性：函数将代码划分为逻辑上独立的块，使得修改和调试代码更加容易。当需要对某个功能进行修改或修复时，只需关注相关的函数，而不必担心对其他部分代码产生意外影响。这种模块化的组织方式简化了代码的维护工作，提高了代码的可维护性。</p></li>
+<li><p>可重用性：通过将通用功能封装在函数中，可以在不同的地方多次调用该函数，实现代码的重用。不必重复编写相同的代码，减少了代码量，并且使得代码更加精简。当需要修改功能时，只需在函数内部进行修改，所有调用该函数的地方都会受到更新的影响。</p></li>
+<li><p>可读性：函数具有自我描述性的名称，可以提高代码的可读性。函数的参数和返回值提供了有关函数预期行为的重要信息，使得其他开发人员可以更轻松地理解和使用函数。通过适当划分和组织函数，可以使代码的逻辑更加清晰，易于理解。</p></li>
+<li><p>测试性：函数的独立性使得单元测试变得更加容易。通过针对函数编写单元测试，可以更好地验证函数的行为是否符合预期。这有助于及早发现和修复潜在的问题，提高代码的质量和可靠性。</p></li>
+<li><p>扩展性：使用函数进行代码组织可以使系统更易于扩展。通过添加新的函数或修改现有函数，可以实现新的功能或改进现有功能。由于函数之间的独立性，扩展一个功能不会对其他部分的代码造成太大的影响，减少了潜在的副作用和错误。</p></li>
+</ol>
+<p>总之，使用函数来组织代码可以提高代码的可维护性、可重用性、可读性和测试性，使得代码更易于扩展和管理。函数为代码提供了一种模块化的方式，使得开发人员能够更有效地开发、调试和维护代码。</p>
+</section>
+<section id="函数的定义和调用" class="level1">
+<h1>函数的定义和调用</h1>
+<section id="函数的定义" class="level2">
+<h2 class="anchored" data-anchor-id="函数的定义">函数的定义</h2>
+<p>函数是<strong>提前组织好的</strong>、<strong>可重复使用的</strong>、<strong>用来实现特定功能</strong>的代码段。<code>input()</code>、<code>print()</code>、<code>str</code>、<code>int()</code>等都是Python的内置函数。</p>
+<p>除了Python内置的函数，用户还可以根据自身的需求，自定义函数。函数的基础定义语法如下：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 函数的基础定义语法</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> 函数名(传入参数):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    函数体</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    renturn 返回值</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 调用函数</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>函数名(参数)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>根据上面的基础定义语法，我们可以写出一个简短的示例函数。</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""这是一个简单的问候函数"""</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello, "</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">"!"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 调用函数</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Alice"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Bob"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, Alice!
+Hello, Bob!</code></pre>
+</div>
+</div>
+<p>上述代码定义了一个名为greet的函数。在定义函数时，将函数名紧跟在<code>def</code>关键字后面(在上面的代码中，函数名是greet)。在函数名后面的圆括号中，是函数的参数列表，在函数定义时传入的参数，称为形式参数，简称形参(在上例中，函数接受了一个参数name)。参数数函数在执行时，所需要的输入值。最后是一个冒号，表示函数定义的结束。</p>
+<p>函数的定义之后，下一行缩进的代码块是函数体，它包含了函数的实际执行逻辑(在上例中，函数体只有一行代码，用于打印问候消息)。函数体可以包含任意数量的语句和逻辑。</p>
+<p>函数体的第一行可以是可选的字符串，称为文档字符串（docstring），用于描述函数的目的和使用方法。函数的说明文档通常使用多行注释的形式。在函数的说明文档中，我们可以使用使用<code>param</code>对参数进行解释，使用<code>return</code>对返回值进行解释。在上面的案例中，文档字符串提供了关于函数的简单说明。</p>
+<p>调用函数时，我们使用函数名后跟一对括号，括号内包含函数所需的参数值。在调用函数时传入的参数，就是实际参数，即实参。在示例中，我们先后调用了greet函数，并传入不同的参数值：“Alice”和”Bob”。函数被调用后，它会执行函数体中的代码，打印出相应的问候消息。</p>
+<p>这只是一个简单的示例，函数的定义和使用可以更加复杂和灵活，可以有多个参数和复杂的逻辑。函数的定义语法在大多数编程语言中都有类似的概念，尽管具体语法可能有所不同。</p>
+<p>在定义函数时，有如下注意事事项：</p>
+<ul>
+<li><p>参数、返回值如不需要，可以省略</p></li>
+<li><p>函数名必须先定义后使用</p></li>
+<li><p>在定义函数语句的前后，规范上要求空2行</p></li>
+</ul>
+</section>
+<section id="函数的命名规则" class="level2">
+<h2 class="anchored" data-anchor-id="函数的命名规则">函数的命名规则</h2>
+<p>在Python中，函数的命名需要遵循一些规则和约定，以保持代码的可读性和一致性。以下是Python中函数命名的规则：</p>
+<ol type="1">
+<li><p>函数名只能包含字母、数字和下划线（_）字符。</p></li>
+<li><p>函数名可以以字母或下划线开头，但不能以数字开头。</p></li>
+<li><p>函数名区分大小写，因此my_function和my_Function是不同的函数名。</p></li>
+<li><p>函数名应该具有描述性，能够清晰地表达函数的作用和功能。推荐使用小写字母和下划线的组合，以增加可读性。例如，<code>calculate_average</code>、<code>print_message</code>等。</p></li>
+<li><p>如果函数名由多个单词组成，可以使用下划线进行单词间的分隔，这样可以提高函数名的可读性。这种命名方式被称为下划线命名法（snake_case）。例如，<code>calculate_average_score</code>。</p></li>
+<li><p>避免使用Python的关键字和保留字作为函数名，以免引起冲突。例如，不要将函数命名为<code>def</code>、<code>print</code>等。</p></li>
+<li><p>函数名应该尽量简洁明了，避免过长的命名。选择能准确描述函数功能的简洁名称。</p></li>
+</ol>
+</section>
+<section id="函数的调用方式" class="level2">
+<h2 class="anchored" data-anchor-id="函数的调用方式">函数的调用方式</h2>
+<section id="函数的传入参数" class="level3">
+<h3 class="anchored" data-anchor-id="函数的传入参数">函数的传入参数</h3>
+<p>函数的传入参数的功能是：在函数进行计算的时候，函数将接收外部提供的数据。</p>
+<ul>
+<li><p>函数的传入参数在函数被调用时指定。</p></li>
+<li><p>在<strong>函数定义</strong>中所提供的<code>n</code>个传入参数，称为形式参数(形参)，表示函数声明将要使用<code>n</code>个形式参数。</p></li>
+<li><p>在<strong>函数调用</strong>中所提供的传入参数，称为实际参数(实参)，表示函数执行时真正实用的参数值。</p></li>
+</ul>
+<p>在Python中，函数可以接受不同类型的参数作为输入。这些参数可以用于在函数内部进行计算、执行操作或提供必要的数据。以下是Python中函数传入参数的一些常见用法：</p>
+<ol type="1">
+<li>位置参数（Positional Arguments）：这是最常见的参数传递方式，按照参数在函数定义中的顺序进行传递。调用函数时，传递的参数值按照对应位置依次赋给函数定义中的参数，即实参的位置要与形参一一对应。</li>
+</ol>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name, message):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>message<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Alice"</span>, <span class="st">"Hello"</span>)  <span class="co"># 输出：Hello, Alice!</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Bob"</span>, <span class="st">"Hi"</span>)  <span class="co"># 输出：Hi, Bob!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, Alice!
+Hi, Bob!</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>关键字参数（Keyword Arguments）：使用关键字参数可以通过参数名来指定参数的值，而不必按照参数的顺序进行传递，即实参与形参的位置并不一一对应，但在传入参数时，需对使用参数名来进行标注。</li>
+</ol>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name, message):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>message<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>greet(message<span class="op">=</span><span class="st">"Hello"</span>, name<span class="op">=</span><span class="st">"Alice"</span>)  <span class="co"># 输出：Hello, Alice!</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>greet(name<span class="op">=</span><span class="st">"Bob"</span>, message<span class="op">=</span><span class="st">"Hi"</span>)  <span class="co"># 输出：Hi, Bob!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, Alice!
+Hi, Bob!</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>默认参数（Default Arguments）：函数定义时，可以为参数指定默认值，当调用函数时没有提供对应参数的值时，将使用默认值。在下面的示例中，将<code>Hello</code>设置为参数<code>message</code>的默认值，因此如果在调用参数时，没有传入<code>message</code>对应的值，<code>message</code>将会使用默认值<code>Hello</code>。</li>
+</ol>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name, message<span class="op">=</span><span class="st">"Hello"</span>):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>message<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Alice"</span>)  <span class="co"># 输出：Hello, Alice!</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>greet(<span class="st">"Bob"</span>, <span class="st">"Hi"</span>)  <span class="co"># 输出：Hi, Bob!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, Alice!
+Hi, Bob!</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li><p>可变数量参数（Variable-length Arguments）：有时候，我们需要处理可变数量的参数。Python提供了两种方式来处理这种情况：</p>
+<ul>
+<li><p><code>*args</code>：表示函数接受任意数量的位置参数，这些参数将作为一个元组传递给函数。</p></li>
+<li><p><code>**kwargs</code>：表示函数接受任意数量的关键字参数，这些参数将作为一个字典传递给函数。</p></li>
+</ul></li>
+</ol>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># *args方式</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_sum(<span class="op">*</span>args):</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="bu">sum</span>(args)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Sum:"</span>, total)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>calculate_sum(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)  <span class="co"># 输出：Sum: 6</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>calculate_sum(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)  <span class="co"># 输出：Sum: 150</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sum: 6
+Sum: 150</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># **kwargs方式</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_info(<span class="op">**</span>kwargs):</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, value <span class="kw">in</span> kwargs.items():</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>print_info(name<span class="op">=</span><span class="st">"Alice"</span>, age<span class="op">=</span><span class="dv">25</span>, country<span class="op">=</span><span class="st">"USA"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 输出：</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># name: Alice</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># age: 25</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># country: USA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>name: Alice
+age: 25
+country: USA</code></pre>
+</div>
+</div>
+</section>
+<section id="函数的返回值" class="level3">
+<h3 class="anchored" data-anchor-id="函数的返回值">函数的返回值</h3>
+<p>函数的返回值，就是程序中函数完成事情后，最后给调用者的结果。在Python中，函数可以通过返回值将计算结果或数据传递给调用方。函数的返回值可以是任意类型的数据，包括数字、字符串、列表、字典等。以下是Python中函数返回值的用法和示例代码：</p>
+<ol type="1">
+<li>返回单个值：函数可以使用<code>return</code>语句返回单个值。一旦执行到<code>return</code>语句，函数将立即停止执行，并将指定的值返回给调用方。</li>
+</ol>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_numbers(a, b):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> add_numbers(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># 输出：7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>7</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>返回多个值：函数可以使用<code>return</code>语句返回多个值，这些值将被打包为一个元组。调用方可以使用多个变量来接收这些返回值。</li>
+</ol>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_name_length(name):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    length <span class="op">=</span> <span class="bu">len</span>(name)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    uppercase_name <span class="op">=</span> name.upper()</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> length, uppercase_name</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>name_length, uppercase_name <span class="op">=</span> get_name_length(<span class="st">"Alice"</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name_length)  <span class="co"># 输出：5</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(uppercase_name)  <span class="co"># 输出：ALICE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5
+ALICE</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li><p>空返回值：如果函数没有明确的返回语句，或者使用<code>return</code>语句而没有指定返回值，函数将默认返回<code>None</code>。</p>
+<blockquote class="blockquote">
+<p>在Python中，有一个特殊的字面量：<code>None</code>，其类型是：<code>&lt;class 'NoneType'&gt;</code>。如果函数没有使用<code>return</code>语句返回数据，实际上就是返回了<code>None</code>这个字面量。</p>
+</blockquote></li>
+</ol>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> do_something():</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Doing something"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> do_something()</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># 输出：None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Doing something
+None</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li>提前返回：在函数执行过程中，可以使用<code>return</code>语句提前结束函数的执行，并返回指定的值。这可以在满足某个条件时提前退出函数。</li>
+</ol>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> check_positive(number):</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> number <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> check_positive(<span class="dv">5</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># 输出：True</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> check_positive(<span class="op">-</span><span class="dv">2</span>)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># 输出：False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+False</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="函数的高级特性" class="level1">
+<h1>函数的高级特性</h1>
+<section id="匿名函数lambda表达式" class="level2">
+<h2 class="anchored" data-anchor-id="匿名函数lambda表达式">匿名函数（lambda表达式）</h2>
+<p>在Python中，可以使用匿名函数（lambda表达式）来创建简单的、没有函数名的函数。匿名函数通常用于需要定义简短、一次性使用的函数。以下是匿名函数的用法和示例代码：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 匿名函数的语法</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">lambda</span> arguments: expression</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p><code>lambda</code>关键字表示创建匿名函数。</p></li>
+<li><p><code>arguments</code>表示函数的参数列表。</p></li>
+<li><p><code>expression</code>表示函数的计算逻辑，即函数的返回值。</p></li>
+</ul>
+<p>匿名函数通常与内置函数（如<code>map()</code>、<code>filter()</code>等）一起使用，或者作为函数的参数传递给其他函数。</p>
+<p>下面是几个使用匿名函数的示例：</p>
+<ol type="1">
+<li>匿名函数求平方：</li>
+</ol>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>square <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> square(<span class="dv">5</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># 输出：25</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>25</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>匿名函数求和：</li>
+</ol>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>addition <span class="op">=</span> <span class="kw">lambda</span> a, b: a <span class="op">+</span> b</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> addition(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># 输出：7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>7</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>使用内置函数<code>map()</code>和匿名函数对列表中的每个元素进行平方操作：</li>
+</ol>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>squared_numbers <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span>, numbers))</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squared_numbers)  <span class="co"># 输出：[1, 4, 9, 16, 25]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 4, 9, 16, 25]</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li>使用内置函数<code>filter()</code>和匿名函数筛选出列表中的偶数：</li>
+</ol>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>even_numbers <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>, numbers))</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(even_numbers)  <span class="co"># 输出：[2, 4]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[2, 4]</code></pre>
+</div>
+</div>
+<p>匿名函数的优势在于其简洁性和灵活性，可以在需要临时定义函数的场景下快速创建函数，避免定义独立的函数名称。然而，由于其只能表示简单的表达式，因此不适合于复杂的逻辑和长代码块的情况。</p>
+</section>
+<section id="函数的嵌套和闭包" class="level2">
+<h2 class="anchored" data-anchor-id="函数的嵌套和闭包">函数的嵌套和闭包</h2>
+<section id="函数的嵌套" class="level3">
+<h3 class="anchored">函数的嵌套</h3>
+<p>函数的嵌套调用是指在一个函数的定义中调用了另外的函数。在函数A中调用另外一个函数B时，会先把函数B中的任务都执行完毕后才会继续执行函数A的剩余内容。下面是函数嵌套的示例：</p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func2():</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"我爱Python"</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func1():</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"我是新手"</span>)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    func2()</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"我要好好学习"</span>)</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>func1()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>我是新手
+我爱Python
+我要好好学习</code></pre>
+</div>
+</div>
+<p>在上面的示例中，函数<code>func1</code>在执行时，调用了函数<code>func2</code>，并且，只有在<code>func2</code>执行完成之后，<code>func1</code>才会继续执行剩余内容。</p>
+<blockquote class="blockquote">
+<h2 id="在函数中使用的变量作用域" class="anchored" data-anchor-id="函数的嵌套">在函数中使用的变量作用域</h2>
+</blockquote>
+<p><strong>变量的作用域</strong>指的是变量的作用范围，即变量在哪里可用，在哪里不可用。</p>
+<p>根据变量的作用范围，变量分为局部变量和全局变量。</p>
+<ol type="1">
+<li>局部变量</li>
+</ol>
+<p>局部变量是指定义在函数体内部的变量，这种变量只在函数体内部生效。</p>
+<p>局部变量的作用：在函数体内部临时保存数据，在函数调用完成以后，局部变量就被销毁了。</p>
+<ol start="2" type="1">
+<li>全局变量</li>
+</ol>
+<p>全局变量就是指在函数体内、外部都能生效的变量。</p>
+<ol start="3" type="1">
+<li><code>global</code>关键字</li>
+</ol>
+<p>使用<code>global</code>关键字，可以在函数内部声明变量为全局变量。</p>
+</section>
+<section id="函数的闭包" class="level3">
+<h3 class="anchored" data-anchor-id="函数的闭包">函数的闭包</h3>
+<p>在Python中，闭包（closure）是指在一个函数内部定义的函数，并且该内部函数可以访问外部函数的变量。闭包可以捕获并保持外部函数的状态，即使外部函数已经执行完毕，内部函数仍然可以使用外部函数的变量。这使得闭包在编程中非常有用，特别是在函数式编程和装饰器模式中。</p>
+<p>闭包的关键是内部函数可以访问外部函数的变量。在Python中，当内部函数引用外部函数的变量时，Python会将该变量包装成一个包含变量值的闭包对象。这个闭包对象可以在内部函数中使用，并且在内部函数被调用时仍然保持着它的值。</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> outer_function(x):</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> inner_function(y):</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> x <span class="op">+</span> y</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> inner_function</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>closure <span class="op">=</span> outer_function(<span class="dv">10</span>)</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> closure(<span class="dv">5</span>)</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>15</code></pre>
+</div>
+</div>
+<p>在上面的例子中，<code>outer_function</code>是外部函数，它接受一个参数<code>x</code>。内部函数<code>inner_function</code>定义在外部函数内部，并引用了外部函数的参数 x。<code>outer_function</code>返回了内部函数<code>inner_function</code>，形成了一个闭包。</p>
+<p>在这个例子中，我们调用<code>outer_function(10)</code>并将返回的内部函数保存在 <code>closure</code>变量中。然后，我们调用<code>closure(5)</code>，这实际上是调用了内部函数<code>inner_function</code>。由于闭包的存在，内部函数仍然可以访问外部函数的变量<code>x</code>，所以结果将是<code>10 + 5 = 15</code>。</p>
+<p>通过闭包，我们可以创建具有记忆功能的函数，可以在多次调用之间保持状态。这使得闭包在实现装饰器、缓存功能等方面非常有用。</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./基础语法.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Python基础语法</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./安装.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pandas安装</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

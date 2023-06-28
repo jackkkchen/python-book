@@ -40,6 +40,8 @@ book:
     - part: "Python基础语法"
       chapters: 
         - 基础语法.ipynb
+        - 第1周_周五_函数.ipynb
+        - 第1周_周五_模块.ipynb
     - part: "Pandas快速入门"
       chapters: 
         - 安装.ipynb
