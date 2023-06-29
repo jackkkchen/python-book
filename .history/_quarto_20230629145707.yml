@@ -41,7 +41,6 @@ book:
       chapters: 
         - 周二基础语法.ipynb
         - 周三数据类型.ipynb
-        - 条件语句和循环语句 .ipynb
         - 周五函数.ipynb
         - 周五模块.ipynb
     - part: "Pandas快速入门"
