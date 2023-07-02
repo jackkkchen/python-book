@@ -221,7 +221,7 @@
     "href": "安装.html",
     "title": "6  Pandas安装",
     "section": "",
-    "text": "使用Anaconda安装\n对于没有经验的小白来说，直接上手用代码来安装各种包可能有点困难，而Anaconda作为一个发型平台，可以非常轻松的安装除了Pandas之外的各种Python包（IPython、NumPy、 Matplotlib等）\n详细的Anaconda安装步骤可以观看我的B站视频，或者官方文档\n\nconda install pandas\n\n\n\n\n\n\n\n\n使用PyPI中的 pip 安装\n\npip install pandas\n\n\n\n\n\n\n\nTip\n\n\n\n一般来说这是python自带的安装方式，但有时候你的虚拟环境没有或者服务器里的需要更新，可以参考文档\n\n\n\nLinuxMacOSWindows\n\n\n$ python -m ensurepip --upgrade\n\n\n$ python -m ensurepip --upgrade\n\n\nC:&gt; py -m ensurepip --upgrade"
+    "text": "使用Anaconda安装\n对于没有经验的小白来说，直接上手用代码来安装各种包可能有点困难，而Anaconda作为一个发行平台，可以非常轻松的安装除了Pandas之外的各种Python包（IPython、NumPy、 Matplotlib等）\n详细的Anaconda安装步骤可以观看我的B站视频，或者官方文档\n\nconda install pandas\n\n\n\n\n\n\n\n\n使用PyPI中的 pip 安装\n\npip install pandas\n\n\n\n\n\n\n\nTip\n\n\n\n一般来说这是python自带的安装方式，但有时候你的虚拟环境没有或者服务器里的需要更新，可以参考文档\n\n\n\nLinuxMacOSWindows\n\n\n$ python -m ensurepip --upgrade\n\n\n$ python -m ensurepip --upgrade\n\n\nC:&gt; py -m ensurepip --upgrade"
   },
   {
     "objectID": "pandas处理什么样的数据.html#表格数据",
