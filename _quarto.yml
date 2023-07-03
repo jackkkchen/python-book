@@ -13,7 +13,7 @@ book:
   author: "明数科技"
   favicon: "./img/logo.png"
   cover-image: "./img/logo.png"
-  back-to-top-navigation: true
+  #back-to-top-navigation: true
   page-navigation: true
   search: true
   # reader-mode: true  
@@ -46,7 +46,7 @@ book:
         - 周五模块.ipynb
     - part: "NumPy快速入门"
       chapters:
-        - NumPy教程.qmd
+        - NumPy教程.ipynb
     - part: "Pandas快速入门"
       chapters: 
         - 安装.ipynb
