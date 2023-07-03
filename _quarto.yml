@@ -44,9 +44,9 @@ book:
         - 条件语句和循环语句 .ipynb
         - 周五函数.ipynb
         - 周五模块.ipynb
-    # - part: "NumPy快速入门"
-    #   chapters:
-    #     - NumPy教程.qmd
+    - part: "NumPy快速入门"
+      chapters:
+        - NumPy教程.ipynb
     - part: "Pandas快速入门"
       chapters: 
         - 安装.ipynb

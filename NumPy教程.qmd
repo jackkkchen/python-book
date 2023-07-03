@@ -1,11 +1,10 @@
 ---
-title: "NumPy教程"
+title: "NumPy基础入门"
 format:
   html:
     code-fold: true
 jupyter: python3
 ---
-# Numpy基础知识 {.unnumbered}
 
 ## 1 NumPy简介{.unnumbered}
 
@@ -45,12 +44,12 @@ a = np.array([(1, 2, 3),(4, 5, 6)])
 print(a)
 ```
 
-您也可以创建一个元素都为0或1的数组（默认元素类型为float，可以通过dtype进行设置）：
+您也可以创建一个元素都为0或1的数组（默认元素类型为float64，可以通过dtype进行设置）：
 
 ```{python}
 #| code-fold: false
 print(np.zeros((2,2)))
-print(np.ones(3,dtype=int))
+print(np.ones(3,dtype=np.int32))
 ```
 
 您也可以创建一个空数组，元素的初始内容是随机的。
@@ -67,62 +66,115 @@ print(np.arange(1,9,2))  # 从1到9(不包含9)，步长为2
 print(np.linspace(0, 10, num=6))  # 从0到10，总数为6，包含首尾
 ```
 
-### 2.2 数组的属性和常用操作{.unnumbered}
+`random.Generator`生成随机数,`Generator.integers`生成随机整数：
+```{python}
+np_rng = np.random.default_rng()
+print("2*2随机数数组:\n",np_rng.random((2,2)))
+print("数值从0到4的2*2随机整数数组:\n",np_rng.integers(5, size=(2, 4)))
+```
 
-#### 2.2.1 数组的形状、维度和大小{.unnumbered}
+还可以基于已有的数组进行复制得到新数组：
+```{python}
+#| code-fold: false
+a = np.arange(4)
+c = a.copy()
+print(c)
+```
+
+
+### 2.2 数组的形状、维度和大小{.unnumbered}
 
 在 NumPy 中，维度称为轴。以下面这个二维数组为例，它的第一个轴的长度为2（行），第二个轴长度为3（列）。
 
 ```{python}
 a = np.array([[1, 2, 3], [4, 5, 6]])
-print(f"以数组a为例：\n{a}")
-print(f"数组a的维度是：{a.ndim}")
-print(f"数组a的形状是：{a.shape}")
-print(f"数组a一共包含{a.size}个元素")
+print(f"以此数组为例：\n{a}")
+print(f"数组的维度是：{a.ndim}")
+print(f"数组的形状是：{a.shape}")
+print(f"数组一共包含{a.size}个元素")
 ```
 
-#### 2.2.2 数组的索引和切片{.unnumbered}
+### 2.3 数组的索引和切片{.unnumbered}
 
-1. 索引默认从0开始
+1. 索引默认从0开始，切片起始为第一个索引，结尾为最后一个索引时可以省略不写。
 
 2. 前闭后开规则，默认含首不含尾。
 
-3. -n意味着反向第n个数
+3. -n意味着反向第n个数。
+
+4. 修改切片元素时原数组的元素也会相应改变。
 ```{python}
 arr = np.arange(10)
-print('数组a:', arr)
+print('以此数组为例:', arr)
 
-slice_one = arr[:4]
+slice_one = arr[:4] # 提取单个元素去掉冒号即可arr[4]
 print('从0到4的切片:', slice_one)
 
 slice_two = arr[4:6]
 print('从4到6的切片:', slice_two)
 
-slice_three = arr[0:10:3]
-print('从0到10步长为3的切片', slice_three)
+slice_three = arr[0:10:3]  # 前两个数可省略：arr[::3] 
+print('从0到9步长为3的切片', slice_three)
 
-slice_four = arr[-5:-3]
+slice_four = arr[:-5]
 print('从0到4的切片:', slice_four)
+
+slice_four[0] = 99
+print('修改切片元素后:', arr)
 ```
 ```{python}
 arr = np.array([(1,2,3),(4,5,6),(7,8,9)])
-print("数组：\n",arr)
-print(f"行索引从1开始：\n{arr[1:,]}") 
+print("二维数组：\n",arr)
+print(f"行索引从1开始(第二行)，列索引到2结束(第三列但不包含):\n{arr[1:,:2]}")
+```
+```{python}
+arr = np.arange(24).reshape((2, 3, 4))
+print("多维数组:\n",arr)
+print("数组的形状为:",arr.shape)
+print("第一维度从第二个元素开始:\n",arr[1:, ...])  # 等价于 arr[1:, :, :]
+print("第三维度到第二个元素结束(不包含):\n",arr[..., :1])  # 等价于 arr[:, :, :1]
+```
+也可以用逻辑条件来筛选满足条件的元素：
+
+```{python}
+arr = np.arange(24).reshape((2, 3, 4))
+print("以此数组为例:\n",arr)
+print("大于12的元素:",arr[arr>12])
+print("返回布尔值:\n",arr>12)
+```
+
+`np.nonzero()`可以用来返回满足条件的元素索引：
+
+```{python}
+arr = np.arange(12).reshape((3, 4))
+print("以此二维数组为例:\n",arr)
+print("两个维度的元素索引:",np.nonzero(arr<6))
+```
+
+可以以坐标形式返回元素索引：
+
+```{python}
+ind = np.nonzero(arr<6)
+
+list_of_coordinates= list(zip(ind[0], ind[1]))
+for coord in list_of_coordinates:
+    print(coord)
 ```
 
 
-#### 2.2.3 数组的基本运算和操作{.unnumbered}
+### 2.4 数组的基本运算和操作{.unnumbered}
 
 数组上的算术运算符按元素应用。
 
 ```{python}
-a = np.array((22, 33, 44, 55))
-b = np.arange(2,6)
+a = np.array([(22,33),(44,55)])
+b = np.arange(2,6).reshape(2,2)
 print("数组a:\n",a)
 print("数组b:\n",b)
-print(f"a-b :\n{a-b}")
-print(f"b**2 :\n{b**2}")
-print(f"b>=4 :\n{b>=4}")
+print(f"a-b:\n{a-b}")
+print(f"a/b:\n{a/b}")
+print(f"b**2:\n{b**2}")
+print(f"b>=4:\n{b>=4}")
 ```
 乘积运算符在NumPy数组中按元素进行运算，矩阵乘积运算用`@`或`.dot()`：
 ```{python}
@@ -130,29 +182,54 @@ A = np.array([(2,3),(3,4)])
 B = np.array([(4,2),(5,2)])
 print("数组A:\n",A)
 print("数组B:\n",B)
-print(f"A*B :\n{A*B}")
-print(f"A@B :\n{A@B}")
-print(f"A.dot(B) :\n{A.dot(B)}")
+print(f"A*B:\n{A*B}")
+print(f"A@B:\n{A@B}")
+print(f"A.dot(B):\n{A.dot(B)}")
 ```
 
-对元素进行排序（以数组x和y为例）：
-
+聚合函数（可以指定轴）：
 ```{python}
-x = np.array([[7,2,5],[3,6,4],[9,1,8]])
-y = np.array([7,2,5,3,6,4,9,1,8])
-print("数组x:\n",x)
-print("排序后:\n",np.sort(x))
-print("数组y:\n",y)
-print("排序后:\n",np.sort(y))
+arr = np.arange(1,5).reshape(2,2)
+print(arr)
+print("数组元素求和:",arr.sum())
+print("数组元素每列求和:",arr.sum(axis=0))  # 行求和：axis=1
+print("数组元素最小值:",arr.min())
+print("数组元素每列最小值:",arr.min(axis=0)) 
 ```
 
-#### 2.2.4 数组的形状操作：改变形状、展平和拼接{.unnumbered}
+对元素进行排序/反转（以数组x和y为例）：
+```{python}
+x = np.array([7,2,5,3,6,4,9,1,8])
+y = np.array([[7,2,5],[3,6,4],[9,1,8]])
+print("数组x:\n",x)
+print("数组x排序后:\n",np.sort(x))
+print("数组x反转后:\n",np.flip(x))
+print("数组y:\n",y)
+print("数组y排序后:\n",np.sort(y))
+print("数组y反转后:\n",np.flip(y))
+print("数组y仅反转行:\n",np.flip(y,axis=0))
+y[:,1] = np.flip(y[:,1])
+print("数组y反转第二列:\n",y)
+```
+
+去重复值：
+```{python}
+arr = np.array([1,2,2,5,7,7,8,9,9,12,14])
+print("数组:",arr)
+print("去重后:",np.unique(arr))
+
+unique_arr,indices_list = np.unique(arr, return_index=True)
+print("去重后数组的索引:",indices_list)
+```
+
+
+### 2.5 数组的形状操作和拼接、堆叠、拆分{.unnumbered}
 
 重塑数组的形状，添加新轴不会改变元素：
 ```{python}
 a = np.arange(6)
-print(f"数组a:{a}")
-print(f"重塑后:\n{a.reshape(1,3,2)}")
+print(f"数组:{a}")
+print(f"重塑形状:\n{a.reshape(1,3,2)}")
 row_vector = a[np.newaxis, :] # 从一维转为二维
 print(f"添加新轴(转换为行向量):{row_vector}")
 print(f"相当于在索引位置0处添加轴：{np.expand_dims(a, axis=0)}")
@@ -161,7 +238,34 @@ print(f"或者转换为列向量:\n{col_vector}")
 print(f"相当于在索引位置1处添加轴：\n{np.expand_dims(a, axis=1)}")
 ```
 
-拼接数组：
+展平数组可用`flatten()`或`ravel()`，但使用`flatten`时，对展平数组的更改不会影响原数组，使用`ravel`数组的更改会影响原数组。
+```{python}
+arr = np.arange(6).reshape(2,3)
+print("展平前:\n",arr)
+
+arr_one = arr.flatten()
+print("使用flatten展平后:",arr_one)
+arr_one[0] = 99
+print("修改元素:",arr_one)
+print("原数组不变:\n",arr)
+
+arr_two = arr.ravel()
+print("使用ravel展平后:",arr_two)
+arr_two[0] = 99
+print("修改元素:",arr_two)
+print("原数组改变:\n",arr)
+```
+
+转置矩阵（二维数组）：
+```{python}
+arr = np.arange(1,7).reshape(2,3)
+print("转置前:\n",arr)
+print("转置后:\n",arr.transpose())
+print("转置后:\n",arr.T)
+```
+
+
+拼接和堆叠数组：
 ```{python}
 a = np.array([(1,2),(3,4)])
 b = np.ones((3,2))
@@ -169,19 +273,49 @@ c = np.zeros((1,2))
 print(f"数组a:\n{a}")
 print(f"数组b:\n{b}")
 print(f"数组c:\n{c}")
-print(f"拼接后:\n{np.concatenate((a,b,c))}")
+print(f"拼接a,b,c:\n{np.concatenate((a,b,c))}")
+print(f"垂直堆叠a,b,c:\n{np.vstack((a,b,c))}")
+print(f"水平堆叠a,a:\n{np.hstack((a,a))}")
 ```
 
-#### 2.2.5 数组的逻辑运算和条件操作{.unnumbered}
+分解数组：
 
-## 3 NumPy高级操作{.unnumbered}
+```{python}
+arr = np.arange(1,25).reshape(2,12)
+print("以此数组为例:\n",arr)
+print(f"拆分为4个形状相同的数组:\n{np.hsplit(arr, 4)}")
+print(f"从第3列，第7列开始拆分:\n{np.hsplit(arr, (3,7))}")
+```
 
-### 3.1 广播操作：处理不同形状数组的运算{.unnumbered}
+### 2.6 数学公式{.unnumbered}
 
-### 3.2 通用函数（ufunc）：对数组进行元素级操作{.unnumbered}
+数组的运算可以帮助实现数学公式的运算，以均方误差公式为例：
 
-### 3.3 线性代数运算：矩阵乘法、逆矩阵等{.unnumbered}
+$$MeanSquareError=\frac{1}{n}\sum_{i=1}^{n}{(Prediction_i-Y_i)^2}$$
+将Prediction和Y看作一维数组进行运算即可：
+`error = (1/n)*np.sum(np.square(prediction-y))`
+```{python}
+prediction = np.array([2,2,2])
+y = np.array([1,2,3])
+print("观测值:",y)
+print("预测值:",prediction)
+print("预测值和观测值之差:",prediction-y)
+error = (1/3)*np.sum(np.square(prediction-y))
+print("均方误差:",error)
+```
 
-### 3.4 数组的文件输入输出：读取和保存数组数据{.unnumbered}
+### 2.7 数组的文件输入输出：读取和保存NumPy对象{.unnumbered}
 
-## 4 示例和练习{.unnumbered}
+将数组对象存为`filename.npy`：
+```{python}
+arr = np.array([1,2,3])
+np.save("arr", arr)
+np.load('arr.npy')
+```
+也可以保存为文本：
+```{python}
+np.savetxt('arr.csv', arr)
+np.loadtxt('arr.csv')
+```
+
+## 3 示例和练习{.unnumbered}
