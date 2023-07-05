@@ -85,3 +85,11 @@ Visual Studio Code是一个轻量级但功能强大的源代码编辑器，在�
 输入`python main.py`运行 python代码
 :::
 
+
+
+
+周一：Python环境搭建，基础语法
+周二：Python数据类型
+周三：Python条件&循环语句
+周四：Python函数&模块
+周五：Python数组概念

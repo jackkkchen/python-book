@@ -84,4 +84,3 @@ Visual Studio Code是一个轻量级但功能强大的源代码编辑器，在�
 在vscode中，创建新的`main.py`文件后，可使用快捷键```ctl+` ```打开终端。
 输入`python main.py`运行 python代码
 :::
-
