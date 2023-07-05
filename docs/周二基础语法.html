@@ -66,7 +66,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <link href="./周三数据类型.html" rel="next">
 <link href="./周一环境搭建.html" rel="prev">
-<link href="././img/logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -195,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./条件语句和循环语句 .html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python条件语句&amp;循环语句</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">条件语句的学习</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -372,6 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="在代码编辑器中输入python指令" class="level3">
 <h3 class="anchored" data-anchor-id="在代码编辑器中输入python指令">在代码编辑器中输入python指令</h3>
 <p>比如在<code>jupyterlab</code>，在<code>终端</code>或者<code>vscode</code>中输入代码</p>
+<p>如图，<code>Shift + Enter</code>执行代码块</p>
 <p><img src="./img/py_basic.png" class="img-fluid"></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -386,7 +386,10 @@ Note
 <p>在终端中，输入<code>python</code>进入python解释器后，即可运行python代码</p>
 </div>
 </div>
-<p>我们可以写一个简单的表达式，在编程中，表达式是一段产生值的代码，例如</p>
+<video width="600" height="450" controls="">
+<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/python-%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC.mp4">
+</video>
+<p>我们可以写一个简单的表达式。表达式在编程中是一段可以产生值的代码，例如：</p>
 <div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
@@ -396,7 +399,7 @@ Note
 <pre><code>6113</code></pre>
 </div>
 </div>
-<p>另外一种表达式，让我们看看是否 9 大于 1？</p>
+<p>上面是最基础的表达式，我们使用它输出了两个数的和。接下来，让我们看看另外一种表达式：</p>
 <div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
@@ -406,8 +409,8 @@ Note
 <pre><code>True</code></pre>
 </div>
 </div>
-<p>因为这个逻辑是成立的，所以我们会得到 <code>True</code>，反之则会得到<code>False</code>。这也叫做<code>布尔值</code>，这会在之后的数据类型中介绍。</p>
-<p>那写代码总少不了报错。假如我的是空值呢？</p>
+<p>上面这个表达式对9和1的大小进行了判断。因为<code>9 &gt; 1</code>，所以，程序返回了<code>True</code>；反之，如果我们编写<code>1 &gt; 9</code>，则会返回<code>False</code>。在这里，<code>True</code>和<code>False</code>统称为布尔值，在之后的数据类型课程中，我们会详细地对其进行介绍。</p>
+<p>在写代码的过程中，我们总会遇到程序报错的情况，不要慌张，程序会将我们犯错的地方、以及犯错的类型全部标注出来，比如下面这行代码：</p>
 <div class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
@@ -417,7 +420,7 @@ Note
 <pre><code>SyntaxError: invalid syntax (1639543893.py, line 1)</code></pre>
 </div>
 </div>
-<p>我们会得到一个语法错误，其中<code>SyntaxError</code>在编程中，意味着语法，就像平常的语言中的语法一样，你不说清楚是什么的话，那是很难理解的。这在编程里也十分讲究。</p>
+<p>我们进行了一个比较运算，但是只填入了一个值。这时 程序就报错了。终端里显示我们的代码出现了一个语法错误，报错提示中的<code>SyntaxError</code>在编程中代表着语法错误。就像自然语言中的语法一样，Python作为一门编程语言，也具有自己的语法。在接下来的日子里，我们会带你详细学习。</p>
 </section>
 </section>
 <section id="变量赋值" class="level2">

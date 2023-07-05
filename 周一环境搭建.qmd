@@ -32,7 +32,7 @@ Mac OS 中，如果安装程序过程中改变了 python 的安装路径，如�
 Windows 系统中，把 Python 安装目录添加到 PATH 环境变量中流程如下
 
 1. 右键点击 计算机，然后点击 属性
-2. 然后点击"高级系统设置"
+2. 然后点击“高级系统设置”
 3. 选择 系统变量 窗口下面的 Path ,双击即可！
 4. 然后在 Path 行，添加 python 安装路径即可，即在最后面，添加 ;`C:\Python`
 5. 设置成功以后，在 `cmd` 命令行，输入命令 python，就可以有相关显示
@@ -81,6 +81,72 @@ Visual Studio Code是一个轻量级但功能强大的源代码编辑器，在�
 官方有非常丰富的文档提供学习参考，第一步可以从[入门视频开始](https://code.visualstudio.com/docs/getstarted/introvideos)
 
 ::: {.callout-note}
-在vscode中，创建新的`main.py`文件后，可使用快捷键```ctl+` ```打开终端。
+在vscode中，创建新的`main.py`文件后，可使用快捷键```ctrl+` ```打开终端。
 输入`python main.py`运行 python代码
 :::
+
+## conda 创建环境
+Conda是一个用于管理和部署软件包、依赖关系和环境的开源工具，用于安装、管理和运行不同版本的软件包和依赖项。Conda时Anaconda发行版的核心组件之一。Conda支持Python，在后面的学习中，我们将使用conda对我们的环境进行管理。
+在安装完成Anaconda后，我们可以使用如下代码验证conda是否成功安装
+```bash
+conda --version
+```
+为了给我们的学习提供一个稳定的、可复现的环境，我们将使用conda来创建一个新的环境。你可以将其理解为一个沙盒，我们后面所进行的更改都将仅限于该环境中。使用下面的代码来创建环境
+```bash
+conda create --name myenv
+```
+上面的代码中的"myenv"是环境的名称，你可以根据你的喜好或者需要来更改它。如果你需要指定Python版本，可以执行如下代码
+```bash
+conda create --name myenv python=3.9
+```
+在成功创建环境后，你会发现，我们目前还是处于基础环境之中，使用下面这行代码来激活刚才创建的环境
+```bash
+conda activate myenv
+```
+这样一来我们就可以使用我们刚才创建好的环境进行Python学习了。在后面的学习中，我们将使用vscode来作为我们的学习工具，当我们成功创建环境以后，还需要再vscode中配置conda环境。
+
+打开vscode后，按下`Ctrl + Shift + P`打开命令面板，输入输入"Python: Select Interpreter"，然后选择该命令以选择Python解释器。在弹出的列表中，您应该能够看到已安装的Conda环境。选择您要在VSCode中使用的Conda环境。
+
+如果没有看到您想要的环境，确保已正确安装并配置了Conda，并在上一步中激活了您想要使用的环境。
+最后，如果你还需要再别的电脑上配置相同的环境，你也可以使用conda完成这些操作：
+```bash
+# 列出环境
+conda env list
+
+# 复制环境
+conda creat --name myclone --clone myenv
+
+# 删除环境
+conda env remove --name myenv
+
+# 导出环境
+conda env export > environment.yml
+
+# 导入环境
+conda env create --file environment.yml
+```
+
+
+## Plotly
+Plotly是一种用于创建交互式可视化的开源Python图形库，它提供了丰富的图表类型和功能，可以生成高质量、可交互的图形，用于数据分析和呈现。
+Plotly支持的图表类型有很多，包括我们常用的散点图、线图、条形图、面积图、箱线图等等。在使用Plotly的过程中，我们可以通过选择合适的图表类型进行数据可视化。另外，Plotly提供了强大的交互式功能，用户可以通过鼠标交互、缩放、平移等操作来和图标进行交互。同时，我们还可以通过添加悬停提示信息、点击事件和自定义工具栏等交互元素，增强用户体验。
+由于Plotly可以和Python中的各种数据分析和科学计算库(如NumPy、Pandas等)无缝集成，因此，在使用Python进行数据可视化工作的进程中，Plotly可以很好地帮助到我们。
+
+### 使用conda安装Plotly
+如果你的电脑上安装了Anaconda，那么我们可以使用conda来安装Plotly。打开终端以后，输入以下代码
+```bash
+conda install -c plotly plotly
+```
+这将从Anaconda的默认渠道安装Plotly。
+### 使用pip安装Plotly
+如果您的电脑上没有安装Anaconda，您也可以使用pip来安装Plotly。打开终端以后，输入以下代码
+```bash
+pip install plotly
+```
+### 验证安装
+安装完成以后，可以使用以下命令来验证是否成功安装了Plotly
+```bash
+python -c "import plotly; print(plotly.--version--)"
+```
+如果成功安装，这行代码将为我们显示Plotly的版本号。
+在安装完成以后，您就可以在Python中使用Plotly来创建交互式可视化图表了。另外，在使用Plotly时，通常还需要安装Pandas或numpy，我们将在后面的章节中带领您安装。
