@@ -132,6 +132,43 @@ Plotly是一种用于创建交互式可视化的开源Python图形库，它提�
 Plotly支持的图表类型有很多，包括我们常用的散点图、线图、条形图、面积图、箱线图等等。在使用Plotly的过程中，我们可以通过选择合适的图表类型进行数据可视化。另外，Plotly提供了强大的交互式功能，用户可以通过鼠标交互、缩放、平移等操作来和图标进行交互。同时，我们还可以通过添加悬停提示信息、点击事件和自定义工具栏等交互元素，增强用户体验。
 由于Plotly可以和Python中的各种数据分析和科学计算库(如NumPy、Pandas等)无缝集成，因此，在使用Python进行数据可视化工作的进程中，Plotly可以很好地帮助到我们。
 
+在后面的课程中，我们会详细介绍Plotly的相关内容，现在，让我们一起来看看Plotly可以实现的效果吧。
+
+1. Lines on Maps
+```bash
+import plotly.express as px
+df = px.data.gapminder().query("year == 2007")
+fig = px.line_geo(df, locations="iso_alpha",
+                  color="continent", # "continent" is one of the columns of gapminder
+                  projection="orthographic")
+fig.show()
+```
+
+2. Funnel Chart
+```bash
+from plotly import graph_objects as go
+
+fig = go.Figure(go.Funnel(
+    y = ["Website visit", "Downloads", "Potential customers", "Requested price", "Finalized"],
+    x = [39, 27.4, 20.6, 11, 2],
+    textposition = "inside",
+    textinfo = "value+percent initial",
+    opacity = 0.65, marker = {"color": ["deepskyblue", "lightsalmon", "tan", "teal", "silver"],
+    "line": {"width": [4, 2, 2, 3, 1, 1], "color": ["wheat", "wheat", "blue", "wheat", "wheat"]}},
+    connector = {"line": {"color": "royalblue", "dash": "dot", "width": 3}})
+    )
+
+fig.show()
+```
+
+3. Scatter Plots
+```bash
+import plotly.express as px
+df = px.data.iris()
+fig = px.scatter(df, x="sepal_width", y="sepal_length", color='petal_length')
+fig.show()
+```
+
 ### 使用conda安装Plotly
 如果你的电脑上安装了Anaconda，那么我们可以使用conda来安装Plotly。打开终端以后，输入以下代码
 ```bash
