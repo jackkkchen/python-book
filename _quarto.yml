@@ -13,7 +13,7 @@ book:
   # author: "明数科技"
   # favicon: "./img/logo.png"
   # cover-image: "./img/logo.png"
-  back-to-top-navigation: true
+  # back-to-top-navigation: true
   page-navigation: true
   search: true
   # reader-mode: true  
