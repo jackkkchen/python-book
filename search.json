@@ -28,46 +28,11 @@
     "text": "应用领域\nPython具有广泛的应用领域，从Web开发到科学计算和人工智能等各种领域都能发挥其优势。它的简洁性和强大的库生态系统使得开发人员能够快速构建各种类型的应用程序。\n\nWeb开发：Python的Web框架（如Django和Flask）使得构建功能强大的Web应用程序变得简单。Python还可以用于服务器端编程、网页爬虫和API开发等。\n数据科学和机器学习：Python在数据科学和机器学习领域非常受欢迎。它提供了许多用于数据处理、数据可视化和机器学习算法的库，如NumPy、Pandas、Matplotlib、Scikit-learn和TensorFlow等。\n科学计算：Python在科学计算领域也得到广泛应用。科学计算库如NumPy和SciPy提供了许多数值计算、优化和统计分析的功能，适用于物理学、数学、生物学等领域。\n自动化和脚本编写：Python的简洁性和易用性使得它成为自动化任务和脚本编写的理想选择。可以使用Python编写脚本来自动执行重复性的任务、处理文件、操作系统和网络等。\n游戏开发：Python也可以用于游戏开发。有一些专门的库和框架，如Pygame，使得使用Python编写2D游戏变得相对容易。"
   },
   {
-    "objectID": "周一环境搭建.html#anaconda环境安装强烈推荐",
-    "href": "周一环境搭建.html#anaconda环境安装强烈推荐",
-    "title": "1  Python环境搭建",
-    "section": "Anaconda环境安装（强烈推荐）",
-    "text": "Anaconda环境安装（强烈推荐）\n强烈推荐小白使用Anaconda平台学习Python。\nAnaconda提供了简化环境配置、跨平台支持、库和工具管理以及丰富的科学计算库等优势，使得小白学习Python更加便捷和高效。它是一个功能强大且易于使用的平台，可以帮助您快速入门Python编程并进行数据处理和分析。\n官方免费提供在线编辑器-jupyterlab 无需手动安装环境，即可直接上手编写代码。"
-  },
-  {
-    "objectID": "周一环境搭建.html#python包-手动安装",
-    "href": "周一环境搭建.html#python包-手动安装",
-    "title": "1  Python环境搭建",
-    "section": "Python包 手动安装",
-    "text": "Python包 手动安装\n你可以访问Python官网下载并安装适合你操作系统的Python版本。最好选择stable稳定版\n\n\n\n\n\n设置环境变量\n程序和可执行文件可以在许多目录，而这些路径很可能不在操作系统提供可执行文件的搜索路径中\nPATH (路径)存储在环境变量中，这是由操作系统维护的一个命名的字符串,这些变量包含可用的命令行解释器和其他程序的信息\nUnix 或 Windows 中路径变量为 PATH ( UNIX区分大小写，Windows 不区分大小写 )\nMac OS 中，如果安装程序过程中改变了 python 的安装路径，如果想要在其它目录引用 Python，则必须在 PATH 中添加 Python 目录\n\n\n在 Windows 设置环境变量\nWindows 系统中，把 Python 安装目录添加到 PATH 环境变量中流程如下\n\n右键点击 计算机，然后点击 属性\n然后点击“高级系统设置”\n选择 系统变量 窗口下面的 Path ,双击即可！\n然后在 Path 行，添加 python 安装路径即可，即在最后面，添加 ;C:\\Python\n设置成功以后，在 cmd 命令行，输入命令 python，就可以有相关显示\n\n\n\n\n\n\n\n\nNote\n\n\n\nWindows 下的 Python 一般安装在 C:\\Python目录。\n\n\n安装完成后，打开命令行（Windows）或终端（macOS/Linux），输入以下命令，确认Python已成功安装：\npython --version\n输入python并按回车键。你将看到一条欢迎消息，其末尾\n为如下提示符：\n\\&gt;&gt;&gt;\n如果情况确实如此，就可以输入Python命令了。\n请尝试像下面这样做，以核实它是否管用：\n\\&gt;&gt;&gt; print(\"Hello, world!\")\n等你按下回车键后，将出现如下输出：\nHello, world!\n\\&gt;&gt;&gt;\n如果你熟悉其他计算机语言，可能习惯了在每行末尾都加上分号。在Python中无需这样做，因为在Python中，一行就是一行。接下来，我们将学习如何编写和运行Python程序。"
-  },
-  {
-    "objectID": "周一环境搭建.html#visual-stuido-code安装",
-    "href": "周一环境搭建.html#visual-stuido-code安装",
-    "title": "1  Python环境搭建",
-    "section": "Visual Stuido Code安装",
-    "text": "Visual Stuido Code安装\nVisual Studio Code是一个轻量级但功能强大的源代码编辑器，在你的桌面上运行，可用于Windows、macOS和Linux。它内置了对JavaScript、TypeScript和Node.js的支持，并有一个丰富的生态系统，可用于其他语言和运行系统（如C++、C#、Java、Python、PHP、Go、.NET）的扩展。\n\n\n\n官方有非常丰富的文档提供学习参考，第一步可以从入门视频开始\n\n\n\n\n\n\nNote\n\n\n\n在vscode中，创建新的main.py文件后，可使用快捷键ctrl+`打开终端。 输入python main.py运行 python代码"
-  },
-  {
-    "objectID": "周一环境搭建.html#conda-创建环境",
-    "href": "周一环境搭建.html#conda-创建环境",
-    "title": "1  Python环境搭建",
-    "section": "conda 创建环境",
-    "text": "conda 创建环境\nConda是一个用于管理和部署软件包、依赖关系和环境的开源工具，用于安装、管理和运行不同版本的软件包和依赖项。Conda时Anaconda发行版的核心组件之一。Conda支持Python，在后面的学习中，我们将使用conda对我们的环境进行管理。 在安装完成Anaconda后，我们可以使用如下代码验证conda是否成功安装\nconda --version\n为了给我们的学习提供一个稳定的、可复现的环境，我们将使用conda来创建一个新的环境。你可以将其理解为一个沙盒，我们后面所进行的更改都将仅限于该环境中。使用下面的代码来创建环境\nconda create --name myenv\n上面的代码中的”myenv”是环境的名称，你可以根据你的喜好或者需要来更改它。如果你需要指定Python版本，可以执行如下代码\nconda create --name myenv python=3.9\n在成功创建环境后，你会发现，我们目前还是处于基础环境之中，使用下面这行代码来激活刚才创建的环境\nconda activate myenv\n这样一来我们就可以使用我们刚才创建好的环境进行Python学习了。在后面的学习中，我们将使用vscode来作为我们的学习工具，当我们成功创建环境以后，还需要再vscode中配置conda环境。\n打开vscode后，按下Ctrl + Shift + P打开命令面板，输入输入”Python: Select Interpreter”，然后选择该命令以选择Python解释器。在弹出的列表中，您应该能够看到已安装的Conda环境。选择您要在VSCode中使用的Conda环境。\n如果没有看到您想要的环境，确保已正确安装并配置了Conda，并在上一步中激活了您想要使用的环境。 最后，如果你还需要再别的电脑上配置相同的环境，你也可以使用conda完成这些操作：\n# 列出环境\nconda env list\n\n# 复制环境\nconda creat --name myclone --clone myenv\n\n# 删除环境\nconda env remove --name myenv\n\n# 导出环境\nconda env export &gt; environment.yml\n\n# 导入环境\nconda env create --file environment.yml"
-  },
-  {
-    "objectID": "周一环境搭建.html#plotly",
-    "href": "周一环境搭建.html#plotly",
-    "title": "1  Python环境搭建",
-    "section": "Plotly",
-    "text": "Plotly\nPlotly是一种用于创建交互式可视化的开源Python图形库，它提供了丰富的图表类型和功能，可以生成高质量、可交互的图形，用于数据分析和呈现。 Plotly支持的图表类型有很多，包括我们常用的散点图、线图、条形图、面积图、箱线图等等。在使用Plotly的过程中，我们可以通过选择合适的图表类型进行数据可视化。另外，Plotly提供了强大的交互式功能，用户可以通过鼠标交互、缩放、平移等操作来和图标进行交互。同时，我们还可以通过添加悬停提示信息、点击事件和自定义工具栏等交互元素，增强用户体验。 由于Plotly可以和Python中的各种数据分析和科学计算库(如NumPy、Pandas等)无缝集成，因此，在使用Python进行数据可视化工作的进程中，Plotly可以很好地帮助到我们。\n\n使用conda安装Plotly\n如果你的电脑上安装了Anaconda，那么我们可以使用conda来安装Plotly。打开终端以后，输入以下代码\nconda install -c plotly plotly\n这将从Anaconda的默认渠道安装Plotly。 ### 使用pip安装Plotly 如果您的电脑上没有安装Anaconda，您也可以使用pip来安装Plotly。打开终端以后，输入以下代码\npip install plotly\n\n\n验证安装\n安装完成以后，可以使用以下命令来验证是否成功安装了Plotly\npython -c \"import plotly; print(plotly.--version--)\"\n如果成功安装，这行代码将为我们显示Plotly的版本号。 在安装完成以后，您就可以在Python中使用Plotly来创建交互式可视化图表了。另外，在使用Plotly时，通常还需要安装Pandas或numpy，我们将在后面的章节中带领您安装。"
-  },
-  {
     "objectID": "周一基础语法.html#如何使用python",
     "href": "周一基础语法.html#如何使用python",
     "title": "2  Python基础语法",
     "section": "如何使用Python",
-    "text": "如何使用Python\n\n运行python文件\n\n\n\nPython文件的后缀为 .py\n\n\n\n在代码编辑器中输入python指令\n比如在jupyterlab，在终端或者vscode中输入代码\n如图，Shift + Enter执行代码块\n\n\n\n\n\n\n\nNote\n\n\n\n在终端中，输入python进入python解释器后，即可运行python代码\n\n\n我们可以写一个简单的表达式，在编程中，表达式是一段产生值的代码，类似计算机功能，例如\n\n2023 + 4090\n\n6113\n\n\n除了输出值外，还有另外一种表达式，比如查看是否 9 大于 1？\n\n9 &gt; 1\n\nTrue\n\n\n因为这个逻辑是成立的，所以我们会得到 True，反之则会得到False。这也叫做布尔值，这会在之后的数据类型中介绍。\n写代码总少不了报错。假如我的是空值呢？\n\n9 &gt; \n\nSyntaxError: invalid syntax (1639543893.py, line 1)\n\n\n我们会得到一个语法错误，其中SyntaxError在编程中，意味着语法，就像平常的语言中的语法一样，你不说清楚是什么的话，那是很难理解的。这在编程里也十分讲究。"
+    "text": "如何使用Python\n\n运行python文件\n\n\n\nPython文件的后缀为 .py\n\n\n\n在代码编辑器中输入python指令\n比如在jupyterlab，在终端或者vscode中输入代码\n如图，Shift + Enter执行代码块\n\n\n\n\n\n\n\nNote\n\n\n\n在终端中，输入python进入python解释器后，即可运行python代码\n\n\n我们可以写一个简单的表达式，在编程中，表达式是一段产生值的代码，类似计算机功能，例如\n\n2023 + 4090\n\n6113\n\n\n除了输出值外，还有另外一种表达式，比如查看是否 9 大于 1？\n\n9 &gt; 1\n\nTrue\n\n\n上面这个表达式对9和1的大小进行了判断。因为9 &gt; 1，所以，程序返回了True；反之，如果我们编写1 &gt; 9，则会返回False。在这里，True和False统称为布尔值，在之后的数据类型课程中，我们会详细地对其进行介绍。\n写代码总少不了报错。假如我的是空值呢？\n\n9 &gt; \n\nSyntaxError: invalid syntax (1639543893.py, line 1)\n\n\n我们进行了一个比较运算，但是只填入了一个值。这时 程序就报错了。终端里显示我们的代码出现了一个语法错误，报错提示中的SyntaxError在编程中代表着语法错误。就像自然语言中的语法一样，Python作为一门编程语言，也具有自己的语法。在接下来的日子里，我们会带你详细学习。"
   },
   {
     "objectID": "周一基础语法.html#变量赋值",
@@ -158,7 +123,7 @@
     "href": "周四函数.html#函数的调用方式",
     "title": "5  Python函数",
     "section": "函数的调用方式",
-    "text": "函数的调用方式\n\n函数的传入参数\n函数的传入参数的功能是：在函数进行计算的时候，函数将接收外部提供的数据。\n\n函数的传入参数在函数被调用时指定。\n在函数定义中所提供的n个传入参数，称为形式参数(形参)，表示函数声明将要使用n个形式参数。\n在函数调用中所提供的传入参数，称为实际参数(实参)，表示函数执行时真正实用的参数值。\n\n在Python中，函数可以接受不同类型的参数作为输入。这些参数可以用于在函数内部进行计算、执行操作或提供必要的数据。以下是Python中函数传入参数的一些常见用法：\n\n位置参数（Positional Arguments）：这是最常见的参数传递方式，按照参数在函数定义中的顺序进行传递。调用函数时，传递的参数值按照对应位置依次赋给函数定义中的参数，即实参的位置要与形参一一对应。\n\n\n\n\n\n关键字参数（Keyword Arguments）：使用关键字参数可以通过参数名来指定参数的值，而不必按照参数的顺序进行传递，即实参与形参的位置并不一一对应，但在传入参数时，需对使用参数名来进行标注。\n\n\n\n\n\n默认参数（Default Arguments）：函数定义时，可以为参数指定默认值，当调用函数时没有提供对应参数的值时，将使用默认值。在下面的示例中，将Hello设置为参数message的默认值，因此如果在调用参数时，没有传入message对应的值，message将会使用默认值Hello。\n\n\n\n\n\n可变数量参数（Variable-length Arguments）：有时候，我们需要处理可变数量的参数。Python提供了两种方式来处理这种情况：\n\n\n*args：表示函数接受任意数量的位置参数，这些参数将作为一个元组传递给函数。\n\n\n\n\n\n**kwargs：表示函数接受任意数量的关键字参数，这些参数将作为一个字典传递给函数。\n\n\n\n\n\n\n函数的返回值\n函数的返回值，就是程序中函数完成事情后，最后给调用者的结果。在Python中，函数可以通过返回值将计算结果或数据传递给调用方。函数的返回值可以是任意类型的数据，包括数字、字符串、列表、字典等。以下是Python中函数返回值的用法和示例代码：\n\n返回单个值：函数可以使用return语句返回单个值。一旦执行到return语句，函数将立即停止执行，并将指定的值返回给调用方。\n\n\n\n\n\n返回多个值：函数可以使用return语句返回多个值，这些值将被打包为一个元组。调用方可以使用多个变量来接收这些返回值。\n\n\n\n\n\n空返回值：如果函数没有明确的返回语句，或者使用return语句而没有指定返回值，函数将默认返回None。\n\n在Python中，有一个特殊的字面量：None，其类型是：&lt;class 'NoneType'&gt;。如果函数没有使用return语句返回数据，实际上就是返回了None这个字面量。\n\n\n\n\n\n\n提前返回：在函数执行过程中，可以使用return语句提前结束函数的执行，并返回指定的值。这可以在满足某个条件时提前退出函数。"
+    "text": "函数的调用方式\n\n函数的传入参数\n函数的传入参数的功能是：在函数进行计算的时候，函数将接收外部提供的数据。\n\n函数的传入参数在函数被调用时指定。\n在函数定义中所提供的n个传入参数，称为形式参数(形参)，表示函数声明将要使用n个形式参数。\n在函数调用中所提供的传入参数，称为实际参数(实参)，表示函数执行时真正实用的参数值。\n\n在Python中，函数可以接受不同类型的参数作为输入。这些参数可以用于在函数内部进行计算、执行操作或提供必要的数据。以下是Python中函数传入参数的一些常见用法：\n\n位置参数（Positional Arguments）：这是最常见的参数传递方式，按照参数在函数定义中的顺序进行传递。调用函数时，传递的参数值按照对应位置依次赋给函数定义中的参数，即实参的位置要与形参一一对应。\n\n\n# 位置参数\ndef greet(name, message):\n    print(f\"{message}, {name}!\")\n\n\ngreet(\"World\", \"Hello\")\ngreet(\"Python\", \"Hi\")\n\nHello, World!\nHi, Python!\n\n\n在上面的例子中，我们编辑了一个问候函数，仿照其格式，你也可以试试编辑一个自己的函数，用来对这个世界打招呼。\n\n关键字参数（Keyword Arguments）：使用关键字参数可以通过参数名来指定参数的值，而不必按照参数的顺序进行传递，即实参与形参的位置并不一一对应，但在传入参数时，需对使用参数名来进行标注。\n\n\n# 关键字参数\ndef greet2(name, message):\n    print(f\"{message}, {name}!\")\n\n\ngreet2(message=\"Hello\", name=\"World\")\ngreet2(name=\"Python\", message=\"Hi\")\n\nHello, World!\nHi, Python!\n\n\n灵活运用关键字参数可以让我们很容易地向函数传递数据，尝试编写一个函数，打乱向他传入参数的顺序，再使用关键字参数来调整。\n\n默认参数（Default Arguments）：函数定义时，可以为参数指定默认值，当调用函数时没有提供对应参数的值时，将使用默认值。在下面的示例中，将Hello设置为参数message的默认值，因此如果在调用参数时，没有传入message对应的值，message将会使用默认值Hello。\n\n\n# 默认参数\ndef greet3(name, message=\"Hello\"):\n    print(f\"{message}, {name}!\")\n\n\ngreet3(\"World\")\ngreet3(\"Python\", \"Hi\")\n\nHello, World!\nHi, Python!\n\n\n\n可变数量参数（Variable-length Arguments）：有时候，我们需要处理可变数量的参数。Python提供了两种方式来处理这种情况：\n\n\n*args：表示函数接受任意数量的位置参数，这些参数将作为一个元组传递给函数。\n\n\n\n\n\n**kwargs：表示函数接受任意数量的关键字参数，这些参数将作为一个字典传递给函数。\n\n\n\n\n\n\n函数的返回值\n函数的返回值，就是程序中函数完成事情后，最后给调用者的结果。在Python中，函数可以通过返回值将计算结果或数据传递给调用方。函数的返回值可以是任意类型的数据，包括数字、字符串、列表、字典等。以下是Python中函数返回值的用法和示例代码：\n\n返回单个值：函数可以使用return语句返回单个值。一旦执行到return语句，函数将立即停止执行，并将指定的值返回给调用方。\n\n\ndef add_num(a, b):\n    return a + b\n\n\nresult = add_num(3, 4)\nprint(result)\n\n\n返回多个值：函数可以使用return语句返回多个值，这些值将被打包为一个元组。调用方可以使用多个变量来接收这些返回值。\n\n\n\n\n\n空返回值：如果函数没有明确的返回语句，或者使用return语句而没有指定返回值，函数将默认返回None。\n\n在Python中，有一个特殊的字面量：None，其类型是：&lt;class 'NoneType'&gt;。如果函数没有使用return语句返回数据，实际上就是返回了None这个字面量。\n\n\n\n\n\n\n提前返回：在函数执行过程中，可以使用return语句提前结束函数的执行，并返回指定的值。这可以在满足某个条件时提前退出函数。"
   },
   {
     "objectID": "周四函数.html#匿名函数lambda表达式",
