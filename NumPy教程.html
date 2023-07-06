@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python新手文档 - 7&nbsp; NumPy基础入门</title>
+<title>Python新手文档 - 7&nbsp; NumPy简介与基本操作</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./NumPy教程.html">NumPy快速入门</a></li><li class="breadcrumb-item"><a href="./NumPy教程.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">NumPy基础入门</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./NumPy教程.html">NumPy快速入门</a></li><li class="breadcrumb-item"><a href="./NumPy教程.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">NumPy简介与基本操作</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -220,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./NumPy教程.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">NumPy基础入门</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">NumPy简介与基本操作</span></span></a>
   </div>
 </li>
       </ul>
@@ -329,23 +329,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#numpy简介" id="toc-numpy简介" class="nav-link active" data-scroll-target="#numpy简介">1 NumPy简介</a>
-  <ul class="collapse">
-  <li><a href="#numpy的安装和导入" id="toc-numpy的安装和导入" class="nav-link" data-scroll-target="#numpy的安装和导入">1.1 NumPy的安装和导入</a></li>
-  <li><a href="#numpy中的核心对象ndarray" id="toc-numpy中的核心对象ndarray" class="nav-link" data-scroll-target="#numpy中的核心对象ndarray">1.2 NumPy中的核心对象：ndarray</a></li>
-  <li><a href="#numpy支持的数据类型" id="toc-numpy支持的数据类型" class="nav-link" data-scroll-target="#numpy支持的数据类型">1.3 NumPy支持的数据类型</a></li>
-  </ul></li>
-  <li><a href="#numpy基本操作" id="toc-numpy基本操作" class="nav-link" data-scroll-target="#numpy基本操作">2 NumPy基本操作</a>
-  <ul class="collapse">
-  <li><a href="#创建numpy数组" id="toc-创建numpy数组" class="nav-link" data-scroll-target="#创建numpy数组">2.1 创建NumPy数组</a></li>
-  <li><a href="#数组的形状维度和大小" id="toc-数组的形状维度和大小" class="nav-link" data-scroll-target="#数组的形状维度和大小">2.2 数组的形状、维度和大小</a></li>
-  <li><a href="#数组的索引和切片" id="toc-数组的索引和切片" class="nav-link" data-scroll-target="#数组的索引和切片">2.3 数组的索引和切片</a></li>
-  <li><a href="#数组的基本运算和操作" id="toc-数组的基本运算和操作" class="nav-link" data-scroll-target="#数组的基本运算和操作">2.4 数组的基本运算和操作</a></li>
-  <li><a href="#数组的形状操作和拼接堆叠拆分" id="toc-数组的形状操作和拼接堆叠拆分" class="nav-link" data-scroll-target="#数组的形状操作和拼接堆叠拆分">2.5 数组的形状操作和拼接、堆叠、拆分</a></li>
-  <li><a href="#数学公式" id="toc-数学公式" class="nav-link" data-scroll-target="#数学公式">2.6 数学公式</a></li>
-  <li><a href="#数组的文件输入输出读取和保存numpy对象" id="toc-数组的文件输入输出读取和保存numpy对象" class="nav-link" data-scroll-target="#数组的文件输入输出读取和保存numpy对象">2.7 数组的文件输入输出：读取和保存NumPy对象</a></li>
-  </ul></li>
-  <li><a href="#示例和练习" id="toc-示例和练习" class="nav-link" data-scroll-target="#示例和练习">3 示例和练习</a></li>
+  <li><a href="#numpy的安装和导入" id="toc-numpy的安装和导入" class="nav-link active" data-scroll-target="#numpy的安装和导入">NumPy的安装和导入*</a></li>
+  <li><a href="#numpy中的核心对象ndarray" id="toc-numpy中的核心对象ndarray" class="nav-link" data-scroll-target="#numpy中的核心对象ndarray">NumPy中的核心对象：ndarray*</a></li>
+  <li><a href="#创建numpy数组" id="toc-创建numpy数组" class="nav-link" data-scroll-target="#创建numpy数组">创建NumPy数组*</a></li>
+  <li><a href="#numpy支持的数据类型" id="toc-numpy支持的数据类型" class="nav-link" data-scroll-target="#numpy支持的数据类型">NumPy支持的数据类型</a></li>
+  <li><a href="#数组的形状维度和大小" id="toc-数组的形状维度和大小" class="nav-link" data-scroll-target="#数组的形状维度和大小">数组的形状、维度和大小*</a></li>
+  <li><a href="#数组的形状操作" id="toc-数组的形状操作" class="nav-link" data-scroll-target="#数组的形状操作">数组的形状操作*</a></li>
+  <li><a href="#数组的索引和切片" id="toc-数组的索引和切片" class="nav-link" data-scroll-target="#数组的索引和切片">数组的索引和切片*</a></li>
+  <li><a href="#数组的基本运算" id="toc-数组的基本运算" class="nav-link" data-scroll-target="#数组的基本运算">数组的基本运算*</a></li>
+  <li><a href="#数组的排序反转和去重" id="toc-数组的排序反转和去重" class="nav-link" data-scroll-target="#数组的排序反转和去重">数组的排序、反转和去重*</a></li>
+  <li><a href="#数组的展平拼接堆叠拆分" id="toc-数组的展平拼接堆叠拆分" class="nav-link" data-scroll-target="#数组的展平拼接堆叠拆分">数组的展平、拼接、堆叠、拆分*</a></li>
+  <li><a href="#数学公式" id="toc-数学公式" class="nav-link" data-scroll-target="#数学公式">数学公式</a></li>
+  <li><a href="#数组对象的读取和保存" id="toc-数组对象的读取和保存" class="nav-link" data-scroll-target="#数组对象的读取和保存">数组对象的读取和保存</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/NumPy教程.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -354,7 +349,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">NumPy基础入门</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">NumPy简介与基本操作</span></h1>
 </div>
 
 
@@ -369,423 +364,1032 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="numpy简介" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="numpy简介">1 NumPy简介</h2>
-<p>NumPy（Numerical Python）是一个开源的Python科学计算库，是Python中用于科学计算和数据分析的核心库之一。它包含多维数组和矩阵数据结构，提供了高性能的多维数组对象ndarray（N-dimensional array）以及处理这些数组的各种函数，提供了高效的数组操作功能，使得处理大规模数据集变得更加高效和便捷。</p>
-<section id="numpy的安装和导入" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="numpy的安装和导入">1.1 NumPy的安装和导入</h3>
+<p>NumPy（Numerical Python）是一个开源的Python科学计算库，是Python中用于科学计算和数据分析的核心库之一。它包含多维数组和矩阵数据结构的运算，提供了高性能的多维数组对象ndarray（N-dimensional array）以及处理这些数组的各种函数，提供了高效的数组操作功能，使得处理大规模数据集变得更加高效和便捷。</p>
+<section id="numpy的安装和导入" class="level2">
+<h2 class="anchored" data-anchor-id="numpy的安装和导入">NumPy的安装和导入*</h2>
 <p>安装 NumPy ：</p>
 <p><code>conda install numpy</code> 或者 <code>pip install numpy</code></p>
 <p>导入 NumPy ：</p>
-<div class="cell">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>使用 NumPy 缩短导入的名称np，可以提高代码的可读性</p>
 </section>
-<section id="numpy中的核心对象ndarray" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="numpy中的核心对象ndarray">1.2 NumPy中的核心对象：ndarray</h3>
-<p>ndarray是NumPy中最重要的对象，它是N 维数组的简写，表示多维同类型数据的数组，可以是一维数组、二维数组或更高维度的数组。</p>
+<section id="numpy中的核心对象ndarray" class="level2">
+<h2 class="anchored" data-anchor-id="numpy中的核心对象ndarray">NumPy中的核心对象：ndarray*</h2>
+<p>ndarray是NumPy中最重要的对象，它是N 维数组的简写，可以是一维数组、二维数组或更高维度的数组。</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"这是一个一维数组:"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>np.array((<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>这是一个一维数组:</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>array([1, 2, 3])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"这是一个2*3的二维数组:"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>np.array([(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>这是一个2*3的二维数组:</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>array([[1, 2, 3],
+       [4, 5, 6]])</code></pre>
+</div>
+</div>
+<p>相对于一维数组，二维数组多了一个维度，示例代码中的二维数组包含两个子数组（也称为行）：[1,2,3]和[4,5,6]，一个子数组代表一个行向量。</p>
 <p>ndarray中的元素可以是任意数据类型，包括整数、浮点数、复数等。数据类型由dtype（data type）对象来描述。</p>
 </section>
-<section id="numpy支持的数据类型" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="numpy支持的数据类型">1.3 NumPy支持的数据类型</h3>
+<section id="创建numpy数组" class="level2">
+<h2 class="anchored" data-anchor-id="创建numpy数组">创建NumPy数组*</h2>
+<p>要创建 NumPy 数组，可以使用函数<code>np.array()</code>将序列转换为数组。</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>对象只能是一个，例如<code>((),(),...)</code>，不能是多个序列：<code>(),(),...</code>。</p>
+</div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array(((<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>array([[1, 2, 3],
+       [4, 5, 6]])</code></pre>
+</div>
+</div>
+<p>创建一个元素都为0的数组（默认元素类型为float64，可以通过dtype进行设置）：</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>np.zeros((<span class="dv">2</span>, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>array([[0., 0.],
+       [0., 0.]])</code></pre>
+</div>
+</div>
+<p>创建一个元素全为1的3*3矩阵，数值类型为整型：</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>np.ones((<span class="dv">3</span>, <span class="dv">3</span>), dtype<span class="op">=</span>np.int_)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>array([[1, 1, 1],
+       [1, 1, 1],
+       [1, 1, 1]])</code></pre>
+</div>
+</div>
+<p>创建一个3*3单位矩阵（对角线元素为1）：</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>np.eye(<span class="dv">3</span>, <span class="dv">3</span>, dtype <span class="op">=</span> np.int_)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>array([[1, 0, 0],
+       [0, 1, 0],
+       [0, 0, 1]])</code></pre>
+</div>
+</div>
+<p>创建一个空数组，元素的初始内容会随机生成，可以设置dtype参数：</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>np.empty((<span class="dv">2</span>, <span class="dv">3</span>), dtype <span class="op">=</span> np.float_)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>array([[0., 0., 0.],
+       [0., 0., 0.]])</code></pre>
+</div>
+</div>
+<p>创建一个等差数列型的一维数组：</p>
+<p><code>np.arange()</code>第一个参数start代表起始值，默认从0开始，第二个参数stop代表结束值，但结束值不包含在数组中。第三个参数step为步长，即相邻元素的差值。</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"创建一个值域从0-9,步长为2的数组:"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>np.arange(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>创建一个值域从0-9,步长为2的数组:</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>array([0, 2, 4, 6, 8])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"只含一个参数时,默认初始索引为0,步长为1:"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>np.arange(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>只含一个参数时,默认初始索引为0,步长为1:</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>array([0, 1, 2, 3])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"创建一个包含6个元素,值域从0到10的整型数组:"</span>) </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, num <span class="op">=</span> <span class="dv">6</span>, dtype <span class="op">=</span> np.int_) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>创建一个包含6个元素,值域从0到10的整型数组:</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>array([ 0,  2,  4,  6,  8, 10])</code></pre>
+</div>
+</div>
+<p>创建随机数组：</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"2*2随机数组:"</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>np.random.random((<span class="dv">2</span>, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2*2随机数组:</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>array([[0.2491061 , 0.64491311],
+       [0.89195183, 0.85252749]])</code></pre>
+</div>
+</div>
+<p>创建随机整型数组：</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>np.random.randint(<span class="dv">5</span>, size<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>array([[4, 1, 4],
+       [2, 2, 3]])</code></pre>
+</div>
+</div>
+<p>基于已有的数组复制得到新数组：</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.arange(<span class="dv">4</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> a.copy()</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>array([0, 1, 2, 3])</code></pre>
+</div>
+</div>
+</section>
+<section id="numpy支持的数据类型" class="level2">
+<h2 class="anchored" data-anchor-id="numpy支持的数据类型">NumPy支持的数据类型</h2>
 <ol type="1">
-<li>布尔类型（bool）：表示True或False的布尔值。</li>
-<li>整数类型（int）：包括有符号和无符号的整数，如int8、int16、int32、int64、uint8、uint16、uint32、uint64等。</li>
-<li>浮点数类型（float）：表示浮点数，包括float16、float32、float64等。</li>
-<li>复数类型（complex）：表示复数，包括complex64、complex128等。</li>
+<li>布尔类型（bool）：表示True或False的布尔值，设置<code>dtype = np.bool_</code>即可。</li>
+<li>整数类型（int）：包括有符号和无符号的整数，如int_、int8、int16、int32、int64、uint8、uint16、uint32、uint64等，u意为unsigned，无符号，表示只能为正数。</li>
+<li>浮点数类型（float）：表示浮点数，包括float16、float32、float64(float_)等。</li>
+<li>复数类型（complex）：表示复数，包括complex64、complex128(complex_)等。</li>
 <li>字符串类型（string）：表示固定长度的字符串，如S10表示长度为10的字符串。</li>
 <li>Unicode类型（unicode）：表示固定长度的Unicode字符串，如U10表示长度为10的Unicode字符串。</li>
 <li>日期和时间类型（datetime）：表示日期和时间，包括datetime64、timedelta64等。</li>
 </ol>
 </section>
-</section>
-<section id="numpy基本操作" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="numpy基本操作">2 NumPy基本操作</h2>
-<section id="创建numpy数组" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="创建numpy数组">2.1 创建NumPy数组</h3>
-<p>要创建 NumPy 数组，您可以使用函数<code>np.array()</code>将序列转换为数组</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)])</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[1 2 3]
- [4 5 6]]</code></pre>
-</div>
-</div>
-<p>您也可以创建一个元素都为0或1的数组（默认元素类型为float64，可以通过dtype进行设置）：</p>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.zeros((<span class="dv">2</span>,<span class="dv">2</span>)))</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.ones(<span class="dv">3</span>,dtype<span class="op">=</span>np.int32))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[0. 0.]
- [0. 0.]]
-[1 1 1]</code></pre>
-</div>
-</div>
-<p>您也可以创建一个空数组，元素的初始内容是随机的。</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.empty((<span class="dv">2</span>,<span class="dv">3</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[-2.68156159e+154  1.29074307e-231  1.48219694e-323]
- [ 0.00000000e+000  0.00000000e+000  4.17201348e-309]]</code></pre>
-</div>
-</div>
-<p>创建一个有序数组：</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.arange(<span class="dv">4</span>))      <span class="co"># 默认从index 0开始，不包含4</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.arange(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">2</span>))  <span class="co"># 从1到9(不包含9)，步长为2</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, num<span class="op">=</span><span class="dv">6</span>))  <span class="co"># 从0到10，总数为6，包含首尾</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[0 1 2 3]
-[1 3 5 7]
-[ 0.  2.  4.  6.  8. 10.]</code></pre>
-</div>
-</div>
-<p><code>random.Generator</code>生成随机数,<code>Generator.integers</code>生成随机整数：</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>np_rng <span class="op">=</span> np.random.default_rng()</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"2*2随机数数组:</span><span class="ch">\n</span><span class="st">"</span>,np_rng.random((<span class="dv">2</span>,<span class="dv">2</span>)))</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数值从0到4的2*2随机整数数组:</span><span class="ch">\n</span><span class="st">"</span>,np_rng.integers(<span class="dv">5</span>, size<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">4</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2*2随机数数组:
- [[0.98175928 0.53018039]
- [0.22108467 0.19259586]]
-数值从0到4的2*2随机整数数组:
- [[4 3 4 0]
- [1 3 0 0]]</code></pre>
-</div>
-</div>
-<p>还可以基于已有的数组进行复制得到新数组：</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.arange(<span class="dv">4</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> a.copy()</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[0 1 2 3]</code></pre>
-</div>
-</div>
-</section>
-<section id="数组的形状维度和大小" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="数组的形状维度和大小">2.2 数组的形状、维度和大小</h3>
+<section id="数组的形状维度和大小" class="level2">
+<h2 class="anchored" data-anchor-id="数组的形状维度和大小">数组的形状、维度和大小*</h2>
 <p>在 NumPy 中，维度称为轴。以下面这个二维数组为例，它的第一个轴的长度为2（行），第二个轴长度为3（列）。</p>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"以此数组为例：</span><span class="ch">\n</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组的维度是：</span><span class="sc">{</span>a<span class="sc">.</span>ndim<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组的形状是：</span><span class="sc">{</span>a<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组一共包含</span><span class="sc">{</span>a<span class="sc">.</span>size<span class="sc">}</span><span class="ss">个元素"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"以此数组为例:</span><span class="ch">\n</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组的维度是:</span><span class="sc">{</span>a<span class="sc">.</span>ndim<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组的形状是:</span><span class="sc">{</span>a<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组一共包含</span><span class="sc">{</span>a<span class="sc">.</span>size<span class="sc">}</span><span class="ss">个元素"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>以此数组为例：
+<pre><code>以此数组为例:
 [[1 2 3]
  [4 5 6]]
-数组的维度是：2
-数组的形状是：(2, 3)
+数组的维度是:2
+数组的形状是:(2, 3)
 数组一共包含6个元素</code></pre>
 </div>
 </div>
 </section>
-<section id="数组的索引和切片" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="数组的索引和切片">2.3 数组的索引和切片</h3>
+<section id="数组的形状操作" class="level2">
+<h2 class="anchored" data-anchor-id="数组的形状操作">数组的形状操作*</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>重塑数组的形状或添加新轴不会改变元素，只会改变数组的形状。</p>
+</div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.arange(<span class="dv">6</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"原数组:</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"重塑形状:</span><span class="ch">\n</span><span class="sc">{</span>a<span class="sc">.</span>reshape(<span class="dv">2</span>, <span class="dv">3</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>row_vector <span class="op">=</span> a[np.newaxis, :]</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"添加新轴,从一维转为二维:</span><span class="ch">\n</span><span class="sc">{</span>row_vector<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"相当于在索引位置0处添加轴:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>expand_dims(a, axis <span class="op">=</span> <span class="dv">0</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>col_vector <span class="op">=</span> a[:, np.newaxis]</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"添加新轴,转换为列向量:</span><span class="ch">\n</span><span class="sc">{</span>col_vector<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"相当于在索引位置1处添加轴:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>expand_dims(a, axis <span class="op">=</span> <span class="dv">1</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>原数组:[0 1 2 3 4 5]
+重塑形状:
+[[0 1 2]
+ [3 4 5]]
+添加新轴,从一维转为二维:
+[[0 1 2 3 4 5]]
+相当于在索引位置0处添加轴:
+[[0 1 2 3 4 5]]
+添加新轴,转换为列向量:
+[[0]
+ [1]
+ [2]
+ [3]
+ [4]
+ [5]]
+相当于在索引位置1处添加轴:
+[[0]
+ [1]
+ [2]
+ [3]
+ [4]
+ [5]]</code></pre>
+</div>
+</div>
+<p>转置矩阵：</p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">7</span>).reshape(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"原矩阵:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"转置后:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">.</span>transpose()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"也可以用.T:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">.</span>T<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>原矩阵:
+[[1 2 3]
+ [4 5 6]]
+转置后:
+[[1 4]
+ [2 5]
+ [3 6]]
+也可以用.T:
+[[1 4]
+ [2 5]
+ [3 6]]</code></pre>
+</div>
+</div>
+</section>
+<section id="数组的索引和切片" class="level2">
+<h2 class="anchored" data-anchor-id="数组的索引和切片">数组的索引和切片*</h2>
 <ol type="1">
-<li><p>索引默认从0开始，切片起始为第一个索引，结尾为最后一个索引时可以省略不写。</p></li>
+<li><p>索引默认从0开始，第一个元素索引为0，第二个元素索引为1，依此类推。</p></li>
 <li><p>前闭后开规则，默认含首不含尾。</p></li>
-<li><p>-n意味着反向第n个数。</p></li>
+<li><p>-n指反方向第n个数。</p></li>
 <li><p>修改切片元素时原数组的元素也会相应改变。</p></li>
 </ol>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">10</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'以此数组为例:'</span>, arr)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>slice_one <span class="op">=</span> arr[:<span class="dv">4</span>] <span class="co"># 提取单个元素去掉冒号即可arr[4]</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'从0到4的切片:'</span>, slice_one)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>slice_two <span class="op">=</span> arr[<span class="dv">4</span>:<span class="dv">6</span>]</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'从4到6的切片:'</span>, slice_two)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>slice_three <span class="op">=</span> arr[<span class="dv">0</span>:<span class="dv">10</span>:<span class="dv">3</span>]  <span class="co"># 前两个数可省略：arr[::3] </span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'从0到9步长为3的切片'</span>, slice_three)</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>slice_four <span class="op">=</span> arr[:<span class="op">-</span><span class="dv">5</span>]</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'从0到4的切片:'</span>, slice_four)</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>slice_four[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span></span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'修改切片元素后:'</span>, arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">10</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'以此数组为例:'</span>, arr)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>slice_one <span class="op">=</span> arr[:<span class="dv">5</span>] <span class="co"># 提取单个元素去掉冒号即可:arr[4]</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'索引从0到4的切片:'</span>, slice_one)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>slice_two <span class="op">=</span> arr[<span class="dv">4</span>:<span class="dv">7</span>]</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'索引从4到6的切片:'</span>, slice_two)</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>slice_three <span class="op">=</span> arr[<span class="dv">0</span>:<span class="dv">10</span>:<span class="dv">3</span>]  <span class="co"># 前两个数可省略：arr[::3] </span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'索引从0到9且步长为3的切片'</span>, slice_three)</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>slice_four <span class="op">=</span> arr[:<span class="op">-</span><span class="dv">5</span>]</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'索引从0到4的切片:'</span>, slice_four)</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>slice_four[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'修改切片元素后原数组随之改变:'</span>, arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>以此数组为例: [0 1 2 3 4 5 6 7 8 9]
-从0到4的切片: [0 1 2 3]
-从4到6的切片: [4 5]
-从0到9步长为3的切片 [0 3 6 9]
-从0到4的切片: [0 1 2 3 4]
-修改切片元素后: [99  1  2  3  4  5  6  7  8  9]</code></pre>
+索引从0到4的切片: [0 1 2 3 4]
+索引从4到6的切片: [4 5 6]
+索引从0到9且步长为3的切片 [0 3 6 9]
+索引从0到4的切片: [0 1 2 3 4]
+修改切片元素后原数组随之改变: [99  1  2  3  4  5  6  7  8  9]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>)])</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"二维数组：</span><span class="ch">\n</span><span class="st">"</span>,arr)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"行索引从1开始(第二行)，列索引到2结束(第三列但不包含):</span><span class="ch">\n</span><span class="sc">{</span>arr[<span class="dv">1</span>:,:<span class="dv">2</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">10</span>).reshape(<span class="dv">3</span>, <span class="dv">3</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"二维数组:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"行索引从1开始(第2行),列索引取到2(第3列但不包含):</span><span class="ch">\n</span><span class="sc">{</span>arr[<span class="dv">1</span>:, :<span class="dv">2</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>二维数组：
- [[1 2 3]
+<pre><code>二维数组:
+[[1 2 3]
  [4 5 6]
  [7 8 9]]
-行索引从1开始(第二行)，列索引到2结束(第三列但不包含):
+行索引从1开始(第2行),列索引取到2(第3列但不包含):
 [[4 5]
  [7 8]]</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">24</span>).reshape((<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"多维数组:</span><span class="ch">\n</span><span class="st">"</span>,arr)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组的形状为:"</span>,arr.shape)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"第一维度从第二个元素开始:</span><span class="ch">\n</span><span class="st">"</span>,arr[<span class="dv">1</span>:, ...])  <span class="co"># 等价于 arr[1:, :, :]</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"第三维度到第二个元素结束(不包含):</span><span class="ch">\n</span><span class="st">"</span>,arr[..., :<span class="dv">1</span>])  <span class="co"># 等价于 arr[:, :, :1]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>以下面的三维数组为例，该数组三个维度的轴长分别为2, 3, 4，意味着:</p>
+<p>第一个维度包含两个二维子数组，第二个维度包含三个一维子数组，第三个维度包含四个整数。（依次去掉最外层中括号来看）</p>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.random.randint(<span class="dv">1</span>, <span class="dv">10</span>, size <span class="op">=</span> (<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"三维数组:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> (<span class="dv">0</span>, <span class="dv">1</span>):</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"第一维度索引</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">指代的元素:</span><span class="ch">\n</span><span class="sc">{</span>arr[i, :, :]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>多维数组:
- [[[ 0  1  2  3]
-  [ 4  5  6  7]
-  [ 8  9 10 11]]
+<pre><code>三维数组:
+[[[1 8 7 6]
+  [5 6 9 1]
+  [3 5 9 8]]
 
- [[12 13 14 15]
-  [16 17 18 19]
-  [20 21 22 23]]]
-数组的形状为: (2, 3, 4)
-第一维度从第二个元素开始:
- [[[12 13 14 15]
-  [16 17 18 19]
-  [20 21 22 23]]]
+ [[2 2 5 2]
+  [3 8 9 9]
+  [2 6 1 1]]]
+第一维度索引0指代的元素:
+[[1 8 7 6]
+ [5 6 9 1]
+ [3 5 9 8]]
+第一维度索引1指代的元素:
+[[2 2 5 2]
+ [3 8 9 9]
+ [2 6 1 1]]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> (<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>):</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"第二维度索引</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">指代的元素:</span><span class="ch">\n</span><span class="sc">{</span>arr[:, i, :]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>第二维度索引0指代的元素:
+[[1 8 7 6]
+ [2 2 5 2]]
+第二维度索引1指代的元素:
+[[5 6 9 1]
+ [3 8 9 9]]
+第二维度索引2指代的元素:
+[[3 5 9 8]
+ [2 6 1 1]]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> (<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>):</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"第三维度索引</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">指代的元素:</span><span class="ch">\n</span><span class="sc">{</span>arr[:, :, i]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>第三维度索引0指代的元素:
+[[1 5 3]
+ [2 3 2]]
+第三维度索引1指代的元素:
+[[8 6 5]
+ [2 8 6]]
+第三维度索引2指代的元素:
+[[7 9 9]
+ [5 9 1]]
+第三维度索引3指代的元素:
+[[6 1 8]
+ [2 9 1]]</code></pre>
+</div>
+</div>
+<p>以坐标形式显示24个元素的索引：</p>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>ind <span class="op">=</span> np.nonzero(arr)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">zip</span>(ind[<span class="dv">0</span>], ind[<span class="dv">1</span>], ind[<span class="dv">2</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>[(0, 0, 0),
+ (0, 0, 1),
+ (0, 0, 2),
+ (0, 0, 3),
+ (0, 1, 0),
+ (0, 1, 1),
+ (0, 1, 2),
+ (0, 1, 3),
+ (0, 2, 0),
+ (0, 2, 1),
+ (0, 2, 2),
+ (0, 2, 3),
+ (1, 0, 0),
+ (1, 0, 1),
+ (1, 0, 2),
+ (1, 0, 3),
+ (1, 1, 0),
+ (1, 1, 1),
+ (1, 1, 2),
+ (1, 1, 3),
+ (1, 2, 0),
+ (1, 2, 1),
+ (1, 2, 2),
+ (1, 2, 3)]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"第一维度从第二个元素开始:</span><span class="ch">\n</span><span class="sc">{</span>arr[<span class="dv">1</span>:, ...]<span class="sc">}</span><span class="ss">"</span>)  <span class="co"># 等价于 arr[1:, :, :]</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"第三维度到第二个元素结束(不包含):</span><span class="ch">\n</span><span class="sc">{</span>arr[..., :<span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)  <span class="co"># 等价于 arr[:, :, :1]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>第一维度从第二个元素开始:
+[[[2 2 5 2]
+  [3 8 9 9]
+  [2 6 1 1]]]
 第三维度到第二个元素结束(不包含):
- [[[ 0]
-  [ 4]
-  [ 8]]
+[[[1]
+  [5]
+  [3]]
 
- [[12]
-  [16]
-  [20]]]</code></pre>
+ [[2]
+  [3]
+  [2]]]</code></pre>
 </div>
 </div>
-<p>也可以用逻辑条件来筛选满足条件的元素：</p>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">24</span>).reshape((<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"以此数组为例:</span><span class="ch">\n</span><span class="st">"</span>,arr)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"大于12的元素:"</span>,arr[arr<span class="op">&gt;</span><span class="dv">12</span>])</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"返回布尔值:</span><span class="ch">\n</span><span class="st">"</span>,arr<span class="op">&gt;</span><span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>用逻辑条件来筛选满足条件的元素，筛选后的数组会被展平为一维数组：</p>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">12</span>).reshape((<span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"以此数组为例:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"大于12的元素:</span><span class="sc">{</span>arr[arr <span class="op">&gt;</span> <span class="dv">6</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"返回布尔值:</span><span class="ch">\n</span><span class="sc">{</span>arr <span class="op">&gt;</span> <span class="dv">6</span><span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>以此数组为例:
- [[[ 0  1  2  3]
-  [ 4  5  6  7]
-  [ 8  9 10 11]]
-
- [[12 13 14 15]
-  [16 17 18 19]
-  [20 21 22 23]]]
-大于12的元素: [13 14 15 16 17 18 19 20 21 22 23]
-返回布尔值:
- [[[False False False False]
-  [False False False False]
-  [False False False False]]
-
- [[False  True  True  True]
-  [ True  True  True  True]
-  [ True  True  True  True]]]</code></pre>
-</div>
-</div>
-<p><code>np.nonzero()</code>可以用来返回满足条件的元素索引：</p>
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">12</span>).reshape((<span class="dv">3</span>, <span class="dv">4</span>))</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"以此二维数组为例:</span><span class="ch">\n</span><span class="st">"</span>,arr)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"两个维度的元素索引:"</span>,np.nonzero(arr<span class="op">&lt;</span><span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>以此二维数组为例:
- [[ 0  1  2  3]
+[[ 0  1  2  3]
  [ 4  5  6  7]
  [ 8  9 10 11]]
-两个维度的元素索引: (array([0, 0, 0, 0, 1, 1]), array([0, 1, 2, 3, 0, 1]))</code></pre>
+大于12的元素:[ 7  8  9 10 11]
+返回布尔值:
+[[False False False False]
+ [False False False  True]
+ [ True  True  True  True]]</code></pre>
 </div>
 </div>
-<p>可以以坐标形式返回元素索引：</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>ind <span class="op">=</span> np.nonzero(arr<span class="op">&lt;</span><span class="dv">6</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>list_of_coordinates<span class="op">=</span> <span class="bu">list</span>(<span class="bu">zip</span>(ind[<span class="dv">0</span>], ind[<span class="dv">1</span>]))</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> coord <span class="kw">in</span> list_of_coordinates:</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(coord)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>返回满足条件的元素索引：</p>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.random.randint(<span class="dv">4</span>, size <span class="op">=</span> (<span class="dv">3</span>, <span class="dv">3</span>))</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"以此二维数组为例:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"非零元素的索引(分维度):</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>nonzero(arr)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"元素小于1的索引:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>nonzero(arr <span class="op">&lt;</span> <span class="dv">1</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>以此二维数组为例:
+[[2 2 1]
+ [2 2 3]
+ [0 1 3]]
+非零元素的索引(分维度):
+(array([0, 0, 0, 1, 1, 1, 2, 2], dtype=int64), array([0, 1, 2, 0, 1, 2, 1, 2], dtype=int64))
+元素小于1的索引:
+(array([2], dtype=int64), array([0], dtype=int64))</code></pre>
+</div>
+</div>
+<p>以坐标形式返回元素索引：</p>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>ind <span class="op">=</span> np.nonzero(arr <span class="op">&lt;</span> <span class="dv">6</span>)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>list_of_coordinates <span class="op">=</span> <span class="bu">list</span>(<span class="bu">zip</span>(ind[<span class="dv">0</span>], ind[<span class="dv">1</span>]))</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> coord <span class="kw">in</span> list_of_coordinates:</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(coord)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(0, 0)
 (0, 1)
 (0, 2)
-(0, 3)
 (1, 0)
-(1, 1)</code></pre>
+(1, 1)
+(1, 2)
+(2, 0)
+(2, 1)
+(2, 2)</code></pre>
+</div>
+</div>
+<div class="callout-tips">
+<p>遇到不认识的函数或模块时，例如上述示例代码的<code>zip()</code>可以使用<code>help()</code>查询函数或模块的信息以及示例代码。</p>
+</div>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(<span class="bu">zip</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Help on zip object:
+
+class zip(object)
+ |  zip(*iterables, strict=False) --&gt; Yield tuples until an input is exhausted.
+ |  
+ |     &gt;&gt;&gt; list(zip('abcdefg', range(3), range(4)))
+ |     [('a', 0, 0), ('b', 1, 1), ('c', 2, 2)]
+ |  
+ |  The zip object yields n-length tuples, where n is the number of iterables
+ |  passed as positional arguments to zip().  The i-th element in every tuple
+ |  comes from the i-th iterable argument to zip().  This continues until the
+ |  shortest argument is exhausted.
+ |  
+ |  If strict is true and one of the arguments is exhausted before the others,
+ |  raise a ValueError.
+ |  
+ |  Methods defined here:
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |  
+ |  __next__(self, /)
+ |      Implement next(self).
+ |  
+ |  __reduce__(...)
+ |      Return state information for pickling.
+ |  
+ |  __setstate__(...)
+ |      Set state information for unpickling.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+</code></pre>
+</div>
+</div>
+<div class="callout-tips">
+<p>如果想要了解某个特定模块的函数，例如numpy的array函数，可以使用<code>numpy.info(numpy.array)</code></p>
+</div>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>np.info(np.array)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>array(object, dtype=None, *, copy=True, order='K', subok=False, ndmin=0,
+      like=None)
+
+Create an array.
+
+Parameters
+----------
+object : array_like
+    An array, any object exposing the array interface, an object whose
+    __array__ method returns an array, or any (nested) sequence.
+    If object is a scalar, a 0-dimensional array containing object is
+    returned.
+dtype : data-type, optional
+    The desired data-type for the array.  If not given, then the type will
+    be determined as the minimum type required to hold the objects in the
+    sequence.
+copy : bool, optional
+    If true (default), then the object is copied.  Otherwise, a copy will
+    only be made if __array__ returns a copy, if obj is a nested sequence,
+    or if a copy is needed to satisfy any of the other requirements
+    (`dtype`, `order`, etc.).
+order : {'K', 'A', 'C', 'F'}, optional
+    Specify the memory layout of the array. If object is not an array, the
+    newly created array will be in C order (row major) unless 'F' is
+    specified, in which case it will be in Fortran order (column major).
+    If object is an array the following holds.
+
+    ===== ========= ===================================================
+    order  no copy                     copy=True
+    ===== ========= ===================================================
+    'K'   unchanged F &amp; C order preserved, otherwise most similar order
+    'A'   unchanged F order if input is F and not C, otherwise C order
+    'C'   C order   C order
+    'F'   F order   F order
+    ===== ========= ===================================================
+
+    When ``copy=False`` and a copy is made for other reasons, the result is
+    the same as if ``copy=True``, with some exceptions for 'A', see the
+    Notes section. The default order is 'K'.
+subok : bool, optional
+    If True, then sub-classes will be passed-through, otherwise
+    the returned array will be forced to be a base-class array (default).
+ndmin : int, optional
+    Specifies the minimum number of dimensions that the resulting
+    array should have.  Ones will be prepended to the shape as
+    needed to meet this requirement.
+like : array_like, optional
+    Reference object to allow the creation of arrays which are not
+    NumPy arrays. If an array-like passed in as ``like`` supports
+    the ``__array_function__`` protocol, the result will be defined
+    by it. In this case, it ensures the creation of an array object
+    compatible with that passed in via this argument.
+
+    .. versionadded:: 1.20.0
+
+Returns
+-------
+out : ndarray
+    An array object satisfying the specified requirements.
+
+See Also
+--------
+empty_like : Return an empty array with shape and type of input.
+ones_like : Return an array of ones with shape and type of input.
+zeros_like : Return an array of zeros with shape and type of input.
+full_like : Return a new array with shape of input filled with value.
+empty : Return a new uninitialized array.
+ones : Return a new array setting values to one.
+zeros : Return a new array setting values to zero.
+full : Return a new array of given shape filled with value.
+
+
+Notes
+-----
+When order is 'A' and `object` is an array in neither 'C' nor 'F' order,
+and a copy is forced by a change in dtype, then the order of the result is
+not necessarily 'C' as expected. This is likely a bug.
+
+Examples
+--------
+&gt;&gt;&gt; np.array([1, 2, 3])
+array([1, 2, 3])
+
+Upcasting:
+
+&gt;&gt;&gt; np.array([1, 2, 3.0])
+array([ 1.,  2.,  3.])
+
+More than one dimension:
+
+&gt;&gt;&gt; np.array([[1, 2], [3, 4]])
+array([[1, 2],
+       [3, 4]])
+
+Minimum dimensions 2:
+
+&gt;&gt;&gt; np.array([1, 2, 3], ndmin=2)
+array([[1, 2, 3]])
+
+Type provided:
+
+&gt;&gt;&gt; np.array([1, 2, 3], dtype=complex)
+array([ 1.+0.j,  2.+0.j,  3.+0.j])
+
+Data-type consisting of more than one element:
+
+&gt;&gt;&gt; x = np.array([(1,2),(3,4)],dtype=[('a','&lt;i4'),('b','&lt;i4')])
+&gt;&gt;&gt; x['a']
+array([1, 3])
+
+Creating an array from sub-classes:
+
+&gt;&gt;&gt; np.array(np.mat('1 2; 3 4'))
+array([[1, 2],
+       [3, 4]])
+
+&gt;&gt;&gt; np.array(np.mat('1 2; 3 4'), subok=True)
+matrix([[1, 2],
+        [3, 4]])</code></pre>
 </div>
 </div>
 </section>
-<section id="数组的基本运算和操作" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="数组的基本运算和操作">2.4 数组的基本运算和操作</h3>
+<section id="数组的基本运算" class="level2">
+<h2 class="anchored" data-anchor-id="数组的基本运算">数组的基本运算*</h2>
 <p>数组上的算术运算符按元素应用。</p>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([(<span class="dv">22</span>,<span class="dv">33</span>),(<span class="dv">44</span>,<span class="dv">55</span>)])</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.arange(<span class="dv">2</span>,<span class="dv">6</span>).reshape(<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组a:</span><span class="ch">\n</span><span class="st">"</span>,a)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组b:</span><span class="ch">\n</span><span class="st">"</span>,b)</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"a-b:</span><span class="ch">\n</span><span class="sc">{</span>a<span class="op">-</span>b<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"a/b:</span><span class="ch">\n</span><span class="sc">{</span>a<span class="op">/</span>b<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"b**2:</span><span class="ch">\n</span><span class="sc">{</span>b<span class="op">**</span><span class="dv">2</span><span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"b&gt;=4:</span><span class="ch">\n</span><span class="sc">{</span>b<span class="op">&gt;=</span><span class="dv">4</span><span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([(<span class="dv">20</span>,<span class="dv">30</span>),(<span class="dv">40</span>,<span class="dv">50</span>)])</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.arange(<span class="dv">2</span>,<span class="dv">6</span>).reshape(<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组a:</span><span class="ch">\n</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组b:</span><span class="ch">\n</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"加法运算:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>add(a, b)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 等价于a + b</span></span>
+<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"减法运算:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>subtract(a, b)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 等价于a - b</span></span>
+<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"乘法运算:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>multiply(a, b)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 等价于a * b</span></span>
+<span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-16"><a href="#cb64-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"除法运算:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>divide(a, b)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb64-17"><a href="#cb64-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 等价于a / b</span></span>
+<span id="cb64-18"><a href="#cb64-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-19"><a href="#cb64-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"平方运算:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>square(b)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb64-20"><a href="#cb64-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 等价于b**2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>数组a:
- [[22 33]
- [44 55]]
-数组b:
- [[2 3]
- [4 5]]
-a-b:
 [[20 30]
  [40 50]]
-a/b:
-[[11. 11.]
- [11. 11.]]
-b**2:
+数组b:
+[[2 3]
+ [4 5]]
+加法运算:
+[[22 33]
+ [44 55]]
+减法运算:
+[[18 27]
+ [36 45]]
+乘法运算:
+[[ 40  90]
+ [160 250]]
+除法运算:
+[[10. 10.]
+ [10. 10.]]
+平方运算:
 [[ 4  9]
- [16 25]]
-b&gt;=4:
-[[False False]
- [ True  True]]</code></pre>
+ [16 25]]</code></pre>
 </div>
 </div>
-<p>乘积运算符在NumPy数组中按元素进行运算，矩阵乘积运算用<code>@</code>或<code>.dot()</code>：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([(<span class="dv">2</span>,<span class="dv">3</span>),(<span class="dv">3</span>,<span class="dv">4</span>)])</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([(<span class="dv">4</span>,<span class="dv">2</span>),(<span class="dv">5</span>,<span class="dv">2</span>)])</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组A:</span><span class="ch">\n</span><span class="st">"</span>,A)</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组B:</span><span class="ch">\n</span><span class="st">"</span>,B)</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"A*B:</span><span class="ch">\n</span><span class="sc">{</span>A<span class="op">*</span>B<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"A@B:</span><span class="ch">\n</span><span class="sc">{</span>A<span class="op">@</span>B<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"A.dot(B):</span><span class="ch">\n</span><span class="sc">{</span>A<span class="sc">.</span>dot(B)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>矩阵（二维数组）乘积运算用<code>@</code>或<code>.dot()</code>：</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>聚合函数（可以指定轴）：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">1</span>,<span class="dv">5</span>).reshape(<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组元素求和:"</span>,arr.<span class="bu">sum</span>())</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组元素每列求和:"</span>,arr.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>))  <span class="co"># 行求和：axis=1</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组元素最小值:"</span>,arr.<span class="bu">min</span>())</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组元素每列最小值:"</span>,arr.<span class="bu">min</span>(axis<span class="op">=</span><span class="dv">0</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-title-container flex-fill">
+Note
 </div>
-<p>对元素进行排序/反转（以数组x和y为例）：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">4</span>,<span class="dv">9</span>,<span class="dv">1</span>,<span class="dv">8</span>])</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([[<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">5</span>],[<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">4</span>],[<span class="dv">9</span>,<span class="dv">1</span>,<span class="dv">8</span>]])</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组x:</span><span class="ch">\n</span><span class="st">"</span>,x)</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组x排序后:</span><span class="ch">\n</span><span class="st">"</span>,np.sort(x))</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组x反转后:</span><span class="ch">\n</span><span class="st">"</span>,np.flip(x))</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组y:</span><span class="ch">\n</span><span class="st">"</span>,y)</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组y排序后:</span><span class="ch">\n</span><span class="st">"</span>,np.sort(y))</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组y反转后:</span><span class="ch">\n</span><span class="st">"</span>,np.flip(y))</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组y仅反转行:</span><span class="ch">\n</span><span class="st">"</span>,np.flip(y,axis<span class="op">=</span><span class="dv">0</span>))</span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>y[:,<span class="dv">1</span>] <span class="op">=</span> np.flip(y[:,<span class="dv">1</span>])</span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组y反转第二列:</span><span class="ch">\n</span><span class="st">"</span>,y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-body-container callout-body">
+<p>计算矩阵A和B的乘积时，新矩阵第i行第j列的元素为矩阵A第i行元素和矩阵B第j列元素的乘积和，所以需要A矩阵的列数和矩阵B的行数相同。</p>
+</div>
+</div>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([(<span class="dv">1</span>, <span class="dv">2</span>),(<span class="dv">3</span>, <span class="dv">4</span>)])</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([(<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>),(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)])</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组A:</span><span class="ch">\n</span><span class="sc">{</span>A<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组B:</span><span class="ch">\n</span><span class="sc">{</span>B<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"矩阵的乘积:</span><span class="ch">\n</span><span class="sc">{</span>A<span class="op">@</span>B<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 等价于A.dot(B)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>数组A:
+[[1 2]
+ [3 4]]
+数组B:
+[[3 2 1]
+ [1 1 1]]
+矩阵的乘积:
+[[ 5  4  3]
+ [13 10  7]]</code></pre>
+</div>
+</div>
+<p>聚合函数的运算（可以指定轴）：</p>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([(<span class="dv">1</span>, <span class="dv">2</span>), (<span class="dv">3</span>, <span class="dv">4</span>)])</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"对数组进行聚合函数的运算:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组元素求和:"</span>, arr.<span class="bu">sum</span>())</span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组元素每列求和:"</span>, arr.<span class="bu">sum</span>(axis <span class="op">=</span> <span class="dv">0</span>))  <span class="co"># 行求和:axis = 1</span></span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组元素最小值:"</span>, arr.<span class="bu">min</span>())</span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组元素每列最小值:"</span>, arr.<span class="bu">min</span>(axis <span class="op">=</span> <span class="dv">0</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>对数组进行聚合函数的运算:
+[[1 2]
+ [3 4]]
+数组元素求和: 10
+数组元素每列求和: [4 6]
+数组元素最小值: 1
+数组元素每列最小值: [1 2]</code></pre>
+</div>
+</div>
+</section>
+<section id="数组的排序反转和去重" class="level2">
+<h2 class="anchored" data-anchor-id="数组的排序反转和去重">数组的排序、反转和去重*</h2>
+<p>对元素进行排序/反转，以一维、二维数组为例：</p>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">1</span>, <span class="dv">8</span>])</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"一维数组:</span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"排序:</span><span class="sc">{</span>np<span class="sc">.</span>sort(x)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"反转:</span><span class="sc">{</span>np<span class="sc">.</span>flip(x)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"利用切片方式反转,步长为-1:</span><span class="sc">{</span>x[::<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>一维数组:[7 2 5 3 6 4 9 1 8]
+排序:[1 2 3 4 5 6 7 8 9]
+反转:[8 1 9 4 6 3 5 2 7]
+利用切片方式反转,步长为-1:[8 1 9 4 6 3 5 2 7]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([[<span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">5</span>], [<span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">4</span>], [<span class="dv">9</span>, <span class="dv">1</span>, <span class="dv">8</span>]])</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"二维数组:</span><span class="ch">\n</span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"排序:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>sort(y)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"反转:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>flip(y)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"仅反转子数组顺序:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>flip(y, axis<span class="op">=</span><span class="dv">0</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a>y[:,<span class="dv">1</span>] <span class="op">=</span> np.flip(y[:,<span class="dv">1</span>])</span>
+<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"仅反转第二列:</span><span class="ch">\n</span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>二维数组:
+[[7 2 5]
+ [3 6 4]
+ [9 1 8]]
+排序:
+[[2 5 7]
+ [3 4 6]
+ [1 8 9]]
+反转:
+[[8 1 9]
+ [4 6 3]
+ [5 2 7]]
+仅反转子数组顺序:
+[[9 1 8]
+ [3 6 4]
+ [7 2 5]]
+仅反转第二列:
+[[7 1 5]
+ [3 6 4]
+ [9 2 8]]</code></pre>
+</div>
 </div>
 <p>去重复值：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">9</span>,<span class="dv">12</span>,<span class="dv">14</span>])</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"数组:"</span>,arr)</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"去重后:"</span>,np.unique(arr))</span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>unique_arr,indices_list <span class="op">=</span> np.unique(arr, return_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"去重后数组的索引:"</span>,indices_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">14</span>])</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"原数组:</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"去重后:</span><span class="sc">{</span>np<span class="sc">.</span>unique(arr)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>unique_arr, indices_list <span class="op">=</span> np.unique(arr, return_index <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"去重数组的索引:</span><span class="sc">{</span>indices_list<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>原数组:[ 1  2  2  5  7  7  8  9  9 12 14]
+去重后:[ 1  2  5  7  8  9 12 14]
+去重数组的索引:[ 0  1  3  4  6  7  9 10]</code></pre>
+</div>
 </div>
 </section>
-<section id="数组的形状操作和拼接堆叠拆分" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="数组的形状操作和拼接堆叠拆分">2.5 数组的形状操作和拼接、堆叠、拆分</h3>
-<p>重塑数组的形状，添加新轴不会改变元素：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.arange(<span class="dv">6</span>)</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组:</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"重塑形状:</span><span class="ch">\n</span><span class="sc">{</span>a<span class="sc">.</span>reshape(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>row_vector <span class="op">=</span> a[np.newaxis, :] <span class="co"># 从一维转为二维</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"添加新轴(转换为行向量):</span><span class="sc">{</span>row_vector<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"相当于在索引位置0处添加轴：</span><span class="sc">{</span>np<span class="sc">.</span>expand_dims(a, axis<span class="op">=</span><span class="dv">0</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>col_vector <span class="op">=</span> a[:, np.newaxis]</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"或者转换为列向量:</span><span class="ch">\n</span><span class="sc">{</span>col_vector<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"相当于在索引位置1处添加轴：</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>expand_dims(a, axis<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="数组的展平拼接堆叠拆分" class="level2">
+<h2 class="anchored" data-anchor-id="数组的展平拼接堆叠拆分">数组的展平、拼接、堆叠、拆分*</h2>
+<p>展平数组可用<code>flatten()</code>或<code>ravel()</code>。</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>展平数组可用<code>flatten()</code>或<code>ravel()</code>，但使用<code>flatten</code>时，对展平数组的更改不会影响原数组，使用<code>ravel</code>数组的更改会影响原数组。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">6</span>).reshape(<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"展平前:</span><span class="ch">\n</span><span class="st">"</span>,arr)</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>arr_one <span class="op">=</span> arr.flatten()</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"使用flatten展平后:"</span>,arr_one)</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>arr_one[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"修改元素:"</span>,arr_one)</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"原数组不变:</span><span class="ch">\n</span><span class="st">"</span>,arr)</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>arr_two <span class="op">=</span> arr.ravel()</span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"使用ravel展平后:"</span>,arr_two)</span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>arr_two[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span></span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"修改元素:"</span>,arr_two)</span>
-<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"原数组改变:</span><span class="ch">\n</span><span class="st">"</span>,arr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-title-container flex-fill">
+Note
 </div>
-<p>转置矩阵（二维数组）：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">1</span>,<span class="dv">7</span>).reshape(<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"转置前:</span><span class="ch">\n</span><span class="st">"</span>,arr)</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"转置后:</span><span class="ch">\n</span><span class="st">"</span>,arr.transpose())</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"转置后:</span><span class="ch">\n</span><span class="st">"</span>,arr.T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-body-container callout-body">
+<p>使用<code>flatten</code>时，对展平数组的更改不会影响原数组，使用<code>ravel</code>时，数组的更改会影响原数组。</p>
+</div>
+</div>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">6</span>).reshape(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"展平前:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>arr_one <span class="op">=</span> arr.flatten()</span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"使用flatten展平后:</span><span class="ch">\n</span><span class="sc">{</span>arr_one<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a>arr_one[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"修改元素:</span><span class="ch">\n</span><span class="sc">{</span>arr_one<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-10"><a href="#cb76-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"原数组不变:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>展平前:
+[[0 1 2]
+ [3 4 5]]
+使用flatten展平后:
+[0 1 2 3 4 5]
+修改元素:
+[99  1  2  3  4  5]
+原数组不变:
+[[0 1 2]
+ [3 4 5]]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>arr_two <span class="op">=</span> arr.ravel()</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"使用ravel展平后:</span><span class="ch">\n</span><span class="sc">{</span>arr_two<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>arr_two[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"修改元素:</span><span class="ch">\n</span><span class="sc">{</span>arr_two<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"原数组改变:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>使用ravel展平后:
+[0 1 2 3 4 5]
+修改元素:
+[99  1  2  3  4  5]
+原数组改变:
+[[99  1  2]
+ [ 3  4  5]]</code></pre>
+</div>
 </div>
 <p>拼接和堆叠数组：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([(<span class="dv">1</span>,<span class="dv">2</span>),(<span class="dv">3</span>,<span class="dv">4</span>)])</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.ones((<span class="dv">3</span>,<span class="dv">2</span>))</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.zeros((<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组a:</span><span class="ch">\n</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组b:</span><span class="ch">\n</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组c:</span><span class="ch">\n</span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"拼接a,b,c:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>concatenate((a,b,c))<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"垂直堆叠a,b,c:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>vstack((a,b,c))<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"水平堆叠a,a:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>hstack((a,a))<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>分解数组：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">1</span>,<span class="dv">25</span>).reshape(<span class="dv">2</span>,<span class="dv">12</span>)</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"以此数组为例:</span><span class="ch">\n</span><span class="st">"</span>,arr)</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"拆分为4个形状相同的数组:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>hsplit(arr, <span class="dv">4</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"从第3列，第7列开始拆分:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>hsplit(arr, (<span class="dv">3</span>,<span class="dv">7</span>))<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>垂直堆叠和拼接需要列数相同，水平堆叠需要行数相同。</p>
+</div>
+</div>
+<div class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.array([(<span class="dv">1</span>, <span class="dv">2</span>),(<span class="dv">3</span>, <span class="dv">4</span>)])</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.ones((<span class="dv">3</span>, <span class="dv">2</span>), dtype <span class="op">=</span> np.int_)</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> np.zeros((<span class="dv">1</span>, <span class="dv">2</span>), dtype <span class="op">=</span> np.int_)</span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组a:</span><span class="ch">\n</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组b:</span><span class="ch">\n</span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组c:</span><span class="ch">\n</span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"拼接三个数组:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>concatenate((a, b, c))<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-11"><a href="#cb80-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"等价于垂直堆叠三个数组:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>vstack((a, b, c))<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb80-12"><a href="#cb80-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-13"><a href="#cb80-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"水平堆叠数组a和数组a:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>hstack((a, a))<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>数组a:
+[[1 2]
+ [3 4]]
+数组b:
+[[1 1]
+ [1 1]
+ [1 1]]
+数组c:
+[[0 0]]
+拼接三个数组:
+[[1 2]
+ [3 4]
+ [1 1]
+ [1 1]
+ [1 1]
+ [0 0]]
+等价于垂直堆叠三个数组:
+[[1 2]
+ [3 4]
+ [1 1]
+ [1 1]
+ [1 1]
+ [0 0]]
+水平堆叠数组a和数组a:
+[[1 2 1 2]
+ [3 4 3 4]]</code></pre>
+</div>
+</div>
+<p>拆分数组：</p>
+<div class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">21</span>).reshape(<span class="dv">2</span>, <span class="dv">10</span>)</span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"以此数组为例:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"拆分为2个形状相同的数组(相当于从第5列开始拆分):</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>hsplit(arr, <span class="dv">2</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"从第3列,第7列之后开始拆分:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>hsplit(arr, (<span class="dv">3</span>, <span class="dv">7</span>))<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>以此数组为例:
+[[ 1  2  3  4  5  6  7  8  9 10]
+ [11 12 13 14 15 16 17 18 19 20]]
+拆分为2个形状相同的数组(相当于从第5列开始拆分):
+[array([[ 1,  2,  3,  4,  5],
+       [11, 12, 13, 14, 15]]), array([[ 6,  7,  8,  9, 10],
+       [16, 17, 18, 19, 20]])]
+从第3列,第7列之后开始拆分:
+[array([[ 1,  2,  3],
+       [11, 12, 13]]), array([[ 4,  5,  6,  7],
+       [14, 15, 16, 17]]), array([[ 8,  9, 10],
+       [18, 19, 20]])]</code></pre>
+</div>
 </div>
 </section>
-<section id="数学公式" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="数学公式">2.6 数学公式</h3>
+<section id="数学公式" class="level2">
+<h2 class="anchored" data-anchor-id="数学公式">数学公式</h2>
 <p>数组的运算可以帮助实现数学公式的运算，以均方误差公式为例：</p>
-<p><span class="math display">\[MeanSquareError=\frac{1}{n}\sum_{i=1}^{n}{(Prediction_i-Y_i)^2}\]</span> 将Prediction和Y看作一维数组进行运算即可： <code>error = (1/n)*np.sum(np.square(prediction-y))</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>prediction <span class="op">=</span> np.array([<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>])</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"观测值:"</span>,y)</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"预测值:"</span>,prediction)</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"预测值和观测值之差:"</span>,prediction<span class="op">-</span>y)</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>error <span class="op">=</span> (<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>)<span class="op">*</span>np.<span class="bu">sum</span>(np.square(prediction<span class="op">-</span>y))</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"均方误差:"</span>,error)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span class="math display">\[MeanSquareError=\frac{1}{n}\sum_{i=1}^{n}{(Prediction_i-Y_i)^2}\]</span> 将Prediction和Y看作一维数组进行运算即可：</p>
+<p><code>error = (1/n)*np.sum(np.square(prediction-y))</code></p>
+<div class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>prediction <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>])</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"观测值:"</span>, y)</span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"预测值:"</span>, prediction)</span>
+<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"预测值和观测值之差:"</span>, prediction <span class="op">-</span> y)</span>
+<span id="cb84-7"><a href="#cb84-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-8"><a href="#cb84-8" aria-hidden="true" tabindex="-1"></a>error <span class="op">=</span> (<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>)<span class="op">*</span>np.<span class="bu">sum</span>(np.square(prediction <span class="op">-</span> y))</span>
+<span id="cb84-9"><a href="#cb84-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"均方误差:"</span>, error)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>观测值: [1 2 3]
+预测值: [2 2 2]
+预测值和观测值之差: [ 1  0 -1]
+均方误差: 0.6666666666666666</code></pre>
+</div>
 </div>
 </section>
-<section id="数组的文件输入输出读取和保存numpy对象" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="数组的文件输入输出读取和保存numpy对象">2.7 数组的文件输入输出：读取和保存NumPy对象</h3>
-<p>将数组对象存为<code>filename.npy</code>：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>np.save(<span class="st">"arr"</span>, arr)</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>np.load(<span class="st">'arr.npy'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="数组对象的读取和保存" class="level2">
+<h2 class="anchored" data-anchor-id="数组对象的读取和保存">数组对象的读取和保存</h2>
+<p>将数组对象存为<code>filename.npy</code>并读取：</p>
+<div class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>np.save(<span class="st">"arr"</span>, arr)</span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>np.load(<span class="st">'arr.npy'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<pre><code>array([1, 2, 3])</code></pre>
 </div>
-<p>也可以保存为文本：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>np.savetxt(<span class="st">'arr.csv'</span>, arr)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>np.loadtxt(<span class="st">'arr.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-</section>
-<section id="示例和练习" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="示例和练习">3 示例和练习</h2>
+<p>也可以保存为文本并读取：</p>
+<div class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>np.savetxt(<span class="st">'arr.csv'</span>, arr)</span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>np.loadtxt(<span class="st">'arr.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>array([1., 2., 3.])</code></pre>
+</div>
+</div>
 
 
 </section>
