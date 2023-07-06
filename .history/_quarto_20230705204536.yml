@@ -36,8 +36,8 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - 周一环境搭建.ipynb
-    - part: "Python入门基础"
+    - 周一环境搭建.qmd
+    - part: "Python基础语法"
       chapters: 
         - 周一基础语法.ipynb
         - 周二数据类型.ipynb
@@ -70,7 +70,7 @@ highlight-style: pygments
 format:
   html:
     theme: cosmo
-    # cover-image: "./img/logo.png"
+    cover-image: "./img/logo.png"
     code-copy: true
     code-link: true
   # pdf: default

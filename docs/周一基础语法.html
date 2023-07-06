@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python新手文档 - 12&nbsp; 增删排序(DataFrame)</title>
+<title>Python新手文档 - 2&nbsp; Python基础语法</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Pandas计算重塑合并最终版本.html" rel="next">
-<link href="./选取数据.html" rel="prev">
+<link href="./周二数据类型.html" rel="next">
+<link href="./周一环境搭建.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -95,9 +95,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -111,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./安装.html">Pandas快速入门</a></li><li class="breadcrumb-item"><a href="./添加新列.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">增删排序(DataFrame)</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./周一基础语法.html">Python入门基础</a></li><li class="breadcrumb-item"><a href="./周一基础语法.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python基础语法</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -185,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./周一基础语法.html" class="sidebar-item-text sidebar-link">
+  <a href="./周一基础语法.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python基础语法</span></span></a>
   </div>
 </li>
@@ -267,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./添加新列.html" class="sidebar-item-text sidebar-link active">
+  <a href="./添加新列.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">增删排序(DataFrame)</span></span></a>
   </div>
 </li>
@@ -336,38 +333,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#添加新列" id="toc-添加新列" class="nav-link active" data-scroll-target="#添加新列">添加新列</a>
+  <li><a href="#如何使用python" id="toc-如何使用python" class="nav-link active" data-scroll-target="#如何使用python">如何使用Python</a>
   <ul class="collapse">
-  <li><a href="#方法一-df列名-值" id="toc-方法一-df列名-值" class="nav-link" data-scroll-target="#方法一-df列名-值">方法一： df[‘列名’] = 值</a></li>
-  <li><a href="#方法二使用assign" id="toc-方法二使用assign" class="nav-link" data-scroll-target="#方法二使用assign">方法二：使用assign()</a></li>
+  <li><a href="#运行python文件" id="toc-运行python文件" class="nav-link" data-scroll-target="#运行python文件">运行python文件</a></li>
+  <li><a href="#在代码编辑器中输入python指令" id="toc-在代码编辑器中输入python指令" class="nav-link" data-scroll-target="#在代码编辑器中输入python指令">在代码编辑器中输入python指令</a></li>
   </ul></li>
-  <li><a href="#添加新行" id="toc-添加新行" class="nav-link" data-scroll-target="#添加新行">添加新行</a>
+  <li><a href="#变量赋值" id="toc-变量赋值" class="nav-link" data-scroll-target="#变量赋值">变量赋值</a>
   <ul class="collapse">
-  <li><a href="#方法一-使用append方法" id="toc-方法一-使用append方法" class="nav-link" data-scroll-target="#方法一-使用append方法">方法一： 使用append方法</a></li>
-  <li><a href="#方法二使用concat" id="toc-方法二使用concat" class="nav-link" data-scroll-target="#方法二使用concat">方法二：使用concat()</a></li>
+  <li><a href="#变量的命名规则" id="toc-变量的命名规则" class="nav-link" data-scroll-target="#变量的命名规则">变量的命名规则</a></li>
+  <li><a href="#变量的赋值" id="toc-变量的赋值" class="nav-link" data-scroll-target="#变量的赋值">变量的赋值</a></li>
+  <li><a href="#变量的使用" id="toc-变量的使用" class="nav-link" data-scroll-target="#变量的使用">变量的使用</a></li>
+  <li><a href="#变量的重新赋值" id="toc-变量的重新赋值" class="nav-link" data-scroll-target="#变量的重新赋值">变量的重新赋值</a></li>
   </ul></li>
-  <li><a href="#删除行列" id="toc-删除行列" class="nav-link" data-scroll-target="#删除行列">删除行/列</a>
+  <li><a href="#注释" id="toc-注释" class="nav-link" data-scroll-target="#注释">注释</a>
   <ul class="collapse">
-  <li><a href="#使用drop方法删除列" id="toc-使用drop方法删除列" class="nav-link" data-scroll-target="#使用drop方法删除列">使用drop方法删除列</a></li>
-  <li><a href="#使用drop方法删除行" id="toc-使用drop方法删除行" class="nav-link" data-scroll-target="#使用drop方法删除行">使用drop方法删除行</a></li>
+  <li><a href="#单行注释" id="toc-单行注释" class="nav-link" data-scroll-target="#单行注释">单行注释</a></li>
+  <li><a href="#多行注释" id="toc-多行注释" class="nav-link" data-scroll-target="#多行注释">多行注释</a></li>
   </ul></li>
-  <li><a href="#重命名列" id="toc-重命名列" class="nav-link" data-scroll-target="#重命名列">重命名列</a>
+  <li><a href="#行和缩进" id="toc-行和缩进" class="nav-link" data-scroll-target="#行和缩进">行和缩进</a>
   <ul class="collapse">
-  <li><a href="#使用rename方法" id="toc-使用rename方法" class="nav-link" data-scroll-target="#使用rename方法">使用rename方法：</a></li>
-  </ul></li>
-  <li><a href="#按值排序" id="toc-按值排序" class="nav-link" data-scroll-target="#按值排序">按值排序</a>
-  <ul class="collapse">
-  <li><a href="#使用sort_values方法" id="toc-使用sort_values方法" class="nav-link" data-scroll-target="#使用sort_values方法">使用sort_values方法：</a></li>
+  <li><a href="#行" id="toc-行" class="nav-link" data-scroll-target="#行">行</a></li>
+  <li><a href="#缩进" id="toc-缩进" class="nav-link" data-scroll-target="#缩进">缩进</a></li>
+  <li><a href="#多行语句" id="toc-多行语句" class="nav-link" data-scroll-target="#多行语句">多行语句</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/添加新列.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/周一基础语法.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">增删排序(DataFrame)</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python基础语法</span></h1>
 </div>
 
 
@@ -382,132 +379,165 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="如何使用python" class="level2">
+<h2 class="anchored" data-anchor-id="如何使用python">如何使用Python</h2>
+<section id="运行python文件" class="level3">
+<h3 class="anchored" data-anchor-id="运行python文件">运行python文件</h3>
+<video width="600" height="450" controls="">
+<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BD%BF%E7%94%A8python.mov">
+</video>
+<p>Python文件的后缀为 <code>.py</code></p>
+<p><img src="./img/py.png" class="img-fluid"></p>
+</section>
+<section id="在代码编辑器中输入python指令" class="level3">
+<h3 class="anchored" data-anchor-id="在代码编辑器中输入python指令">在代码编辑器中输入python指令</h3>
+<p>比如在<code>jupyterlab</code>，在<code>终端</code>或者<code>vscode</code>中输入代码</p>
+<p>如图，<code>Shift + Enter</code>执行代码块</p>
+<p><img src="./img/py_basic.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>在终端中，输入<code>python</code>进入python解释器后，即可运行python代码</p>
+</div>
+</div>
+<p>我们可以写一个简单的表达式，在编程中，表达式是一段产生值的代码，类似计算机功能，例如</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2023</span> <span class="op">+</span> <span class="dv">4090</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>6113</code></pre>
+</div>
+</div>
+<p>除了输出值外，还有另外一种表达式，比如查看是否 9 大于 1？</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="op">&gt;</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p>因为这个逻辑是成立的，所以我们会得到 <code>True</code>，反之则会得到<code>False</code>。这也叫做<code>布尔值</code>，这会在之后的数据类型中介绍。</p>
+<p>写代码总少不了报错。假如我的是空值呢？</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>SyntaxError: invalid syntax (1639543893.py, line 1)</code></pre>
+</div>
+</div>
+<p>我们会得到一个语法错误，其中<code>SyntaxError</code>在编程中，意味着语法，就像平常的语言中的语法一样，你不说清楚是什么的话，那是很难理解的。这在编程里也十分讲究。</p>
+</section>
+</section>
+<section id="变量赋值" class="level2">
+<h2 class="anchored" data-anchor-id="变量赋值">变量赋值</h2>
+<p>在Python中，变量用于存储和表示数据。变量赋值是将一个值与一个变量关联起来的过程。通过变量，我们可以在程序中存储和操作数据。</p>
+<section id="变量的命名规则" class="level3">
+<h3 class="anchored" data-anchor-id="变量的命名规则">变量的命名规则</h3>
+<p>在Python中，变量的命名需要遵循以下规则：</p>
+<ul>
+<li>变量名只能包含字母（大小写敏感）、数字和下划线（_）。</li>
+<li>变量名不能以数字开头。</li>
+<li>变量名不能使用Python关键字和保留字，如if、for、while等。</li>
+<li>变量名应具有描述性，能够清晰地表示变量的含义。</li>
+</ul>
+</section>
+<section id="变量的赋值" class="level3">
+<h3 class="anchored" data-anchor-id="变量的赋值">变量的赋值</h3>
+<p>在Python中，使用等号（=）进行变量赋值操作。等号 ( = ) 运算符左边是一个变量名,等号 ( = ) 运算符右边是存储在变量中的值</p>
+<video width="600" height="450" controls="">
+<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/python-%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC.mp4">
+</video>
+<p>下面是一个例子，将数字5赋值给变量x：</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="变量的使用" class="level3">
+<h3 class="anchored" data-anchor-id="变量的使用">变量的使用</h3>
+<p>一旦变量被赋值，我们可以在程序中使用它来表示和操作存储的值。</p>
+<p>下面是一个例子，使用变量x计算其平方并打印结果：</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>square <span class="op">=</span> x <span class="op">*</span> x</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>25</code></pre>
+</div>
+</div>
+</section>
+<section id="变量的重新赋值" class="level3">
+<h3 class="anchored" data-anchor-id="变量的重新赋值">变量的重新赋值</h3>
+<p>在程序中，我们可以多次为同一个变量赋值，新的赋值将覆盖之前的值。</p>
+<p>下面是一个例子，演示变量的重新赋值：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)  <span class="co"># 输出：5</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)  <span class="co"># 输出：10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>题型一</p>
+<p>将字符串”Hello, Python!“赋值给变量message，然后打印出变量的值。</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> <span class="st">"Hello, Python!"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, Python!</code></pre>
+</div>
+</div>
+<p>题型二 将变量的值用于字符串拼接，使用input()函数接收输入值，使用<a href="https://www.runoob.com/python/att-string-format.html">字符串的格式化功能</a>，将这变量的值拼接到一句话中。最后，通过print()函数将句子打印输出。</p>
 <div class="cell" data-execution_count="1">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建示例数据</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'姓名'</span>: [<span class="st">'张三'</span>, <span class="st">'李四'</span>, <span class="st">'王五'</span>, <span class="st">'赵六'</span>],</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'年龄'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">28</span>],</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'性别'</span>: [<span class="st">'M'</span>, <span class="st">'F'</span>, <span class="st">'M'</span>, <span class="st">'F'</span>]}</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">姓名</th>
-<th data-quarto-table-cell-role="th">年龄</th>
-<th data-quarto-table-cell-role="th">性别</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>张三</td>
-<td>25</td>
-<td>M</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>李四</td>
-<td>30</td>
-<td>F</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>王五</td>
-<td>35</td>
-<td>M</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>赵六</td>
-<td>28</td>
-<td>F</td>
-</tr>
-</tbody>
-</table>
-
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 用户输入姓名和年龄</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"请输入您的姓名："</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="bu">input</span>(<span class="st">"请输入您的年龄："</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建自我介绍的句子并打印输出</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>introduction <span class="op">=</span> <span class="ss">f"我的名字是</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">，今年</span><span class="sc">{</span>age<span class="sc">}</span><span class="ss">岁。"</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(introduction)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>我的名字是Jack，今年18岁。</code></pre>
 </div>
 </div>
+</section>
+</section>
+<section id="注释" class="level2">
+<h2 class="anchored" data-anchor-id="注释">注释</h2>
+<p>在Python中，注释用于对代码进行解释和说明，对于其他人（包括自己）来理解代码的作用和意图非常有帮助。注释是在代码中添加的文本，Python解释器会忽略它们。</p>
+<section id="单行注释" class="level3">
+<h3 class="anchored" data-anchor-id="单行注释">单行注释</h3>
+<p>在Python中，使用<code>#</code>符号开始的文本被视为单行注释。在<code>#</code>后面的所有内容都被视为注释，不会被执行。</p>
+<p>下面是一个例子，演示如何使用单行注释：</p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 这是一个单行注释</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World!"</span>)  <span class="co"># 打印输出文本</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, World!</code></pre>
 </div>
-<p>查看行数<code>df.shape</code></p>
-<div class="cell" data-execution_count="2">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>(4, 3)</code></pre>
 </div>
-</div>
-<section id="添加新列" class="level2">
-<h2 class="anchored" data-anchor-id="添加新列">添加新列</h2>
-<p>可以看到目前的案例中是四行三列，如果我想添加新的一列“薪资”，有两种方法：</p>
-<section id="方法一-df列名-值" class="level3">
-<h3 class="anchored" data-anchor-id="方法一-df列名-值">方法一： df[‘列名’] = 值</h3>
-<div class="cell" data-execution_count="3">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'工资'</span>] <span class="op">=</span> [<span class="dv">5000</span>, <span class="dv">6000</span>, <span class="st">''</span>, <span class="dv">7000</span>]</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">姓名</th>
-<th data-quarto-table-cell-role="th">年龄</th>
-<th data-quarto-table-cell-role="th">性别</th>
-<th data-quarto-table-cell-role="th">工资</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>张三</td>
-<td>25</td>
-<td>M</td>
-<td>5000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>李四</td>
-<td>30</td>
-<td>F</td>
-<td>6000</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>王五</td>
-<td>35</td>
-<td>M</td>
-<td></td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>赵六</td>
-<td>28</td>
-<td>F</td>
-<td>7000</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+<p>上述代码中，第一行是一个注释，用于对代码的目的进行解释。第二行是打印输出语句，不受注释的影响。</p>
+</section>
+<section id="多行注释" class="level3">
+<h3 class="anchored" data-anchor-id="多行注释">多行注释</h3>
+<p>在Python中，使用三个引号（双引号或单引号都可以）包围的文本被视为多行注释。多行注释可以跨越多行，并且可以包含多个段落。</p>
+<p>下面是一个例子，演示如何使用多行注释：</p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">这是一个多行注释的示例。</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">它可以跨越多行，并且可以包含多个段落。</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">以下是代码的主要功能：</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">- 输入用户的姓名</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">- 打印欢迎消息和姓名</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"请输入您的姓名："</span>)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"欢迎，"</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">"!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>欢迎，jack!</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -520,460 +550,106 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>[值]</code>必须对应行数，这里有四个人就必须有四个值，没有则可以为空白<code>' '</code> 或者 <code>'NA'</code>；[]里面的顺序也会保持一样</p>
-</div>
-</div>
-</section>
-<section id="方法二使用assign" class="level3">
-<h3 class="anchored" data-anchor-id="方法二使用assign">方法二：使用assign()</h3>
-<div class="cell" data-execution_count="4">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.assign(工资<span class="op">=</span>[<span class="dv">5000</span>, <span class="dv">6000</span>, <span class="dv">4500</span>, <span class="dv">7000</span>])</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">姓名</th>
-<th data-quarto-table-cell-role="th">年龄</th>
-<th data-quarto-table-cell-role="th">性别</th>
-<th data-quarto-table-cell-role="th">工资</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>张三</td>
-<td>25</td>
-<td>M</td>
-<td>5000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>李四</td>
-<td>30</td>
-<td>F</td>
-<td>6000</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>王五</td>
-<td>35</td>
-<td>M</td>
-<td>4500</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>赵六</td>
-<td>28</td>
-<td>F</td>
-<td>7000</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>我们可以在原有表格中添加新列，也可以从其他数据源（如文件、数据库等）中导入数据，并将其作为新列添加到DataFrame中。</p>
-</section>
-</section>
-<section id="添加新行" class="level2">
-<h2 class="anchored" data-anchor-id="添加新行">添加新行</h2>
-<section id="方法一-使用append方法" class="level3">
-<h3 class="anchored" data-anchor-id="方法一-使用append方法">方法一： 使用append方法</h3>
-<p><code>df = df.append(new_row, ignore_index=True)</code></p>
-<p>其中，new_row是一个包含新行数据的字典或Series对象。</p>
-<div class="cell" data-execution_count="5">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 重新选取数据</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'姓名'</span>: [<span class="st">'张三'</span>, <span class="st">'李四'</span>, <span class="st">'王五'</span>, <span class="st">'赵六'</span>],</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'年龄'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">28</span>],</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'性别'</span>: [<span class="st">'M'</span>, <span class="st">'F'</span>, <span class="st">'M'</span>, <span class="st">'F'</span>]}</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-<div class="cell" data-execution_count="6">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#`ignore_index=True`是确保新行的索引与原始DataFrame的索引保持一致。</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>new_row <span class="op">=</span> {<span class="st">'姓名'</span>: <span class="st">'熊大'</span>, <span class="st">'年龄'</span>: <span class="dv">35</span>, <span class="st">'性别'</span>: <span class="st">'M'</span>}</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.append(new_row, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/fx/3rtntmd93wg4hsmfkcgfpq840000gn/T/ipykernel_42888/3717194637.py:5: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
-  df = df.append(new_row, ignore_index=True)</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">姓名</th>
-<th data-quarto-table-cell-role="th">年龄</th>
-<th data-quarto-table-cell-role="th">性别</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>张三</td>
-<td>25</td>
-<td>M</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>李四</td>
-<td>30</td>
-<td>F</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>王五</td>
-<td>35</td>
-<td>M</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>赵六</td>
-<td>28</td>
-<td>F</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>熊大</td>
-<td>35</td>
-<td>M</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</section>
-<section id="方法二使用concat" class="level3">
-<h3 class="anchored" data-anchor-id="方法二使用concat">方法二：使用concat()</h3>
-<p>先创建一个新的DataFrame，然后将其与原始DataFrame进行合并</p>
-<div class="cell" data-execution_count="7">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>new_row <span class="op">=</span> {<span class="st">'姓名'</span>: <span class="st">'熊二'</span>, <span class="st">'年龄'</span>: <span class="dv">30</span>, <span class="st">'性别'</span>: <span class="st">'M'</span>}</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>new_df <span class="op">=</span> pd.DataFrame([new_row])</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat([df, new_df], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">姓名</th>
-<th data-quarto-table-cell-role="th">年龄</th>
-<th data-quarto-table-cell-role="th">性别</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>张三</td>
-<td>25</td>
-<td>M</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>李四</td>
-<td>30</td>
-<td>F</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>王五</td>
-<td>35</td>
-<td>M</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>赵六</td>
-<td>28</td>
-<td>F</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>熊大</td>
-<td>35</td>
-<td>M</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>熊二</td>
-<td>30</td>
-<td>M</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+<p>如果想一次性注释多行的话，鼠标选取后，按<code>ctl+/</code>进行注释</p>
 </div>
 </div>
 </section>
 </section>
-<section id="删除行列" class="level2">
-<h2 class="anchored" data-anchor-id="删除行列">删除行/列</h2>
-<section id="使用drop方法删除列" class="level3">
-<h3 class="anchored" data-anchor-id="使用drop方法删除列">使用drop方法删除列</h3>
-<p><code>df = df.drop('column_name', axis=1)</code></p>
-<p>需要提供要删除的列名，然后指定axis=1表示按列进行操作。删除列后，DataFrame会自动调整列的顺序。</p>
-<div class="cell" data-execution_count="8">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="st">'性别'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">姓名</th>
-<th data-quarto-table-cell-role="th">年龄</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>张三</td>
-<td>25</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>李四</td>
-<td>30</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>王五</td>
-<td>35</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>赵六</td>
-<td>28</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>熊大</td>
-<td>35</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>熊二</td>
-<td>30</td>
-</tr>
-</tbody>
-</table>
-
+<section id="行和缩进" class="level2">
+<h2 class="anchored" data-anchor-id="行和缩进">行和缩进</h2>
+<p>在Python中，行用于分隔不同的代码语句，而缩进用于表示代码块（例如条件语句、循环等）的范围。</p>
+<section id="行" class="level3">
+<h3 class="anchored" data-anchor-id="行">行</h3>
+<p>每一行都包含一个完整的代码语句或表达式。下面是一个例子：</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, world!</code></pre>
 </div>
+</div>
+<p>上述代码中，print(“Hello, world!”)是一行代码，用于输出字符串”Hello, world!“。</p>
+</section>
+<section id="缩进" class="level3">
+<h3 class="anchored" data-anchor-id="缩进">缩进</h3>
+<p>在Python中，缩进通过空格或制表符来实现，用于表示代码块的开始和结束。通常使用4个空格作为标准缩进。</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>缩进造成的错误，应该名列 Python 错误榜第一</p>
+</div>
+</div>
+<p>下面是一个例子，演示如何在代码块中使用缩进：</p>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> x<span class="op">&gt;</span><span class="dv">0</span>:</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x是正数"</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"干得漂亮！"</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span> (<span class="st">"x是负数"</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span> (<span class="st">"可惜哇嗷！"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x是正数
+干得漂亮！</code></pre>
+</div>
+</div>
+<p>上述代码中，if语句和else语句是两个代码块，它们的范围由缩进表示。在if代码块中，两个print语句都会在条件满足时执行。在else代码块中，同样有两个print语句。（大家可以自己修改下x范围）</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>养成良好编码习惯：</p>
+<ol type="1">
+<li><p>保持一致的缩进：使用相同数量的空格或制表符进行缩进，并在整个代码中保持一致。这有助于提高代码的可读性；</p></li>
+<li><p>使用合适的缩进级别：根据代码逻辑嵌套关系，选择适当的缩进级别。通常建议每个缩进级别使用4个空格；</p></li>
+<li><p>使用注释：在关键地方添加注释，解释代码的目的和功能。注释可以提高代码的可读性和可维护性；</p></li>
+<li><p>注意行的长度：尽量将每行代码控制在适当的长度范围内，通常推荐不超过80个字符。可以使用换行符（）或括号来换行。</p></li>
+</ol>
 </div>
 </div>
 </section>
-<section id="使用drop方法删除行" class="level3">
-<h3 class="anchored" data-anchor-id="使用drop方法删除行">使用drop方法删除行</h3>
-<p><code>df = df.drop(row_index)</code></p>
-<p>使用drop方法根据行的<code>索引</code>来删除特定的行</p>
-<div class="cell" data-execution_count="9">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 删除第五行数据</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="dv">5</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">姓名</th>
-<th data-quarto-table-cell-role="th">年龄</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>张三</td>
-<td>25</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>李四</td>
-<td>30</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>王五</td>
-<td>35</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>赵六</td>
-<td>28</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>熊大</td>
-<td>35</td>
-</tr>
-</tbody>
-</table>
-
+<section id="多行语句" class="level3">
+<h3 class="anchored" data-anchor-id="多行语句">多行语句</h3>
+<section id="使用反斜杠" class="level4">
+<h4 class="anchored" data-anchor-id="使用反斜杠">使用反斜杠</h4>
+<p>使用反斜杠<code>（\）</code>将一行代码分成多行。下面是一个例子：</p>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> <span class="op">\</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>        <span class="dv">2</span> <span class="op">*</span> <span class="op">\</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>        <span class="dv">3</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>7</code></pre>
 </div>
 </div>
-</div>
+<p>上述代码中，total变量的值是1+2+3，通过使用反斜杠在多行中编写，使代码更易读。</p>
 </section>
+<section id="使用括号" class="level4">
+<h4 class="anchored" data-anchor-id="使用括号">使用括号</h4>
+<p>另一种方式是使用括号（圆括号、方括号、花括号）来隔行编写多行语句。下面是一个例子：</p>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> (<span class="dv">1</span> <span class="op">+</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>         <span class="dv">2</span> <span class="op">*</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>         <span class="dv">3</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>7</code></pre>
+</div>
+</div>
+
+
 </section>
-<section id="重命名列" class="level2">
-<h2 class="anchored" data-anchor-id="重命名列">重命名列</h2>
-<section id="使用rename方法" class="level3">
-<h3 class="anchored" data-anchor-id="使用rename方法">使用rename方法：</h3>
-<p><code>df = df.rename(columns={'old_column_name': 'new_column_name'})</code></p>
-<p>其中，old_column_name是要重命名的旧列名，new_column_name是新的列名。</p>
-<div class="cell" data-execution_count="10">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">'姓名'</span>: <span class="st">'乘客id'</span>, <span class="st">'年龄'</span>:<span class="st">'乘客年龄'</span>})</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">乘客id</th>
-<th data-quarto-table-cell-role="th">乘客年龄</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>张三</td>
-<td>25</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>李四</td>
-<td>30</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>王五</td>
-<td>35</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>赵六</td>
-<td>28</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>熊大</td>
-<td>35</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="按值排序" class="level2">
-<h2 class="anchored" data-anchor-id="按值排序">按值排序</h2>
-<section id="使用sort_values方法" class="level3">
-<h3 class="anchored" data-anchor-id="使用sort_values方法">使用sort_values方法：</h3>
-<p><code>df = df.sort_values(by='column_name', ascending=True)</code></p>
-<p>其中，column_name是你想要按其值进行排序的列名。ascending=True表示按升序排序，若要按降序排序，将ascending设置为False。</p>
-<p>通过sort_values方法，你可以根据特定列的值对DataFrame进行排序。你可以选择按单个列的值排序，也可以按多个列的值排序，只需在by参数中提供相应的列名列表即可。</p>
-<div class="cell" data-execution_count="11">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.sort_values(by<span class="op">=</span><span class="st">'乘客年龄'</span>, ascending<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">乘客id</th>
-<th data-quarto-table-cell-role="th">乘客年龄</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>张三</td>
-<td>25</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>赵六</td>
-<td>28</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1</td>
-<td>李四</td>
-<td>30</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2</td>
-<td>王五</td>
-<td>35</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>熊大</td>
-<td>35</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-
-
 </section>
 </section>
 
@@ -1264,13 +940,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./选取数据.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">选取数据</span></span>
+      <a href="./周一环境搭建.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Python环境搭建</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Pandas计算重塑合并最终版本.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">如何计算汇总统计</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./周二数据类型.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python数据类型</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

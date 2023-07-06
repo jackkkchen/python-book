@@ -70,7 +70,7 @@ highlight-style: pygments
 format:
   html:
     theme: cosmo
-    # cover-image: "./img/logo.png"
+    cover-image: "./img/logo.png"
     code-copy: true
     code-link: true
   # pdf: default
