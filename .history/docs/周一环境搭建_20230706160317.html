@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python新手文档 - 2&nbsp; Python基础语法</title>
+<title>Python新手文档 - 1&nbsp; Python环境搭建</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./周二数据类型.html" rel="next">
-<link href="./周一环境搭建.html" rel="prev">
+<link href="./周一基础语法.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,6 +75,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -108,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./周一基础语法.html">Python入门基础</a></li><li class="breadcrumb-item"><a href="./周一基础语法.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python基础语法</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./周一环境搭建.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Python环境搭建</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -167,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./周一环境搭建.html" class="sidebar-item-text sidebar-link">
+  <a href="./周一环境搭建.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Python环境搭建</span></span></a>
   </div>
 </li>
@@ -182,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./周一基础语法.html" class="sidebar-item-text sidebar-link active">
+  <a href="./周一基础语法.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python基础语法</span></span></a>
   </div>
 </li>
@@ -333,38 +335,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#如何使用python" id="toc-如何使用python" class="nav-link active" data-scroll-target="#如何使用python">如何使用Python</a>
+  <li><a href="#anaconda环境安装强烈推荐" id="toc-anaconda环境安装强烈推荐" class="nav-link active" data-scroll-target="#anaconda环境安装强烈推荐">Anaconda环境安装（强烈推荐）</a></li>
+  <li><a href="#python包-手动安装" id="toc-python包-手动安装" class="nav-link" data-scroll-target="#python包-手动安装">Python包 手动安装</a>
   <ul class="collapse">
-  <li><a href="#运行python文件" id="toc-运行python文件" class="nav-link" data-scroll-target="#运行python文件">运行python文件</a></li>
-  <li><a href="#在代码编辑器中输入python指令" id="toc-在代码编辑器中输入python指令" class="nav-link" data-scroll-target="#在代码编辑器中输入python指令">在代码编辑器中输入python指令</a></li>
+  <li><a href="#设置环境变量" id="toc-设置环境变量" class="nav-link" data-scroll-target="#设置环境变量">设置环境变量</a></li>
+  <li><a href="#在-windows-设置环境变量" id="toc-在-windows-设置环境变量" class="nav-link" data-scroll-target="#在-windows-设置环境变量">在 Windows 设置环境变量</a></li>
   </ul></li>
-  <li><a href="#变量赋值" id="toc-变量赋值" class="nav-link" data-scroll-target="#变量赋值">变量赋值</a>
+  <li><a href="#visual-stuido-code安装" id="toc-visual-stuido-code安装" class="nav-link" data-scroll-target="#visual-stuido-code安装">Visual Stuido Code安装</a></li>
+  <li><a href="#conda-创建环境" id="toc-conda-创建环境" class="nav-link" data-scroll-target="#conda-创建环境">conda 创建环境</a></li>
+  <li><a href="#plotly" id="toc-plotly" class="nav-link" data-scroll-target="#plotly">Plotly</a>
   <ul class="collapse">
-  <li><a href="#变量的命名规则" id="toc-变量的命名规则" class="nav-link" data-scroll-target="#变量的命名规则">变量的命名规则</a></li>
-  <li><a href="#变量的赋值" id="toc-变量的赋值" class="nav-link" data-scroll-target="#变量的赋值">变量的赋值</a></li>
-  <li><a href="#变量的使用" id="toc-变量的使用" class="nav-link" data-scroll-target="#变量的使用">变量的使用</a></li>
-  <li><a href="#变量的重新赋值" id="toc-变量的重新赋值" class="nav-link" data-scroll-target="#变量的重新赋值">变量的重新赋值</a></li>
-  </ul></li>
-  <li><a href="#注释" id="toc-注释" class="nav-link" data-scroll-target="#注释">注释</a>
-  <ul class="collapse">
-  <li><a href="#单行注释" id="toc-单行注释" class="nav-link" data-scroll-target="#单行注释">单行注释</a></li>
-  <li><a href="#多行注释" id="toc-多行注释" class="nav-link" data-scroll-target="#多行注释">多行注释</a></li>
-  </ul></li>
-  <li><a href="#行和缩进" id="toc-行和缩进" class="nav-link" data-scroll-target="#行和缩进">行和缩进</a>
-  <ul class="collapse">
-  <li><a href="#行" id="toc-行" class="nav-link" data-scroll-target="#行">行</a></li>
-  <li><a href="#缩进" id="toc-缩进" class="nav-link" data-scroll-target="#缩进">缩进</a></li>
-  <li><a href="#多行语句" id="toc-多行语句" class="nav-link" data-scroll-target="#多行语句">多行语句</a></li>
+  <li><a href="#使用conda安装plotly" id="toc-使用conda安装plotly" class="nav-link" data-scroll-target="#使用conda安装plotly">使用conda安装Plotly</a></li>
+  <li><a href="#验证安装" id="toc-验证安装" class="nav-link" data-scroll-target="#验证安装">验证安装</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/周一基础语法.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/周一环境搭建.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python基础语法</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Python环境搭建</span></h1>
 </div>
 
 
@@ -379,277 +371,133 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="如何使用python" class="level2">
-<h2 class="anchored" data-anchor-id="如何使用python">如何使用Python</h2>
-<section id="运行python文件" class="level3">
-<h3 class="anchored" data-anchor-id="运行python文件">运行python文件</h3>
+<section id="anaconda环境安装强烈推荐" class="level2">
+<h2 class="anchored" data-anchor-id="anaconda环境安装强烈推荐">Anaconda环境安装（强烈推荐）</h2>
+<p>强烈推荐小白使用<a href="https://www.anaconda.com/">Anaconda平台</a>学习Python。</p>
+<p>Anaconda提供了简化环境配置、跨平台支持、库和工具管理以及丰富的科学计算库等优势，使得小白学习Python更加便捷和高效。它是一个功能强大且易于使用的平台，可以帮助您快速入门Python编程并进行数据处理和分析。</p>
+<p>官方免费提供<a href="https://www.anaconda.com/code-in-the-cloud">在线编辑器-jupyterlab</a> 无需手动安装环境，即可直接上手编写代码。</p>
 <video width="600" height="450" controls="">
-<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BD%BF%E7%94%A8python.mov">
+<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/win_anaconda-jack.mp4">
 </video>
-<p>Python文件的后缀为 <code>.py</code></p>
-<p><img src="./img/py.png" class="img-fluid"></p>
 </section>
-<section id="在代码编辑器中输入python指令" class="level3">
-<h3 class="anchored" data-anchor-id="在代码编辑器中输入python指令">在代码编辑器中输入python指令</h3>
-<p>比如在<code>jupyterlab</code>，在<code>终端</code>或者<code>vscode</code>中输入代码</p>
-<p>如图，<code>Shift + Enter</code>执行代码块</p>
-<p><img src="./img/py_basic.png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>在终端中，输入<code>python</code>进入python解释器后，即可运行python代码</p>
-</div>
-</div>
-<p>我们可以写一个简单的表达式，在编程中，表达式是一段产生值的代码，类似计算机功能，例如</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2023</span> <span class="op">+</span> <span class="dv">4090</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>6113</code></pre>
-</div>
-</div>
-<p>除了输出值外，还有另外一种表达式，比如查看是否 9 大于 1？</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="op">&gt;</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>True</code></pre>
-</div>
-</div>
-<p>上面这个表达式对9和1的大小进行了判断。因为<code>9 &gt; 1</code>，所以，程序返回了<code>True</code>；反之，如果我们编写<code>1 &gt; 9</code>，则会返回<code>False</code>。在这里，<code>True</code>和<code>False</code>统称为布尔值，在之后的数据类型课程中，我们会详细地对其进行介绍。</p>
-<p>写代码总少不了报错。假如我的是空值呢？</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>SyntaxError: invalid syntax (1639543893.py, line 1)</code></pre>
-</div>
-</div>
-<p>我们进行了一个比较运算，但是只填入了一个值。这时 程序就报错了。终端里显示我们的代码出现了一个语法错误，报错提示中的<code>SyntaxError</code>在编程中代表着语法错误。就像自然语言中的语法一样，Python作为一门编程语言，也具有自己的语法。在接下来的日子里，我们会带你详细学习。</p>
-</section>
-</section>
-<section id="变量赋值" class="level2">
-<h2 class="anchored" data-anchor-id="变量赋值">变量赋值</h2>
-<p>在Python中，变量用于存储和表示数据。变量赋值是将一个值与一个变量关联起来的过程。通过变量，我们可以在程序中存储和操作数据。</p>
-<section id="变量的命名规则" class="level3">
-<h3 class="anchored" data-anchor-id="变量的命名规则">变量的命名规则</h3>
-<p>在Python中，变量的命名需要遵循以下规则：</p>
-<ul>
-<li>变量名只能包含字母（大小写敏感）、数字和下划线（_）。</li>
-<li>变量名不能以数字开头。</li>
-<li>变量名不能使用Python关键字和保留字，如if、for、while等。</li>
-<li>变量名应具有描述性，能够清晰地表示变量的含义。</li>
-</ul>
-</section>
-<section id="变量的赋值" class="level3">
-<h3 class="anchored" data-anchor-id="变量的赋值">变量的赋值</h3>
-<p>在Python中，使用等号（=）进行变量赋值操作。等号 ( = ) 运算符左边是一个变量名,等号 ( = ) 运算符右边是存储在变量中的值</p>
+<section id="python包-手动安装" class="level2">
+<h2 class="anchored" data-anchor-id="python包-手动安装">Python包 手动安装</h2>
+<p>你可以访问<a href="https://www.python.org/downloads/">Python官网</a>下载并安装适合你操作系统的Python版本。最好选择stable稳定版</p>
+<!--  -->
 <video width="600" height="450" controls="">
-<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/python-%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC.mp4">
+<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/python_jack%E9%85%8D%E9%9F%B3.mp4">
 </video>
-<p>下面是一个例子，将数字5赋值给变量x：</p>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="设置环境变量" class="level3">
+<h3 class="anchored" data-anchor-id="设置环境变量">设置环境变量</h3>
+<p>程序和可执行文件可以在许多目录，而这些路径很可能不在操作系统提供可执行文件的搜索路径中</p>
+<p>PATH (路径)存储在环境变量中，这是由操作系统维护的一个命名的字符串,这些变量包含可用的命令行解释器和其他程序的信息</p>
+<p>Unix 或 Windows 中路径变量为 PATH ( UNIX区分大小写，Windows 不区分大小写 )</p>
+<p>Mac OS 中，如果安装程序过程中改变了 python 的安装路径，如果想要在其它目录引用 Python，则必须在 PATH 中添加 Python 目录</p>
 </section>
-<section id="变量的使用" class="level3">
-<h3 class="anchored" data-anchor-id="变量的使用">变量的使用</h3>
-<p>一旦变量被赋值，我们可以在程序中使用它来表示和操作存储的值。</p>
-<p>下面是一个例子，使用变量x计算其平方并打印结果：</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>square <span class="op">=</span> x <span class="op">*</span> x</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>25</code></pre>
-</div>
-</div>
-</section>
-<section id="变量的重新赋值" class="level3">
-<h3 class="anchored" data-anchor-id="变量的重新赋值">变量的重新赋值</h3>
-<p>在程序中，我们可以多次为同一个变量赋值，新的赋值将覆盖之前的值。</p>
-<p>下面是一个例子，演示变量的重新赋值：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)  <span class="co"># 输出：5</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)  <span class="co"># 输出：10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>题型一</p>
-<p>将字符串”Hello, Python!“赋值给变量message，然后打印出变量的值。</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>message <span class="op">=</span> <span class="st">"Hello, Python!"</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello, Python!</code></pre>
-</div>
-</div>
-<p>题型二 将变量的值用于字符串拼接，使用input()函数接收输入值，使用<a href="https://www.runoob.com/python/att-string-format.html">字符串的格式化功能</a>，将这变量的值拼接到一句话中。最后，通过print()函数将句子打印输出。</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 用户输入姓名和年龄</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"请输入您的姓名："</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="bu">input</span>(<span class="st">"请输入您的年龄："</span>)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建自我介绍的句子并打印输出</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>introduction <span class="op">=</span> <span class="ss">f"我的名字是</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">，今年</span><span class="sc">{</span>age<span class="sc">}</span><span class="ss">岁。"</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(introduction)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>我的名字是Jack，今年18岁。</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="注释" class="level2">
-<h2 class="anchored" data-anchor-id="注释">注释</h2>
-<p>在Python中，注释用于对代码进行解释和说明，对于其他人（包括自己）来理解代码的作用和意图非常有帮助。注释是在代码中添加的文本，Python解释器会忽略它们。</p>
-<section id="单行注释" class="level3">
-<h3 class="anchored" data-anchor-id="单行注释">单行注释</h3>
-<p>在Python中，使用<code>#</code>符号开始的文本被视为单行注释。在<code>#</code>后面的所有内容都被视为注释，不会被执行。</p>
-<p>下面是一个例子，演示如何使用单行注释：</p>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 这是一个单行注释</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World!"</span>)  <span class="co"># 打印输出文本</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello, World!</code></pre>
-</div>
-</div>
-<p>上述代码中，第一行是一个注释，用于对代码的目的进行解释。第二行是打印输出语句，不受注释的影响。</p>
-</section>
-<section id="多行注释" class="level3">
-<h3 class="anchored" data-anchor-id="多行注释">多行注释</h3>
-<p>在Python中，使用三个引号（双引号或单引号都可以）包围的文本被视为多行注释。多行注释可以跨越多行，并且可以包含多个段落。</p>
-<p>下面是一个例子，演示如何使用多行注释：</p>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">这是一个多行注释的示例。</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">它可以跨越多行，并且可以包含多个段落。</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">以下是代码的主要功能：</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">- 输入用户的姓名</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">- 打印欢迎消息和姓名</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"请输入您的姓名："</span>)</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"欢迎，"</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">"!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>欢迎，jack!</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>如果想一次性注释多行的话，鼠标选取后，按<code>ctl+/</code>进行注释</p>
-</div>
-</div>
-</section>
-</section>
-<section id="行和缩进" class="level2">
-<h2 class="anchored" data-anchor-id="行和缩进">行和缩进</h2>
-<p>在Python中，行用于分隔不同的代码语句，而缩进用于表示代码块（例如条件语句、循环等）的范围。</p>
-<section id="行" class="level3">
-<h3 class="anchored" data-anchor-id="行">行</h3>
-<p>每一行都包含一个完整的代码语句或表达式。下面是一个例子：</p>
-<div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello, world!</code></pre>
-</div>
-</div>
-<p>上述代码中，print(“Hello, world!”)是一行代码，用于输出字符串”Hello, world!“。</p>
-</section>
-<section id="缩进" class="level3">
-<h3 class="anchored" data-anchor-id="缩进">缩进</h3>
-<p>在Python中，缩进通过空格或制表符来实现，用于表示代码块的开始和结束。通常使用4个空格作为标准缩进。</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>缩进造成的错误，应该名列 Python 错误榜第一</p>
-</div>
-</div>
-<p>下面是一个例子，演示如何在代码块中使用缩进：</p>
-<div class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a> <span class="cf">if</span> x<span class="op">&gt;</span><span class="dv">0</span>:</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"x是正数"</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"干得漂亮！"</span>)</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span> (<span class="st">"x是负数"</span>)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span> (<span class="st">"可惜哇嗷！"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>x是正数
-干得漂亮！</code></pre>
-</div>
-</div>
-<p>上述代码中，if语句和else语句是两个代码块，它们的范围由缩进表示。在if代码块中，两个print语句都会在条件满足时执行。在else代码块中，同样有两个print语句。（大家可以自己修改下x范围）</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>养成良好编码习惯：</p>
+<section id="在-windows-设置环境变量" class="level3">
+<h3 class="anchored" data-anchor-id="在-windows-设置环境变量">在 Windows 设置环境变量</h3>
+<p>Windows 系统中，把 Python 安装目录添加到 PATH 环境变量中流程如下</p>
 <ol type="1">
-<li><p>保持一致的缩进：使用相同数量的空格或制表符进行缩进，并在整个代码中保持一致。这有助于提高代码的可读性；</p></li>
-<li><p>使用合适的缩进级别：根据代码逻辑嵌套关系，选择适当的缩进级别。通常建议每个缩进级别使用4个空格；</p></li>
-<li><p>使用注释：在关键地方添加注释，解释代码的目的和功能。注释可以提高代码的可读性和可维护性；</p></li>
-<li><p>注意行的长度：尽量将每行代码控制在适当的长度范围内，通常推荐不超过80个字符。可以使用换行符（）或括号来换行。</p></li>
+<li>右键点击 计算机，然后点击 属性</li>
+<li>然后点击“高级系统设置”</li>
+<li>选择 系统变量 窗口下面的 Path ,双击即可！</li>
+<li>然后在 Path 行，添加 python 安装路径即可，即在最后面，添加 ;<code>C:\Python</code></li>
+<li>设置成功以后，在 <code>cmd</code> 命令行，输入命令 python，就可以有相关显示</li>
 </ol>
+<p><img src="./img/python_install.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Windows 下的 Python 一般安装在 <code>C:\Python</code>目录。</p>
+</div>
+</div>
+<p>安装完成后，打开命令行（Windows）或终端（macOS/Linux），输入以下命令，确认Python已成功安装：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>输入python并按回车键。你将看到一条欢迎消息，其末尾</p>
+<p>为如下提示符：</p>
+<p><code>\&gt;&gt;&gt;</code></p>
+<p>如果情况确实如此，就可以输入Python命令了。</p>
+<p>请尝试像下面这样做，以核实它是否管用：</p>
+<p><code>\&gt;&gt;&gt; print("Hello, world!")</code></p>
+<p>等你按下回车键后，将出现如下输出：</p>
+<p><code>Hello, world!</code></p>
+<p><code>\&gt;&gt;&gt;</code></p>
+<p>如果你熟悉其他计算机语言，可能习惯了在每行末尾都加上分号。在Python中无需这样做，因为在Python中，一行就是一行。接下来，我们将学习如何编写和运行Python程序。</p>
+</section>
+</section>
+<section id="visual-stuido-code安装" class="level2">
+<h2 class="anchored" data-anchor-id="visual-stuido-code安装">Visual Stuido Code安装</h2>
+<p>Visual Studio Code是一个轻量级但功能强大的源代码编辑器，在你的桌面上运行，可用于Windows、macOS和Linux。它内置了对JavaScript、TypeScript和Node.js的支持，并有一个丰富的生态系统，可用于其他语言和运行系统（如C++、C#、Java、Python、PHP、Go、.NET）的扩展。</p>
+<video width="600" height="450" controls="">
+<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/vscode.mov">
+</video>
+<p>官方有非常丰富的文档提供学习参考，第一步可以从<a href="https://code.visualstudio.com/docs/getstarted/introvideos">入门视频开始</a></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>在vscode中，创建新的<code>main.py</code>文件后，可使用快捷键<code>ctrl+`</code>打开终端。 输入<code>python main.py</code>运行 python代码</p>
 </div>
 </div>
 </section>
-<section id="多行语句" class="level3">
-<h3 class="anchored" data-anchor-id="多行语句">多行语句</h3>
-<section id="使用反斜杠" class="level4">
-<h4 class="anchored" data-anchor-id="使用反斜杠">使用反斜杠</h4>
-<p>使用反斜杠<code>（\）</code>将一行代码分成多行。下面是一个例子：</p>
-<div class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> <span class="op">\</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>        <span class="dv">2</span> <span class="op">*</span> <span class="op">\</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>        <span class="dv">3</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>7</code></pre>
-</div>
-</div>
-<p>上述代码中，total变量的值是1+2+3，通过使用反斜杠在多行中编写，使代码更易读。</p>
+<section id="conda-创建环境" class="level2">
+<h2 class="anchored" data-anchor-id="conda-创建环境">conda 创建环境</h2>
+<p>Conda是一个用于管理和部署软件包、依赖关系和环境的开源工具，用于安装、管理和运行不同版本的软件包和依赖项。Conda时Anaconda发行版的核心组件之一。Conda支持Python，在后面的学习中，我们将使用conda对我们的环境进行管理。 在安装完成Anaconda后，我们可以使用如下代码验证conda是否成功安装</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>为了给我们的学习提供一个稳定的、可复现的环境，我们将使用conda来创建一个新的环境。你可以将其理解为一个沙盒，我们后面所进行的更改都将仅限于该环境中。使用下面的代码来创建环境</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> myenv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>上面的代码中的”myenv”是环境的名称，你可以根据你的喜好或者需要来更改它。如果你需要指定Python版本，可以执行如下代码</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> myenv python=3.9</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>在成功创建环境后，你会发现，我们目前还是处于基础环境之中，使用下面这行代码来激活刚才创建的环境</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate myenv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>这样一来我们就可以使用我们刚才创建好的环境进行Python学习了。在后面的学习中，我们将使用vscode来作为我们的学习工具，当我们成功创建环境以后，还需要再vscode中配置conda环境。</p>
+<p>打开vscode后，按下<code>Ctrl + Shift + P</code>打开命令面板，输入输入”Python: Select Interpreter”，然后选择该命令以选择Python解释器。在弹出的列表中，您应该能够看到已安装的Conda环境。选择您要在VSCode中使用的Conda环境。</p>
+<p>如果没有看到您想要的环境，确保已正确安装并配置了Conda，并在上一步中激活了您想要使用的环境。 最后，如果你还需要再别的电脑上配置相同的环境，你也可以使用conda完成这些操作：</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 列出环境</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env list</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 复制环境</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> creat <span class="at">--name</span> myclone <span class="at">--clone</span> myenv</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 删除环境</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env remove <span class="at">--name</span> myenv</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 导出环境</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env export <span class="op">&gt;</span> environment.yml</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 导入环境</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">--file</span> environment.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="使用括号" class="level4">
-<h4 class="anchored" data-anchor-id="使用括号">使用括号</h4>
-<p>另一种方式是使用括号（圆括号、方括号、花括号）来隔行编写多行语句。下面是一个例子：</p>
-<div class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> (<span class="dv">1</span> <span class="op">+</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>         <span class="dv">2</span> <span class="op">*</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>         <span class="dv">3</span>)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>7</code></pre>
-</div>
-</div>
+<section id="plotly" class="level2">
+<h2 class="anchored" data-anchor-id="plotly">Plotly</h2>
+<p>Plotly是一种用于创建交互式可视化的开源Python图形库，它提供了丰富的图表类型和功能，可以生成高质量、可交互的图形，用于数据分析和呈现。 Plotly支持的图表类型有很多，包括我们常用的散点图、线图、条形图、面积图、箱线图等等。在使用Plotly的过程中，我们可以通过选择合适的图表类型进行数据可视化。另外，Plotly提供了强大的交互式功能，用户可以通过鼠标交互、缩放、平移等操作来和图标进行交互。同时，我们还可以通过添加悬停提示信息、点击事件和自定义工具栏等交互元素，增强用户体验。 由于Plotly可以和Python中的各种数据分析和科学计算库(如NumPy、Pandas等)无缝集成，因此，在使用Python进行数据可视化工作的进程中，Plotly可以很好地帮助到我们。</p>
+<section id="使用conda安装plotly" class="level3">
+<h3 class="anchored" data-anchor-id="使用conda安装plotly">使用conda安装Plotly</h3>
+<p>如果你的电脑上安装了Anaconda，那么我们可以使用conda来安装Plotly。打开终端以后，输入以下代码</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> plotly plotly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>这将从Anaconda的默认渠道安装Plotly。 ### 使用pip安装Plotly 如果您的电脑上没有安装Anaconda，您也可以使用pip来安装Plotly。打开终端以后，输入以下代码</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install plotly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="验证安装" class="level3">
+<h3 class="anchored" data-anchor-id="验证安装">验证安装</h3>
+<p>安装完成以后，可以使用以下命令来验证是否成功安装了Plotly</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import plotly; print(plotly.--version--)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>如果成功安装，这行代码将为我们显示Plotly的版本号。 在安装完成以后，您就可以在Python中使用Plotly来创建交互式可视化图表了。另外，在使用Plotly时，通常还需要安装Pandas或numpy，我们将在后面的章节中带领您安装。</p>
 
 
-</section>
 </section>
 </section>
 
@@ -940,17 +788,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./周一环境搭建.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Python环境搭建</span></span>
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Python简介</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./周二数据类型.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python数据类型</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./周一基础语法.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python基础语法</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
