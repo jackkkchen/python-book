@@ -752,6 +752,7 @@ Note
 <section id="列表list" class="level3">
 <h3 class="anchored" data-anchor-id="列表list"><a href="https://www.w3schools.com/python/python_lists.asp">列表(List)</a></h3>
 <p><code>list</code>是Python中最常用的数据结构之一，用于存储一组有序的元素。列表中的元素可以是不同类型的对象，可以进行增删改查等操作。</p>
+<p><img src="./img/listt.png" class="img-fluid"></p>
 <section id="创建列表" class="level4">
 <h4 class="anchored" data-anchor-id="创建列表">创建列表</h4>
 <p>列表可以使用方括号<code>[]</code>来创建，其中每个元素用逗号分隔。例如：</p>
@@ -846,6 +847,7 @@ Note
 <section id="元组tuple" class="level3">
 <h3 class="anchored" data-anchor-id="元组tuple"><a href="https://www.w3schools.com/python/python_tuples.asp">元组(Tuple)</a></h3>
 <p>元组与列表类似，也是用于存储一组有序的元素。但是，元组一旦创建，其元素不可更改，即元组是不可变的。</p>
+<p><img src="./img/tuple.png" class="img-fluid"></p>
 <div class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个元组</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>person <span class="op">=</span> (<span class="st">'Jack'</span>, <span class="dv">25</span>, <span class="st">'China'</span>)</span>
@@ -877,18 +879,22 @@ Note
 <h4 class="anchored" data-anchor-id="元组解包">元组解包</h4>
 <p>可以将元组的元素解包到多个变量中，从而快速访问元组的各个元素。</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># person元组中，有三个数值，所以必须设`x,y,z`</span></span>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 上述的person元组中，有三个数值，所以必须设`x,y,z`</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>x, y, z <span class="op">=</span> person</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Jack</code></pre>
 </div>
 </div>
+<video width="600" height="450" controls="">
+<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/%E5%85%83%E7%BB%84%E8%A7%A3%E5%8C%85%E2%80%94%E2%80%94%E4%BD%BF%E7%94%A8Clipchamp%E5%88%B6%E4%BD%9C.mp4">
+</video>
 </section>
 </section>
 <section id="字典dictionary" class="level3">
 <h3 class="anchored" data-anchor-id="字典dictionary"><a href="https://www.w3schools.com/python/python_dictionaries.asp">字典(Dictionary)</a></h3>
 <p>字典是Python中一种常用的数据结构，又称 <a href="https://zhuanlan.zhihu.com/p/84327339">哈希表</a>，它以键-值（key-value）对的形式存储数据。以下是对字典的详细说明：</p>
+<p><img src="./img/dict.png" class="img-fluid"></p>
 <section id="创建字典" class="level4">
 <h4 class="anchored" data-anchor-id="创建字典">创建字典</h4>
 <p>字典使用花括号<code>{}</code>来创建，每个键-值对之间使用冒号<code>:</code>分隔，不同键-值对之间使用逗号<code>,</code>分隔。例如：</p>
@@ -947,7 +953,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>设置变量的时候，不要使用类似list, tuple等，如果出现<code>'list' object is not callable</code>，使用<code>del list</code>删除变量</p>
+<p>设置<code>变量</code>的时候，不要使用类似<code>list, tuple</code>等，如果出现<code>'list' object is not callable</code>，使用<code>del list</code>删除变量</p>
 </div>
 </div>
 </section>
