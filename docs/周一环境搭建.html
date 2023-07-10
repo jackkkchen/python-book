@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.361">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,8 +93,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -195,7 +194,7 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./周一环境搭建.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Python环境搭建</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -428,6 +427,7 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
   <li><a href="#plotly" id="toc-plotly" class="nav-link" data-scroll-target="#plotly">Plotly</a>
   <ul class="collapse">
   <li><a href="#使用conda安装plotly" id="toc-使用conda安装plotly" class="nav-link" data-scroll-target="#使用conda安装plotly">使用conda安装Plotly</a></li>
+  <li><a href="#使用pip安装plotly" id="toc-使用pip安装plotly" class="nav-link" data-scroll-target="#使用pip安装plotly">使用pip安装Plotly</a></li>
   <li><a href="#验证安装" id="toc-验证安装" class="nav-link" data-scroll-target="#验证安装">验证安装</a></li>
   <li><a href="#lines-on-maps" id="toc-lines-on-maps" class="nav-link" data-scroll-target="#lines-on-maps">1. Lines on Maps</a></li>
   <li><a href="#funnel-chart" id="toc-funnel-chart" class="nav-link" data-scroll-target="#funnel-chart">2. Funnel Chart</a></li>
@@ -461,9 +461,16 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
 <p>强烈推荐小白使用<a href="https://www.anaconda.com/">Anaconda平台</a>学习Python。</p>
 <p>Anaconda提供了简化环境配置、跨平台支持、库和工具管理以及丰富的科学计算库等优势，使得小白学习Python更加便捷和高效。它是一个功能强大且易于使用的平台，可以帮助您快速入门Python编程并进行数据处理和分析。</p>
 <p>官方免费提供<a href="https://www.anaconda.com/code-in-the-cloud">在线编辑器-jupyterlab</a> 无需手动安装环境，即可直接上手编写代码。</p>
-<video width="600" height="450" controls="" poster="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/anaconda%E5%AE%89%E8%A3%85.png">
-<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/win_anaconda-jack.mp4">
+<video controls="" style="width: 100%;" poster="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/anaconda%E5%AE%89%E8%A3%85.png">
+<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/win_anaconda-jack.mp4" type="video/mp4">
 </video>
+<style>
+video {
+  max-width: 100%;
+  height: auto;
+  
+}
+</style>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -482,9 +489,16 @@ Warning
 <h2 class="anchored" data-anchor-id="python包-手动安装">Python包 手动安装</h2>
 <p>你可以访问<a href="https://www.python.org/downloads/">Python官网</a>下载并安装适合你操作系统的Python版本。最好选择stable稳定版</p>
 <!--  -->
-<video width="600" height="450" controls="" poster="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/python%E5%B0%81%E9%9D%A2.png">
-<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/python_jack%E9%85%8D%E9%9F%B3.mp4">
+<video controls="" style="width: 100%;" poster="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/python%E5%B0%81%E9%9D%A2.png">
+<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/python_jack%E9%85%8D%E9%9F%B3.mp4" type="video/mp4">
 </video>
+<style>
+video {
+  max-width: 100%;
+  height: auto;
+  
+}
+</style>
 <section id="设置环境变量" class="level3">
 <h3 class="anchored" data-anchor-id="设置环境变量">设置环境变量</h3>
 <p>程序和可执行文件可以在许多目录，而这些路径很可能不在操作系统提供可执行文件的搜索路径中</p>
@@ -533,9 +547,16 @@ Note
 <section id="visual-stuido-code安装" class="level2">
 <h2 class="anchored" data-anchor-id="visual-stuido-code安装">Visual Stuido Code安装</h2>
 <p><a href="https://code.visualstudio.com/">Visual Studio Code</a>是一个轻量级但功能强大的源代码编辑器，在你的桌面上运行，可用于Windows、macOS和Linux。它内置了对JavaScript、TypeScript和Node.js的支持，并有一个丰富的生态系统，可用于其他语言和运行系统（如C++、C#、Java、Python、PHP、Go、.NET）的扩展。</p>
-<video width="600" height="450" controls="" poster="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/vscode%E5%B0%81%E9%9D%A2.png">
-<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/vscode-yunfeng.mp4">
+<video controls="" style="width: 100%;" poster="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/vscode%E5%B0%81%E9%9D%A2.png">
+<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/vscode-yunfeng.mp4" type="video/mp4">
 </video>
+<style>
+video {
+  max-width: 100%;
+  height: auto;
+  
+}
+</style>
 <p>官方有非常丰富的文档提供学习参考，第一步可以从<a href="https://code.visualstudio.com/docs/getstarted/introvideos">入门视频开始</a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -585,16 +606,21 @@ Note
 <p>在后面的课程中，我们会详细介绍Plotly的相关内容，现在，让我们一起来看看Plotly可以实现的效果吧。</p>
 <section id="使用conda安装plotly" class="level3">
 <h3 class="anchored" data-anchor-id="使用conda安装plotly">使用conda安装Plotly</h3>
-<p>如果你的电脑上安装了Anaconda，那么我们可以使用conda来安装Plotly。打开终端以后，输入以下代码</p>
+<p>如果你的电脑上安装了Anaconda，那么我们可以使用conda来安装Plotly。打开<code>终端</code>或者<code>Jupyter文件</code>，输入以下代码</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> plotly plotly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>这将从Anaconda的默认渠道安装Plotly。 ### 使用pip安装Plotly 如果您的电脑上没有安装Anaconda，您也可以使用pip来安装Plotly。打开终端以后，输入以下代码</p>
+<p>这将从Anaconda的默认渠道安装Plotly。</p>
+</section>
+<section id="使用pip安装plotly" class="level3">
+<h3 class="anchored" data-anchor-id="使用pip安装plotly">使用pip安装Plotly</h3>
+<p>如果您的电脑上没有安装Anaconda，您也可以使用pip来安装Plotly。打开<code>终端</code>以后，输入以下代码</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install plotly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="验证安装" class="level3">
 <h3 class="anchored" data-anchor-id="验证安装">验证安装</h3>
 <p>安装完成以后，可以使用以下命令来验证是否成功安装了Plotly</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import plotly; print(plotly.--version--)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> show plotly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>如果成功安装，这行代码将为我们显示Plotly的版本号。 在安装完成以后，您就可以在Python中使用Plotly来创建交互式可视化图表了。另外，在使用Plotly时，通常还需要安装Pandas或numpy，我们将在后面的章节中带领您安装。</p>
+<p><a href="https://plotly.com/python/plotly-express/">plotly.express官方介绍</a>可以先本地尝试下官方给的案例～</p>
 </section>
 <section id="lines-on-maps" class="level3">
 <h3 class="anchored" data-anchor-id="lines-on-maps">1. Lines on Maps</h3>
