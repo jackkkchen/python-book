@@ -586,15 +586,16 @@ Note
 <section id="使用conda安装plotly" class="level3">
 <h3 class="anchored" data-anchor-id="使用conda安装plotly">使用conda安装Plotly</h3>
 <p>如果你的电脑上安装了Anaconda，那么我们可以使用conda来安装Plotly。打开终端以后，输入以下代码</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> plotly plotly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> plotly </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>这将从Anaconda的默认渠道安装Plotly。 ### 使用pip安装Plotly 如果您的电脑上没有安装Anaconda，您也可以使用pip来安装Plotly。打开终端以后，输入以下代码</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install plotly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="验证安装" class="level3">
 <h3 class="anchored" data-anchor-id="验证安装">验证安装</h3>
 <p>安装完成以后，可以使用以下命令来验证是否成功安装了Plotly</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import plotly; print(plotly.--version--)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> show plotly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>如果成功安装，这行代码将为我们显示Plotly的版本号。 在安装完成以后，您就可以在Python中使用Plotly来创建交互式可视化图表了。另外，在使用Plotly时，通常还需要安装Pandas或numpy，我们将在后面的章节中带领您安装。</p>
+<p><a href="https://plotly.com/python/plotly-express/">plotly.express官方介绍</a>可以先本地尝试下官方给的案例～</p>
 </section>
 <section id="lines-on-maps" class="level3">
 <h3 class="anchored" data-anchor-id="lines-on-maps">1. Lines on Maps</h3>
