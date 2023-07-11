@@ -195,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./周三条件语句和循环语句 .html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句的学习</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句&amp;循环语句</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -935,22 +935,6 @@ video {
 <pre><code>{'姓名': '帅气的Jack', '年龄': 24, '成绩': '刚好及格'}</code></pre>
 </div>
 </div>
-</section>
-<section id="关于字典的相关操作" class="level4">
-<h4 class="anchored" data-anchor-id="关于字典的相关操作">关于字典的相关操作</h4>
-<p>要确定字典有多少项，可以使用<code>len()</code>函数</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(student))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> student[<span class="st">'姓名'</span>]  <span class="co"># 删除键是'姓名'的条目</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>student.clear()      <span class="co"># 清空字典所有条目</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> student          <span class="co"># 删除字典</span></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> <span class="bu">list</span>            <span class="co"># 删除变量</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -964,6 +948,27 @@ Note
 <p>设置<code>变量</code>的时候，不要使用类似<code>list, tuple</code>等，如果出现<code>'list' object is not callable</code>，使用<code>del list</code>删除变量</p>
 </div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>dict1 <span class="op">=</span> {<span class="st">'key'</span>: [<span class="st">'value'</span>, <span class="st">'value2'</span>], <span class="st">'key2'</span>: <span class="st">'value2'</span>}</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>dict2 <span class="op">=</span> {<span class="st">'key'</span>: (<span class="st">'physics'</span>, <span class="st">'chemistry'</span>, <span class="dv">1997</span>, <span class="dv">2000</span>), <span class="st">'key2'</span>: <span class="st">'value2'</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="关于字典的相关操作" class="level4">
+<h4 class="anchored" data-anchor-id="关于字典的相关操作">关于字典的相关操作</h4>
+<p>要确定字典有多少项，可以使用<code>len()</code>函数</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(student))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> student[<span class="st">'姓名'</span>]  <span class="co"># 删除键是'姓名'的条目</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>student.clear()      <span class="co"># 清空字典所有条目</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> student          <span class="co"># 删除字典</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> <span class="bu">list</span>            <span class="co"># 删除变量</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>字典Dict中键和值是一 一对应的，键是唯一的，如果重复最后的一个键【值】对会替换前面的。若一个键中需要存放多个值，可以考虑使用元组Tuple和列表List</p>
 </section>
 </section>
 <section id="数据结构间的相互转换" class="level3">
@@ -975,19 +980,19 @@ Note
 <li>使用 <code>tuple()</code> 函数将<code>列表</code>转换为<code>元组</code>。</li>
 </ol>
 <div class="cell" data-execution_count="52">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 元组转列表</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>my_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> <span class="bu">list</span>(my_tuple)</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 元组转列表</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>my_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> <span class="bu">list</span>(my_tuple)</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1, 2, 3, 4, 5]</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 列表转元组</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>my_tuple <span class="op">=</span> <span class="bu">tuple</span>(my_list)</span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_tuple)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 列表转元组</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>my_tuple <span class="op">=</span> <span class="bu">tuple</span>(my_list)</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_tuple)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(1, 2, 3, 4, 5)</code></pre>
 </div>
@@ -999,26 +1004,26 @@ Note
 <p><code>keys()</code> 方法返回一个包含字典中所有键的可迭代对象。</p>
 <p><code>items()</code> 方法获取字典的键值对</p>
 <div class="cell" data-execution_count="63">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># keys() 是一个字典(Dictionary)对象的方法，用于返回字典中所有的键</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"John"</span>, <span class="st">"age"</span>: <span class="dv">25</span>, <span class="st">"city"</span>: <span class="st">"New York"</span>}</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> <span class="bu">list</span>(my_dict.keys())</span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)</span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(my_list))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># keys() 是一个字典(Dictionary)对象的方法，用于返回字典中所有的键</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"John"</span>, <span class="st">"age"</span>: <span class="dv">25</span>, <span class="st">"city"</span>: <span class="st">"New York"</span>}</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> <span class="bu">list</span>(my_dict.keys())</span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)</span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(my_list))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['name', 'age', 'city']
 &lt;class 'list'&gt;</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="62">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用 items() 方法获取字典的键值对，然后使用 tuple() 函数将键值对转换为元组。</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"John"</span>, <span class="st">"age"</span>: <span class="dv">25</span>, <span class="st">"city"</span>: <span class="st">"New York"</span>}</span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>my_tuple <span class="op">=</span> <span class="bu">tuple</span>(my_dict.items())</span>
-<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_tuple)</span>
-<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(my_tuple))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用 items() 方法获取字典的键值对，然后使用 tuple() 函数将键值对转换为元组。</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">"name"</span>: <span class="st">"John"</span>, <span class="st">"age"</span>: <span class="dv">25</span>, <span class="st">"city"</span>: <span class="st">"New York"</span>}</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>my_tuple <span class="op">=</span> <span class="bu">tuple</span>(my_dict.items())</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_tuple)</span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(my_tuple))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(('name', 'John'), ('age', 25), ('city', 'New York'))
 &lt;class 'tuple'&gt;</code></pre>
@@ -1323,7 +1328,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./周三条件语句和循环语句 .html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句的学习</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句&amp;循环语句</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
