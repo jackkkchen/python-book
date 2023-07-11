@@ -278,8 +278,8 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./周三条件语句和循环语句 .html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句的学习</span></span></a>
+  <a href="./周三条件语句和循环语句.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句&amp;循环语句</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -602,6 +602,19 @@ conda env create --file environment.yml
 </section>
 <section id="lines-on-maps" class="level3">
 <h3 class="anchored" data-anchor-id="lines-on-maps">1. Lines on Maps</h3>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>plotly在本地运行<code>无法显示图片</code>的话，可以尝试直接使用<code>fig.show()</code>，去掉<code>renderer="notebook"</code></p>
+</div>
+</div>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> px.data.gapminder().query(<span class="st">"year == 2007"</span>)</span>
