@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python新手文档 - 4&nbsp; 条件语句的学习</title>
+<title>Python新手文档 - 4&nbsp; 条件语句&amp;循环语句</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./周一基础语法.html">Python入门基础</a></li><li class="breadcrumb-item"><a href="./周三条件语句和循环语句 .html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句的学习</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./周一基础语法.html">Python入门基础</a></li><li class="breadcrumb-item"><a href="./周三条件语句和循环语句 .html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句&amp;循环语句</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -195,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./周三条件语句和循环语句 .html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句的学习</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句&amp;循环语句</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -333,7 +333,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#循环语句的学习" id="toc-循环语句的学习" class="nav-link active" data-scroll-target="#循环语句的学习">循环语句的学习</a></li>
+  <li><a href="#条件语句" id="toc-条件语句" class="nav-link active" data-scroll-target="#条件语句">条件语句</a></li>
+  <li><a href="#循环语句" id="toc-循环语句" class="nav-link" data-scroll-target="#循环语句">循环语句</a></li>
   <li><a href="#编写具有条件判断和循环结构的程序" id="toc-编写具有条件判断和循环结构的程序" class="nav-link" data-scroll-target="#编写具有条件判断和循环结构的程序"><strong>编写具有条件判断和循环结构的程序</strong></a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/周三条件语句和循环语句 .ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -343,7 +344,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句的学习</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句&amp;循环语句</span></h1>
 </div>
 
 
@@ -358,9 +359,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="条件语句" class="level3">
+<h3 class="anchored" data-anchor-id="条件语句">条件语句</h3>
 <p>在本节课程中，我们将学习条件语句的基本结构、逻辑判断以及如何构建复杂的条件表达式。同时，我们还会练习编写带有条件判断的程序，让你能够根据条件执行不同的代码块。</p>
 <video controls="" style="width: 100%;">
-<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/python%E5%91%A8%E4%B8%89%E6%9D%A1%E4%BB%B6%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5.mp4" type="video/mp4">
+<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/python%E5%91%A8%E4%B8%89%E6%9D%A1%E4%BB%B6%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/1354_1689084698.mp4" type="video/mp4">
 </video>
 <style>
   video {
@@ -444,8 +447,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>应缴纳的所得税为： 60000.0</code></pre>
 </div>
 </div>
-<section id="循环语句的学习" class="level3">
-<h3 class="anchored" data-anchor-id="循环语句的学习">循环语句的学习</h3>
+</section>
+<section id="循环语句" class="level3">
+<h3 class="anchored" data-anchor-id="循环语句">循环语句</h3>
 <p>本节课程中，我们将探索循环语句的基本结构、控制条件和循环体的执行过程。同时，我们还会学习如何使用break语句和continue语句控制循环的执行流程。最后，我们将练习编写带有循环结构的程序，如遍历列表和计算累加和。</p>
 <ol type="1">
 <li>基本结构 循环语句允许我们重复执行一段代码。Python中有两种常见的循环结构：while循环和for循环。</li>

@@ -41,7 +41,7 @@ book:
       chapters: 
         - 周一基础语法.ipynb
         - 周二数据类型.ipynb
-        - 周三条件语句和循环语句 .ipynb
+        - 周三条件语句和循环语句.ipynb
         - 周四函数.ipynb
         - 周四模块.ipynb
     - part: "NumPy快速入门"
