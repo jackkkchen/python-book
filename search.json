@@ -32,28 +32,7 @@
     "href": "周一环境搭建.html#anaconda环境安装强烈推荐",
     "title": "1  Python环境搭建",
     "section": "Anaconda环境安装（强烈推荐）",
-    "text": "Anaconda环境安装（强烈推荐）\n强烈推荐小白使用Anaconda平台学习Python。\nAnaconda提供了简化环境配置、跨平台支持、库和工具管理以及丰富的科学计算库等优势，使得小白学习Python更加便捷和高效。它是一个功能强大且易于使用的平台，可以帮助您快速入门Python编程并进行数据处理和分析。\n官方免费提供在线编辑器-jupyterlab 无需手动安装环境，即可直接上手编写代码。\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nAnaconda的安装路径和用户名最好使用英文"
-  },
-  {
-    "objectID": "周一环境搭建.html#python包-手动安装",
-    "href": "周一环境搭建.html#python包-手动安装",
-    "title": "1  Python环境搭建",
-    "section": "Python包 手动安装",
-    "text": "Python包 手动安装\n你可以访问Python官网下载并安装适合你操作系统的Python版本。最好选择stable稳定版\n\n\n\n\n\n\n设置环境变量\n程序和可执行文件可以在许多目录，而这些路径很可能不在操作系统提供可执行文件的搜索路径中\nPATH (路径)存储在环境变量中，这是由操作系统维护的一个命名的字符串,这些变量包含可用的命令行解释器和其他程序的信息\nUnix 或 Windows 中路径变量为 PATH ( UNIX区分大小写，Windows 不区分大小写 )\nMac OS 中，如果安装程序过程中改变了 python 的安装路径，如果想要在其它目录引用 Python，则必须在 PATH 中添加 Python 目录\n\n\n在 Windows 设置环境变量\nWindows 系统中，把 Python 安装目录添加到 PATH 环境变量中流程如下\n\n右键点击 计算机，然后点击 属性\n然后点击“高级系统设置”\n选择 系统变量 窗口下面的 Path ,双击即可！\n然后在 Path 行，添加 python 安装路径即可，即在最后面，添加 ;C:\\Python\n设置成功以后，在 cmd 命令行，输入命令 python，就可以有相关显示\n\n\n\n\n\n\n\n\nNote\n\n\n\nWindows 下的 Python 一般安装在 C:\\Python目录。\n\n\n安装完成后，打开命令行（Windows）或终端（macOS/Linux），输入以下命令，确认Python已成功安装：\npython --version\n输入python并按回车键。你将看到一条欢迎消息，其末尾\n为如下提示符：\n\\&gt;&gt;&gt;\n如果情况确实如此，就可以输入Python命令了。\n请尝试像下面这样做，以核实它是否管用：\n\\&gt;&gt;&gt; print(\"Hello, world!\")\n等你按下回车键后，将出现如下输出：\nHello, world!\n\\&gt;&gt;&gt;\n如果你熟悉其他计算机语言，可能习惯了在每行末尾都加上分号。在Python中无需这样做，因为在Python中，一行就是一行。接下来，我们将学习如何编写和运行Python程序。"
-  },
-  {
-    "objectID": "周一环境搭建.html#visual-stuido-code安装",
-    "href": "周一环境搭建.html#visual-stuido-code安装",
-    "title": "1  Python环境搭建",
-    "section": "Visual Stuido Code安装",
-    "text": "Visual Stuido Code安装\nVisual Studio Code是一个轻量级但功能强大的源代码编辑器，在你的桌面上运行，可用于Windows、macOS和Linux。它内置了对JavaScript、TypeScript和Node.js的支持，并有一个丰富的生态系统，可用于其他语言和运行系统（如C++、C#、Java、Python、PHP、Go、.NET）的扩展。\n\n\n\n\n官方有非常丰富的文档提供学习参考，第一步可以从入门视频开始\n\n\n\n\n\n\nNote\n\n\n\n在vscode中，创建新的main.py文件后，可使用快捷键ctrl+`打开终端。 输入python main.py运行 python代码"
-  },
-  {
-    "objectID": "周一环境搭建.html#conda-创建环境",
-    "href": "周一环境搭建.html#conda-创建环境",
-    "title": "1  Python环境搭建",
-    "section": "conda 创建环境",
-    "text": "conda 创建环境\nConda是一个用于管理和部署软件包、依赖关系和环境的开源工具，用于安装、管理和运行不同版本的软件包和依赖项。Conda时Anaconda发行版的核心组件之一。Conda支持Python，在后面的学习中，我们将使用conda对我们的环境进行管理。 在安装完成Anaconda后，我们可以使用如下代码验证conda是否成功安装\nconda --version\n为了给我们的学习提供一个稳定的、可复现的环境，我们将使用conda来创建一个新的环境。你可以将其理解为一个沙盒，我们后面所进行的更改都将仅限于该环境中。使用下面的代码来创建环境\nconda create --name myenv\n上面的代码中的”myenv”是环境的名称，你可以根据你的喜好或者需要来更改它。如果你需要指定Python版本，可以执行如下代码\nconda create --name myenv python=3.9\n在成功创建环境后，你会发现，我们目前还是处于基础环境之中，使用下面这行代码来激活刚才创建的环境\nconda activate myenv\n这样一来我们就可以使用我们刚才创建好的环境进行Python学习了。在后面的学习中，我们将使用vscode来作为我们的学习工具，当我们成功创建环境以后，还需要再vscode中配置conda环境。\n打开vscode后，按下Ctrl + Shift + P打开命令面板，输入输入”Python: Select Interpreter”，然后选择该命令以选择Python解释器。在弹出的列表中，您应该能够看到已安装的Conda环境。选择您要在VSCode中使用的Conda环境。\n如果没有看到您想要的环境，确保已正确安装并配置了Conda，并在上一步中激活了您想要使用的环境。 最后，如果你还需要再别的电脑上配置相同的环境，你也可以使用conda完成这些操作：\n# 列出环境\nconda env list\n\n# 复制环境\nconda creat --name myclone --clone myenv\n\n# 删除环境\nconda env remove --name myenv\n\n# 导出环境\nconda env export &gt; environment.yml\n\n# 导入环境\nconda env create --file environment.yml"
+    "text": "Anaconda环境安装（强烈推荐）\n强烈推荐小白使用Anaconda平台学习Python。\nAnaconda提供了简化环境配置、跨平台支持、库和工具管理以及丰富的科学计算库等优势，使得小白学习Python更加便捷和高效。它是一个功能强大且易于使用的平台，可以帮助您快速入门Python编程并进行数据处理和分析。\n官方免费提供在线编辑器-jupyterlab 无需手动安装环境，即可直接上手编写代码。\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nAnaconda的安装路径和用户名最好使用英文"
   },
   {
     "objectID": "周一环境搭建.html#plotly",
@@ -95,7 +74,7 @@
     "href": "周二数据类型.html#数据类型",
     "title": "3  Python数据类型",
     "section": "数据类型",
-    "text": "数据类型\n在Python中，有多种内置的数据类型，每种类型都用于存储不同类型的数据。了解和正确使用这些数据类型对于编写有效的Python代码非常重要。\nPython有以下基本数据类型：\n\n整数（int）：如 1, 2, 3\n浮点数（float）：如 1.5, 3.14\n字符串（str）：如 “hello” 或者 ‘world !’\n布尔值（bool）：True, False\n\n\n\n\n\n\n\nNote\n\n\n\n使用 type() 函数来查看数据结构的类型\n\n\n\n数字类型\n数字类型用于表示数值数据，包括整数（int）和浮点数（float）。\n下面是一个例子，演示如何使用数字类型：\n\n# 整数类型（没有小数点的数字）\nnum1 = 10\nprint(num1) \n\ntype(num1)\n\n10\n\n\nint\n\n\n\n# 浮点数类型（带小数点的数字）\nnum2 = 3.14\nprint(num2)  \n\n3.14\n\n\n\n\n字符串类型\n字符串类型用于表示文本数据，使用引号（单引号或双引号）括起来。\n下面是一个例子，演示如何使用字符串类型：\n\nintro = \"你好，我叫 Jack !\"\nprint(intro)  \n\n你好，我叫 Jack !\n\n\n\n\n布尔类型\n布尔类型用于表示真（True）和假（False）的值。\n下面是一个例子，演示如何使用布尔类型：\n\nis_active = True\nprint(is_active)  \n\nTrue\n\n\n\nis_student = False\nprint(is_student) \n\nFalse"
+    "text": "数据类型\n在Python中，有多种内置的数据类型，每种类型都用于存储不同类型的数据。了解和正确使用这些数据类型对于编写有效的Python代码非常重要。\nPython有以下基本数据类型：\n\n整数（int）：如 1, 2, 3\n浮点数（float）：如 1.5, 3.14\n字符串（str）：如 “hello” 或者 ‘world !’\n布尔值（bool）：True, False\n\n\n\n\n\n\n\nNote\n\n\n\n使用 type() 函数来查看数据结构的类型\n\n\n\n数字类型\n数字类型用于表示数值数据，包括整数（int）和浮点数（float）。\n下面是一个例子，演示如何使用数字类型：\n\n# 整数类型（没有小数点的数字）\nnum1 = 10\nprint(num1) \n\n10\n\n\n\ntype(num1)\n\nint\n\n\n\n# 浮点数类型（带小数点的数字）\nnum2 = 3.14\nprint(num2)  \n\n3.14\n\n\n\n\n字符串类型\n字符串类型用于表示文本数据，使用引号（单引号或双引号）括起来。\n下面是一个例子，演示如何使用字符串类型：\n\nintro = \"你好，我叫 Jack !\"\nprint(intro)  \n\n你好，我叫 Jack !\n\n\n\n\n布尔类型\n布尔类型用于表示真（True）和假（False）的值。\n下面是一个例子，演示如何使用布尔类型：\n\nis_active = True\nprint(is_active)  \n\nTrue\n\n\n\nis_student = False\nprint(is_student) \n\nFalse"
   },
   {
     "objectID": "周二数据类型.html#运算符",
