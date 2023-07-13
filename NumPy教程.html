@@ -595,12 +595,12 @@ Note
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>row_vector <span class="op">=</span> a[np.newaxis, :]</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"添加新轴,从一维转为二维:</span><span class="ch">\n</span><span class="sc">{</span>row_vector<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"相当于在索引位置0处添加轴:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>expand_dims(a, axis<span class="op">=</span><span class="dv">0</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"相当于在维度索引位置0处添加轴:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>expand_dims(a, axis<span class="op">=</span><span class="dv">0</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>col_vector <span class="op">=</span> a[:, np.newaxis]</span>
 <span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"添加新轴,转换为列向量:</span><span class="ch">\n</span><span class="sc">{</span>col_vector<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"相当于在索引位置1处添加轴:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>expand_dims(a, axis<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"相当于在维度索引位置1处添加轴:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>expand_dims(a, axis<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>添加新轴,从一维转为二维:
 [[0 1 2 3 4 5]]
