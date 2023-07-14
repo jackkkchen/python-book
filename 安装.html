@@ -75,8 +75,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
-<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -363,23 +361,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="使用anaconda安装" class="level3">
 <h3 class="anchored" data-anchor-id="使用anaconda安装">使用Anaconda安装</h3>
 <p>对于没有经验的小白来说，直接上手用代码来安装各种包可能有点困难，而<a href="https://docs.continuum.io/free/anaconda/">Anaconda</a>作为一个发行平台，可以非常轻松的安装除了Pandas之外的各种Python包（IPython、NumPy、 Matplotlib等）</p>
-<p>详细的Anaconda安装步骤可以观看我的B站视频，或者<a href="https://docs.continuum.io/free/anaconda/install/">官方文档</a></p>
+<p>可以直接在jupyter代码块中安装</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>conda install pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<!--  -->
-<!-- <iframe src=" http://szmspython.oss-cn-hangzhou.aliyuncs.com/anaconda%E5%AE%89%E8%A3%85.mp4"
-  allowfullscreen=""
-  width="350" height="250"></iframe> -->
-<video width="600" height="450" controls="" poster="http://szmspython.oss-cn-hangzhou.aliyuncs.com/anaconda%E5%AE%89%E8%A3%85-%E5%B0%81%E9%9D%A2.jpg">
-<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/anaconda%E5%AE%89%E8%A3%85.mp4">
+<p><img src="./img/conda_install.png" class="img-fluid"></p>
+<!-- <video width="600" height="450" controls poster="http://szmspython.oss-cn-hangzhou.aliyuncs.com/anaconda%E5%AE%89%E8%A3%85-%E5%B0%81%E9%9D%A2.jpg">
+  <source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/anaconda%E5%AE%89%E8%A3%85.mp4">
 </video>
+｜ -->
 </section>
 <section id="使用pypi中的-pip-安装" class="level3">
 <h3 class="anchored" data-anchor-id="使用pypi中的-pip-安装">使用<a href="https://pypi.org/project/pandas/">PyPI</a>中的 pip 安装</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pip install pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><img src="./img/pip_install.png" class="img-fluid"></p>
+<p>使用<code>pip show pandas</code>检验是否安装成功</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -658,7 +656,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
