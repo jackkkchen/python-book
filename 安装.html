@@ -252,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./导入&amp;导出数据.html" class="sidebar-item-text sidebar-link">
+  <a href="./导入_导出数据.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">导入&amp;导出数据</span></span></a>
   </div>
 </li>
@@ -363,7 +363,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>对于没有经验的小白来说，直接上手用代码来安装各种包可能有点困难，而<a href="https://docs.continuum.io/free/anaconda/">Anaconda</a>作为一个发行平台，可以非常轻松的安装除了Pandas之外的各种Python包（IPython、NumPy、 Matplotlib等）</p>
 <p>可以直接在jupyter代码块中安装</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>conda install pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 在jupyter代码块中使用</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>conda install pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="./img/conda_install.png" class="img-fluid"></p>
 <!-- <video width="600" height="450" controls poster="http://szmspython.oss-cn-hangzhou.aliyuncs.com/anaconda%E5%AE%89%E8%A3%85-%E5%B0%81%E9%9D%A2.jpg">
@@ -374,7 +375,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="使用pypi中的-pip-安装" class="level3">
 <h3 class="anchored" data-anchor-id="使用pypi中的-pip-安装">使用<a href="https://pypi.org/project/pandas/">PyPI</a>中的 pip 安装</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pip install pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 在命令行（终端）中使用</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pip install pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="./img/pip_install.png" class="img-fluid"></p>
 <p>使用<code>pip show pandas</code>检验是否安装成功</p>
@@ -391,22 +393,49 @@ Tip
 <p>一般来说这是python自带的安装方式，但有时候你的虚拟环境没有或者服务器里的需要更新，可以<a href="https://pip.pypa.io/en/stable/installation/">参考文档</a></p>
 </div>
 </div>
+<section id="安装pip的步骤" class="level4">
+<h4 class="anchored" data-anchor-id="安装pip的步骤">安装pip的步骤</h4>
+<ol type="1">
+<li><p>首先，确保您已经安装了Python。Pip是Python的包管理工具，它通常随着Python的安装一起提供。</p></li>
+<li><p>打开终端（命令提示符）。</p></li>
+<li><p>输入以下命令来检查是否已安装pip：</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 命令行中输入</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pip <span class="op">--</span>version</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 在jupyter中输入 </span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>如果已经安装了pip，您将看到版本号信息。否则，将显示错误信息或没有任何输出。</p>
+<p>如果未安装pip，可以使用以下方法进行安装：</p>
+<p>对于Windows操作系统：</p>
+<ol type="1">
+<li><p>访问<a href="https://bootstrap.pypa.io/get-pip.py">该链接</a></p></li>
+<li><p>右键点击页面上的”Raw”按钮，选择”另存为”，将文件保存在您的计算机上。</p></li>
+<li><p>打开命令提示符，导航到保存<code>get-pip.py</code>文件的目录。</p></li>
+<li><p>运行以下命令来安装pip：</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>python get<span class="op">-</span>pip.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">MacOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Windows</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Linux&amp;MacOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<pre class="{python}"><code>$ python -m ensurepip --upgrade</code></pre>
+<p>打开终端，运行以下命令来安装pip</p>
+<pre class="{python}"><code>$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py</code></pre>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<pre class="{python}"><code>$ python -m ensurepip --upgrade</code></pre>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>使用Python自带的ensurepip模块来安装或升级pip。</p>
 <pre class="{python}"><code>C:&gt; py -m ensurepip --upgrade</code></pre>
 </div>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
