@@ -1721,7 +1721,7 @@ Warning
 <section id="导出csv文件" class="level3">
 <h3 class="anchored" data-anchor-id="导出csv文件">导出CSV文件</h3>
 <p>在 pandas 中，可以使用 <code>to_csv()</code>方法将数据导出为文本格式（如 CSV 文件）。<code>to_csv()</code> 方法接受一个参数，即导出的文件路径，可以是相对路径或绝对路径</p>
-<p>一般我们的导出对象是 <code>DataFrame</code> 和 <code>Series</code>，将这些数据结构中的数据保存到一个 CSV 文件中。就算是字典或者Numpy的数据结构，也可以转换为<code>DataFrame</code>后进行导出。</p>
+<p>一般我们的导出对象是 <code>DataFrame</code> 数据框和 <code>Series</code> 序列，将这些数据结构中的数据保存到一个 CSV 文件中。就算是字典或者Numpy的数据结构，也可以转换为<code>DataFrame</code>后进行导出。</p>
 <ol type="1">
 <li><p>创建名为data的字典，作为示例数据；</p></li>
 <li><p>调用pandas，将字典转换为DataFrame格式；</p></li>
@@ -1741,7 +1741,7 @@ Warning
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 导出为 CSV 文件，默认为当前路径</span></span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'output.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Series 导出：Series 是 pandas 中的另一个常见数据结构，它是一维标记数组。可以使用 to_csv()、to_excel() 等方法将 Series 导出为 CSV、Excel 等格式。</p>
+<p>Series 导出：Series 序列 是 pandas 中的另一个常见数据结构，它是一维标记数组。可以使用 to_csv()、to_excel() 等方法将 Series 导出为 CSV、Excel 等格式。</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建 Series 示例数据</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
