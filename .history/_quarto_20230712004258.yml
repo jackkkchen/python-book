@@ -1,0 +1,82 @@
+project:
+  type: book
+  output-dir: docs  
+
+number-depth: 0
+
+execute:
+  freeze: auto # re-render only when source changes
+# freeze: true  never re-render during project render
+
+book:
+  title: "Python新手文档"
+  # author: "明数科技"
+  # favicon: "./img/logo.png"
+  # cover-image: "./img/logo.png"
+  back-to-top-navigation: true
+  page-navigation: true
+  search: true
+  # reader-mode: true  
+
+  # sidebar:
+  #   style: "docked"
+  #   background: light
+  #   tools:
+  #     - text: Bilibili 
+  #       href: https://space.bilibili.com/22770928?spm_id_from=333.33.b_73656375726974794f75744c696e6b.1
+  #     - icon: github
+  #       url:  https://github.com/jackkkchen/python-book
+
+  # date: "5/25/2023"
+  repo-url: https://github.com/jackkkchen/python-book
+  repo-actions: [edit]
+  downloads: [pdf, epub]
+  # sharing: [twitter, facebook]
+
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - 周一环境搭建.ipynb
+    - part: "Python入门基础"
+      chapters: 
+        - 周一基础语法.ipynb
+        - 周二数据类型.ipynb
+        - 周三条件语句和循环语句.ipynb
+        - 周四函数.ipynb
+        - 周四模块.ipynb
+    - part: "NumPy快速入门"
+      chapters:
+        - NumPy教程.ipynb
+    - part: "Pandas快速入门"
+      chapters: 
+        - 安装.ipynb
+        - pandas处理什么样的数据.ipynb
+        - 导入&导出数据.ipynb
+        - 选取数据.ipynb
+        - 添加新列.ipynb
+        - Pandas计算重塑合并最终版本.ipynb
+        - time_data.qmd
+        - txt_data.qmd
+        - 更好的数据可视化.ipynb
+    - part: "实际案例"
+      chapters:
+        - for循环.ipynb
+        - python链接数据库.ipynb
+        - Dash案例.ipynb
+        
+
+highlight-style: pygments
+
+format:
+  html:
+    theme: cosmo
+    # cover-image: "./img/logo.png"
+    code-copy: true
+    code-link: true
+  # pdf: default
+  # ipynb:
+  #   number-sections: true
+
+
+
+
