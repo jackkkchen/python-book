@@ -338,11 +338,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#读取本地数据" id="toc-读取本地数据" class="nav-link active" data-scroll-target="#读取本地数据">读取本地数据</a></li>
-  <li><a href="#读取线上数据" id="toc-读取线上数据" class="nav-link" data-scroll-target="#读取线上数据">读取线上数据</a></li>
-  <li><a href="#read_csv参数介绍" id="toc-read_csv参数介绍" class="nav-link" data-scroll-target="#read_csv参数介绍"><code>read_csv()</code>参数介绍</a></li>
+  <li><a href="#导入数据" id="toc-导入数据" class="nav-link active" data-scroll-target="#导入数据">导入数据</a>
+  <ul class="collapse">
+  <li><a href="#导入本地数据" id="toc-导入本地数据" class="nav-link" data-scroll-target="#导入本地数据">导入本地数据</a></li>
+  <li><a href="#导入线上数据" id="toc-导入线上数据" class="nav-link" data-scroll-target="#导入线上数据">导入线上数据</a></li>
+  <li><a href="#参数介绍" id="toc-参数介绍" class="nav-link" data-scroll-target="#参数介绍">参数介绍</a></li>
   <li><a href="#常见错误" id="toc-常见错误" class="nav-link" data-scroll-target="#常见错误">常见错误</a></li>
-  <li><a href="#pandas连接mysql数据库导入导出数据拓展" id="toc-pandas连接mysql数据库导入导出数据拓展" class="nav-link" data-scroll-target="#pandas连接mysql数据库导入导出数据拓展">Pandas连接MySQL数据库导入导出数据（拓展）</a></li>
+  <li><a href="#连接mysql数据库导入导出数据拓展" id="toc-连接mysql数据库导入导出数据拓展" class="nav-link" data-scroll-target="#连接mysql数据库导入导出数据拓展">连接MySQL数据库导入导出数据（拓展）</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/导入_导出数据.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -810,10 +813,12 @@ SQL
 
 </table>
 <!-- ![](./img/导入导出.png) -->
-<section id="读取本地数据" class="level3">
-<h3 class="anchored" data-anchor-id="读取本地数据">读取本地数据</h3>
-<section id="读取csv文件官方文档参数介绍" class="level4">
-<h4 class="anchored" data-anchor-id="读取csv文件官方文档参数介绍">读取CSV文件,<a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#csv-text-files">官方文档参数介绍</a></h4>
+<section id="导入数据" class="level2">
+<h2 class="anchored" data-anchor-id="导入数据">导入数据</h2>
+<section id="导入本地数据" class="level3">
+<h3 class="anchored" data-anchor-id="导入本地数据">导入本地数据</h3>
+<section id="读取csv文件-官方文档参数介绍" class="level4">
+<h4 class="anchored" data-anchor-id="读取csv文件-官方文档参数介绍">读取CSV文件, <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#csv-text-files">官方文档参数介绍</a></h4>
 <ol type="1">
 <li>第一步先点击data.csv下载文件</li>
 </ol>
@@ -824,7 +829,7 @@ SQL
 <li><p><code>df</code> 执行变量</p></li>
 </ol>
 <p>Tips：如果已经来到了文件所在路径，则可以直接使用<code>pd.read_csv('data.csv')</code>读取csv文件</p>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 导入pandas包</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -833,7 +838,7 @@ SQL
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 调用变量df</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
 
@@ -951,8 +956,8 @@ Tip
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(pd.read_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="读取excel文件官方文档参数介绍" class="level4">
-<h4 class="anchored" data-anchor-id="读取excel文件官方文档参数介绍">读取Excel文件,<a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-excel-reader">官方文档参数介绍</a></h4>
+<section id="读取excel文件-官方文档参数介绍" class="level4">
+<h4 class="anchored" data-anchor-id="读取excel文件-官方文档参数介绍">读取Excel文件, <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-excel-reader">官方文档参数介绍</a></h4>
 <ol type="1">
 <li>步骤同上，第一步先点击<code>Financial_Sample.xlsx</code>下载文件</li>
 </ol>
@@ -1115,10 +1120,9 @@ Warning
 </div>
 </section>
 </section>
-<section id="读取线上数据" class="level3">
-<h3 class="anchored" data-anchor-id="读取线上数据">读取线上数据</h3>
-<p>线上<a href="https://www.w3schools.com/python/pandas/data.csv.txt">数据地址</a></p>
-<p>https://www.w3schools.com/python/pandas/data.csv.txt</p>
+<section id="导入线上数据" class="level3">
+<h3 class="anchored" data-anchor-id="导入线上数据">导入线上数据</h3>
+<p>线上<a href="https://www.w3schools.com/python/pandas/data.csv.txt">数据地址</a> https://www.w3schools.com/python/pandas/data.csv.txt</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://www.w3schools.com/python/pandas/data.csv.txt'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1180,12 +1184,12 @@ Warning
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取案例数据</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/titanic.csv'</span>) </span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -1290,8 +1294,8 @@ Warning
 </div>
 </div>
 </section>
-<section id="read_csv参数介绍" class="level3">
-<h3 class="anchored" data-anchor-id="read_csv参数介绍"><code>read_csv()</code>参数介绍</h3>
+<section id="参数介绍" class="level3">
+<h3 class="anchored" data-anchor-id="参数介绍">参数介绍</h3>
 <p>以下参数也适用于大部分pandas导入方式，也就是<code>read_</code>函数。</p>
 <ul>
 <li>filepath_or_buffer：要读取的文件路径或文件对象。</li>
@@ -1305,13 +1309,13 @@ Warning
 <li>na_values：指定用于表示缺失值的字符串列表。</li>
 <li>encoding：指定文件的编码方式。</li>
 </ul>
-<div class="cell" data-execution_count="30">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 默认情况下</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.read_csv(<span class="st">'./example_data/data.csv'</span>)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>df1.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="30">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -1368,12 +1372,12 @@ Warning
 </div>
 </div>
 <p><code>header</code>：指定作为列名的行号，默认为’infer’，表示使用文件中的第一行作为列名，可以设为None来表示没有列名。</p>
-<div class="cell" data-execution_count="35">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 指定第二行为列名</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.read_csv(<span class="st">'./example_data/data.csv'</span>, header <span class="op">=</span> <span class="dv">1</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>df1.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="35">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -1429,11 +1433,11 @@ Warning
 </div>
 </div>
 </div>
-<p><code>index_col</code>：指定作为索引列的列号或列名。有时候导入后会自动添加一列索引，可使用<code>index_col=None</code>去除索引。</p>
-<div class="cell" data-execution_count="43">
+<p><code>index_col</code>：指定作为索引列的列号或列名。比如<code>index_col="Duration"</code>，或者第一列<code>index_col=0</code></p>
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.read_csv(<span class="st">'./example_data/data.csv'</span>, index_col<span class="op">=</span><span class="st">"Duration"</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df2.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="43">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
 
@@ -1490,10 +1494,10 @@ Warning
 </div>
 </div>
 <p><code>encoding</code>：指定文件的编码方式。使用<code>utf-8</code>编码是因为它是一种广泛支持的字符编码，能够处理几乎所有的文本数据。出现编码问题用这个大概率就对了～</p>
-<div class="cell" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> pd.read_csv(<span class="st">'./example_data/data.csv'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> pd.read_csv(<span class="st">'./example_data/data.csv'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>,index_col<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df3.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="44">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
 
@@ -1501,44 +1505,44 @@ Warning
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Duration</th>
 <th data-quarto-table-cell-role="th">Pulse</th>
 <th data-quarto-table-cell-role="th">Maxpulse</th>
 <th data-quarto-table-cell-role="th">Calories</th>
 </tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Duration</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>60</td>
+<td data-quarto-table-cell-role="th">60</td>
 <td>110</td>
 <td>130</td>
 <td>409.1</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>60</td>
+<td data-quarto-table-cell-role="th">60</td>
 <td>117</td>
 <td>145</td>
 <td>479.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>60</td>
+<td data-quarto-table-cell-role="th">60</td>
 <td>103</td>
 <td>135</td>
 <td>340.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>45</td>
+<td data-quarto-table-cell-role="th">45</td>
 <td>109</td>
 <td>175</td>
 <td>282.4</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>45</td>
+<td data-quarto-table-cell-role="th">45</td>
 <td>117</td>
 <td>148</td>
 <td>406.0</td>
@@ -1566,8 +1570,8 @@ Warning
   <source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/Pandas%20IOtools.mp4">
 </video> -->
 </section>
-<section id="pandas连接mysql数据库导入导出数据拓展" class="level3">
-<h3 class="anchored" data-anchor-id="pandas连接mysql数据库导入导出数据拓展">Pandas连接MySQL数据库导入导出数据（拓展）</h3>
+<section id="连接mysql数据库导入导出数据拓展" class="level3">
+<h3 class="anchored" data-anchor-id="连接mysql数据库导入导出数据拓展">连接MySQL数据库导入导出数据（拓展）</h3>
 <section id="步骤1安装必要的库" class="level4">
 <h4 class="anchored" data-anchor-id="步骤1安装必要的库">步骤1：安装必要的库</h4>
 <p>在开始之前，确保已经安装了以下库：</p>
@@ -1653,6 +1657,7 @@ Tip
 </div>
 
 
+</section>
 </section>
 </section>
 
