@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python新手文档 - 12&nbsp; 增删排序(DataFrame)</title>
+<title>Python新手文档 - 12&nbsp; 数据的增加、删除、修改</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./安装.html">Pandas快速入门</a></li><li class="breadcrumb-item"><a href="./添加新列.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">增删排序(DataFrame)</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./安装.html">Pandas快速入门</a></li><li class="breadcrumb-item"><a href="./添加新列.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">数据的增加、删除、修改</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -197,8 +197,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./周三条件语句和循环语句 .html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句&amp;循环语句</span></span></a>
+  <a href="./周三条件语句和循环语句.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句的学习</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -227,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./NumPy教程.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">NumPy基础入门</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">NumPy简介与基本操作</span></span></a>
   </div>
 </li>
       </ul>
@@ -255,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./导入&amp;导出数据.html" class="sidebar-item-text sidebar-link">
+  <a href="./导入_导出数据.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">导入&amp;导出数据</span></span></a>
   </div>
 </li>
@@ -268,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./添加新列.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">增删排序(DataFrame)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">数据的增加、删除、修改</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -279,20 +279,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./time_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">使用Pandas处理时间序列数据</span></span></a>
+  <a href="./时间序列数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Pandas处理时间序列数据</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./txt_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">使用Pandas处理文本数据</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./更好的数据可视化.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">更好的数据可视化(Plotly)</span></span></a>
+  <a href="./文本数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Pandas处理文本数据</span></span></a>
   </div>
 </li>
       </ul>
@@ -309,19 +303,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./for循环.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">for循环自动获取股票数据</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">for循环自动获取股票数据</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./python链接数据库.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Python连接Postgresql数据库</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Python连接Postgresql数据库</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Dash案例.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Dash创建股票APP</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Dash创建股票APP</span></span></a>
   </div>
 </li>
       </ul>
@@ -338,26 +332,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#添加新列" id="toc-添加新列" class="nav-link active" data-scroll-target="#添加新列">添加新列</a>
   <ul class="collapse">
-  <li><a href="#方法一-df列名-值" id="toc-方法一-df列名-值" class="nav-link" data-scroll-target="#方法一-df列名-值">方法一： df[‘列名’] = 值</a></li>
-  <li><a href="#方法二使用assign" id="toc-方法二使用assign" class="nav-link" data-scroll-target="#方法二使用assign">方法二：使用assign()</a></li>
+  <li><a href="#直接对数据框df添加列" id="toc-直接对数据框df添加列" class="nav-link" data-scroll-target="#直接对数据框df添加列">直接对数据框df添加列</a></li>
+  <li><a href="#使用assign添加列" id="toc-使用assign添加列" class="nav-link" data-scroll-target="#使用assign添加列">使用assign()添加列</a></li>
+  <li><a href="#基于已有数据添加列" id="toc-基于已有数据添加列" class="nav-link" data-scroll-target="#基于已有数据添加列">基于已有数据添加列</a></li>
   </ul></li>
   <li><a href="#添加新行" id="toc-添加新行" class="nav-link" data-scroll-target="#添加新行">添加新行</a>
   <ul class="collapse">
-  <li><a href="#方法一-使用append方法" id="toc-方法一-使用append方法" class="nav-link" data-scroll-target="#方法一-使用append方法">方法一： 使用append方法</a></li>
-  <li><a href="#方法二使用concat" id="toc-方法二使用concat" class="nav-link" data-scroll-target="#方法二使用concat">方法二：使用concat()</a></li>
+  <li><a href="#使用append方法" id="toc-使用append方法" class="nav-link" data-scroll-target="#使用append方法">使用append方法</a></li>
+  <li><a href="#使用concat合并数据框" id="toc-使用concat合并数据框" class="nav-link" data-scroll-target="#使用concat合并数据框">使用concat()合并数据框</a></li>
   </ul></li>
   <li><a href="#删除行列" id="toc-删除行列" class="nav-link" data-scroll-target="#删除行列">删除行/列</a>
   <ul class="collapse">
   <li><a href="#使用drop方法删除列" id="toc-使用drop方法删除列" class="nav-link" data-scroll-target="#使用drop方法删除列">使用drop方法删除列</a></li>
   <li><a href="#使用drop方法删除行" id="toc-使用drop方法删除行" class="nav-link" data-scroll-target="#使用drop方法删除行">使用drop方法删除行</a></li>
   </ul></li>
+  <li><a href="#修改数据值" id="toc-修改数据值" class="nav-link" data-scroll-target="#修改数据值">修改数据值</a>
+  <ul class="collapse">
+  <li><a href="#at方法" id="toc-at方法" class="nav-link" data-scroll-target="#at方法">at方法</a></li>
+  <li><a href="#根据条件过滤修改数据" id="toc-根据条件过滤修改数据" class="nav-link" data-scroll-target="#根据条件过滤修改数据">根据条件过滤修改数据</a></li>
+  </ul></li>
   <li><a href="#重命名列" id="toc-重命名列" class="nav-link" data-scroll-target="#重命名列">重命名列</a>
   <ul class="collapse">
-  <li><a href="#使用rename方法" id="toc-使用rename方法" class="nav-link" data-scroll-target="#使用rename方法">使用rename方法：</a></li>
+  <li><a href="#使用rename" id="toc-使用rename" class="nav-link" data-scroll-target="#使用rename">使用rename</a></li>
   </ul></li>
   <li><a href="#按值排序" id="toc-按值排序" class="nav-link" data-scroll-target="#按值排序">按值排序</a>
   <ul class="collapse">
-  <li><a href="#使用sort_values方法" id="toc-使用sort_values方法" class="nav-link" data-scroll-target="#使用sort_values方法">使用sort_values方法：</a></li>
+  <li><a href="#使用sort_values方法" id="toc-使用sort_values方法" class="nav-link" data-scroll-target="#使用sort_values方法">使用sort_values方法</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/添加新列.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -367,7 +367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">增删排序(DataFrame)</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">数据的增加、删除、修改</span></h1>
 </div>
 
 
@@ -382,19 +382,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>上一节介绍了如何对数据进行筛选，这一节将介绍如何对数据框实现添加、删除、修改等操作来帮助我们管理数据。</p>
+<p>以下列数据框为例。</p>
 <div class="cell" data-execution_count="1">
-<details>
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建示例数据</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'姓名'</span>: [<span class="st">'张三'</span>, <span class="st">'李四'</span>, <span class="st">'王五'</span>, <span class="st">'赵六'</span>],</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'年龄'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">28</span>],</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'性别'</span>: [<span class="st">'M'</span>, <span class="st">'F'</span>, <span class="st">'M'</span>, <span class="st">'F'</span>]}</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建示例数据:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 姓名、年龄、性别为列名</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'姓名'</span>: [<span class="st">'张三'</span>, <span class="st">'李四'</span>, <span class="st">'王五'</span>, <span class="st">'赵六'</span>],</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'年龄'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">28</span>],</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'性别'</span>: [<span class="st">'M'</span>, <span class="st">'F'</span>, <span class="st">'M'</span>, <span class="st">'F'</span>]}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
@@ -439,29 +439,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>查看行数<code>df.shape</code></p>
-<div class="cell" data-execution_count="2">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>(4, 3)</code></pre>
-</div>
-</div>
 <section id="添加新列" class="level2">
 <h2 class="anchored" data-anchor-id="添加新列">添加新列</h2>
-<p>可以看到目前的案例中是四行三列，如果我想添加新的一列“薪资”，有两种方法：</p>
-<section id="方法一-df列名-值" class="level3">
-<h3 class="anchored" data-anchor-id="方法一-df列名-值">方法一： df[‘列名’] = 值</h3>
-<div class="cell" data-execution_count="3">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'工资'</span>] <span class="op">=</span> [<span class="dv">5000</span>, <span class="dv">6000</span>, <span class="st">''</span>, <span class="dv">7000</span>]</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<p>目前的案例数据是四行三列，添加新的一列，有两种方法：</p>
+<section id="直接对数据框df添加列" class="level3">
+<h3 class="anchored" data-anchor-id="直接对数据框df添加列">直接对数据框df添加列</h3>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'薪资'</span>] <span class="op">=</span> [<span class="dv">5000</span>, <span class="dv">6000</span>, <span class="dv">9000</span>, <span class="dv">7000</span>]  <span class="co"># 有缺失值用一对不包含任何内容的引号代替</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -472,7 +458,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <th data-quarto-table-cell-role="th">姓名</th>
 <th data-quarto-table-cell-role="th">年龄</th>
 <th data-quarto-table-cell-role="th">性别</th>
-<th data-quarto-table-cell-role="th">工资</th>
+<th data-quarto-table-cell-role="th">薪资</th>
 </tr>
 </thead>
 <tbody>
@@ -495,7 +481,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>王五</td>
 <td>35</td>
 <td>M</td>
-<td></td>
+<td>9000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -520,19 +506,77 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>[值]</code>必须对应行数，这里有四个人就必须有四个值，没有则可以为空白<code>' '</code> 或者 <code>'NA'</code>；[]里面的顺序也会保持一样</p>
+<p><code>[值]</code>必须对应行数，这里有四个人就必须有四个值，没有则可以为空白<code>''</code> 或者 <code>'NA'</code>；[]里面的值的顺序也需要和原数据框保持一样</p>
 </div>
 </div>
 </section>
-<section id="方法二使用assign" class="level3">
-<h3 class="anchored" data-anchor-id="方法二使用assign">方法二：使用assign()</h3>
+<section id="使用assign添加列" class="level3">
+<h3 class="anchored" data-anchor-id="使用assign添加列">使用assign()添加列</h3>
+<p>assign()不会直接改变原数据框df，需要用新数据框覆盖原数据框的数据。</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.assign(工龄<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>])</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">姓名</th>
+<th data-quarto-table-cell-role="th">年龄</th>
+<th data-quarto-table-cell-role="th">性别</th>
+<th data-quarto-table-cell-role="th">薪资</th>
+<th data-quarto-table-cell-role="th">工龄</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>张三</td>
+<td>25</td>
+<td>M</td>
+<td>5000</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>李四</td>
+<td>30</td>
+<td>F</td>
+<td>6000</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>王五</td>
+<td>35</td>
+<td>M</td>
+<td>9000</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>赵六</td>
+<td>28</td>
+<td>F</td>
+<td>7000</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="基于已有数据添加列" class="level3">
+<h3 class="anchored" data-anchor-id="基于已有数据添加列">基于已有数据添加列</h3>
 <div class="cell" data-execution_count="4">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.assign(工资<span class="op">=</span>[<span class="dv">5000</span>, <span class="dv">6000</span>, <span class="dv">4500</span>, <span class="dv">7000</span>])</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 一个例子，假设薪资不变</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"年薪"</span>] <span class="op">=</span> df[<span class="st">"薪资"</span>]<span class="op">*</span><span class="dv">12</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
@@ -544,7 +588,9 @@ Note
 <th data-quarto-table-cell-role="th">姓名</th>
 <th data-quarto-table-cell-role="th">年龄</th>
 <th data-quarto-table-cell-role="th">性别</th>
-<th data-quarto-table-cell-role="th">工资</th>
+<th data-quarto-table-cell-role="th">薪资</th>
+<th data-quarto-table-cell-role="th">工龄</th>
+<th data-quarto-table-cell-role="th">年薪</th>
 </tr>
 </thead>
 <tbody>
@@ -554,6 +600,8 @@ Note
 <td>25</td>
 <td>M</td>
 <td>5000</td>
+<td>1</td>
+<td>60000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -561,13 +609,17 @@ Note
 <td>30</td>
 <td>F</td>
 <td>6000</td>
+<td>1</td>
+<td>72000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>王五</td>
 <td>35</td>
 <td>M</td>
-<td>4500</td>
+<td>9000</td>
+<td>3</td>
+<td>108000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -575,6 +627,8 @@ Note
 <td>28</td>
 <td>F</td>
 <td>7000</td>
+<td>2</td>
+<td>84000</td>
 </tr>
 </tbody>
 </table>
@@ -582,38 +636,32 @@ Note
 </div>
 </div>
 </div>
-<p>我们可以在原有表格中添加新列，也可以从其他数据源（如文件、数据库等）中导入数据，并将其作为新列添加到DataFrame中。</p>
+<p>除了手动添加新列，也可以从其他数据源（如文件、数据库等）中导入数据，并将其作为新列添加到DataFrame中。</p>
 </section>
 </section>
 <section id="添加新行" class="level2">
 <h2 class="anchored" data-anchor-id="添加新行">添加新行</h2>
-<section id="方法一-使用append方法" class="level3">
-<h3 class="anchored" data-anchor-id="方法一-使用append方法">方法一： 使用append方法</h3>
+<section id="使用append方法" class="level3">
+<h3 class="anchored" data-anchor-id="使用append方法">使用append方法</h3>
 <p><code>df = df.append(new_row, ignore_index=True)</code></p>
 <p>其中，new_row是一个包含新行数据的字典或Series对象。</p>
 <div class="cell" data-execution_count="5">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 重新选取数据</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'姓名'</span>: [<span class="st">'张三'</span>, <span class="st">'李四'</span>, <span class="st">'王五'</span>, <span class="st">'赵六'</span>],</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'年龄'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">28</span>],</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'性别'</span>: [<span class="st">'M'</span>, <span class="st">'F'</span>, <span class="st">'M'</span>, <span class="st">'F'</span>]}</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 重新选取数据</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'姓名'</span>: [<span class="st">'张三'</span>, <span class="st">'李四'</span>, <span class="st">'王五'</span>, <span class="st">'赵六'</span>],</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'年龄'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">28</span>],</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'性别'</span>: [<span class="st">'M'</span>, <span class="st">'F'</span>, <span class="st">'M'</span>, <span class="st">'F'</span>]}</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="6">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#`ignore_index=True`是确保新行的索引与原始DataFrame的索引保持一致。</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>new_row <span class="op">=</span> {<span class="st">'姓名'</span>: <span class="st">'熊大'</span>, <span class="st">'年龄'</span>: <span class="dv">35</span>, <span class="st">'性别'</span>: <span class="st">'M'</span>}</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.append(new_row, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#`ignore_index=True`是确保新行的索引在原始DataFrame的索引基础上继续增加，而不是使用原来的索引。</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>new_row <span class="op">=</span> {<span class="st">'姓名'</span>: <span class="st">'熊大'</span>, <span class="st">'年龄'</span>: <span class="dv">35</span>, <span class="st">'性别'</span>: <span class="st">'M'</span>}</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.append(new_row, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/fx/3rtntmd93wg4hsmfkcgfpq840000gn/T/ipykernel_42888/3717194637.py:5: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+<pre><code>C:\Users\nan\AppData\Local\Temp\ipykernel_15056\518159157.py:5: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
   df = df.append(new_row, ignore_index=True)</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -667,19 +715,16 @@ Note
 </div>
 </div>
 </section>
-<section id="方法二使用concat" class="level3">
-<h3 class="anchored" data-anchor-id="方法二使用concat">方法二：使用concat()</h3>
-<p>先创建一个新的DataFrame，然后将其与原始DataFrame进行合并</p>
+<section id="使用concat合并数据框" class="level3">
+<h3 class="anchored" data-anchor-id="使用concat合并数据框">使用concat()合并数据框</h3>
+<p>将新行转换为数据框，然后将其与原数据框df进行合并。</p>
 <div class="cell" data-execution_count="7">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>new_row <span class="op">=</span> {<span class="st">'姓名'</span>: <span class="st">'熊二'</span>, <span class="st">'年龄'</span>: <span class="dv">30</span>, <span class="st">'性别'</span>: <span class="st">'M'</span>}</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>new_df <span class="op">=</span> pd.DataFrame([new_row])</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat([df, new_df], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>new_row <span class="op">=</span> {<span class="st">'姓名'</span>: <span class="st">'熊二'</span>, <span class="st">'年龄'</span>: <span class="dv">30</span>, <span class="st">'性别'</span>: <span class="st">'M'</span>}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>new_df <span class="op">=</span> pd.DataFrame([new_row])</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># df = pd.concat([df, new_df]) # 不设置ignore_index的话，新行索引沿用旧索引 0</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.concat([df, new_df], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
@@ -743,13 +788,10 @@ Note
 <section id="使用drop方法删除列" class="level3">
 <h3 class="anchored" data-anchor-id="使用drop方法删除列">使用drop方法删除列</h3>
 <p><code>df = df.drop('column_name', axis=1)</code></p>
-<p>需要提供要删除的列名，然后指定axis=1表示按列进行操作。删除列后，DataFrame会自动调整列的顺序。</p>
+<p>需要提供要删除的列名，然后指定axis=1表示按列轴进行操作。删除列后，DataFrame会自动调整列的顺序。</p>
 <div class="cell" data-execution_count="8">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="st">'性别'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="st">'性别'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
@@ -805,12 +847,9 @@ Note
 <p><code>df = df.drop(row_index)</code></p>
 <p>使用drop方法根据行的<code>索引</code>来删除特定的行</p>
 <div class="cell" data-execution_count="9">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 删除第五行数据</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="dv">5</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 删除第六行数据</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="dv">5</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
@@ -857,18 +896,14 @@ Note
 </div>
 </section>
 </section>
-<section id="重命名列" class="level2">
-<h2 class="anchored" data-anchor-id="重命名列">重命名列</h2>
-<section id="使用rename方法" class="level3">
-<h3 class="anchored" data-anchor-id="使用rename方法">使用rename方法：</h3>
-<p><code>df = df.rename(columns={'old_column_name': 'new_column_name'})</code></p>
-<p>其中，old_column_name是要重命名的旧列名，new_column_name是新的列名。</p>
+<section id="修改数据值" class="level2">
+<h2 class="anchored" data-anchor-id="修改数据值">修改数据值</h2>
+<section id="at方法" class="level3">
+<h3 class="anchored" data-anchor-id="at方法">at方法</h3>
 <div class="cell" data-execution_count="10">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">'姓名'</span>: <span class="st">'乘客id'</span>, <span class="st">'年龄'</span>:<span class="st">'乘客年龄'</span>})</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 指定行列</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df.at[<span class="dv">4</span>, <span class="st">'年龄'</span>] <span class="op">=</span> <span class="dv">32</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 
@@ -877,8 +912,8 @@ Note
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">乘客id</th>
-<th data-quarto-table-cell-role="th">乘客年龄</th>
+<th data-quarto-table-cell-role="th">姓名</th>
+<th data-quarto-table-cell-role="th">年龄</th>
 </tr>
 </thead>
 <tbody>
@@ -905,7 +940,57 @@ Note
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>熊大</td>
+<td>32</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="根据条件过滤修改数据" class="level3">
+<h3 class="anchored" data-anchor-id="根据条件过滤修改数据">根据条件过滤修改数据</h3>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">'姓名'</span>] <span class="op">==</span> <span class="st">'熊大'</span>, <span class="st">'年龄'</span>] <span class="op">=</span> <span class="dv">31</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">姓名</th>
+<th data-quarto-table-cell-role="th">年龄</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>张三</td>
+<td>25</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>李四</td>
+<td>30</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>王五</td>
 <td>35</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>赵六</td>
+<td>28</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>熊大</td>
+<td>31</td>
 </tr>
 </tbody>
 </table>
@@ -915,20 +1000,17 @@ Note
 </div>
 </section>
 </section>
-<section id="按值排序" class="level2">
-<h2 class="anchored" data-anchor-id="按值排序">按值排序</h2>
-<section id="使用sort_values方法" class="level3">
-<h3 class="anchored" data-anchor-id="使用sort_values方法">使用sort_values方法：</h3>
-<p><code>df = df.sort_values(by='column_name', ascending=True)</code></p>
-<p>其中，column_name是你想要按其值进行排序的列名。ascending=True表示按升序排序，若要按降序排序，将ascending设置为False。</p>
-<p>通过sort_values方法，你可以根据特定列的值对DataFrame进行排序。你可以选择按单个列的值排序，也可以按多个列的值排序，只需在by参数中提供相应的列名列表即可。</p>
-<div class="cell" data-execution_count="11">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.sort_values(by<span class="op">=</span><span class="st">'乘客年龄'</span>, ascending<span class="op">=</span><span class="va">True</span>)</span>
+<section id="重命名列" class="level2">
+<h2 class="anchored" data-anchor-id="重命名列">重命名列</h2>
+<section id="使用rename" class="level3">
+<h3 class="anchored" data-anchor-id="使用rename">使用rename</h3>
+<p><code>df = df.rename(columns={'old_column_name':'new_column_name'})</code></p>
+<p>其中，old_column_name是旧列名，new_column_name是新的列名。</p>
+<p><code>df.rename(index={'old_label':'new_label'})</code>也能用来修改行标签，但通常情况下我们不会对行标签进行修改。</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">'姓名'</span>: <span class="st">'职员姓名'</span>, <span class="st">'年龄'</span>:<span class="st">'职员年龄'</span>})</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -936,8 +1018,77 @@ Note
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">乘客id</th>
-<th data-quarto-table-cell-role="th">乘客年龄</th>
+<th data-quarto-table-cell-role="th">职员姓名</th>
+<th data-quarto-table-cell-role="th">职员年龄</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>张三</td>
+<td>25</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>李四</td>
+<td>30</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>王五</td>
+<td>35</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>赵六</td>
+<td>28</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>熊大</td>
+<td>31</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>drop()</code>和<code>rename()</code>也可以通过设置<code>inplace=True</code>直接修改原数据框。</p>
+</div>
+</div>
+</section>
+</section>
+<section id="按值排序" class="level2">
+<h2 class="anchored" data-anchor-id="按值排序">按值排序</h2>
+<section id="使用sort_values方法" class="level3">
+<h3 class="anchored" data-anchor-id="使用sort_values方法">使用sort_values方法</h3>
+<p><code>df = df.sort_values(by='column_name', ascending=True)</code></p>
+<p>其中，column_name是你想要按其值进行排序的列名。ascending=True表示按升序——从小到大排列，若要按降序——从大到小排列，将ascending设置为False即可。</p>
+<p>通过sort_values方法可以根据特定列的值对DataFrame进行排序。可以选择按单个列或多个列的值排序，只需在by参数中提供相应的列名列表即可。</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.sort_values(by<span class="op">=</span><span class="st">'职员年龄'</span>, ascending<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">职员姓名</th>
+<th data-quarto-table-cell-role="th">职员年龄</th>
 </tr>
 </thead>
 <tbody>
@@ -957,14 +1108,69 @@ Note
 <td>30</td>
 </tr>
 <tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>熊大</td>
+<td>31</td>
+</tr>
+<tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>王五</td>
 <td>35</td>
 </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'薪资'</span>] <span class="op">=</span> [<span class="dv">9000</span>, <span class="dv">8000</span>, <span class="dv">9000</span>, <span class="dv">11000</span>, <span class="dv">10000</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 先按薪资降序排列，薪资相同则按年龄升序排列</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.sort_values(by<span class="op">=</span>[<span class="st">'薪资'</span>, <span class="st">'职员年龄'</span>], ascending<span class="op">=</span>[<span class="va">False</span>, <span class="va">True</span>]) <span class="co"># 如果排序方式相同，只需要一个布尔值就好 </span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">职员姓名</th>
+<th data-quarto-table-cell-role="th">职员年龄</th>
+<th data-quarto-table-cell-role="th">薪资</th>
+</tr>
+</thead>
+<tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>熊大</td>
+<td>31</td>
+<td>11000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2</td>
+<td>王五</td>
 <td>35</td>
+<td>10000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>张三</td>
+<td>25</td>
+<td>9000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>李四</td>
+<td>30</td>
+<td>9000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>赵六</td>
+<td>28</td>
+<td>8000</td>
 </tr>
 </tbody>
 </table>
