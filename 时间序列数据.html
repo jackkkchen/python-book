@@ -402,16 +402,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 从时间戳创建</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>pd.Timestamp(<span class="dv">1612060800</span>)    <span class="co"># 时间戳1612060800代表从UNIX纪元开始经过的秒数，具体日期和时间取决于该时间戳对应的具体时区和时刻。</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="属性和方法" class="level4">
-<h4 class="anchored" data-anchor-id="属性和方法">(2) 属性和方法</h4>
+<br>
+<details>
+<summary>
+<mark><font size="4"><b>拓展：</b>属性与方法</font></mark>
+</summary>
+<ul>
+<li>
+<b>属性（Attributes）</b>是对象的特征或状态，用于描述对象的数据。在Python中，对象的属性可以是对象的实例变量（instance variable），也可以是类变量（class variable），用于存储对象的数据。
+</li>
+<li>
+<b>方法（Methods）</b>是对象可以执行的操作或行为，用于描述对象的功能和行为。在Python中，方法是定义在类中的函数，通过访问对象的方法，我们可以执行特定的操作或实现对象的功能。
+</li>
+</ul>
+</details>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <blockquote class="blockquote">
-<p>属性（Attributes）是对象的特征或状态，用于描述对象的数据。在Python中，对象的属性可以是对象的实例变量（instance variable），也可以是类变量（class variable），用于存储对象的数据。</p>
-<p>方法（Methods）是对象可以执行的操作或行为，用于描述对象的功能和行为。在Python中，方法是定义在类中的函数，通过访问对象的方法，我们可以执行特定的操作或实现对象的功能。</p>
+<p>注意，这部分是可选的，大家可以根据自己的需要阅读。</p>
 </blockquote>
-<p><code>Timestamp</code>对象具有多个属性和方法，用于获取和操作日期时间信息。通过使用属性和方法可以对时间和日期进行提取或格式化等操作。对<code>Timestamp</code>对象常用的属性和方法有：</p>
-<section id="属性" class="level5">
-<h5 class="anchored" data-anchor-id="属性">属性：</h5>
+<p><code>Timestamp</code>对象具有多个属性和方法，用于获取和操作日期时间信息。通过使用属性和方法可以对时间和日期进行提取或格式化等操作。对<code>Timestamp</code>对象常用的属性和方法有： ##### 属性：</p>
 <ul>
 <li><code>year</code>、<code>month</code>、<code>day</code>：返回<code>Timestamp</code>对象的年份、月份和日期。</li>
 <li><code>hour</code>、<code>minute</code>、<code>second</code>：返回<code>Timestamp</code>对象的小时、分钟和秒。</li>
@@ -421,7 +439,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>week</code>：获取<code>Timestamp</code>对象所在年份的周数。</li>
 <li><code>dayofyear</code>：获取<code>Timestamp</code>对象在所在年份中的第几天。</li>
 </ul>
-</section>
 <section id="方法" class="level5">
 <h5 class="anchored" data-anchor-id="方法">方法：</h5>
 <ul>
@@ -430,12 +447,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>strftime(format)</code>：将<code>Timestamp</code>对象格式化为指定的字符串格式。<code>format</code>参数是一个字符串，用于指定输出的日期时间格式，如”%Y-%m-%d %H:%M:%S”。</li>
 </ul>
 </section>
+</div>
+</div>
 </section>
 <section id="比较和运算" class="level4">
-<h4 class="anchored" data-anchor-id="比较和运算">(3) 比较和运算</h4>
+<h4 class="anchored" data-anchor-id="比较和运算">(2) 比较和运算</h4>
 <p><code>Timestamp</code>对象在Pandas中支持比较运算符和算术运算符，可以用于进行日期和时间的比较和计算。</p>
 <section id="比较运算符" class="level5">
-<h5 class="anchored" data-anchor-id="比较运算符">比较运算符</h5>
+<h5 class="anchored" data-anchor-id="比较运算符"><strong>比较运算符</strong></h5>
 <ul>
 <li>相等性比较：使用<code>==</code>运算符检查两个<code>Timestamp</code>对象是否相等。</li>
 <li>不等性比较：使用<code>!=</code>运算符检查两个<code>Timestamp</code>对象是否不相等。</li>
@@ -443,7 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="算术运算符" class="level5">
-<h5 class="anchored" data-anchor-id="算术运算符">算术运算符</h5>
+<h5 class="anchored" data-anchor-id="算术运算符"><strong>算术运算符</strong></h5>
 <ul>
 <li>加法和减法运算：可以使用<code>+</code>和<code>-</code>运算符对<code>Timestamp</code>对象进行加法和减法运算。加法运算可以用于将一个<code>Timestamp</code>对象与时间差（<code>Timedelta</code>对象）相加，得到一个新的<code>Timestamp</code>对象。减法运算可以用于计算两个<code>Timestamp</code>对象之间的时间差，得到一个<code>Timedelta</code>对象。</li>
 <li>时间偏移运算：可以使用<code>+</code>和<code>-</code>运算符对<code>Timestamp</code>对象进行时间偏移运算。通过给<code>Timestamp</code>对象加上或减去一个时间差（<code>Timedelta</code>对象），可以得到一个新的<code>Timestamp</code>对象。</li>
@@ -478,12 +497,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 通过日期范围创建</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>pd.date_range(start, end, freq) <span class="co"># start和end是起始和结束日期，freq是时间间隔。</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="属性和方法-1" class="level4">
-<h4 class="anchored" data-anchor-id="属性和方法-1">(2) 属性和方法</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>注意，这部分是可选的，大家可以根据自己的需要阅读。</p>
+</blockquote>
 <p><code>DatetimeIndex</code>对象具有多个属性和方法，如下是对其常用的属性和方法。</p>
-<section id="属性-1" class="level5">
-<h5 class="anchored" data-anchor-id="属性-1">属性</h5>
+<section id="属性" class="level5">
+<h5 class="anchored" data-anchor-id="属性">属性</h5>
 <ul>
 <li><code>year</code>、<code>month</code>、<code>day</code>：返回<code>DatetimeIndex</code>对象中<strong>所有时间点</strong>的年份、月份和日期。</li>
 <li><code>hour</code>、<code>minute</code>、<code>second</code>：返回<code>DatetimeIndex</code>对象中<strong>所有时间点</strong>的小时、分钟和秒。</li>
@@ -502,6 +531,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p><code>DatetimeIndex</code>对象常用于对时间序列数据进行索引和切片操作，实现对时间序列数据的筛选、聚合和分析，还可以用于时间序列数据的重采样和频率转换操作，对时间序列数据进行降采样或升采样。另外，<code>DatetimeIndex</code>对象也可以用在时间序列数据的可视化中，将时间轴作为横坐标，方便观察和分析时间趋势。</p>
 </section>
+</div>
+</div>
 </section>
 </section>
 <section id="period对象" class="level3">
@@ -536,11 +567,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </blockquote>
-</section>
-<section id="属性和方法-2" class="level4">
-<h4 class="anchored" data-anchor-id="属性和方法-2">(2) 属性和方法</h4>
-<section id="属性-2" class="level5">
-<h5 class="anchored" data-anchor-id="属性-2">属性</h5>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>注意，这部分是可选的，大家可以根据自己的需要阅读</p>
+</blockquote>
+<section id="属性-1" class="level5">
+<h5 class="anchored" data-anchor-id="属性-1">属性</h5>
 <ul>
 <li><code>start_time</code>：返回时间段的起始时间点，表示为时间戳（<code>Timestamp</code>）对象。</li>
 <li><code>end_time</code>：返回时间段的结束时间点，表示为时间戳（<code>Timestamp</code>）对象。</li>
@@ -555,6 +596,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>strftime(format)</code>：将时间段格式化为指定的字符串表示形式。</li>
 </ul>
 </section>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -652,6 +695,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="三时间序列的索引和切片">三、时间序列的索引和切片</h2>
 <section id="时间序列索引" class="level3">
 <h3 class="anchored" data-anchor-id="时间序列索引">1. 时间序列索引</h3>
+<br>
+<details>
+<summary>
+<mark><font size="4"><b>拓展：</b>时间序列索引的特性和功能</font></mark>
+</summary>
+<ol>
+<li>
+<b>时间序列索引的特性</b>
+</li>
+<ul>
+<li>
+时间序列索引具有排序的特性，它将时间点按照从早到晚的顺序进行排序。
+</li>
+<li>
+时间序列索引还可以具有重复的时间点，这意味着在同一个时间点上可能有多个数据点。
+</li>
+</ul>
+<li>
+<b>时间序列索引的功能</b>
+</li>
+<ul>
+<li>
+时间序列索引提供了一种灵活的方式来访问和处理时间序列数据。
+</li>
+<li>
+可以使用时间序列索引来选择特定日期或时间范围的数据点。
+</li>
+<li>
+时间序列索引支持基于标签的索引和切片操作，可以使用日期时间对象、日期时间字符串或日期时间范围来选择数据。
+</li>
+<li>
+时间序列索引还支持根据时间点进行数据的重采样、聚合和频率转换等操作。
+</li>
+</ul>
+</ol>
+</details>
 <p>Pandas提供了多种类型的时间序列索引，其中最常用的时<code>DatetimeIndex</code>，除了<code>DatetimeIndex</code>以外，还有其他的时间序列索引类型，如<code>PeriodIndex</code>用于表示时间段的索引、<code>TimedeltaIndex</code>用于表示时间间隔索引等。</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -698,22 +777,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用时间序列索引访问数据</span></span>
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> new_ts_3[datetime.datetime(<span class="dv">2023</span>, <span class="dv">8</span>, <span class="dv">1</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="时间序列索引的特性" class="level4">
-<h4 class="anchored" data-anchor-id="时间序列索引的特性">(1) 时间序列索引的特性</h4>
-<ul>
-<li>时间序列索引具有排序的特性，它将时间点按照从早到晚的顺序进行排序。</li>
-<li>时间序列索引还可以具有重复的时间点，这意味着在同一个时间点上可能有多个数据点。</li>
-</ul>
-</section>
-<section id="时间序列索引的功能" class="level4">
-<h4 class="anchored" data-anchor-id="时间序列索引的功能">(2) 时间序列索引的功能</h4>
-<ul>
-<li>时间序列索引提供了一种灵活的方式来访问和处理时间序列数据。</li>
-<li>可以使用时间序列索引来选择特定日期或时间范围的数据点。</li>
-<li>时间序列索引支持基于标签的索引和切片操作，可以使用日期时间对象、日期时间字符串或日期时间范围来选择数据。</li>
-<li>时间序列索引还支持根据时间点进行数据的重采样、聚合和频率转换等操作。</li>
-</ul>
-</section>
 </section>
 <section id="时间序列切片" class="level3">
 <h3 class="anchored" data-anchor-id="时间序列切片">2. 时间序列切片</h3>
@@ -798,7 +861,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>downsampled_trade_volume <span class="op">=</span> trade_volume.resample(<span class="st">'1min'</span>).<span class="bu">sum</span>()</span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(downsampled_trade_volume)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>升采样（Upsampling）：将数据从低频率转换为高频率，例如从每天数据转换为每小时数据。在升采样中，单个原始数据点被扩展为一个或多个更细粒度的数据点，通常使用插值方法来填充新生成的数据点。</p>
+<ul>
+<li>升采样（Upsampling）：将数据从低频率转换为高频率，例如从每天数据转换为每小时数据。在升采样中，单个原始数据点被扩展为一个或多个更细粒度的数据点，通常使用插值方法来填充新生成的数据点。</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
