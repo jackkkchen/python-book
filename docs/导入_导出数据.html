@@ -270,7 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./添加新列.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">增删排序(DataFrame)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">数据的增加、删除、修改</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -281,20 +281,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./time_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">使用Pandas处理时间序列数据</span></span></a>
+  <a href="./时间序列数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Pandas处理时间序列数据</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./txt_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">使用Pandas处理文本数据</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./更好的数据可视化.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">更好的数据可视化(Plotly)</span></span></a>
+  <a href="./文本数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Pandas处理文本数据</span></span></a>
   </div>
 </li>
       </ul>
@@ -311,19 +305,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./for循环.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">for循环自动获取股票数据</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">for循环自动获取股票数据</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./python链接数据库.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Python连接Postgresql数据库</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Python连接Postgresql数据库</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Dash案例.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Dash创建股票APP</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Dash创建股票APP</span></span></a>
   </div>
 </li>
       </ul>
@@ -344,6 +338,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#导入线上数据" id="toc-导入线上数据" class="nav-link" data-scroll-target="#导入线上数据">导入线上数据</a></li>
   <li><a href="#参数介绍" id="toc-参数介绍" class="nav-link" data-scroll-target="#参数介绍">参数介绍</a></li>
   <li><a href="#常见错误" id="toc-常见错误" class="nav-link" data-scroll-target="#常见错误">常见错误</a></li>
+  </ul></li>
+  <li><a href="#导出数据" id="toc-导出数据" class="nav-link" data-scroll-target="#导出数据">导出数据</a>
+  <ul class="collapse">
+  <li><a href="#导出csv文件" id="toc-导出csv文件" class="nav-link" data-scroll-target="#导出csv文件">导出CSV文件</a></li>
+  <li><a href="#导出excel文件" id="toc-导出excel文件" class="nav-link" data-scroll-target="#导出excel文件">导出Excel文件</a></li>
+  <li><a href="#参数介绍-1" id="toc-参数介绍-1" class="nav-link" data-scroll-target="#参数介绍-1">参数介绍</a></li>
   <li><a href="#连接mysql数据库导入导出数据拓展" id="toc-连接mysql数据库导入导出数据拓展" class="nav-link" data-scroll-target="#连接mysql数据库导入导出数据拓展">连接MySQL数据库导入导出数据（拓展）</a></li>
   </ul></li>
   </ul>
@@ -428,25 +428,6 @@ text
 </p>
 </td>
 </tr>
-<tr class="row-odd">
-<td>
-<p>
-text
-</p>
-</td>
-<td>
-<p>
-Fixed-Width Text File
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-fwf-reader"><span class="std std-ref">read_fwf</span></a>
-</p>
-</td>
-<td>
-</td>
-</tr>
 <tr class="row-even">
 <td>
 <p>
@@ -491,25 +472,6 @@ text
 </p>
 </td>
 </tr>
-<tr class="row-even">
-<td>
-<p>
-text
-</p>
-</td>
-<td>
-<p>
-<a class="reference external" href="https://en.wikipedia.org/wiki/LaTeX">LaTeX</a>
-</p>
-</td>
-<td>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-latex"><span class="std std-ref">Styler.to_latex</span></a>
-</p>
-</td>
-</tr>
 <tr class="row-odd">
 <td>
 <p>
@@ -531,30 +493,7 @@ text
 <a class="reference internal" href="#io-xml"><span class="std std-ref">to_xml</span></a>
 </p>
 </td>
-</tr>
-<tr class="row-even">
-<td>
-<p>
-text
-</p>
-</td>
-<td>
-<p>
-Local clipboard
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-clipboard"><span class="std std-ref">read_clipboard</span></a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-clipboard"><span class="std std-ref">to_clipboard</span></a>
-</p>
-</td>
-</tr>
-<tr class="row-odd">
+</tr><tr class="row-odd">
 <td>
 <p>
 binary
@@ -575,197 +514,7 @@ binary
 <a class="reference internal" href="#io-excel-writer"><span class="std std-ref">to_excel</span></a>
 </p>
 </td>
-</tr>
-<tr class="row-even">
-<td>
-<p>
-binary
-</p>
-</td>
-<td>
-<p>
-<a class="reference external" href="http://opendocumentformat.org">OpenDocument</a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-ods"><span class="std std-ref">read_excel</span></a>
-</p>
-</td>
-<td>
-</td>
-</tr>
-<tr class="row-odd">
-<td>
-<p>
-binary
-</p>
-</td>
-<td>
-<p>
-<a class="reference external" href="https://support.hdfgroup.org/HDF5/whatishdf5.html">HDF5 Format</a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-hdf5"><span class="std std-ref">read_hdf</span></a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-hdf5"><span class="std std-ref">to_hdf</span></a>
-</p>
-</td>
-</tr>
-<tr class="row-even">
-<td>
-<p>
-binary
-</p>
-</td>
-<td>
-<p>
-<a class="reference external" href="https://github.com/wesm/feather">Feather Format</a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-feather"><span class="std std-ref">read_feather</span></a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-feather"><span class="std std-ref">to_feather</span></a>
-</p>
-</td>
-</tr>
-<tr class="row-odd">
-<td>
-<p>
-binary
-</p>
-</td>
-<td>
-<p>
-<a class="reference external" href="https://parquet.apache.org/">Parquet Format</a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-parquet"><span class="std std-ref">read_parquet</span></a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-parquet"><span class="std std-ref">to_parquet</span></a>
-</p>
-</td>
-</tr>
-<tr class="row-even">
-<td>
-<p>
-binary
-</p>
-</td>
-<td>
-<p>
-<a class="reference external" href="https://orc.apache.org/">ORC Format</a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-orc"><span class="std std-ref">read_orc</span></a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-orc"><span class="std std-ref">to_orc</span></a>
-</p>
-</td>
-</tr>
-<tr class="row-odd">
-<td>
-<p>
-binary
-</p>
-</td>
-<td>
-<p>
-<a class="reference external" href="https://en.wikipedia.org/wiki/Stata">Stata</a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-stata-reader"><span class="std std-ref">read_stata</span></a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-stata-writer"><span class="std std-ref">to_stata</span></a>
-</p>
-</td>
-</tr>
-<tr class="row-even">
-<td>
-<p>
-binary
-</p>
-</td>
-<td>
-<p>
-<a class="reference external" href="https://en.wikipedia.org/wiki/SAS_(software)">SAS</a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-sas-reader"><span class="std std-ref">read_sas</span></a>
-</p>
-</td>
-<td>
-</td>
-</tr>
-<tr class="row-odd">
-<td>
-<p>
-binary
-</p>
-</td>
-<td>
-<p>
-<a class="reference external" href="https://en.wikipedia.org/wiki/SPSS">SPSS</a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-spss-reader"><span class="std std-ref">read_spss</span></a>
-</p>
-</td>
-<td>
-</td>
-</tr>
-<tr class="row-even">
-<td>
-<p>
-binary
-</p>
-</td>
-<td>
-<p>
-<a class="reference external" href="https://docs.python.org/3/library/pickle.html">Python Pickle Format</a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-pickle"><span class="std std-ref">read_pickle</span></a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-pickle"><span class="std std-ref">to_pickle</span></a>
-</p>
-</td>
-</tr>
-<tr class="row-odd">
+</tr><tr class="row-odd">
 <td>
 <p>
 SQL
@@ -784,28 +533,6 @@ SQL
 <td>
 <p>
 <a class="reference internal" href="#io-sql"><span class="std std-ref">to_sql</span></a>
-</p>
-</td>
-</tr>
-<tr class="row-even">
-<td>
-<p>
-SQL
-</p>
-</td>
-<td>
-<p>
-<a class="reference external" href="https://en.wikipedia.org/wiki/BigQuery">Google BigQuery</a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-bigquery"><span class="std std-ref">read_gbq</span></a>
-</p>
-</td>
-<td>
-<p>
-<a class="reference internal" href="#io-bigquery"><span class="std std-ref">to_gbq</span></a>
 </p>
 </td>
 </tr>
@@ -1303,6 +1030,7 @@ Warning
 <li>header：指定作为列名的行号，默认为’infer’，表示使用文件中的第一行作为列名，可以设为None来表示没有列名。</li>
 <li>index_col：指定作为索引列的列号或列名。</li>
 <li>usecols：要读取的列的列号或列名列表。</li>
+<li>nrows：读取制定行数</li>
 <li>dtype：指定列的数据类型。</li>
 <li>parse_dates：指定要解析为日期的列。</li>
 <li>skiprows：跳过指定的行数。</li>
@@ -1493,10 +1221,153 @@ Warning
 </div>
 </div>
 </div>
+<p><code>usecols</code>：只读取指定的列数据</p>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> pd.read_csv(<span class="st">'./example_data/data.csv'</span>, usecols<span class="op">=</span>[<span class="st">"Pulse"</span>, <span class="st">"Calories"</span>])</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df3.head() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Pulse</th>
+<th data-quarto-table-cell-role="th">Calories</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>110</td>
+<td>409.1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>117</td>
+<td>479.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>103</td>
+<td>340.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>109</td>
+<td>282.4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>117</td>
+<td>406.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><code>nrows</code>：只读取指定行数的数据</p>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df4 <span class="op">=</span> pd.read_csv(<span class="st">'./example_data/data.csv'</span>, nrows<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Duration</th>
+<th data-quarto-table-cell-role="th">Pulse</th>
+<th data-quarto-table-cell-role="th">Maxpulse</th>
+<th data-quarto-table-cell-role="th">Calories</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>60</td>
+<td>110</td>
+<td>130</td>
+<td>409.1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>60</td>
+<td>117</td>
+<td>145</td>
+<td>479.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>60</td>
+<td>103</td>
+<td>135</td>
+<td>340.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>45</td>
+<td>109</td>
+<td>175</td>
+<td>282.4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>45</td>
+<td>117</td>
+<td>148</td>
+<td>406.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>60</td>
+<td>102</td>
+<td>127</td>
+<td>300.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>60</td>
+<td>110</td>
+<td>136</td>
+<td>374.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>45</td>
+<td>104</td>
+<td>134</td>
+<td>253.3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>30</td>
+<td>109</td>
+<td>133</td>
+<td>195.1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>60</td>
+<td>98</td>
+<td>124</td>
+<td>269.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 <p><code>encoding</code>：指定文件的编码方式。使用<code>utf-8</code>编码是因为它是一种广泛支持的字符编码，能够处理几乎所有的文本数据。出现编码问题用这个大概率就对了～</p>
 <div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> pd.read_csv(<span class="st">'./example_data/data.csv'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>,index_col<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df3.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df5 <span class="op">=</span> pd.read_csv(<span class="st">'./example_data/data.csv'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>,index_col<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df5.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
@@ -1564,6 +1435,100 @@ Warning
 <li><p>错误：UnicodeDecodeError: ‘utf-8’ codec can’t decode byte 0xff in position 0: invalid start byte</p>
 <p>解决方法：尝试指定正确的文件编码，如encoding=’utf-8-sig’来处理带有BOM（字节顺序标记）的文件。</p></li>
 </ol>
+</section>
+</section>
+<section id="导出数据" class="level2">
+<h2 class="anchored" data-anchor-id="导出数据">导出数据</h2>
+<section id="导出csv文件" class="level3">
+<h3 class="anchored" data-anchor-id="导出csv文件">导出CSV文件</h3>
+<p>在 pandas 中，可以使用 <code>to_csv()</code>方法将数据导出为文本格式（如 CSV 文件）。<code>to_csv()</code> 方法接受一个参数，即导出的文件路径，可以是相对路径或绝对路径</p>
+<p>一般我们的导出对象是 <code>DataFrame</code> 数据框和 <code>Series</code> 序列，将这些数据结构中的数据保存到一个 CSV 文件中。就算是字典或者Numpy的数据结构，也可以转换为<code>DataFrame</code>后进行导出。</p>
+<ol type="1">
+<li><p>创建名为data的字典，作为示例数据；</p></li>
+<li><p>调用pandas，将字典转换为DataFrame格式；</p></li>
+<li><p>使用to_csv，导出并保存为csv文件，同时命名文件为 output.csv</p></li>
+<li><p>index=False 参数表示不包含行索引。</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建 DataFrame 示例数据</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'Name'</span>: [<span class="st">'Jack'</span>, <span class="st">'Luxue'</span>, <span class="st">'Wenxi'</span>],</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Age'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>],</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'City'</span>: [<span class="st">'New York'</span>, <span class="st">'London'</span>, <span class="st">'Paris'</span>]}</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 导出为 CSV 文件，默认为当前路径</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'output.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Series 导出：Series 序列 是 pandas 中的另一个常见数据结构，它是一维标记数组。可以使用 to_csv()、to_excel() 等方法将 Series 导出为 CSV、Excel 等格式。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建 Series 示例数据</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.Series([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 导出为 CSV 文件</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>data.to_csv(<span class="st">'output.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 导出为 Excel 文件</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>data.to_excel(<span class="st">'output.xlsx'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="导出excel文件" class="level3">
+<h3 class="anchored" data-anchor-id="导出excel文件">导出Excel文件</h3>
+<p>当涉及到导出为 Excel 文件时，让我们考虑一个简单的案例。假设我们有一个包含学生考试成绩的 DataFrame，我们希望将其导出为一个名为 <code>grades.xlsx</code> 的 Excel 文件。</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>使用<code>to_excel()</code>时可能会出现报错<code>ModuleNotFoundError: No module named 'openpyxl'</code>，这意味着你的系统中没有安装 openpyxl 模块。</p>
+</div>
+</div>
+<p><code>openpyxl</code> 是一个用于处理Excel文件的第三方库，它在Pandas中用于导出Excel文件。为了解决这个错误，你需要安装 openpyxl 模块。</p>
+<p>你可以使用以下命令使用 pip 安装 openpyxl 模块：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install openpyxl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例的 DataFrame</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>],</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Math'</span>: [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>],</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'English'</span>: [<span class="dv">90</span>, <span class="dv">88</span>, <span class="dv">95</span>],</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Science'</span>: [<span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">92</span>]}</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用 to_excel() 方法将 DataFrame 导出为 Excel 文件</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>df.to_excel(<span class="st">'grades.xlsx'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="参数介绍-1" class="level3">
+<h3 class="anchored" data-anchor-id="参数介绍-1">参数介绍</h3>
+<ul>
+<li>sheet_name：指定要导出到的工作表名称，默认为 ‘Sheet1’。</li>
+<li>na_rep：指定缺失值的表示，默认为空字符串。</li>
+<li>columns：指定要导出的列名。可以传入一个列表来指定特定的列，或者使用布尔索引来选择要导出的列。</li>
+<li>header：指定是否将列名包含在导出的文件中，默认为 True。</li>
+<li>index：指定是否将行索引包含在导出的文件中，默认为 True。</li>
+<li>index_label：指定行索引的标签名称，默认为 None。</li>
+<li>startrow 和 startcol：指定数据在工作表中的起始行和起始列，默认从第一行第一列开始。</li>
+</ul>
+<p><code>sheet_name</code>如果我们想将数据保存在特定的工作表中，可以使用 sheet_name 参数指定工作表的名称</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df.to_excel(<span class="st">'grades.xlsx'</span>, sheet_name<span class="op">=</span><span class="st">'Exam Scores'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>columns</code> 如果我们只想导出特定的列，可以使用 columns 参数来指定要导出的列名，比如只导出 “Name”、“Math” 和 “English” 列的数据。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df.to_excel(<span class="st">'grades.xlsx'</span>, columns<span class="op">=</span>[<span class="st">'Name'</span>, <span class="st">'Math'</span>, <span class="st">'English'</span>], index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <!--  -->
 <!-- 
 <video width="600" height="450" controls poster="img/pandas导入导出.jpeg">
@@ -1579,7 +1544,7 @@ Warning
 <p>SQLAlchemy：用于数据库连接和交互</p>
 <p>可以使用以下命令通过pip安装它们：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>pip install pandas sqlalchemy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>pip install pandas sqlalchemy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="步骤2链接数据库" class="level4">
@@ -1587,10 +1552,10 @@ Warning
 <p>首先，我们需要使用SQLAlchemy来建立与数据库的连接。根据使用的数据库类型（如MySQL、SQLite、PostgreSQL等），使用适当的连接字符串和数据库驱动程序。</p>
 <p>以下是使用SQLite数据库的示例代码：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlalchemy</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 建立与数据库的连接</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>engine <span class="op">=</span> sqlalchemy.create_engine(<span class="st">'sqlite:///path/to/database.db'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlalchemy</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 建立与数据库的连接</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>engine <span class="op">=</span> sqlalchemy.create_engine(<span class="st">'sqlite:///path/to/database.db'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1611,14 +1576,14 @@ Tip
 <p>有几种方法可以使用Pandas从数据库中导入数据。最简单的方法是使用read_sql()函数，该函数接受一个SQL查询语句并将结果读取为DataFrame对象。</p>
 <p>以下是使用read_sql()函数导入数据的示例代码：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 执行SQL查询并将结果读取为DataFrame</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>query <span class="op">=</span> <span class="st">'SELECT * FROM table_name'</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_sql(query, engine)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 打印DataFrame</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 执行SQL查询并将结果读取为DataFrame</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>query <span class="op">=</span> <span class="st">'SELECT * FROM table_name'</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_sql(query, engine)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 打印DataFrame</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1639,8 +1604,8 @@ Tip
 <p>同样，使用Pandas可以将DataFrame中的数据导出到数据库中。可以使用to_sql()函数将DataFrame写入数据库表。</p>
 <p>以下是使用to_sql()函数导出数据的示例代码</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 将DataFrame写入数据库表</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df.to_sql(<span class="st">'table_name'</span>, engine, if_exists<span class="op">=</span><span class="st">'replace'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 将DataFrame写入数据库表</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df.to_sql(<span class="st">'table_name'</span>, engine, if_exists<span class="op">=</span><span class="st">'replace'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
