@@ -60,7 +60,7 @@ book:
         # - 更好的数据可视化.ipynb
     - part: "Plotly可视化入门"
       chapters:
-        # - 基础图表.ipynb
+        - basic.ipynb
         # - 高阶图表.ipynb
         - 地图可视化.ipynb
     - part: "实际案例"
