@@ -62,7 +62,7 @@ book:
       chapters:
         - basic.ipynb
         # - 高阶图表.ipynb
-        - 地图可视化.ipynb
+        # - 地图可视化.ipynb
     - part: "实际案例"
       chapters:
         - for循环.ipynb
