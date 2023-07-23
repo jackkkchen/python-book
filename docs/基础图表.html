@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Python新手文档 - 16&nbsp; Plotly 图表绘制与可视化</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./地图可视化.html" rel="next">
+<link href="./文本数据.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./基础图表.html">Plotly可视化入门</a></li><li class="breadcrumb-item"><a href="./基础图表.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Plotly 图表绘制与可视化</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Python新手文档</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/jackkkchen/python-book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Python新手文档.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Python新手文档.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">文档目录</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python简介</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./周一环境搭建.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Python环境搭建</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Python入门基础</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./周一基础语法.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python基础语法</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./周二数据类型.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python数据类型</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./周三条件语句和循环语句.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">条件语句的学习</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./周四函数.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Python函数</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./周四模块.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Python模块</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">NumPy快速入门</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./NumPy教程.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">NumPy简介与基本操作</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Pandas快速入门</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./安装.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pandas安装</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pandas处理什么样的数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">pandas处理什么样的数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./导入_导出数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">导入&amp;导出数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./选取数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">选取数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./添加新列.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">数据的增加、删除、修改</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Pandas计算重塑合并最终版本.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">如何计算汇总统计</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./时间序列数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Pandas处理时间序列数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./文本数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Pandas处理文本数据</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Plotly可视化入门</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./基础图表.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Plotly 图表绘制与可视化</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./地图可视化.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Plotly地图可视化</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">实际案例</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./for循环.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">for循环自动获取股票数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python链接数据库.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Python连接Postgresql数据库</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Dash案例.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Dash创建股票APP</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#什么是plotly" id="toc-什么是plotly" class="nav-link active" data-scroll-target="#什么是plotly">什么是Plotly？</a></li>
+  <li><a href="#ploty有什么用对职场人在技能效率和汇报呈现上有什么帮助" id="toc-ploty有什么用对职场人在技能效率和汇报呈现上有什么帮助" class="nav-link" data-scroll-target="#ploty有什么用对职场人在技能效率和汇报呈现上有什么帮助">Ploty有什么用？对职场人在技能、效率和汇报呈现上有什么帮助？</a></li>
+  <li><a href="#plotly怎么安装" id="toc-plotly怎么安装" class="nav-link" data-scroll-target="#plotly怎么安装">Plotly怎么安装？</a></li>
+  <li><a href="#使用plotly可以绘制什么图表" id="toc-使用plotly可以绘制什么图表" class="nav-link" data-scroll-target="#使用plotly可以绘制什么图表">使用Plotly可以绘制什么图表？</a></li>
+  <li><a href="#绘制图表需要掌握的函数理解即可" id="toc-绘制图表需要掌握的函数理解即可" class="nav-link" data-scroll-target="#绘制图表需要掌握的函数理解即可">绘制图表需要掌握的函数（理解即可）</a>
+  <ul class="collapse">
+  <li><a href="#px.scatter-函数绘制散点图" id="toc-px.scatter-函数绘制散点图" class="nav-link" data-scroll-target="#px.scatter-函数绘制散点图">px.scatter() 函数绘制散点图</a></li>
+  <li><a href="#px.line绘制折线图" id="toc-px.line绘制折线图" class="nav-link" data-scroll-target="#px.line绘制折线图">px.line()绘制折线图</a></li>
+  <li><a href="#px.bar绘制条形图" id="toc-px.bar绘制条形图" class="nav-link" data-scroll-target="#px.bar绘制条形图">px.bar()绘制条形图</a></li>
+  <li><a href="#px.pie函数绘制饼图" id="toc-px.pie函数绘制饼图" class="nav-link" data-scroll-target="#px.pie函数绘制饼图">px.pie()函数绘制饼图</a></li>
+  <li><a href="#px.histogram函数绘制直方图" id="toc-px.histogram函数绘制直方图" class="nav-link" data-scroll-target="#px.histogram函数绘制直方图">px.histogram()函数绘制直方图</a></li>
+  <li><a href="#px.box函数绘制箱线图仅做了解" id="toc-px.box函数绘制箱线图仅做了解" class="nav-link" data-scroll-target="#px.box函数绘制箱线图仅做了解">px.box()函数绘制箱线图（仅做了解）</a></li>
+  </ul></li>
+  <li><a href="#plotly-express图表导出" id="toc-plotly-express图表导出" class="nav-link" data-scroll-target="#plotly-express图表导出">Plotly Express图表导出</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/基础图表.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Plotly 图表绘制与可视化</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="什么是plotly" class="level3">
+<h3 class="anchored" data-anchor-id="什么是plotly">什么是Plotly？</h3>
+<p>Plotly是一种开源的Python库，相当于一个强大的工具包，用于生成各种类型的图表和数据可视化。它提供了丰富的图表选项，可以用于绘制线图、散点图、条形图、饼图、热力图等。本章节将介绍如何使用Plotly创建各种类型的图表。学习如何映射数据到可视化属性，并了解绘图过程中需要注意的参数和属性（理解即可）。</p>
+</section>
+<section id="ploty有什么用对职场人在技能效率和汇报呈现上有什么帮助" class="level3">
+<h3 class="anchored" data-anchor-id="ploty有什么用对职场人在技能效率和汇报呈现上有什么帮助">Ploty有什么用？对职场人在技能、效率和汇报呈现上有什么帮助？</h3>
+<section id="总结一句话就是" class="level4">
+<h4 class="anchored" data-anchor-id="总结一句话就是">总结一句话就是：</h4>
+<section id="掌握plotly可助力你在职场中提升数据可视化和汇报能力提高工作效率让数据更加生动和易于理解从而更好地完成工作任务并与他人更好地合作与分享工作成果助力你在工作汇报的时候给老板留下深刻印象升职加薪不是梦" class="level5">
+<h5 class="anchored" data-anchor-id="掌握plotly可助力你在职场中提升数据可视化和汇报能力提高工作效率让数据更加生动和易于理解从而更好地完成工作任务并与他人更好地合作与分享工作成果助力你在工作汇报的时候给老板留下深刻印象升职加薪不是梦">掌握Plotly可助力你在职场中提升数据可视化和汇报能力！提高工作效率！让数据更加生动和易于理解！从而更好地完成工作任务，并与他人更好地合作与分享工作成果！助力你在工作汇报的时候给老板留下深刻印象！升职加薪不是梦！</h5>
+</section>
+<section id="主要厉害之处" class="level5">
+<h5 class="anchored" data-anchor-id="主要厉害之处">主要厉害之处：</h5>
+<ul>
+<li><p>数据可视化技能提升： 使用Plotly，你可以轻松地将数据转换为交互式和美观的图表。掌握数据可视化技能可以帮助你更好地理解数据、发现模式和趋势，并更有效地传达数据背后的故事。这在工作中的数据分析、业务决策以及与同事、客户分享结果时都非常有用。</p></li>
+<li><p>效率提升： Plotly是一个强大的图表库，可以帮助你快速创建各种类型的图表，而无需从头编写复杂的可视化代码。这节省了大量时间，并提高了数据处理和可视化的效率。你可以专注于解读数据和提取洞见，而不必担心图表的细节。</p></li>
+<li><p>交互式汇报呈现： 在职场上，很多时候你需要向团队、客户或管理层呈现工作成果或数据分析结果。使用Plotly创建交互式图表，可以使你的汇报更具吸引力和说服力。你可以通过悬停、缩放、过滤等方式与图表交互，展示更多细节和数据，从而更好地传达你的观点。</p></li>
+<li><p>多样化的图表类型： Plotly支持许多不同类型的图表，例如折线图、散点图、饼图、热力图、3D图和箱线图等。掌握这些图表类型，使你能够选择最适合你数据的可视化方式，从而更有效地传达信息。</p></li>
+<li><p>自定义样式和主题： Plotly允许你自定义图表的样式、颜色和主题，使你的图表与公司品牌一致或适应不同的场景。这让你能够产生专业水平的报告和展示，展现你的专业素养。</p></li>
+<li><p>数据协作和分享： 使用Plotly创建的图表可以轻松分享和共享给团队成员或客户。你可以将交互式图表嵌入网页、报告或文档中，让他人能够与数据进行互动，加深对数据的理解。</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="plotly怎么安装" class="level2">
+<h2 class="anchored" data-anchor-id="plotly怎么安装">Plotly怎么安装？</h2>
+<p>要安装 Plotly，你可以在jupyter中执行以下命令：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install plotly</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用 pip 包管理器在命令行或终端中运行</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>pip install plotly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>安装完成后，你就可以在 Python 脚本或 Jupyter Notebook 中导入 Plotly，并开始使用它来创建交互式和美观的可视化图表。例如，在 Python 脚本或 Jupyter Notebook 中导入 Plotly：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="使用plotly可以绘制什么图表" class="level2">
+<h2 class="anchored" data-anchor-id="使用plotly可以绘制什么图表">使用Plotly可以绘制什么图表？</h2>
+<ol type="1">
+<li>散点图（Scatter plot）
+<ul>
+<li>散点图的概念和用途：用于展示两个变量之间的关系，如相关性、分布等。</li>
+<li>创建散点图：<code>px.scatter()</code> 函数，设置 x 轴和 y 轴数据，以及通过颜色映射和大小映射展示额外信息。</li>
+</ul></li>
+<li>折线图（Line plot）
+<ul>
+<li>折线图的作用：展示随时间或其他连续变量的变化趋势，如时间序列数据、趋势分析等。</li>
+<li>创建折线图： <code>px.line()</code> 函数，包括设置 x 轴和 y 轴数据，添加标记点、调整线条样式等。</li>
+</ul></li>
+<li>柱状图（Bar chart）
+<ul>
+<li>解释柱状图的用途：用于比较不同类别或组之间的数值差异，比如销售额、人口统计等。</li>
+<li>创建柱状图： <code>px.bar()</code> 函数，包括设置 x 轴和 y 轴数据，添加堆叠柱状图、分组柱状图等。</li>
+</ul></li>
+<li>饼图（Pie chart）
+<ul>
+<li>饼图的含义：展示数据在整体中的占比情况，适用于展示相对比例。</li>
+<li>绘制饼图：<code>px.pie()</code> 函数，设置数据和标签，调整颜色、标签位置等。</li>
+</ul></li>
+<li>直方图（Histogram）
+<ul>
+<li>直方图的作用：用于展示数据的分布情况，特别适用于连续变量，帮助了解数据的分布范围和形态。</li>
+<li>绘制直方图： <code>px.histogram()</code> 函数，参数须了解，如 bin 大小、频数或频率显示等。</li>
+</ul></li>
+<li>箱线图（Box plot）
+<ul>
+<li>箱线图的含义：用于显示数据的统计特征，如中位数、四分位数和异常值，帮助了解数据的分布和离群点。</li>
+<li>绘制箱线图：<code>px.box()</code> 函数，设置 x 轴和 y 轴数据，添加多个箱线图、调整样式等。</li>
+</ul></li>
+</ol>
+</section>
+<section id="绘制图表需要掌握的函数理解即可" class="level2">
+<h2 class="anchored" data-anchor-id="绘制图表需要掌握的函数理解即可">绘制图表需要掌握的函数（理解即可）</h2>
+<section id="px.scatter-函数绘制散点图" class="level3">
+<h3 class="anchored" data-anchor-id="px.scatter-函数绘制散点图">px.scatter() 函数绘制散点图</h3>
+<p><code>px.scatter()</code> 是 Plotly Express 中用于创建散点图的函数。散点图用于展示两个变量之间的关系，并通过点的位置和颜色来表示数据的特征。该函数简化了创建散点图的过程，只需提供数据和一些基本参数，即可生成可视化图形。</p>
+<p>以下是 <code>px.scatter()</code> 函数的简单案例：（复制代码测试下图表效果即可，理解其中参数）</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 准备数据</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>x_data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>y_data <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">14</span>, <span class="dv">9</span>]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用px.scatter()创建散点图</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter(x<span class="op">=</span>x_data, y<span class="op">=</span>y_data, title<span class="op">=</span><span class="st">'散点图'</span>, labels<span class="op">=</span>{<span class="st">'x'</span>: <span class="st">'X轴'</span>, <span class="st">'y'</span>: <span class="st">'Y轴'</span>})</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示图表</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>fig.show(renderer<span class="op">=</span><span class="st">"notebook"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<p><strong>参数解释：</strong></p>
+<ul>
+<li><code>x</code>（必需参数）：这是一个列表、一维数组或DataFrame列，用于指定散点图中X轴的数据。</li>
+<li><code>y</code>（必需参数）：这是一个列表、一维数组或DataFrame列，用于指定散点图中Y轴的数据。</li>
+<li><code>data_frame</code>（可选参数）：这是一个DataFrame，如果您有一个数据框，可以通过<code>data_frame</code>参数直接指定，而不需要分别指定<code>x</code>和<code>y</code>参数。</li>
+<li><code>title</code>（可选参数）：用于设置散点图的标题，以字符串形式指定。</li>
+<li><code>labels</code>（可选参数）：一个字典，用于指定X轴和Y轴的标签。例如，<code>labels={'x': '时间', 'y': '销量'}</code>将X轴标签设置为”时间”，Y轴标签设置为”销量”。</li>
+<li><code>color</code>（可选参数）：用于设置散点图的颜色。您可以通过指定颜色名称或HEX代码来自定义散点的颜色。还可以设置为列名或一维数组，根据其值自动给散点上色。</li>
+<li><code>size</code>（可选参数）：用于设置散点的大小。可以指定一个数值或列名，根据数据中的值调整散点的大小。</li>
+<li><code>template</code>（可选参数）：用于设置图表的样式模板，包括颜色、背景等。</li>
+<li><code>trendline</code>（可选参数）：是否显示散点图上的趋势线。</li>
+</ul>
+<p>通过 <code>px.scatter()</code> 函数，你可以轻松地创建各种散点图，将数据可视化，发现变量之间的关系，并更好地理解数据的特征和模式。</p>
+</section>
+<section id="px.line绘制折线图" class="level3">
+<h3 class="anchored" data-anchor-id="px.line绘制折线图">px.line()绘制折线图</h3>
+<p>当使用Plotly Express中的px.line()函数时，您可以绘制折线图（Line Plot），它是一种展示数据随连续变量变化而变化的图表。px.line()函数是Plotly库的高级封装，它简化了创建折线图的过程，使可视化变得更加简单和快捷。</p>
+<p>下面是px.line()函数的基本用法和常用参数解释：（复制代码测试下图表效果即可，理解其中参数）</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 准备数据</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>x_data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>y_data <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">14</span>, <span class="dv">9</span>]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用px.line()创建折线图</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(x<span class="op">=</span>x_data, y<span class="op">=</span>y_data, title<span class="op">=</span><span class="st">'折线图'</span>, labels<span class="op">=</span>{<span class="st">'x'</span>: <span class="st">'X轴'</span>, <span class="st">'y'</span>: <span class="st">'Y轴'</span>})</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示图表</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>fig.show(renderer<span class="op">=</span><span class="st">"notebook"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<p><strong>参数解释：</strong></p>
+<ul>
+<li><code>x</code>（必需参数）：这是一个列表或一维数组，用于指定折线图中X轴的数据点。</li>
+<li><code>y</code>（必需参数）：这也是一个列表或一维数组，用于指定折线图中Y轴的数据点。</li>
+<li><code>data_frame</code>（可选参数）：这是一个DataFrame，如果您有一个数据框，可以通过<code>data_frame</code>参数直接指定，而不需要分别指定<code>x</code>和<code>y</code>参数。</li>
+<li><code>title</code>（可选参数）：用于设置折线图的标题，以字符串形式指定。</li>
+<li><code>labels</code>（可选参数）：一个字典，用于指定X轴和Y轴的标签。例如，<code>labels={'x': '时间', 'y': '销量'}</code>将X轴标签设置为”时间”，Y轴标签设置为”销量”。</li>
+<li><code>line_group</code>（可选参数）：用于绘制多个折线图并将它们分组。这个参数可以指定一个列名或一维数组，具有相同值的数据点将被视为同一组，并绘制在同一条折线上。</li>
+<li><code>color_discrete_sequence</code>（可选参数）：用于指定折线的颜色序列。您可以通过指定颜色名称或HEX代码的列表来自定义折线的颜色。</li>
+<li><code>template</code>（可选参数）：用于设置图表的样式模板，包括颜色、背景等。</li>
+</ul>
+</section>
+<section id="px.bar绘制条形图" class="level3">
+<h3 class="anchored" data-anchor-id="px.bar绘制条形图">px.bar()绘制条形图</h3>
+<p>px.bar()函数是Plotly Express库中的一个函数，用于绘制条形图（Bar Chart）。条形图是一种常用的数据可视化方式，用于展示不同类别之间的数量或比较数据。</p>
+<p>以下是px.bar()函数的基本用法和常用参数解释：（复制代码测试下图表效果即可，理解其中参数）</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 准备数据</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>categories <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>, <span class="st">'E'</span>]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="dv">30</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">10</span>]</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用px.bar()创建条形图</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(x<span class="op">=</span>categories, y<span class="op">=</span>values, title<span class="op">=</span><span class="st">'条形图'</span>, labels<span class="op">=</span>{<span class="st">'x'</span>: <span class="st">'类别'</span>, <span class="st">'y'</span>: <span class="st">'数量'</span>})</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示图表</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>fig.show(renderer<span class="op">=</span><span class="st">"notebook"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<p><strong>参数解释：</strong></p>
+<ul>
+<li><code>x</code>（必需参数）：这是一个列表、一维数组或DataFrame列，用于指定条形图中各个条形的类别或X轴数据。</li>
+<li><code>y</code>（必需参数）：这是一个列表、一维数组或DataFrame列，用于指定条形图中各个条形的高度或Y轴数据。</li>
+<li><code>data_frame</code>（可选参数）：这是一个DataFrame，如果您有一个数据框，可以通过<code>data_frame</code>参数直接指定，而不需要分别指定<code>x</code>和<code>y</code>参数。</li>
+<li><code>title</code>（可选参数）：用于设置条形图的标题，以字符串形式指定。</li>
+<li><code>labels</code>（可选参数）：一个字典，用于指定X轴和Y轴的标签。例如，<code>labels={'x': '产品', 'y': '销量'}</code>将X轴标签设置为”产品”，Y轴标签设置为”销量”。</li>
+<li><code>color</code>（可选参数）：用于设置条形图的颜色。您可以通过指定颜色名称或HEX代码来自定义条形的颜色。还可以设置为列名或一维数组，根据其值自动给条形上色。</li>
+<li><code>barmode</code>（可选参数）：用于指定多个数据系列的条形图显示模式。默认为”group”，表示每个类别的不同系列将并排显示。还可以设置为”stack”，表示将多个系列堆叠显示。</li>
+<li><code>template</code>（可选参数）：用于设置图表的样式模板，包括颜色、背景等。</li>
+</ul>
+</section>
+<section id="px.pie函数绘制饼图" class="level3">
+<h3 class="anchored" data-anchor-id="px.pie函数绘制饼图">px.pie()函数绘制饼图</h3>
+<p>px.pie()函数是Plotly Express库中的一个函数，用于绘制饼图（Pie Chart）。饼图是一种常见的数据可视化方式，用于展示不同类别的数据在整体中的比例关系。</p>
+<p>以下是px.pie()函数的基本用法和常用参数解释：（复制代码测试下图表效果即可，理解其中参数）</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 准备数据</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>, <span class="st">'E'</span>]</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="dv">30</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">10</span>]</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用px.pie()创建饼图</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.pie(values<span class="op">=</span>values, names<span class="op">=</span>labels, title<span class="op">=</span><span class="st">'饼图'</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示图表</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>fig.show(renderer<span class="op">=</span><span class="st">"notebook"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<p><strong>参数解释：</strong></p>
+<ul>
+<li><code>values</code>（必需参数）：这是一个列表、一维数组或DataFrame列，用于指定各个类别的数据值，即饼图的扇区大小。</li>
+<li><code>names</code>（必需参数）：这是一个列表、一维数组或DataFrame列，用于指定各个类别的名称，即饼图的标签。</li>
+<li><code>data_frame</code>（可选参数）：这是一个DataFrame，如果您有一个数据框，可以通过<code>data_frame</code>参数直接指定，而不需要分别指定<code>values</code>和<code>names</code>参数。</li>
+<li><code>title</code>（可选参数）：用于设置饼图的标题，以字符串形式指定。</li>
+<li><code>color</code>（可选参数）：用于设置饼图扇区的颜色。您可以通过指定颜色名称或HEX代码来自定义扇区的颜色。还可以设置为列名或一维数组，根据其值自动给扇区上色。</li>
+<li><code>template</code>（可选参数）：用于设置图表的样式模板，包括颜色、背景等。</li>
+<li><code>hole</code>（可选参数）：用于设置饼图的中心孔的大小。可以指定一个0到1之间的小数，值为0表示完整饼图，值为1表示一个圆环图。</li>
+<li><code>labels</code>（可选参数）：用于控制饼图标签的显示方式。默认为”percent”，表示显示百分比标签。也可以设置为”label”，表示显示类别名称标签。还可以设置为”name”，表示显示数据名称标签。</li>
+</ul>
+</section>
+<section id="px.histogram函数绘制直方图" class="level3">
+<h3 class="anchored" data-anchor-id="px.histogram函数绘制直方图">px.histogram()函数绘制直方图</h3>
+<p>px.histogram()函数是Plotly Express库中的一个函数，用于绘制直方图（Histogram）。直方图是一种常见的数据可视化方式，用于展示连续变量的分布情况。</p>
+<p>以下是px.histogram()函数的基本用法和常用参数解释：（复制代码测试下图表效果即可，理解其中参数）</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 准备数据</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>]</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用px.histogram()创建直方图</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.histogram(data, title<span class="op">=</span><span class="st">'直方图'</span>, labels<span class="op">=</span>{<span class="st">'value'</span>: <span class="st">'数值'</span>, <span class="st">'count'</span>: <span class="st">'频数'</span>})</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示图表</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>fig.show(renderer<span class="op">=</span><span class="st">"notebook"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<p><strong>参数解释：</strong></p>
+<ul>
+<li><code>data_frame</code>（必需参数）：这是一个DataFrame或一维数组，用于指定要绘制直方图的数据。</li>
+<li><code>x</code>（可选参数）：这是一个字符串或一维数组，用于指定直方图中X轴的数据。如果不指定，<code>x</code>默认为数据列中的值。</li>
+<li><code>nbins</code>（可选参数）：用于指定直方图的箱子数量，即直方图的条数。默认值为”auto”，会自动选择合适的箱子数量。</li>
+<li><code>title</code>（可选参数）：用于设置直方图的标题，以字符串形式指定。</li>
+<li><code>labels</code>（可选参数）：一个字典，用于指定X轴和Y轴的标签。例如，<code>labels={'value': '数值', 'count': '频数'}</code>将X轴标签设置为”数值”，Y轴标签设置为”频数”。</li>
+<li><code>color</code>（可选参数）：用于设置直方图的颜色。您可以通过指定颜色名称或HEX代码来自定义直方图的颜色。</li>
+<li><code>template</code>（可选参数）：用于设置图表的样式模板，包括颜色、背景等。</li>
+<li><code>marginal</code>（可选参数）：用于在直方图的边缘添加边缘直方图或箱线图。可以设置为”rug”、“box”、“violin”等。</li>
+</ul>
+</section>
+<section id="px.box函数绘制箱线图仅做了解" class="level3">
+<h3 class="anchored" data-anchor-id="px.box函数绘制箱线图仅做了解">px.box()函数绘制箱线图（仅做了解）</h3>
+<p>px.box()函数是Plotly Express库中的一个函数，用于绘制箱线图（Box Plot）。箱线图是一种常见的数据可视化方式，用于展示数据的分布情况和异常值。</p>
+<p>以下是px.box()函数的基本用法和常用参数解释：（复制代码测试下图表效果即可，理解其中参数）</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 准备数据</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>data_1 <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>]</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>data_2 <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 合并数据并添加标识列</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> []</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> val <span class="kw">in</span> data_1:</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    df.append({<span class="st">'Value'</span>: val, <span class="st">'Data'</span>: <span class="st">'数据集1'</span>})</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> val <span class="kw">in</span> data_2:</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    df.append({<span class="st">'Value'</span>: val, <span class="st">'Data'</span>: <span class="st">'数据集2'</span>})</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用px.box()创建箱线图</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.box(df, y<span class="op">=</span><span class="st">'Value'</span>, color<span class="op">=</span><span class="st">'Data'</span>, title<span class="op">=</span><span class="st">'箱线图'</span>, labels<span class="op">=</span>{<span class="st">'Value'</span>: <span class="st">'值'</span>, <span class="st">'Data'</span>: <span class="st">'数据集'</span>})</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示图表</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>fig.show(renderer<span class="op">=</span><span class="st">"notebook"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<p><strong>参数解释：</strong></p>
+<ul>
+<li><code>data_frame</code>（必需参数）：这是一个DataFrame，用于指定要绘制箱线图的数据。在我们的例子中，我们使用了一个包含’Value’和’Data’列的DataFrame <code>df</code>，其中’Value’列包含箱线图的Y轴数据，’Data’列用于指定箱线图的不同数据集。</li>
+<li><code>y</code>（必需参数）：这是一个字符串，用于指定箱线图中Y轴的数据。在我们的例子中，我们将’Value’列作为箱线图的Y轴数据。</li>
+<li><code>color</code>（可选参数）：这是一个字符串，用于设置箱线图的颜色分类。在我们的例子中，我们使用’Data’列作为颜色分类，将两个数据集分别标记为’数据集1’和’数据集2’，这样就可以在箱线图中区分它们。</li>
+<li><code>title</code>（可选参数）：用于设置箱线图的标题，以字符串形式指定。在我们的例子中，我们设置了标题为”箱线图”。</li>
+<li><code>labels</code>（可选参数）：一个字典，用于指定图表的标签。例如，<code>labels={'Value': '值', 'Data': '数据集'}</code>将Y轴标签设置为”值”，颜色分类标签设置为”数据集”。</li>
+<li><code>template</code>（可选参数）：用于设置图表的样式模板，包括颜色、背景等。</li>
+</ul>
+</section>
+</section>
+<section id="plotly-express图表导出" class="level2">
+<h2 class="anchored" data-anchor-id="plotly-express图表导出">Plotly Express图表导出</h2>
+<p>Plotly Express图表导出为静态图像文件或生成可分享的交互式图表链接，以下是两种方法的说明：</p>
+<ol type="1">
+<li>导出为静态图像文件：</li>
+</ol>
+<p>使用plotly.io.write_image()函数可以将Plotly Express图表导出为静态图像文件，支持多种格式，如PNG、JPEG、SVG等。以下是一个示例：</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.io <span class="im">as</span> pio</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 准备数据</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>x_data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>y_data <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">14</span>, <span class="dv">9</span>]</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用px.line()创建折线图</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(x<span class="op">=</span>x_data, y<span class="op">=</span>y_data, title<span class="op">=</span><span class="st">'折线图'</span>, labels<span class="op">=</span>{<span class="st">'x'</span>: <span class="st">'X轴'</span>, <span class="st">'y'</span>: <span class="st">'Y轴'</span>})</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 导出为静态图像文件（PNG格式）</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>pio.write_image(fig, <span class="st">'line_plot.png'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>运行上述代码后，将会在当前目录下生成名为”line_plot.png”的PNG格式图片文件，即将折线图保存为静态图像。（记得先选择当前文件夹）</p>
+<ol start="2" type="1">
+<li>生成可分享的交互式图表链接：</li>
+</ol>
+<p>要生成可分享的交互式图表链接，您可以使用plotly.offline.plot()函数。这将创建一个HTML文件，其中包含交互式的Plotly Express图表，并且你可以将此HTML文件分享给其他人。以下是一个示例：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.offline <span class="im">as</span> pyo</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 准备数据</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>x_data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>y_data <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">14</span>, <span class="dv">9</span>]</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用px.line()创建折线图</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(x<span class="op">=</span>x_data, y<span class="op">=</span>y_data, title<span class="op">=</span><span class="st">'折线图'</span>, labels<span class="op">=</span>{<span class="st">'x'</span>: <span class="st">'X轴'</span>, <span class="st">'y'</span>: <span class="st">'Y轴'</span>})</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 生成交互式图表链接并保存为HTML文件</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>pyo.plot(fig, filename<span class="op">=</span><span class="st">'interactive_line_plot.html'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>'interactive_line_plot.html'</code></pre>
+</div>
+</div>
+<p>运行上述代码后，将会在当前目录下生成名为”interactive_line_plot.html”的HTML文件，其中包含交互式的折线图。你可以将此HTML文件分享给其他人，他们可以通过浏览器查看和与图表进行交互。</p>
+<p>通过这两种方法，你可以方便地分享你的Plotly Express图表，无论是静态图像还是交互式图表。</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./文本数据.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Pandas处理文本数据</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./地图可视化.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Plotly地图可视化</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

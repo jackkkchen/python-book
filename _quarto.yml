@@ -58,6 +58,11 @@ book:
         - 时间序列数据.ipynb
         - 文本数据.ipynb
         # - 更好的数据可视化.ipynb
+    - part: "Plotly可视化入门"
+      chapters:
+        - basic.ipynb
+        # - 高阶图表.ipynb
+        # - 地图可视化.ipynb
     - part: "实际案例"
       chapters:
         - for循环.ipynb
