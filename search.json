@@ -487,7 +487,7 @@
     "href": "basic.html#plotly怎么安装",
     "title": "16  Plotly 图表绘制与可视化",
     "section": "Plotly怎么安装？",
-    "text": "Plotly怎么安装？\n要安装 Plotly，你可以在jupyter中执行以下命令：\n\n!pip install plotly\n\n# 使用 pip 包管理器在命令行或终端中运行\npip install plotly\n\n安装完成后，你就可以在 Python 脚本或 Jupyter Notebook 中导入 Plotly，并开始使用它来创建交互式和美观的可视化图表。例如，在 Python 脚本或 Jupyter Notebook 中导入 Plotly：\n\nimport plotly.express as px"
+    "text": "Plotly怎么安装？\n要安装 Plotly，你可以在jupyter中执行以下命令：\n\n# jupyter中安装\n!pip install plotly\n\n# 使用 pip 包管理器在命令行或终端中运行\npip install plotly\n\n导出时还需安装 kaleido 模块\n\n# jupyter中安装\n!pip install -U kaleido\n\n# 命令行中安装\npip install -U kaleido\n\n安装完成后，你就可以在 Python 脚本或 Jupyter Notebook 中导入 Plotly，并开始使用它来创建交互式和美观的可视化图表。例如，在 Python 脚本或 Jupyter Notebook 中导入 Plotly：\n\nimport plotly.express as px"
   },
   {
     "objectID": "basic.html#使用plotly可以绘制什么图表",
