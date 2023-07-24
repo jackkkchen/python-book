@@ -525,79 +525,128 @@
     "text": "plotly.graph_objects高级绘图模块\n当你导入plotly.graph_objects模块并使用别名go，你可以使用go来创建和定制Plotly图形对象。\n\n以下是plotly.graph_objects模块中go的主要内容和用法：\n\n1、创建图表对象：使用go.Figure()方法创建一个图表对象。这是创建几乎所有Plotly图表的起点。\n2、添加图表轨迹：使用go模块中的各种图表类型（例如Scatter、Bar、Pie等）创建图表轨迹（trace）。每个图表轨迹代表图表上的一组数据点或数据柱。\n3、图表布局和样式：使用update_layout()方法来设置图表的布局和样式，例如设置标题、轴标签、背景颜色等。\n4、图表交互性：Plotly允许你为图表添加交互性，例如鼠标悬停提示、缩放、平移等。可以使用update_traces()方法来设置图表轨迹的交互行为。\n5、绘制和显示图表：使用show()方法显示图表或使用write_image()方法将图表导出为图像文件。\n以下是融合了散点图和柱状图的示例代码：\n\nimport plotly.graph_objects as go\n\n\n\n# 创建一个图表对象\nfig = go.Figure()\n\n# 添加散点图轨迹\nfig.add_trace(go.Scatter(x=[1, 2, 3, 4], y=[10, 11, 12, 13], mode='markers', name='散点图'))\n\n# 添加柱状图轨迹\nfig.add_trace(go.Bar(x=[1, 2, 3, 4], y=[5, 6, 7, 8], name='柱状图'))\n\n# 设置图表布局和样式\nfig.update_layout(title='示例图表', xaxis_title='X轴', yaxis_title='Y轴')\n\n# 显示图表\nfig.show(renderer=\"notebook\")\n\n\n                                                \n\n\nplotly.graph_objects模块提供了丰富的图表类型和配置选项，让你能够灵活地创建和定制各种类型的图表，满足你的数据可视化需求。可以查阅Plotly官方文档获取更多关于go模块的详细信息和用法。\n\n.add_trace图表轨迹方法\n.add_trace是用于向Plotly图表对象中添加不同类型的图表轨迹（trace）的方法。每个图表轨迹代表图表上的一组数据点或数据柱。\n在Plotly中，你可以在同一个图表对象中添加多个图表轨迹，从而在同一个图表中展示多个不同类型的数据。这让你可以将多个数据集以不同的图表类型呈现在同一个图表中，方便进行数据比较和分析。\n.add_trace方法的基本语法如下：\nfig.add_trace(trace)\n其中，fig是go.Figure图表对象，trace是你要添加的图表轨迹。\n以下是.add_trace方法的具体用法和示例：\n添加散点图轨迹：\n\nimport plotly.graph_objects as go\n\n\n\n# 示例数据\nx = [1, 2, 3, 4]\ny = [10, 11, 12, 13]\n\n# 创建一个图表对象\nfig = go.Figure()\n\n# 添加散点图轨迹\nfig.add_trace(go.Scatter(x=x, y=y, mode='markers', name='散点图'))\n\n# 显示图表\nfig.show(renderer=\"notebook\")\n\n\n                                                \n\n\n添加折线图轨迹：\n\nimport plotly.graph_objects as go\n\n\n\n# 示例数据\nx = [1, 2, 3, 4]\ny = [10, 11, 12, 13]\n\n# 创建一个图表对象\nfig = go.Figure()\n\n# 添加折线图轨迹\nfig.add_trace(go.Scatter(x=x, y=y, mode='lines', name='折线图'))\n\n# 显示图表\nfig.show(renderer=\"notebook\")\n\n\n                                                \n\n\n\n#添加柱状图轨迹：\n\nimport plotly.graph_objects as go\n\n\n\n# 示例数据\nx = ['A', 'B', 'C', 'D']\ny = [10, 20, 15, 25]\n\n# 创建一个图表对象\nfig = go.Figure()\n\n# 添加柱状图轨迹\nfig.add_trace(go.Bar(x=x, y=y, name='柱状图'))\n\n# 显示图表\nfig.show(renderer=\"notebook\")\n\n\n                                                \n\n\n通过.add_trace方法，你可以在同一个图表对象中添加多个图表轨迹，实现数据的多重展示。这使得你可以更好地进行数据比较、分析和可视化。注意，每个图表轨迹可以有不同的样式和设置，使得图表的外观和表现更加灵活和丰富。\n\n\n表格可视化\n在Plotly中，使用go.Figure可以很方便地展示表格可视化。\n在这部分，我们使用go.Figure函数创建了一个图表对象table_figure，并将表格图形对象table_trace作为数据传入。\n准备数据并创建一个go.Table对象：\n\n# 示例数据\ndata = {\n    \"Name\": [\"John\", \"Emma\", \"Michael\", \"Sophia\"],\n    \"Age\": [28, 24, 22, 26],\n    \"City\": [\"New York\", \"San Francisco\", \"Los Angeles\", \"Chicago\"],\n}\n\n# 创建一个数据帧\ndf = pd.DataFrame(data)\n\n# 创建一个表格图形对象\ntable_trace = go.Table(\n    header=dict(values=list(df.columns)),  # 定义表头，将数据帧的列名作为表头的值\n    cells=dict(values=[df.Name, df.Age, df.City])  # 定义单元格内容，将数据帧的数据作为单元格的值\n)\n\n\n在这部分中，我们创建了一个示例数据字典data，其中包含了姓名（“Name”）、年龄（“Age”）和所在城市（“City”）的数据。接着，使用pandas的DataFrame函数将数据字典转换为数据帧df，这将创建一个表格结构，其中包含了姓名、年龄和所在城市这三列数据。然后，我们使用go.Table来创建一个表格图形对象。在go.Table中，我们传入了header和cells参数：\nheader用于定义表格的表头，我们将df.columns（即数据帧df的列名）作为表头的值。\ncells用于定义表格的单元格内容，我们将df.Name、df.Age和df.City作为单元格的值。这样，数据帧中的姓名、年龄和城市数据将分别显示在表格的三列中。\n创建go.Figure图表对象并添加表格轨迹：\n\n# 创建图表对象，并将表格轨迹添加到图表中\ntable_figure = go.Figure(data=[table_trace])\n\n在这部分，我们使用go.Figure函数创建了一个图表对象table_figure，并将表格图形对象table_trace作为数据传入。\n显示图表：\n\n# 显示图表\ntable_figure.show(renderer=\"notebook\")\n\n\n                                                \n\n\n\n更直接的把go.Table嵌套在go.Figure中的方法是：\n你可以直接将go.Table嵌套在go.Figure中来创建一个包含表格可视化的图表对象。这样的做法非常方便，特别是当你只需要展示一个简单的表格可视化时，直接在go.Figure中添加go.Table即可，无需另外创建一个图表轨迹。\n以下是直接将go.Table嵌套在go.Figure中的方法：\n\nimport plotly.graph_objects as go\nimport pandas as pd\n\n# 示例数据\ndata = {\n    \"Name\": [\"John\", \"Emma\", \"Michael\", \"Sophia\"],\n    \"Age\": [28, 24, 22, 26],\n    \"City\": [\"New York\", \"San Francisco\", \"Los Angeles\", \"Chicago\"],\n}\n\n# 创建一个数据帧\ndf = pd.DataFrame(data)\n\n# 创建一个表格图形对象\ntable_figure = go.Figure(data=[go.Table(\n    header=dict(values=list(df.columns)),  # 定义表头，将数据帧的列名作为表头的值\n    cells=dict(values=[df.Name, df.Age, df.City])   # 定义单元格内容，将数据帧的数据作为单元格的值\n)])\n\n# 显示图表\ntable_figure.show(renderer=\"notebook\")"
   },
   {
+    "objectID": "动态图表.html#热力图",
+    "href": "动态图表.html#热力图",
+    "title": "17  高阶图表",
+    "section": "热力图",
+    "text": "热力图\n热力图是一种使用颜色来展示二维数据的图表，主要用于展示二维数据的分布和相关性，其中颜色的深浅表示数据的密度、数值的大小或相关性的强度。\n\n热力图可以帮助用户直观地观察数据的分布情况，从而快速识别数据的集中区域和稀疏区域。\n主要用于显示数据的分布、相关性和模式，例如地图上的人口密度。\n能够突出显示异常值：热力图可以突出显示数据中的异常值或异常模式，帮助用户识别潜在的问题或异常情况。 ### 一个简单的热力图示例：\n\n\nimport plotly.express as px\nimport pandas as pd\n# 数据\nheat_map_data = {\n    'Day': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],\n    'Temperature': [28, 30, 32, 29, 31], # 温度\n    'Humidity': [55, 58, 50, 61, 54]  # 湿度\n}\n\ndf = pd.DataFrame(heat_map_data)\n\n# 绘制热力图\nfig_heat_map = px.imshow(df[['Temperature', 'Humidity']], y=df['Day'], text_auto = True)\nfig_heat_map.show(renderer=\"notebook\")\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json\n\n\n\n参数介绍：\n\n绘制热力图函数px.imshow(z, x, y, ...)：\nz: 二维数据矩阵。要绘制的数据。\nx: 用于指定列标签(每一列)。\ny: 用于指定行标签(每一行)。\ntext_auto=True 表示显示数值。"
+  },
+  {
+    "objectID": "动态图表.html#旭日图",
+    "href": "动态图表.html#旭日图",
+    "title": "17  高阶图表",
+    "section": "旭日图",
+    "text": "旭日图\n旭日图，也叫做Sundayburst Charts，主要用来展示具有层级结构的数据，其中每个数据点都有一个父级和一个或多个子级。\n\n旭日图可以理解为是表示分层数据的多级饼图，在一个圆环中嵌套多个圆环，每个圆环代表一个层级的分类数据，离中心越近的圆环层级越高。\n旭日图能够同时表现数据的局部和整体的占比情况，以及数据层级之间的关系。相较于饼图，旭日图更适合展示层级多的比例数据关系，更适合呈现复杂的数据结构。\n旭日图通过环形结构，使得用户可以清楚地看到数据从大类到子类的层级关系，以及不同类别之间的相对比例。\n\n\nimport plotly.express as px\n\n# 旭日图数据（层次结构数据）\nsunburst_data = {\n    'Region': ['Asia', 'Asia', 'Europe', 'Africa', 'North America', 'South America', 'North America'],\n    'Country': ['China', 'Japan', 'Germany', 'Nigeria', 'USA', 'Brazil', 'Mexico'],\n    'Population': [1439323776, 124520000, 83783942, 214028302, 331002651, 212559417, 129040000]\n}\ndf = pd.DataFrame(sunburst_data)\n# 绘制旭日图\nfig_sunburst = px.sunburst(df, path=['Region', 'Country'], \n                           values='Population', color='Region')\nfig_sunburst.show(renderer=\"notebook\")\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json\n\n\n\n参数介绍：\n\n不论绘制任何图像，第一个参数基本上为传递给绘图参数的数据，这里是数据框df。\npath: 层次结构的路径：洲Region-&gt;国Country。一个列名列表，在前面的列为更靠近圆环中心的大类。 从中心向外的层层圆环，从前往后的列名列表，都表示从高层级向子层级展开。\nvalues: 决定圆环中各部分占比的变量，这里是人口数Population。\ncolor: 表示这个变量中的所有不同取值用不同颜色来区分，这里不同洲地区的板块显示为不同的颜色。\n\n通过鼠标点击旭日图中不同的环块，可以展开或折叠不同层级的数据。"
+  },
+  {
+    "objectID": "动态图表.html#树状图",
+    "href": "动态图表.html#树状图",
+    "title": "17  高阶图表",
+    "section": "树状图",
+    "text": "树状图\n树状图是一种展现层次结构的可视化图表，通过矩形的嵌套和面积大小来展示数据的层级关系。\n\n树状图主要用于展示层次结构数据，例如文件夹大小、组织架构、经济分布等。\n树状图可以帮助用户快速了解数据的组织结构，同时直观地比较不同层级之间的数据大小。\n\n\n# 树状图数据（层次结构数据）\n# 各个领域的商品销量\ntree_map_data = {\n    'Category': ['Electronics', 'Fashion', 'Fashion', 'Beauty', 'Toys'],\n    'Product': ['Laptop', 'Shirt', 'Pants', 'Lipstick', 'Action Figure'],\n    'Sales': [1200, 800, 600, 600, 300]\n}\ndf = pd.DataFrame(tree_map_data)\n# 绘制树状图\n# 参数可以参照旭日图\n# path表示层次结构路径，values为决定矩形大小的变量，color决定用不同颜色区分哪个层级。\nfig_tree_map = px.treemap(df, path=[px.Constant('Sale'), 'Category', 'Product'], \n                          values='Sales', color='Category')\nfig_tree_map.show(renderer=\"notebook\")\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json\n\n\n\ncolor参数\n\nimport numpy as np\nfig1_tree_map = px.treemap(df, path=[px.Constant('Sale'), 'Category', 'Product'], \n                           values='Sales', color='Sales', color_continuous_scale='RdBu',\n                           color_continuous_midpoint=np.average(df['Sales'])\n                           )\nfig1_tree_map.show(renderer=\"notebook\")\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json\n\n\n当使用数值列来决定不同矩形的颜色时，可以设置color相关的参数：\n\ncolor_continuous_scale：这个参数设置了颜色的渐变色标尺，’RdBu’表示红蓝双色渐变。\ncolor_continuous_midpoint：这个参数用于设置颜色渐变的中点。将某个值作为颜色渐变的中点，可以使得图表的颜色更加平衡。\n\n通过鼠标点击树状图中不同的矩形版块，可以展开或折叠不同层级的数据。"
+  },
+  {
+    "objectID": "动态图表.html#动画效果",
+    "href": "动态图表.html#动画效果",
+    "title": "17  高阶图表",
+    "section": "动画效果",
+    "text": "动画效果\n通过图像连续变化来展示一系列动作或过程，就叫做动效，通常用来展示数据的可视化图表随时间变化的过程。 ### 绘图示例\n\nimport plotly.express as px\n# 内置数据集\ndf = px.data.gapminder()\n\n# 绘制加入动画效果的散点图，展示随时间变化的散点图走势\nfig = px.scatter(df, x=\"gdpPercap\", y=\"lifeExp\", \n                 animation_frame=\"year\", animation_group=\"country\",\n                 size=\"pop\", color=\"continent\", hover_name=\"country\",\n                 log_x=True, size_max=55, range_x=[100,100000], range_y=[25,90])\nfig.show(renderer=\"notebook\")\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json\n\n\n\nGapminder数据集变量介绍\n\n用于展示全球人口、经济和健康状况的变化情况。\ncountry：国家名称。\ncontinent：所属洲。\nyear：年份。\nlifeExp：平均预期寿命。\npop：人口数量。\ngdpPercap：人均GDP。 #### 参数介绍\nhover_name：鼠标悬停在散点上时显示的标签。\nlog_x：控制 x 轴是否使用对数刻度。将其设置为True，则 x 轴使用对数刻度。 在对数刻度中，刻度值是指数增长的，例如刻度值为100、101、102、103\nsize_max：设置散点的最大大小以避免散点过大。\nrange_x：x 轴的取值范围。\nrange_y：y 轴的取值范围。\nanimation_frame：设置动画效果的关键字，此处为year表示散点图将以动画形式展示数据随时间的变化\nanimation_group：确定动画效果的关键字，此处为country表示将展示各个国家的变化数据趋势。\n\n\n\n交互式功能\n\n鼠标交互：\n鼠标悬停提示：Plotly 默认会在图表上显示数据点的数值信息。鼠标悬停在数据点上时，会显示该点的具体数值，包括 x 轴和 y 轴的值。这个功能在 Plotly 中是默认开启的，无需设置。\n缩放和平移：通过鼠标拖拽可以实现图表的缩放和平移。当鼠标指针放在图表上方时，会出现缩放和平移的图标，通过拖动可以改变图表的视图范围。\n\n\n工具栏操作：\n工具栏按钮：Plotly 默认会在图表的右上角显示一个工具栏，其中包含一系列按钮，例如缩放、平移、自动缩放、重置轴范围等。这些按钮可以用于调整图表的外观和交互方式。\n\n\n图例控制：\n图例样式：可以通过设置图例的样式来调整图例的外观，例如字体大小、背景颜色等。通过在 legend 参数中设置相应的属性来实现。\n图例位置：可以通过设置图表布局中的 legend 参数来控制图例的位置。例如，layout=dict(legend=dict(x=0, y=1)) 表示将图例放在图表的左上角。默认情况下，Plotly 会自动根据图表的内容和大小来选择最佳的图例位置。\nlegend常用参数：\n\nx 和 y：设置图例的水平和垂直位置，取值范围为0到1，0表示图表的最左边或最下边，1表示图表的最右边或最上边。\nxanchor 和 yanchor：设置图例的水平和垂直锚点，用于确定图例相对于设置的 x 和 y 位置的对齐方式。\nbgcolor：设置图例的背景颜色。\nbordercolor 和 borderwidth：设置图例的边框颜色和宽度。\ntraceorder：设置图例中数据系列的显示顺序，可选值为 ‘normal’（默认）或 ‘reversed’。\nitemsizing：设置图例中每个数据系列的尺寸，可选值为 ‘trace’（默认）或 ‘constant’。‘trace’ 表示图例中每个数据系列的尺寸与其在图表中的尺寸成比例，‘constant’ 表示图例中每个数据系列的尺寸保持不变。\n\n\nimport plotly.express as px\n\n# 内置数据集\ndf = px.data.gapminder()\n\n# 绘制加入动画效果的散点图，展示随时间变化的散点图走势\nfig = px.scatter(df, x=\"gdpPercap\", y=\"lifeExp\", \n                 animation_frame=\"year\", animation_group=\"country\",\n                 size=\"pop\", color=\"continent\", hover_name=\"country\",\n                 log_x=True, size_max=55, range_x=[100,100000], range_y=[25,90])\n# update_layout定制图表布局\n# legend参数设置图表的图例位置和样式\nfig.update_layout(\n    # x=1表示右，y=1表示上，图例显示在右上角，背景色为白色，边框黑色且宽度为1\n    legend=dict(x=1, y=1, bgcolor='white', bordercolor='black', borderwidth=1)\n)\n\n# 显示图表\nfig.show(renderer=\"notebook\")\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json"
+  },
+  {
+    "objectID": "动态图表.html#滑块和dropdown选择器",
+    "href": "动态图表.html#滑块和dropdown选择器",
+    "title": "17  高阶图表",
+    "section": "滑块和dropdown选择器",
+    "text": "滑块和dropdown选择器\n\nslider滑块\n\nimport plotly.express as px\n\ndf = px.data.gapminder()\nfig = px.scatter(df, x=\"gdpPercap\", y=\"lifeExp\", animation_frame=\"year\", animation_group=\"country\",\n           size=\"pop\", color=\"continent\", hover_name=\"country\",\n           log_x=True, size_max=55, range_x=[100,100000], range_y=[25,90])\n\nfig[\"layout\"].pop(\"updatemenus\") # 省去动画的播放按钮\nfig.show(renderer=\"notebook\")\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json\n\n\n\n\nDropdown下拉菜单（仅作了解）\n\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n\n# 示例数据\nyears = [2010, 2011, 2012, 2013, 2014]\nsales = [100, 150, 200, 180, 250]\nprice = [10, 12, 15, 18, 20]\n\n# 创建图表\nfig = go.Figure()\n\n# 添加销售额折线图，不可见\nfig.add_trace(go.Scatter(x=years, y=sales, mode='lines+markers', name='Sales', visible=True))\n\n# 添加价格折线图，默认可见\nfig.add_trace(go.Scatter(x=years, y=price, mode='lines+markers', name='Price', visible=False))\n\n# 设置布局\nfig.update_layout(title='Sales and Price over Time',\n                  xaxis_title='Year',\n                  yaxis_title='Value',\n                  height=600,\n                  width=1000)\n\n# 添加 Dropdown 组件\nfig.update_layout(\n    updatemenus=[\n        dict(\n            buttons=list([\n                dict(\n                    args=[{'visible': [True, False]}],\n                    label='Sales',\n                    method='update'\n                ),\n                dict(\n                    args=[{'visible': [False, True]}],\n                    label='Price',\n                    method='update'\n                )\n            ]),\n            direction='down',\n            showactive=True,\n            x=0.1,\n            xanchor='left',\n            y=1.1,\n            yanchor='top'\n        ),\n    ]\n)\n\n# 显示图表\nfig.show(renderer=\"notebook\")\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json"
+  },
+  {
+    "objectID": "动态图表.html#数据的分组聚合-groypby和agg",
+    "href": "动态图表.html#数据的分组聚合-groypby和agg",
+    "title": "17  高阶图表",
+    "section": "数据的分组聚合: groypby()和agg()",
+    "text": "数据的分组聚合: groypby()和agg()\n使用groupby()和agg()实现数据的分组聚合：\n\nimport plotly.express as px\nimport pandas as pd\n\n# 示例数据\ndata = {\n    'Category': ['A', 'B', 'A', 'B', 'A', 'B'],\n    'Value': [10, 15, 20, 25, 30, 35]\n}\ndf = pd.DataFrame(data)\n\n# 嵌套使用 groupby 和 agg 进行数据分组和聚合\ngrouped_data = df.groupby('Category').agg({'Value': 'mean'}).reset_index()\n\n# 使用 Plotly 绘制条形图\nfig = px.bar(grouped_data, x='Category', y='Value', title='Category Average')\nfig.show(renderer=\"notebook\")\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json"
+  },
+  {
+    "objectID": "动态图表.html#transform-filtergroupbyaggregate",
+    "href": "动态图表.html#transform-filtergroupbyaggregate",
+    "title": "17  高阶图表",
+    "section": "Transform: Filter/Groupby/Aggregate",
+    "text": "Transform: Filter/Groupby/Aggregate\nPlotly中有一种Transform可以对数据进行转换处理，通过transform可以实现对数据的筛选过滤filter、分组groupby、聚合aggregate操作。\n请查看下面的示例代码和图表。 ### Filter\n\nimport plotly.io as pio\n\nstudent = ['Amy', 'Laura', 'Lisa', 'Amy', 'Laura', 'Lisa', 'Laura', 'Lisa', 'Amy']\nscore = [77, 88, 99, 87, 76, 65, 78, 89, 90]\n# 使用 dict() 定义一个散点图的数据字典列表 data。\n# data 中包含一个字典，其中定义了散点图的数据属性。\ndata = [dict(\n  type = 'scatter', \n  # 指定x轴和y轴\n  x = student, \n  y = score,\n  # mode 参数用于控制绘制散点图时标记的形状。\n  # markers:圆点。'lines':折线,'lines+markers':圆点+折线,'text'：显示文本标签。\n  mode = 'markers',\n  transforms = [dict(\n    type = 'filter',  # 'filter'表示筛选过滤，'groupby'表示分组，'aggregate'表示聚合\n    target = 'y',     # 数据转换filter的目标对象为y\n    operation = '&gt;',  # 过滤条件：&gt;\n    value = 80        # 过滤条件临界值：80\n  )]\n)]\n\nlayout = dict(\n    title = 'Scores &gt; 80'\n)\n\nfig_dict = dict(data=data, layout=layout)\n# validate=False表示无需验证数据，直接输出图像\npio.show(fig_dict, validate=False, renderer=\"notebook\")\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json\n\n\n\nGroupby\n\nimport plotly.io as pio\n\nstudent = ['Amy', 'Laura', 'Lisa', 'Amy', 'Laura', 'Lisa', 'Laura', 'Lisa', 'Amy']\nscore = [77, 88, 99, 87, 76, 65, 78, 89, 90]\n\ndata = [dict(\n  type = 'scatter', \n  x = student, \n  y = score,\n  mode = 'markers',\n  transforms = [dict(\n    type = 'groupby',  \n    groups = student,  # 以不同学生来分组\n    # styles: 样式列表，其中包含不同学生的样式设置，这里显示为特定的不同颜色\n    styles = [\n        dict(target = 'Amy', value = dict(marker = dict(color = 'blue'))),\n        dict(target = 'Laura', value = dict(marker = dict(color = 'red'))),\n        dict(target = 'Lisa', value = dict(marker = dict(color = 'black')))\n    ]\n  )]\n)]\n\nfig_dict = dict(data=data)\npio.show(fig_dict, validate=False, renderer=\"notebook\")\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json\n\n\n\n\nAggregate\n\ncount: 数量。\nsum: 总和。\navg: 平均值。\nmedian: 中位数。\nmode: 众数。\nrms: 均方根。\nstddev: 标准差。\nmin: 最小值。\nmax: 最大值。\nfirst: 第一个值。\nlast: 最后一个值。\n\n\nimport plotly.io as pio\n\nstudent = ['Amy', 'Laura', 'Lisa', 'Amy', 'Laura', 'Lisa', 'Laura', 'Lisa', 'Amy']\nscore = [77, 88, 99, 87, 76, 65, 78, 89, 90]\n\ndata = [dict(\n  type = 'scatter', \n  x = student, \n  y = score,\n  mode = 'markers',\n  transforms = [dict(\n    type = 'aggregate',\n    groups = student,\n    aggregations = [dict(\n        # 聚合的目标对象:y, 聚合结果：返回平均值。\n        target = 'y', func = 'avg', enabled = True),\n    ]\n  )]\n)]\n\nlayout = dict(\n    title = 'Average Score'\n)\nfig_dict = dict(data=data, layout=layout)\npio.show(fig_dict, validate=False, renderer=\"notebook\")\n\nUnable to display output for mime type(s): application/vnd.plotly.v1+json"
+  },
+  {
     "objectID": "for循环.html#为什么需要使用for循环",
     "href": "for循环.html#为什么需要使用for循环",
-    "title": "17  for循环自动获取股票数据",
+    "title": "18  for循环自动获取股票数据",
     "section": "为什么需要使用for循环？",
     "text": "为什么需要使用for循环？\nfor循环简化了操作、处理大量数据，自动化了重复任务，并提供灵活的遍历顺序。它是一种强大的编程工具，帮助我们优化效率、减少冗余代码。无论初学者还是经验丰富的开发人员，for循环都是不可或缺的技术，提升代码质量、处理数据轻而易举。"
   },
   {
     "objectID": "for循环.html#案例背景",
     "href": "for循环.html#案例背景",
-    "title": "17  for循环自动获取股票数据",
+    "title": "18  for循环自动获取股票数据",
     "section": "案例背景",
     "text": "案例背景\n使用for循环调用股票API Tushare获取日线行情。但是有限制调用页数。尝试使用for循环遍历列表，逐个发送API请求获取每只股票的日线行情数据。"
   },
   {
     "objectID": "for循环.html#操作步骤",
     "href": "for循环.html#操作步骤",
-    "title": "17  for循环自动获取股票数据",
+    "title": "18  for循环自动获取股票数据",
     "section": "操作步骤",
     "text": "操作步骤\n\n通过def定义函数\nfor循环遍历整个日线行情\nconcat合并上下表"
   },
   {
     "objectID": "python链接数据库.html#为什么要用sqlalchemy连接数据库",
     "href": "python链接数据库.html#为什么要用sqlalchemy连接数据库",
-    "title": "18  Python连接Postgresql数据库",
+    "title": "19  Python连接Postgresql数据库",
     "section": "为什么要用SQLAlchemy连接数据库？",
     "text": "为什么要用SQLAlchemy连接数据库？\n在企业中，很多数据都存储在数据库当中，通过SQLAlchemy，可以轻松连接多种数据库，包括MySQL、PostgreSQL、SQLite等，并使用统一的API进行数据库操作。SQLAlchemy提供了高级的对象关系映射（ORM）功能，使数据库操作更加面向对象，简化了数据模型的开发和管理。它提供了查询构建器、事务管理、数据迁移等功能，提高了开发效率。"
   },
   {
     "objectID": "python链接数据库.html#所需环境和拓展包",
     "href": "python链接数据库.html#所需环境和拓展包",
-    "title": "18  Python连接Postgresql数据库",
+    "title": "19  Python连接Postgresql数据库",
     "section": "所需环境和拓展包",
     "text": "所需环境和拓展包\n\njupyternotebook – 撰写python代码\nPostgreSQL & Pgadmin4 – 数据库及其GUI工具（数据库客户端）\nSQLAlchemy – python拓展包，用来连接数据库"
   },
   {
     "objectID": "python链接数据库.html#操作步骤",
     "href": "python链接数据库.html#操作步骤",
-    "title": "18  Python连接Postgresql数据库",
+    "title": "19  Python连接Postgresql数据库",
     "section": "操作步骤",
     "text": "操作步骤\n\nDocker安装jupyternotebook & Postgresql数据库\n本地数据库备份&迁移\n安装和使用SqlAlechemy"
   },
   {
     "objectID": "Dash案例.html#为什么要使用dash",
     "href": "Dash案例.html#为什么要使用dash",
-    "title": "19  Dash创建股票APP",
+    "title": "20  Dash创建股票APP",
     "section": "为什么要使用Dash",
     "text": "为什么要使用Dash\nDash Plotly是一个基于Python的开源框架，用于构建交互式数据可视化和分析应用。\n它的优势在于简洁的语法、强大的可视化功能和灵活的布局选项。通过使用Dash Plotly，您可以轻松创建漂亮、交互式的应用程序，展示和探索数据，无论是用于内部报告、数据分析还是对外展示。它提供了丰富的图表类型、注解和样式设置，以及与其他Python库的无缝集成，如pandas和numpy。Dash Plotly还支持部署到Web服务器上，使得应用程序能够通过浏览器进行访问和共享。\n总的来说，Dash Plotly提供了一种简单而强大的方式来创建数据驱动的应用程序，使得数据可视化和交互变得更加容易和高效。"
   },
   {
     "objectID": "Dash案例.html#案例背景",
     "href": "Dash案例.html#案例背景",
-    "title": "19  Dash创建股票APP",
+    "title": "20  Dash创建股票APP",
     "section": "案例背景",
     "text": "案例背景\n使用Dash 模仿复现股票走势的交互可视化面板，可以查看股票日线级别的涨跌幅度、股票走势和买入卖出盈亏比。以英伟达股票为案例"
   },
   {
     "objectID": "Dash案例.html#相关链接",
     "href": "Dash案例.html#相关链接",
-    "title": "19  Dash创建股票APP",
+    "title": "20  Dash创建股票APP",
     "section": "相关链接",
     "text": "相关链接\n免费股票数据API\nGitHub Python调用API\n模仿案例网站"
   },
   {
     "objectID": "Dash案例.html#dash股票案例上集",
     "href": "Dash案例.html#dash股票案例上集",
-    "title": "19  Dash创建股票APP",
+    "title": "20  Dash创建股票APP",
     "section": "Dash股票案例（上集）",
     "text": "Dash股票案例（上集）\n\nAPI获取&调用\npands数据清洗\n导出csv到本地\nDash-Bootstrap主题\nDash-layout排版\nDash-调整位置和宽度"
   },
   {
     "objectID": "Dash案例.html#dash股票案例下集",
     "href": "Dash案例.html#dash股票案例下集",
-    "title": "19  Dash创建股票APP",
+    "title": "20  Dash创建股票APP",
     "section": "Dash股票案例（下集）",
     "text": "Dash股票案例（下集）\n\napp功能：涨跌百分比\npadnas数据清洗&过滤\nplotly绘制百分比图\napp功能：股票走势图\nupdate_traces VS update_layout\napp功能：滚动数据\nBootstrap组件使用"
   }
