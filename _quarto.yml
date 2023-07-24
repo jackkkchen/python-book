@@ -61,7 +61,7 @@ book:
     - part: "Plotly可视化入门"
       chapters:
         - basic.ipynb
-        # - 高阶图表.ipynb
+        - 动态图表.ipynb
         # - 地图可视化.ipynb
     - part: "实际案例"
       chapters:
