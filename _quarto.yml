@@ -55,9 +55,14 @@ book:
         - 选取数据.ipynb
         - 添加新列.ipynb
         - Pandas计算重塑合并最终版本.ipynb
-        - time_data.qmd
-        - txt_data.qmd
-        - 更好的数据可视化.ipynb
+        - 时间序列数据.ipynb
+        - 文本数据.ipynb
+        # - 更好的数据可视化.ipynb
+    - part: "Plotly可视化入门"
+      chapters:
+        - basic.ipynb
+        # - 高阶图表.ipynb
+        # - 地图可视化.ipynb
     - part: "实际案例"
       chapters:
         - for循环.ipynb
