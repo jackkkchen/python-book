@@ -350,15 +350,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#热力图" id="toc-热力图" class="nav-link active" data-scroll-target="#热力图">热力图</a></li>
-  <li><a href="#旭日图" id="toc-旭日图" class="nav-link" data-scroll-target="#旭日图">旭日图</a></li>
+  <li><a href="#热力图" id="toc-热力图" class="nav-link active" data-scroll-target="#热力图">热力图</a>
+  <ul class="collapse">
+  <li><a href="#一个简单的热力图示例" id="toc-一个简单的热力图示例" class="nav-link" data-scroll-target="#一个简单的热力图示例">一个简单的热力图示例：</a></li>
+  </ul></li>
+  <li><a href="#旭日图" id="toc-旭日图" class="nav-link" data-scroll-target="#旭日图">旭日图</a>
+  <ul class="collapse">
+  <li><a href="#一个简单的旭日图示例" id="toc-一个简单的旭日图示例" class="nav-link" data-scroll-target="#一个简单的旭日图示例">一个简单的旭日图示例：</a></li>
+  </ul></li>
   <li><a href="#树状图" id="toc-树状图" class="nav-link" data-scroll-target="#树状图">树状图</a>
   <ul class="collapse">
+  <li><a href="#一个简单的树状图示例" id="toc-一个简单的树状图示例" class="nav-link" data-scroll-target="#一个简单的树状图示例">一个简单的树状图示例：</a></li>
   <li><a href="#color参数" id="toc-color参数" class="nav-link" data-scroll-target="#color参数">color参数</a></li>
   </ul></li>
-  <li><a href="#动画效果" id="toc-动画效果" class="nav-link" data-scroll-target="#动画效果">动画效果</a>
+  <li><a href="#动画效果" id="toc-动画效果" class="nav-link" data-scroll-target="#动画效果">动画效果</a></li>
+  <li><a href="#交互式功能" id="toc-交互式功能" class="nav-link" data-scroll-target="#交互式功能">交互式功能</a>
   <ul class="collapse">
-  <li><a href="#交互式功能" id="toc-交互式功能" class="nav-link" data-scroll-target="#交互式功能">交互式功能</a></li>
+  <li><a href="#鼠标交互" id="toc-鼠标交互" class="nav-link" data-scroll-target="#鼠标交互">鼠标交互：</a></li>
+  <li><a href="#工具栏操作" id="toc-工具栏操作" class="nav-link" data-scroll-target="#工具栏操作">工具栏操作：</a></li>
+  <li><a href="#图例控制" id="toc-图例控制" class="nav-link" data-scroll-target="#图例控制">图例控制：</a></li>
   </ul></li>
   <li><a href="#滑块和dropdown选择器" id="toc-滑块和dropdown选择器" class="nav-link" data-scroll-target="#滑块和dropdown选择器">滑块和dropdown选择器</a>
   <ul class="collapse">
@@ -366,8 +376,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#dropdown下拉菜单仅作了解" id="toc-dropdown下拉菜单仅作了解" class="nav-link" data-scroll-target="#dropdown下拉菜单仅作了解">Dropdown下拉菜单（仅作了解）</a></li>
   </ul></li>
   <li><a href="#数据的分组聚合-groypby和agg" id="toc-数据的分组聚合-groypby和agg" class="nav-link" data-scroll-target="#数据的分组聚合-groypby和agg">数据的分组聚合: <code>groypby()</code>和<code>agg()</code></a></li>
-  <li><a href="#transform-filtergroupbyaggregate" id="toc-transform-filtergroupbyaggregate" class="nav-link" data-scroll-target="#transform-filtergroupbyaggregate">Transform: Filter/Groupby/Aggregate</a>
+  <li><a href="#数据转换-filtergroupbyaggregate" id="toc-数据转换-filtergroupbyaggregate" class="nav-link" data-scroll-target="#数据转换-filtergroupbyaggregate">数据转换: Filter/Groupby/Aggregate</a>
   <ul class="collapse">
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter">Filter</a></li>
   <li><a href="#groupby" id="toc-groupby" class="nav-link" data-scroll-target="#groupby">Groupby</a></li>
   <li><a href="#aggregate" id="toc-aggregate" class="nav-link" data-scroll-target="#aggregate">Aggregate</a></li>
   </ul></li>
@@ -394,15 +405,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>上一节介绍了基础图表的绘制，这一节来介绍下plotly可视化的高级功能 - 绘制<a href="https://plotly.com/python/sunburst-charts/">旭日图</a>，<a href="https://plotly.com/python/treemaps/">树状图</a>和<a href="https://plotly.com/python/heatmaps/">热力图</a> - 通过Transform实现数据的<a href="https://plotly.com/python/filter/">筛选过滤</a>，<a href="https://plotly.com/python/group-by/">分组</a>和<a href="https://plotly.com/python/aggregations/">聚合</a>操作。 - Plotly的交互功能实现: - 鼠标交互、工具栏操作和图例控制。 - 基于基础图表添加动画效果(<a href="https://plotly.com/python/animations/">Animation</a>) - 自定义控件：使用滑块、下拉菜单等控件进行数据过滤和筛选。</p>
+<p>上一节介绍了基础图表的绘制，这一节来介绍下plotly可视化的高级功能 - 绘制<a href="https://plotly.com/python/sunburst-charts/">旭日图</a>，<a href="https://plotly.com/python/treemaps/">树状图</a>和<a href="https://plotly.com/python/heatmaps/">热力图</a></p>
+<ul>
+<li><p>通过Transform实现数据的<a href="https://plotly.com/python/filter/">筛选过滤</a>，<a href="https://plotly.com/python/group-by/">分组</a>和<a href="https://plotly.com/python/aggregations/">聚合</a>操作。</p></li>
+<li><p>Plotly的交互功能实现:</p>
+<ul>
+<li><p>鼠标交互、工具栏操作和图例控制。</p></li>
+<li><p>基于基础图表添加动画效果(<a href="https://plotly.com/python/animations/">Animation</a>)</p></li>
+<li><p>自定义控件：使用滑块、下拉菜单等控件进行数据过滤和筛选。</p></li>
+</ul></li>
+</ul>
 <section id="热力图" class="level2">
 <h2 class="anchored" data-anchor-id="热力图">热力图</h2>
 <p>热力图是一种使用颜色来展示二维数据的图表，主要用于展示二维数据的分布和相关性，其中颜色的深浅表示数据的密度、数值的大小或相关性的强度。</p>
 <ul>
 <li>热力图可以帮助用户直观地观察数据的分布情况，从而快速识别数据的集中区域和稀疏区域。</li>
 <li>主要用于显示数据的分布、相关性和模式，例如地图上的人口密度。</li>
-<li>能够突出显示异常值：热力图可以突出显示数据中的异常值或异常模式，帮助用户识别潜在的问题或异常情况。 ### 一个简单的热力图示例：</li>
+<li>能够突出显示异常值：热力图可以突出显示数据中的异常值或异常模式，帮助用户识别潜在的问题或异常情况。</li>
 </ul>
+<section id="一个简单的热力图示例" class="level3">
+<h3 class="anchored" data-anchor-id="一个简单的热力图示例">一个简单的热力图示例：</h3>
 <div class="cell" data-execution_count="104">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -433,6 +455,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 </section>
+</section>
 <section id="旭日图" class="level2">
 <h2 class="anchored" data-anchor-id="旭日图">旭日图</h2>
 <p>旭日图，也叫做<a href="https://plotly.com/python/sunburst-charts/">Sundayburst Charts</a>，主要用来展示具有层级结构的数据，其中每个数据点都有一个父级和一个或多个子级。</p>
@@ -441,6 +464,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>旭日图能够同时表现数据的局部和整体的占比情况，以及数据层级之间的关系。相较于饼图，旭日图更适合展示层级多的比例数据关系，更适合呈现复杂的数据结构。</p></li>
 <li><p>旭日图通过环形结构，使得用户可以清楚地看到数据从大类到子类的层级关系，以及不同类别之间的相对比例。</p></li>
 </ul>
+<section id="一个简单的旭日图示例" class="level3">
+<h3 class="anchored" data-anchor-id="一个简单的旭日图示例">一个简单的旭日图示例：</h3>
 <div class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -470,6 +495,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>通过鼠标点击旭日图中不同的环块，可以展开或折叠不同层级的数据。</p>
 </section>
 </section>
+</section>
 <section id="树状图" class="level2">
 <h2 class="anchored" data-anchor-id="树状图">树状图</h2>
 <p>树状图是一种展现层次结构的可视化图表，通过矩形的嵌套和面积大小来展示数据的层级关系。</p>
@@ -477,6 +503,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>树状图主要用于展示层次结构数据，例如文件夹大小、组织架构、经济分布等。</li>
 <li>树状图可以帮助用户快速了解数据的组织结构，同时直观地比较不同层级之间的数据大小。</li>
 </ul>
+<section id="一个简单的树状图示例" class="level3">
+<h3 class="anchored" data-anchor-id="一个简单的树状图示例">一个简单的树状图示例：</h3>
 <div class="cell" data-execution_count="107">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 树状图数据（层次结构数据）</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 各个领域的商品销量</span></span>
@@ -496,6 +524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
 </div>
+</section>
 <section id="color参数" class="level3">
 <h3 class="anchored" data-anchor-id="color参数">color参数</h3>
 <div class="cell" data-execution_count="112">
@@ -554,19 +583,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>animation_group：确定动画效果的关键字，此处为country表示将展示各个国家的变化数据趋势。</li>
 </ul>
 </section>
-<section id="交互式功能" class="level3">
-<h3 class="anchored" data-anchor-id="交互式功能">交互式功能</h3>
-<section id="鼠标交互" class="level4">
-<h4 class="anchored" data-anchor-id="鼠标交互">鼠标交互：</h4>
+</section>
+<section id="交互式功能" class="level2">
+<h2 class="anchored" data-anchor-id="交互式功能">交互式功能</h2>
+<section id="鼠标交互" class="level3">
+<h3 class="anchored" data-anchor-id="鼠标交互">鼠标交互：</h3>
 <p>鼠标悬停提示：Plotly 默认会在图表上显示数据点的数值信息。鼠标悬停在数据点上时，会显示该点的具体数值，包括 x 轴和 y 轴的值。这个功能在 Plotly 中是默认开启的，无需设置。</p>
 <p>缩放和平移：通过鼠标拖拽可以实现图表的缩放和平移。当鼠标指针放在图表上方时，会出现缩放和平移的图标，通过拖动可以改变图表的视图范围。</p>
 </section>
-<section id="工具栏操作" class="level4">
-<h4 class="anchored" data-anchor-id="工具栏操作">工具栏操作：</h4>
+<section id="工具栏操作" class="level3">
+<h3 class="anchored" data-anchor-id="工具栏操作">工具栏操作：</h3>
 <p>工具栏按钮：Plotly 默认会在图表的右上角显示一个工具栏，其中包含一系列按钮，例如缩放、平移、自动缩放、重置轴范围等。这些按钮可以用于调整图表的外观和交互方式。</p>
 </section>
-<section id="图例控制" class="level4">
-<h4 class="anchored" data-anchor-id="图例控制">图例控制：</h4>
+<section id="图例控制" class="level3">
+<h3 class="anchored" data-anchor-id="图例控制">图例控制：</h3>
 <p>图例样式：可以通过设置图例的样式来调整图例的外观，例如字体大小、背景颜色等。通过在 legend 参数中设置相应的属性来实现。</p>
 <p>图例位置：可以通过设置图表布局中的 legend 参数来控制图例的位置。例如，layout=dict(legend=dict(x=0, y=1)) 表示将图例放在图表的左上角。默认情况下，Plotly 会自动根据图表的内容和大小来选择最佳的图例位置。</p>
 <p>legend常用参数：</p>
@@ -602,7 +632,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
 </div>
-</section>
 </section>
 </section>
 <section id="滑块和dropdown选择器" class="level2">
@@ -710,10 +739,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="transform-filtergroupbyaggregate" class="level2">
-<h2 class="anchored" data-anchor-id="transform-filtergroupbyaggregate">Transform: Filter/Groupby/Aggregate</h2>
+<section id="数据转换-filtergroupbyaggregate" class="level2">
+<h2 class="anchored" data-anchor-id="数据转换-filtergroupbyaggregate">数据转换: Filter/Groupby/Aggregate</h2>
 <p>Plotly中有一种Transform可以对数据进行转换处理，通过transform可以实现对数据的筛选过滤filter、分组groupby、聚合aggregate操作。</p>
-<p>请查看下面的示例代码和图表。 ### Filter</p>
+<p>请查看下面的示例代码和图表。</p>
+<section id="filter" class="level3">
+<h3 class="anchored" data-anchor-id="filter">Filter</h3>
 <div class="cell" data-execution_count="82">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.io <span class="im">as</span> pio</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -748,6 +779,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
 </div>
+</section>
 <section id="groupby" class="level3">
 <h3 class="anchored" data-anchor-id="groupby">Groupby</h3>
 <div class="cell" data-execution_count="127">
