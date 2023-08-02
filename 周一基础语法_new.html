@@ -121,8 +121,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>然后，我们点击创建一个Python File。这样一来，我们就成功创建了一个<code>.py</code>文件了，但是我们的文件中还没有代码，需要我们进行进一步的操作。</p>
 <p>在左边的目录中，我们可以看到我们新建的文件，通常来说，它会被命名为<code>Untitled.py</code>，我们可以在目录中直接修改文件名。</p>
 <p>点击进入Python文件之后，我们就可以开始撰写代码了，试试看，输入：</p>
-<div class="cell">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"世界和平"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>世界和平</code></pre>
+</div>
 </div>
 <p>暂时你还不领会这段代码的含义，但是没关系，在后面的教程中，我们会慢慢来告诉你。</p>
 <p><img src="./img/run.png" class="img-fluid"></p>
@@ -158,26 +161,8 @@ Note
 <p>.ipynb格式的文件中的块分为两类，一类是markdown块，用于书写文本内容，另一类就是代码块，我们可以很方便地在其中输入代码，然后点击标题栏下方的运行按钮，或者按下<code>Shift + Enter</code>就可以执行我们的代码。</p>
 <p><img src="./img/py_basic.png" class="img-fluid"></p>
 <p>试试看新建一个.ipynb文件，然后输入刚才的代码，你会很直观的看到代码的运行结果。</p>
-<p>现在，你可以看看下面的视频，这会帮助你加深对文件运行方法的理解。</p>
-<video controls="" style="width: 100%;">
-<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E4%BD%BF%E7%94%A8python%E2%80%94%E2%80%94%E4%BD%BF%E7%94%A8Clipchamp%E5%88%B6%E4%BD%9C.mp4" type="video/mp4">
-</video>
-<style>
-video {
-  max-width: 100%;
-  height: auto;
-}
-</style>
+<p>现在，你自己尝试一下新建一个.ipynb文件并运行，这会帮助你加深对文件运行方法的理解。</p>
 <p>在后面的学习中，我们会经常用到.ipynb文件，大家可以从微信群中下载所需要用到的文件，然后上传到JupyterLab中打开。</p>
-<video controls="" style="width: 100%;">
-<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%89%93%E5%BC%80ipynb%E6%96%87%E4%BB%B6.mp4" type="video/mp4">
-</video>
-<style>
-video {
-  max-width: 100%;
-  height: auto;
-}
-</style>
 </section>
 </section>
 <section id="四python基础语法" class="level3">
@@ -202,26 +187,26 @@ Note
 </code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2023</span> <span class="op">+</span> <span class="dv">4090</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2023</span> <span class="op">+</span> <span class="dv">4090</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>6113</code></pre>
 </div>
 </div>
 <p>在上面的例子中，我们编写了一个简单的算术表达式，用来计算<code>2023</code>与<code>4090</code>的和。在执行后，我们可以在输出区域看到运算结果：</p>
 <p><code>6113</code></p>
 <p>现在，让我们尝试另外一种表达式：逻辑表达式。</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="op">&gt;</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="op">&gt;</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p>上面的表达式对9和1的大小进行了判断。由于<code>9 &gt; 1</code>成立，因此程序返回<code>True</code>；相反，如果我们编写<code>1 &gt; 9</code>，则会返回<code>False</code>。在这里，<code>True</code>和<code>False</code>统称为布尔值，在后续的数据类型课程中，我们会详细地介绍它们。</p>
 <p>在编写代码时，难免会遇到错误。</p>
 <p>如果我们让一个未赋值的变量(也就是一个空值)与数字进行比较会发生什么呢？现在，试试看删除上面的表达式中<code>&gt;</code>右侧的数字<code>1</code>，重新执行代码。</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>SyntaxError: invalid syntax (1639543893.py, line 1)</code></pre>
 </div>
@@ -253,31 +238,22 @@ Note
 <h4 class="anchored" data-anchor-id="变量的赋值">3. 变量的赋值</h4>
 <p>在Python中，可以使用赋值操作符（=）来给变量赋值。在<code>=</code>左侧的元素就是变量名，在<code>=</code>右侧的元素则是存储在变量中的值。赋值操作就是将右侧的数据或表达式的值存储到变量中。在赋值时，等号右侧的值先被计算，然后再赋给等号左侧的变量。如：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"John"</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"John"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>尝试完上面的代码，你可以观看下面的视频，这会有助于帮助你理解赋值操作。</p>
-<video controls="" style="width: 100%;">
-<source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/python-%E5%8F%98%E9%87%8F%E8%B5%8B%E5%80%BC.mp4" type="video/mp4">
-</video>
-<style>
-video {
-  max-width: 100%;
-  height: auto;
-}
-</style>
+<p>尝试上面的代码，这会有助于帮助你理解赋值操作。</p>
 </section>
 <section id="变量的使用" class="level4">
 <h4 class="anchored" data-anchor-id="变量的使用">4. 变量的使用</h4>
 <p>一旦变量被赋值，我们可以在程序中使用它们。通过变量名，我们可以获取存储在变量中的值，并在代码中进行各种操作。</p>
 <p>试着在JupyterLab中输入下面的示例代码，这将会调用变量<code>x</code>计算其平方并打印结果：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>square <span class="op">=</span> x <span class="op">*</span> x</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>square <span class="op">=</span> x <span class="op">*</span> x</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="变量的重新赋值" class="level4">
@@ -285,11 +261,11 @@ video {
 <p>变量的值可以随时更改。通过简单地再次使用赋值操作符，我们可以为变量分配新的值。新值将覆盖之前的值。</p>
 <p>下面的例子向我们演示了如何为我们在上面定义的变量重新进行赋值：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Jack"</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Jack"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>现在你已经了解了变量的基础概念。接下来，你可以试试看如何将字符串”Hello, Python!“赋值给一个名为message的变量，并输出它的值。</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -315,26 +291,26 @@ Note
 <p>单行注释是通过在一行代码后面使用井号<code>#</code>符号添加的注释。任何位于<code>#</code>后面的文本都会被Python解释器忽略，不会对代码产生影响。单行注释通常用于对代码进行简短的解释、备注或说明，帮助开发者理解代码的功能和意图。</p>
 <p>看看下面的代码，这是单行注释的两种形式：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 这是一个单行注释</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World!"</span>)  <span class="co"># 打印输出文本</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 这是一个单行注释</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World!"</span>)  <span class="co"># 打印输出文本</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="多行注释" class="level4">
 <h4 class="anchored" data-anchor-id="多行注释">2. 多行注释</h4>
 <p>多行注释是通过使用三个单引号<code>'''</code>或三个双引号<code>"""</code>将多行文本包围起来，从而形成一个注释块。这种注释方式通常用于注释较长的段落或函数的文档说明，以提供更详细的代码解释和描述。例如：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">这是一个多行注释，</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">用于提供更详细的代码解释和描述。</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">可以跨越多行，非常方便。</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">以下是代码的主要功能：</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">- 输入用户的姓名</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">- 打印欢迎消息和姓名</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"请输入您的姓名："</span>)</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"欢迎，"</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">"!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">这是一个多行注释，</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">用于提供更详细的代码解释和描述。</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">可以跨越多行，非常方便。</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">以下是代码的主要功能：</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">- 输入用户的姓名</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">- 打印欢迎消息和姓名</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"请输入您的姓名："</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"欢迎，"</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">"!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -375,22 +351,22 @@ Note
 </ul>
 <p>下面的例子，向我们展示了Python中行最重要的功能：语句分隔</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello,"</span>)  <span class="co"># 第一行代码</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Python!"</span>)  <span class="co"># 第二行代码</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello,"</span>)  <span class="co"># 第一行代码</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Python!"</span>)  <span class="co"># 第二行代码</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>在一些情况下，行可能会非常长，为了让代码更美观，我们可以使用反斜杠<code>\</code>作为续行字符将一行代码分成多行。例如：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>long_line <span class="op">=</span> <span class="st">"This is a very long line, and we want to split it into multiple lines </span><span class="ch">\</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="st">             for better readability."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>long_line <span class="op">=</span> <span class="st">"This is a very long line, and we want to split it into multiple lines </span><span class="ch">\</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="st">             for better readability."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>在上述代码中，我们演示了将一个特别长的字符串赋值给变量<code>long_line</code>。为了使代码更易读，我们在字符串中间使用了<code>\</code>进行换行。</p>
 <p>另外，你还可以使用括号(圆括号、方括号、花括号)来隔行编写多行语句，就像下面的例子一样：</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> (<span class="dv">10</span> <span class="op">+</span> <span class="dv">20</span> <span class="op">+</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>          <span class="dv">30</span> <span class="op">+</span> <span class="dv">40</span> <span class="op">+</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>          <span class="dv">50</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># 输出：150</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> (<span class="dv">10</span> <span class="op">+</span> <span class="dv">20</span> <span class="op">+</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>          <span class="dv">30</span> <span class="op">+</span> <span class="dv">40</span> <span class="op">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>          <span class="dv">50</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># 输出：150</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="缩进" class="level4">
@@ -416,20 +392,20 @@ Note
 </div>
 </div>
 <p>看看下面的代码，展示了缩进在代码块定义中的应用。</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> draw_heart():</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 第一层缩进，函数的代码块开始</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"  ❤️    ❤️  "</span>)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"❤️   ❤️   ❤️"</span>)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"❤️        ❤️"</span>)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"  ❤️    ❤️"</span>)</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"     ❤️ "</span>)</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 第一层缩进，函数的代码块结束</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 主程序从这里开始执行</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"我画了一个可爱的心形："</span>)</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>draw_heart()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> draw_heart():</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 第一层缩进，函数的代码块开始</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"  ❤️    ❤️  "</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"❤️   ❤️   ❤️"</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"❤️        ❤️"</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"  ❤️    ❤️"</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"     ❤️ "</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 第一层缩进，函数的代码块结束</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 主程序从这里开始执行</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"我画了一个可爱的心形："</span>)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>draw_heart()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>我画了一个可爱的心形：
   ❤️    ❤️  
