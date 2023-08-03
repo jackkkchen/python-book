@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.433">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Python新手文档 - 3&nbsp; Python数据类型</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./new_周三_数据结构.html" rel="next">
+<link href="./周一基础语法_new.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./周一基础语法_new.html">Python入门基础</a></li><li class="breadcrumb-item"><a href="./周二数据类型_new.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python数据类型</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Python新手文档</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/jackkkchen/python-book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Python新手文档.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Python新手文档.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">文档目录</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python简介</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./周一环境搭建.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Python环境搭建</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Python入门基础</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./周一基础语法_new.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python基本概念与指令输入</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./周二数据类型_new.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python数据类型</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./new_周三_数据结构.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Python结构</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">NumPy快速入门</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./NumPy数组概念.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">NumPy数组概念</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./NumPy数组的基本操作.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">NumPy数组的基本操作和变换</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Pandas快速入门</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./安装.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pandas安装</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pandas处理什么样的数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">pandas处理什么样的数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./导入_导出数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">导入&amp;导出数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./选取数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">选取数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./添加新列.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">数据的增加、删除、修改</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Pandas计算重塑合并最终版本.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">如何计算汇总统计</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./时间序列数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Pandas处理时间序列数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./文本数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Pandas处理文本数据</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Plotly可视化入门</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Plotly 图表绘制与可视化</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./动态图表.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">高阶图表</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./地图可视化.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Plotly地图可视化</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">实际案例</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./for循环.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">for循环自动获取股票数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python链接数据库.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Python连接Postgresql数据库</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Dash案例.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Dash创建股票APP</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#数据类型" id="toc-数据类型" class="nav-link active" data-scroll-target="#数据类型">数据类型</a>
+  <ul class="collapse">
+  <li><a href="#一数字类型numeric-types" id="toc-一数字类型numeric-types" class="nav-link" data-scroll-target="#一数字类型numeric-types">一、数字类型(Numeric Types)</a></li>
+  <li><a href="#二布尔类型boolean-type" id="toc-二布尔类型boolean-type" class="nav-link" data-scroll-target="#二布尔类型boolean-type">二、布尔类型(Boolean Type)</a></li>
+  <li><a href="#三字符串类型string-type" id="toc-三字符串类型string-type" class="nav-link" data-scroll-target="#三字符串类型string-type">三、字符串类型(String Type)</a></li>
+  </ul></li>
+  <li><a href="#运算符" id="toc-运算符" class="nav-link" data-scroll-target="#运算符">运算符</a>
+  <ul class="collapse">
+  <li><a href="#一算术运算符" id="toc-一算术运算符" class="nav-link" data-scroll-target="#一算术运算符">一、算术运算符</a></li>
+  <li><a href="#二赋值运算符" id="toc-二赋值运算符" class="nav-link" data-scroll-target="#二赋值运算符">二、赋值运算符</a></li>
+  <li><a href="#三比较运算符" id="toc-三比较运算符" class="nav-link" data-scroll-target="#三比较运算符">三、比较运算符</a></li>
+  <li><a href="#四逻辑运算符" id="toc-四逻辑运算符" class="nav-link" data-scroll-target="#四逻辑运算符">四、逻辑运算符</a></li>
+  <li><a href="#五身份运算符与成员运算符" id="toc-五身份运算符与成员运算符" class="nav-link" data-scroll-target="#五身份运算符与成员运算符">五、身份运算符与成员运算符</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/周二数据类型_new.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python数据类型</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="数据类型" class="level2">
+<h2 class="anchored" data-anchor-id="数据类型">数据类型</h2>
+<p>当我们编写程序时，数据是不可或缺的。</p>
+<p>在Python中，数据类型用于表示数据的不同种类和属性，决定了数据的存储方式和可进行的操作。Python中的数据类型包括数字类型（整数、浮点数）、布尔类型（True和False）以及字符串等。通过了解和灵活运用这些数据类型，我们可以有效地处理和操作各种数据，使程序更加灵活和高效。数据类型是Python编程的基础，也是我们展开深入学习的起点。了解和正确使用这些数据类型对于编写Python代码非常重要。</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>你可以使用<code>type()</code>函数来查看元素的类型。尝试在代码框中输入<code>print(type(元素名))</code>，来查看你的元素的数据类型。</p>
+</div>
+</div>
+<section id="一数字类型numeric-types" class="level3">
+<h3 class="anchored" data-anchor-id="一数字类型numeric-types">一、数字类型(Numeric Types)</h3>
+<section id="整数类型int" class="level4">
+<h4 class="anchored" data-anchor-id="整数类型int">1. 整数类型(<code>int</code>)</h4>
+<p>整数类型(<code>int</code>)是数字类型数据中的一个重要的组成部分，是基本的数字类型之一，也是进行算术运算和计数操作的基础。在Python中，整数是用来表示没有小数部分的数值，可以是正数、负数或零。</p>
+<p>整数类型的数据可以用常规的整数表示方式来表示，例如：<code>10</code>、<code>-5</code>等。整数类型也支持基本的算术运算，如加法、减法等。同时，Python的整数类型支持无限精度，即整数的大小不受限制，可以表示任意大的整数。</p>
+<p>试试看下面的代码，创建一些整数对象。</p>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 定义整数变量</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>num1 <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>num2 <span class="op">=</span> <span class="op">-</span><span class="dv">5</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num1)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(num1))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num2)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(num2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10
+&lt;class 'int'&gt;
+-5
+&lt;class 'int'&gt;</code></pre>
+</div>
+</div>
+<p>在编写程序时，整数类型经常用于计数、计算和存储整数数据。在处理整数时，需要注意整数运算的结果可能会超出预期，因为整数运算可能会产生浮点数结果。</p>
+</section>
+<section id="浮点数类型float" class="level4">
+<h4 class="anchored" data-anchor-id="浮点数类型float">2. 浮点数类型(<code>float</code>)</h4>
+<p>浮点数类型(float)也是数字类型中的一个重要组成部分，用于标识带有小数部分的数值，例如：<code>3.14</code>、<code>0.5</code>、<code>-2.71828</code>等。在Python中，浮点数的表示方式和数学中的实数类似，使用小数点来标识小数部分。</p>
+<p>浮点数可以用常规的十进制来标识，也可以使用科学计数法表示，例如：<code>1.23</code>、<code>5e-3</code>等。浮点数和整数一样，支持基本的算术运算。与整数不同的是，在计算机中，浮点数是有限的，因此它们具有一定的精度限制。在进行复杂运算时，可能会出现精度丢失的问题。</p>
+<p>下面是一些浮点数的例子，你可以在JupyterLab中尝试一下。</p>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 定义浮点数变量</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.1415926</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="fl">25.5</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pi)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(pi))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperature)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(temperature))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3.1415926
+&lt;class 'float'&gt;
+25.5
+&lt;class 'float'&gt;</code></pre>
+</div>
+</div>
+<p>在编写程序时，浮点数常用于涉及小数的计算和数据处理。需要注意的是，由于浮点数的精度限制，可能会出现舍入误差，因此在比较浮点数是否相等时，应使用适当的误差范围进行比较，以确保计算结果的准确性。</p>
+</section>
+</section>
+<section id="二布尔类型boolean-type" class="level3">
+<h3 class="anchored" data-anchor-id="二布尔类型boolean-type">二、布尔类型(Boolean Type)</h3>
+<p>布尔类型(bool)是Python数据类型中的一个关键部分。布尔类型只有两个取值：<code>True</code>(表示’真’)和<code>False</code>(表示’假’)。布尔类型通常用于表示逻辑条件的结果，如判断某条件是否成立，或变量是否满足某种条件。</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>对于布尔类型的数据，首先需要注意的是布尔类型只能取<code>True</code>或<code>False</code>这两个值，区分大小写（首字母必须大写）。</p>
+</div>
+</div>
+<p>布尔类型通常用于条件判断和逻辑运算，如if语句、while循环和逻辑运算符（and、or、not）等。布尔类型在编程中非常重要，因为它们用于控制程序的流程和决策。在条件判断和逻辑运算时，布尔类型充当关键的判断条件，根据不同的条件结果执行相应的代码块。</p>
+<p>下面是一个布尔类型的数据的应用示例：</p>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用布尔类型进行条件判断</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>is_adult <span class="op">=</span> age <span class="op">&gt;=</span> <span class="dv">18</span>  <span class="co"># 将判断结果赋值给变量is_adult</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> is_adult:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You are an adult."</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"is_adult:"</span>, is_adult)  <span class="co"># 输出布尔值</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"You are not an adult."</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"is_adult:"</span>, is_adult)  <span class="co"># 输出布尔值</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>You are an adult.
+is_adult: True</code></pre>
+</div>
+</div>
+<p>可以看到，由于变量<code>age</code>的值为<code>25</code>，大于条件判断中的<code>18</code>，因此，条件成立，程序会返回布尔值<code>True</code>，然后输出语句：<code>You are an adult.</code> 这说明在条件判断中，布尔类型的值会根据条件的真假返回True或False，从而影响程序的执行分支。在这个例子中，由于条件为真，所以输出了相应的信息。</p>
+<p>你可以试修改变量<code>age</code>的值，试试看不同的情况下，程序的运行情况。</p>
+<p>在实际应用中，布尔类型通常与条件语句和循环结构紧密结合，帮助程序做出复杂的决策和执行不同的操作。熟练掌握布尔类型的用法，是编写高效和灵活的Python代码的关键。</p>
+</section>
+<section id="三字符串类型string-type" class="level3">
+<h3 class="anchored" data-anchor-id="三字符串类型string-type">三、字符串类型(String Type)</h3>
+<section id="字符串的定义" class="level4">
+<h4 class="anchored" data-anchor-id="字符串的定义">1. 字符串的定义</h4>
+<p>现在，让我们来看看Python中最常用的数据类型——字符串(<code>str</code>)。字符串类型<code>str</code>是其中一种常见且重要的数据类型。字符串用于表示文本信息，可以包含字母、数字、标点符号等字符序列。在Python中，字符串可以使用单引号<code>' '</code>或双引号<code>" "</code>来定义，例如：</p>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>message1 <span class="op">=</span> <span class="st">'Hello, Python!'</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>message2 <span class="op">=</span> <span class="st">"Welcome to the world of Python!"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(message1)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(message2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, Python!
+Welcome to the world of Python!</code></pre>
+</div>
+</div>
+</section>
+<section id="字符串拼接格式化字符串" class="level4">
+<h4 class="anchored" data-anchor-id="字符串拼接格式化字符串">2. 字符串拼接(格式化字符串)</h4>
+<p>在Python中，字符串拼接的目的是将多个字符串连接成一个新的字符串。这样一来，在输出时，我们就可以一次性输出许多字符串的内容，而不用写太繁琐的代码。</p>
+<p>字符串拼接在处理文本信息和字符串处理任务中非常常见，这在构建动态文本、输出用户友好的提示信息以及处理数据时非常有用。</p>
+<p>在这里，我们向你介绍三个最常用的字符串拼接方法：使用<code>+</code>运算符、<code>.format()</code>方法，以及更加简洁和直观的<code>f-string</code>(格式化字符串)方式。通过了解这些拼接方式，我们可以灵活地处理字符串，并使代码更加清晰易读。</p>
+<section id="使用运算符进行字符串拼接" class="level5">
+<h5 class="anchored" data-anchor-id="使用运算符进行字符串拼接">(1) 使用<code>+</code>运算符进行字符串拼接</h5>
+<p>通过<code>+</code>运算符，我们可以将两个字符串连接成一个新的字符串。例如：</p>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Python"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>greeting <span class="op">=</span> <span class="st">"Hello, "</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">"!"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(greeting)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, Python!</code></pre>
+</div>
+</div>
+<p>在上面的示例代码中，我们定义了一个名为<code>name</code>的字符串变量，然后使用<code>+</code>运算符将<code>"Hello,"</code>、<code>name</code>和<code>"!"</code>连接在一起，形成新的字符串<code>greeting</code>。</p>
+<p>使用<code>+</code>运算符，你还可以将更多的元素拼接在一起，但这种方式太过繁琐，我们还有更简便的字符串拼接方式——<code>.format()</code>方法和<code>f-string</code>。让我们来看看这两种更灵活的拼接方式。</p>
+</section>
+<section id="使用.format方法拼接字符串" class="level5">
+<h5 class="anchored" data-anchor-id="使用.format方法拼接字符串">(2) 使用<code>.format()</code>方法拼接字符串</h5>
+<p>相较于使用<code>+</code>运算符，使用<code>.format()</code>方法更加灵活，可以在字符串中插入多个变量值，对于多个值的拼接，是一种更常用方式。</p>
+<p><code>.format()</code>方式使用占位符 {} 来表示将要被替换的部分。例如：</p>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Python"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>greeting <span class="op">=</span> <span class="st">"Hello, </span><span class="sc">{}</span><span class="st">!"</span>.<span class="bu">format</span>(name)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(greeting)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, Python!</code></pre>
+</div>
+</div>
+<p>在这个例子中，我们定义了一个名为<code>name</code>的字符串变量，然后使用<code>.format()</code>方法将 {} 替换为<code>name</code>的值，从而形成新的字符串<code>greeting</code>。</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>在使用<code>.format()</code>方法时，一定要注意，使用占位符<code>{ }</code>来表示将要被替换的部分，如<code>"Hello, {}!".format(name)</code></p>
+<p>另外，<code>.format()</code>方法还需要遵守位置对应的规则，在使用该方法时，需要确保占位符<code>{ }</code>的未知和传入的变量值一一对应。如果占位符的个数大于传入的变量值，或者顺序不匹配，会导致错误或者意想不到的结果。</p>
+</div>
+</div>
+<p>在使用<code>.format()</code>方式输出数字类型的数据时，我们还可以对数据进行以下两种格式控制：</p>
+<p><strong>a. 浮点数格式化</strong></p>
+<p>使用<code>:.nf</code>来限制浮点数的小数位数，其中<code>n</code>代表要显示的小数位，例如：</p>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.1415926</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The value of pi is </span><span class="sc">{:.2f}</span><span class="st">"</span>.<span class="bu">format</span>(pi))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The value of pi is 3.14</code></pre>
+</div>
+</div>
+<p>在上面的代码中，我们在使用<code>.format()</code>方法时，通过在占位符中规定<code>:.2f</code>，实现了对变量精度的控制。</p>
+<p><strong>b. 整数宽度控制</strong></p>
+<p>使用<code>{:n}</code>来规定整数的宽度，其中<code>n</code>代表要显示的最小字符宽度。如果整数的宽度不足，会使用空格进行填充。例如：</p>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The number is </span><span class="sc">{:5}</span><span class="st">"</span>.<span class="bu">format</span>(number))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The number is    42</code></pre>
+</div>
+</div>
+<p>在上面的代码中，我们使用了<code>.format()</code>方法来格式化输出。在字符串中的占位符<code>{:5}</code>中，我们指定了一个字段宽度为<code>5</code>，这样输出的内容将总共占据5个字符的宽度。</p>
+</section>
+<section id="使用f-string方式拼接字符串" class="level5">
+<h5 class="anchored" data-anchor-id="使用f-string方式拼接字符串">(3) 使用<code>f-string</code>方式拼接字符串</h5>
+<p><code>f-string</code>是最新的格式化字符串方式，简洁直观，易于理解。它在拼接字符串时更加简便，适用于大部分字符串格式化的场景。需要注意的是，<code>f-string</code>只适用于 Python 3.6 及以上的版本。</p>
+<p>在我们后面的学习中，<code>f-string</code>方式将会是我们最常使用的字符串拼接方式。</p>
+<p><code>f-string</code>方式的使用非常简单，只需要在字符串前面加上<code>f</code>或<code>F</code>前缀，然后在字符串中使用<code>{}</code>占位符来引用变量或表达式。Python 将自动将这些花括号中的内容替换为对应的变量值或表达式结果。</p>
+<p>例如：</p>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Python"</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>greeting <span class="op">=</span> <span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!"</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(greeting)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, Python!</code></pre>
+</div>
+</div>
+<p>这里我们定义了一个名为<code>name</code>的字符串变量，然后使用<code>f</code>前缀以及<code>{}</code>占位符，将<code>{}</code>替换为<code>name</code>的值，形成新的字符串<code>greeting</code>。</p>
+<p>使用<code>f-string</code>的好处是，它不仅使字符串的格式化更加简洁明了，而且还支持在花括号中进行更复杂的表达式计算，甚至可以调用函数。在实际使用中，<code>f-string</code>是推荐的字符串格式化方法，因为它既简单又强大，能够满足大多数字符串格式化的需求。</p>
+</section>
+</section>
+</section>
+</section>
+<section id="运算符" class="level2">
+<h2 class="anchored" data-anchor-id="运算符">运算符</h2>
+<p>当你编写Python代码时，你可能会经常涉及到各种计算和比较操作。在Python中，运算符就是用来执行这些操作的特殊符号或关键字。它们使你能够对变量、常量和表达式进行各种数学运算、逻辑操作和比较判断。例如，你可以使用运算符来执行加法、减法、乘法等数学运算，也可以用它们来判断两个值是否相等、大小关系等。通过灵活使用这些运算符，你可以让你的代码更加强大和智能。</p>
+<section id="一算术运算符" class="level3">
+<h3 class="anchored" data-anchor-id="一算术运算符">一、算术运算符</h3>
+<p>算术运算符就像编程中的特殊工具，用来做数学计算。在Python里，你可以使用这些特殊符号来做加减乘除、取余、整数除法和乘方运算。它们就像计算器上的加号、减号等按钮一样，帮助你在程序中处理数字和数据，完成各种数学运算。这些运算符让你的程序变得灵活又强大，可以进行更复杂的计算。</p>
+<p>下面是Python中常见的算术运算符：</p>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 45%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>运算符</th>
+<th>名称</th>
+<th>描述</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>+</code></td>
+<td>加法运算符</td>
+<td>用于相加两个数或连接两个字符串</td>
+<td><code>a = 5 + 3 # 结果为8</code></td>
+</tr>
+<tr class="even">
+<td><code>-</code></td>
+<td>减法运算符</td>
+<td>用于从一个数中减去另一个数</td>
+<td><code>b = 10 - 5 # 结果为5</code></td>
+</tr>
+<tr class="odd">
+<td><code>*</code></td>
+<td>乘法运算符</td>
+<td>用于将两个数相乘</td>
+<td><code>c = 2 * 3 # 结果为6</code></td>
+</tr>
+<tr class="even">
+<td><code>/</code></td>
+<td>除法运算符</td>
+<td>用于将一个数除以另一个数，得到浮点数结果</td>
+<td><code>d = 10 / 2 # 结果为5.0</code></td>
+</tr>
+<tr class="odd">
+<td><code>//</code></td>
+<td>整数除法运算符</td>
+<td>用于将一个数除以另一个数，得到整数结果（向下取整）</td>
+<td><code>e = 10 // 3 # 结果为3</code></td>
+</tr>
+<tr class="even">
+<td><code>%</code></td>
+<td>取余运算符</td>
+<td>用于得到两个数相除的余数</td>
+<td><code>f = 10 % 3 # 结果为1</code></td>
+</tr>
+<tr class="odd">
+<td><code>**</code></td>
+<td>幂运算符</td>
+<td>用于将一个数的值提高到另一个数的幂</td>
+<td><code>g = 2 ** 3 # 结果为8</code></td>
+</tr>
+</tbody>
+</table>
+<p>通过下面的一系列例子，你可以更好地理解算术运算符在编程中的简单应用：</p>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 加法运算符 (+)：用于相加两个数或连接两个字符串。</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="st">"Hello"</span> <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> <span class="st">"World"</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of a is: </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of b is: </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 减法运算符 (-)：用于从一个数中减去另一个数。</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">10</span> <span class="op">-</span> <span class="dv">5</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of c is: </span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 乘法运算符 (*)：用于将两个数相乘。</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of d is: </span><span class="sc">{</span>d<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 除法运算符 (/)：用于将一个数除以另一个数，得到浮点数结果。</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>e <span class="op">=</span> <span class="dv">10</span> <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of e is: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 整数除法运算符 (//)：用于将一个数除以另一个数，得到整数结果（向下取整）。</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="dv">10</span> <span class="op">//</span> <span class="dv">3</span></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of f is: </span><span class="sc">{</span>f<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 取余运算符（模运算符） (%)：用于得到两个数相除的余数。</span></span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="dv">10</span> <span class="op">%</span> <span class="dv">3</span></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of g is: </span><span class="sc">{</span>g<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a><span class="co"># 幂运算符 (**)：用于将一个数的值提高到另一个数的幂。</span></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">2</span> <span class="op">**</span> <span class="dv">3</span></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of h is: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>the value of a is: 8
+the value of b is: Hello World
+the value of c is: 5
+the value of d is: 6
+the value of e is: 5.0
+the value of f is: 3
+the value of g is: 1
+the value of h is: 8</code></pre>
+</div>
+</div>
+</section>
+<section id="二赋值运算符" class="level3">
+<h3 class="anchored" data-anchor-id="二赋值运算符">二、赋值运算符</h3>
+<p>赋值运算符是编程中用来给变量赋值的特殊符号。在Python中，常见的赋值运算符是等号<code>=</code>。它的作用是将右边的值赋给左边的变量，从而将数据存储在变量中，方便后续的使用和操作。</p>
+<p>除了等号外，还有一些拓展的赋值运算符，它们的作用是在进行运算的同时进行赋值，使得代码更加简洁高效。以下是常见的拓展赋值运算符：</p>
+<table class="table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 22%">
+<col style="width: 38%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>运算符</th>
+<th>名称</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>=</code></td>
+<td>等号</td>
+<td>将右边的值赋给左边的变量</td>
+<td><code>x = 10</code></td>
+</tr>
+<tr class="even">
+<td><code>+=</code></td>
+<td>加等</td>
+<td>将右边的值与左边的变量相加，并赋值</td>
+<td><code>x += 5</code>（等同于<code>x = x + 5</code>）</td>
+</tr>
+<tr class="odd">
+<td><code>-=</code></td>
+<td>减等</td>
+<td>将右边的值从左边的变量中减去，并赋值</td>
+<td><code>y -= 3</code>（等同于<code>y = y - 3</code>）</td>
+</tr>
+<tr class="even">
+<td><code>*=</code></td>
+<td>乘等</td>
+<td>将右边的值与左边的变量相乘，并赋值</td>
+<td><code>z *= 4</code>（等同于<code>z = z * 4</code>）</td>
+</tr>
+<tr class="odd">
+<td><code>/=</code></td>
+<td>除等</td>
+<td>将左边的变量除以右边的值，并赋值</td>
+<td><code>a /= 2</code>（等同于<code>a = a / 2</code>）</td>
+</tr>
+<tr class="even">
+<td><code>//=</code></td>
+<td>整数除等</td>
+<td>将左边的变量整数除以右边的值，并赋值</td>
+<td><code>b //= 3</code>（等同于<code>b = b // 3</code>）</td>
+</tr>
+<tr class="odd">
+<td><code>%=</code></td>
+<td>取余等</td>
+<td>将左边的变量除以右边的值取余，并赋值</td>
+<td><code>c %= 4</code>（等同于<code>c = c % 4</code>）</td>
+</tr>
+<tr class="even">
+<td><code>**=</code></td>
+<td>幂等</td>
+<td>将左边的变量的值提高到右边的值的幂，并赋值</td>
+<td><code>d **= 3</code>（等同于<code>d = d ** 3</code>）</td>
+</tr>
+</tbody>
+</table>
+<p>你可以在在JupyterLab中尝试以下关于赋值运算符的简单示例，这将有助于你更好地理解赋值运算符的概念。</p>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 赋值运算符：将右边的值赋给左边的变量</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of x is: </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 扩展赋值运算符示例：</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 加等运算符：将右边的值与左边的变量相加，并赋值</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">+=</span> <span class="dv">5</span>  <span class="co"># 等同于 x = x + 5</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of x is: </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 减等运算符：将右边的值从左边的变量中减去，并赋值</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>y <span class="op">-=</span> <span class="dv">3</span>  <span class="co"># 等同于 y = y - 3</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of y is: </span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 乘等运算符：将右边的值与左边的变量相乘，并赋值</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>z <span class="op">*=</span> <span class="dv">4</span>  <span class="co"># 等同于 z = z * 4</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of z is: </span><span class="sc">{</span>z<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 除等运算符：将左边的变量除以右边的值，并赋值</span></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>a <span class="op">/=</span> <span class="dv">2</span>  <span class="co"># 等同于 a = a / 2</span></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of a is: </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 整数除等运算符：将左边的变量整数除以右边的值，并赋值</span></span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>b <span class="op">//=</span> <span class="dv">3</span>  <span class="co"># 等同于 b = b // 3</span></span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of b is: </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a><span class="co"># 取余等运算符：将左边的变量除以右边的值取余，并赋值</span></span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">17</span></span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>c <span class="op">%=</span> <span class="dv">4</span>  <span class="co"># 等同于 c = c % 4</span></span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of c is: </span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 幂等运算符：将左边的变量的值提高到右边的值的幂，并赋值</span></span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>d <span class="op">**=</span> <span class="dv">3</span>  <span class="co"># 等同于 d = d ** 3</span></span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the value of d is: </span><span class="sc">{</span>d<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>the value of x is: 10
+the value of x is: 15
+the value of y is: 17
+the value of z is: 12
+the value of a is: 7.5
+the value of b is: 3
+the value of c is: 1
+the value of d is: 8</code></pre>
+</div>
+</div>
+</section>
+<section id="三比较运算符" class="level3">
+<h3 class="anchored" data-anchor-id="三比较运算符">三、比较运算符</h3>
+<p>比较运算符在Python中是用来比较两个值之间的关系的特殊符号。它们让我们可以判断变量之间是否相等、大小关系以及其他比较情况。通过使用这些运算符，我们可以轻松地进行逻辑判断，从而在程序中做出不同的决策和控制流程。让我们看看以下比较运算符的示例和用法。</p>
+<table class="table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 9%">
+<col style="width: 37%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>运算符</th>
+<th>名称</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>==</code></td>
+<td>等于</td>
+<td>判断两个操作数是否相等</td>
+<td><code>x == y</code> （如果<code>x</code>等于<code>y</code>，结果为<code>True</code>）</td>
+</tr>
+<tr class="even">
+<td><code>!=</code></td>
+<td>不等于</td>
+<td>判断两个操作数是否不相等</td>
+<td><code>x != y</code> （如果<code>x</code>不等于<code>y</code>，结果为<code>True</code>）</td>
+</tr>
+<tr class="odd">
+<td><code>&gt;</code></td>
+<td>大于</td>
+<td>判断左操作数是否大于右操作数</td>
+<td><code>x &gt; y</code> （如果<code>x</code>大于<code>y</code>，结果为<code>True</code>）</td>
+</tr>
+<tr class="even">
+<td><code>&lt;</code></td>
+<td>小于</td>
+<td>判断左操作数是否小于右操作数</td>
+<td><code>x &lt; y</code> （如果<code>x</code>小于<code>y</code>，结果为<code>True</code>）</td>
+</tr>
+<tr class="odd">
+<td><code>&gt;=</code></td>
+<td>大于等于</td>
+<td>判断左操作数是否大于等于右操作数</td>
+<td><code>x &gt;= y</code> （如果<code>x</code>大于等于<code>y</code>，结果为<code>True</code>）</td>
+</tr>
+<tr class="even">
+<td><code>&lt;=</code></td>
+<td>小于等于</td>
+<td>判断左操作数是否小于等于右操作数</td>
+<td><code>x &lt;= y</code> （如果<code>x</code>小于等于<code>y</code>，结果为<code>True</code>）</td>
+</tr>
+</tbody>
+</table>
+<p>这些比较运算符允许我们对变量进行各种比较操作，用于条件判断、循环控制和逻辑运算，是编程中非常常用的一类运算符。以下代码是比较运算符的简单应用示例：</p>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 等于运算符 (==)：判断两个操作数是否相等</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">==</span> y)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 不等于运算符 (!=)：判断两个操作数是否不相等</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">!=</span> y)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 大于运算符 (&gt;)：判断左操作数是否大于右操作数</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">&gt;</span> y)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 小于运算符 (&lt;)：判断左操作数是否小于右操作数</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">&lt;</span> y)</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 大于等于运算符 (&gt;=)：判断左操作数是否大于等于右操作数</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">&gt;=</span> y)</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 小于等于运算符 (&lt;=)：判断左操作数是否小于等于右操作数</span></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="op">&lt;=</span> y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>False
+True
+False
+True
+False
+True</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>在Python中应用运算符时，务必注意赋值运算符<code>=</code>表示赋值操作，而<code>==</code>才与我们在日常生活中理解的’等于’概念相近。因此，在使用这些运算符时要区分清楚，避免混淆。</p>
+</div>
+</div>
+</section>
+<section id="四逻辑运算符" class="level3">
+<h3 class="anchored" data-anchor-id="四逻辑运算符">四、逻辑运算符</h3>
+<p>在编程世界中，逻辑运算符是我们用来进行逻辑判断的特殊工具。它们让我们可以对布尔值进行逻辑操作，以便在程序中根据不同的条件做出不同的决策和控制流程。通过合理地使用逻辑运算符，我们能够将复杂的条件表达式简化为更直观、更高效的代码，使得程序更加灵活、可读性更强。现在，让我们一起来了解一下逻辑运算符的各种用法和示例。</p>
+<table class="table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 41%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>运算符</th>
+<th>名称</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>and</code></td>
+<td>逻辑”与”</td>
+<td>当两个操作数都为<code>True</code>时，结果为<code>True</code></td>
+<td><code>x and y</code> （如果<code>x</code>和<code>y</code>都为<code>True</code>，结果为True；否则为False）</td>
+</tr>
+<tr class="even">
+<td><code>or</code></td>
+<td>逻辑”或”</td>
+<td>当两个操作数中有一个为<code>True</code>时，结果为<code>True</code></td>
+<td><code>x or y</code> （如果<code>x</code>或<code>y</code>有一个为<code>True</code>，结果为<code>True</code>；如果<code>x</code>和<code>y</code>都为<code>False</code>，结果为<code>False</code>）</td>
+</tr>
+<tr class="odd">
+<td><code>not</code></td>
+<td>逻辑”非”</td>
+<td>用于取反操作，如果操作数为<code>True</code>，则结果为<code>False</code>，如果为<code>False</code>，则结果为<code>True</code></td>
+<td><code>not x</code> （如果<code>x</code>为<code>Fals</code>e，结果为<code>True</code>；如果<code>x</code>为<code>True</code>，结果为<code>False</code>）</td>
+</tr>
+</tbody>
+</table>
+<p>逻辑运算符是在条件判断、循环控制和逻辑运算中非常常用的工具，它们帮助我们进行布尔值的组合和判断，使得程序更加灵活、高效和直观。</p>
+<p>尝试一下下面的代码，相信你能很快掌握逻辑运算符的概念。</p>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 定义两个变量</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 逻辑与运算符 (and)：当两个操作数都为True时，结果为True，否则为False</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="kw">and</span> y)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 逻辑或运算符 (or)：当两个操作数中有一个为True时，结果为True，否则为False</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="kw">or</span> y)</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 逻辑非运算符 (not)：用于取反操作，如果操作数为True，则结果为False，如果为False，则结果为True</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="kw">not</span> x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>False
+True
+False</code></pre>
+</div>
+</div>
+</section>
+<section id="五身份运算符与成员运算符" class="level3">
+<h3 class="anchored" data-anchor-id="五身份运算符与成员运算符">五、身份运算符与成员运算符</h3>
+<p>在Python中，身份运算符是用于比较两个对象的内存地址是否相同的特殊工具，允许我们判断两个变量是否指向同一个对象，以及是否指向不同的对象，从而更加精确地比较对象之间的关系。</p>
+<p>成员运算符则用于检查某个值是否属于某个容器（如列表、元组、集合等），允许我们判断一个值是否存在于容器中，从而帮助进行成员检查和数据过滤。在处理集合数据时，成员运算符非常有用，能够轻松地判断元素是否在容器中，并做出相应的处理。</p>
+<p>现在，让我们一起来探索这些运算符的用法和示例。</p>
+<p><strong>身份运算符 (Identity Operators)</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 14%">
+<col style="width: 24%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>运算符</th>
+<th>名称</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>is</code></td>
+<td>是同一对象</td>
+<td>判断两个对象的内存地址是否相同</td>
+<td><code>x is y</code> （如果<code>x</code>和<code>y</code>指向同一对象，结果为<code>True</code>）</td>
+</tr>
+<tr class="even">
+<td><code>is not</code></td>
+<td>不是同一对象</td>
+<td>判断两个对象的内存地址是否不相同</td>
+<td><code>x is not y</code> （如果<code>x</code>和<code>y</code>指向不同对象，结果为<code>True</code>）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>成员运算符 (Membership Operators):</strong></p>
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 31%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>运算符</th>
+<th>名称</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>in</code></td>
+<td>存在于</td>
+<td>判断某个值是否存在于某个容器中</td>
+<td><code>x in list</code> （如果<code>x</code>在列表<code>list</code>中，结果为<code>True</code>）</td>
+</tr>
+<tr class="even">
+<td><code>not in</code></td>
+<td>不存在于</td>
+<td>判断某个值是否不存在于某个容器中</td>
+<td><code>x not in set</code> （如果<code>x</code>不在集合<code>set</code>中，结果为<code>True</code>）</td>
+</tr>
+</tbody>
+</table>
+<p>下面这些示例展示了身份运算符和成员运算符在Python中的基本用法。身份运算符用于比较对象的内存地址是否相同，而成员运算符用于判断值是否存在于容器中。这些运算符在Python编程中非常常用，能够帮助我们进行对象和数据的比较、判断和过滤。</p>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 身份运算符示例</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co"># is运算符：判断两个对象的内存地址是否相同</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="kw">is</span> y)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="kw">is</span> z)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co"># is not运算符：判断两个对象的内存地址是否不相同</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="kw">is</span> <span class="kw">not</span> y)</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x <span class="kw">is</span> <span class="kw">not</span> z)</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 成员运算符示例</span></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"orange"</span>]</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="co"># in运算符：判断某个值是否存在于某个容器中</span></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"apple"</span> <span class="kw">in</span> fruits)</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"grape"</span> <span class="kw">in</span> fruits)</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a><span class="co"># not in运算符：判断某个值是否不存在于某个容器中</span></span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"apple"</span> <span class="kw">not</span> <span class="kw">in</span> fruits)</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"grape"</span> <span class="kw">not</span> <span class="kw">in</span> fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+False
+False
+True
+
+True
+False
+False
+True</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./周一基础语法_new.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python基本概念与指令输入</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./new_周三_数据结构.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Python结构</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
