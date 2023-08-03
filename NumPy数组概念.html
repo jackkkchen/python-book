@@ -349,7 +349,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#创建numpy数组" id="toc-创建numpy数组" class="nav-link" data-scroll-target="#创建numpy数组">创建NumPy数组</a></li>
   <li><a href="#numpy支持的数据类型" id="toc-numpy支持的数据类型" class="nav-link" data-scroll-target="#numpy支持的数据类型">NumPy支持的数据类型</a></li>
   <li><a href="#数组的属性" id="toc-数组的属性" class="nav-link" data-scroll-target="#数组的属性">数组的属性</a></li>
-  <li><a href="#数组的形状操作" id="toc-数组的形状操作" class="nav-link" data-scroll-target="#数组的形状操作">数组的形状操作</a></li>
+  <li><a href="#数组的形状操作" id="toc-数组的形状操作" class="nav-link" data-scroll-target="#数组的形状操作">数组的形状操作</a>
+  <ul class="collapse">
+  <li><a href="#添加新轴" id="toc-添加新轴" class="nav-link" data-scroll-target="#添加新轴">添加新轴</a></li>
+  </ul></li>
   <li><a href="#numpy的通用函数" id="toc-numpy的通用函数" class="nav-link" data-scroll-target="#numpy的通用函数">NumPy的通用函数</a>
   <ul class="collapse">
   <li><a href="#算术运算函数" id="toc-算术运算函数" class="nav-link" data-scroll-target="#算术运算函数">1. 算术运算函数：</a></li>
@@ -659,27 +662,22 @@ Note
  [4 5]]</code></pre>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 添加新轴</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>`np.newaxis`是一个特殊的常量，用于扩展数组的维度。`np.expand_dims()`也能添加新轴，并且默认新轴的默认轴长为<span class="dv">1</span>，数组其他维度的元素个数会随之自动调整。</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>对于二维数组的两个轴，可以看作是行轴（第<span class="dv">0</span><span class="er">轴</span>）和列轴（第<span class="dv">1</span><span class="er">轴</span>），行轴代表第一维度，列轴代表第二维度。</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>添加行轴也就是在第<span class="dv">0</span><span class="er">轴处添加新的维度</span>，且行轴的轴长为<span class="dv">1</span>，说明第一维度只有一个元素，也就是只有一行。</span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>添加列轴，则默认添加的列轴轴长为<span class="dv">1</span>，每个一维子数组中的单个元素个数为<span class="dv">1</span>，也就是只有一列，元素总数不变，行数随之自动调整。</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="添加新轴" class="level3">
+<h3 class="anchored" data-anchor-id="添加新轴">添加新轴</h3>
+<p><code>np.newaxis</code>是一个特殊的常量，用于扩展数组的维度。<code>np.expand_dims()</code>也能添加新轴，并且默认新轴的默认轴长为1，数组其他维度的元素个数会随之自动调整。</p>
+<p>对于二维数组的两个轴，可以看作是行轴（第0轴）和列轴（第1轴），行轴代表第一维度，列轴代表第二维度。</p>
+<p>添加行轴也就是在第0轴处添加新的维度，且行轴的轴长为1，说明第一维度只有一个元素，也就是只有一行。</p>
+<p>添加列轴，则默认添加的列轴轴长为1，每个一维子数组中的单个元素个数为1，也就是只有一列，元素总数不变，行数随之自动调整。</p>
 <div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>row_vector <span class="op">=</span> a[np.newaxis, :]</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"添加新的行轴:</span><span class="ch">\n</span><span class="sc">{</span>row_vector<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"相当于在第0轴处添加轴:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>expand_dims(a, axis<span class="op">=</span><span class="dv">0</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>col_vector <span class="op">=</span> a[:, np.newaxis]</span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"添加新的列轴:</span><span class="ch">\n</span><span class="sc">{</span>col_vector<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"相当于在索引位置1处添加轴:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>expand_dims(a, axis<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>row_vector <span class="op">=</span> a[np.newaxis, :]</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"添加新的行轴:</span><span class="ch">\n</span><span class="sc">{</span>row_vector<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"相当于在第0轴处添加轴:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>expand_dims(a, axis<span class="op">=</span><span class="dv">0</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>col_vector <span class="op">=</span> a[:, np.newaxis]</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"添加新的列轴:</span><span class="ch">\n</span><span class="sc">{</span>col_vector<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"相当于在索引位置1处添加轴:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>expand_dims(a, axis<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>添加新轴,从一维转为二维:
 [[0 1 2 3 4 5]]
@@ -704,12 +702,12 @@ Note
 <p>除了重塑矩阵和添加新轴，还有一种方法叫转置矩阵。</p>
 <p>矩阵的转置是一种基本的线性代数运算，它是指将原始矩阵的行与列进行互换，从而得到一个新的矩阵。原来的第i行变成新矩阵的第i列，第j列则变成新矩阵的第j行，当m≠n时，形状会由(m, n)变为(n, m)。</p>
 <div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">7</span>).reshape(<span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"原矩阵:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"转置后:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">.</span>transpose()<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"也可以用.T:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">.</span>T<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">7</span>).reshape(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"原矩阵:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"转置后:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">.</span>transpose()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"也可以用.T:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">.</span>T<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>原矩阵:
 [[1 2 3]
@@ -724,6 +722,7 @@ Note
  [3 6]]</code></pre>
 </div>
 </div>
+</section>
 </section>
 <section id="numpy的通用函数" class="level2">
 <h2 class="anchored" data-anchor-id="numpy的通用函数">NumPy的通用函数</h2>
