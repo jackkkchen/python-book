@@ -509,8 +509,8 @@ Note
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>np.empty((<span class="dv">2</span>, <span class="dv">3</span>), dtype<span class="op">=</span>np.float_)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>array([[1.01582801e+094, 3.54586565e+068, 1.57001898e+155],
-       [3.71754479e+177, 3.97949006e-315, 0.00000000e+000]])</code></pre>
+<pre><code>array([[6.23042070e-307, 4.67296746e-307, 1.69121096e-306],
+       [1.33511018e-306, 1.42419938e-306, 7.56603881e-307]])</code></pre>
 </div>
 </div>
 <p>创建一个等差数列型的一维数组：</p>
@@ -567,24 +567,24 @@ Note
 <pre><code>2行2列的随机数组:</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>array([[0.43863291, 0.96991626],
-       [0.3334159 , 0.52684637]])</code></pre>
+<pre><code>array([[0.52122284, 0.08509464],
+       [0.02830555, 0.001575  ]])</code></pre>
 </div>
 </div>
 <p>创建随机整数型数组：</p>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>np.random.randint(<span class="dv">5</span>, size<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>array([[0, 0, 1],
-       [0, 1, 2]])</code></pre>
+<pre><code>array([[1, 1, 0],
+       [4, 0, 3]])</code></pre>
 </div>
 </div>
 <p>基于已有数组复制得到同样内容的新数组：</p>
-<div class="cell" data-execution_count="23">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.arange(<span class="dv">4</span>)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> a.copy()</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>array([0, 1, 2, 3])</code></pre>
 </div>
 </div>
@@ -613,14 +613,17 @@ Note
 <span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组的形状是:</span><span class="sc">{</span>a<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组一共包含</span><span class="sc">{</span>a<span class="sc">.</span>size<span class="sc">}</span><span class="ss">个元素"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组一共包含</span><span class="sc">{</span>a<span class="sc">.</span>size<span class="sc">}</span><span class="ss">个元素"</span>)</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"数组元素的类型为: </span><span class="sc">{</span>a<span class="sc">.</span>dtype<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>以此数组为例:
 [[1 2 3]
  [4 5 6]]
 数组的维度是:2
 数组的形状是:(2, 3)
-数组一共包含6个元素</code></pre>
+数组一共包含6个元素
+数组元素的类型为: int32</code></pre>
 </div>
 </div>
 </section>
@@ -639,7 +642,7 @@ Note
 <p>重塑数组的形状或添加新轴不会改变元素，只会改变数组的形状。</p>
 </div>
 </div>
-<div class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> np.arange(<span class="dv">6</span>)</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"原数组:</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -653,7 +656,7 @@ Note
 </div>
 <p>如果元素过多，我们不能确定所有轴的个数，可以指定部分轴长，指定某一个轴为-1，-1表示根据已知的其余轴长自动计算。</p>
 <p>下列示例表示重塑为3行的二维数组，列数自动计算。</p>
-<div class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"转换为3行n列:</span><span class="ch">\n</span><span class="sc">{</span>a<span class="sc">.</span>reshape(<span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>转换为3行n列:
@@ -668,7 +671,7 @@ Note
 <p>对于二维数组的两个轴，可以看作是行轴（第0轴）和列轴（第1轴），行轴代表第一维度，列轴代表第二维度。</p>
 <p>添加行轴也就是在第0轴处添加新的维度，且行轴的轴长为1，说明第一维度只有一个元素，也就是只有一行。</p>
 <p>添加列轴，则默认添加的列轴轴长为1，每个一维子数组中的单个元素个数为1，也就是只有一列，元素总数不变，行数随之自动调整。</p>
-<div class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>row_vector <span class="op">=</span> a[np.newaxis, :]</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"添加新的行轴:</span><span class="ch">\n</span><span class="sc">{</span>row_vector<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -679,11 +682,11 @@ Note
 <span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"相当于在索引位置1处添加轴:</span><span class="ch">\n</span><span class="sc">{</span>np<span class="sc">.</span>expand_dims(a, axis<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>添加新轴,从一维转为二维:
+<pre><code>添加新的行轴:
 [[0 1 2 3 4 5]]
-相当于在索引位置0处添加轴:
+相当于在第0轴处添加轴:
 [[0 1 2 3 4 5]]
-添加新轴,转换为列向量:
+添加新的列轴:
 [[0]
  [1]
  [2]
@@ -701,7 +704,7 @@ Note
 </div>
 <p>除了重塑矩阵和添加新轴，还有一种方法叫转置矩阵。</p>
 <p>矩阵的转置是一种基本的线性代数运算，它是指将原始矩阵的行与列进行互换，从而得到一个新的矩阵。原来的第i行变成新矩阵的第i列，第j列则变成新矩阵的第j行，当m≠n时，形状会由(m, n)变为(n, m)。</p>
-<div class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">7</span>).reshape(<span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"原矩阵:</span><span class="ch">\n</span><span class="sc">{</span>arr<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
