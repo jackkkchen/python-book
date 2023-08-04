@@ -769,6 +769,20 @@ Note
 <h3 class="anchored" data-anchor-id="特殊值">特殊值</h3>
 <p>在数据处理和科学计算中，还有一些常见的特殊值，比如缺失值，无穷小，无穷大等等。如同Python中的<code>None</code>对象，表示缺少值或空值。</p>
 <p><code>np.nan</code>表示缺失或未定义的数据，可以在定义数组或数据框数据时用于赋值：<code>arr = np.array([1, 2, np.nan, 4, 5])</code></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>np.nan不等于任何值，包括自己，输入<code>np.nan == np.nan</code>得到的结果也会是False，所以判断缺失值时可以用<code>np.isnan()</code>来判断数组中有没有缺失值。</p>
+<p>在Pandas库中，还有<code>isna()</code>和<code>notna()</code>可以用来识别数据中的缺失值。</p>
+</div>
+</div>
 
 
 </section>
