@@ -39,8 +39,9 @@ book:
     - 周一环境搭建.ipynb
     - part: "Python入门基础"
       chapters: 
-        - 周一基础语法.ipynb
-        - 周二数据类型.ipynb
+        - 周一基础语法_new.ipynb
+        - 周二数据类型_new.ipynb
+        - new_周三_数据结构.ipynb
     - part: "NumPy快速入门"
       chapters: 
         - NumPy数组概念.ipynb
