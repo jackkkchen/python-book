@@ -4,7 +4,7 @@
     "href": "index.html#文档目录",
     "title": "Python新手文档",
     "section": "文档目录",
-    "text": "文档目录\n\nPython简介\n\nPython的特点和应用领域\n安装Python和开发环境\nPython基础知识\n\n\n\n数据类型和变量\n\n运算符和表达式\n条件语句和循环\n函数和模块\n数据处理与分析入门\n\n\n\nPandas 基本操作\n\nPandas库介绍和安装\nPandas处理什么样的数据\n读取和写入\n选取和筛选\n增删和排序\n分组和聚合\n处理时间序列数据\n处理文本数据\n数据可视化\n\n\n\nPandas 实际应用案例\n\n从实际数据集中读取数据\n数据清洗和预处理\nPlotly可视化展示\nDash应用程序展示\n扩展学习资源\n\n\n\n推荐的Pandas学习资源\n\npandas官方文档(自译版)\nPandas对比SQL\nPlotly可视化官方文档\nW3schools for Pandas\n JackB站超级多的视频"
+    "text": "文档目录\n\nPython简介\n\nPython的特点和应用领域\n安装Python和开发环境\nPython基础知识\n\n\n\n数据类型和变量\n\n运算符和表达式\n数据类型\n数据结构\n\n\n\nNumPy 基本操作\n\nNumPy库介绍和安装\nNumPy数组对象\nNumPy的基本运算\n索引和切片\n数组排序和反转\n数组的展平、拼接、堆叠和拆分\n\n\n\nPandas 基本操作\n\nPandas库介绍和安装\nPandas处理什么样的数据\n读取和写入\n选取和筛选\n增删和排序\n分组和聚合\n处理时间序列数据\n处理文本数据\n数据可视化\n\n\n\nPandas 实际应用案例\n\n从实际数据集中读取数据\n数据清洗和预处理\nPlotly可视化展示\n扩展学习资源\n\n\n\n推荐的Pandas学习资源\n\npandas官方文档(自译版)\nPandas对比SQL\nPlotly可视化官方文档\nW3schools for Pandas\n JackB站超级多的视频"
   },
   {
     "objectID": "index.html#结语",
@@ -72,7 +72,7 @@
   {
     "objectID": "new_周三_数据结构.html#数据结构",
     "href": "new_周三_数据结构.html#数据结构",
-    "title": "4  Python结构",
+    "title": "4  Python数据结构",
     "section": "数据结构",
     "text": "数据结构\n数据结构是计算机科学中研究和组织数据的一种方式。它是一种将数据按照特定的方式进行存储、组织和管理的方法，以便于在计算机程序中进行访问、处理和操作。\n数据结构可以看作是数据的容器，它定义了数据元素之间的关系，以及对这些数据元素进行操作的方法。不同的数据结构适用于不同的应用场景，它们可以是简单的数据类型（如整数、浮点数等），也可以是复杂的组合类型（如列表、元组、字典等）。\n在Python中，数据结构是指用于存储和组织数据的不同方式和容器。Python提供了多种内置的数据结构，使得在程序中可以更加灵活地操作和处理数据。\n\n一、列表\n\n1. 列表的概念\n列表 (Lists) 是Python中最常用的数据结构之一。它是一种有序的可变序列，可以存储多个元素，并且允许在列表中添加、删除、修改元素。列表使用方括号 [ ] 表示，各个元素之间用逗号 , 分隔。列表可以根据索引来访问和修改元素，可以存储不同类型的数据，并且允许重复元素。\n另外，列表支持嵌套，也就是说，列表中的元素，也可以是列表或任意类型的数据结构。\n尝试跟着下面的示例，来创建一些列表：\n\n# 创建一个整数列表\nnumbers = [1, 2, 3, 4, 5]\n# 创建一个字符串列表\nfruits = [\"apple\", \"banana\", \"orange\"]\n# 创建一个混合类型的列表\nmixed_list = [1, \"hello\", True, 3.14]\n# 创建一个嵌套列表\nnested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n\n\nprint(numbers)\nprint(type(numbers))\nprint(fruits)\nprint(type(fruits))\nprint(mixed_list)\nprint(type(mixed_list))\nprint(nested_list)\nprint(type(nested_list))\n\n[1, 2, 3, 4, 5]\n&lt;class 'list'&gt;\n['apple', 'banana', 'orange']\n&lt;class 'list'&gt;\n[1, 'hello', True, 3.14]\n&lt;class 'list'&gt;\n[[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n&lt;class 'list'&gt;\n\n\n\n\n\n\n\n\nNote\n\n\n\n列表是有序的序列，因此列表中的每一个元素都有一个索引，索引从0开始，从前往后，依次递增，表示元素在列表中的位置。\n\n\n现在，让我们来看一看，有哪些关于列表的常用操作。\n\n\n2. 列表的常用操作\n\n(1) 查找\n由于列表是一种可以存储多个元素的有序的数据结构，并且支持索引，因此，我们可以根据索引来查找列表中特定的元素。\na. 索引查找\n延续刚才的代码，使用索引来查找其中特定的元素。注意，如果列表是嵌套的列表，同样支持下标索引。在查询嵌套列表中的下标索引时，先找到内层列表的下标编号，在找到内层列表元素在内层列表中的下标编号，将二者联合查询。\n\nprint(numbers[0])\nprint(fruits[1])\nprint(mixed_list[2])\nprint(nested_list[0][0])\n\n1\nbanana\nTrue\n1\n\n\n索引可以帮助我们取出特定位置的数据。另外，下标索引除了从前往后，从0开始递增排序，也可以从最后一个元素开始，从后往前，从-1开始向前递减排序。\nb. .index()方法查找\n除了直接使用索引进行查找指定元素，我们也可以使用.index()方法来查找元素的索引。如果元素不存在，则会抛出ValueError异常。该方法返回列表中第一个匹配的元素的索引。\n试试看下面的代码，你就可以得到特定元素的索引。\n\nprint(numbers.index(1))\nprint(fruits.index('apple'))\nprint(mixed_list.index(3.14))\nprint(nested_list.index([1, 2, 3]))\n\n0\n0\n3\n0\n\n\n在使用下标索引时，要注意索引的取值范围，超出范围将无法取出元素，并且报错。\n\n\n(2) 修改\n在Python中，列表是可变的，我们可以在需要时对列表中的元素进行修改操作。\n与查找元素一样，修改列表中的元素也是通过索引实现的。\n\n# 查看原列表中的内容\nprint(numbers)\n\n# 修改列表中的元素\nnumbers[2] = 10\n\n# 查看修改过的列表\nprint(numbers)\n\n[1, 2, 3, 4, 5]\n[1, 2, 10, 4, 5]\n\n\n列表的可变性使得它在存储和处理数据时非常灵活，在修改列表时，要确保操作的正确性，以避免出现意外的结果。\n\n\n(3) 增加元素\n在Python中，向列表中增加元素一共有两种方法：\na. 在列表末尾添加元素\n使用append()方法可以在列表的末尾添加元素，使用方法如下例所示：\n\n# 查看原列表\nprint(fruits)\n\n# 在列表末尾添加元素\nfruits.append(\"grape\")\n\n# 查看修改过的列表\nprint(fruits)\n\n['apple', 'banana', 'orange']\n['apple', 'banana', 'orange', 'grape']\n\n\nb. 在指定位置插入元素\n使用insert()方法可以在列表中的指定位置插入元素，与修改元素一样，我们也需要使用索引用以定位。\n该方法在使用时，要在括号中填入两个参数，第一个参数为索引，第二个参数为添加的元素。insert()\n\n# 查看原列表\nprint(fruits)\n\n# 在列表末尾添加元素\nfruits.insert(2,\"watermelon\")\n\n# 查看修改过的列表\nprint(fruits)\n\n['apple', 'banana', 'orange', 'grape']\n['apple', 'banana', 'watermelon', 'orange', 'grape']\n\n\n\n\n(4) 删除元素\n在Python中，有三种常用的方法可以删除列表中的元素。\na. del方法\n使用del方法将根据索引删除指定位置的元素。\n\n# 查看原列表\nprint(numbers)\n\n# 根据索引，删除指定位置的元素\ndel numbers[3]\n\n# 查看修改过的列表\nprint(numbers)\n\n[1, 2, 10, 4, 5]\n[1, 2, 10, 5]\n\n\nb. pop()方法\npop()方法在删除指定索引位置的元素时，还会将其返回出来，你可以使用一个变量来接收这个返回值。\n\n\n\n\n\n\nNote\n\n\n\n你可以将pop()方法的逻辑理解为，将列表中指定位置的元素提取了出来，并且不再放回原列表。\n\n\n如果不向括号中填入索引，pop()方法将默认删除末尾元素。\n\n# 查看原列表\nprint(numbers)\n\n# 根据索引，删除指定位置的元素\npopped_element = numbers.pop(1)\n\n# 查看修改过的列表\nprint(numbers)\nprint(popped_element)\n\n[1, 2, 10, 5]\n[1, 10, 5]\n2\n\n\nc. remove()方法\n使用remove()方法将会删除第一个匹配的元素，如果不存在则会抛出异常。\n\n# 查看原列表\nprint(fruits)\n\n# 删除指定的元素\nfruits.remove(\"banana\")\n\n# 查看修改过的列表\nprint(fruits)\n\n['apple', 'banana', 'watermelon', 'orange', 'grape']\n['apple', 'watermelon', 'orange', 'grape']\n\n\n列表是Python编程中非常常用的数据结构，它可以用于存储各种类型的数据，并且允许灵活地对数据进行增删改查操作，提供了强大的功能来处理和组织数据。\n大家可以试着创建一个新的列表，并对它进行添加、删除、修改以及查找等操作，以加深对列表的理解。\n\n\n\n\n二、元组\n\n1. 元组的概念\n元组（Tuple）是Python中的一种数据结构，类似于列表，但具有一些重要的区别。元组是有序的，可以包含多个元素，而且一旦创建后，其元素是不可变的，即不可被修改。元组使用圆括号()表示，元素之间用逗号,分隔。\n与列表不同，元组的不可变性使得它适用于存储那些不希望被改变的数据，例如坐标、日期、配置信息等。\n与列表相似的是，元组也支持嵌套操作，这意味着我们可以在一个元组中包含其他元组或任意类型的数据结构，包括列表、字典等。\n\n\n\n\n\n\nNote\n\n\n\n可以认为元组就是一个只读的列表，但是要注意元组内只有一个数据时，这个数据后也要加上,\n\n\n\n# 创建一个整数元组\nnumbers = (1, 2, 3, 4, 5)\n\n# 创建一个字符串元组\nfruits = (\"apple\", \"banana\", \"orange\")\n\n# 创建一个混合类型的元组\nmixed_tuple = (1, \"hello\", True, 3.14)\n\nprint(numbers)\nprint(type(numbers))\nprint(fruits)\nprint(type(fruits))\nprint(mixed_list)\nprint(type(mixed_list))\nprint(nested_list)\nprint(type(nested_list))\n\n(1, 2, 3, 4, 5)\n&lt;class 'tuple'&gt;\n('apple', 'banana', 'orange')\n&lt;class 'tuple'&gt;\n[1, 'hello', True, 3.14]\n&lt;class 'list'&gt;\n[[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n&lt;class 'list'&gt;\n\n\n\n\n\n\n\n\nNote\n\n\n\n元组也是有序的序列，元组中的每一个元素都有一个索引，索引从0开始，从前往后，依次递增，表示元素在元组中的位置。\n\n\n\n\n2. 元组的常用操作\n\n(1) 查找\n元组具有与列表一样的下标索引规则，因此也可以通过下标索引进行查找操作。\na. 索引查找\n\nprint(numbers[0])  # 输出：1\nprint(fruits[1])   # 输出：\"banana\"\n\n1\nbanana\n\n\nb. index()方法查找\n\nprint(numbers.index(1))\nprint(fruits.index('apple'))\nprint(mixed_list.index(3.14))\n\n0\n0\n3\n\n\n\n\n(2) 尝试修改\n与列表不同的是，元组中的内容是不可变的，因此无法直接修改元组中的元素，如果尝试修改则会引发异常\n\nnumbers[2] = 10\n\n\n\n\n\n\n\nNote\n\n\n\n当元组中包含嵌套的列表时，我们可以修改列表中的元素，但不能改变列表本身的数据类型。\n\n\n\n\n(3) 解包\n在Python中，解包（Unpacking）是一种特殊的操作，用于将一个序列（例如列表、元组）或其他可迭代对象中的元素，分别赋值给多个变量。解包可以在一行代码中同时为多个变量赋值，从而方便地提取序列或可迭代对象中的元素。\n解包的语法非常简单，通常使用等号（=）将目标序列与变量列表相结合。要注意的是，被解包的序列中的元素数量必须与变量的数量相匹配，否则会引发ValueError异常。\n\npoint = (10, 20)\nx, y = point\nprint(x)\nprint(y)\n\n10\n20\n\n\n元组的不可变性意味着一旦创建了元组，它的内容不会被修改，因此元组通常用于存储一组相关的值，以及在函数返回多个值时使用。虽然元组的内容不可变，但元组本身可以被重新赋值，因此可以用来在不可变和可变数据之间进行转换。\n\n\n\n\n三、字典\n\n1. 字典的概念\n字典是Python中非常重要的数据结构，用于存储键值对(即key-value)映射。字典提供了一种灵活的方式来组织和访问数据，允许根据键快速查找和修改对应的值。字典用花括号{}来创建，每个键值对用冒号:分隔，键必须是不可变的类型，通常使用字符串或整数。\n注意，字典是无序键值对的集合，每个键都是唯一的。这也意味着，字典不可以通过索引来访问，只可以通过’键’来查找’值’。\n\n\n\n\n\n\nNote\n\n\n\n字典中’键’对应的’值’可以为任意元素，也可以为列表、元组等数据结构。\n\n\n\n# 创建一个空字典\nempty_dict = {}\n\n# 创建一个包含键值对的字典\nperson = {\n    \"name\": \"John\",\n    \"age\": 30,\n    \"city\": \"New York\"\n}\n\nprint(person)\n\n{'name': 'John', 'age': 30, 'city': 'New York'}\n\n\n\n\n2. 字典的常用操作\n\n(1) 查找\n在字典中，由于字典自身的无序性，所以需要使用’键’来代替索引进行查找。\n\nprint(person[\"name\"])\nprint(person[\"age\"])\n\nJohn\n30\n\n\n但是在查找时要注意，如果输入的’键’不存在，会引发KeyError异常。为避免异常，可以使用get()方法来查找’键’对应的’值’。\n\nprint(person.get(\"city\"))\nprint(person.get(\"occupation\"))  # 键\"occupation\"不存在时返回None\n\nNew York\nNone\n\n\n\n\n(2) 修改\n字典中的值是可以修改的，与查找过程类似，我们也需要通过指定’键’来更新对应的’值’。\n\nperson[\"age\"] = 31\nprint(person[\"age\"])\n\n31\n\n\n如果输入的’键’是字典中不存在的，则会向字典中添加一个键值对。\n\nperson[\"occupation\"] = \"Engineer\"\nprint(person)\n\n{'name': 'John', 'age': 31, 'city': 'New York', 'occupation': 'Engineer'}\n\n\n\n\n(3) 删除\n对于字典，我们可以使用del方法来进行删除指定的键值对。\n\n# 使用del删除指定键值对\ndel person[\"age\"]\n\n# 输出结果\nprint(person)\n\n{'name': 'John', 'city': 'New York', 'occupation': 'Engineer'}\n\n\n也可以使用.clear()方法清空字典中的所有条目。\n\n# 使用clear()清空字典\nperson.clear()\n\n# 输出结果\nprint(person)\n\n{}\n\n\n字典Dict中键和值是一 一对应的，键是唯一的，如果重复最后的一个键【值】对会替换前面的。若一个键中需要存放多个值，可以考虑使用元组Tuple和列表List 。\n字典是Python编程中非常重要的数据结构，它允许将数据组织为键值对的形式，方便快速查找和修改数据。字典的灵活性和高效性使其在很多场景中得到广泛应用，例如用于存储配置信息、处理JSON数据、构建数据库等。\n\n\n\n\n四、数据结构的通用操作\n数据结构尽管各自有各自的特点，但是也存在一些通用的操作。\n\n1. 通用的统计操作\n\n\n\n\n\n\nNote\n\n\n\n字符串的大小比较是通过ASCⅡ码表进行的，从头到尾，一位位进行比较，其中一位大，后面就无需比较了。对于单个字符，将其转换为ASCⅡ码表中对应的码值数字后来确定大小。\n\n\n\n(1) 统计元素个数\n\nlen(容器)\n\n\n\n(2) 统计最大/最小元素\n\n# 统计最大元素\nmax(容器)\n\n# 统计最小元素\nmin(容器)\n\n\n\n\n2. 通用转换功能\n\n使用 list() 函数将元组转换为列表。\n使用 tuple() 函数将列表转换为元组\n\n\n\"\"\"\n列表、元组互相转换时，看起来会好像只有括号的形式变了\n\"\"\"\n\n# 将给定容器转换为列表\nlist(容器)\n    \"\"\"\n    * 字符串列表时，会将字符串内的每一个字符提取出来作为列表内的一个新元素\n    * 字典转列表时，会舍弃value，只保留key作为列表里面的元素\n    \"\"\"\n    \n    \n# 将给定容器转换为元组\ntuple(容器)\n    \"\"\"\n    * 字符串元组时，会将字符串内的每一个字符提取出来作为元组内的一个新元素\n    * 字典转元组时，会舍弃value，只保留key作为元组里面的元素\n    \"\"\"\n    \n\n\n# 元组转列表\nmy_tuple = (1, 2, 3, 4, 5)\nmy_list = list(my_tuple)\nprint(my_list)\n\n[1, 2, 3, 4, 5]\n\n\n\n# 列表转元组\nmy_list = [1, 2, 3, 4, 5]\nmy_tuple = tuple(my_list)\nprint(my_tuple)\n\n(1, 2, 3, 4, 5)\n\n\n\n# keys() 是一个字典(Dictionary)对象的方法，用于返回字典中所有的键\n\nmy_dict = {\"name\": \"John\", \"age\": 25, \"city\": \"New York\"}\nmy_list = list(my_dict.keys())\nprint(my_list)\n\nprint(type(my_list))\n\n['name', 'age', 'city']\n&lt;class 'list'&gt;\n\n\n如果想要将字典转换为元组，可以使用items()方法。\n\n# 使用 items() 方法获取字典的键值对，然后使用 tuple() 函数将键值对转换为元组。\n\nmy_dict = {\"name\": \"John\", \"age\": 25, \"city\": \"New York\"}\nmy_tuple = tuple(my_dict.items())\nprint(my_tuple)\n\nprint(type(my_tuple))\n\n(('name', 'John'), ('age', 25), ('city', 'New York'))\n&lt;class 'tuple'&gt;\n\n\n\n\n3. 通用排序功能\n使用sorted函数，可以将容器从小到大排序；如果添加reverse=True参数，则会将排序结果反转。\n\nsorted(容器, reverse=True)\n# 使用sorted函数进行排序后，会将内容全部转换为列表对象，实际上，这个函数就是将排序结果放入了列表之中。\n\n\n\n\n五、列表、元组、字典的异同点\n\n1. 列表、元组、字典的相同点：\n\n都是Python中常用的数据结构，用于存储和组织数据。\n都可以存储多个元素，可以包含不同类型的数据。\n都支持索引访问，可以根据位置获取元素。\n都可以用于存储任意数量的数据项。\n都可以通过迭代和循环遍历其中的元素。\n\n\n\n2. 列表、元组、字典的不同点：\n\n可变性：\n\n列表是可变的，可以随时添加、删除和修改其中的元素。\n元组是不可变的，一旦创建了元组，就不能修改其中的元素。\n字典也是可变的，可以根据键添加、删除和修改对应的值。\n\n创建方式：\n\n列表使用方括号 [] 创建。\n元组使用圆括号 () 创建。\n字典使用花括号 {} 创建，每个键值对用冒号 : 分隔。\n\n可以包含的数据类型：\n\n列表和元组都可以包含不同类型的数据，甚至可以包含其他列表或元组（嵌套结构）。\n字典的值可以是任意类型的数据，而键必须是不可变的类型，通常使用字符串或整数。\n\n访问元素方式：\n\n列表和元组使用索引来访问元素，索引从0开始。\n字典使用键来查找对应的值，键必须是唯一的。\n\n适用场景：\n\n列表适用于存储有序、可变的数据集合，常用于保存一组相关的数据项。\n元组适用于存储有序、不可变的数据集合，常用于函数返回多个值或作为字典的键。\n字典适用于存储键值对映射，常用于需要通过键快速查找对应值的情况。\n\n\n总的来说，列表、元组和字典都是有用且重要的数据结构，根据不同的需求和场景，我们可以灵活地选择使用其中的任何一个或多个来处理和组织数据。"
   },
@@ -401,56 +401,56 @@
   {
     "objectID": "动态图表.html#热力图",
     "href": "动态图表.html#热力图",
-    "title": "16  高阶图表",
+    "title": "16  Plotly高阶图表",
     "section": "热力图",
     "text": "热力图\n热力图是一种使用颜色来展示二维数据的图表，主要用于展示二维数据的分布和相关性，其中颜色的深浅表示数据的密度、数值的大小或相关性的强度。\n\n热力图可以帮助用户直观地观察数据的分布情况，从而快速识别数据的集中区域和稀疏区域。\n主要用于显示数据的分布、相关性和模式，例如地图上的人口密度。\n能够突出显示异常值：热力图可以突出显示数据中的异常值或异常模式，帮助用户识别潜在的问题或异常情况。\n\n\n一个简单的热力图示例\n\nimport plotly.express as px\nimport pandas as pd\n# 数据\nheat_map_data = {\n    'Day': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],\n    'Temperature': [28, 30, 32, 29, 31], # 温度\n    'Humidity': [55, 58, 50, 61, 54]  # 湿度\n}\n\ndf = pd.DataFrame(heat_map_data)\n\n# 绘制热力图\nfig_heat_map = px.imshow(df[['Temperature', 'Humidity']], y=df['Day'], text_auto = True)\nfig_heat_map.show(renderer=\"notebook\")\n\n\n                                                \n\n\n\n参数介绍：\n\n绘制热力图函数px.imshow(img, x, y, ...)：\nimg : 二维数据矩阵，要绘制的数据。\nx : 用于指定列标签(每一列)。\ny : 用于指定行标签(每一行)。\ntext_auto=True 表示显示数值。"
   },
   {
     "objectID": "动态图表.html#旭日图",
     "href": "动态图表.html#旭日图",
-    "title": "16  高阶图表",
+    "title": "16  Plotly高阶图表",
     "section": "旭日图",
     "text": "旭日图\n旭日图，也叫做Sunburst Charts，主要用来展示具有层级结构的数据，其中每个数据点都有一个父级和一个或多个子级。\n\n旭日图可以理解为是表示分层数据的多级饼图，在一个圆环中嵌套多个圆环，每个圆环代表一个层级的分类数据，离中心越近的圆环层级越高。\n旭日图能够同时表现数据的局部和整体的占比情况，以及数据层级之间的关系。相较于饼图，旭日图更适合展示层级多的比例数据关系，更适合呈现复杂的数据结构。\n旭日图通过环形结构，使得用户可以清楚地看到数据从大类到子类的层级关系，以及不同类别之间的相对比例。\n\n\n一个简单的旭日图示例\n\nimport plotly.express as px\n\n# 旭日图数据（层次结构数据）\nsunburst_data = {\n    'Region': ['Asia', 'Asia', 'Europe', 'Africa', 'North America', 'South America', 'North America'],\n    'Country': ['China', 'Japan', 'Germany', 'Nigeria', 'USA', 'Brazil', 'Mexico'],\n    'Population': [1439323776, 124520000, 83783942, 214028302, 331002651, 212559417, 129040000]\n}\ndf = pd.DataFrame(sunburst_data)\n# 绘制旭日图\nfig_sunburst = px.sunburst(df, path=['Region', 'Country'], \n                           values='Population', color='Region',\n                           title='Sunburst Plot'\n                           )\nfig_sunburst.show(renderer=\"notebook\")\n\n\n                                                \n\n\n\n参数介绍：\n\n不论绘制任何图像，第一个参数基本上为传递给绘图参数的数据，这里是数据框df。\npath : 层次结构的路径：洲Region-&gt;国Country。一个列名列表，在前面的列为更靠近圆环中心的大类。 从中心向外的层层圆环，从前往后的列名列表，都表示从高层级向子层级展开。\nvalues : 决定圆环中各部分占比的变量，这里是人口数Population。\ncolor : 表示这个变量中的所有不同取值用不同颜色来区分，这里不同洲地区的板块显示为不同的颜色。\n\n通过鼠标点击旭日图中不同的环块，可以展开或折叠不同层级的数据。"
   },
   {
     "objectID": "动态图表.html#树状图",
     "href": "动态图表.html#树状图",
-    "title": "16  高阶图表",
+    "title": "16  Plotly高阶图表",
     "section": "树状图",
     "text": "树状图\n树状图是一种展现层次结构的可视化图表，通过矩形的嵌套和面积大小来展示数据的层级关系。\n\n树状图主要用于展示层次结构数据，例如文件夹大小、组织架构、经济分布等。\n树状图可以帮助用户快速了解数据的组织结构，同时直观地比较不同层级之间的数据大小。\n\n\n一个简单的树状图示例\n\n# 树状图数据（层次结构数据）\n# 各个领域的商品销量\ntree_map_data = {\n    'Category': ['Electronics', 'Fashion', 'Fashion', 'Beauty', 'Toys'],\n    'Product': ['Laptop', 'Shirt', 'Pants', 'Lipstick', 'Action Figure'],\n    'Sales': [1200, 800, 600, 600, 300]\n}\ndf = pd.DataFrame(tree_map_data)\n# 绘制树状图\n# 参数可以参照旭日图\n# path表示层次结构路径，values为决定矩形大小的变量，color决定用不同颜色区分哪个层级。\nfig_tree_map = px.treemap(df, path=[px.Constant('Sale'), 'Category', 'Product'], \n                          values='Sales', color='Category', title='TreeMap Plot')\nfig_tree_map.show(renderer=\"notebook\")\n\n\n                                                \n\n\n\n\ncolor参数\n当使用数值列来决定不同矩形的颜色时，可以设置color相关的参数：\n\ncolor_continuous_scale ：这个参数设置了颜色的渐变色标尺，’RdBu’表示红蓝双色渐变。\ncolor_continuous_midpoint ：这个参数用于设置颜色渐变的中点。将某个值作为颜色渐变的中点，可以使得图表的颜色更加平衡。\n\n\nimport numpy as np\nfig1_tree_map = px.treemap(df, path=[px.Constant('Sale'), 'Category', 'Product'], \n                           values='Sales', color='Sales', color_continuous_scale='RdBu',\n                           color_continuous_midpoint=np.average(df['Sales'])\n                           )\nfig1_tree_map.show(renderer=\"notebook\")\n\n\n                                                \n\n\n通过鼠标点击树状图中不同的矩形版块，可以展开或折叠不同层级的数据。"
   },
   {
     "objectID": "动态图表.html#动画效果",
     "href": "动态图表.html#动画效果",
-    "title": "16  高阶图表",
+    "title": "16  Plotly高阶图表",
     "section": "动画效果",
     "text": "动画效果\n通过图像连续变化来展示一系列动作或过程，就叫做动效，通常用来展示数据的可视化图表随时间变化的过程。\n\n绘图示例\n\nimport plotly.express as px\n# 内置数据集\ndf = px.data.gapminder()\n\n# 绘制加入动画效果的散点图，展示随时间变化的散点图走势\nfig = px.scatter(df, x=\"gdpPercap\", y=\"lifeExp\", \n                 animation_frame=\"year\", animation_group=\"country\",\n                 size=\"pop\", color=\"continent\", hover_name=\"country\",\n                 log_x=True, size_max=55, range_x=[100,100000], range_y=[25,90])\nfig.show(renderer=\"notebook\")\n\n\n                                                \n\n\n\nGapminder数据集变量介绍\n\n用于展示全球人口、经济和健康状况的变化情况。\ncountry：国家名称。\ncontinent：所属洲。\nyear：年份。\nlifeExp：平均预期寿命。\npop：人口数量。\ngdpPercap：人均GDP。\n\n\n\n参数介绍\n\nhover_name ：鼠标悬停在散点上时显示的标签。\nlog_x ：控制 x 轴是否使用对数刻度。将其设置为True，则 x 轴使用对数刻度。 在对数刻度中，刻度值是指数增长的，例如刻度值为100、101、102、103\nsize_max ：设置散点的最大大小以避免散点过大。\nrange_x ：x 轴的取值范围。\nrange_y ：y 轴的取值范围。\nanimation_frame ：设置动画效果的关键字，此处为year表示散点图将以动画形式展示数据随时间的变化\nanimation_group ：确定动画效果的关键字，此处为country表示将展示各个国家的变化数据趋势。"
   },
   {
     "objectID": "动态图表.html#交互式功能",
     "href": "动态图表.html#交互式功能",
-    "title": "16  高阶图表",
+    "title": "16  Plotly高阶图表",
     "section": "交互式功能",
     "text": "交互式功能\n\n鼠标交互：\n鼠标悬停提示：Plotly 默认会在图表上显示数据点的数值信息。鼠标悬停在数据点上时，会显示该点的具体数值，包括 x 轴和 y 轴的值。这个功能在 Plotly 中是默认开启的，无需设置。\n缩放和平移：通过鼠标拖拽可以实现图表的缩放和平移。当鼠标指针放在图表上方时，会出现缩放和平移的图标，通过拖动可以改变图表的视图范围。\n\n\n工具栏操作：\n工具栏按钮：Plotly 默认会在图表的右上角显示一个工具栏，其中包含一系列按钮，例如缩放、平移、自动缩放、重置轴范围等。这些按钮可以用于调整图表的外观和交互方式。\n\n\n图例控制：\n图例样式：可以通过设置图例的样式来调整图例的外观，例如字体大小、背景颜色等。通过在 legend 参数中设置相应的属性来实现。\n图例位置：可以通过设置图表布局中的 legend 参数来控制图例的位置。例如，layout=dict(legend=dict(x=0, y=1)) 表示将图例放在图表的左上角。默认情况下，Plotly 会自动根据图表的内容和大小来选择最佳的图例位置。\nlegend常用参数：\n\nx 和 y ：设置图例的水平和垂直位置，取值范围为0到1，0表示图表的最左边或最下边，1表示图表的最右边或最上边。\nxanchor 和 yanchor ：设置图例的水平和垂直锚点，用于确定图例相对于设置的 x 和 y 位置的对齐方式。\nbgcolor ：设置图例的背景颜色。\nbordercolor 和 borderwidth ：设置图例的边框颜色和宽度。\ntraceorder ：设置图例中数据系列的显示顺序，可选值为 ‘normal’（默认）或 ‘reversed’。\nitemsizing ：设置图例中每个数据系列的尺寸，可选值为 ‘trace’（默认）或 ‘constant’。‘trace’ 表示图例中每个数据系列的尺寸与其在图表中的尺寸成比例，‘constant’ 表示图例中每个数据系列的尺寸保持不变。\n\n\nimport plotly.express as px\n\n# 内置数据集\ndf = px.data.gapminder()\n\n# 绘制加入动画效果的散点图，展示随时间变化的散点图走势\nfig = px.scatter(df, x=\"gdpPercap\", y=\"lifeExp\", \n                 animation_frame=\"year\", animation_group=\"country\",\n                 size=\"pop\", color=\"continent\", hover_name=\"country\",\n                 log_x=True, size_max=55, range_x=[100,100000], range_y=[25,90])\n# update_layout定制图表布局\n# legend参数设置图表的图例位置和样式\nfig.update_layout(\n    # x=1表示右，y=1表示上，图例显示在右上角，背景色为白色，边框黑色且宽度为1\n    legend=dict(x=1, y=1, bgcolor='white', bordercolor='black', borderwidth=1)\n)\n\n# 显示图表\nfig.show(renderer=\"notebook\")"
   },
   {
     "objectID": "动态图表.html#滑块和dropdown选择器",
     "href": "动态图表.html#滑块和dropdown选择器",
-    "title": "16  高阶图表",
+    "title": "16  Plotly高阶图表",
     "section": "滑块和dropdown选择器",
     "text": "滑块和dropdown选择器\n\nslider滑块\n\nimport plotly.express as px\n\ndf = px.data.gapminder()\nfig = px.scatter(df, x=\"gdpPercap\", y=\"lifeExp\", animation_frame=\"year\", animation_group=\"country\",\n           size=\"pop\", color=\"continent\", hover_name=\"country\",\n           log_x=True, size_max=55, range_x=[100,100000], range_y=[25,90])\n\nfig[\"layout\"].pop(\"updatemenus\") # 省去动画的播放按钮\nfig.show(renderer=\"notebook\")\n\n\n                                                \n\n\n\n\nDropdown下拉菜单（仅作了解）\n\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n\n# 示例数据\nyears = [2010, 2011, 2012, 2013, 2014]\nsales = [100, 150, 200, 180, 250]\nprice = [10, 12, 15, 18, 20]\n\n# 创建图表\nfig = go.Figure()\n\n# 添加销售额折线图，不可见\nfig.add_trace(go.Scatter(x=years, y=sales, mode='lines+markers', name='Sales', visible=True))\n\n# 添加价格折线图，默认可见\nfig.add_trace(go.Scatter(x=years, y=price, mode='lines+markers', name='Price', visible=False))\n\n# 设置布局\nfig.update_layout(title='Sales and Price over Time',\n                  xaxis_title='Year',\n                  yaxis_title='Value'\n                  )\n\n# 添加 Dropdown 组件\nfig.update_layout(\n    updatemenus=[\n        dict(\n            buttons=list([\n                dict(\n                    args=[{'visible': [True, False]}],\n                    label='Sales',\n                    method='update'\n                ),\n                dict(\n                    args=[{'visible': [False, True]}],\n                    label='Price',\n                    method='update'\n                )\n            ]),\n            direction='down',\n            showactive=True,\n            x=0.1,\n            xanchor='left',\n            y=1.1,\n            yanchor='top'\n        ),\n    ]\n)\n\n# 显示图表\nfig.show(renderer=\"notebook\")"
   },
   {
     "objectID": "动态图表.html#数据的分组聚合-groupby和agg",
     "href": "动态图表.html#数据的分组聚合-groupby和agg",
-    "title": "16  高阶图表",
+    "title": "16  Plotly高阶图表",
     "section": "数据的分组聚合: groupby()和agg()",
     "text": "数据的分组聚合: groupby()和agg()\n使用groupby()和agg()实现数据的分组聚合：\n\nimport plotly.express as px\nimport pandas as pd\n\n# 示例数据\ndata = {\n    'Category': ['A', 'B', 'A', 'B', 'A', 'B'],\n    'Value': [10, 15, 20, 25, 30, 35]\n}\ndf = pd.DataFrame(data)\n\n# 嵌套使用 groupby 和 agg 进行数据分组和聚合\ngrouped_data = df.groupby('Category').agg({'Value': 'mean'}).reset_index()\n\n# 使用 Plotly 绘制条形图\nfig = px.bar(grouped_data, x='Category', y='Value', title='Category Average')\nfig.show(renderer=\"notebook\")"
   },
   {
     "objectID": "动态图表.html#数据转换-filtergroupbyaggregate",
     "href": "动态图表.html#数据转换-filtergroupbyaggregate",
-    "title": "16  高阶图表",
+    "title": "16  Plotly高阶图表",
     "section": "数据转换: Filter/Groupby/Aggregate",
     "text": "数据转换: Filter/Groupby/Aggregate\nPlotly中有一种Transform可以对数据进行转换处理，通过transform可以实现对数据的筛选过滤filter、分组groupby、聚合aggregate操作。\n请查看下面的示例代码和图表。\n\nFilter\n\nimport plotly.io as pio\n\nstudent = ['Amy', 'Laura', 'Lisa', 'Amy', 'Laura', 'Lisa', 'Laura', 'Lisa', 'Amy']\nscore = [77, 88, 99, 87, 76, 65, 78, 89, 90]\n# 使用 dict() 定义一个散点图的数据字典列表 data。\n# data 中包含一个字典，其中定义了散点图的数据属性。\ndata = [dict(\n  type = 'scatter', \n  # 指定x轴和y轴\n  x = student, \n  y = score,\n  # mode 参数用于控制绘制散点图时标记的形状。\n  # markers:圆点。'lines':折线,'lines+markers':圆点+折线,'text'：显示文本标签。\n  mode = 'markers',\n  transforms = [dict(\n    type = 'filter',  # 'filter'表示筛选过滤，'groupby'表示分组，'aggregate'表示聚合\n    target = 'y',     # 数据转换filter的目标对象为y\n    operation = '&gt;',  # 过滤条件：&gt;\n    value = 80        # 过滤条件临界值：80\n  )]\n)]\n\nlayout = dict(\n    title = 'Scores &gt; 80'\n)\n\nfig_dict = dict(data=data, layout=layout)\n# validate=False表示无需验证数据，直接输出图像\npio.show(fig_dict, validate=False, renderer=\"notebook\")\n\n                                                \n\n\n\n\nGroupby\n\nimport plotly.io as pio\n\nstudent = ['Amy', 'Laura', 'Lisa', 'Amy', 'Laura', 'Lisa', 'Laura', 'Lisa', 'Amy']\nscore = [77, 88, 99, 87, 76, 65, 78, 89, 90]\n\ndata = [dict(\n  type = 'scatter', \n  x = student, \n  y = score,\n  mode = 'markers',\n  transforms = [dict(\n    type = 'groupby',  \n    groups = student,  # 以不同学生来分组\n    # styles: 样式列表，其中包含不同学生的样式设置，这里显示为特定的不同颜色\n    styles = [\n        dict(target = 'Amy', value = dict(marker = dict(color = 'blue'))),\n        dict(target = 'Laura', value = dict(marker = dict(color = 'red'))),\n        dict(target = 'Lisa', value = dict(marker = dict(color = 'black')))\n    ]\n  )]\n)]\n\nfig_dict = dict(data=data)\npio.show(fig_dict, validate=False, renderer=\"notebook\")\n\n                                                \n\n\n\n\nAggregate\n\ncount: 数量。\nsum: 总和。\navg: 平均值。\nmedian: 中位数。\nmode: 众数。\nrms: 均方根。\nstddev: 标准差。\nmin: 最小值。\nmax: 最大值。\nfirst: 第一个值。\nlast: 最后一个值。\n\n\nimport plotly.io as pio\n\nstudent = ['Amy', 'Laura', 'Lisa', 'Amy', 'Laura', 'Lisa', 'Laura', 'Lisa', 'Amy']\nscore = [77, 88, 99, 87, 76, 65, 78, 89, 90]\n\ndata = [dict(\n  type = 'scatter', \n  x = student, \n  y = score,\n  mode = 'markers',\n  transforms = [dict(\n    type = 'aggregate',\n    groups = student,\n    aggregations = [dict(\n        # 聚合的目标对象:y, 聚合结果：返回平均值。\n        target = 'y', func = 'avg', enabled = True),\n    ]\n  )]\n)]\n\nlayout = dict(\n    title = 'Average Score'\n)\nfig_dict = dict(data=data, layout=layout)\npio.show(fig_dict, validate=False, renderer=\"notebook\")"
   },
@@ -537,40 +537,5 @@
     "title": "19  Python连接Postgresql数据库",
     "section": "操作步骤",
     "text": "操作步骤\n\nDocker安装jupyternotebook & Postgresql数据库\n本地数据库备份&迁移\n安装和使用SqlAlechemy"
-  },
-  {
-    "objectID": "Dash案例.html#为什么要使用dash",
-    "href": "Dash案例.html#为什么要使用dash",
-    "title": "20  Dash创建股票APP",
-    "section": "为什么要使用Dash",
-    "text": "为什么要使用Dash\nDash Plotly是一个基于Python的开源框架，用于构建交互式数据可视化和分析应用。\n它的优势在于简洁的语法、强大的可视化功能和灵活的布局选项。通过使用Dash Plotly，您可以轻松创建漂亮、交互式的应用程序，展示和探索数据，无论是用于内部报告、数据分析还是对外展示。它提供了丰富的图表类型、注解和样式设置，以及与其他Python库的无缝集成，如pandas和numpy。Dash Plotly还支持部署到Web服务器上，使得应用程序能够通过浏览器进行访问和共享。\n总的来说，Dash Plotly提供了一种简单而强大的方式来创建数据驱动的应用程序，使得数据可视化和交互变得更加容易和高效。"
-  },
-  {
-    "objectID": "Dash案例.html#案例背景",
-    "href": "Dash案例.html#案例背景",
-    "title": "20  Dash创建股票APP",
-    "section": "案例背景",
-    "text": "案例背景\n使用Dash 模仿复现股票走势的交互可视化面板，可以查看股票日线级别的涨跌幅度、股票走势和买入卖出盈亏比。以英伟达股票为案例"
-  },
-  {
-    "objectID": "Dash案例.html#相关链接",
-    "href": "Dash案例.html#相关链接",
-    "title": "20  Dash创建股票APP",
-    "section": "相关链接",
-    "text": "相关链接\n免费股票数据API\nGitHub Python调用API\n模仿案例网站"
-  },
-  {
-    "objectID": "Dash案例.html#dash股票案例上集",
-    "href": "Dash案例.html#dash股票案例上集",
-    "title": "20  Dash创建股票APP",
-    "section": "Dash股票案例（上集）",
-    "text": "Dash股票案例（上集）\n\nAPI获取&调用\npands数据清洗\n导出csv到本地\nDash-Bootstrap主题\nDash-layout排版\nDash-调整位置和宽度"
-  },
-  {
-    "objectID": "Dash案例.html#dash股票案例下集",
-    "href": "Dash案例.html#dash股票案例下集",
-    "title": "20  Dash创建股票APP",
-    "section": "Dash股票案例（下集）",
-    "text": "Dash股票案例（下集）\n\napp功能：涨跌百分比\npadnas数据清洗&过滤\nplotly绘制百分比图\napp功能：股票走势图\nupdate_traces VS update_layout\napp功能：滚动数据\nBootstrap组件使用"
   }
 ]
