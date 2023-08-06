@@ -66,7 +66,7 @@ book:
       chapters:
         - for循环.ipynb
         - python链接数据库.ipynb
-        - Dash案例.ipynb
+        # - Dash案例.ipynb
         
 
 highlight-style: pygments
