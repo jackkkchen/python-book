@@ -36,7 +36,7 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
-    - 周一环境搭建.ipynb
+    # - 周一环境搭建.ipynb
     - part: "Python入门基础"
       chapters: 
         - 周一基础语法_new.ipynb
@@ -67,6 +67,13 @@ book:
         - for循环.ipynb
         - python链接数据库.ipynb
         # - Dash案例.ipynb
+    - part: "拓展"
+      chapters:
+        - 周一环境搭建.ipynb
+        - 周三条件语句和循环语句.ipynb
+        - 周四函数.ipynb
+        - 周四模块.ipynb
+
         
 
 highlight-style: pygments
