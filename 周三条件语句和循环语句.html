@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python新手文档 - 20&nbsp; 条件语句的学习</title>
+<title>Python新手文档 - 20&nbsp; Python条件语句</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./周一环境搭建.html">拓展</a></li><li class="breadcrumb-item"><a href="./周三条件语句和循环语句.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">条件语句的学习</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./周一环境搭建.html">拓展</a></li><li class="breadcrumb-item"><a href="./周三条件语句和循环语句.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Python条件语句</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -346,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./周三条件语句和循环语句.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">条件语句的学习</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Python条件语句</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -373,8 +373,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#循环语句的学习" id="toc-循环语句的学习" class="nav-link active" data-scroll-target="#循环语句的学习">循环语句的学习</a></li>
-  <li><a href="#编写具有条件判断和循环结构的程序" id="toc-编写具有条件判断和循环结构的程序" class="nav-link" data-scroll-target="#编写具有条件判断和循环结构的程序"><strong>编写具有条件判断和循环结构的程序</strong></a></li>
+  <li><a href="#条件语句" id="toc-条件语句" class="nav-link active" data-scroll-target="#条件语句">条件语句</a></li>
+  <li><a href="#循环语句" id="toc-循环语句" class="nav-link" data-scroll-target="#循环语句">循环语句</a></li>
+  <li><a href="#编写具有条件判断和循环结构的程序" id="toc-编写具有条件判断和循环结构的程序" class="nav-link" data-scroll-target="#编写具有条件判断和循环结构的程序"><em>编写具有条件判断和循环结构的程序</em></a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/周三条件语句和循环语句.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -383,7 +384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">条件语句的学习</span></h1>
+<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Python条件语句</span></h1>
 </div>
 
 
@@ -398,6 +399,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<video width="600" height="450" controls="" src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/%E5%91%A8%E4%B8%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%26%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/%E6%96%B0%E6%89%8B%E7%AC%AC%E4%B8%80%E5%A4%A9/%E5%BE%AA%E7%8E%AF.mp4">
+</video>
+<section id="条件语句" class="level2">
+<h2 class="anchored" data-anchor-id="条件语句">条件语句</h2>
 <p>在本节课程中，我们将学习条件语句的基本结构、逻辑判断以及如何构建复杂的条件表达式。同时，我们还会练习编写带有条件判断的程序，让你能够根据条件执行不同的代码块。</p>
 <ol type="1">
 <li>条件语句的基本结构 条件语句允许我们根据不同的条件来执行不同的代码块。在Python中，条件语句使用if和else关键字构建。基本结构如下：</li>
@@ -487,8 +492,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>应缴纳的所得税为： 100000.0</code></pre>
 </div>
 </div>
-<section id="循环语句的学习" class="level3">
-<h3 class="anchored" data-anchor-id="循环语句的学习">循环语句的学习</h3>
+</section>
+<section id="循环语句" class="level2">
+<h2 class="anchored" data-anchor-id="循环语句">循环语句</h2>
 <ol type="1">
 <li>基本结构 循环语句允许我们重复执行一段代码。Python中有两种常见的循环结构：while循环和for循环。</li>
 </ol>
@@ -504,7 +510,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="周三条件语句和循环语句_files/figure-html/bfc9b333-1-image.png" class="img-fluid figure-img"></p>
+<p><img src="周三条件语句和循环语句_files/figure-html/e67fdd7c-1-image.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">image.png</figcaption>
 </figure>
 </div>
@@ -538,7 +544,7 @@ Repeat this line !</code></pre>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="周三条件语句和循环语句_files/figure-html/8ffe9138-1-image.png" class="img-fluid figure-img"></p>
+<p><img src="周三条件语句和循环语句_files/figure-html/292d52d4-1-image.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">image.png</figcaption>
 </figure>
 </div>
@@ -624,8 +630,8 @@ Repeat this line !</code></pre>
 </div>
 </div>
 </section>
-<section id="编写具有条件判断和循环结构的程序" class="level3">
-<h3 class="anchored" data-anchor-id="编写具有条件判断和循环结构的程序"><strong>编写具有条件判断和循环结构的程序</strong></h3>
+<section id="编写具有条件判断和循环结构的程序" class="level2">
+<h2 class="anchored" data-anchor-id="编写具有条件判断和循环结构的程序"><em>编写具有条件判断和循环结构的程序</em></h2>
 <p>在本节课程中，我们将进一步学习如何编写具有条件判断和循环结构的程序，并解决一些简单的问题。</p>
 <ol type="1">
 <li>判断奇数和偶数 编写一个程序，判断一个数是奇数还是偶数，并打印出所有的奇数或偶数。</li>
@@ -801,6 +807,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
