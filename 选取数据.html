@@ -412,18 +412,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>在数据分析中，选取需要的数据进行处理和分析是很重要的。在Excel中，主要通过鼠标点选或拖拽来选取数据。</p>
-<p>而Pandas 提供了丰富的数据探索方法，如数据排序、数据筛选、数据切片等。这些功能可以帮助我们快速了解数据的基本特征。</p>
+<p>在数据分析中，选取需要的数据进行处理和分析是很重要的。Pandas 提供了丰富的数据探索方法，包数据排序、数据筛选、数据切片、数据分组汇总等等。这些功能可以帮助我们快速了解数据的基本特征并选取自己需要的数据。</p>
 <p>在Pandas中，我们可以通过列名、位置索引以及各种条件来筛选感兴趣的数据子集，从而对数据进行过滤、筛选、切片、分析等操作。</p>
-<p>首先，导入并查看泰坦尼克号数据集示例：</p>
-<div class="cell" data-execution_count="51">
+<p>首先，导入并查看泰坦尼克号数据集的前5行：</p>
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 从 github上的公开存储库获取数据</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/titanic.csv'</span>) </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看前5行数据，加粗部分是行、列名。</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="51">
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/titanic.csv'</span>) </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看前5行数据，加粗部分是列标签，第一列数字是行标签。</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -540,140 +538,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <p>本教程使用存储为 CSV 格式的泰坦尼克号数据集。</p>
 <p>PassengerId：每位乘客的Id。</p>
-<p>Survived：指示乘客是否幸存。0是和1否。</p>
-<p>Pclass：3 个机票类别之一：Class 1、Class2和 Class 3。</p>
+<p>Survived：表示乘客是否幸存。0：是，1：否。</p>
+<p>Pclass：乘客等级，有三个等级。</p>
 <p>Name：乘客姓名。</p>
-<p>Sex：乘客的性别。</p>
-<p>Age：乘客的年龄。</p>
-<p>SibSp：船上兄弟姐妹或配偶的数量。</p>
-<p>Parch：船上父母或孩子的人数。</p>
+<p>Sex：乘客性别。female表示女性，male表示男性。</p>
+<p>Age：乘客年龄。</p>
+<p>SibSp：在船上的兄弟姐妹或配偶的数量。</p>
+<p>Parch：在船上的父母或孩子的人数。</p>
 <p>Ticket：旅客的客票号。</p>
-<p>Fare：表示票价。</p>
+<p>Fare：票价。</p>
 <p>Cabin：乘客的客舱号。</p>
-<p>Embarked：登船的港口。</p>
+<p>Embarked：登船的港口，有S、C、Q三个港口。</p>
 </div>
 </div>
-<div class="cell" data-execution_count="50">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据集的形状：(891行, 12列)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.shape</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据集的行标签(有时是行索引)：0:891:1 —— 起始索引:结束索引:索引之间的步长</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据集的行索引</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df.index</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据集的列名(列标签)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据集的列标签</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df.columns</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据集数值列的统计摘要（有效值数量、均值、标准差、最值、分位数）</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>df.describe()   <span class="co"># 这里的 count、mean就是行标签</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="50">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">PassengerId</th>
-<th data-quarto-table-cell-role="th">Survived</th>
-<th data-quarto-table-cell-role="th">Pclass</th>
-<th data-quarto-table-cell-role="th">Age</th>
-<th data-quarto-table-cell-role="th">SibSp</th>
-<th data-quarto-table-cell-role="th">Parch</th>
-<th data-quarto-table-cell-role="th">Fare</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">count</td>
-<td>891.000000</td>
-<td>891.000000</td>
-<td>891.000000</td>
-<td>714.000000</td>
-<td>891.000000</td>
-<td>891.000000</td>
-<td>891.000000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">mean</td>
-<td>446.000000</td>
-<td>0.383838</td>
-<td>2.308642</td>
-<td>29.699118</td>
-<td>0.523008</td>
-<td>0.381594</td>
-<td>32.204208</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">std</td>
-<td>257.353842</td>
-<td>0.486592</td>
-<td>0.836071</td>
-<td>14.526497</td>
-<td>1.102743</td>
-<td>0.806057</td>
-<td>49.693429</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">min</td>
-<td>1.000000</td>
-<td>0.000000</td>
-<td>1.000000</td>
-<td>0.420000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">25%</td>
-<td>223.500000</td>
-<td>0.000000</td>
-<td>2.000000</td>
-<td>20.125000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>7.910400</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">50%</td>
-<td>446.000000</td>
-<td>0.000000</td>
-<td>3.000000</td>
-<td>28.000000</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>14.454200</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">75%</td>
-<td>668.500000</td>
-<td>1.000000</td>
-<td>3.000000</td>
-<td>38.000000</td>
-<td>1.000000</td>
-<td>0.000000</td>
-<td>31.000000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">max</td>
-<td>891.000000</td>
-<td>1.000000</td>
-<td>3.000000</td>
-<td>80.000000</td>
-<td>8.000000</td>
-<td>6.000000</td>
-<td>512.329200</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据集数值列的统计摘要（数量、均值、标准差、最值、分位数）</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>df.describe()   </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看各列的数据量和缺失情况</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 12 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   PassengerId  891 non-null    int64  
+ 1   Survived     891 non-null    int64  
+ 2   Pclass       891 non-null    int64  
+ 3   Name         891 non-null    object 
+ 4   Sex          891 non-null    object 
+ 5   Age          714 non-null    float64
+ 6   SibSp        891 non-null    int64  
+ 7   Parch        891 non-null    int64  
+ 8   Ticket       891 non-null    object 
+ 9   Fare         891 non-null    float64
+ 10  Cabin        204 non-null    object 
+ 11  Embarked     889 non-null    object 
+dtypes: float64(2), int64(5), object(5)
+memory usage: 83.7+ KB</code></pre>
 </div>
 </div>
 <section id="筛选行数据" class="level2">
 <h2 class="anchored" data-anchor-id="筛选行数据">筛选行数据</h2>
 <p>第一种：通过行索引获取行数据，冒号指定范围，一般的模式是，起始索引:结束索引，结束索引不含在内，开始索引为0或结束索引为行数时可省略数字。</p>
 <div class="cell" data-execution_count="52">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 选取前3行数据，行索引取0、1、2，结束索引3是取不到的。</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df[:<span class="dv">3</span>]  <span class="co"># 等价于df[0:3]</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 选取第5行(索引4)到第8行(索引7)</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">4</span>:<span class="dv">8</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 选取前3行数据，行索引取0、1、2，结束索引3是取不到的。 </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df[:<span class="dv">3</span>]  <span class="co"># 等价于df[0:3]  </span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 选取第5行(索引4)到第8行(索引7) </span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">4</span>:<span class="dv">8</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="52">
 <div>
 
@@ -780,8 +698,8 @@ Warning
 <h3 class="anchored" data-anchor-id="iloc方法基于行索引筛选行">iloc方法基于行索引筛选行</h3>
 <p>iloc方法是按行索引位置选取数据，索引就是表格最左边的数字。</p>
 <div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.iloc[[<span class="dv">1</span>, <span class="dv">4</span>]]</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 等价于df.iloc[[1, 4], :]，选取行数据时可以不提取列。</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.iloc[[<span class="dv">1</span>, <span class="dv">4</span>]]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 等价于df.iloc[[1, 4], :]，选取行数据时可以不提取列。</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
@@ -846,8 +764,8 @@ Warning
 <h3 class="anchored" data-anchor-id="loc方法基于行标签筛选行">loc方法基于行标签筛选行</h3>
 <p>loc方法是按行标签选取数据，因为这里没有设置行标签，所以这里行标签默认等于行索引。</p>
 <div class="cell" data-execution_count="53">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.loc[[<span class="dv">1</span>, <span class="dv">4</span>]]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 等价于df.loc[[1, 4], :]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.loc[[<span class="dv">1</span>, <span class="dv">4</span>]]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 等价于df.loc[[1, 4], :]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="53">
 <div>
 
@@ -910,8 +828,8 @@ Warning
 <section id="除了列表形式还可以用区间形式如ab引用连续的行标签" class="level4">
 <h4 class="anchored" data-anchor-id="除了列表形式还可以用区间形式如ab引用连续的行标签">除了列表形式，还可以用区间形式如a:b，引用连续的行标签。</h4>
 <div class="cell" data-execution_count="54">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_summary <span class="op">=</span> df.describe()</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df_summary.loc[<span class="st">"count"</span>:<span class="st">"mean"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_summary <span class="op">=</span> df.describe()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df_summary.loc[<span class="st">"count"</span>:<span class="st">"mean"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="54">
 <div>
 
@@ -966,8 +884,8 @@ Warning
 <section id="引用列名提取单列" class="level3">
 <h3 class="anchored" data-anchor-id="引用列名提取单列">引用列名提取单列</h3>
 <div class="cell" data-execution_count="58">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Name'</span>]</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df.Name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Name'</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df.Name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="58">
 <pre><code>0                                Braund, Mr. Owen Harris
 1      Cumings, Mrs. John Bradley (Florence Briggs Th...
@@ -987,11 +905,11 @@ Name: Name, Length: 891, dtype: object</code></pre>
 <section id="loc和iloc方法提取单列" class="level3">
 <h3 class="anchored" data-anchor-id="loc和iloc方法提取单列">loc和iloc方法提取单列</h3>
 <div class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用.loc或.iloc取列: 逗号前筛选行,逗号后面筛选列</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 行数取全部时只用一个冒号就可以，列取Name列：</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df.loc[:, <span class="st">'Name'</span>]</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># # 使用.iloc根据列索引来提取第4列(索引3)</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>df.iloc[:, <span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用.loc或.iloc取列: 逗号前筛选行,逗号后面筛选列</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 行数取全部时只用一个冒号就可以，列取Name列：</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df.loc[:, <span class="st">'Name'</span>]</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># # 使用.iloc根据列索引来提取第4列(索引3)</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>df.iloc[:, <span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>0                                Braund, Mr. Owen Harris
 1      Cumings, Mrs. John Bradley (Florence Briggs Th...
@@ -1013,15 +931,15 @@ Name: Name, Length: 891, dtype: object</code></pre>
 <p>如果需要获取多列，比如所有乘客的幸存情况（<code>Name</code>、<code>Survived</code>），我们再添加一对中括号把所有的列括起来以获取多个列的数据，数据子集依旧为数据框dataframe。</p>
 <p>下面的代码示例用.head()显示前5行。</p>
 <div class="cell" data-execution_count="59">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 方法一：</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'Name'</span>,<span class="st">'Survived'</span>]]</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 方法二：</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># df.loc[:, ['column_name1', 'column_name2', ...]]</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>df.loc[:, [<span class="st">'Name'</span>,<span class="st">'Survived'</span>]]</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># df.iloc[:, [column_index1, column_index2]]</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>df.iloc[:, [<span class="dv">3</span>, <span class="dv">1</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 方法一：</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'Name'</span>,<span class="st">'Survived'</span>]]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 方法二：</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># df.loc[:, ['column_name1', 'column_name2', ...]]</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>df.loc[:, [<span class="st">'Name'</span>,<span class="st">'Survived'</span>]]</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># df.iloc[:, [column_index1, column_index2]]</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>df.iloc[:, [<span class="dv">3</span>, <span class="dv">1</span>]].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="59">
 <div>
 
@@ -1083,8 +1001,8 @@ Tip
 <section id="除了列表形式还可以用列标签区间提取连续的列比如提取乘客的基本信息namesexage" class="level4">
 <h4 class="anchored" data-anchor-id="除了列表形式还可以用列标签区间提取连续的列比如提取乘客的基本信息namesexage">除了列表形式，还可以用列标签区间提取连续的列，比如提取乘客的基本信息(Name、Sex、Age)：</h4>
 <div class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 用区间提取连续的多个列</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df.loc[:, <span class="st">"Name"</span>:<span class="st">"Age"</span>].head() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 用区间提取连续的多个列</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df.loc[:, <span class="st">"Name"</span>:<span class="st">"Age"</span>].head() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
 <div>
 
@@ -1141,7 +1059,7 @@ Tip
 <h3 class="anchored" data-anchor-id="根据条件筛选行数据">根据条件筛选行数据</h3>
 <p>提取十八岁以下的乘客信息:</p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">"Age"</span>] <span class="op">&lt;</span> <span class="dv">18</span>].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">"Age"</span>] <span class="op">&lt;</span> <span class="dv">18</span>].head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
@@ -1251,7 +1169,7 @@ Tip
 <h3 class="anchored" data-anchor-id="根据多个条件筛选行数据">根据多个条件筛选行数据</h3>
 <p>多个条件之间用&amp;相连：<code>df[(条件1) &amp; (条件2)]</code> 提取成年(age&gt;=18)男性乘客信息:</p>
 <div class="cell" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df[(df.Age <span class="op">&gt;=</span> <span class="dv">18</span>) <span class="op">&amp;</span> (df.Sex <span class="op">==</span> <span class="st">"male"</span>)] <span class="co"># 等价于 df[(df["Age"] &lt; 18) &amp; (df["Sex"] == "male")]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[(df.Age <span class="op">&gt;=</span> <span class="dv">18</span>) <span class="op">&amp;</span> (df.Sex <span class="op">==</span> <span class="st">"male"</span>)] <span class="co"># 等价于 df[(df["Age"] &lt; 18) &amp; (df["Sex"] == "male")]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="44">
 <div>
 
