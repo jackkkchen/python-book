@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python新手文档 - 6&nbsp; Pandas安装</title>
+<title>Python新手文档 - 23&nbsp; Python常见的异常提示</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./pandas处理什么样的数据.html" rel="next">
-<link href="./NumPy数组的基本操作.html" rel="prev">
+<link href="./周四模块.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,7 +73,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./安装.html">Pandas快速入门</a></li><li class="breadcrumb-item"><a href="./安装.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Pandas安装</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./周一环境搭建.html">拓展</a></li><li class="breadcrumb-item"><a href="./错误汇总.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Python常见的异常提示</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -228,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./安装.html" class="sidebar-item-text sidebar-link active">
+  <a href="./安装.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Pandas安装</span></span></a>
   </div>
 </li>
@@ -363,7 +328,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./错误汇总.html" class="sidebar-item-text sidebar-link">
+  <a href="./错误汇总.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Python常见的异常提示</span></span></a>
   </div>
 </li>
@@ -379,17 +344,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#使用anaconda安装" id="toc-使用anaconda安装" class="nav-link active" data-scroll-target="#使用anaconda安装">使用Anaconda安装</a></li>
-  <li><a href="#使用pypi中的-pip-安装" id="toc-使用pypi中的-pip-安装" class="nav-link" data-scroll-target="#使用pypi中的-pip-安装">使用PyPI中的 pip 安装</a></li>
+  <li><a href="#含义对照表" id="toc-含义对照表" class="nav-link active" data-scroll-target="#含义对照表">含义对照表</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/安装.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/错误汇总.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Pandas安装</span></h1>
+<h1 class="title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Python常见的异常提示</span></h1>
 </div>
 
 
@@ -404,84 +368,200 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="使用anaconda安装" class="level3">
-<h3 class="anchored" data-anchor-id="使用anaconda安装">使用Anaconda安装</h3>
-<p>对于没有经验的小白来说，直接上手用代码来安装各种包可能有点困难，而<a href="https://docs.continuum.io/free/anaconda/">Anaconda</a>作为一个发行平台，可以非常轻松的安装除了Pandas之外的各种Python包（IPython、NumPy、 Matplotlib等）</p>
-<p>可以直接在jupyter代码块中安装</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 在jupyter代码块中使用</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>conda install pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="./img/conda_install.png" class="img-fluid"></p>
-<!-- <video width="600" height="450" controls poster="http://szmspython.oss-cn-hangzhou.aliyuncs.com/anaconda%E5%AE%89%E8%A3%85-%E5%B0%81%E9%9D%A2.jpg">
-  <source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/anaconda%E5%AE%89%E8%A3%85.mp4">
-</video>
-｜ -->
-</section>
-<section id="使用pypi中的-pip-安装" class="level3">
-<h3 class="anchored" data-anchor-id="使用pypi中的-pip-安装">使用<a href="https://pypi.org/project/pandas/">PyPI</a>中的 pip 安装</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 在命令行（终端）中使用</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pip install pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><img src="./img/pip_install.png" class="img-fluid"></p>
-<p>使用<code>pip show pandas</code>检验是否安装成功</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>一般来说这是python自带的安装方式，但有时候你的虚拟环境没有或者服务器里的需要更新，可以<a href="https://pip.pypa.io/en/stable/installation/">参考文档</a></p>
-</div>
-</div>
-<section id="安装pip的步骤" class="level4">
-<h4 class="anchored" data-anchor-id="安装pip的步骤">安装pip的步骤</h4>
-<ol type="1">
-<li><p>首先，确保您已经安装了Python。Pip是Python的包管理工具，它通常随着Python的安装一起提供。</p></li>
-<li><p>打开终端（命令提示符）。</p></li>
-<li><p>输入以下命令来检查是否已安装pip：</p></li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 命令行中输入</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pip <span class="op">--</span>version</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 在jupyter中输入 </span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>如果已经安装了pip，您将看到版本号信息。否则，将显示错误信息或没有任何输出。</p>
-<p>如果未安装pip，可以使用以下方法进行安装：</p>
+<section id="含义对照表" class="level2">
+<h2 class="anchored" data-anchor-id="含义对照表">含义对照表</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>异常名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BaseException</td>
+<td>所有异常的基类</td>
+</tr>
+<tr class="even">
+<td>SystemExit</td>
+<td>解释器请求退出</td>
+</tr>
+<tr class="odd">
+<td>KeyboardInterrupt</td>
+<td>用户中断执行(通常是输入^C)</td>
+</tr>
+<tr class="even">
+<td>Exception</td>
+<td>常规错误的基类</td>
+</tr>
+<tr class="odd">
+<td>StopIteration</td>
+<td>迭代器没有更多的值</td>
+</tr>
+<tr class="even">
+<td>GeneratorExit</td>
+<td>生成器(generator)发生异常来通知退出</td>
+</tr>
+<tr class="odd">
+<td>StandardError</td>
+<td>所有的内建标准异常的基类</td>
+</tr>
+<tr class="even">
+<td>ArithmeticError</td>
+<td>所有数值计算错误的基类</td>
+</tr>
+<tr class="odd">
+<td>FloatingPointError</td>
+<td>浮点计算错误</td>
+</tr>
+<tr class="even">
+<td>OverflowError</td>
+<td>数值运算超出最大限制</td>
+</tr>
+<tr class="odd">
+<td>ZeroDivisionError</td>
+<td>除(或取模)零 (所有数据类型)</td>
+</tr>
+<tr class="even">
+<td>AssertionError</td>
+<td>断言语句失败</td>
+</tr>
+<tr class="odd">
+<td>AttributeError</td>
+<td>对象没有这个属性</td>
+</tr>
+<tr class="even">
+<td>EOFError</td>
+<td>没有内建输入,到达EOF 标记</td>
+</tr>
+<tr class="odd">
+<td>EnvironmentError</td>
+<td>操作系统错误的基类</td>
+</tr>
+<tr class="even">
+<td>IOError</td>
+<td>输入/输出操作失败</td>
+</tr>
+<tr class="odd">
+<td>OSError</td>
+<td>操作系统错误</td>
+</tr>
+<tr class="even">
+<td>WindowsError</td>
+<td>系统调用失败</td>
+</tr>
+<tr class="odd">
+<td>ImportError</td>
+<td>导入模块/对象失败</td>
+</tr>
+<tr class="even">
+<td>LookupError</td>
+<td>无效数据查询的基类</td>
+</tr>
+<tr class="odd">
+<td>IndexError</td>
+<td>序列中没有此索引(index)</td>
+</tr>
+<tr class="even">
+<td>KeyError</td>
+<td>映射中没有这个键</td>
+</tr>
+<tr class="odd">
+<td>MemoryError</td>
+<td>内存溢出错误(对于Python 解释器不是致命的)</td>
+</tr>
+<tr class="even">
+<td>NameError</td>
+<td>未声明/初始化对象 (没有属性)</td>
+</tr>
+<tr class="odd">
+<td>UnboundLocalError</td>
+<td>访问未初始化的本地变量</td>
+</tr>
+<tr class="even">
+<td>ReferenceError</td>
+<td>弱引用(Weak reference)试图访问已经垃圾回收了的对象</td>
+</tr>
+<tr class="odd">
+<td>RuntimeError</td>
+<td>一般的运行时错误</td>
+</tr>
+<tr class="even">
+<td>NotImplementedError</td>
+<td>尚未实现的方法</td>
+</tr>
+<tr class="odd">
+<td>SyntaxError</td>
+<td>Python 语法错误</td>
+</tr>
+<tr class="even">
+<td>IndentationError</td>
+<td>缩进错误</td>
+</tr>
+<tr class="odd">
+<td>TabError</td>
+<td>Tab 和空格混用</td>
+</tr>
+<tr class="even">
+<td>SystemError</td>
+<td>一般的解释器系统错误</td>
+</tr>
+<tr class="odd">
+<td>TypeError</td>
+<td>对类型无效的操作</td>
+</tr>
+<tr class="even">
+<td>ValueError</td>
+<td>传入无效的参数</td>
+</tr>
+<tr class="odd">
+<td>UnicodeError</td>
+<td>Unicode 相关的错误</td>
+</tr>
+<tr class="even">
+<td>UnicodeDecodeError</td>
+<td>Unicode 解码时的错误</td>
+</tr>
+<tr class="odd">
+<td>UnicodeEncodeError</td>
+<td>Unicode 编码时错误</td>
+</tr>
+<tr class="even">
+<td>UnicodeTranslateError</td>
+<td>Unicode 转换时错误</td>
+</tr>
+<tr class="odd">
+<td>Warning</td>
+<td>警告的基类</td>
+</tr>
+<tr class="even">
+<td>DeprecationWarning</td>
+<td>关于被弃用的特征的警告</td>
+</tr>
+<tr class="odd">
+<td>FutureWarning</td>
+<td>关于构造将来语义会有改变的警告</td>
+</tr>
+<tr class="even">
+<td>OverflowWarning</td>
+<td>旧的关于自动提升为长整型(long)的警告</td>
+</tr>
+<tr class="odd">
+<td>PendingDeprecationWarning</td>
+<td>关于特性将会被废弃的警告</td>
+</tr>
+<tr class="even">
+<td>RuntimeWarning</td>
+<td>可疑的运行时行为(runtime behavior)的警告</td>
+</tr>
+<tr class="odd">
+<td>SyntaxWarning</td>
+<td>可疑的语法的警告</td>
+</tr>
+</tbody>
+</table>
 
-<!-- 对于Windows操作系统：
 
-1. 访问[该链接](https://pip.pypa.io/en/stable/installation/) 
-   
-2. 右键点击页面上的"Raw"按钮，选择"另存为"，将文件保存在您的计算机上。
-   
-3. 打开命令提示符，导航到保存`get-pip.py`文件的目录。
-   
-4. 运行以下命令来安装pip： -->
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Linux&amp;MacOS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>打开终端，运行以下命令来安装pip</p>
-<pre class="{python}"><code>$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python get-pip.py</code></pre>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>使用Python自带的ensurepip模块来安装或升级pip。</p>
-<pre class="{python}"><code>C:&gt; py -m ensurepip --upgrade</code></pre>
-</div>
-</div>
-</div>
-
-
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -564,6 +644,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
@@ -720,14 +851,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./NumPy数组的基本操作.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">NumPy数组的基本操作和变换</span></span>
+      <a href="./周四模块.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Python模块</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./pandas处理什么样的数据.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">pandas处理什么样的数据</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
