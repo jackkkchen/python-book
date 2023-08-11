@@ -603,7 +603,7 @@ SQL
 <li>点击链下载链接下载文件到本地</li>
 </ol>
 <p>获取数据<code>data.csv</code><a href="https://www.w3schools.com/python/pandas/data.csv">下载地址</a>，将csv文件下载到本地。通过把本地csv文件拖到JupyterLab的目录界面，可以将csv文件传到服务器。建议大家创建一个夏令营文件夹，方便对文件统一管理。</p>
-<p><strong>关于Jupyter服务器上的文件路径</strong>，将鼠标移至目录上方<code>/</code>左边的文件夹图标，可以显示服务器本地的主目录:<code>/home/jupyter-账号名称</code>，在读取路径是可用<code>~</code>表示，在此目录下创建一个名为<code>夏令营</code>的文件夹，将数据文件<code>data.csv</code>上传到当前路径，读取文件时，只需执行指令<code>df = pd.read_csv('~/夏令营/data.csv')</code>即可。</p>
+<p><strong>关于Jupyter服务器上的文件路径</strong>，将鼠标移至目录上方<code>/</code>左边的文件夹图标，可以显示服务器本地的主目录:<code>/home/jupyter-账号名称</code>，在读取路径时可用<code>~</code>表示，在此目录下创建一个名为<code>夏令营</code>的文件夹，将数据文件<code>data.csv</code>上传到当前路径，读取文件时，只需执行指令<code>df = pd.read_csv('~/夏令营/data.csv')</code>即可。</p>
 <p><img src="./img/jupyter目录.png" height="200" width="400"></p>
 <ol type="1">
 <li><p>导入pandas包进行调用，<code>import pandas as pd</code>，这样在后续调用pandas库的函数时使用缩写就好。</p></li>
