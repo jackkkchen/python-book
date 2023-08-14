@@ -1356,7 +1356,7 @@ Tip
 <p>多个条件之间用<code>&amp;</code>或<code>|</code>相连：<code>df[(条件1) &amp; (条件2)]</code> 提取成年(age&gt;=18)男性乘客信息:</p>
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>condition <span class="op">=</span> (df.Age <span class="op">&gt;=</span> <span class="dv">18</span>) <span class="op">&amp;</span> (df.Sex <span class="op">==</span> <span class="st">"male"</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df[condition] <span class="co"># 等价于 df[(df["Age"] &lt; 18) &amp; (df["Sex"] == "male")]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df[condition] <span class="co"># 等价于 df[(df["Age"] &gt;= 18) &amp; (df["Sex"] == "male")]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <div>
 
