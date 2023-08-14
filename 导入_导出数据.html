@@ -396,8 +396,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#导出csv文件" id="toc-导出csv文件" class="nav-link" data-scroll-target="#导出csv文件">导出CSV文件</a></li>
   <li><a href="#导出excel文件" id="toc-导出excel文件" class="nav-link" data-scroll-target="#导出excel文件">导出Excel文件</a></li>
   <li><a href="#参数介绍-1" id="toc-参数介绍-1" class="nav-link" data-scroll-target="#参数介绍-1">参数介绍</a></li>
-  <li><a href="#连接mysql数据库导入导出数据拓展" id="toc-连接mysql数据库导入导出数据拓展" class="nav-link" data-scroll-target="#连接mysql数据库导入导出数据拓展">连接MySQL数据库导入导出数据（拓展）</a></li>
   </ul></li>
+  <li><a href="#项目数据" id="toc-项目数据" class="nav-link" data-scroll-target="#项目数据">项目数据</a></li>
+  <li><a href="#连接mysql数据库导入导出数据拓展" id="toc-连接mysql数据库导入导出数据拓展" class="nav-link" data-scroll-target="#连接mysql数据库导入导出数据拓展">连接MySQL数据库导入导出数据（拓展）</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/导入_导出数据.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -1595,8 +1596,22 @@ Warning
   <source src="http://szmspython.oss-cn-hangzhou.aliyuncs.com/Pandas%20IOtools.mp4">
 </video> -->
 </section>
-<section id="连接mysql数据库导入导出数据拓展" class="level3">
-<h3 class="anchored" data-anchor-id="连接mysql数据库导入导出数据拓展">连接MySQL数据库导入导出数据（拓展）</h3>
+</section>
+<section id="项目数据" class="level2">
+<h2 class="anchored" data-anchor-id="项目数据">项目数据</h2>
+<p>这周的项目数据已经存放在共享文件夹中：数据存放的路径为<code>/srv/data/COVID-19/</code></p>
+<p>大家需要进入终端将数据文件下载到自己的主目录下:<code>/home/jupyter-账户名称/</code></p>
+<ol type="1">
+<li>进入终端：</li>
+</ol>
+<p><img src="./img/terminal_jupyter.png" height="500" width="800"></p>
+<ol start="2" type="1">
+<li>在终端执行命令<code>cp -r /srv/data/COVID-19/ /home/jupyter-账户名称/</code>，将COVID-19文件夹复制到服务器本地的主目录下:</li>
+</ol>
+<p><img src="./img/copydata.png" width="800" height="120"></p>
+</section>
+<section id="连接mysql数据库导入导出数据拓展" class="level2">
+<h2 class="anchored" data-anchor-id="连接mysql数据库导入导出数据拓展">连接MySQL数据库导入导出数据（拓展）</h2>
 <section id="步骤1安装必要的库" class="level4">
 <h4 class="anchored" data-anchor-id="步骤1安装必要的库">步骤1：安装必要的库</h4>
 <p>在开始之前，确保已经安装了以下库：</p>
@@ -1682,7 +1697,6 @@ Tip
 </div>
 
 
-</section>
 </section>
 </section>
 
