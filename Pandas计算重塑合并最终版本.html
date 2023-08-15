@@ -849,7 +849,17 @@ print(missing_values_count)
 <span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>unstacked_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>在上述示例中，原始数据包含学生的姓名、科目和分数。通过使用<code>pivot()</code>方法，将姓名作为行索引，科目作为列索引，并将分数填充到相应的单元格中，得到了以学生姓名为行、科目为列的宽格式表格布局。</p>
-<p>::: {.callout-note} <strong>长、宽格式转换与转置的区别</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>长、宽格式转换与转置的区别</strong></p>
 <p>在Python中，长格式（Long Format）和宽格式（Wide Format）是数据集的两种常见表示方式，通常用于数据分析和处理。这两种格式在转换和转置时有一些区别。</p>
 <p><strong>长格式（Long Format）</strong>： - 长格式也称为“堆叠”或“纵向”格式，它将数据以多行的形式呈现，每一行表示一个观察值，每一列包含一个变量。 - 长格式通常用于处理时间序列数据或实验数据，其中每个实验单位可以有多个测量值。 - 在长格式中，通常会有一个或多个列用于标识不同的变量，以及一个列用于存储对应的值。 - 适用于需要对数据进行聚合、分组和透视的操作。</p>
 <p>长格式表格示例： | 学生ID | 科目 | 成绩 | | —— | —- | —- | | 1 | 数学 | 85 | | 1 | 物理 | 78 | | 2 | 数学 | 92 | | 2 | 物理 | 88 | | 3 | 数学 | 76 | | 3 | 物理 | 95 |</p>
@@ -861,6 +871,8 @@ print(missing_values_count)
 </ul>
 <p>在Python中，你可以使用不同的库和工具来进行长、宽格式之间的转换和转置操作。例如，Pandas库提供了丰富的功能来处理和转换数据集的不同格式。使用<code>melt()</code>函数可以将宽格式转换为长格式，而使用<code>pivot()</code>函数可以将长格式转换为宽格式。至于转置，你可以使用Numpy库的<code>transpose()</code>函数或者Pandas库的<code>.T</code>属性来实现。</p>
 <p>总之，长、宽格式之间的转换和转置操作取决于你的数据分析需求以及数据集的结构。</p>
+</div>
+</div>
 </section>
 </section>
 <section id="如何合并多个表中的数据" class="level1">
