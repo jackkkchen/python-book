@@ -849,30 +849,126 @@ print(missing_values_count)
 <span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>unstacked_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>在上述示例中，原始数据包含学生的姓名、科目和分数。通过使用<code>pivot()</code>方法，将姓名作为行索引，科目作为列索引，并将分数填充到相应的单元格中，得到了以学生姓名为行、科目为列的宽格式表格布局。</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
 <p><strong>长、宽格式转换与转置的区别</strong></p>
 <p>在Python中，长格式（Long Format）和宽格式（Wide Format）是数据集的两种常见表示方式，通常用于数据分析和处理。这两种格式在转换和转置时有一些区别。</p>
-<p><strong>长格式（Long Format）</strong>： - 长格式也称为“堆叠”或“纵向”格式，它将数据以多行的形式呈现，每一行表示一个观察值，每一列包含一个变量。 - 长格式通常用于处理时间序列数据或实验数据，其中每个实验单位可以有多个测量值。 - 在长格式中，通常会有一个或多个列用于标识不同的变量，以及一个列用于存储对应的值。 - 适用于需要对数据进行聚合、分组和透视的操作。</p>
-<p>长格式表格示例： | 学生ID | 科目 | 成绩 | | —— | —- | —- | | 1 | 数学 | 85 | | 1 | 物理 | 78 | | 2 | 数学 | 92 | | 2 | 物理 | 88 | | 3 | 数学 | 76 | | 3 | 物理 | 95 |</p>
-<p><strong>宽格式（Wide Format）</strong>： - 宽格式也称为“透视”或“横向”格式，它将数据以多列的形式呈现，每一行表示一个观察值，每一列包含一个变量。 - 宽格式通常用于简化数据结构，将不同的变量作为独立的列存储，方便直观地查看变量之间的关系。 - 在宽格式中，每列可能代表不同的变量，每行可能代表不同的观察值。 - 适用于需要直接查看变量之间关系的情况。</p>
-<p>宽格式表格示例： | 学生ID | 数学 | 物理 | | —— | —- | —- | | 1 | 85 | 78 | | 2 | 92 | 88 | | 3 | 76 | 95 |</p>
-<p><strong>转换与转置的区别</strong>： - <strong>转换</strong>：指的是将数据从一种格式转换为另一种格式，通常涉及重新组织数据以满足特定的分析或可视化需求。例如，从长格式转换为宽格式，或者从宽格式转换为长格式。</p>
+<p><strong>长格式（Long Format）</strong>：</p>
 <ul>
-<li><strong>转置</strong>：指的是在数据集中对行和列进行互换。对于二维数据，转置就是将行变为列，列变为行。转置不涉及数据的重新排列，只是改变了数据的布局。</li>
+<li>长格式也称为“堆叠”或“纵向”格式，它将数据以多行的形式呈现，每一行表示一个观察值，每一列包含一个变量。</li>
+<li>长格式通常用于处理时间序列数据或实验数据，其中每个实验单位可以有多个测量值。</li>
+<li>在长格式中，通常会有一个或多个列用于标识不同的变量，以及一个列用于存储对应的值。</li>
+<li>适用于需要对数据进行聚合、分组和透视的操作。</li>
 </ul>
-<p>在Python中，你可以使用不同的库和工具来进行长、宽格式之间的转换和转置操作。例如，Pandas库提供了丰富的功能来处理和转换数据集的不同格式。使用<code>melt()</code>函数可以将宽格式转换为长格式，而使用<code>pivot()</code>函数可以将长格式转换为宽格式。至于转置，你可以使用Numpy库的<code>transpose()</code>函数或者Pandas库的<code>.T</code>属性来实现。</p>
+<p><strong>长格式表格示例</strong></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>城市</th>
+<th>月份</th>
+<th>温度</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>北京</td>
+<td>1月</td>
+<td>0°C</td>
+</tr>
+<tr class="even">
+<td>北京</td>
+<td>2月</td>
+<td>3°C</td>
+</tr>
+<tr class="odd">
+<td>北京</td>
+<td>3月</td>
+<td>10°C</td>
+</tr>
+<tr class="even">
+<td>上海</td>
+<td>1月</td>
+<td>5°C</td>
+</tr>
+<tr class="odd">
+<td>上海</td>
+<td>2月</td>
+<td>8°C</td>
+</tr>
+<tr class="even">
+<td>上海</td>
+<td>3月</td>
+<td>15°C</td>
+</tr>
+</tbody>
+</table>
+<p><strong>宽格式（Wide Format）</strong>：</p>
+<ul>
+<li><p>宽格式也称为“透视”或“横向”格式，它将数据以多列的形式呈现，每一行表示一个观察值，每一列包含一个变量。</p></li>
+<li><p>宽格式通常用于简化数据结构，将不同的变量作为独立的列存储，方便直观地查看变量之间的关系。</p></li>
+<li><p>在宽格式中，每列可能代表不同的变量，每行可能代表不同的观察值。</p></li>
+<li><p>适用于需要直接查看变量之间关系的情况。</p></li>
+</ul>
+<p><strong>宽格式表格示例：</strong></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>城市</th>
+<th>1月</th>
+<th>2月</th>
+<th>3月</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>北京</td>
+<td>0°C</td>
+<td>3°C</td>
+<td>10°C</td>
+</tr>
+<tr class="even">
+<td>上海</td>
+<td>5°C</td>
+<td>8°C</td>
+<td>15°C</td>
+</tr>
+</tbody>
+</table>
+<p><strong>转换与转置的区别</strong>：</p>
+<ul>
+<li><p><strong>转换</strong>：指的是将数据从一种格式转换为另一种格式，通常涉及重新组&gt; 织数据以满足特定的分析或可视化需求。例如，从长格式转换为宽格式，或&gt; 者从宽格式转换为长格式。</p></li>
+<li><p><strong>转置</strong>：指的是在数据集中对行和列进行互换。对于二维数据，转置就&gt; 是将行变为列，列变为行。转置不涉及数据的重新排列，只是改变了数据的&gt; 布局。</p></li>
+</ul>
+<p>对上面的宽表格进行专职操作，得到如下表：</p>
+<p><strong>转置表格示例：</strong></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>城市</th>
+<th>北京</th>
+<th>上海</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1月</td>
+<td>0°C</td>
+<td>5°C</td>
+</tr>
+<tr class="even">
+<td>2月</td>
+<td>3°C</td>
+<td>8°C</td>
+</tr>
+<tr class="odd">
+<td>3月</td>
+<td>10°C</td>
+<td>15°C</td>
+</tr>
+</tbody>
+</table>
+<p>在Python中，你可以使用不同的库和工具来进行长、宽格式之间的转换和转&gt; 置操作。例如，Pandas库提供了丰富的功能来处理和转换数据集的不同格&gt; &gt; 式。使用<code>melt()</code>函数可以将宽格式转换为长格式，而使用<code>pivot()</code>函数可&gt; 以将长格式转换为宽格式。至于转置，你可以使用Numpy库的<code>transpose() 函数或者Pandas库的</code>.T`属性来实现。</p>
 <p>总之，长、宽格式之间的转换和转置操作取决于你的数据分析需求以及数据集的结构。</p>
-</div>
-</div>
+</blockquote>
 </section>
 </section>
 <section id="如何合并多个表中的数据" class="level1">
