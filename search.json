@@ -221,7 +221,7 @@
     "href": "导入_导出数据.html#项目数据",
     "title": "8  导入&导出数据",
     "section": "项目数据",
-    "text": "项目数据\n这周的项目数据已经存放在共享文件夹中：数据存放的路径为/srv/data/COVID-19/\n大家需要进入终端将数据文件下载到自己的主目录下:/home/jupyter-账户名称/\n\n进入终端：\n\n\n\n在终端执行命令cp -r /srv/data/COVID-19/ /home/jupyter-账户名称/，将COVID-19文件夹复制到服务器本地的主目录下:"
+    "text": "项目数据\n这周的项目数据已经存放在共享文件夹中：数据存放的路径为/srv/data/COVID-19/\n读取文件的路径：\n确诊数据：'/srv/data/COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'\n死亡数据：'/srv/data/COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv'\n治愈数据：'/srv/data/COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv'"
   },
   {
     "objectID": "导入_导出数据.html#连接mysql数据库导入导出数据拓展",
