@@ -95,6 +95,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -454,7 +457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="创建timestamp对象" class="level4">
 <h4 class="anchored" data-anchor-id="创建timestamp对象">(1) 创建<code>Timestamp</code>对象</h4>
 <p>在Pandas中，<code>Timestamp</code>对象的值包括日期和时间信息，创建<code>Timestamp</code>对象的方法共有三种：</p>
-<div class="cell">
+<div class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -466,6 +469,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 从时间戳创建</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>pd.Timestamp(<span class="dv">1612060800</span>)    <span class="co"># 时间戳1612060800代表从UNIX纪元开始经过的秒数，具体日期和时间取决于该时间戳对应的具体时区和时刻。</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>Timestamp('1970-01-01 00:00:01.612060800')</code></pre>
+</div>
 </div>
 <br>
 <details>
@@ -552,15 +558,15 @@ Note
 <section id="创建datetimeindex对象" class="level4">
 <h4 class="anchored" data-anchor-id="创建datetimeindex对象">(1) 创建<code>DatetimeIndex</code>对象</h4>
 <p>创建<code>DatetimeIndex</code>对象的方式一共有三种：</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 从Python的datetime对象列表或数组创建</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>pd.DatetimeIndex([datetime1, datetime2, ...])</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 通过日期字符串列表或数组创建</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>pd.DatetimeIndex([<span class="st">'2023-07-20'</span>, <span class="st">'2023-07-21'</span>, ...])</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 通过日期范围创建</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>pd.date_range(start, end, freq) <span class="co"># start和end是起始和结束日期，freq是时间间隔。</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 从Python的datetime对象列表或数组创建</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pd.DatetimeIndex([datetime1, datetime2, ...])</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 通过日期字符串列表或数组创建</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>pd.DatetimeIndex([<span class="st">'2023-07-20'</span>, <span class="st">'2023-07-21'</span>, ...])</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 通过日期范围创建</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>pd.date_range(start, end, freq) <span class="co"># start和end是起始和结束日期，freq是时间间隔。</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -606,15 +612,18 @@ Note
 <section id="创建period对象" class="level4">
 <h4 class="anchored" data-anchor-id="创建period对象">(1) 创建<code>Period</code>对象</h4>
 <p>在Pandas中，创建<code>Period</code>对象的方式有很多种，主要取决于时间段的起始点和频率</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用日期字符串创建</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pd.Period(<span class="st">'2023-07'</span>, freq<span class="op">=</span><span class="st">'M'</span>)  <span class="co"># 表示以2023年7月1日为起始点的一个月时间段，即从2023年7月1日到2023年7月31日</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用整数值创建</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>pd.Period(<span class="dv">2023</span>, freq<span class="op">=</span><span class="st">'A-DEC'</span>)   <span class="co">#表示以2023为起始点的一个年度的时间段，即从2023年1月1日开始，2023年12月31日结束，</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用时间戳创建</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>pd.Period(pd.Timestamp(<span class="st">'2023-07-21'</span>), freq<span class="op">=</span><span class="st">'D'</span>) <span class="co">#表示一个天的时间段，从2023年7月21日开始，为期1天的时间段</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用日期字符串创建</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pd.Period(<span class="st">'2023-07'</span>, freq<span class="op">=</span><span class="st">'M'</span>)  <span class="co"># 表示以2023年7月1日为起始点的一个月时间段，即从2023年7月1日到2023年7月31日</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用整数值创建</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>pd.Period(<span class="dv">2023</span>, freq<span class="op">=</span><span class="st">'A-DEC'</span>)   <span class="co">#表示以2023为起始点的一个年度的时间段，即从2023年1月1日开始，2023年12月31日结束，</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用时间戳创建</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>pd.Period(pd.Timestamp(<span class="st">'2023-07-21'</span>), freq<span class="op">=</span><span class="st">'D'</span>) <span class="co">#表示一个天的时间段，从2023年7月21日开始，为期1天的时间段</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<pre><code>Period('2023-07-21', 'D')</code></pre>
+</div>
 </div>
 <blockquote class="blockquote">
 <p>起始点可以是日期字符串、整数或时间戳，而频率由频率字符串表示，如年度（‘A’）、季度（<code>Q</code>）、月度（<code>M</code>）、周度（<code>W</code>）或日（<code>D</code>）等。</p>
@@ -672,84 +681,96 @@ Note
 <section id="从python的datetime对象创建时间序列" class="level3">
 <h3 class="anchored" data-anchor-id="从python的datetime对象创建时间序列">1. 从Python的datetime对象创建时间序列</h3>
 <p>这种方法涉及在Python中使用datetime模块创建datetime对象，然后将其转换为Pandas的时间序列数据。需要预先定义和创建datetime对象，然后将其转换为时间序列。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">从Python的datetime对象创建时间序列</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">1. 创建一个包含Python的datetime对象的列表或数组</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">2. 使用pd.Series()函数将其转换为时间序列数据</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>dates_1 <span class="op">=</span> [datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">21</span>), datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">22</span>), datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">23</span>)]</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>ts_1 <span class="op">=</span> pd.Series(dates_1)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ts_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">从Python的datetime对象创建时间序列</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">1. 创建一个包含Python的datetime对象的列表或数组</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">2. 使用pd.Series()函数将其转换为时间序列数据</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>dates_1 <span class="op">=</span> [datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">21</span>), datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">22</span>), datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">23</span>)]</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>ts_1 <span class="op">=</span> pd.Series(dates_1)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ts_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0   2023-07-21
+1   2023-07-22
+2   2023-07-23
+dtype: datetime64[ns]</code></pre>
+</div>
 </div>
 </section>
 <section id="从字符串创建时间序列" class="level3">
 <h3 class="anchored" data-anchor-id="从字符串创建时间序列">2. 从字符串创建时间序列</h3>
 <p>这种方法接受包含日期时间信息的字符串，并使用<code>pd.to_datetime()</code>函数将其转换为时间序列数据。它能够直接从日期时间字符串中解析和转换。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">从字符串创建时间序列</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">1. 创建一个包含日期字符串的列表或数组</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">2. 使用pd.to_datetime()函数将其转换为时间序列数据</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>dates_2 <span class="op">=</span> [<span class="st">'2023-07-24'</span>, <span class="st">'2023-07-25'</span>, <span class="st">'2023-07-26'</span>]</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ts_2 <span class="op">=</span> pd.to_datetime(dates_2)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ts_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">从字符串创建时间序列</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">1. 创建一个包含日期字符串的列表或数组</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">2. 使用pd.to_datetime()函数将其转换为时间序列数据</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>dates_2 <span class="op">=</span> [<span class="st">'2023-07-24'</span>, <span class="st">'2023-07-25'</span>, <span class="st">'2023-07-26'</span>]</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>ts_2 <span class="op">=</span> pd.to_datetime(dates_2)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ts_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>DatetimeIndex(['2023-07-24', '2023-07-25', '2023-07-26'], dtype='datetime64[ns]', freq=None)</code></pre>
+</div>
 </div>
 </section>
 <section id="使用日期范围创建" class="level3">
 <h3 class="anchored" data-anchor-id="使用日期范围创建">3. 使用日期范围创建</h3>
 <p>这种方法使用<code>pd.date_range()</code>函数生成指定范围内的连续日期时间序列。需要指定起始日期、结束日期和频率等参数来定义范围和间隔。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">使用日期范围创建时间序列</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">1. 使用start和end参数指定日期范围的其实和结束</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">2. 使用freq参数指定日期的频率，例如天(D)、月(M)等</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>ts_3 <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">'2023-07-27'</span>, end<span class="op">=</span><span class="st">'2023-07-29'</span>, freq<span class="op">=</span><span class="st">'D'</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ts_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">使用日期范围创建时间序列</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">1. 使用start和end参数指定日期范围的其实和结束</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">2. 使用freq参数指定日期的频率，例如天(D)、月(M)等</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>ts_3 <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">'2023-07-27'</span>, end<span class="op">=</span><span class="st">'2023-07-29'</span>, freq<span class="op">=</span><span class="st">'D'</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ts_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>DatetimeIndex(['2023-07-27', '2023-07-28', '2023-07-29'], dtype='datetime64[ns]', freq='D')</code></pre>
+</div>
 </div>
 </section>
 <section id="从时间戳创建" class="level3">
 <h3 class="anchored" data-anchor-id="从时间戳创建">4. 从时间戳创建</h3>
 <p>这种方法使用<code>pd.Timestamp()</code>函数从单个时间戳创建时间序列。需要提供一个日期时间的字符串或Python的datetime对象作为参数。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">从时间戳创建时间序列</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">1. 使用pd.Timestamp函数，将单个时间戳转换为时间序列数据</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>ts_4 <span class="op">=</span> pd.Timestamp(<span class="st">'2022-07-30'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">从时间戳创建时间序列</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">1. 使用pd.Timestamp函数，将单个时间戳转换为时间序列数据</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>ts_4 <span class="op">=</span> pd.Timestamp(<span class="st">'2022-07-30'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="从时间偏移创建" class="level3">
 <h3 class="anchored" data-anchor-id="从时间偏移创建">5. 从时间偏移创建</h3>
 <p>这种方法使用<code>pd.date_range()</code>函数结合相对时间偏移（<code>DateOffset</code>）对象，生成具有特定规则的时间序列。需要指定起始日期、时间序列长度和相对时间偏移对象等参数。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">从时间偏移创建时间序列</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">1. 使用start和periods参数指定起始日期和时间序列的长度</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">2. 使用freq参数指定日期的频率，并将相对时间偏移对象做为参数传递给freq参数</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pandas.tseries.offsets <span class="im">import</span> DateOffset</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>ts_5 <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">'2023-07-31'</span>, periods<span class="op">=</span><span class="dv">10</span>, freq<span class="op">=</span>DateOffset(days<span class="op">=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">从时间偏移创建时间序列</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">1. 使用start和periods参数指定起始日期和时间序列的长度</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">2. 使用freq参数指定日期的频率，并将相对时间偏移对象做为参数传递给freq参数</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pandas.tseries.offsets <span class="im">import</span> DateOffset</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>ts_5 <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">'2023-07-31'</span>, periods<span class="op">=</span><span class="dv">10</span>, freq<span class="op">=</span>DateOffset(days<span class="op">=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p><code>DateOffset</code>是Pandas中的一个类，用于表示相对时间偏移量。它可以与日期时间对象一起使用，用于执行日期时间的偏移和调整。</p>
@@ -797,50 +818,61 @@ Note
 </ol>
 </details>
 <p>Pandas提供了多种类型的时间序列索引，其中最常用的时<code>DatetimeIndex</code>，除了<code>DatetimeIndex</code>以外，还有其他的时间序列索引类型，如<code>PeriodIndex</code>用于表示时间段的索引、<code>TimedeltaIndex</code>用于表示时间间隔索引等。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建时间序列索引</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>new_dates <span class="op">=</span> pd.to_datetime([<span class="st">'2023-07-21'</span>, <span class="st">'2023-07-22'</span>, <span class="st">'2023-07-23'</span>, <span class="st">'2023-07-24'</span>, <span class="st">'2023-07-25'</span>])</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>value_list <span class="op">=</span> [<span class="st">"新手"</span>, <span class="st">"程序员"</span>, <span class="fl">3.14</span>, <span class="dv">666</span>, (<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">8</span>)]</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>new_ts_1 <span class="op">=</span> pd.Series(value_list, index<span class="op">=</span>new_dates)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(new_ts_1[<span class="st">'2023-07-21'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建时间序列索引</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>new_dates <span class="op">=</span> pd.to_datetime([<span class="st">'2023-07-21'</span>, <span class="st">'2023-07-22'</span>, <span class="st">'2023-07-23'</span>, <span class="st">'2023-07-24'</span>, <span class="st">'2023-07-25'</span>])</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>value_list <span class="op">=</span> [<span class="st">"新手"</span>, <span class="st">"程序员"</span>, <span class="fl">3.14</span>, <span class="dv">666</span>, (<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">8</span>)]</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>new_ts_1 <span class="op">=</span> pd.Series(value_list, index<span class="op">=</span>new_dates)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(new_ts_1[<span class="st">'2023-07-21'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>新手</code></pre>
+</div>
 </div>
 <p>时间序列索引是由日期时间对象组成的，用于标识时间序列的各个数据点。时间序列索引可以是单个日期时间对象，也可以是包含多个日期对象的索引的对象。</p>
 <blockquote class="blockquote">
 <p>可以将时间序列索引分配给<code>DataFrame</code>或<code>Series</code>的索引，或者在创建<code>DataFrame</code>或<code>Series</code>时指定时间序列索引。</p>
 </blockquote>
 <p><strong>使用单个日期时间对象作为时间序列索引</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建时间序列</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>dt1 <span class="op">=</span> datetime.datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">21</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>dt2 <span class="op">=</span> datetime.datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">22</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>dt3 <span class="op">=</span> datetime.datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">23</span>)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>new_ts_2 <span class="op">=</span> pd.Series([<span class="st">"name"</span>, <span class="st">"is"</span>, <span class="st">"新手程序员"</span>], index<span class="op">=</span>[dt1, dt2, dt3])</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用时间序列索引访问数据</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> new_ts_2[dt2]</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建时间序列</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>dt1 <span class="op">=</span> datetime.datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">21</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>dt2 <span class="op">=</span> datetime.datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">22</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>dt3 <span class="op">=</span> datetime.datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">23</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>new_ts_2 <span class="op">=</span> pd.Series([<span class="st">"name"</span>, <span class="st">"is"</span>, <span class="st">"新手程序员"</span>], index<span class="op">=</span>[dt1, dt2, dt3])</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用时间序列索引访问数据</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> new_ts_2[dt2]</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>is</code></pre>
+</div>
 </div>
 <p><strong>使用日期时间对象列表作为时间序列索引</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建时间序列</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>new_dates_2 <span class="op">=</span> [datetime.datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">21</span>), datetime.datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">22</span>), datetime.datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">23</span>)]</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>value_list_2 <span class="op">=</span> [<span class="st">"我想说"</span>, <span class="st">"Hello"</span>, <span class="st">"World"</span>]</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>new_ts_3 <span class="op">=</span> pd.Series(value_list, index<span class="op">=</span>new_dates_2)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用时间序列索引访问数据</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> new_ts_3[datetime.datetime(<span class="dv">2023</span>, <span class="dv">8</span>, <span class="dv">1</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建时间序列</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>new_dates_2 <span class="op">=</span> [datetime.datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">21</span>), datetime.datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">22</span>), datetime.datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">23</span>)]</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>value_list_2 <span class="op">=</span> [<span class="st">"我想说"</span>, <span class="st">"Hello"</span>, <span class="st">"World"</span>]</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>new_ts_3 <span class="op">=</span> pd.Series(value_list_2, index<span class="op">=</span>new_dates_2)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用时间序列索引访问数据</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> new_ts_3[datetime.datetime(<span class="dv">2023</span>, <span class="dv">7</span>, <span class="dv">21</span>)]</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>我想说</code></pre>
+</div>
 </div>
 </section>
 <section id="时间序列切片" class="level3">
@@ -852,56 +884,78 @@ Note
 <section id="根据日期索引选择数据" class="level4">
 <h4 class="anchored" data-anchor-id="根据日期索引选择数据">(1) 根据日期索引选择数据</h4>
 <p>在Pandas中，我们可以使用日期索引来选择特定日期或日期范围的数据。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，每日气温</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> pd.Series([<span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">21</span>, <span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">24</span>], </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                        index<span class="op">=</span>pd.date_range(<span class="st">'2023-07-01'</span>, periods<span class="op">=</span><span class="dv">7</span>, freq<span class="op">=</span><span class="st">'D'</span>))</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 选择7月3日的气温数据</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>sliced_temperatures <span class="op">=</span> temperatures[<span class="st">'2023-07-03'</span>]</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sliced_temperatures)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，每日气温</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> pd.Series([<span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">21</span>, <span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">24</span>], </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                        index<span class="op">=</span>pd.date_range(<span class="st">'2023-07-01'</span>, periods<span class="op">=</span><span class="dv">7</span>, freq<span class="op">=</span><span class="st">'D'</span>))</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 选择7月3日的气温数据</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>sliced_temperatures <span class="op">=</span> temperatures[<span class="st">'2023-07-03'</span>]</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sliced_temperatures)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>21</code></pre>
+</div>
 </div>
 </section>
 <section id="根据时间范围选择数据" class="level4">
 <h4 class="anchored" data-anchor-id="根据时间范围选择数据">(2) 根据时间范围选择数据</h4>
 <p>除了根据日期索引选择数据外，我们还可以根据特定的时间范围来选择数据。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> time</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，每小时交通流量</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>traffic <span class="op">=</span> pd.Series([<span class="dv">120</span>, <span class="dv">160</span>, <span class="dv">180</span>, <span class="dv">200</span>, <span class="dv">220</span>, <span class="dv">210</span>, <span class="dv">190</span>, <span class="dv">150</span>, <span class="dv">130</span>, <span class="dv">110</span>, <span class="dv">100</span>, <span class="dv">90</span>],</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                    index<span class="op">=</span>pd.date_range(<span class="st">'2023-07-01'</span>, periods<span class="op">=</span><span class="dv">12</span>, freq<span class="op">=</span><span class="st">'H'</span>))</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 选择在早上8点到上午10点之间的交通流量数据</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>sliced_traffic <span class="op">=</span> traffic.between_time(time(<span class="dv">8</span>, <span class="dv">0</span>), time(<span class="dv">10</span>, <span class="dv">0</span>))</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sliced_traffic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> time</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，每小时交通流量</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>traffic <span class="op">=</span> pd.Series([<span class="dv">120</span>, <span class="dv">160</span>, <span class="dv">180</span>, <span class="dv">200</span>, <span class="dv">220</span>, <span class="dv">210</span>, <span class="dv">190</span>, <span class="dv">150</span>, <span class="dv">130</span>, <span class="dv">110</span>, <span class="dv">100</span>, <span class="dv">90</span>],</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>                    index<span class="op">=</span>pd.date_range(<span class="st">'2023-07-01'</span>, periods<span class="op">=</span><span class="dv">12</span>, freq<span class="op">=</span><span class="st">'H'</span>))</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 选择在早上8点到上午10点之间的交通流量数据</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>sliced_traffic <span class="op">=</span> traffic.between_time(time(<span class="dv">8</span>, <span class="dv">0</span>), time(<span class="dv">10</span>, <span class="dv">0</span>))</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sliced_traffic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2023-07-01 08:00:00    130
+2023-07-01 09:00:00    110
+2023-07-01 10:00:00    100
+Freq: H, dtype: int64</code></pre>
+</div>
 </div>
 <p>除了使用<code>between_time()</code>方法，我们还可以使用布尔索引来选择特定时间范围内的数据。我们可以创造一个布尔条件，指定时间范围，并应用于时间序列数据。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个布尔条件，选择早上8点到下午3点之间的数据</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>condition <span class="op">=</span> (traffic.index.hour <span class="op">&gt;=</span> <span class="dv">8</span>) <span class="op">&amp;</span> (traffic.index.hour <span class="op">&lt;=</span> <span class="dv">15</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 应用布尔条件进行筛选</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>sliced_data <span class="op">=</span> traffic[condition]</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sliced_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个布尔条件，选择早上8点到下午3点之间的数据</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>condition <span class="op">=</span> (traffic.index.hour <span class="op">&gt;=</span> <span class="dv">8</span>) <span class="op">&amp;</span> (traffic.index.hour <span class="op">&lt;=</span> <span class="dv">15</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 应用布尔条件进行筛选</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>sliced_data <span class="op">=</span> traffic[condition]</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sliced_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2023-07-01 08:00:00    130
+2023-07-01 09:00:00    110
+2023-07-01 10:00:00    100
+2023-07-01 11:00:00     90
+Freq: H, dtype: int64</code></pre>
+</div>
 </div>
 </section>
 <section id="根据时间段选择数据" class="level4">
 <h4 class="anchored" data-anchor-id="根据时间段选择数据">(3) 根据时间段选择数据</h4>
 <p>在Pandas中，我们还可以使用时间段来选择数据。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，每月销售额</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> pd.Series([<span class="dv">1000</span>, <span class="dv">1200</span>, <span class="dv">900</span>, <span class="dv">1100</span>, <span class="dv">1300</span>, <span class="dv">1400</span>],</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                  index<span class="op">=</span>pd.period_range(<span class="st">'2023-01'</span>, periods<span class="op">=</span><span class="dv">6</span>, freq<span class="op">=</span><span class="st">'M'</span>))</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 选择2023年第一季度的销售额数据</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>sliced_sales <span class="op">=</span> sales[<span class="st">'2023Q1'</span>]</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sliced_sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，每月销售额</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> pd.Series([<span class="dv">1000</span>, <span class="dv">1200</span>, <span class="dv">900</span>, <span class="dv">1100</span>, <span class="dv">1300</span>, <span class="dv">1400</span>],</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>                  index<span class="op">=</span>pd.period_range(<span class="st">'2023-01'</span>, periods<span class="op">=</span><span class="dv">6</span>, freq<span class="op">=</span><span class="st">'M'</span>))</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 选择2023年第一季度的销售额数据</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>sliced_sales <span class="op">=</span> sales[<span class="st">'2023Q1'</span>]</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sliced_sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2023-01    1000
+2023-02    1200
+2023-03     900
+Freq: M, dtype: int64</code></pre>
+</div>
 </div>
 </section>
 </section>
@@ -915,30 +969,97 @@ Note
 <ul>
 <li>降采样（Downsampling）：将数据从高频率转换为低频率，例如从每分钟数据转换为每小时数据。在降采样中，多个原始数据点被合并为一个单独的数据点，通常通过聚合函数进行汇总。</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，每秒钟的交易量数据</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>trade_volume <span class="op">=</span> pd.Series([<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">120</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">110</span>, <span class="dv">130</span>, <span class="dv">140</span>, <span class="dv">160</span>, <span class="dv">120</span>],</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                         index<span class="op">=</span>pd.date_range(<span class="st">'2023-07-01 09:30:00'</span>, periods<span class="op">=</span><span class="dv">10</span>, freq<span class="op">=</span><span class="st">'S'</span>))</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 将数据降采样为每分钟，并计算每分钟的交易量</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>downsampled_trade_volume <span class="op">=</span> trade_volume.resample(<span class="st">'1min'</span>).<span class="bu">sum</span>()</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(downsampled_trade_volume)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，每秒钟的交易量数据</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>trade_volume <span class="op">=</span> pd.Series([<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">120</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">110</span>, <span class="dv">130</span>, <span class="dv">140</span>, <span class="dv">160</span>, <span class="dv">120</span>],</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>                         index<span class="op">=</span>pd.date_range(<span class="st">'2023-07-01 09:30:00'</span>, periods<span class="op">=</span><span class="dv">10</span>, freq<span class="op">=</span><span class="st">'S'</span>))</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 将数据降采样为每分钟，并计算每分钟的交易量</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>downsampled_trade_volume <span class="op">=</span> trade_volume.resample(<span class="st">'1min'</span>).<span class="bu">sum</span>()</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(downsampled_trade_volume)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2023-07-01 09:30:00    1200
+Freq: T, dtype: int64</code></pre>
+</div>
 </div>
 <ul>
 <li>升采样（Upsampling）：将数据从低频率转换为高频率，例如从每天数据转换为每小时数据。在升采样中，单个原始数据点被扩展为一个或多个更细粒度的数据点，通常使用插值方法来填充新生成的数据点。</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，每月的销售额数据</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> pd.Series([<span class="dv">1000</span>, <span class="dv">1200</span>, <span class="dv">900</span>],</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>                  index<span class="op">=</span>pd.date_range(<span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">3</span>, freq<span class="op">=</span><span class="st">'M'</span>))</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 将数据升采样为每天，并使用线性插值方式填充新生成的数据点</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>upsampled_sales <span class="op">=</span> sales.resample(<span class="st">'D'</span>).interpolate(method<span class="op">=</span><span class="st">'linear'</span>)</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(upsampled_sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，每月的销售额数据</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> pd.Series([<span class="dv">1000</span>, <span class="dv">1200</span>, <span class="dv">900</span>],</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>                  index<span class="op">=</span>pd.date_range(<span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">3</span>, freq<span class="op">=</span><span class="st">'M'</span>))</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 将数据升采样为每天，并使用线性插值方式填充新生成的数据点</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>upsampled_sales <span class="op">=</span> sales.resample(<span class="st">'D'</span>).interpolate(method<span class="op">=</span><span class="st">'linear'</span>)</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(upsampled_sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2023-01-31    1000.000000
+2023-02-01    1007.142857
+2023-02-02    1014.285714
+2023-02-03    1021.428571
+2023-02-04    1028.571429
+2023-02-05    1035.714286
+2023-02-06    1042.857143
+2023-02-07    1050.000000
+2023-02-08    1057.142857
+2023-02-09    1064.285714
+2023-02-10    1071.428571
+2023-02-11    1078.571429
+2023-02-12    1085.714286
+2023-02-13    1092.857143
+2023-02-14    1100.000000
+2023-02-15    1107.142857
+2023-02-16    1114.285714
+2023-02-17    1121.428571
+2023-02-18    1128.571429
+2023-02-19    1135.714286
+2023-02-20    1142.857143
+2023-02-21    1150.000000
+2023-02-22    1157.142857
+2023-02-23    1164.285714
+2023-02-24    1171.428571
+2023-02-25    1178.571429
+2023-02-26    1185.714286
+2023-02-27    1192.857143
+2023-02-28    1200.000000
+2023-03-01    1190.322581
+2023-03-02    1180.645161
+2023-03-03    1170.967742
+2023-03-04    1161.290323
+2023-03-05    1151.612903
+2023-03-06    1141.935484
+2023-03-07    1132.258065
+2023-03-08    1122.580645
+2023-03-09    1112.903226
+2023-03-10    1103.225806
+2023-03-11    1093.548387
+2023-03-12    1083.870968
+2023-03-13    1074.193548
+2023-03-14    1064.516129
+2023-03-15    1054.838710
+2023-03-16    1045.161290
+2023-03-17    1035.483871
+2023-03-18    1025.806452
+2023-03-19    1016.129032
+2023-03-20    1006.451613
+2023-03-21     996.774194
+2023-03-22     987.096774
+2023-03-23     977.419355
+2023-03-24     967.741935
+2023-03-25     958.064516
+2023-03-26     948.387097
+2023-03-27     938.709677
+2023-03-28     929.032258
+2023-03-29     919.354839
+2023-03-30     909.677419
+2023-03-31     900.000000
+Freq: D, dtype: float64</code></pre>
+</div>
 </div>
 <p>在Pandas中，可以使用<code>.resample()</code>方法来执行时间重采样操作，并根据需要应用聚合函数（如求和、平均值等）来处理生成的时间段内的数据。</p>
 </section>
@@ -946,16 +1067,20 @@ Note
 <h3 class="anchored" data-anchor-id="频率转换">2. 频率转换</h3>
 <p>频率转换是指将时间序列数据从一个频率转换为另一个频率的过程。它可以根据需要将数据聚合到更高频率或更低频率，或者将数据按照自定义的频率进行转换。</p>
 <p>在Pandas中，可以使用<code>.asfreq()</code>方法来执行频率转换操作。它可以根据指定的频率将数据重新采样，填充缺失的数据点或者删除多余的数据点。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，每天销售额</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> pd.Series([<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">150</span>, <span class="dv">300</span>, <span class="dv">250</span>, <span class="dv">180</span>],</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>                  index<span class="op">=</span>pd.date_range(<span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">6</span>, freq<span class="op">=</span><span class="st">'D'</span>))</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 将数据转换为每周频率，填充缺失的数据点为0</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>converted_data <span class="op">=</span> sales.asfreq(<span class="st">'W'</span>, fill_value<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(converted_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，每天销售额</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> pd.Series([<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">150</span>, <span class="dv">300</span>, <span class="dv">250</span>, <span class="dv">180</span>],</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>                  index<span class="op">=</span>pd.date_range(<span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">6</span>, freq<span class="op">=</span><span class="st">'D'</span>))</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 将数据转换为每周频率，填充缺失的数据点为0</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>converted_data <span class="op">=</span> sales.asfreq(<span class="st">'W'</span>, fill_value<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(converted_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2023-01-01    100
+Freq: W-SUN, dtype: int64</code></pre>
+</div>
 </div>
 <blockquote class="blockquote">
 <p>时间重采样和频率转换都涉及将时间序列数据从一个时间频率或频率转换为另一个的操作。时间重采样更侧重于根据时间间隔进行数据汇总和处理，而频率转换更侧重于调整数据的频率，并可根据需求填充或删除缺失的数据点。尽管它们在某些方面有相似之处，但它们在Pandas中具有不同的方法和选项来执行这些操作。</p>
@@ -965,56 +1090,175 @@ Note
 <section id="五对缺失值的处理" class="level2">
 <h2 class="anchored" data-anchor-id="五对缺失值的处理">五、对缺失值的处理</h2>
 <p>在Pandas处理时间序列数据时，处理缺失值是一个重要的环节，因为时间序列数据中可能会存在一些缺失的观测值。缺失值可能会对数据分析和建模产生不良影响，因此需要选择合适的方法来处理它们。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建包含缺失值的DataFrame</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Date'</span>: pd.date_range(start<span class="op">=</span><span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">10</span>),</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Value'</span>: [<span class="dv">10</span>, <span class="dv">20</span>, np.nan, <span class="dv">40</span>, np.nan, <span class="dv">60</span>, np.nan, <span class="dv">80</span>, <span class="dv">90</span>, np.nan]</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建包含缺失值的DataFrame</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Date'</span>: pd.date_range(start<span class="op">=</span><span class="st">'2023-01-01'</span>, periods<span class="op">=</span><span class="dv">10</span>),</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Value'</span>: [<span class="dv">10</span>, <span class="dv">20</span>, np.nan, <span class="dv">40</span>, np.nan, <span class="dv">60</span>, np.nan, <span class="dv">80</span>, <span class="dv">90</span>, np.nan]</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="60">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2023-01-01</td>
+<td>10.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2023-01-02</td>
+<td>20.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2023-01-03</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2023-01-04</td>
+<td>40.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2023-01-05</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>2023-01-06</td>
+<td>60.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>2023-01-07</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>2023-01-08</td>
+<td>80.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>2023-01-09</td>
+<td>90.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>2023-01-10</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
 </div>
 <section id="删除缺失值" class="level3">
 <h3 class="anchored" data-anchor-id="删除缺失值">1. 删除缺失值</h3>
 <p>删除缺失值是处理缺失值最简单直观的方法，其语法为<code>.dropna()</code>，调用该方法将直接删除包含缺失值的行和列。</p>
 <p>直接删除缺失值一般使用在缺失值较多，或者缺失值对数据整体影响较大的情况，且在删除缺失值后，仍然有足够的样本数据用于后续的分析和建模时。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 删除包含缺失值的行</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 删除包含缺失值的行</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>df.dropna(axis<span class="op">=</span><span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="61">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Date</th>
+<th data-quarto-table-cell-role="th">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2023-01-01</td>
+<td>10.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2023-01-02</td>
+<td>20.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2023-01-04</td>
+<td>40.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>2023-01-06</td>
+<td>60.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7</td>
+<td>2023-01-08</td>
+<td>80.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">8</td>
+<td>2023-01-09</td>
+<td>90.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
 </div>
 </section>
 <section id="填充缺失值" class="level3">
 <h3 class="anchored" data-anchor-id="填充缺失值">2. 填充缺失值</h3>
 <p>填充缺失值时最常用的一种用于处理缺失值的方法，其语法为<code>.fillna()</code>。在调用该方法时，我们可以使用指定的值或其他有效的填充策略来替换缺失值。</p>
 <p>填充缺失值的方法通常适用于保留所有样本且不影响数据整体分布的情况，比如<strong>连续时间序列数据</strong>之中，相邻时间点的数据较为平滑。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 将缺失值填充为0</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df.fillna(<span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用前向填充（使用前面的值填充）</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>df.fillna(method<span class="op">=</span><span class="st">'ffill'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用后向填充（使用后面的值填充）</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>df.fillna(method<span class="op">=</span><span class="st">'bfill'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="62">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 将缺失值填充为0</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>df.fillna(<span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用前向填充（使用前面的值填充）</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>df.fillna(method<span class="op">=</span><span class="st">'ffill'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用后向填充（使用后面的值填充）</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>df.fillna(method<span class="op">=</span><span class="st">'bfill'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="使用统计值填充" class="level3">
 <h3 class="anchored" data-anchor-id="使用统计值填充">3. 使用统计值填充</h3>
 <p>使用统计值填充通常与上面的方法结合使用。我们可以在获得已有数据的统计值(如均值、中位数)以后，使用列的统计值来填充该列的缺失值。</p>
 <p>使用统计值进行填充可以保持数据的整体分布特征。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用均值填充缺失值</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>mean_value <span class="op">=</span> df[<span class="st">'Value'</span>].mean()</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Value'</span>].fillna(mean_value, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="63">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用均值填充缺失值</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>mean_value <span class="op">=</span> df[<span class="st">'Value'</span>].mean()</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Value'</span>].fillna(mean_value, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="使用插值方法进行填充" class="level3">
 <h3 class="anchored" data-anchor-id="使用插值方法进行填充">4. 使用插值方法进行填充</h3>
 <p>对于连续的时间数据，我们可以尝试根据一致的数据点之间的关系来推断缺失数据点的值。这样的方法，就叫做插值填充。</p>
 <p>插值填充的方法适用于时间序列数据中缺失值相对较少且数据之间存在一定连续性的情况，比如在温度、股价等数据的处理中较为常用。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用插值方法对缺失值进行估算</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Value'</span>].interpolate(inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用插值方法对缺失值进行估算</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Value'</span>].interpolate(inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -1023,48 +1267,68 @@ Note
 <section id="平移时间序列数据" class="level3">
 <h3 class="anchored" data-anchor-id="平移时间序列数据">1. 平移时间序列数据</h3>
 <p>平移时间序列数据是指将时间序列沿时间轴前移或后移一定的时间单位。在Pandas中，可以使用<code>.shift()</code>方法来实现平移操作。通过指定正数表示向前平移，负数表示向后平移。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> pd.Series([<span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">24</span>, <span class="dv">22</span>, <span class="dv">20</span>],</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>                         index<span class="op">=</span>pd.date_range(<span class="st">'2023-07-01'</span>, periods<span class="op">=</span><span class="dv">5</span>, freq<span class="op">=</span><span class="st">'D'</span>))</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 向前平移一天</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>shifted_temperatures <span class="op">=</span> temperatures.shift(<span class="dv">1</span>)</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(shifted_temperatures)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> pd.Series([<span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">24</span>, <span class="dv">22</span>, <span class="dv">20</span>],</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>                         index<span class="op">=</span>pd.date_range(<span class="st">'2023-07-01'</span>, periods<span class="op">=</span><span class="dv">5</span>, freq<span class="op">=</span><span class="st">'D'</span>))</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 向前平移一天</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>shifted_temperatures <span class="op">=</span> temperatures.shift(<span class="dv">1</span>)</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(shifted_temperatures)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2023-07-01     NaN
+2023-07-02    23.0
+2023-07-03    25.0
+2023-07-04    24.0
+2023-07-05    22.0
+Freq: D, dtype: float64</code></pre>
+</div>
 </div>
 </section>
 <section id="计算时间差" class="level3">
 <h3 class="anchored" data-anchor-id="计算时间差">2. 计算时间差</h3>
 <p>计算时间差是指计算两个时间点之间的时间间隔。在Pandas中，可以使用时间戳索引之间的差异来计算时间差。计算结果可以是时间间隔（<code>Timedelta</code>）类型。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建示例时间戳索引</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>timestamps <span class="op">=</span> pd.to_datetime([<span class="st">'2023-07-01'</span>, <span class="st">'2023-07-05'</span>, <span class="st">'2023-07-10'</span>])</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 计算时间差</span></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>time_diff <span class="op">=</span> timestamps.diff()</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(time_diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>要注意，在计算时间差时，要首先将 DatetimeIndex 对象转换为 TimedeltaIndex 对象</p>
+</blockquote>
+<div class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建示例时间戳索引</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>timestamps <span class="op">=</span> pd.to_datetime([<span class="st">'2023-07-01'</span>, <span class="st">'2023-07-05'</span>, <span class="st">'2023-07-10'</span>])</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 计算时间差</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>time_diff <span class="op">=</span> timestamps.to_series().diff()</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(time_diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2023-07-01      NaT
+2023-07-05   4 days
+2023-07-10   5 days
+dtype: timedelta64[ns]</code></pre>
+</div>
 </div>
 </section>
 <section id="统计和聚合操作" class="level3">
 <h3 class="anchored" data-anchor-id="统计和聚合操作">3. 统计和聚合操作</h3>
 <p>时间序列数据常常需要进行统计和聚合操作，以了解数据的趋势、周期性和总体特征。在Pandas中，可以使用各种统计函数和聚合函数对时间序列进行操作，例如求和、平均值、最大值、最小值等。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，表示每天的销售额</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> pd.Series([<span class="dv">1000</span>, <span class="dv">1200</span>, <span class="dv">900</span>, <span class="dv">1100</span>, <span class="dv">1300</span>],</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>                  index<span class="op">=</span>pd.date_range(<span class="st">'2023-07-01'</span>, periods<span class="op">=</span><span class="dv">5</span>, freq<span class="op">=</span><span class="st">'D'</span>))</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 计算销售额的总和、平均值和最大值</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>total_sales <span class="op">=</span> sales.<span class="bu">sum</span>()</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>average_sales <span class="op">=</span> sales.mean()</span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>max_sales <span class="op">=</span> sales.<span class="bu">max</span>()</span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total_sales, average_sales, max_sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个示例时间序列数据，表示每天的销售额</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> pd.Series([<span class="dv">1000</span>, <span class="dv">1200</span>, <span class="dv">900</span>, <span class="dv">1100</span>, <span class="dv">1300</span>],</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>                  index<span class="op">=</span>pd.date_range(<span class="st">'2023-07-01'</span>, periods<span class="op">=</span><span class="dv">5</span>, freq<span class="op">=</span><span class="st">'D'</span>))</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 计算销售额的总和、平均值和最大值</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>total_sales <span class="op">=</span> sales.<span class="bu">sum</span>()</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>average_sales <span class="op">=</span> sales.mean()</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>max_sales <span class="op">=</span> sales.<span class="bu">max</span>()</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total_sales, average_sales, max_sales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5500 1100.0 1300</code></pre>
+</div>
 </div>
 
 
