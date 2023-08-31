@@ -42,10 +42,15 @@ book:
         - 周一基础语法_new.ipynb
         - 周二数据类型_new.ipynb
         - new_周三_数据结构.ipynb
-    - part: "NumPy快速入门"
-      chapters: 
-        - NumPy数组概念.ipynb
-        - NumPy数组的基本操作.ipynb
+    - part: "Plotly可视化入门"
+      chapters:
+        - basic.ipynb
+        - 动态图表.ipynb
+        - 地图可视化.ipynb
+    # - part: "NumPy快速入门"
+    #   chapters: 
+    #     - NumPy数组概念.ipynb
+    #     - NumPy数组的基本操作.ipynb
     - part: "Pandas快速入门"
       chapters: 
         - 安装.ipynb
@@ -57,11 +62,11 @@ book:
         - 时间序列数据.ipynb
         - 文本数据.ipynb
         # - 更好的数据可视化.ipynb
-    - part: "Plotly可视化入门"
-      chapters:
-        - basic.ipynb
-        - 动态图表.ipynb
-        - 地图可视化.ipynb
+    - part: :"爬虫快速入门"
+      chapters: 
+        - HTTP、HTTPS协议.ipynb
+        - Requests库.ipynb
+        - Scrapy框架.ipynb
     - part: "实际案例"
       chapters:
         - for循环.ipynb
