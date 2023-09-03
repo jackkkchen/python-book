@@ -34,8 +34,8 @@ book:
   # sharing: [twitter, facebook]
 
   chapters:
-    - 01_01_文档目录.qmd
-    - 01_02_Python简介.qmd
+    - index.qmd
+    - intro.qmd
     # - 周一环境搭建.ipynb
     - part: "Python入门基础"
       chapters: 

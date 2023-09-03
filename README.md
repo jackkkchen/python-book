@@ -1,4 +1,3 @@
-
 ## Python入门学习指南：从编程小白到掌握Pandas
 
 ### 简介
@@ -43,13 +42,9 @@
 #### 推荐的Python和Pandas学习资源
 
 - [pandas官方文档(自译版)](https://pypandas.com/)
-
 - [Pandas对比SQL](https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_sql.html#)
-
 - [Plotly可视化官方文档](https://plotly.com/python/getting-started/)
-
 - [W3schools for Pandas](https://www.w3schools.com/python/pandas/default.asp)
-
 - [JackB站超级多的视频](https://space.bilibili.com/22770928)
 
 ### 结语
