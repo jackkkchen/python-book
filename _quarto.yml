@@ -34,52 +34,52 @@ book:
   # sharing: [twitter, facebook]
 
   chapters:
-    - index.qmd
-    - intro.qmd
+    - 01_01_文档目录.qmd
+    - 01_02_Python简介.qmd
     # - 周一环境搭建.ipynb
     - part: "Python入门基础"
       chapters: 
-        - 周一基础语法_new.ipynb
-        - 周二数据类型_new.ipynb
-        - new_周三_数据结构.ipynb
+        - 02_01_Python基本概念与指令输入.ipynb
+        - 02_02_Python数据类型.ipynb
+        - 02_03_Python数据结构.ipynb
     - part: "Plotly可视化入门"
       chapters:
-        - basic.ipynb
-        - 动态图表.ipynb
-        - 地图可视化.ipynb
+        - 03_01_Plotly图表绘制与可视化.ipynb
+        - 03_02_Plotly高阶图表.ipynb
+        - 03_03_Plotly地图可视化.ipynb
     # - part: "NumPy快速入门"
     #   chapters: 
     #     - NumPy数组概念.ipynb
     #     - NumPy数组的基本操作.ipynb
     - part: "Pandas快速入门"
       chapters: 
-        - 安装.ipynb
-        - pandas处理什么样的数据.ipynb
-        - 导入_导出数据.ipynb
-        - 选取数据.ipynb
-        - 添加新列.ipynb
-        - Pandas计算重塑合并最终版本.ipynb
-        - 时间序列数据.ipynb
-        - 文本数据.ipynb
+        - 04_01_Pandas安装.ipynb
+        - 04_02_Pandas处理什么样的数据.ipynb
+        - 04_03_导入导出数据.ipynb
+        - 04_04_选取数据.ipynb
+        - 04_05_数据的增加、删除、修改.ipynb
+        - 04_06_如何计算汇总统计.ipynb
+        - 04_07_时间序列数据.ipynb
+        - 04_08_文本数据.ipynb
         # - 更好的数据可视化.ipynb
-    - part: :"爬虫快速入门"
+    - part: "爬虫快速入门"
       chapters: 
-        - HTTP、HTTPS协议.ipynb
-        - Requests库.ipynb
-        - Scrapy框架.ipynb
+        - 05_01_爬虫基础.ipynb
+        - 05_02_Requests库.ipynb
+        - 05_03_Scrapy框架.ipynb
     - part: "实际案例"
       chapters:
-        - for循环.ipynb
-        - python链接数据库.ipynb
+        - 06_01_for循环.ipynb
+        - 06_02_python链接数据库.ipynb
         # - Dash案例.ipynb
     - part: "拓展"
       chapters:
-        - 周一环境搭建.ipynb
-        - 周三条件语句和循环语句.ipynb
-        - 周四函数.ipynb
-        - 周四模块.ipynb
-        - Excel和Python的Pandas功能类比学习.ipynb
-        - 错误汇总.ipynb
+        - 07_01_环境搭建.ipynb
+        - 07_02_条件语句和循环语句.ipynb
+        - 07_03_函数.ipynb
+        - 07_04_模块.ipynb
+        - 07_05_Excel和Python的Pandas功能类比学习.ipynb
+        - 07_06_错误汇总.ipynb
 
         
 
