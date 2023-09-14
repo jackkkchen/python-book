@@ -66,7 +66,8 @@ book:
       chapters: 
         - 05_01_爬虫基础.ipynb
         - 05_02_HTML文档与Requests库.ipynb
-        - 05_03_Scrapy框架.ipynb
+        - 05_03_BeautifulSoup库.ipynb
+        - 05_04_Scrapy框架.ipynb
     - part: "实际案例"
       chapters:
         - 06_01_for循环.ipynb
