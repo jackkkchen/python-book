@@ -65,7 +65,7 @@ book:
     - part: "爬虫快速入门"
       chapters: 
         - 05_01_爬虫基础.ipynb
-        - 05_02_Requests库.ipynb
+        - 05_02_HTML文档与Requests库.ipynb
         - 05_03_Scrapy框架.ipynb
     - part: "实际案例"
       chapters:
