@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Python新手文档 - 18&nbsp; Scrapy 框架</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./06_01_for循环.html" rel="next">
+<link href="./05_03_BeautifulSoup库.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_01_爬虫基础.html">爬虫快速入门</a></li><li class="breadcrumb-item"><a href="./05_04_Scrapy框架.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Scrapy 框架</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Python新手文档</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/jackkkchen/python-book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Python新手文档.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Python新手文档.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">文档目录</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python简介</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Python入门基础</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_01_Python基本概念与指令输入.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Python基本概念与指令输入</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_02_Python数据类型.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Python数据类型</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_03_Python数据结构.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Python数据结构</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Plotly可视化入门</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_01_Plotly图表绘制与可视化.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Plotly 图表绘制与可视化</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_02_Plotly高阶图表.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Plotly高阶图表</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_03_Plotly地图可视化.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Plotly地图可视化</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Pandas快速入门</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_01_Pandas安装.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Pandas安装</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_02_Pandas处理什么样的数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pandas处理什么样的数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_03_导入导出数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">导入&amp;导出数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_04_选取数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">选取数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_05_数据的增加、删除、修改.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">数据的增加、删除、修改</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_06_如何计算汇总统计.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">如何计算汇总统计</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_07_时间序列数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Pandas处理时间序列数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_08_文本数据.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Pandas处理文本数据</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">爬虫快速入门</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_01_爬虫基础.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">爬虫基础</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_02_HTML文档与Requests库.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">HTML 文档与 Requests 库</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_03_BeautifulSoup库.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">BeautifulSoup 库</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_04_Scrapy框架.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Scrapy 框架</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">实际案例</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_01_for循环.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">for循环自动获取股票数据</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06_02_python链接数据库.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Python连接Postgresql数据库</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">拓展</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_01_环境搭建.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Python环境搭建</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_02_条件语句和循环语句.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Python条件语句</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_03_函数.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Python函数</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_04_模块.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Python模块</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_05_Excel和Python的Pandas功能类比学习.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Excel和Python的类比学习</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_06_错误汇总.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Python常见的异常提示</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#scrapy-框架" id="toc-scrapy-框架" class="nav-link active" data-scroll-target="#scrapy-框架">Scrapy 框架</a>
+  <ul class="collapse">
+  <li><a href="#一scrapy-的架构与组成部分" id="toc-一scrapy-的架构与组成部分" class="nav-link" data-scroll-target="#一scrapy-的架构与组成部分">一、scrapy 的架构与组成部分</a></li>
+  <li><a href="#二创建第一个-scrapy-爬虫" id="toc-二创建第一个-scrapy-爬虫" class="nav-link" data-scroll-target="#二创建第一个-scrapy-爬虫">二、创建第一个 Scrapy 爬虫</a></li>
+  <li><a href="#步骤二创建-spider" id="toc-步骤二创建-spider" class="nav-link" data-scroll-target="#步骤二创建-spider">2. 步骤二：创建 Spider</a></li>
+  <li><a href="#步骤三修改-spider" id="toc-步骤三修改-spider" class="nav-link" data-scroll-target="#步骤三修改-spider">3. 步骤三：修改 Spider</a></li>
+  <li><a href="#三数据提取和选择器" id="toc-三数据提取和选择器" class="nav-link" data-scroll-target="#三数据提取和选择器">三、数据提取和选择器</a></li>
+  <li><a href="#四编写-spider-规则以定义爬取流程" id="toc-四编写-spider-规则以定义爬取流程" class="nav-link" data-scroll-target="#四编写-spider-规则以定义爬取流程">四、编写 Spider 规则以定义爬取流程</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/05_04_Scrapy框架.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Scrapy 框架</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="scrapy-框架" class="level2">
+<h2 class="anchored" data-anchor-id="scrapy-框架">Scrapy 框架</h2>
+<p>在前面的学习中，我们使用 requests 库抓取到了我们想要的网站的全部源代码，但通常情况下，我们并不需要整个网站的代码，而只需要我们所关注的部分的数据即可。因此，我们需要有一个新的工具，来帮助我们对网页中的内容进行分析，并提取我们所需要的内容。</p>
+<p>scrapy 是一个强大的 Python 框架，具有高度模块化的设计，包括各种组件，通过这些组件的协同工作，用户可以实现高效的网络爬取。</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>爬虫框架</strong></p>
+<p>所谓爬虫框架就是一种用于开发和执行网络爬虫的软件工具或库。爬虫框架提供了一组功能和工具，用于自动化地访问网站、下载网页内容、解析HTML数据，并从中提取有用的信息。这些框架通常以模块化的方式设计，使开发人员能够更容易地构建、配置和管理爬虫。</p>
+</div>
+</div>
+<p>scrapy 是世界上最流行的爬虫框架之一，它是一个开源的项目，被广泛地运用于爬取各种类型的网站。scrapy 具有十分强大的功能，在本次学习中，我们将从以下几个方面对 scrapy 进行基本的学习。</p>
+<ul>
+<li>scrapy的架构、组成部分</li>
+<li>创建和运行一个scrapy爬虫</li>
+<li>使用XPath和CSS选择题提取数据</li>
+<li>编写Spider规则以定义爬取流程</li>
+</ul>
+<p>现在，让我们从基础入手，来认识一下世界上最棒的爬虫框架 —— scrapy。不过千万要记得，scrapy 作为一个第三方库，在使用它之前，需要安装它。</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;powershell&quot;}">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pip install scrapy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="一scrapy-的架构与组成部分" class="level3">
+<h3 class="anchored" data-anchor-id="一scrapy-的架构与组成部分">一、scrapy 的架构与组成部分</h3>
+<p>前面我们说过，scrapy具有高度模块化的设计，它包括各种组件，如下载器、中间件、管道、调度器等等，这是 scrapy 的重要优势之一。模块化的设计意味着我们可以根据需要调用我们所需要的组件、使用我们所需要的功能，根据我们的需求灵活地配置和定制爬虫，并且减少资源的占用。</p>
+<p>scrapy 共有六个核心组件，让我们一起来看看。</p>
+<section id="spiders蜘蛛" class="level4">
+<h4 class="anchored" data-anchor-id="spiders蜘蛛">1. Spiders(蜘蛛)</h4>
+<p>顾名思义，Spiders(蜘蛛) 就是一种 Crawler(爬虫)，在网络世界中，Spiders 会在网页中进行“爬行”和“捕捉(索取）”的工作。Spiders 是 Scrapy 的核心组件，负责定义和爬取的规则与流程。每个 Spider 定义了如何从网站上爬取数据，以及如何解析和处理这些数据。每个Spider定义了从一个或多个起始URL开始的爬取任务，并指定了如何跟踪链接、解析HTML数据以及如何提取有用的信息。就像一只真正的 Spider(蜘蛛)一样，它会从一个起始点(起始网页或种子 URL)开始，沿着蜘蛛网上的线(我们定义好的规则)，追寻和捕捉猎物(跟踪链接和URL，递归地遍历和抓取其他相关网页的内容)。</p>
+<p>下面让我们一起来看看 Spiders 是如何工作的</p>
+<p>就像一只小蜘蛛织网一样，Spiders 的主要任务就是定义爬取规则。为了创建一个 Spider，我们首先需要编写一个 Python 类，这个类通常继承自 Scrapy 的 <code>scrapy.Spider</code> 类。这个类必须包含一些必要的属性和方法，如 Spider 的名称、起始 URL 列表，以及数据解析逻辑。就像下面这样。</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MySpider(scrapy.Spider):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">'myspider'</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    start_urls <span class="op">=</span> [<span class="st">'https://example.com'</span>]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse(<span class="va">self</span>, response):</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 在这里编写数据解析逻辑</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>关于编写数据解析逻辑的方法，我们将在后面学习，现在我们只需要掌握定义一个 Spider 的方法就可以了。</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong><code>pass</code> 关键字</strong></p>
+<p>你可能会好奇上面代码中的 <code>pass</code> 关键字的作用。在 Python 中，<code>pass</code> 是一个占位符关键字，不执行任何操作，只是一个空语句，用于指示此处需要有代码，但在当前情况下不需要执行任何操作。在上面的示例中，我们在 <code>parse</code> 方法的内部填上了 <code>pass</code> 关键字，用以占位，如果以后我们要编写数据解析逻辑，那么使用新代码替换掉 <code>pass</code> 就可以了。</p>
+</div>
+</div>
+<p>观察上面的代码，我们在定义这个类时一共做了三件事：</p>
+<ul>
+<li>定义 Spider 的名称：使用 <code>name</code> 属性，将其定义为 <code>myspider</code></li>
+<li>定义起始 URL(Start URLs)：每个Spider都有一个或多个起始URL，爬虫将从这些URL开始抓取数据。这些URL可以是单个字符串或URL列表。我们使用 <code>start_urls</code> 属性来定义起始 URL。</li>
+<li>定义了一个类方法：定义了 <code>parse</code> 方法，向它传入了两个参数：<code>self</code> 和 <code>response</code>。
+<ul>
+<li><code>self</code>：<code>self</code> 参数是一个指向类的实例的引用。你可以这么理解它：当你使用 <code>self</code> 时，实际上就是在访问这个类的属性和方法。在上面的代码中，<code>self</code> 在 <code>parse</code> 方法内部使用，就代表着我们可以在 <code>parse</code> 中访问 <code>Spider</code> 的属性和方法，如 <code>name</code> 和 <code>start_urls</code>。<code>self</code> 参数就是一个连接到 Spider 对象的“自我引用”。</li>
+<li><code>response</code>：我们在 requests 库的学习中与 <code>response</code> 有过一定接触，这个参数在这里是由 Scrapy 框架提供的 HTTP 响应对象，包含了从目标网站下载的页面内容，我们可以使用这个参数中的内容进行提取数据、跟踪链接和执行其他与响应相关的操作。</li>
+</ul></li>
+</ul>
+<p>Spiders 作为 Scrapy 最核心的组件，也是我们本次学习所需要掌握的最关键的部分，大家需要牢记创建 Spider 的方法。</p>
+</section>
+<section id="downloader下载器" class="level4">
+<h4 class="anchored" data-anchor-id="downloader下载器">2. Downloader(下载器)</h4>
+<p>Scrapy 中的 Downloader 是爬虫框架的一个关键组件，该组件负责发送 HTTP 请求以下载网页内容。下载器处理与网络请求和响应相关的底层细节包括处理代理、User-Agent、重定向、Cookie 等。</p>
+<ul>
+<li>HTTP 请求发送和响应处理： 下载器负责发送 HTTP 请求，并处理来自服务器的响应。它管理连接池，可以异步发送多个请求以提高效率。</li>
+<li>处理重定向和代理： 下载器处理 HTTP 重定向，以及如果需要的话，可以使用代理服务器来下载页面。这有助于应对某些网站的反爬措施。</li>
+<li>下载网页内容： Downloader 接收到 HTTP 响应后，将网页内容下载到内存中，并将其包装在一个 <code>Response</code> 对象中，然后将 <code>Response</code> 对象传递给 Spider，以便进一步的处理。我们在创建第一个 Spider 时，在 <code>parse</code> 方法里传入的 <code>response</code> 参数就是由 Downloader 下载的。</li>
+</ul>
+</section>
+<section id="item-pipeline数据管道" class="level4">
+<h4 class="anchored" data-anchor-id="item-pipeline数据管道">3. Item Pipeline(数据管道)</h4>
+<p>Scrapy 的 Item Pipeline 组件负责处理从 Spider 中提取的数据项(Item)，它允许用户再数据被存储或导出之前对数据进行进一步的处理、验证和清洗。我们还可以编写自定义数据管道来处理数据，根据项目的需求实施特定的数据处理逻辑。</p>
+<ul>
+<li>数据清洗：我们可以在 Pipeline 中执行数据清理操作，例如去除不需要的空格、特殊字符或 HTML 标签。</li>
+<li>数据验证：使用 Pipeline 可以验证从 Spider 中提取的数据是否符合特定的格式或要求，如果数据不合规，可以选择丢弃或修复它。</li>
+<li>数据存储：Pipeline 允许将数据保存到不同的存储介质中，例如本地文件、数据库、Elasticsearch 等。</li>
+<li>数据导出：Pipeline 可以将数据导出到不同的输出格式，如 JSON、CSV、XML 等，以便后续分析或共享。</li>
+<li>数据处理：Pipeline 还可以执行其他数据处理任务，例如计算字段、转换数据类型等。</li>
+</ul>
+<p>在 Scrapy 中，每个 Item Pipeline 是一个独立的处理组件，可以按照优先级的顺序依次应用于提取的数据项。Pipeline 可以配置为启用或禁用，我们可以根据需要启用或禁用不同的 Pipeline 组件。</p>
+</section>
+<section id="scheduler调度器" class="level4">
+<h4 class="anchored" data-anchor-id="scheduler调度器">4. Scheduler(调度器)</h4>
+<p>Scheduler 是 Scrapy 框架中的核心组件之一，负责管理爬虫任务的调度和控制。Scheduler的主要任务是维护待爬取的URL队列，确保每个URL都被适时地爬取，并避免重复爬取。</p>
+<ul>
+<li>URL 队列管理： Scheduler 负责管理待爬取的 URL 队列。当一个 Spider 启动时，它会从 Scheduler 获取起始 URL，并根据规则和链接跟踪逻辑不断向队列中添加新的 URL。这确保了 Spide 能够按照预定的方式遍历和爬取网站。</li>
+<li>去重处理： 防止重复爬取是爬虫的一个重要任务。Scheduler 会检查新加入队列的 URL 是否已经存在，以避免重复的请求。这可以通过使用去重过滤器(Duplicate Filter)来实现，以确保同一个 URL 不会被爬虫多次请求。</li>
+<li>调度策略： Scheduler 还负责确定下一个要爬取的 URL。它可以使用不同的调度策略，如广度优先、深度优先等，来控制爬虫的行为。调度策略可以根据网站的结构和需求进行配置。</li>
+<li>并发控制： 爬虫通常需要控制并发请求的数量，以避免对目标网站造成过大的负载。Scheduler 允许您配置并发请求数的上限，以便适应目标网站的性能和反爬虫机制。</li>
+<li>错误处理： 当发生网络请求错误或其他异常时，Scheduler 可以处理错误情况，并根据策略重试或忽略失败的请求。这有助于提高爬虫的稳定性。</li>
+<li>分布式爬取： 在分布式爬取环境中，多个爬虫节点可以共享同一个 Scheduler，以协调任务。Scheduler 可以确保不同节点之间不会爬取相同的 URL，从而提高效率。</li>
+<li>自定义扩展： Scrapy 允许开发人员自定义 Scheduler 组件，以满足特定项目的需求。您可以编写自己的调度逻辑，甚至使用外部队列服务(如Redis)来管理 URL 队列。</li>
+</ul>
+<p>Scheduler 是 Scrapy 中非常重要的组件，它有效地管理了爬虫的调度和 URL 队列，使得爬虫能够高效、有序地访问网站并提取数据。在 Scrapy 中，Scheduler 与 Downloader、Spider 等组件协同工作，构成了一个强大的网络爬虫框架。</p>
+</section>
+<section id="downloader-middleware下载器中间件" class="level4">
+<h4 class="anchored" data-anchor-id="downloader-middleware下载器中间件">5. Downloader Middleware(下载器中间件)</h4>
+<p>Downloader Middleware 是用于在 Scrapy 的 Downloader 处理请求和响应的过程中进行拦截和处理的机制。它通常用于执行以下任务：</p>
+<ul>
+<li>请求预处理和响应后处理：下载器中间件是在请求发送之前和响应处理之后执行的一组处理程序。它们可以进行 User-Agent 设置、代理设置、请求头修改、请求过滤、请求重定向处理等任务。</li>
+<li>自定义中间件：我们可以编写自定义的下载器中间件，以满足特定的需求，如处理代理、用户代理切换等。</li>
+</ul>
+</section>
+<section id="spider-middleware蜘蛛中间件" class="level4">
+<h4 class="anchored" data-anchor-id="spider-middleware蜘蛛中间件">6. Spider Middleware(蜘蛛中间件)</h4>
+<p>Spider Middleware 是用于在Scrapy的 Spider 处理响应数据之前和之后进行拦截和处理的机制。它通常用于执行以下任务：</p>
+<ul>
+<li>请求预处理和响应后处理：蜘蛛中间件是在 Spider 发出请求之前和响应被 Spider 处理之后执行的一组处理程序。它们可以用于全局性的请求预处理和响应后处理，进行数据处理、请求生成、异常处理、数据过滤等任务。</li>
+<li>自定义中间件：我们可以编写自定义的蜘蛛中间件，以实现全局性的功能，如网页去重、异常处理等。</li>
+</ul>
+</section>
+</section>
+<section id="二创建第一个-scrapy-爬虫" class="level3">
+<h3 class="anchored" data-anchor-id="二创建第一个-scrapy-爬虫">二、创建第一个 Scrapy 爬虫</h3>
+<p>现在，我们已经对 Scrapy 的构成有了基本的了解。是时候开始上手试一试了，创建一个新的爬虫项目，开始伟大的信息猎人生涯吧。</p>
+<section id="步骤一创建-scrapy-项目" class="level4">
+<h4 class="anchored" data-anchor-id="步骤一创建-scrapy-项目">1. 步骤一：创建 Scrapy 项目</h4>
+<p>前面我们已经掌握了如何建立一个新的 Spider，或许你已经心痒难耐要孵化一只你的小虫子了，但是请不要着急，我们现在要使用的是世界上最流行的爬虫框架 Scrapy —— 最流行的东西往往有许多奇奇怪怪的规则，当然，这都是为了我们项目的高效展开。</p>
+<p>在创建一只 Spider 以前，我们需要首先建立一个 Scrapy 项目。为什么要这么做？因为 Scrapy 作为一个高级 Python 爬虫框架，Scrapy 项目具有一个特定的文件夹结构，其中包含了用于不同方面的代码和配置文件，这个结构包括 Spiders、Item Pipelines、中间件、配置文件等。这个组织结构有助于将爬虫的不同部分分离开来，使其更易于管理和维护。</p>
+<p>现在让我们来试试看！在 JupyterLab 中输入下面的代码，其中 <code>DoubanScrapy</code> 是我们的 Scrapy 项目的名称，你可以自定义一个你喜欢的。</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>scrapy startproject DoubanScrapy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>New Scrapy project 'DoubanScrapy', using template directory 'D:\Programs\Code Editor and Database\Anaconda\envs\myenv\Lib\site-packages\scrapy\templates\project', created in:
+    D:\Files\Desktop\爬虫\DoubanScrapy
+
+You can start your first spider with:
+    cd DoubanScrapy
+    scrapy genspider example example.com</code></pre>
+</div>
+</div>
+<p>现在瞧一瞧你的目录文件夹，这里应当出现了一个新的文件夹，就是我们刚才创建的 Scrapy 项目保存的位置，请记住它，现在，让我们进入到我们的项目之中。</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>请注意，在 JupyterLab 中执行的命令会在 JupyterLab 的工作目录中创建或操作文件。如果你想要在 JupyterLab 中创建、运行和管理 Scrapy 项目，确保你已经正确配置了 JupyterLab 的工作目录以便操作项目文件。</p>
+</div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>cd DoubanScrapy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>现在我们已经处于我们的项目文件夹下啦，接下来，让我们一起来编辑和开发我们的 Scrapy 项目吧。</p>
+</section>
+</section>
+<section id="步骤二创建-spider" class="level3">
+<h3 class="anchored" data-anchor-id="步骤二创建-spider">2. 步骤二：创建 Spider</h3>
+<p>前面我们已经学过，如何创建一个 Spider，但是在正式的工作流程中，我们需要使用更通常的办法。就是首先创建一个 Spider，再对它进行编辑。</p>
+<p>进入到你的 JupyterLab 界面，试试看下面的代码，创建一个新的 Spider，命名为 <code>douban</code>。</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>scrapy genspider douban movie.douban.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Created spider 'douban' using template 'basic' </code></pre>
+</div>
+</div>
+<p>在上面的代码中：</p>
+<ul>
+<li><code>douban</code> 是我们所创建的新 Spider 的名称。</li>
+<li><code>movie.douban.com</code> 是我们所要爬取的网站的起始URL。</li>
+</ul>
+<p>上面的命令将在 <code>DoubanMyScrapy/spiders</code> 目录下生成一个名为 “douban.py” 的 Spider 文件，并将起始 URL 设置为豆瓣电影的页面。</p>
+</section>
+<section id="步骤三修改-spider" class="level3">
+<h3 class="anchored" data-anchor-id="步骤三修改-spider">3. 步骤三：修改 Spider</h3>
+<p>接下来，让我们一起来修改我们的新 Spider。看看你的工作目录，找到 “douban.py” 文件，打开它，将其中的内容修改为：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> DoubanSpider(scrapy.Spider):</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">"douban"</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    allowed_domains <span class="op">=</span> [<span class="st">"movie.douban.com"</span>]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    start_urls <span class="op">=</span> [<span class="st">"http://movie.douban.com/top250"</span>]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse(<span class="va">self</span>, response):</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>也就是将 <code>start_urls</code> 修改为 <code>http://movie.douban.com/top250</code>。这样一来，我们就完成了对起始 URL 的修改，请务必保证没有修改错误，因为 <code>start_urls</code> 是 Spider 在启动时进行爬取的 URL 列表，后续的 URL 都将从初始 URL 获取到的数据中提取。</p>
+<p>现在你是不是已经着急想要编写爬虫的数据解析逻辑了？请先不要着急，我们接下来还要学习选择器部分，掌握了数据提取的方法，才能更好的编写数据解析逻辑。此处 Spider 数据解析逻辑的编写请让我们先按下不表，后面再来尝试。</p>
+</section>
+<section id="三数据提取和选择器" class="level3">
+<h3 class="anchored" data-anchor-id="三数据提取和选择器">三、数据提取和选择器</h3>
+<p>通过前面的学习，我们很容易就可以获取一个网页的全部数据，但是往往我们不需要那么庞杂的数据。因此，我们需要借助一些工具来将我们所需要的部分从完整的网页数据中提取出来，这种工具就叫做选择器，这个过程就叫做数据提取。</p>
+<p>Scrapy 提供了两种主要的选择器来提取 HTML 页面中的数据。</p>
+<section id="xpth-选择器" class="level4">
+<h4 class="anchored" data-anchor-id="xpth-选择器">1. XPth 选择器</h4>
+<p>Scrapy 中的 XPth 选择器是用于爬虫中解析 HTML 或 XML 文档的一种强大工具。在前面学习 HTML 文档时我们知道，HTML 文档由许多标签和元素组成，XPth 选择器就允许根据元素的路径和属性来定位和提取数据，有助于从网页中抽取信息。</p>
+<p>让我们一起来看看如何使用 XPth 选择器。</p>
+<section id="导入-xpth-选择器" class="level5">
+<h5 class="anchored" data-anchor-id="导入-xpth-选择器">(1) 导入 XPth 选择器</h5>
+<p>在 Scrapy 中，我们需要使用 <code>Selector</code> 类来创建 XPth 选择器对象，因此，我们首选需要导入 <code>Selector</code> 类。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scrapy.selector <span class="im">import</span> Selector</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="创建-selector-对象" class="level5">
+<h5 class="anchored" data-anchor-id="创建-selector-对象">(2) 创建 <code>Selector</code> 对象</h5>
+<p>还记得我们在学习创建一个 Spider 时使用 <code>Pass</code> 关键字所占下的空位吗？现在我们就要编写代码来替换掉 <code>Pass</code> 关键字了。</p>
+<p>要创建一个 XPth 选择器对象，就要首先将服务器响应给我们的内容(即 <code>response</code>)传递给 <code>Selector</code> 类的构造函数。在通常情况下，我们都会在 Spider 的 <code>parse</code> 方法中使用 XPth 选择器，因此，我们可以这样写：</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scrapy.selector <span class="im">import</span> Selector</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MySpider(scrapy.Spider):</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">'myspider'</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    start_urls <span class="op">=</span> [<span class="st">'https://example.com'</span>]</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse(<span class="va">self</span>, response):</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        selector <span class="op">=</span> Selector(response)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 现在可以使用selector来进行XPath选择</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="选择数据" class="level5">
+<h5 class="anchored" data-anchor-id="选择数据">(3) 选择数据</h5>
+<p>XPath 选择器通过使用 XPath 表达式来选择元素，我们可以使用 XPath 表达式来进行元素选择、层级选择等操作。请回想一下 HTML 文档章节中我们所学习过的标签，在选择数据时，我们需要使用这些标签来做定位。</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>为了便于大家理解，这里不得不提上一句，XPath(XML Path Language)是一种用于在 XML 文档中定位和选择元素的语言，它同样适用于 HTML 文档的解析。XPath 表达式是 XPath 语言中的一种语法，用于指定如何选择文档中的元素。</p>
+</div>
+</div>
+<ol type="1">
+<li><p>元素选择</p>
+<p>XPath 表达式中最简单的形式是元素选择，用于选择文档中的元素，其语法为：使用双斜杠 <code>//</code> 加上需要选择的元素的标签，如：</p>
+<ul>
+<li><code>//p</code>：选择所有 <code>&lt;p&gt;</code> 元素</li>
+<li><code>//a</code>：选择所有 <code>&lt;a&gt;</code> 元素</li>
+</ul></li>
+<li><p>层级选择</p>
+<p>XPth 表达式可以通过层级结构定位元素，从根节点(父节点)开始逐级选择，各个层级之间使用斜杠 <code>/</code> 来分隔，如：</p>
+<ul>
+<li><code>/html/body</code>：选择文档根节点下的所有 <code>&lt;body&gt;</code> 元素</li>
+<li><code>//div/p</code>：选择所有 <code>&lt;div&gt;</code> 元素下的 <code>&lt;p&gt;</code> 元素</li>
+</ul></li>
+<li><p>通配符</p>
+<p>通配符 <code>*</code> 可以用来选择所有子元素或所有元素。例如：</p>
+<ul>
+<li>选择<code>&lt;body&gt;</code>元素下的所有子元素：<code>/html/body/*</code></li>
+<li>选择文档中的所有元素：<code>//*</code></li>
+</ul></li>
+<li><p>属性选择</p>
+<p>XPath 表达式可以根据元素的属性来选择元素，其语法为：选中某一元素后，在其后紧跟 <code>[@ ]</code>，<code>@</code> 后填入具体的属性内容。例如：</p>
+<ul>
+<li>选择所有带有 <code>href</code> 属性的<code>&lt;a&gt;</code>元素：<code>//a[@href]</code></li>
+<li>选择所有 <code>class</code> 属性为 <code>header</code> 的 <code>&lt;div&gt;</code> 元素：<code>//div[@class="header"]</code></li>
+</ul></li>
+<li><p>文本选择</p>
+<p>XPath 表达式可以选择元素的文本内容。例如：</p>
+<ul>
+<li>选择所有 <code>&lt;p&gt;</code> 元素的文本内容：<code>//p/text()</code></li>
+<li>选择第一个 <code>&lt;h1&gt;</code> 元素的文本内容：<code>//h1[1]/text()</code></li>
+</ul></li>
+<li><p>谓词(Predicates)</p>
+<p>谓词用于筛选元素。可以在XPath表达式中使用方括号 <code>[]</code> 来定义谓词。例如：</p>
+<ul>
+<li>选择第一个 <code>&lt;a&gt;</code> 元素的文本内容：<code>//a[1]/text()</code></li>
+<li>选择第一个 <code>&lt;div&gt;</code> 元素下的第三个 <code>&lt;p&gt;</code> 元素：<code>//div[1]/p[3]</code></li>
+</ul></li>
+<li><p>逻辑运算符</p>
+<p>XPath 支持逻辑运算符，如 <code>and</code>、<code>or</code>、<code>not</code>，用于组合条件。例如：</p>
+<ul>
+<li>选择所有 <code>&lt;a&gt;</code> 元素，其文本内容包含 “click” 或 “visit”：<code>//a[contains(text(), "click") or contains(text(), "visit")]</code></li>
+</ul></li>
+<li><p>函数</p>
+<p>XPath 还包括一系列内置函数，用于在表达式中执行操作，如字符串处理、数学计算等。例如：</p>
+<ul>
+<li>选择所有文本内容不为空的 <code>&lt;p&gt;</code> 元素：<code>//p[string-length(text()) &gt; 0]</code></li>
+</ul></li>
+</ol>
+<p>看完了常见的 XPath 表达式，让我们来看看在实际中应该如何书写，要使用 XPath 表达式，只需要调用 <code>.xpath</code> 方法就可以了。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scrapy.selector <span class="im">import</span> Selector</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MySpider(scrapy.Spider):</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">'myspider'</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    start_urls <span class="op">=</span> [<span class="st">'https://example.com'</span>]</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse(<span class="va">self</span>, response):</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>        selector <span class="op">=</span> Selector(response)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 现在可以使用selector来进行XPath选择</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 提取所有链接的文本内容</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        links <span class="op">=</span> selector.xpath(<span class="st">'//a/text()'</span>).extract()</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 提取第一个&lt;h1&gt;元素的文本内容</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        title <span class="op">=</span> selector.xpath(<span class="st">'//h1/text()'</span>).extract_first()</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 提取所有class属性为"content"的&lt;div&gt;元素的文本内容</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        contents <span class="op">=</span> selector.xpath(<span class="st">'//div[@class="content"]/text()'</span>).extract()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>另外，我们还可以在一个 XPath 选择器对象上多次进行选择操作。比如下面的例子，我们首先选择所有的链接，然后再选择其文本内容。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scrapy.selector <span class="im">import</span> Selector</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MySpider(scrapy.Spider):</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">'myspider'</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    start_urls <span class="op">=</span> [<span class="st">'https://example.com'</span>]</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse(<span class="va">self</span>, response):</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>        selector <span class="op">=</span> Selector(response)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 现在可以使用selector来进行XPath选择</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 选择所有链接</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        links <span class="op">=</span> selector.xpath(<span class="st">'//a'</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 在选定的链接上选择文本内容</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>        text_contents <span class="op">=</span> links.xpath(<span class="st">'./text()'</span>).extract()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>XPath 选择器是 Scrapy 中非常有用的工具，它允许爬虫精确选择和提取数据。熟练掌握 XPath 语法和选择器操作对于成功构建爬虫非常重要。不仅可以提取数据，还可以用于页面导航、链接提取等多个爬虫任务。</p>
+<p>现在，让我们一起来看看 Scrapy 中的另外一个选择器 —— CSS选择器。</p>
+</section>
+</section>
+<section id="css-选择器" class="level4">
+<h4 class="anchored" data-anchor-id="css-选择器">2. CSS 选择器</h4>
+<p>回想 HTML 章节的内容，我们知道，网页的三大组成部分分别是：HTML、Javascript 和 CSS。CSS 选择器就是 CSS 中的一部分，它使用类似于CSS的选择器语法来定位和操作元素。CSS 选择器的作用与使用方法与 XPath 选择器类似，让我们一起来试试看！</p>
+<section id="导入-css-选择器并创建-selector-对象" class="level5">
+<h5 class="anchored" data-anchor-id="导入-css-选择器并创建-selector-对象">(1) 导入 CSS 选择器并创建 <code>Selector</code> 对象</h5>
+<p>与 XPath 选择器的操作一致，在 Scrapy 中，要使用 CSS 选择器，就要首先创建 <code>Selector</code> 类，如下所示：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scrapy.selector <span class="im">import</span> Selector</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MySpider(scrapy.Spider):</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">'myspider'</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    start_urls <span class="op">=</span> [<span class="st">'https://example.com'</span>]</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse(<span class="va">self</span>, response):</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        selector <span class="op">=</span> Selector(response)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 现在可以使用selector来进行CSS选择</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="选择数据-1" class="level5">
+<h5 class="anchored" data-anchor-id="选择数据-1">(2) 选择数据</h5>
+<p>在 Scrapy 中，我们使用 CSS 选择器语法来定位和提取 HTML 或 XML 文旦中的元素。CSS 选择器语法相对简洁，易于理解。同样的，我们也需要牢记 HTML 文档的标签与元素的含义，CSS 选择器也需要借助 HTML 标签来进行数据选择。</p>
+<ol type="1">
+<li><p>基本元素选择</p>
+<p>CSS 选择器选择基本元素的语法十分简单，想要选择哪一种元素，就可以直接使用该元素的名称进行选择，例如：</p>
+<ul>
+<li>选择元素：使用元素名称来选择元素，例如：
+<ul>
+<li><code>a</code> 选择所有链接</li>
+</ul></li>
+<li>类选择器：使用类名来选择元素，例如：
+<ul>
+<li><code>.classname</code> 选择所有具有特定类的元素</li>
+</ul></li>
+<li>ID 选择器：使用 ID 来选择元素，例如：
+<ul>
+<li><code>#elementid</code> 选择具有特定ID的元素</li>
+</ul></li>
+</ul></li>
+<li><p>层级选择</p>
+<p>CSS 选择器与 XPath 选择器一样，同样可以进行层级选择，但是语法不一致：</p>
+<ul>
+<li>子元素：使用空格来表示子元素，例如：
+<ul>
+<li><code>div a</code> 选择所有 <code>&lt;div&gt;</code> 元素内的链接</li>
+</ul></li>
+<li>相邻兄弟元素：使用 <code>+</code> 符号选择相邻兄弟元素，例如：
+<ul>
+<li><code>h1 + p</code> 选择 <code>&lt;h1&gt;</code> 元素后紧随的 <code>&lt;p&gt;</code> 元素</li>
+</ul></li>
+<li>通用兄弟元素：使用 <code>~</code> 符号选择所有通用兄弟元素，例如：
+<ul>
+<li><code>h1 ~ p</code> 选择 <code>&lt;h1&gt;</code> 元素后的所有 <code>&lt;p&gt;</code> 元素</li>
+</ul></li>
+</ul></li>
+<li><p>属性选择</p>
+<ul>
+<li>属性选择：使用方括号来选择具有特定属性的元素，例如：
+<ul>
+<li><code>a[href]</code> 选择所有带有 <code>href</code> 属性的链接</li>
+</ul></li>
+<li>属性值选择：使用 <code>[]</code> 方括号和 <code>=</code> 来选择具有特定属性值的元素，例如：
+<ul>
+<li><code>input[type="text"]</code> 选择所有 <code>type</code> 属性值为”text”的输入框</li>
+</ul></li>
+</ul></li>
+<li><p>伪类选择器：</p>
+<p>CSS选择器还支持伪类选择器，用于选择具有特定状态或位置的元素。例如：</p>
+<ul>
+<li><code>:hover</code> 用于选择鼠标悬停的元素</li>
+<li><code>:first-child</code> 用于选择第一个子元素等</li>
+</ul></li>
+<li><p>组合选择器：</p>
+<p>我们可以将多个选择器组合在一起，以便更精确地定位元素。例如：</p>
+<ul>
+<li><code>div.content a</code> 可以选择所有具有类名 “content” 的 <code>&lt;div&gt;</code> 元素内的链接</li>
+</ul></li>
+<li><p>提取文本和属性：</p>
+<p>要提取元素的文本内容，可以使用 <code>::text</code>。要提取元素的属性，可以使用 <code>::attr(attribute_name)</code>。例如：</p>
+<ul>
+<li>提取链接文本：<code>a::text</code></li>
+<li>提取链接的<code>href</code>属性：<code>a::attr(href)</code></li>
+</ul></li>
+<li><p>通配符选择器：</p>
+<p>使用 <code>*</code> 通配符来选择任何元素，例如：</p>
+<ul>
+<li><code>*::text</code> 可以选择文档中的所有文本内容</li>
+</ul></li>
+</ol>
+<p>下面给出了一些基本示例，便于大家理解如何使用 CSS 选择器。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scrapy.selector <span class="im">import</span> Selector</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MySpider(scrapy.Spider):</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">'myspider'</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    start_urls <span class="op">=</span> [<span class="st">'https://example.com'</span>]</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse(<span class="va">self</span>, response):</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        selector <span class="op">=</span> Selector(response)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 现在可以使用selector来进行CSS选择</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 提取所有链接的文本内容</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>        links <span class="op">=</span> selector.css(<span class="st">'a::text'</span>).extract()</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 提取第一个`&lt;h1&gt;`元素的文本内容</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        title <span class="op">=</span> selector.css(<span class="st">'h1::text'</span>).extract_first()</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 提取所有带有`class`属性为 "content"的`&lt;div&gt;`元素的文本内容</span></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>        contents <span class="op">=</span> selector.css(<span class="st">'div.content::text'</span>).extract()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>到现在，你已经完全掌握了 Scrapy 框架的基础用法，知道了 Scrapy 的架构，学会了如何创建 Spider，了解了如何使用选择器提取数据。让我们来进行本章节学习的最后一步，将编写 Spider 规则、定义爬取流程的工作重新梳理一遍。</p>
+</section>
+</section>
+</section>
+<section id="四编写-spider-规则以定义爬取流程" class="level3">
+<h3 class="anchored" data-anchor-id="四编写-spider-规则以定义爬取流程">四、编写 Spider 规则以定义爬取流程</h3>
+<p>编写 Spider 规则是定义 Scrapy 爬虫行为的关键部分，它决定了爬虫如何从网页中提取数据和遍历网站的过程。以下是详细描述如何编写 Spider 规则以定义爬取流程的步骤：</p>
+<section id="定义-spider-类" class="level4">
+<h4 class="anchored" data-anchor-id="定义-spider-类">1. 定义 Spider 类</h4>
+<p>首先，我们需要创建一个继承自 <code>scrapy.Spider</code> 类的 Spider 类。在该类中，我们需要定义一些必要的属性，包括 Spider 的名称、起始 URL 列表等。下面，我们一起来创建一个 Spider 示例。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MySpider(scrapy.Spider):</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">'myspider'</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    start_urls <span class="op">=</span> [<span class="st">'https://example.com'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="编写-parse-方法" class="level4">
+<h4 class="anchored" data-anchor-id="编写-parse-方法">2. 编写 <code>parse</code> 方法</h4>
+<p><code>parse</code> 方法是 Spider 的入口点，它接收从起始 URL 下载的响应对象(<code>response</code>)。在 <code>parse</code> 方法中，我们可以编写数据提取和爬取流程。我们可以使用 XPath 选择器或 CSS 选择器来定位和提取页面中的数据。</p>
+</section>
+<section id="数据提取和存储" class="level4">
+<h4 class="anchored" data-anchor-id="数据提取和存储">3. 数据提取和存储：</h4>
+<p>在 <code>parse</code> 方法中，我们可以使用选择器从响应中提取数据，然后将数据存储在 Scrapy 的 Item 对象中。Item 对象是字典形式的容器，用于组织和传递数据。</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>在 Scrapy 中，Item 对象是用来存储爬取到的数据的容器。每个 Item 对象都表示一个爬取项，它可以包含从网页中抽取出来的各种数据，如文本、数字、链接、图片URL等。Item 对象是将爬取到的数据传递到 Item Pipeline 的方式之一，以便进行进一步处理、清洗和存储。</p>
+<p>以下是关于 Scrapy 中 Item 对象的详细介绍：</p>
+<ol type="1">
+<li>创建 Item 对象：</li>
+</ol>
+<p>在 Scrapy 中，我们需要定义 Item 对象的结构，这项工作通常是在项目的 <code>items.py</code> 文件中进行。一个 Item 对象是一个简单的 Python 类，它通常包含一组字段(field)来存储不同类型的数据。</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyItem(scrapy.Item):</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> scrapy.Field()</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    link <span class="op">=</span> scrapy.Field()</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    description <span class="op">=</span> scrapy.Field()</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 可以添加更多字段</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>在上述示例中，我们创建了一个名为 <code>MyItem</code> 的 Item 类，并定义了三个字段：<code>title</code>、<code>link</code> 和 <code>description</code>。这些字段将用于存储爬取到的数据。</p>
+<ol start="2" type="1">
+<li>传递 Item 对象：</li>
+</ol>
+<p>一旦 Item 对象包含了所需的数据，我们就可以将其传递给 Spider 中的回调函数，或者直接返回它。 Item 对象将会在 Spider 中传递，然后在 Item Pipeline 中处理。</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parse(<span class="va">self</span>, response):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    item <span class="op">=</span> MyItem()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    item[<span class="st">'title'</span>] <span class="op">=</span> <span class="st">'Example Title'</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    item[<span class="st">'link'</span>] <span class="op">=</span> <span class="st">'https://example.com'</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    item[<span class="st">'description'</span>] <span class="op">=</span> <span class="st">'This is an example description.'</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> item</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>总之，Item对象是Scrapy中用来存储和传递爬取数据的关键元素。通过创建自定义的Item类并实例化Item对象，我们可以有效地组织和管理从网页中抽取出来的数据，并通过Item Pipeline进行进一步的处理和存储。这使得Scrapy能够高效地处理不同类型的数据，从而实现强大的爬虫功能。</p>
+</div>
+</div>
+</section>
+<section id="使用-yield-传递-item-对象" class="level4">
+<h4 class="anchored" data-anchor-id="使用-yield-传递-item-对象">4. 使用 <code>yield</code> 传递 Item 对象：</h4>
+<p>要将提取的数据传递给 Item Pipeline 进行处理，我们就需要使用 Python 的 <code>yield</code> 语句将 Item 对象返回。Scrapy 将自动将返回的 Item 对象传递给配置的 Item Pipeline。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scrapy</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MySpider(scrapy.Spider):</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">'myspider'</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    start_urls <span class="op">=</span> [<span class="st">'https://example.com'</span>]</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> parse(<span class="va">self</span>, response):</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 使用XPath选择器提取页面中的标题文本</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>        title <span class="op">=</span> response.xpath(<span class="st">'//h1/text()'</span>).get()</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 使用CSS选择器提取页面中的链接</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>        links <span class="op">=</span> response.css(<span class="st">'a::attr(href)'</span>).getall()</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 创建一个Item对象并存储提取的数据</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>        item <span class="op">=</span> {</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>            <span class="st">'title'</span>: title,</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>            <span class="st">'links'</span>: links</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 使用yield将Item对象传递给Item Pipeline进行处理</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> item</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./05_03_BeautifulSoup库.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">BeautifulSoup 库</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./06_01_for循环.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">for循环自动获取股票数据</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
