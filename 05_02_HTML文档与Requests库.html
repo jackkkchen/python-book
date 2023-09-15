@@ -462,7 +462,7 @@ id1 --&gt; id4(JavaScript: 用户和网页的交互逻辑)
 <p>随机打开一个网页，在页面上单击右键，选择查看网页源代码，你就可以看到一个网页的源码是如撰写的。比如，我们打开<a href="https://www.bing.com/">必应 (bing.com)</a>，在打开其网页源代码，就可以看到如下所示的界面：</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img\网页源代码.png" class="img-fluid figure-img"></p>
+<p><img src="./img\网页源代码.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">网页源代码</figcaption>
 </figure>
 </div>
@@ -554,20 +554,20 @@ Note
 <div>
 
 <pre class="mermaid mermaid-js">graph TD
-id1(HTML 文档) --&gt; id2(&amp;lt!DOCTYPE&amp;gt 声明)
-id1 --&gt; id3(&amp;lthtml&amp;gt)
-id3 --&gt; id4(&amp;lthead&amp;gt)
-id4 --&gt; id5(&amp;ltmeta&amp;gt)
-id4 --&gt; id6(&amp;lttitle&amp;gt)
+id1(HTML 文档) --&gt; id2(&amp;lt !DOCTYPE &amp;gt 声明)
+id1 --&gt; id3(&amp;lt html &amp;gt)
+id3 --&gt; id4(&amp;lt head &amp;gt)
+id4 --&gt; id5(&amp;lt meta &amp;gt)
+id4 --&gt; id6(&amp;lt title &amp;gt)
 id4 --&gt; id7(...)
-id3 --&gt; id8(&amp;ltbody&amp;gt)
-id8 --&gt; id9(&amp;lth&amp;gt)
-id8 --&gt; id10(&amp;ltp&amp;gt)
-id8 --&gt; id11(&amp;lta&amp;gt)
-id8 --&gt; id12(&amp;ltimg&amp;gt)
-id8 --&gt; id13(&amp;ltul&amp;gt)
-id8 --&gt; id14(&amp;lttable&amp;gt)
-id8 --&gt; id15(&amp;ltform&amp;gt)
+id3 --&gt; id8(&amp;lt body &amp;gt)
+id8 --&gt; id9(&amp;lt h &amp;gt)
+id8 --&gt; id10(&amp;lt p &amp;gt)
+id8 --&gt; id11(&amp;lt a &amp;gt)
+id8 --&gt; id12(&amp;lt img &amp;gt)
+id8 --&gt; id13(&amp;lt ul &amp;gt)
+id8 --&gt; id14(&amp;lt table &amp;gt)
+id8 --&gt; id15(&amp;lt form &amp;gt)
 id8 --&gt; id16(...)
 </pre>
 </div>
@@ -1222,14 +1222,14 @@ Note
 <p>在我们的日常生活中，浏览器地址里里的网址可能是这样的：movie.douban.com/top250 或 www.movie.douban.com/top250</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img\地址1.png" class="img-fluid figure-img"></p>
+<p><img src="./img/地址1.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">地址1</figcaption>
 </figure>
 </div>
 <p>但是在将网址作为参数填入时，我们必须要在网址前加上传输协议，即：https://movie.douban.com/top250</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img\地址2.png" class="img-fluid figure-img"></p>
+<p><img src="./img/地址2.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">地址2</figcaption>
 </figure>
 </div>
@@ -1358,7 +1358,7 @@ id --&gt; id6(requests.post 发送 POST 请求)
 <p>在上面的示例中，我们通过设置 <code>headers</code> 参数，将我们的身份模拟成了一个运行在 Windows 10 上的 Chrome 浏览器，观察服务器给我们的返回结果就可以发现，状态码从表示请求失败的 <code>418</code> 变为了代表请求成功的 <code>200</code>，我们的伪装成功骗过了网站的服务器。但是请先别急着骄傲，我们还没有大获全胜，如果你要爬取更多的信息，可能会触发网站的反爬虫机制，请让我们脚踏实地，一步步来。</p>
 <blockquote class="blockquote">
 <p>如果你想知道更多的 <code>user-agent</code>，可以试试看下面的方法： 1. 打开你的浏览器，按 <code>F12</code> 或 <code>Ctrl + Shift + I</code>(或 <code>Cmd + Option + I</code> 在 Mac 上)打开开发者工具，切换到 “Network” 或 “网络” 标签。 2. 刷新页面或执行所需的操作，浏览器就会生成一个HTTP请求。 3. 在开发者工具中，我们就将看到所有HTTP请求的列表。选择其中一个请求，然后在右侧的 “Headers” 或 “标头” 部分查找 “User-Agent” 头部，就可以看到浏览器的User-Agent信息。</p>
-<img src="img\UA.png" class="img-fluid" alt="UA">
+<img src="./.img/UA.png" class="img-fluid" alt="UA">
 </blockquote>
 <p>在 <code>requests</code> 库中，你可以使用参数来自定义和配置HTTP请求。这些参数通常是键值对，用于指定请求的一些特定要求或信息。以下是 <code>requests</code> 库中常见的一些参数及其用法：</p>
 <p><strong>1. <code>params</code>： 用于向URL添加查询字符串参数，常用于GET请求。</strong></p>
