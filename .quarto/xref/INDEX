@@ -166,5 +166,83 @@
   },
   "错误汇总.ipynb": {
     "错误汇总.html": "adc07686"
+  },
+  "05_01_爬虫基础.ipynb": {
+    "05_01_爬虫基础.html": "4a93f98b"
+  },
+  "02_01_Python基本概念与指令输入.ipynb": {
+    "02_01_Python基本概念与指令输入.html": "7fe931a2"
+  },
+  "02_02_Python数据类型.ipynb": {
+    "02_02_Python数据类型.html": "2e4564dd"
+  },
+  "02_03_Python数据结构.ipynb": {
+    "02_03_Python数据结构.html": "f1467867"
+  },
+  "03_01_Plotly图表绘制与可视化.ipynb": {
+    "03_01_Plotly图表绘制与可视化.html": "50ac5066"
+  },
+  "03_02_Plotly高阶图表.ipynb": {
+    "03_02_Plotly高阶图表.html": "9d567b4c"
+  },
+  "03_03_Plotly地图可视化.ipynb": {
+    "03_03_Plotly地图可视化.html": "b1c0600c"
+  },
+  "04_01_Pandas安装.ipynb": {
+    "04_01_Pandas安装.html": "ce7c0266"
+  },
+  "04_02_Pandas处理什么样的数据.ipynb": {
+    "04_02_Pandas处理什么样的数据.html": "b5a28d3b"
+  },
+  "04_03_导入导出数据.ipynb": {
+    "04_03_导入导出数据.html": "14bfa5d1"
+  },
+  "04_04_选取数据.ipynb": {
+    "04_04_选取数据.html": "ee30001f"
+  },
+  "04_05_数据的增加、删除、修改.ipynb": {
+    "04_05_数据的增加、删除、修改.html": "4a645b99"
+  },
+  "04_06_如何计算汇总统计.ipynb": {
+    "04_06_如何计算汇总统计.html": "92254d90"
+  },
+  "04_07_时间序列数据.ipynb": {
+    "04_07_时间序列数据.html": "9d8279a5"
+  },
+  "04_08_文本数据.ipynb": {
+    "04_08_文本数据.html": "c621c573"
+  },
+  "05_02_HTML文档与Requests库.ipynb": {
+    "05_02_HTML文档与Requests库.html": "19c1539e"
+  },
+  "05_03_BeautifulSoup库.ipynb": {
+    "05_03_BeautifulSoup库.html": "83a1d278"
+  },
+  "05_04_Scrapy框架.ipynb": {
+    "05_04_Scrapy框架.html": "4c6919a6"
+  },
+  "06_01_for循环.ipynb": {
+    "06_01_for循环.html": "e04f93bf"
+  },
+  "06_02_python链接数据库.ipynb": {
+    "06_02_python链接数据库.html": "1c646a04"
+  },
+  "07_01_环境搭建.ipynb": {
+    "07_01_环境搭建.html": "367dc1a3"
+  },
+  "07_02_条件语句和循环语句.ipynb": {
+    "07_02_条件语句和循环语句.html": "8325d343"
+  },
+  "07_03_函数.ipynb": {
+    "07_03_函数.html": "242d348f"
+  },
+  "07_04_模块.ipynb": {
+    "07_04_模块.html": "93ba2f0a"
+  },
+  "07_05_Excel和Python的Pandas功能类比学习.ipynb": {
+    "07_05_Excel和Python的Pandas功能类比学习.html": "d7eb8184"
+  },
+  "07_06_错误汇总.ipynb": {
+    "07_06_错误汇总.html": "1a024a5f"
   }
 }
