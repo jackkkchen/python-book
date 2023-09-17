@@ -405,13 +405,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#爬虫的基本概念" id="toc-爬虫的基本概念" class="nav-link" data-scroll-target="#爬虫的基本概念">爬虫的基本概念</a>
   <ul class="collapse">
   <li><a href="#一爬虫的概念" id="toc-一爬虫的概念" class="nav-link" data-scroll-target="#一爬虫的概念">一、爬虫的概念</a></li>
-  <li><a href="#二爬虫策略与爬虫伦理" id="toc-二爬虫策略与爬虫伦理" class="nav-link" data-scroll-target="#二爬虫策略与爬虫伦理">二、爬虫策略与爬虫伦理</a></li>
+  <li><a href="#二爬虫伦理" id="toc-二爬虫伦理" class="nav-link" data-scroll-target="#二爬虫伦理">二、爬虫伦理</a></li>
   </ul></li>
-  <li><a href="#http-协议" id="toc-http-协议" class="nav-link" data-scroll-target="#http-协议">HTTP 协议</a>
+  <li><a href="#链接解析" id="toc-链接解析" class="nav-link" data-scroll-target="#链接解析">链接解析</a>
   <ul class="collapse">
-  <li><a href="#一http-的概念" id="toc-一http-的概念" class="nav-link" data-scroll-target="#一http-的概念">一、HTTP 的概念</a></li>
-  <li><a href="#二uri-的概念" id="toc-二uri-的概念" class="nav-link" data-scroll-target="#二uri-的概念">二、URI 的概念</a></li>
-  <li><a href="#三http-的请求与响应" id="toc-三http-的请求与响应" class="nav-link" data-scroll-target="#三http-的请求与响应">三、HTTP 的请求与响应</a></li>
+  <li><a href="#一传输协议" id="toc-一传输协议" class="nav-link" data-scroll-target="#一传输协议">一、传输协议</a></li>
+  <li><a href="#二域名与资源" id="toc-二域名与资源" class="nav-link" data-scroll-target="#二域名与资源">二、域名与资源</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -461,13 +460,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="一爬虫的概念" class="level3">
 <h3 class="anchored" data-anchor-id="一爬虫的概念">一、爬虫的概念</h3>
 <p>Python 爬虫从本质上来说，就是一种自动化程序，被设计用来在互联网上获取特定的信息。它模仿人类在网页上进行浏览的行为，可以在短时间内处理大量的网页和数据。Python 爬虫通常可以用于从网页中抓取数据、分析信息、搜索特定内容等场景。</p>
-<p>根据前面的介绍，我们已经知道了，Python 爬虫就是一段自动化代码，通过各种条件判断、循环等操作来从互联网上抓取我们想要的内容。爬虫是如何模拟人类的操作的呢？要知道这一点，我们就首先要了解在日常中，我们使用浏览器进行搜索时，是如何与服务器建立连接的。另外，由于服务器返回给客户端的内容往往不是整理好的表格或文本，而是 HTML 文档，因此，我们也需要了解 HTML 文档的构成，以帮助我们从中提取出我们想要的部分。</p>
 <p>这样一来，我们似乎整理出了爬虫程序的基本运行方式，即：</p>
 <ol type="1">
-<li>请求库(HTTP 请求)：首先，爬虫使用 HTTP 请求库（如 <code>requests</code>）向目标网站发送请求，获取网页的 HTML 源代码。在这个步骤中，我们获取了需要被处理的网页内容。</li>
-<li>网页解析：接下来，我们需要解析获取到的 HTML 源代码以获取有用的信息。在这一步中，我们使用 HTML 解析库（如<code>BeautifulSoup</code> 等）或正则表达式等方法来完成。</li>
-<li>数据提取：在解析的基础上，爬虫可以使用解析库提供的工具（如标签解析、<code>XPath</code>、<code>CSS</code> 选择器）来从 HTML 源代码中提取所需的数据。这些数据可以是网页的标题、段落、链接、图像等等。</li>
-<li>数据存储：最后，提取到的数据可以被存储在本地文件、数据库或其他的数据存储方式中，以备后续的分析、使用或展示。这一步骤使得爬虫获得的有用信息可以被进一步处理和利用</li>
+<li>请求库(HTTP 请求)：首先，爬虫使用 HTTP 请求库 <code>requests</code> 获取网页的 HTML 源代码。</li>
+<li>网页解析：接下来，使用 HTML 解析库 <code>BeautifulSoup</code> 对获取到的网页源代码进行解析。</li>
+<li>数据提取：使用标签解析、<code>XPath</code>、<code>CSS</code> 选择器来从 HTML 源代码中提取所需的数据。</li>
+<li>数据存储：最后，将提取到的数据存储在本地文件、数据库或其他的数据存储方式中。</li>
 </ol>
 <div class="cell">
 <div class="cell-output-display">
@@ -482,91 +480,51 @@ id1(发送 HTTP 请求) --&gt; id2(网页解析) --&gt; id3(数据提取) --&gt;
 </div>
 </div>
 <p>根据爬虫的基本运作方式，我们也就了解了学习爬虫的一般步骤。首先，我们要了解什么是 HTTP 请求，什么是 HTML 文档。随后，我们就可以开始学习如何使用 HTTP 请求库来获取网页的基本数据。最后，我们再掌握解析网页数据，并从中提取关键信息的方法。另外，为了更高效地获取数据，简化爬虫的开发过程，我们还将了解主流的爬虫框架，学习其构成及使用方法。</p>
-<p>现在，让我们来看看本次学习的基本规划吧：</p>
-<p>首先，我们将会学习 HTTP&amp;HTTPS 与 HTML 的概念，并且了解如何从一个网页中找到我们所需要的信息。</p>
-<p>接下来，我们学习 <code>requests</code> 库，这是一个简洁而功能强大的Python库，用于发送HTTP请求和处理HTTP响应。它使得在Python中进行网络请求变得更加简单，提供了一种直观的方式来与Web服务进行交互。</p>
-<p>随后，我们学习 <code>BeautifulSoup</code> 库，使用这个流行的解析库来解析我们在上一步中所获取到的数据。</p>
-<p>最后，我们学习 <code>scrapy</code> 框架，它是一个高级的、开源的Python爬虫框架，专门设计用于快速、高效地从网站中提取结构化数据。它提供了一整套工具和抽象层，使得开发者能够轻松地创建、管理和执行各种类型的网络爬虫任务。</p>
 </section>
-<section id="二爬虫策略与爬虫伦理" class="level3">
-<h3 class="anchored" data-anchor-id="二爬虫策略与爬虫伦理">二、爬虫策略与爬虫伦理</h3>
-<p>在正式开始爬虫的学习之前，我们还有一个十分重要的任务要做，就是了解爬虫策略与爬虫伦理。</p>
-<p>首先我们要了解，爬虫作为一种技术手段，本身是不违法任何法律条文的，但是开发者使用爬虫进行网络数据获取的行为可能会涉及到法律风险。这是因为，虽然许多网站向用户免费提供服务，放开了数据获取权限，但是网站的数据依然是受到版权或知识产权保护的，随意使用爬虫不仅会触犯到网站所有者的权益，也可能危害到数据隐私和个人信息。另外，网站的运营和维护都是需要成本的，网站的服务器资源也是有限的，如果不受限制地使用爬虫，会加重网站的运行负担，占用过多的服务器资源，甚至无异于 DDoS 攻击，这会导致网站服务器过载从而无法正常提供服务，也会影响到其他用户的使用。</p>
-<p>使用爬虫的法律风险包括但不限于：</p>
-<ul>
-<li>侵犯版权和知识产权： 爬虫可能会获取并使用受版权保护的内容，如文本、图片、音频等。在未经授权的情况下使用这些内容可能构成版权侵犯，导致法律纠纷。</li>
-<li>数据隐私和个人信息： 爬虫获取的数据可能包含个人隐私信息，如姓名、邮箱、电话号码等。在处理这些信息时，需要遵守相关数据隐私法规，避免侵犯他人隐私权。</li>
-<li>反竞争行为： 如果使用爬虫获取竞争对手的商业信息，可能被视为不正当竞争行为，可能触发法律纠纷。</li>
-<li>网络犯罪： 如果爬虫被用于非法活动，如网络钓鱼、诈骗等，可能构成网络犯罪，导致刑事责任。</li>
-<li>违反网站条款： 有些网站在其服务条款中规定了爬虫行为的限制，如果不遵守这些规定，可能导致法律风险。</li>
-<li>分布式拒绝服务攻击（DDoS）： 如果爬虫请求过于频繁，可能会对网站服务器造成压力，被视为DDoS攻击，导致法律追究。</li>
-<li>机器人协议（robots.txt）： 忽略网站的robots.txt文件，即使不是法律违规，也可能导致网站封禁你的爬虫，影响数据获取。</li>
-<li>法律地域差异： 不同国家和地区对爬虫活动的法律规定不同，需要根据实际情况遵循当地法律法规。</li>
-</ul>
-<p>基于以上因素，在学习爬虫之前，我们首先要了解爬虫策略与爬虫伦理。</p>
-<section id="爬虫策略" class="level4">
-<h4 class="anchored" data-anchor-id="爬虫策略">1. 爬虫策略</h4>
-<p>爬虫策略是指开发者在进行网络爬虫任务时制定的计划和方法。它涉及爬取的目标、深度、频率、数据提取、并发等方面的决策，以确保爬虫能够高效、有序地从目标网站抓取数据。合理的爬虫策略可以降低对目标网站的负担，减少被封禁的风险，同时也能够保证数据的准确性和完整性。</p>
-<p>爬虫策略的一些重要考虑因素包括：</p>
-<ul>
-<li>爬取目标： 确定要爬取的网站或页面，明确所需的数据。</li>
-<li>爬取深度： 决定爬虫深入网站的层级，即爬取多少个链接的链接。</li>
-<li>爬取频率： 设定请求频率，避免对网站造成过大的压力，防止被封禁。</li>
-<li>数据提取： 确定如何从网页中提取所需的数据，使用选择器、正则表达式等方法。</li>
-<li>请求头设置： 设置适当的User-Agent、Referer等请求头，模拟正常用户行为。</li>
-<li>并发处理： 考虑如何有效地处理多个并发请求，提高爬取效率。</li>
-<li>错误处理： 处理网络错误、连接超时等问题，设置重试机制。</li>
-</ul>
-<p>设置合理的爬虫策略，不仅有利于进行更高效更准确的数据爬取，也有利于保护自身不触犯法律风险。</p>
-</section>
-<section id="爬虫伦理" class="level4">
-<h4 class="anchored" data-anchor-id="爬虫伦理">2. 爬虫伦理</h4>
-<p>为了设置合理的爬虫策略，我们就需要了解爬虫伦理。</p>
+<section id="二爬虫伦理" class="level3">
+<h3 class="anchored" data-anchor-id="二爬虫伦理">二、爬虫伦理</h3>
+<p>为了在使用爬虫时不触犯法律风险，我们就需要了解爬虫伦理。</p>
 <p>爬虫伦理是指在进行网络爬虫任务时应遵循的道德和法律规范。因为爬虫可能会对目标网站产生一定的影响，开发者应该遵循以下几个伦理原则：</p>
 <ul>
-<li>尊重网站规则： 开发者应该遵循目标网站的 robots.txt 文件，避免爬取被禁止的页面。</li>
-<li>避免过度请求： 爬虫不应该对目标网站造成不必要的负担，应该合理设置请求频率和间隔。</li>
-<li>尊重隐私： 爬虫不应该获取或传播个人隐私信息，如邮箱、密码等。</li>
-<li>遵循法律法规： 爬虫开发者应该遵守国家和地区的相关法律法规，避免侵犯他人权益。</li>
-<li>避免滥用： 爬虫不应该被用于恶意目的，如大规模数据盗取、DDoS攻击等。</li>
-<li>保护目标网站： 爬虫应该避免对目标网站造成影响，如不要频繁爬取大量页面。</li>
+<li>尊重网站规则</li>
+<li>避免过度请求</li>
+<li>尊重隐私</li>
+<li>遵循法律法规</li>
+<li>避免滥用</li>
+<li>保护目标网站</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
 <p><strong>robots.txt 文件</strong></p>
-<p>robots.txt 文件是一个用于指导网络爬虫如何爬取网站内容的标准文件。这个文件通常位于网站的根目录下，我们可以通过在网站域名后面添加 /robots.txt 来访问。</p>
-<p>robots.txt 文件的主要作用是告诉网络爬虫哪些页面可以爬取，哪些页面不应该被爬取。它是网站所有者与搜索引擎和其他爬虫之间的一种协议，有助于管理网络爬虫的行为，以确保爬虫不会访问或爬取敏感、私人或不希望被索引的内容。</p>
-<p>我们可以打开任意一个网站，在其域名后添加 来访问其 robots.txt 文件。下面是一个简单的 robots.txt 文件示例：</p>
-<pre><code>User-agent: *
-Disallow: /private/
-Disallow: /admin/
-Allow: /public/
-Crawl-delay: 10</code></pre>
+<p>robots.txt 文件是一个用于指导网络爬虫如何爬取以及是否允许爬取网站内容的标准文件，这个文件通常位于网站的根目录下。</p>
+<p>我们可以打开任意一个网站的根目录，在其域名后添加 <code>/robots.txt</code> 来访问。</p>
+<p>下面是一个简单的 robots.txt 文件示例：</p>
+<p><img src="./img/robots.png" class="img-fluid"></p>
 <p>这个文件的结构为：</p>
-<p>User-agent：这个部分指定了要针对哪个爬虫或用户代理设置规则。通常使用一个星号 * 来表示适用于所有爬虫，或者指定爬虫的名称或代号。 Disallow：这个部分规定了爬虫不允许访问的页面或目录。例如，Disallow: /private/ 表示不允许爬虫访问以 /private/ 开头的所有页面。 Allow：与Disallow相对应，这个部分规定了允许访问的页面或目录。通常不是所有的爬虫都支持这个指令。 Crawl-delay：这个部分指定了爬虫爬取网站页面的延迟时间，以秒为单位。例如，Crawl-delay: 5 表示爬虫每隔5秒才能请求一个页面。</p>
-</div>
-</div>
-<p>总之，爬虫策略和伦理是网络爬虫开发中不可忽视的重要方面。通过合理的策略和遵循伦理原则，开发者可以实现有效的数据抓取，同时避免对网站和其他用户造成不必要的困扰和损害。</p>
+<p>User-agent：这个部分指定了要针对哪个爬虫或用户代理设置规则。通常使用一个星号 * 来表示适用于所有爬虫，或者指定爬虫的名称或代号。</p>
+<p>Disallow：这个部分规定了爬虫不允许访问的页面或目录。例如，Disallow: /private/ 表示不允许爬虫访问以 /private/ 开头的所有页面。</p>
+<p>Allow：与Disallow相对应，这个部分规定了允许访问的页面或目录。通常不是所有的爬虫都支持这个指令。</p>
+<p>Crawl-delay：这个部分指定了爬虫爬取网站页面的延迟时间，以秒为单位。例如，Crawl-delay: 5 表示爬虫每隔5秒才能请求一个页面。</p>
 <hr>
 </section>
 </section>
-</section>
-<section id="http-协议" class="level2">
-<h2 class="anchored" data-anchor-id="http-协议">HTTP 协议</h2>
-<section id="一http-的概念" class="level3">
-<h3 class="anchored" data-anchor-id="一http-的概念">一、HTTP 的概念</h3>
+<section id="链接解析" class="level2">
+<h2 class="anchored" data-anchor-id="链接解析">链接解析</h2>
+<p>URL，也就是我们常说的网址，它的正式名称是“统一资源定位符”，它是互联网上的路标，指向了我们所需要的资源。因此，要学习爬虫，就要了解什么是 URL。我们把一个网址分成四个部分来说明，以 <a href="https://movie.douban.com/top250?filter=unwatched" class="uri">https://movie.douban.com/top250?filter=unwatched</a> 为例，分别是：</p>
+<ul>
+<li>安全传输协议：<code>https://</code></li>
+<li>主域名：<code>movie.douban.com</code></li>
+<li>子链接：<code>/top250</code></li>
+<li>筛选规则：<code>?filter=unwatched</code></li>
+</ul>
+<section id="一传输协议" class="level3">
+<h3 class="anchored" data-anchor-id="一传输协议">一、传输协议</h3>
+<section id="http-的概念" class="level4">
+<h4 class="anchored" data-anchor-id="http-的概念">1. HTTP 的概念</h4>
 <p>首先，让我们一起来了解一下，什么是 HTTP 协议。</p>
 <p>在前面对爬虫的介绍中，我们讲到，爬虫程序会模拟人类的行为，向浏览器发送请求，与服务器建立连接。在这一步中，与服务器建立连接的行为，就使用到了 HTTP 协议。</p>
-<p>HTTP 即 Hypertext Transfer Protocol(超文本传输协议)，是一种用于在<strong>客户端</strong>与<strong>服务器</strong>之间的传输数据的<strong>请求 - 响应协议</strong>。在我们的日常生活中，最常用到 HTTP 协议的地方就是在浏览器中浏览网页，我们在浏览器的地址栏中输入一个网址，浏览器就会向该网站的服务器发送一个请求。在这一过程中，浏览器与服务器之间遵循的传输协议，通常就是 HTTP 协议。</p>
-<p>HTTP 是 Web 应用程序和互联网上的服务器之间通信的基础，它被设计用于传输超文本(通常指 HTML 文档)，但是也可以传输其他类型的数据，如图像、音视频文件等。</p>
+<p>HTTP 即 Hypertext Transfer Protocol(超文本传输协议)，是一种用于在<strong>客户端</strong>与<strong>服务器</strong>之间的传输数据的<strong>请求 - 响应协议</strong>。比如，我们在浏览网页时，浏览器与服务器之间遵循的传输协议，通常就是 HTTP 协议。</p>
+<p>HTTP 通常会显示不安全，例如 <a href="http://www.moe.gov.cn/" class="uri">http://www.moe.gov.cn/</a>，如果网站受到攻击，密码容易泄露。</p>
+<p><img src="./img/https.png" class="img-fluid"></p>
+<p>随着互联网的不断发展，HTTP 协议正在逐渐被淘汰，HTTPS 协议已成为越来越多网站的标配，为用户提供更为安全和可靠的网络环境。</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -578,66 +536,54 @@ id1(客户端) -- HTTP 协议 --&gt; id2(服务器)
 </div>
 </div>
 </div>
-<blockquote class="blockquote">
-<p>HTTPS 即 Hypertext Transfer Protocol Secure，是基于 HTTP 提出的一种<strong>安全</strong>超文本传输协议，即 HTTP 的安全版本。HTTPS 旨在保护网络通信的隐私和安全性，它通过多种加密方式来加密数据传输，防止敏感信息在传输过程中被恶意窃听或篡改。</p>
-<p>关于 HTTP &amp; HTTPS 有以下几点需要注意：</p>
-<p>关于 HTTPS，需要注意的点是：</p>
-<ul>
-<li>端口：默认情况下，HTTPS 使用 TCP 端口443，而 HTTP 使用端口80。</li>
-<li>URL前缀：HTTPS 网站的 URL 以 “https://” 开头，而 HTTP 网站以 “http://” 开头。这个前缀是浏览器的一种提示，告诉用户连接是安全的。</li>
-<li>身份验证：HTTPS 可以通过数字证书对服务器进行身份验证，确保客户端正在连接到合法的服务器，而不是中间人攻击者。数字证书由可信的证书颁发机构（CA）颁发。</li>
-<li>数据完整性：HTTPS 还提供了数据完整性检查，以确保在传输过程中数据没有被篡改或损坏。数据完整性是通过使用消息摘要算法（如 SHA-256）和数字签名来实现的。</li>
-</ul>
-</blockquote>
+<!-- HTTP 是 Web 应用程序和互联网上的服务器之间通信的基础，它被设计用于传输超文本(通常指 HTML 文档)，但是也可以传输其他类型的数据，如图像、音视频文件等。
+
+> HTTPS 即 Hypertext Transfer Protocol Secure，是基于 HTTP 提出的一种**安全**超文本传输协议，即 HTTP 的安全版本。HTTPS 旨在保护网络通信的隐私和安全性，它通过多种加密方式来加密数据传输，防止敏感信息在传输过程中被恶意窃听或篡改。
+
+### 二、URI 的概念
+
+在学习 HTTP 时，我们还需要了解一些相关的知识——即 URI 与 URL。
+
+URI(Uniform Resource Identifier)的中文名称叫做“统一资源标识符”，顾名思义，它的作用就是标识和定位资源(不仅仅是互联网上的资源)。URI 分为两种形式：URL 和 URN。
+
+#### 1. URL(Uniform Resource Locator)
+
+URL 是 URI 的一个子集，它就是我们常说的“统一资源定位符”，它包含了资源的地址以及获取该资源所需要的协议信息。URL 通常以特定的协议(如 HTTP、HTTPS、FTP 等）开头，后面跟着资源的地址和可能的其他信息。
+
+一个完整的 URL 通常由三部分构成：比如 https://www.example.com/index.html 是一个URL，它包括了协议(HTTPS)、主机名(www.example.com)以及资源路径(/index.html)。
+
+任意打开一个网页，仔细观察它的地址栏。
+
+![URL](./img/URL.png)
+
+这里有一串长长的字符，就是我们常说的网址，即 URL。现在，让我们将其拆分为几块来看，分别为：
+
+- 传输协议：`https://`
+- 域名：`pydatacamp.com`
+- 资源路径：`/05_01_爬虫基础.html`
+
+掌握 URL 的知识，对我们后面学习使用爬虫获取资源十分有必要。
+
+#### 2. URN(Uniform Resource Name)
+
+URN 是 URI 的另一种子集，又叫做“统一资源名称”，它用于标识资源的名称，而不涉及资源的位置或如何获取资源。URN 的一个例子是 ISBN(国际标准书号)，它标识了一本书的唯一名称，而不管它存储在哪里。 -->
 </section>
-<section id="二uri-的概念" class="level3">
-<h3 class="anchored" data-anchor-id="二uri-的概念">二、URI 的概念</h3>
-<p>在学习 HTTP 时，我们还需要了解一些相关的知识——即 URI 与 URL。</p>
-<p>URI(Uniform Resource Identifier)的中文名称叫做“统一资源标识符”，顾名思义，它的作用就是标识和定位资源(不仅仅是互联网上的资源)。URI 分为两种形式：URL 和 URN。</p>
-<section id="urluniform-resource-locator" class="level4">
-<h4 class="anchored" data-anchor-id="urluniform-resource-locator">1. URL(Uniform Resource Locator)</h4>
-<p>URL 是 URI 的一个子集，它就是我们常说的“统一资源定位符”，它包含了资源的地址以及获取该资源所需要的协议信息。URL 通常以特定的协议(如 HTTP、HTTPS、FTP 等）开头，后面跟着资源的地址和可能的其他信息。</p>
-<p>一个完整的 URL 通常由三部分构成：比如 https://www.example.com/index.html 是一个URL，它包括了协议(HTTPS)、主机名(www.example.com)以及资源路径(/index.html)。</p>
-<p>任意打开一个网页，仔细观察它的地址栏。</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./img/URL.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">URL</figcaption>
-</figure>
-</div>
-<p>这里有一串长长的字符，就是我们常说的网址，即 URL。现在，让我们将其拆分为几块来看，分别为：</p>
-<ul>
-<li>传输协议：<code>https://</code></li>
-<li>域名：<code>pydatacamp.com</code></li>
-<li>资源路径：<code>/05_01_爬虫基础.html</code></li>
-</ul>
-<p>掌握 URL 的知识，对我们后面学习使用爬虫获取资源十分有必要。</p>
-</section>
-<section id="urnuniform-resource-name" class="level4">
-<h4 class="anchored" data-anchor-id="urnuniform-resource-name">2. URN(Uniform Resource Name)</h4>
-<p>URN 是 URI 的另一种子集，又叫做“统一资源名称”，它用于标识资源的名称，而不涉及资源的位置或如何获取资源。URN 的一个例子是 ISBN(国际标准书号)，它标识了一本书的唯一名称，而不管它存储在哪里。</p>
-</section>
-</section>
-<section id="三http-的请求与响应" class="level3">
-<h3 class="anchored" data-anchor-id="三http-的请求与响应">三、HTTP 的请求与响应</h3>
-<section id="http-请求" class="level4">
-<h4 class="anchored" data-anchor-id="http-请求">1. HTTP 请求</h4>
-<p>客户端要使用 HTTP 协议向服务器发送请求，就要遵循 HTTP 的请求方法。HTTP 协议支持多种请求方法以实现获取数据、创建数据、删除数据等功能，其中最常见的两种方法就是 <code>GET</code> 和 <code>POST</code>。</p>
-<ul>
-<li><p><code>GET</code> 方法主要用于获取数据，比如当我们浏览某一个网页时，浏览器就会像服务器发送 <code>GET</code> 请求，用以获取页面数据。</p></li>
-<li><p><code>POST</code> 方法主要用于创建数据，比如当我们注册账号时，浏览器就会向服务器发送 <code>POST</code> 请求，将用户数据传递给服务器。</p></li>
-</ul>
-<p>本次学习我们主要讲解爬虫的基本概念，大多情况下只需要获取浏览器返回的数据，因此我们主要学习 <code>GET</code> 方法。</p>
-<p>一个 HTTP 请求通常由<strong>请求行</strong>、<strong>请求头</strong>、<strong>请求体</strong>三个部分组成，其中，请求体常常用来向服务器传输数据，因此 <code>GET</code> 方法，通常没有请求体。</p>
+<section id="http-的请求与响应" class="level4">
+<h4 class="anchored" data-anchor-id="http-的请求与响应">2. HTTP 的请求与响应</h4>
+<section id="http-请求" class="level5">
+<h5 class="anchored" data-anchor-id="http-请求">(1) HTTP 请求</h5>
+<p>客户端要使用 HTTP 协议向服务器发送请求，就要遵循 HTTP 的请求方法。HTTP 协议支持多种请求方法以实现获取数据、创建数据、删除数据等功能。在爬虫中，最常用的就是 <code>GET</code> 方法。</p>
+<p><code>GET</code> 方法主要用于获取数据，比如当我们浏览某一个网页时，浏览器就会像服务器发送 <code>GET</code> 请求，用以获取页面数据。</p>
+<p>一个 HTTP 请求通常由<strong>请求行</strong>、<strong>请求头</strong>、<strong>请求体</strong>三个部分组成，其中，请求体常常用来向服务器传输数据，因此 <code>GET</code> 方法，通常没有请求体。下面是一个 <code>GET</code> 请求的示例。</p>
 <div class="cell" data-vscode="{&quot;languageId&quot;:&quot;html&quot;}">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>GET <span class="op">/</span>top250 HTTP<span class="op">/</span><span class="fl">1.1</span><span class="op">&lt;!--</span> 请求行(Request Line) <span class="op">--&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Host: movie.douban.com<span class="op">&lt;!--</span> 请求头(Request Headers) <span class="op">--&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>User<span class="op">-</span>Agent: Mozilla<span class="op">/</span><span class="fl">5.0</span> (Windows NT <span class="fl">10.0</span><span class="op">;</span> Win64<span class="op">;</span> x64) AppleWebKit<span class="op">/</span><span class="fl">537.36</span> (KHTML, like Gecko) Chrome<span class="op">/</span><span class="fl">94.0.4606.71</span> Safari<span class="op">/</span><span class="fl">537.36</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>Accept: text<span class="op">/</span>html,application<span class="op">/</span>xhtml<span class="op">+</span>xml,application<span class="op">/</span>xml<span class="op">;</span>q<span class="op">=</span><span class="fl">0.9</span>,image<span class="op">/</span>avif,image<span class="op">/</span>webp,image<span class="op">/</span>apng,<span class="op">*/*;</span>q<span class="op">=</span><span class="fl">0.8</span>,application<span class="op">/</span>signed<span class="op">-</span>exchange<span class="op">;</span>v<span class="op">=</span>b3<span class="op">;</span>q<span class="op">=</span><span class="fl">0.9</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Accept<span class="op">-</span>Language: en<span class="op">-</span>US,en<span class="op">;</span>q<span class="op">=</span><span class="fl">0.9</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>Connection: keep<span class="op">-</span>alive</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!--</span> 空行 <span class="op">--&gt;</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!--</span> 请求体(Request Body)<span class="op">--&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>GET <span class="op">/</span>top250 HTTP<span class="op">/</span><span class="fl">1.1</span><span class="op">&lt;!--</span> 请求行(Request Line) <span class="op">--&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Host: movie.douban.com<span class="op">&lt;!--</span> 请求头(Request Headers) <span class="op">--&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>User<span class="op">-</span>Agent: Mozilla<span class="op">/</span><span class="fl">5.0</span> (Windows NT <span class="fl">10.0</span><span class="op">;</span> Win64<span class="op">;</span> x64) AppleWebKit<span class="op">/</span><span class="fl">537.36</span> (KHTML, like Gecko) Chrome<span class="op">/</span><span class="fl">94.0.4606.71</span> Safari<span class="op">/</span><span class="fl">537.36</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Accept: text<span class="op">/</span>html,application<span class="op">/</span>xhtml<span class="op">+</span>xml,application<span class="op">/</span>xml<span class="op">;</span>q<span class="op">=</span><span class="fl">0.9</span>,image<span class="op">/</span>avif,image<span class="op">/</span>webp,image<span class="op">/</span>apng,<span class="op">*/*;</span>q<span class="op">=</span><span class="fl">0.8</span>,application<span class="op">/</span>signed<span class="op">-</span>exchange<span class="op">;</span>v<span class="op">=</span>b3<span class="op">;</span>q<span class="op">=</span><span class="fl">0.9</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Accept<span class="op">-</span>Language: en<span class="op">-</span>US,en<span class="op">;</span>q<span class="op">=</span><span class="fl">0.9</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Connection: keep<span class="op">-</span>alive</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!--</span> 空行 <span class="op">--&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!--</span> 请求体(Request Body)<span class="op">--&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>在上面的例子中，HTTP 请求的结构如下：</p>
 <ul>
@@ -671,57 +617,49 @@ id1 --&gt; id4(请求体)
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>在上面的示例中，还有一些特殊的点需要注意</p>
-<ol type="1">
-<li>请求行中的资源路径指明了客户端想要访问的服务器中的资源，在资源路径后面，还可以填入一个 <code>?</code>，用以添加查询参数，用以向服务器传递额外的信息，不同的信息之间用 <code>&amp;</code> 分隔。如：</li>
-</ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>www.douban.com/movie/top250?start=750<span class="er">&amp;</span>filter=unwatched</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>请求头会包含一些传递给服务器的信息，其中：
-<ol type="1">
-<li><code>Host</code> 指主机域名，主机域名结合请求行里面的资源路径，就可以得到一个完整的网址</li>
-<li><code>User-Agent</code> 用来告知服务器客户端的相关信息，比如请求发起者的身份等等</li>
-<li><code>Accept</code> 告诉服务器客户端希望接受的响应数据的类型，多种类型以 <code>,</code> 分隔， <code>*/*</code> 表示接受任意类型的数据</li>
-</ol></li>
-<li>请求体一般包含客户端想要传递给服务器的其他任意数据，<code>GET</code> 方法的请求体通常为空。</li>
-</ol>
-</div>
-</div>
+<!-- ::: {.callout-note}
+
+在上面的示例中，还有一些特殊的点需要注意
+
+1. 请求行中的资源路径指明了客户端想要访问的服务器中的资源，在资源路径后面，还可以填入一个 `?`，用以添加查询参数，用以向服务器传递额外的信息，不同的信息之间用 `&` 分隔。如：
+
+```html
+www.douban.com/movie/top250?start=750&filter=unwatched
+```
+
+2. 请求头会包含一些传递给服务器的信息，其中：
+   (1) `Host` 指主机域名，主机域名结合请求行里面的资源路径，就可以得到一个完整的网址
+     (2) `User-Agent` 用来告知服务器客户端的相关信息，比如请求发起者的身份等等
+     (3) `Accept` 告诉服务器客户端希望接受的响应数据的类型，多种类型以 `,` 分隔， `*/*` 表示接受任意类型的数据
+
+3. 请求体一般包含客户端想要传递给服务器的其他任意数据，`GET` 方法的请求体通常为空。
+
+::: -->
 </section>
-<section id="http-响应" class="level4">
-<h4 class="anchored" data-anchor-id="http-响应">2. HTTP 响应</h4>
+<section id="http-响应" class="level5">
+<h5 class="anchored" data-anchor-id="http-响应">(2) HTTP 响应</h5>
 <p>当服务器接收到客户端发出的 HTTP 请求后，会根据请求返回 HTTP 响应。类似的，HTTP 响应也由三个部分组成：状态行、响应头、响应体。观察下面的例子，这是一个完整的 HTTP 响应。</p>
 <div class="cell" data-vscode="{&quot;languageId&quot;:&quot;html&quot;}">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>HTTP<span class="op">/</span><span class="fl">1.1</span> <span class="dv">200</span> OK<span class="op">&lt;!--</span> 状态行(Status Line) <span class="op">--&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Date: Sat, <span class="dv">28</span> Aug <span class="dv">2023</span> <span class="dv">12</span>:<span class="dv">00</span>:<span class="dv">00</span> GMT<span class="op">&lt;!--</span> 响应头(Response Headers) <span class="op">--&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Server: Apache<span class="op">/</span><span class="fl">2.4.41</span> (Unix)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Content<span class="op">-</span>Type: text<span class="op">/</span>html<span class="op">;</span> charset<span class="op">=</span>UTF<span class="op">-</span><span class="dv">8</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Content<span class="op">-</span>Length: <span class="dv">1234</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>Connection: keep<span class="op">-</span>alive</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!</span>DOCTYPE html<span class="op">&gt;&lt;!--</span> 响应体(Response Body) <span class="op">--&gt;</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>html<span class="op">&gt;</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>head<span class="op">&gt;</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>title<span class="op">&gt;</span>Welcome to Example.com<span class="op">&lt;/</span>title<span class="op">&gt;</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>head<span class="op">&gt;</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>body<span class="op">&gt;</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>h1<span class="op">&gt;</span>Hello, World<span class="op">!&lt;/</span>h1<span class="op">&gt;</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>p<span class="op">&gt;</span>This <span class="kw">is</span> an example HTML page.<span class="op">&lt;/</span>p<span class="op">&gt;</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>body<span class="op">&gt;</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>html<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>HTTP<span class="op">/</span><span class="fl">1.1</span> <span class="dv">200</span> OK<span class="op">&lt;!--</span> 状态行(Status Line) <span class="op">--&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Date: Sat, <span class="dv">28</span> Aug <span class="dv">2023</span> <span class="dv">12</span>:<span class="dv">00</span>:<span class="dv">00</span> GMT<span class="op">&lt;!--</span> 响应头(Response Headers) <span class="op">--&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Server: Apache<span class="op">/</span><span class="fl">2.4.41</span> (Unix)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>Content<span class="op">-</span>Type: text<span class="op">/</span>html<span class="op">;</span> charset<span class="op">=</span>UTF<span class="op">-</span><span class="dv">8</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Content<span class="op">-</span>Length: <span class="dv">1234</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>Connection: keep<span class="op">-</span>alive</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!</span>DOCTYPE html<span class="op">&gt;&lt;!--</span> 响应体(Response Body) <span class="op">--&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>html<span class="op">&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>head<span class="op">&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>title<span class="op">&gt;</span>Welcome to Example.com<span class="op">&lt;/</span>title<span class="op">&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>head<span class="op">&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>body<span class="op">&gt;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>h1<span class="op">&gt;</span>Hello, World<span class="op">!&lt;/</span>h1<span class="op">&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>p<span class="op">&gt;</span>This <span class="kw">is</span> an example HTML page.<span class="op">&lt;/</span>p<span class="op">&gt;</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>body<span class="op">&gt;</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>html<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>这个 HTTP 响应的结构如下：</p>
 <ul>
@@ -756,11 +694,11 @@ id1 --&gt; id4(响应体)
 </div>
 <p>关于服务器返回的 HTTP 响应，需要格外注意的是状态行中的<strong>响应状态码</strong>，它代表了服务器对客户端的请求的响应状态。状态码共分为五类：</p>
 <ol type="1">
-<li><code>1xx</code>(信息性状态码)：这些状态码是信息性的，表示请求已被接收，继续处理。最常见的 <code>1xx</code> 状态码是 <code>100 Continue</code>，表示服务器已经接收到请求的一部分，客户端可以继续发送请求的其余部分。</li>
-<li><code>2xx</code>(成功状态码)：这些状态码表示请求已成功接收、理解和接受。最常见的 <code>2xx</code> 状态码是 <code>200 OK</code>，表示请求成功。</li>
-<li><code>3xx</code>(重定向状态码)：这些状态码表示客户端需要采取额外的操作来完成请求。通常用于指示资源已经移动到新的URL，需要重新发起请求。常见的 <code>3xx</code> 状态码包括 <code>301 Moved Permanently</code>(永久重定向)和<code>302 Found</code>(临时重定向)。</li>
-<li><code>4xx</code>(客户端错误状态码)：这些状态码表示客户端发送的请求有错误或无法完成。最常见的 <code>4xx</code> 状态码是 <code>400 Bad Request</code>(请求无效)和 <code>403 Forbidden</code>(禁止访问)。这些状态码通常表示客户端需要修改请求以使其有效。</li>
-<li><code>5xx</code>(服务器错误状态码)：这些状态码表示服务器在尝试处理请求时发生了错误。最常见的 <code>5xx</code> 状态码是 <code>500 Internal Server Error</code>（服务器内部错误)。这些状态码通常表示服务器出现问题，无法处理请求。</li>
+<li><code>1xx</code>(信息性状态码)</li>
+<li><code>2xx</code>(成功状态码)</li>
+<li><code>3xx</code>(重定向状态码)</li>
+<li><code>4xx</code>(客户端错误状态码)</li>
+<li><code>5xx</code>(服务器错误状态码)</li>
 </ol>
 <p>下面的表格中给出了常见的 HTTP 状态码及其含义：</p>
 <table class="table">
@@ -805,6 +743,78 @@ id1 --&gt; id4(响应体)
 </tr>
 </tbody>
 </table>
+</section>
+</section>
+</section>
+<section id="二域名与资源" class="level3">
+<h3 class="anchored" data-anchor-id="二域名与资源">二、域名与资源</h3>
+<p>前面我们已经了解到，URL 就是指向互联网资源的路标，给浏览器一个 URL 就可以定位到网络上的一个资源。刚才我们解析了网址 <a href="https://movie.douban.com/top250?filter=unwatched" class="uri">https://movie.douban.com/top250?filter=unwatched</a> 开头的传输协议部分 <code>https</code>，现在，让我们一起来看看后面的路径部分。</p>
+<p>就像我们电脑上的文件地址一样，URL 的功能就是在网络上对一个资源进行定位。你可以将一个网址拆分成几部分，并且向理解电脑上的文件地址一样理解它。</p>
+<p>对于网址 <a href="https://movie.douban.com/top250?filter=unwatched" class="uri">https://movie.douban.com/top250?filter=unwatched</a>，我们可以这样来看，比如在你的 Windows 电脑中，你的用户文件夹下，有一个名为 “MyDocuments” 的文件夹，这个文件夹下有一个名为 “report.docx” 的文件，那么它的路径就是：“C:.docx”。</p>
+<p>现在让我们试着类比：</p>
+<ul>
+<li>协议：在 URL 最前面的协议部分，可以理解为我们电脑上文件的<strong>“打开方式”</strong>，只有用文件支持的打开方式才能打开它，同理，只有遵循网址的通讯协议，才能与其建立连接。</li>
+<li>主域名：<code>www.douban.com</code> 这部分就是域名，它类似于文件的文件路径的主文件夹，就是 “C:” 部分。</li>
+<li>子域名：<code>www.movie.douban.com</code> 就是 URL 的子域名，它就像主文件夹下面的子文件夹，就是 “” 这一部分。</li>
+<li>资源路径：<code>/top250</code> 就是网络上的资源路径，它指向了网站 <code>www.movie.douban.com</code> 下的一个榜单：电影 TOP250，就像文件的具体位置一样 “.docx”。</li>
+<li>查询参数：<code>?filter=unwatched</code> 就是文件的查询参数，它用于筛选特定的内容，就像电脑上文件的附加信息一样。</li>
+</ul>
+<p>让我们一起跟着这个比喻，来看看域名与资源的关系。</p>
+<section id="域名" class="level4">
+<h4 class="anchored" data-anchor-id="域名">1. 域名</h4>
+<p>现在，让我们以 <code>www.movie.douban.com</code> 为例来解释域名的结构。</p>
+<p>和我们日常生活中的阅读习惯不同，域名的阅读是从右到左进行的。其结构为：</p>
+<ul>
+<li>顶级域名：<code>.com</code></li>
+<li>二级域名：<code>.douban</code></li>
+<li>二级域名的子部分：<code>.movie</code></li>
+<li>子域名：<code>www</code></li>
+</ul>
+<p>这个网址共有以上四个组成部分。让我们一个个来看：</p>
+<section id="顶级域名" class="level5">
+<h5 class="anchored" data-anchor-id="顶级域名">(1) 顶级域名</h5>
+<p>顶级域名 <code>.com</code> 是一个通用顶级域名，通常与商业网站相关。我们在《流浪地球 2》中看到的根服务器，就是用来存放和维护顶级域名的。顶级域名是互联网中最高层次的域名，一般位于 URL 的最右侧。顶级域名通常由国际组织、国家或地区的注册机构进行管理，并根据其用途分为不同的类别。以下是一些常见的顶级域名：</p>
+<ul>
+<li>通用顶级域名
+<ul>
+<li><code>.com</code>：通用商业顶级域名，用于商业网站。</li>
+<li><code>.org</code>：通用组织顶级域名，用于非盈利组织。</li>
+<li><code>.net</code>：通用网络顶级域名，用于与互联网和网络服务相关的机构。</li>
+<li><code>.gov</code>：通用政府顶级域名，用于政府机构。</li>
+<li><code>.edu</code>：通用教育顶级域名，用于教育机构</li>
+</ul></li>
+<li>国家和地区代码顶级域名
+<ul>
+<li><code>.cn</code>：中国的顶级域名</li>
+<li><code>.us</code>：美国的顶级域名</li>
+</ul></li>
+</ul>
+<p>了解一些常见的顶级域名，可以让我们在看到一个 URL 时就大概知道其用途。</p>
+</section>
+<section id="二级域名" class="level5">
+<h5 class="anchored" data-anchor-id="二级域名">(2) 二级域名</h5>
+<p>在上面的示例中，<code>.douban</code> 就是一个二级域名。二级域名通常表示特定的组织、公司、网站或服务。例如，<code>.douban</code> 就由豆瓣公司掌握，<code>.zhihu</code> 就由中文知识社区知乎掌握。</p>
+</section>
+<section id="二级域名的子部分" class="level5">
+<h5 class="anchored" data-anchor-id="二级域名的子部分">(3) 二级域名的子部分</h5>
+<p>这一部分比较特殊，在上面的 URL 中，我们可以看到，除了常见的顶级域名 <code>.com</code>，二级域名 <code>.douban</code>，子域名<code>www</code>，还有一个部分，就是 <code>.movie</code>。<code>.movie</code> 在这里是 <code>.douban.com</code> 域名的一个子域名，代表了豆瓣网站中的电影板块。这样的作法可以使网站的功能划分更为明确。但是要注意，如果 <code>.movie</code> 在 URL 的最右侧，那么它代表的就是一个通用顶级域名，表示电影相关的网站。</p>
+</section>
+<section id="子域名" class="level5">
+<h5 class="anchored" data-anchor-id="子域名">(4) 子域名</h5>
+<p>子域名就是 URL 最左侧的部分 <code>www</code>，它表示世界范围内的万维网服务，是访问网站的标准方式。</p>
+<p>将上面的四个部分合并起来，就是主域名：<code>www.movie.douban.com</code>。这个 URL 告诉我们：</p>
+<ul>
+<li>它是一个位于 <code>.com</code> 顶级域名下的域名；</li>
+<li>它的名称是 <code>douban</code>，归属于一个特定的公司；</li>
+<li>它提供的服务是 <code>movie</code>，表示电影板块；</li>
+<li>它的访问方式是 <code>www</code>，属于万维网的一部分。</li>
+</ul>
+</section>
+</section>
+<section id="查询参数" class="level4">
+<h4 class="anchored" data-anchor-id="查询参数">2. 查询参数</h4>
+<p>网站的查询参数是用于在 URL 中传递额外信息或数据的一种方式，通常位于 UTL 的末尾，以便向服务器发送请求时提供特定的参数或选项。上面示例中的 <code>?filter=unwatched</code>，就是查询参数，表示未观看过的电影。</p>
+<p>要知道网站支持哪些查询参数，通常只有两种方法，一种是得到网站官方的支持，比如阅读其官方文档或联系网站支持；另一种是总结归纳，通过自己或其他开发者的归纳，来获取网站支持的查询参数。</p>
 
 
 </section>
