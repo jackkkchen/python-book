@@ -405,6 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#一beautifulsoup-库的安装与使用" id="toc-一beautifulsoup-库的安装与使用" class="nav-link" data-scroll-target="#一beautifulsoup-库的安装与使用">一、BeautifulSoup 库的安装与使用</a></li>
   <li><a href="#二beautifulsoup-库的对象类型" id="toc-二beautifulsoup-库的对象类型" class="nav-link" data-scroll-target="#二beautifulsoup-库的对象类型">二、BeautifulSoup 库的对象类型</a></li>
   <li><a href="#三遍历文档树" id="toc-三遍历文档树" class="nav-link" data-scroll-target="#三遍历文档树">三、遍历文档树</a></li>
+  <li><a href="#四css-选择器" id="toc-四css-选择器" class="nav-link" data-scroll-target="#四css-选择器">四、CSS 选择器</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/jackkkchen/python-book/blob/main/05_03_BeautifulSoup库.ipynb" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -1093,6 +1094,285 @@ id(打开 &amp;lthtml&amp;gt 标签) --&gt; id1(打开一个 &amp;lthead&amp;gt 
 </div>
 <p>根据解析器的工作流程，我们就可以定义出前后节点关系：在指定节点后解析的节点叫做该节点的前进节点，在指定节点前解析的节点叫做回退节点。我们可以使用 <code>.next_element</code> 属性指向解析过程中下一个被解析的对象(字符串或 <code>tag</code>)，即指向前进节点；使用 <code>.previous_element</code> 属性指向当前被解析的对象的前一个解析对象，即指向回退节点。</p>
 <p>有时候前后节点可能与兄弟节点是一样的，但通常是不一样的。</p>
+</section>
+</section>
+</section>
+<section id="四css-选择器" class="level3">
+<h3 class="anchored" data-anchor-id="四css-选择器">四、CSS 选择器</h3>
+<p>BeautifulSoup 是一个独立的第三方库，用于从HTML和XML中提取数据时，通常需要使用选择器来定位元素。然而，BeautifulSoup 和 XPath 并不直接兼容，因为它们是两种不同的 HTML 元素选择和定位方法。为了解决这个问题，我们可以转而使用 CSS 选择器来选择网页中的元素。在本次学习中，我们将学习如何使用 CSS 选择器来定位和提取所需的元素。</p>
+<blockquote class="blockquote">
+<p>需要注意的是，由于 BeautifulSoup 是由 Python 开发的，所以在某些情况下，它的解析效率可能相对较低，特别是对于大型文档。因此，在实际工作中，我们通常会选择使用 BeautifulSoup 来解析网页的整体结构，然后使用 XPath 来更精确地定位和提取特定元素。这种组合的使用方式能够在处理不同类型的任务时更加灵活和方便。</p>
+</blockquote>
+<section id="css-选择器的基本语法" class="level4">
+<h4 class="anchored" data-anchor-id="css-选择器的基本语法">CSS 选择器的基本语法</h4>
+<p>要使用 CSS 选择器，只需要调用 <code>.select()</code> 方法就可以了，向 <code>()</code> 中传入 CSS 表达式，就可以精确定位到我们想要的元素。其语法为：</p>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;html&quot;}">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>soup.select(CSS表达式)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>下面的表格中整理了 CSS 选择器的基本语法，在学习过 XPath 选择器后，其中的内容很容易理解。</p>
+<p>在下面的表格中，<code>class</code> 表示<strong>类选择器</strong>，<code>element</code> 表示<strong>元素选择器</strong>，<code>attribute</code> 表示<strong>属性选择器</strong>，<code>#id</code> 表示 <strong>id 选择器</strong>。</p>
+<table class="table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 32%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">语法</th>
+<th style="text-align: center;">示例表达式</th>
+<th style="text-align: center;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">.class</td>
+<td style="text-align: center;">soup.select(‘.notice’)</td>
+<td style="text-align: center;">选择所有 <code>class = notice</code> 的元素</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">element.class</td>
+<td style="text-align: center;">soup.select(‘div.notice’)</td>
+<td style="text-align: center;">选择所有 <code>class = notice</code> 的 <code>&lt;div&gt;</code> 元素</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">#id</td>
+<td style="text-align: center;">soup.select(‘#author’)</td>
+<td style="text-align: center;">选择所有 <code>id</code> 属性值为 <code>author</code>的元素</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">element#id</td>
+<td style="text-align: center;">soup.select(‘a#author’)</td>
+<td style="text-align: center;">选择所有 <code>id</code>属性为 <code>author</code> 的 <code>&lt;a&gt;</code> 元素</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">*</td>
+<td style="text-align: center;">soup.select(*)</td>
+<td style="text-align: center;">选择所有元素</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">element</td>
+<td style="text-align: center;">soup.select(‘p’)</td>
+<td style="text-align: center;">选择所有 <code>&lt;p&gt;</code> 元素</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">element, element</td>
+<td style="text-align: center;">soup.select(‘div, p’)</td>
+<td style="text-align: center;">选择所有 <code>&lt;div&gt;</code> 元素和所有 <code>&lt;p&gt;</code> 元素</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">element element</td>
+<td style="text-align: center;">soup.select(‘div p’)</td>
+<td style="text-align: center;">选择 <code>&lt;div&gt;</code> 元素内部的所有 <code>&lt;p&gt;</code> 元素</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">element&gt;element</td>
+<td style="text-align: center;">soup.select(‘div&gt;p’)</td>
+<td style="text-align: center;">选择父元素为 <code>&lt;div&gt;</code> 元素的所有 <code>&lt;p&gt;</code> 元素</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">element+element</td>
+<td style="text-align: center;">soup.select(‘div+p’)</td>
+<td style="text-align: center;">选择紧接在 <code>&lt;div&gt;</code> 元素后的所有 <code>&lt;p&gt;</code> 元素</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">[attribute]</td>
+<td style="text-align: center;">soup.select(‘[target]’)</td>
+<td style="text-align: center;">选择带有 <code>target</code> 属性的所有元素</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">element[attribute]</td>
+<td style="text-align: center;">soup.select(‘input[name]’)</td>
+<td style="text-align: center;">选择所有带有 <code>name</code> 属性的 <code>&lt;input&gt;</code> 元素</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">[attribute=value]</td>
+<td style="text-align: center;">soup.select(‘[target=_blank]’)</td>
+<td style="text-align: center;">选择 <code>target = 'blank'</code> 的所有元素</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">[attribute~=value]</td>
+<td style="text-align: center;">soup.select(‘[target~=flower]’)</td>
+<td style="text-align: center;">选择 <code>title</code> 属性包含单词 <code>'flower'</code> 的所有元素</td>
+</tr>
+</tbody>
+</table>
+<p>根据上面的表格我们可以发现，不同类型的选择器可以组合使用，使得选择更加灵活精准。我们以表格中的第2、4、8、12行的语法为例，一起来理解 CSS 选择器的用法。</p>
+<section id="使用-css-选择器选择所有-classnotice-的-div-元素" class="level5">
+<h5 class="anchored" data-anchor-id="使用-css-选择器选择所有-classnotice-的-div-元素">(1) 使用 CSS 选择器选择所有 <code>class=notice</code> 的 <code>&lt;div&gt;</code> 元素</h5>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="co"># HTML文档示例</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>html_doc <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;!DOCTYPE html&gt;</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;html&gt;</span></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;head&gt;</span></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;title&gt;CSS选择器示例&lt;/title&gt;</span></span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;style&gt;</span></span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a><span class="st">        /* CSS样式表中定义了一个.notice类 */</span></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a><span class="st">        .notice {</span></span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a><span class="st">            background-color: yellow;</span></span>
+<span id="cb57-13"><a href="#cb57-13" aria-hidden="true" tabindex="-1"></a><span class="st">            border: 1px solid black;</span></span>
+<span id="cb57-14"><a href="#cb57-14" aria-hidden="true" tabindex="-1"></a><span class="st">            padding: 10px;</span></span>
+<span id="cb57-15"><a href="#cb57-15" aria-hidden="true" tabindex="-1"></a><span class="st">            margin: 5px;</span></span>
+<span id="cb57-16"><a href="#cb57-16" aria-hidden="true" tabindex="-1"></a><span class="st">        }</span></span>
+<span id="cb57-17"><a href="#cb57-17" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;/style&gt;</span></span>
+<span id="cb57-18"><a href="#cb57-18" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/head&gt;</span></span>
+<span id="cb57-19"><a href="#cb57-19" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;body&gt;</span></span>
+<span id="cb57-20"><a href="#cb57-20" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;h1&gt;使用CSS选择器选择class=notice的div元素&lt;/h1&gt;</span></span>
+<span id="cb57-21"><a href="#cb57-21" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;div class="notice"&gt;</span></span>
+<span id="cb57-22"><a href="#cb57-22" aria-hidden="true" tabindex="-1"></a><span class="st">        &lt;p&gt;这是一个带有class="notice"的div元素。&lt;/p&gt;</span></span>
+<span id="cb57-23"><a href="#cb57-23" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;/div&gt;</span></span>
+<span id="cb57-24"><a href="#cb57-24" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;div&gt;</span></span>
+<span id="cb57-25"><a href="#cb57-25" aria-hidden="true" tabindex="-1"></a><span class="st">        &lt;p&gt;这是一个普通的div元素，没有class属性。&lt;/p&gt;</span></span>
+<span id="cb57-26"><a href="#cb57-26" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;/div&gt;</span></span>
+<span id="cb57-27"><a href="#cb57-27" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;div class="notice"&gt;</span></span>
+<span id="cb57-28"><a href="#cb57-28" aria-hidden="true" tabindex="-1"></a><span class="st">        &lt;p&gt;这是另一个带有class="notice"的div元素。&lt;/p&gt;</span></span>
+<span id="cb57-29"><a href="#cb57-29" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;/div&gt;</span></span>
+<span id="cb57-30"><a href="#cb57-30" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/body&gt;</span></span>
+<span id="cb57-31"><a href="#cb57-31" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/html&gt;</span></span>
+<span id="cb57-32"><a href="#cb57-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-33"><a href="#cb57-33" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb57-34"><a href="#cb57-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-35"><a href="#cb57-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用Beautiful Soup解析HTML文档</span></span>
+<span id="cb57-36"><a href="#cb57-36" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(html_doc, <span class="st">'lxml'</span>)</span>
+<span id="cb57-37"><a href="#cb57-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-38"><a href="#cb57-38" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用 CSS 选择器选择所有 `class=notice` 的 `&lt;div&gt;` 元素</span></span>
+<span id="cb57-39"><a href="#cb57-39" aria-hidden="true" tabindex="-1"></a>selected_div <span class="op">=</span> soup.select(<span class="st">'div.notice'</span>)</span>
+<span id="cb57-40"><a href="#cb57-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-41"><a href="#cb57-41" aria-hidden="true" tabindex="-1"></a><span class="co"># 打印选择的元素</span></span>
+<span id="cb57-42"><a href="#cb57-42" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> div <span class="kw">in</span> selected_div:</span>
+<span id="cb57-43"><a href="#cb57-43" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(div)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;div class="notice"&gt;
+&lt;p&gt;这是一个带有class="notice"的div元素。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="notice"&gt;
+&lt;p&gt;这是另一个带有class="notice"的div元素。&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="使用-css-选择器选择所有-id属性为-author-的-a-元素" class="level5">
+<h5 class="anchored" data-anchor-id="使用-css-选择器选择所有-id属性为-author-的-a-元素">(2) 使用 CSS 选择器选择所有 <code>id</code>属性为 <code>author</code> 的 <code>&lt;a&gt;</code> 元素</h5>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="co"># HTML文档示例</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>html_doc <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;!DOCTYPE html&gt;</span></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;html&gt;</span></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;head&gt;</span></span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;title&gt;CSS选择器示例&lt;/title&gt;</span></span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/head&gt;</span></span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;body&gt;</span></span>
+<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;h1&gt;选择所有id="author"的&amp;lt;a&amp;gt;元素&lt;/h1&gt;</span></span>
+<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;p&gt;下面是一些带有id="author"属性的&amp;lt;a&amp;gt;元素：&lt;/p&gt;</span></span>
+<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;a href="https://www.example1.com"&gt;示例链接 1&lt;/a&gt;</span></span>
+<span id="cb59-14"><a href="#cb59-14" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;a href="https://www.example2.com"&gt;示例链接 2&lt;/a&gt;</span></span>
+<span id="cb59-15"><a href="#cb59-15" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;a id="author" href="https://www.example3.com"&gt;作者链接&lt;/a&gt;</span></span>
+<span id="cb59-16"><a href="#cb59-16" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;a id="author" href="https://www.example4.com"&gt;另一个作者链接&lt;/a&gt;</span></span>
+<span id="cb59-17"><a href="#cb59-17" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;a href="https://www.example5.com"&gt;示例链接 3&lt;/a&gt;</span></span>
+<span id="cb59-18"><a href="#cb59-18" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/body&gt;</span></span>
+<span id="cb59-19"><a href="#cb59-19" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/html&gt;</span></span>
+<span id="cb59-20"><a href="#cb59-20" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb59-21"><a href="#cb59-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-22"><a href="#cb59-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用Beautiful Soup解析HTML文档</span></span>
+<span id="cb59-23"><a href="#cb59-23" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(html_doc, <span class="st">'lxml'</span>)</span>
+<span id="cb59-24"><a href="#cb59-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-25"><a href="#cb59-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用 CSS 选择器选择所有 `id `属性为 `author` 的 `&lt;a&gt;` 元素</span></span>
+<span id="cb59-26"><a href="#cb59-26" aria-hidden="true" tabindex="-1"></a>author_links <span class="op">=</span> soup.select(<span class="st">'a#author'</span>)</span>
+<span id="cb59-27"><a href="#cb59-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-28"><a href="#cb59-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 打印选择的元素</span></span>
+<span id="cb59-29"><a href="#cb59-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> link <span class="kw">in</span> author_links:</span>
+<span id="cb59-30"><a href="#cb59-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(link.text, link[<span class="st">'href'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>作者链接 https://www.example3.com
+另一个作者链接 https://www.example4.com</code></pre>
+</div>
+</div>
+</section>
+<section id="使用-css-选择器选择-div-元素内部的所有-p-元素" class="level5">
+<h5 class="anchored" data-anchor-id="使用-css-选择器选择-div-元素内部的所有-p-元素">(3) 使用 CSS 选择器选择 <code>&lt;div&gt;</code> 元素内部的所有 <code>&lt;p&gt;</code> 元素</h5>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个 BeautifulSoup 对象并解析 HTML 文档</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>html_doc <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;!DOCTYPE html&gt;</span></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;html&gt;</span></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;head&gt;</span></span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;title&gt;HTML文档示例&lt;/title&gt;</span></span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/head&gt;</span></span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;body&gt;</span></span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;div id="content"&gt;</span></span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a><span class="st">        &lt;p&gt;第一个段落&lt;/p&gt;</span></span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a><span class="st">        &lt;p&gt;第二个段落&lt;/p&gt;</span></span>
+<span id="cb61-14"><a href="#cb61-14" aria-hidden="true" tabindex="-1"></a><span class="st">        &lt;p&gt;第三个段落&lt;/p&gt;</span></span>
+<span id="cb61-15"><a href="#cb61-15" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;/div&gt;</span></span>
+<span id="cb61-16"><a href="#cb61-16" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;div id="other-content"&gt;</span></span>
+<span id="cb61-17"><a href="#cb61-17" aria-hidden="true" tabindex="-1"></a><span class="st">        &lt;p&gt;另一个段落&lt;/p&gt;</span></span>
+<span id="cb61-18"><a href="#cb61-18" aria-hidden="true" tabindex="-1"></a><span class="st">        &lt;p&gt;还有一个段落&lt;/p&gt;</span></span>
+<span id="cb61-19"><a href="#cb61-19" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;/div&gt;</span></span>
+<span id="cb61-20"><a href="#cb61-20" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/body&gt;</span></span>
+<span id="cb61-21"><a href="#cb61-21" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/html&gt;</span></span>
+<span id="cb61-22"><a href="#cb61-22" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb61-23"><a href="#cb61-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-24"><a href="#cb61-24" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(html_doc, <span class="st">'html.parser'</span>)</span>
+<span id="cb61-25"><a href="#cb61-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-26"><a href="#cb61-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用 CSS 选择器选择&lt;div&gt;元素内部的所有&lt;p&gt;元素</span></span>
+<span id="cb61-27"><a href="#cb61-27" aria-hidden="true" tabindex="-1"></a>div_content <span class="op">=</span> soup.select(<span class="st">'div#content'</span>)</span>
+<span id="cb61-28"><a href="#cb61-28" aria-hidden="true" tabindex="-1"></a>p_elements <span class="op">=</span> div_content[<span class="dv">0</span>].find_all(<span class="st">'p'</span>)</span>
+<span id="cb61-29"><a href="#cb61-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-30"><a href="#cb61-30" aria-hidden="true" tabindex="-1"></a><span class="co"># 打印所选&lt;p&gt;元素的文本内容</span></span>
+<span id="cb61-31"><a href="#cb61-31" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> p <span class="kw">in</span> p_elements:</span>
+<span id="cb61-32"><a href="#cb61-32" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(p.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>第一个段落
+第二个段落
+第三个段落</code></pre>
+</div>
+</div>
+</section>
+<section id="使用-css-选择器选择所有带有-name-属性的-input-元素" class="level5">
+<h5 class="anchored" data-anchor-id="使用-css-选择器选择所有带有-name-属性的-input-元素">(4) 使用 CSS 选择器选择所有带有 <code>name</code> 属性的 <code>&lt;input&gt;</code> 元素</h5>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 创建一个 BeautifulSoup 对象并解析 HTML 文档</span></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>html_doc <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;!DOCTYPE html&gt;</span></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;html&gt;</span></span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;head&gt;</span></span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;title&gt;HTML文档示例&lt;/title&gt;</span></span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/head&gt;</span></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;body&gt;</span></span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;form&gt;</span></span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a><span class="st">        &lt;input type="text" name="用户名" value="周节轮"&gt;</span></span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a><span class="st">        &lt;input type="password" value="12345"&gt;</span></span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a><span class="st">        &lt;input type="email"&gt;</span></span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a><span class="st">    &lt;/form&gt;</span></span>
+<span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/body&gt;</span></span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/html&gt;</span></span>
+<span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-19"><a href="#cb63-19" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb63-20"><a href="#cb63-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-21"><a href="#cb63-21" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(html_doc, <span class="st">'html.parser'</span>)</span>
+<span id="cb63-22"><a href="#cb63-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-23"><a href="#cb63-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 使用 CSS 选择器选择所有带有name属性的&lt;input&gt;元素</span></span>
+<span id="cb63-24"><a href="#cb63-24" aria-hidden="true" tabindex="-1"></a>input_elements_with_name <span class="op">=</span> soup.select(<span class="st">'input[name]'</span>)</span>
+<span id="cb63-25"><a href="#cb63-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-26"><a href="#cb63-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 打印所选&lt;input&gt;元素的属性和值</span></span>
+<span id="cb63-27"><a href="#cb63-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> input_element <span class="kw">in</span> input_elements_with_name:</span>
+<span id="cb63-28"><a href="#cb63-28" aria-hidden="true" tabindex="-1"></a>    input_name <span class="op">=</span> input_element.get(<span class="st">'name'</span>, <span class="st">''</span>)</span>
+<span id="cb63-29"><a href="#cb63-29" aria-hidden="true" tabindex="-1"></a>    input_type <span class="op">=</span> input_element.get(<span class="st">'type'</span>, <span class="st">''</span>)</span>
+<span id="cb63-30"><a href="#cb63-30" aria-hidden="true" tabindex="-1"></a>    input_value <span class="op">=</span> input_element.get(<span class="st">'value'</span>, <span class="st">''</span>)  <span class="co"># 检查属性是否存在，如果不存在就赋予空字符串</span></span>
+<span id="cb63-31"><a href="#cb63-31" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Input name: </span><span class="sc">{</span>input_name<span class="sc">}</span><span class="ss">, Input type: </span><span class="sc">{</span>input_type<span class="sc">}</span><span class="ss">, Input value: </span><span class="sc">{</span>input_value<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Input name: 用户名, Input type: text, Input value: 周节轮</code></pre>
+</div>
+</div>
 
 
 </section>
